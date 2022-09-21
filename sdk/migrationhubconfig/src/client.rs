@@ -161,7 +161,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::CreateHomeRegionControl,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError>,
         > {
@@ -258,7 +258,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeHomeRegionControls,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError>,
         > {
@@ -381,7 +381,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetHomeRegion,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetHomeRegionError>,
         > {

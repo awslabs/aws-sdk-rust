@@ -635,7 +635,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::CreateApplicationInstance,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::CreateApplicationInstanceError>,
         > {
@@ -819,7 +819,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::CreateJobForDevices,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::CreateJobForDevicesError>,
         > {
@@ -926,7 +926,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::CreateNodeFromTemplateJob,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::CreateNodeFromTemplateJobError>,
         > {
@@ -1095,7 +1095,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::CreatePackage,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::CreatePackageError>,
         > {
@@ -1195,7 +1195,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::CreatePackageImportJob,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::CreatePackageImportJobError>,
         > {
@@ -1328,7 +1328,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeleteDevice,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeleteDeviceError>,
         > {
@@ -1407,7 +1407,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeletePackage,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeletePackageError>,
         > {
@@ -1494,7 +1494,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeregisterPackageVersion,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeregisterPackageVersionError>,
         > {
@@ -1626,7 +1626,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeApplicationInstance,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeApplicationInstanceError>,
         > {
@@ -1706,7 +1706,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeApplicationInstanceDetails,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<
                 crate::error::DescribeApplicationInstanceDetailsError,
@@ -1790,7 +1790,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeDevice,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeDeviceError>,
         > {
@@ -1867,7 +1867,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeDeviceJob,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeDeviceJobError>,
         > {
@@ -1944,7 +1944,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeNode,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeNodeError>,
         > {
@@ -2034,7 +2034,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeNodeFromTemplateJob,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeNodeFromTemplateJobError>,
         > {
@@ -2111,7 +2111,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribePackage,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribePackageError>,
         > {
@@ -2188,7 +2188,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribePackageImportJob,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribePackageImportJobError>,
         > {
@@ -2265,7 +2265,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribePackageVersion,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribePackageVersionError>,
         > {
@@ -2381,7 +2381,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListApplicationInstanceDependencies,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<
                 crate::error::ListApplicationInstanceDependenciesError,
@@ -2496,7 +2496,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListApplicationInstanceNodeInstances,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<
                 crate::error::ListApplicationInstanceNodeInstancesError,
@@ -2611,7 +2611,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListApplicationInstances,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListApplicationInstancesError>,
         > {
@@ -2727,7 +2727,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListDevices,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListDevicesError>,
         > {
@@ -2820,7 +2820,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListDevicesJobs,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListDevicesJobsError>,
         > {
@@ -2923,7 +2923,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListNodeFromTemplateJobs,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListNodeFromTemplateJobsError>,
         > {
@@ -3016,7 +3016,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListNodes,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListNodesError>,
         > {
@@ -3171,7 +3171,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListPackageImportJobs,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListPackageImportJobsError>,
         > {
@@ -3264,7 +3264,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListPackages,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListPackagesError>,
         > {
@@ -3357,7 +3357,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListTagsForResource,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         > {
@@ -3434,7 +3434,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ProvisionDevice,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ProvisionDeviceError>,
         > {
@@ -3557,7 +3557,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::RegisterPackageVersion,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::RegisterPackageVersionError>,
         > {
@@ -3683,7 +3683,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::RemoveApplicationInstance,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::RemoveApplicationInstanceError>,
         > {
@@ -3763,7 +3763,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::TagResource,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
         > {
@@ -3863,7 +3863,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UntagResource,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
         > {
@@ -3957,7 +3957,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UpdateDeviceMetadata,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UpdateDeviceMetadataError>,
         > {

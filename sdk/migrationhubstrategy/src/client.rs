@@ -389,7 +389,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetApplicationComponentDetails,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetApplicationComponentDetailsError>,
         > {
@@ -469,7 +469,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetApplicationComponentStrategies,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetApplicationComponentStrategiesError>,
         > {
@@ -549,7 +549,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetAssessment,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetAssessmentError>,
         > {
@@ -626,7 +626,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetImportFileTask,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetImportFileTaskError>,
         > {
@@ -703,7 +703,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetPortfolioPreferences,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetPortfolioPreferencesError>,
         > {
@@ -770,7 +770,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetPortfolioSummary,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetPortfolioSummaryError>,
         > {
@@ -837,7 +837,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetRecommendationReportDetails,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetRecommendationReportDetailsError>,
         > {
@@ -914,7 +914,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetServerDetails,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetServerDetailsError>,
         > {
@@ -1017,7 +1017,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::GetServerStrategies,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::GetServerStrategiesError>,
         > {
@@ -1094,7 +1094,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListApplicationComponents,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListApplicationComponentsError>,
         > {
@@ -1240,7 +1240,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListCollectors,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListCollectorsError>,
         > {
@@ -1333,7 +1333,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListImportFileTask,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListImportFileTaskError>,
         > {
@@ -1426,7 +1426,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListServers,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListServersError>,
         > {
@@ -1569,7 +1569,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::PutPortfolioPreferences,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::PutPortfolioPreferencesError>,
         > {
@@ -1681,7 +1681,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::StartAssessment,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::StartAssessmentError>,
         > {
@@ -1774,7 +1774,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::StartImportFileTask,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::StartImportFileTaskError>,
         > {
@@ -1914,7 +1914,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::StartRecommendationReportGeneration,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<
                 crate::error::StartRecommendationReportGenerationError,
@@ -2015,7 +2015,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::StopAssessment,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::StopAssessmentError>,
         > {
@@ -2095,7 +2095,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UpdateApplicationComponentConfig,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UpdateApplicationComponentConfigError>,
         > {
@@ -2231,7 +2231,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UpdateServerConfig,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UpdateServerConfigError>,
         > {

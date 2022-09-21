@@ -296,7 +296,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::CreateDeliveryStream,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::CreateDeliveryStreamError>,
         > {
@@ -578,7 +578,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeleteDeliveryStream,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeleteDeliveryStreamError>,
         > {
@@ -671,7 +671,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeDeliveryStream,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeDeliveryStreamError>,
         > {
@@ -778,7 +778,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListDeliveryStreams,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListDeliveryStreamsError>,
         > {
@@ -896,7 +896,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListTagsForDeliveryStream,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListTagsForDeliveryStreamError>,
         > {
@@ -1007,7 +1007,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::PutRecord,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::PutRecordError>,
         > {
@@ -1108,7 +1108,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::PutRecordBatch,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::PutRecordBatchError>,
         > {
@@ -1212,7 +1212,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::StartDeliveryStreamEncryption,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::StartDeliveryStreamEncryptionError>,
         > {
@@ -1316,7 +1316,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::StopDeliveryStreamEncryption,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::StopDeliveryStreamEncryptionError>,
         > {
@@ -1398,7 +1398,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::TagDeliveryStream,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::TagDeliveryStreamError>,
         > {
@@ -1497,7 +1497,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UntagDeliveryStream,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UntagDeliveryStreamError>,
         > {
@@ -1599,7 +1599,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UpdateDestination,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UpdateDestinationError>,
         > {

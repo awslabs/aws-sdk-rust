@@ -410,7 +410,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::BuildSuggesters,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::BuildSuggestersError>,
         > {
@@ -487,7 +487,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::CreateDomain,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::CreateDomainError>,
         > {
@@ -564,7 +564,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DefineAnalysisScheme,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DefineAnalysisSchemeError>,
         > {
@@ -654,7 +654,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DefineExpression,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DefineExpressionError>,
         > {
@@ -744,7 +744,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DefineIndexField,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DefineIndexFieldError>,
         > {
@@ -834,7 +834,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DefineSuggester,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DefineSuggesterError>,
         > {
@@ -924,7 +924,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeleteAnalysisScheme,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeleteAnalysisSchemeError>,
         > {
@@ -1014,7 +1014,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeleteDomain,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeleteDomainError>,
         > {
@@ -1091,7 +1091,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeleteExpression,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeleteExpressionError>,
         > {
@@ -1181,7 +1181,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeleteIndexField,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeleteIndexFieldError>,
         > {
@@ -1271,7 +1271,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DeleteSuggester,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DeleteSuggesterError>,
         > {
@@ -1361,7 +1361,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeAnalysisSchemes,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisSchemesError>,
         > {
@@ -1465,7 +1465,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeAvailabilityOptions,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeAvailabilityOptionsError>,
         > {
@@ -1552,7 +1552,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeDomainEndpointOptions,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeDomainEndpointOptionsError>,
         > {
@@ -1639,7 +1639,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeDomains,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeDomainsError>,
         > {
@@ -1723,7 +1723,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeExpressions,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeExpressionsError>,
         > {
@@ -1827,7 +1827,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeIndexFields,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeIndexFieldsError>,
         > {
@@ -1931,7 +1931,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeScalingParameters,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeScalingParametersError>,
         > {
@@ -2008,7 +2008,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeServiceAccessPolicies,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeServiceAccessPoliciesError>,
         > {
@@ -2095,7 +2095,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::DescribeSuggesters,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::DescribeSuggestersError>,
         > {
@@ -2199,7 +2199,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::IndexDocuments,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::IndexDocumentsError>,
         > {
@@ -2276,7 +2276,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::ListDomainNames,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::ListDomainNamesError>,
         > {
@@ -2343,7 +2343,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UpdateAvailabilityOptions,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UpdateAvailabilityOptionsError>,
         > {
@@ -2430,7 +2430,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UpdateDomainEndpointOptions,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UpdateDomainEndpointOptionsError>,
         > {
@@ -2523,7 +2523,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UpdateScalingParameters,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UpdateScalingParametersError>,
         > {
@@ -2613,7 +2613,7 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::customizable_operation::CustomizableOperation<
                 crate::operation::UpdateServiceAccessPolicies,
-                aws_http::retry::AwsErrorRetryPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
             >,
             aws_smithy_http::result::SdkError<crate::error::UpdateServiceAccessPoliciesError>,
         > {

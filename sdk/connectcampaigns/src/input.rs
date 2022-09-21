@@ -116,7 +116,7 @@ impl CreateCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCampaign,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -204,7 +204,7 @@ impl CreateCampaignInput {
             "CreateCampaign",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCampaignInput`](crate::input::CreateCampaignInput).
@@ -252,7 +252,7 @@ impl DeleteCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCampaign,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -340,7 +340,7 @@ impl DeleteCampaignInput {
             "DeleteCampaign",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCampaignInput`](crate::input::DeleteCampaignInput).
@@ -395,7 +395,7 @@ impl DeleteConnectInstanceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnectInstanceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -488,7 +488,7 @@ impl DeleteConnectInstanceConfigInput {
             "DeleteConnectInstanceConfig",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConnectInstanceConfigInput`](crate::input::DeleteConnectInstanceConfigInput).
@@ -543,7 +543,7 @@ impl DeleteInstanceOnboardingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInstanceOnboardingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -636,7 +636,7 @@ impl DeleteInstanceOnboardingJobInput {
             "DeleteInstanceOnboardingJob",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteInstanceOnboardingJobInput`](crate::input::DeleteInstanceOnboardingJobInput).
@@ -684,7 +684,7 @@ impl DescribeCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCampaign,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -772,7 +772,7 @@ impl DescribeCampaignInput {
             "DescribeCampaign",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCampaignInput`](crate::input::DescribeCampaignInput).
@@ -820,7 +820,7 @@ impl GetCampaignStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCampaignState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -909,7 +909,7 @@ impl GetCampaignStateInput {
             "GetCampaignState",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCampaignStateInput`](crate::input::GetCampaignStateInput).
@@ -968,7 +968,7 @@ impl GetCampaignStateBatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCampaignStateBatch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1058,7 +1058,7 @@ impl GetCampaignStateBatchInput {
             "GetCampaignStateBatch",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCampaignStateBatchInput`](crate::input::GetCampaignStateBatchInput).
@@ -1113,7 +1113,7 @@ impl GetConnectInstanceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnectInstanceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1206,7 +1206,7 @@ impl GetConnectInstanceConfigInput {
             "GetConnectInstanceConfig",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetConnectInstanceConfigInput`](crate::input::GetConnectInstanceConfigInput).
@@ -1261,7 +1261,7 @@ impl GetInstanceOnboardingJobStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInstanceOnboardingJobStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1354,7 +1354,7 @@ impl GetInstanceOnboardingJobStatusInput {
             "GetInstanceOnboardingJobStatus",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetInstanceOnboardingJobStatusInput`](crate::input::GetInstanceOnboardingJobStatusInput).
@@ -1431,7 +1431,7 @@ impl ListCampaignsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCampaigns,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1519,7 +1519,7 @@ impl ListCampaignsInput {
             "ListCampaigns",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCampaignsInput`](crate::input::ListCampaignsInput).
@@ -1567,7 +1567,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1655,7 +1655,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -1703,7 +1703,7 @@ impl PauseCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PauseCampaign,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1792,7 +1792,7 @@ impl PauseCampaignInput {
             "PauseCampaign",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PauseCampaignInput`](crate::input::PauseCampaignInput).
@@ -1863,7 +1863,7 @@ impl PutDialRequestBatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDialRequestBatch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1968,7 +1968,7 @@ impl PutDialRequestBatchInput {
             "PutDialRequestBatch",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutDialRequestBatchInput`](crate::input::PutDialRequestBatchInput).
@@ -2016,7 +2016,7 @@ impl ResumeCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResumeCampaign,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2105,7 +2105,7 @@ impl ResumeCampaignInput {
             "ResumeCampaign",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ResumeCampaignInput`](crate::input::ResumeCampaignInput).
@@ -2153,7 +2153,7 @@ impl StartCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartCampaign,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2242,7 +2242,7 @@ impl StartCampaignInput {
             "StartCampaign",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartCampaignInput`](crate::input::StartCampaignInput).
@@ -2312,7 +2312,7 @@ impl StartInstanceOnboardingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartInstanceOnboardingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2418,7 +2418,7 @@ impl StartInstanceOnboardingJobInput {
             "StartInstanceOnboardingJob",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartInstanceOnboardingJobInput`](crate::input::StartInstanceOnboardingJobInput).
@@ -2466,7 +2466,7 @@ impl StopCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopCampaign,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2554,7 +2554,7 @@ impl StopCampaignInput {
             "StopCampaign",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopCampaignInput`](crate::input::StopCampaignInput).
@@ -2633,7 +2633,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2735,7 +2735,7 @@ impl TagResourceInput {
             "TagResource",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -2806,7 +2806,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2907,7 +2907,7 @@ impl UntagResourceInput {
             "UntagResource",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -2974,7 +2974,7 @@ impl UpdateCampaignDialerConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCampaignDialerConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3076,7 +3076,7 @@ impl UpdateCampaignDialerConfigInput {
             "UpdateCampaignDialerConfig",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCampaignDialerConfigInput`](crate::input::UpdateCampaignDialerConfigInput).
@@ -3138,7 +3138,7 @@ impl UpdateCampaignNameInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCampaignName,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3240,7 +3240,7 @@ impl UpdateCampaignNameInput {
             "UpdateCampaignName",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCampaignNameInput`](crate::input::UpdateCampaignNameInput).
@@ -3344,7 +3344,7 @@ impl UpdateCampaignOutboundCallConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCampaignOutboundCallConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3446,7 +3446,7 @@ impl UpdateCampaignOutboundCallConfigInput {
             "UpdateCampaignOutboundCallConfig",
             "connectcampaigns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCampaignOutboundCallConfigInput`](crate::input::UpdateCampaignOutboundCallConfigInput).

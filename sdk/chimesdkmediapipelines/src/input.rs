@@ -141,7 +141,7 @@ impl CreateMediaCapturePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMediaCapturePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -231,7 +231,7 @@ impl CreateMediaCapturePipelineInput {
             "CreateMediaCapturePipeline",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput).
@@ -349,7 +349,7 @@ impl CreateMediaConcatenationPipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMediaConcatenationPipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -440,7 +440,7 @@ impl CreateMediaConcatenationPipelineInput {
             "CreateMediaConcatenationPipeline",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
@@ -562,7 +562,7 @@ impl CreateMediaLiveConnectorPipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMediaLiveConnectorPipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -653,7 +653,7 @@ impl CreateMediaLiveConnectorPipelineInput {
             "CreateMediaLiveConnectorPipeline",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
@@ -708,7 +708,7 @@ impl DeleteMediaCapturePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMediaCapturePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -801,7 +801,7 @@ impl DeleteMediaCapturePipelineInput {
             "DeleteMediaCapturePipeline",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput).
@@ -854,7 +854,7 @@ impl DeleteMediaPipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMediaPipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -947,7 +947,7 @@ impl DeleteMediaPipelineInput {
             "DeleteMediaPipeline",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
@@ -1002,7 +1002,7 @@ impl GetMediaCapturePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMediaCapturePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1095,7 +1095,7 @@ impl GetMediaCapturePipelineInput {
             "GetMediaCapturePipeline",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput).
@@ -1148,7 +1148,7 @@ impl GetMediaPipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMediaPipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1241,7 +1241,7 @@ impl GetMediaPipelineInput {
             "GetMediaPipeline",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
@@ -1305,7 +1305,7 @@ impl ListMediaCapturePipelinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMediaCapturePipelines,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1396,7 +1396,7 @@ impl ListMediaCapturePipelinesInput {
             "ListMediaCapturePipelines",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput).
@@ -1458,7 +1458,7 @@ impl ListMediaPipelinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMediaPipelines,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1549,7 +1549,7 @@ impl ListMediaPipelinesInput {
             "ListMediaPipelines",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
@@ -1599,7 +1599,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1684,7 +1684,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -1755,7 +1755,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1852,7 +1852,7 @@ impl TagResourceInput {
             "TagResource",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -1923,7 +1923,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2020,7 +2020,7 @@ impl UntagResourceInput {
             "UntagResource",
             "chimesdkmediapipelines",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).

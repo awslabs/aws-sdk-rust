@@ -63,7 +63,7 @@ impl AddTagsToResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -156,7 +156,7 @@ impl AddTagsToResourceInput {
             "AddTagsToResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
@@ -203,7 +203,7 @@ impl CreateHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHapg,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -296,7 +296,7 @@ impl CreateHapgInput {
             "CreateHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateHapgInput`](crate::input::CreateHapgInput).
@@ -442,7 +442,7 @@ impl CreateHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHsm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -533,7 +533,7 @@ impl CreateHsmInput {
                     "CreateHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateHsmInput`](crate::input::CreateHsmInput).
@@ -595,7 +595,7 @@ impl CreateLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLunaClient,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -688,7 +688,7 @@ impl CreateLunaClientInput {
             "CreateLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLunaClientInput`](crate::input::CreateLunaClientInput).
@@ -737,7 +737,7 @@ impl DeleteHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHapg,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -830,7 +830,7 @@ impl DeleteHapgInput {
             "DeleteHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteHapgInput`](crate::input::DeleteHapgInput).
@@ -879,7 +879,7 @@ impl DeleteHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHsm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -970,7 +970,7 @@ impl DeleteHsmInput {
                     "DeleteHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteHsmInput`](crate::input::DeleteHsmInput).
@@ -1020,7 +1020,7 @@ impl DeleteLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLunaClient,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1113,7 +1113,7 @@ impl DeleteLunaClientInput {
             "DeleteLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLunaClientInput`](crate::input::DeleteLunaClientInput).
@@ -1163,7 +1163,7 @@ impl DescribeHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHapg,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1256,7 +1256,7 @@ impl DescribeHapgInput {
             "DescribeHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeHapgInput`](crate::input::DescribeHapgInput).
@@ -1321,7 +1321,7 @@ impl DescribeHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHsm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1414,7 +1414,7 @@ impl DescribeHsmInput {
             "DescribeHsm",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeHsmInput`](crate::input::DescribeHsmInput).
@@ -1479,7 +1479,7 @@ impl DescribeLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLunaClient,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1572,7 +1572,7 @@ impl DescribeLunaClientInput {
             "DescribeLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLunaClientInput`](crate::input::DescribeLunaClientInput).
@@ -1657,7 +1657,7 @@ impl GetConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1748,7 +1748,7 @@ impl GetConfigInput {
                     "GetConfig",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetConfigInput`](crate::input::GetConfigInput).
@@ -1784,7 +1784,7 @@ impl ListAvailableZonesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableZones,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1870,7 +1870,7 @@ impl ListAvailableZonesInput {
             "ListAvailableZones",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAvailableZonesInput`](crate::input::ListAvailableZonesInput).
@@ -1919,7 +1919,7 @@ impl ListHapgsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHapgs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2010,7 +2010,7 @@ impl ListHapgsInput {
                     "ListHapgs",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHapgsInput`](crate::input::ListHapgsInput).
@@ -2059,7 +2059,7 @@ impl ListHsmsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHsms,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2149,7 +2149,7 @@ impl ListHsmsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListHsms", "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHsmsInput`](crate::input::ListHsmsInput).
@@ -2199,7 +2199,7 @@ impl ListLunaClientsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLunaClients,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2292,7 +2292,7 @@ impl ListLunaClientsInput {
             "ListLunaClients",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLunaClientsInput`](crate::input::ListLunaClientsInput).
@@ -2342,7 +2342,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2437,7 +2437,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -2519,7 +2519,7 @@ impl ModifyHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyHapg,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2612,7 +2612,7 @@ impl ModifyHapgInput {
             "ModifyHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ModifyHapgInput`](crate::input::ModifyHapgInput).
@@ -2723,7 +2723,7 @@ impl ModifyHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyHsm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2814,7 +2814,7 @@ impl ModifyHsmInput {
                     "ModifyHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ModifyHsmInput`](crate::input::ModifyHsmInput).
@@ -2876,7 +2876,7 @@ impl ModifyLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyLunaClient,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2969,7 +2969,7 @@ impl ModifyLunaClientInput {
             "ModifyLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ModifyLunaClientInput`](crate::input::ModifyLunaClientInput).
@@ -3042,7 +3042,7 @@ impl RemoveTagsFromResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3137,7 +3137,7 @@ impl RemoveTagsFromResourceInput {
             "RemoveTagsFromResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).

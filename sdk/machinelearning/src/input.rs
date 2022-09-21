@@ -77,7 +77,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -168,7 +168,7 @@ impl AddTagsInput {
                     "AddTags",
                     "machinelearning",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput).
@@ -280,7 +280,7 @@ impl CreateBatchPredictionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBatchPrediction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -375,7 +375,7 @@ impl CreateBatchPredictionInput {
             "CreateBatchPrediction",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateBatchPredictionInput`](crate::input::CreateBatchPredictionInput).
@@ -518,7 +518,7 @@ impl CreateDataSourceFromRdsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataSourceFromRDS,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -613,7 +613,7 @@ impl CreateDataSourceFromRdsInput {
             "CreateDataSourceFromRDS",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRdsInput`](crate::input::CreateDataSourceFromRdsInput).
@@ -756,7 +756,7 @@ impl CreateDataSourceFromRedshiftInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataSourceFromRedshift,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -848,7 +848,7 @@ impl CreateDataSourceFromRedshiftInput {
             "CreateDataSourceFromRedshift",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRedshiftInput`](crate::input::CreateDataSourceFromRedshiftInput).
@@ -955,7 +955,7 @@ impl CreateDataSourceFromS3Input {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataSourceFromS3,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1050,7 +1050,7 @@ impl CreateDataSourceFromS3Input {
             "CreateDataSourceFromS3",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDataSourceFromS3Input`](crate::input::CreateDataSourceFromS3Input).
@@ -1147,7 +1147,7 @@ impl CreateEvaluationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEvaluation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1240,7 +1240,7 @@ impl CreateEvaluationInput {
             "CreateEvaluation",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEvaluationInput`](crate::input::CreateEvaluationInput).
@@ -1416,7 +1416,7 @@ impl CreateMlModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMLModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1509,7 +1509,7 @@ impl CreateMlModelInput {
             "CreateMLModel",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMlModelInput`](crate::input::CreateMlModelInput).
@@ -1559,7 +1559,7 @@ impl CreateRealtimeEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRealtimeEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1654,7 +1654,7 @@ impl CreateRealtimeEndpointInput {
             "CreateRealtimeEndpoint",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRealtimeEndpointInput`](crate::input::CreateRealtimeEndpointInput).
@@ -1707,7 +1707,7 @@ impl DeleteBatchPredictionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBatchPrediction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1802,7 +1802,7 @@ impl DeleteBatchPredictionInput {
             "DeleteBatchPrediction",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionInput`](crate::input::DeleteBatchPredictionInput).
@@ -1855,7 +1855,7 @@ impl DeleteDataSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataSource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1948,7 +1948,7 @@ impl DeleteDataSourceInput {
             "DeleteDataSource",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
@@ -2001,7 +2001,7 @@ impl DeleteEvaluationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEvaluation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2094,7 +2094,7 @@ impl DeleteEvaluationInput {
             "DeleteEvaluation",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEvaluationInput`](crate::input::DeleteEvaluationInput).
@@ -2144,7 +2144,7 @@ impl DeleteMlModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMLModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2237,7 +2237,7 @@ impl DeleteMlModelInput {
             "DeleteMLModel",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMlModelInput`](crate::input::DeleteMlModelInput).
@@ -2287,7 +2287,7 @@ impl DeleteRealtimeEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRealtimeEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2382,7 +2382,7 @@ impl DeleteRealtimeEndpointInput {
             "DeleteRealtimeEndpoint",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRealtimeEndpointInput`](crate::input::DeleteRealtimeEndpointInput).
@@ -2467,7 +2467,7 @@ impl DeleteTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2560,7 +2560,7 @@ impl DeleteTagsInput {
             "DeleteTags",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTagsInput`](crate::input::DeleteTagsInput).
@@ -2782,7 +2782,7 @@ impl DescribeBatchPredictionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBatchPredictions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2877,7 +2877,7 @@ impl DescribeBatchPredictionsInput {
             "DescribeBatchPredictions",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBatchPredictionsInput`](crate::input::DescribeBatchPredictionsInput).
@@ -3089,7 +3089,7 @@ impl DescribeDataSourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataSources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3182,7 +3182,7 @@ impl DescribeDataSourcesInput {
             "DescribeDataSources",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDataSourcesInput`](crate::input::DescribeDataSourcesInput).
@@ -3398,7 +3398,7 @@ impl DescribeEvaluationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEvaluations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3491,7 +3491,7 @@ impl DescribeEvaluationsInput {
             "DescribeEvaluations",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEvaluationsInput`](crate::input::DescribeEvaluationsInput).
@@ -3711,7 +3711,7 @@ impl DescribeMlModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMLModels,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3804,7 +3804,7 @@ impl DescribeMlModelsInput {
             "DescribeMLModels",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeMlModelsInput`](crate::input::DescribeMlModelsInput).
@@ -3869,7 +3869,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3962,7 +3962,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTagsInput`](crate::input::DescribeTagsInput).
@@ -4015,7 +4015,7 @@ impl GetBatchPredictionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBatchPrediction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4108,7 +4108,7 @@ impl GetBatchPredictionInput {
             "GetBatchPrediction",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionInput`](crate::input::GetBatchPredictionInput).
@@ -4177,7 +4177,7 @@ impl GetDataSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataSource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4270,7 +4270,7 @@ impl GetDataSourceInput {
             "GetDataSource",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDataSourceInput`](crate::input::GetDataSourceInput).
@@ -4323,7 +4323,7 @@ impl GetEvaluationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEvaluation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4416,7 +4416,7 @@ impl GetEvaluationInput {
             "GetEvaluation",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEvaluationInput`](crate::input::GetEvaluationInput).
@@ -4481,7 +4481,7 @@ impl GetMlModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMLModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4574,7 +4574,7 @@ impl GetMlModelInput {
             "GetMLModel",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMlModelInput`](crate::input::GetMlModelInput).
@@ -4667,7 +4667,7 @@ impl PredictInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Predict,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4758,7 +4758,7 @@ impl PredictInput {
                     "Predict",
                     "machinelearning",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PredictInput`](crate::input::PredictInput).
@@ -4826,7 +4826,7 @@ impl UpdateBatchPredictionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBatchPrediction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4921,7 +4921,7 @@ impl UpdateBatchPredictionInput {
             "UpdateBatchPrediction",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateBatchPredictionInput`](crate::input::UpdateBatchPredictionInput).
@@ -4989,7 +4989,7 @@ impl UpdateDataSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataSource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5082,7 +5082,7 @@ impl UpdateDataSourceInput {
             "UpdateDataSource",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
@@ -5150,7 +5150,7 @@ impl UpdateEvaluationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEvaluation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5243,7 +5243,7 @@ impl UpdateEvaluationInput {
             "UpdateEvaluation",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateEvaluationInput`](crate::input::UpdateEvaluationInput).
@@ -5322,7 +5322,7 @@ impl UpdateMlModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMLModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5415,7 +5415,7 @@ impl UpdateMlModelInput {
             "UpdateMLModel",
             "machinelearning",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateMlModelInput`](crate::input::UpdateMlModelInput).

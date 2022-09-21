@@ -58,7 +58,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptDomainTransferFromAnotherAwsAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -150,7 +150,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
             "AcceptDomainTransferFromAnotherAwsAccount",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::input::AcceptDomainTransferFromAnotherAwsAccountInput).
@@ -203,7 +203,7 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelDomainTransferToAnotherAwsAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -295,7 +295,7 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
             "CancelDomainTransferToAnotherAwsAccount",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountInput`](crate::input::CancelDomainTransferToAnotherAwsAccountInput).
@@ -378,7 +378,7 @@ impl CheckDomainAvailabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckDomainAvailability,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -473,7 +473,7 @@ impl CheckDomainAvailabilityInput {
             "CheckDomainAvailability",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityInput`](crate::input::CheckDomainAvailabilityInput).
@@ -551,7 +551,7 @@ impl CheckDomainTransferabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckDomainTransferability,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -646,7 +646,7 @@ impl CheckDomainTransferabilityInput {
             "CheckDomainTransferability",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityInput`](crate::input::CheckDomainTransferabilityInput).
@@ -696,7 +696,7 @@ impl DeleteDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -789,7 +789,7 @@ impl DeleteDomainInput {
             "DeleteDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput).
@@ -860,7 +860,7 @@ impl DeleteTagsForDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTagsForDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -955,7 +955,7 @@ impl DeleteTagsForDomainInput {
             "DeleteTagsForDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainInput`](crate::input::DeleteTagsForDomainInput).
@@ -1005,7 +1005,7 @@ impl DisableDomainAutoRenewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableDomainAutoRenew,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1100,7 +1100,7 @@ impl DisableDomainAutoRenewInput {
             "DisableDomainAutoRenew",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewInput`](crate::input::DisableDomainAutoRenewInput).
@@ -1152,7 +1152,7 @@ impl DisableDomainTransferLockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableDomainTransferLock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1247,7 +1247,7 @@ impl DisableDomainTransferLockInput {
             "DisableDomainTransferLock",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisableDomainTransferLockInput`](crate::input::DisableDomainTransferLockInput).
@@ -1297,7 +1297,7 @@ impl EnableDomainAutoRenewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableDomainAutoRenew,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1392,7 +1392,7 @@ impl EnableDomainAutoRenewInput {
             "EnableDomainAutoRenew",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewInput`](crate::input::EnableDomainAutoRenewInput).
@@ -1444,7 +1444,7 @@ impl EnableDomainTransferLockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableDomainTransferLock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1539,7 +1539,7 @@ impl EnableDomainTransferLockInput {
             "EnableDomainTransferLock",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockInput`](crate::input::EnableDomainTransferLockInput).
@@ -1591,7 +1591,7 @@ impl GetContactReachabilityStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContactReachabilityStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1683,7 +1683,7 @@ impl GetContactReachabilityStatusInput {
             "GetContactReachabilityStatus",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusInput`](crate::input::GetContactReachabilityStatusInput).
@@ -1733,7 +1733,7 @@ impl GetDomainDetailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDomainDetail,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1826,7 +1826,7 @@ impl GetDomainDetailInput {
             "GetDomainDetail",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDomainDetailInput`](crate::input::GetDomainDetailInput).
@@ -1916,7 +1916,7 @@ impl GetDomainSuggestionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDomainSuggestions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2011,7 +2011,7 @@ impl GetDomainSuggestionsInput {
             "GetDomainSuggestions",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsInput`](crate::input::GetDomainSuggestionsInput).
@@ -2061,7 +2061,7 @@ impl GetOperationDetailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOperationDetail,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2154,7 +2154,7 @@ impl GetOperationDetailInput {
             "GetOperationDetail",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetOperationDetailInput`](crate::input::GetOperationDetailInput).
@@ -2257,7 +2257,7 @@ impl ListDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2350,7 +2350,7 @@ impl ListDomainsInput {
             "ListDomains",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput).
@@ -2429,7 +2429,7 @@ impl ListOperationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOperations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2522,7 +2522,7 @@ impl ListOperationsInput {
             "ListOperations",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput).
@@ -2601,7 +2601,7 @@ impl ListPricesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPrices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2694,7 +2694,7 @@ impl ListPricesInput {
             "ListPrices",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPricesInput`](crate::input::ListPricesInput).
@@ -2744,7 +2744,7 @@ impl ListTagsForDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2837,7 +2837,7 @@ impl ListTagsForDomainInput {
             "ListTagsForDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForDomainInput`](crate::input::ListTagsForDomainInput).
@@ -3054,7 +3054,7 @@ impl RegisterDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3147,7 +3147,7 @@ impl RegisterDomainInput {
             "RegisterDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterDomainInput`](crate::input::RegisterDomainInput).
@@ -3201,7 +3201,7 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectDomainTransferFromAnotherAwsAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3293,7 +3293,7 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
             "RejectDomainTransferFromAnotherAwsAccount",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::input::RejectDomainTransferFromAnotherAwsAccountInput).
@@ -3370,7 +3370,7 @@ impl RenewDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RenewDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3463,7 +3463,7 @@ impl RenewDomainInput {
             "RenewDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RenewDomainInput`](crate::input::RenewDomainInput).
@@ -3515,7 +3515,7 @@ impl ResendContactReachabilityEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResendContactReachabilityEmail,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3607,7 +3607,7 @@ impl ResendContactReachabilityEmailInput {
             "ResendContactReachabilityEmail",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailInput`](crate::input::ResendContactReachabilityEmailInput).
@@ -3657,7 +3657,7 @@ impl RetrieveDomainAuthCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RetrieveDomainAuthCode,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3752,7 +3752,7 @@ impl RetrieveDomainAuthCodeInput {
             "RetrieveDomainAuthCode",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeInput`](crate::input::RetrieveDomainAuthCodeInput).
@@ -4000,7 +4000,7 @@ impl TransferDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransferDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4093,7 +4093,7 @@ impl TransferDomainInput {
             "TransferDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TransferDomainInput`](crate::input::TransferDomainInput).
@@ -4157,7 +4157,7 @@ impl TransferDomainToAnotherAwsAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransferDomainToAnotherAwsAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4249,7 +4249,7 @@ impl TransferDomainToAnotherAwsAccountInput {
             "TransferDomainToAnotherAwsAccount",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountInput`](crate::input::TransferDomainToAnotherAwsAccountInput).
@@ -4344,7 +4344,7 @@ impl UpdateDomainContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainContact,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4437,7 +4437,7 @@ impl UpdateDomainContactInput {
             "UpdateDomainContact",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactInput`](crate::input::UpdateDomainContactInput).
@@ -4537,7 +4537,7 @@ impl UpdateDomainContactPrivacyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainContactPrivacy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4629,7 +4629,7 @@ impl UpdateDomainContactPrivacyInput {
             "UpdateDomainContactPrivacy",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyInput`](crate::input::UpdateDomainContactPrivacyInput).
@@ -4716,7 +4716,7 @@ impl UpdateDomainNameserversInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainNameservers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4811,7 +4811,7 @@ impl UpdateDomainNameserversInput {
             "UpdateDomainNameservers",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversInput`](crate::input::UpdateDomainNameserversInput).
@@ -4882,7 +4882,7 @@ impl UpdateTagsForDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTagsForDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4977,7 +4977,7 @@ impl UpdateTagsForDomainInput {
             "UpdateTagsForDomain",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTagsForDomainInput`](crate::input::UpdateTagsForDomainInput).
@@ -5067,7 +5067,7 @@ impl ViewBillingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ViewBilling,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5160,7 +5160,7 @@ impl ViewBillingInput {
             "ViewBilling",
             "route53domains",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ViewBillingInput`](crate::input::ViewBillingInput).

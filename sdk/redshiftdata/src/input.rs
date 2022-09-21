@@ -144,7 +144,7 @@ impl BatchExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -239,7 +239,7 @@ impl BatchExecuteStatementInput {
             "BatchExecuteStatement",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
@@ -287,7 +287,7 @@ impl CancelStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelStatement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -380,7 +380,7 @@ impl CancelStatementInput {
             "CancelStatement",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CancelStatementInput`](crate::input::CancelStatementInput).
@@ -428,7 +428,7 @@ impl DescribeStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStatement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -521,7 +521,7 @@ impl DescribeStatementInput {
             "DescribeStatement",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeStatementInput`](crate::input::DescribeStatementInput).
@@ -688,7 +688,7 @@ impl DescribeTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTable,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -781,7 +781,7 @@ impl DescribeTableInput {
             "DescribeTable",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTableInput`](crate::input::DescribeTableInput).
@@ -945,7 +945,7 @@ impl ExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1038,7 +1038,7 @@ impl ExecuteStatementInput {
             "ExecuteStatement",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
@@ -1100,7 +1100,7 @@ impl GetStatementResultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStatementResult,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1193,7 +1193,7 @@ impl GetStatementResultInput {
             "GetStatementResult",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetStatementResultInput`](crate::input::GetStatementResultInput).
@@ -1321,7 +1321,7 @@ impl ListDatabasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatabases,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1414,7 +1414,7 @@ impl ListDatabasesInput {
             "ListDatabases",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDatabasesInput`](crate::input::ListDatabasesInput).
@@ -1572,7 +1572,7 @@ impl ListSchemasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSchemas,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1665,7 +1665,7 @@ impl ListSchemasInput {
             "ListSchemas",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSchemasInput`](crate::input::ListSchemasInput).
@@ -1787,7 +1787,7 @@ impl ListStatementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStatements,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1880,7 +1880,7 @@ impl ListStatementsInput {
             "ListStatements",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListStatementsInput`](crate::input::ListStatementsInput).
@@ -2052,7 +2052,7 @@ impl ListTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTables,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2145,7 +2145,7 @@ impl ListTablesInput {
             "ListTables",
             "redshiftdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput).

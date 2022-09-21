@@ -94,7 +94,7 @@ impl DeleteRecommendationPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecommendationPreferences,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -186,7 +186,7 @@ impl DeleteRecommendationPreferencesInput {
             "DeleteRecommendationPreferences",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesInput`](crate::input::DeleteRecommendationPreferencesInput).
@@ -298,7 +298,7 @@ impl DescribeRecommendationExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecommendationExportJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -390,7 +390,7 @@ impl DescribeRecommendationExportJobsInput {
             "DescribeRecommendationExportJobs",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsInput`](crate::input::DescribeRecommendationExportJobsInput).
@@ -580,7 +580,7 @@ impl ExportAutoScalingGroupRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportAutoScalingGroupRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -672,7 +672,7 @@ impl ExportAutoScalingGroupRecommendationsInput {
             "ExportAutoScalingGroupRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExportAutoScalingGroupRecommendationsInput`](crate::input::ExportAutoScalingGroupRecommendationsInput).
@@ -838,7 +838,7 @@ impl ExportEbsVolumeRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportEBSVolumeRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -930,7 +930,7 @@ impl ExportEbsVolumeRecommendationsInput {
             "ExportEBSVolumeRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExportEbsVolumeRecommendationsInput`](crate::input::ExportEbsVolumeRecommendationsInput).
@@ -1113,7 +1113,7 @@ impl ExportEc2InstanceRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportEC2InstanceRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1205,7 +1205,7 @@ impl ExportEc2InstanceRecommendationsInput {
             "ExportEC2InstanceRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsInput`](crate::input::ExportEc2InstanceRecommendationsInput).
@@ -1377,7 +1377,7 @@ impl ExportLambdaFunctionRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportLambdaFunctionRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1469,7 +1469,7 @@ impl ExportLambdaFunctionRecommendationsInput {
             "ExportLambdaFunctionRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExportLambdaFunctionRecommendationsInput`](crate::input::ExportLambdaFunctionRecommendationsInput).
@@ -1621,7 +1621,7 @@ impl GetAutoScalingGroupRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAutoScalingGroupRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1713,7 +1713,7 @@ impl GetAutoScalingGroupRecommendationsInput {
             "GetAutoScalingGroupRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsInput`](crate::input::GetAutoScalingGroupRecommendationsInput).
@@ -1846,7 +1846,7 @@ impl GetEbsVolumeRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEBSVolumeRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1938,7 +1938,7 @@ impl GetEbsVolumeRecommendationsInput {
             "GetEBSVolumeRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsInput`](crate::input::GetEbsVolumeRecommendationsInput).
@@ -2090,7 +2090,7 @@ impl GetEc2InstanceRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEC2InstanceRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2182,7 +2182,7 @@ impl GetEc2InstanceRecommendationsInput {
             "GetEC2InstanceRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsInput`](crate::input::GetEc2InstanceRecommendationsInput).
@@ -2310,7 +2310,7 @@ impl GetEc2RecommendationProjectedMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEC2RecommendationProjectedMetrics,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2402,7 +2402,7 @@ impl GetEc2RecommendationProjectedMetricsInput {
             "GetEC2RecommendationProjectedMetrics",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEc2RecommendationProjectedMetricsInput`](crate::input::GetEc2RecommendationProjectedMetricsInput).
@@ -2454,7 +2454,7 @@ impl GetEffectiveRecommendationPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEffectiveRecommendationPreferences,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2546,7 +2546,7 @@ impl GetEffectiveRecommendationPreferencesInput {
             "GetEffectiveRecommendationPreferences",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesInput`](crate::input::GetEffectiveRecommendationPreferencesInput).
@@ -2582,7 +2582,7 @@ impl GetEnrollmentStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnrollmentStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2668,7 +2668,7 @@ impl GetEnrollmentStatusInput {
             "GetEnrollmentStatus",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusInput`](crate::input::GetEnrollmentStatusInput).
@@ -2755,7 +2755,7 @@ impl GetEnrollmentStatusesForOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnrollmentStatusesForOrganization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2847,7 +2847,7 @@ impl GetEnrollmentStatusesForOrganizationInput {
             "GetEnrollmentStatusesForOrganization",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationInput`](crate::input::GetEnrollmentStatusesForOrganizationInput).
@@ -2985,7 +2985,7 @@ impl GetLambdaFunctionRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLambdaFunctionRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3077,7 +3077,7 @@ impl GetLambdaFunctionRecommendationsInput {
             "GetLambdaFunctionRecommendations",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsInput`](crate::input::GetLambdaFunctionRecommendationsInput).
@@ -3178,7 +3178,7 @@ impl GetRecommendationPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendationPreferences,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3270,7 +3270,7 @@ impl GetRecommendationPreferencesInput {
             "GetRecommendationPreferences",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesInput`](crate::input::GetRecommendationPreferencesInput).
@@ -3361,7 +3361,7 @@ impl GetRecommendationSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendationSummaries,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3456,7 +3456,7 @@ impl GetRecommendationSummariesInput {
             "GetRecommendationSummaries",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesInput`](crate::input::GetRecommendationSummariesInput).
@@ -3585,7 +3585,7 @@ impl PutRecommendationPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRecommendationPreferences,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3677,7 +3677,7 @@ impl PutRecommendationPreferencesInput {
             "PutRecommendationPreferences",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesInput`](crate::input::PutRecommendationPreferencesInput).
@@ -3753,7 +3753,7 @@ impl UpdateEnrollmentStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnrollmentStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3848,7 +3848,7 @@ impl UpdateEnrollmentStatusInput {
             "UpdateEnrollmentStatus",
             "computeoptimizer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusInput`](crate::input::UpdateEnrollmentStatusInput).

@@ -57,7 +57,7 @@ impl AssociateAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -161,7 +161,7 @@ impl AssociateAliasInput {
             "AssociateAlias",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateAliasInput`](crate::input::AssociateAliasInput).
@@ -214,7 +214,7 @@ impl CreateCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCachePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -304,7 +304,7 @@ impl CreateCachePolicyInput {
             "CreateCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCachePolicyInput`](crate::input::CreateCachePolicyInput).
@@ -364,7 +364,7 @@ impl CreateCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCloudFrontOriginAccessIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -452,7 +452,7 @@ impl CreateCloudFrontOriginAccessIdentityInput {
             "CreateCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCloudFrontOriginAccessIdentityInput`](crate::input::CreateCloudFrontOriginAccessIdentityInput).
@@ -505,7 +505,7 @@ impl CreateDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDistribution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -595,7 +595,7 @@ impl CreateDistributionInput {
             "CreateDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDistributionInput`](crate::input::CreateDistributionInput).
@@ -654,7 +654,7 @@ impl CreateDistributionWithTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDistributionWithTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -753,7 +753,7 @@ impl CreateDistributionWithTagsInput {
             "CreateDistributionWithTags",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDistributionWithTagsInput`](crate::input::CreateDistributionWithTagsInput).
@@ -812,7 +812,7 @@ impl CreateFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFieldLevelEncryptionConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -903,7 +903,7 @@ impl CreateFieldLevelEncryptionConfigInput {
             "CreateFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFieldLevelEncryptionConfigInput`](crate::input::CreateFieldLevelEncryptionConfigInput).
@@ -962,7 +962,7 @@ impl CreateFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFieldLevelEncryptionProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1053,7 +1053,7 @@ impl CreateFieldLevelEncryptionProfileInput {
             "CreateFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFieldLevelEncryptionProfileInput`](crate::input::CreateFieldLevelEncryptionProfileInput).
@@ -1133,7 +1133,7 @@ impl CreateFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFunction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1221,7 +1221,7 @@ impl CreateFunctionInput {
             "CreateFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFunctionInput`](crate::input::CreateFunctionInput).
@@ -1289,7 +1289,7 @@ impl CreateInvalidationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInvalidation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1398,7 +1398,7 @@ impl CreateInvalidationInput {
             "CreateInvalidation",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateInvalidationInput`](crate::input::CreateInvalidationInput).
@@ -1451,7 +1451,7 @@ impl CreateKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateKeyGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1539,7 +1539,7 @@ impl CreateKeyGroupInput {
             "CreateKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateKeyGroupInput`](crate::input::CreateKeyGroupInput).
@@ -1613,7 +1613,7 @@ impl CreateMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMonitoringSubscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1722,7 +1722,7 @@ impl CreateMonitoringSubscriptionInput {
             "CreateMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMonitoringSubscriptionInput`](crate::input::CreateMonitoringSubscriptionInput).
@@ -1781,7 +1781,7 @@ impl CreateOriginAccessControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOriginAccessControl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1872,7 +1872,7 @@ impl CreateOriginAccessControlInput {
             "CreateOriginAccessControl",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateOriginAccessControlInput`](crate::input::CreateOriginAccessControlInput).
@@ -1931,7 +1931,7 @@ impl CreateOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOriginRequestPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2022,7 +2022,7 @@ impl CreateOriginRequestPolicyInput {
             "CreateOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateOriginRequestPolicyInput`](crate::input::CreateOriginRequestPolicyInput).
@@ -2075,7 +2075,7 @@ impl CreatePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePublicKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2165,7 +2165,7 @@ impl CreatePublicKeyInput {
             "CreatePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePublicKeyInput`](crate::input::CreatePublicKeyInput).
@@ -2273,7 +2273,7 @@ impl CreateRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRealtimeLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2364,7 +2364,7 @@ impl CreateRealtimeLogConfigInput {
             "CreateRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRealtimeLogConfigInput`](crate::input::CreateRealtimeLogConfigInput).
@@ -2423,7 +2423,7 @@ impl CreateResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResponseHeadersPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2514,7 +2514,7 @@ impl CreateResponseHeadersPolicyInput {
             "CreateResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateResponseHeadersPolicyInput`](crate::input::CreateResponseHeadersPolicyInput).
@@ -2573,7 +2573,7 @@ impl CreateStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingDistribution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2664,7 +2664,7 @@ impl CreateStreamingDistributionInput {
             "CreateStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateStreamingDistributionInput`](crate::input::CreateStreamingDistributionInput).
@@ -2724,7 +2724,7 @@ impl CreateStreamingDistributionWithTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingDistributionWithTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2824,7 +2824,7 @@ impl CreateStreamingDistributionWithTagsInput {
             "CreateStreamingDistributionWithTags",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateStreamingDistributionWithTagsInput`](crate::input::CreateStreamingDistributionWithTagsInput).
@@ -2886,7 +2886,7 @@ impl DeleteCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCachePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2976,7 +2976,7 @@ impl DeleteCachePolicyInput {
             "DeleteCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCachePolicyInput`](crate::input::DeleteCachePolicyInput).
@@ -3040,7 +3040,7 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCloudFrontOriginAccessIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3137,7 +3137,7 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
             "DeleteCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCloudFrontOriginAccessIdentityInput`](crate::input::DeleteCloudFrontOriginAccessIdentityInput).
@@ -3199,7 +3199,7 @@ impl DeleteDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDistribution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3289,7 +3289,7 @@ impl DeleteDistributionInput {
             "DeleteDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDistributionInput`](crate::input::DeleteDistributionInput).
@@ -3353,7 +3353,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFieldLevelEncryptionConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3445,7 +3445,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
             "DeleteFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFieldLevelEncryptionConfigInput`](crate::input::DeleteFieldLevelEncryptionConfigInput).
@@ -3509,7 +3509,7 @@ impl DeleteFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFieldLevelEncryptionProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3605,7 +3605,7 @@ impl DeleteFieldLevelEncryptionProfileInput {
             "DeleteFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFieldLevelEncryptionProfileInput`](crate::input::DeleteFieldLevelEncryptionProfileInput).
@@ -3667,7 +3667,7 @@ impl DeleteFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFunction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3757,7 +3757,7 @@ impl DeleteFunctionInput {
             "DeleteFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFunctionInput`](crate::input::DeleteFunctionInput).
@@ -3819,7 +3819,7 @@ impl DeleteKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteKeyGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3909,7 +3909,7 @@ impl DeleteKeyGroupInput {
             "DeleteKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteKeyGroupInput`](crate::input::DeleteKeyGroupInput).
@@ -3964,7 +3964,7 @@ impl DeleteMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMonitoringSubscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4057,7 +4057,7 @@ impl DeleteMonitoringSubscriptionInput {
             "DeleteMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMonitoringSubscriptionInput`](crate::input::DeleteMonitoringSubscriptionInput).
@@ -4121,7 +4121,7 @@ impl DeleteOriginAccessControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOriginAccessControl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4212,7 +4212,7 @@ impl DeleteOriginAccessControlInput {
             "DeleteOriginAccessControl",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteOriginAccessControlInput`](crate::input::DeleteOriginAccessControlInput).
@@ -4276,7 +4276,7 @@ impl DeleteOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOriginRequestPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4367,7 +4367,7 @@ impl DeleteOriginRequestPolicyInput {
             "DeleteOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteOriginRequestPolicyInput`](crate::input::DeleteOriginRequestPolicyInput).
@@ -4429,7 +4429,7 @@ impl DeletePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePublicKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4519,7 +4519,7 @@ impl DeletePublicKeyInput {
             "DeletePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePublicKeyInput`](crate::input::DeletePublicKeyInput).
@@ -4583,7 +4583,7 @@ impl DeleteRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRealtimeLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4674,7 +4674,7 @@ impl DeleteRealtimeLogConfigInput {
             "DeleteRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRealtimeLogConfigInput`](crate::input::DeleteRealtimeLogConfigInput).
@@ -4742,7 +4742,7 @@ impl DeleteResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResponseHeadersPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4833,7 +4833,7 @@ impl DeleteResponseHeadersPolicyInput {
             "DeleteResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResponseHeadersPolicyInput`](crate::input::DeleteResponseHeadersPolicyInput).
@@ -4897,7 +4897,7 @@ impl DeleteStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStreamingDistribution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4988,7 +4988,7 @@ impl DeleteStreamingDistributionInput {
             "DeleteStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteStreamingDistributionInput`](crate::input::DeleteStreamingDistributionInput).
@@ -5053,7 +5053,7 @@ impl DescribeFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFunction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5153,7 +5153,7 @@ impl DescribeFunctionInput {
             "DescribeFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFunctionInput`](crate::input::DescribeFunctionInput).
@@ -5201,7 +5201,7 @@ impl GetCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCachePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5290,7 +5290,7 @@ impl GetCachePolicyInput {
             "GetCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCachePolicyInput`](crate::input::GetCachePolicyInput).
@@ -5338,7 +5338,7 @@ impl GetCachePolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCachePolicyConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5427,7 +5427,7 @@ impl GetCachePolicyConfigInput {
             "GetCachePolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCachePolicyConfigInput`](crate::input::GetCachePolicyConfigInput).
@@ -5477,7 +5477,7 @@ impl GetCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCloudFrontOriginAccessIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5570,7 +5570,7 @@ impl GetCloudFrontOriginAccessIdentityInput {
             "GetCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCloudFrontOriginAccessIdentityInput`](crate::input::GetCloudFrontOriginAccessIdentityInput).
@@ -5620,7 +5620,7 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCloudFrontOriginAccessIdentityConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5713,7 +5713,7 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
             "GetCloudFrontOriginAccessIdentityConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCloudFrontOriginAccessIdentityConfigInput`](crate::input::GetCloudFrontOriginAccessIdentityConfigInput).
@@ -5761,7 +5761,7 @@ impl GetDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDistribution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5850,7 +5850,7 @@ impl GetDistributionInput {
             "GetDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDistributionInput`](crate::input::GetDistributionInput).
@@ -5898,7 +5898,7 @@ impl GetDistributionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDistributionConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5987,7 +5987,7 @@ impl GetDistributionConfigInput {
             "GetDistributionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDistributionConfigInput`](crate::input::GetDistributionConfigInput).
@@ -6037,7 +6037,7 @@ impl GetFieldLevelEncryptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryption,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6126,7 +6126,7 @@ impl GetFieldLevelEncryptionInput {
             "GetFieldLevelEncryption",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionInput`](crate::input::GetFieldLevelEncryptionInput).
@@ -6176,7 +6176,7 @@ impl GetFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6269,7 +6269,7 @@ impl GetFieldLevelEncryptionConfigInput {
             "GetFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionConfigInput`](crate::input::GetFieldLevelEncryptionConfigInput).
@@ -6319,7 +6319,7 @@ impl GetFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6412,7 +6412,7 @@ impl GetFieldLevelEncryptionProfileInput {
             "GetFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionProfileInput`](crate::input::GetFieldLevelEncryptionProfileInput).
@@ -6462,7 +6462,7 @@ impl GetFieldLevelEncryptionProfileConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionProfileConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6555,7 +6555,7 @@ impl GetFieldLevelEncryptionProfileConfigInput {
             "GetFieldLevelEncryptionProfileConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionProfileConfigInput`](crate::input::GetFieldLevelEncryptionProfileConfigInput).
@@ -6620,7 +6620,7 @@ impl GetFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFunction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6720,7 +6720,7 @@ impl GetFunctionInput {
             "GetFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFunctionInput`](crate::input::GetFunctionInput).
@@ -6785,7 +6785,7 @@ impl GetInvalidationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInvalidation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6893,7 +6893,7 @@ impl GetInvalidationInput {
             "GetInvalidation",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetInvalidationInput`](crate::input::GetInvalidationInput).
@@ -6941,7 +6941,7 @@ impl GetKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetKeyGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7030,7 +7030,7 @@ impl GetKeyGroupInput {
             "GetKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetKeyGroupInput`](crate::input::GetKeyGroupInput).
@@ -7078,7 +7078,7 @@ impl GetKeyGroupConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetKeyGroupConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7167,7 +7167,7 @@ impl GetKeyGroupConfigInput {
             "GetKeyGroupConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetKeyGroupConfigInput`](crate::input::GetKeyGroupConfigInput).
@@ -7222,7 +7222,7 @@ impl GetMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMonitoringSubscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7315,7 +7315,7 @@ impl GetMonitoringSubscriptionInput {
             "GetMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMonitoringSubscriptionInput`](crate::input::GetMonitoringSubscriptionInput).
@@ -7363,7 +7363,7 @@ impl GetOriginAccessControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOriginAccessControl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7452,7 +7452,7 @@ impl GetOriginAccessControlInput {
             "GetOriginAccessControl",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetOriginAccessControlInput`](crate::input::GetOriginAccessControlInput).
@@ -7502,7 +7502,7 @@ impl GetOriginAccessControlConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOriginAccessControlConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7595,7 +7595,7 @@ impl GetOriginAccessControlConfigInput {
             "GetOriginAccessControlConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetOriginAccessControlConfigInput`](crate::input::GetOriginAccessControlConfigInput).
@@ -7643,7 +7643,7 @@ impl GetOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOriginRequestPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7732,7 +7732,7 @@ impl GetOriginRequestPolicyInput {
             "GetOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetOriginRequestPolicyInput`](crate::input::GetOriginRequestPolicyInput).
@@ -7782,7 +7782,7 @@ impl GetOriginRequestPolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOriginRequestPolicyConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7875,7 +7875,7 @@ impl GetOriginRequestPolicyConfigInput {
             "GetOriginRequestPolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetOriginRequestPolicyConfigInput`](crate::input::GetOriginRequestPolicyConfigInput).
@@ -7923,7 +7923,7 @@ impl GetPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPublicKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8012,7 +8012,7 @@ impl GetPublicKeyInput {
             "GetPublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPublicKeyInput`](crate::input::GetPublicKeyInput).
@@ -8060,7 +8060,7 @@ impl GetPublicKeyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPublicKeyConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8149,7 +8149,7 @@ impl GetPublicKeyConfigInput {
             "GetPublicKeyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPublicKeyConfigInput`](crate::input::GetPublicKeyConfigInput).
@@ -8211,7 +8211,7 @@ impl GetRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRealtimeLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8302,7 +8302,7 @@ impl GetRealtimeLogConfigInput {
             "GetRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRealtimeLogConfigInput`](crate::input::GetRealtimeLogConfigInput).
@@ -8354,7 +8354,7 @@ impl GetResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResponseHeadersPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8443,7 +8443,7 @@ impl GetResponseHeadersPolicyInput {
             "GetResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyInput`](crate::input::GetResponseHeadersPolicyInput).
@@ -8495,7 +8495,7 @@ impl GetResponseHeadersPolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResponseHeadersPolicyConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8588,7 +8588,7 @@ impl GetResponseHeadersPolicyConfigInput {
             "GetResponseHeadersPolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyConfigInput`](crate::input::GetResponseHeadersPolicyConfigInput).
@@ -8638,7 +8638,7 @@ impl GetStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingDistribution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8727,7 +8727,7 @@ impl GetStreamingDistributionInput {
             "GetStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionInput`](crate::input::GetStreamingDistributionInput).
@@ -8777,7 +8777,7 @@ impl GetStreamingDistributionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingDistributionConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8870,7 +8870,7 @@ impl GetStreamingDistributionConfigInput {
             "GetStreamingDistributionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionConfigInput`](crate::input::GetStreamingDistributionConfigInput).
@@ -8955,7 +8955,7 @@ impl ListCachePoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCachePolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9049,7 +9049,7 @@ impl ListCachePoliciesInput {
             "ListCachePolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCachePoliciesInput`](crate::input::ListCachePoliciesInput).
@@ -9113,7 +9113,7 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCloudFrontOriginAccessIdentities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9205,7 +9205,7 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
             "ListCloudFrontOriginAccessIdentities",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCloudFrontOriginAccessIdentitiesInput`](crate::input::ListCloudFrontOriginAccessIdentitiesInput).
@@ -9294,7 +9294,7 @@ impl ListConflictingAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConflictingAliases,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9394,7 +9394,7 @@ impl ListConflictingAliasesInput {
             "ListConflictingAliases",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListConflictingAliasesInput`](crate::input::ListConflictingAliasesInput).
@@ -9456,7 +9456,7 @@ impl ListDistributionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9547,7 +9547,7 @@ impl ListDistributionsInput {
             "ListDistributions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsInput`](crate::input::ListDistributionsInput).
@@ -9626,7 +9626,7 @@ impl ListDistributionsByCachePolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByCachePolicyId,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9736,7 +9736,7 @@ impl ListDistributionsByCachePolicyIdInput {
             "ListDistributionsByCachePolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByCachePolicyIdInput`](crate::input::ListDistributionsByCachePolicyIdInput).
@@ -9812,7 +9812,7 @@ impl ListDistributionsByKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByKeyGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9922,7 +9922,7 @@ impl ListDistributionsByKeyGroupInput {
             "ListDistributionsByKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByKeyGroupInput`](crate::input::ListDistributionsByKeyGroupInput).
@@ -10003,7 +10003,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByOriginRequestPolicyId,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10113,7 +10113,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
             "ListDistributionsByOriginRequestPolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByOriginRequestPolicyIdInput`](crate::input::ListDistributionsByOriginRequestPolicyIdInput).
@@ -10208,7 +10208,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByRealtimeLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10296,7 +10296,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
             "ListDistributionsByRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByRealtimeLogConfigInput`](crate::input::ListDistributionsByRealtimeLogConfigInput).
@@ -10377,7 +10377,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByResponseHeadersPolicyId,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10488,7 +10488,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
             "ListDistributionsByResponseHeadersPolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::input::ListDistributionsByResponseHeadersPolicyIdInput).
@@ -10565,7 +10565,7 @@ impl ListDistributionsByWebAclIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByWebACLId,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10675,7 +10675,7 @@ impl ListDistributionsByWebAclIdInput {
             "ListDistributionsByWebACLId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByWebAclIdInput`](crate::input::ListDistributionsByWebAclIdInput).
@@ -10739,7 +10739,7 @@ impl ListFieldLevelEncryptionConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFieldLevelEncryptionConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10831,7 +10831,7 @@ impl ListFieldLevelEncryptionConfigsInput {
             "ListFieldLevelEncryptionConfigs",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionConfigsInput`](crate::input::ListFieldLevelEncryptionConfigsInput).
@@ -10895,7 +10895,7 @@ impl ListFieldLevelEncryptionProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFieldLevelEncryptionProfiles,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10987,7 +10987,7 @@ impl ListFieldLevelEncryptionProfilesInput {
             "ListFieldLevelEncryptionProfiles",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionProfilesInput`](crate::input::ListFieldLevelEncryptionProfilesInput).
@@ -11064,7 +11064,7 @@ impl ListFunctionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFunctions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11158,7 +11158,7 @@ impl ListFunctionsInput {
             "ListFunctions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFunctionsInput`](crate::input::ListFunctionsInput).
@@ -11235,7 +11235,7 @@ impl ListInvalidationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvalidations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11345,7 +11345,7 @@ impl ListInvalidationsInput {
             "ListInvalidations",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListInvalidationsInput`](crate::input::ListInvalidationsInput).
@@ -11407,7 +11407,7 @@ impl ListKeyGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListKeyGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11498,7 +11498,7 @@ impl ListKeyGroupsInput {
             "ListKeyGroups",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListKeyGroupsInput`](crate::input::ListKeyGroupsInput).
@@ -11562,7 +11562,7 @@ impl ListOriginAccessControlsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOriginAccessControls,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11654,7 +11654,7 @@ impl ListOriginAccessControlsInput {
             "ListOriginAccessControls",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListOriginAccessControlsInput`](crate::input::ListOriginAccessControlsInput).
@@ -11741,7 +11741,7 @@ impl ListOriginRequestPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOriginRequestPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11836,7 +11836,7 @@ impl ListOriginRequestPoliciesInput {
             "ListOriginRequestPolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListOriginRequestPoliciesInput`](crate::input::ListOriginRequestPoliciesInput).
@@ -11898,7 +11898,7 @@ impl ListPublicKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPublicKeys,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11989,7 +11989,7 @@ impl ListPublicKeysInput {
             "ListPublicKeys",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPublicKeysInput`](crate::input::ListPublicKeysInput).
@@ -12051,7 +12051,7 @@ impl ListRealtimeLogConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRealtimeLogConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12143,7 +12143,7 @@ impl ListRealtimeLogConfigsInput {
             "ListRealtimeLogConfigs",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRealtimeLogConfigsInput`](crate::input::ListRealtimeLogConfigsInput).
@@ -12230,7 +12230,7 @@ impl ListResponseHeadersPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResponseHeadersPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12325,7 +12325,7 @@ impl ListResponseHeadersPoliciesInput {
             "ListResponseHeadersPolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResponseHeadersPoliciesInput`](crate::input::ListResponseHeadersPoliciesInput).
@@ -12389,7 +12389,7 @@ impl ListStreamingDistributionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreamingDistributions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12481,7 +12481,7 @@ impl ListStreamingDistributionsInput {
             "ListStreamingDistributions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListStreamingDistributionsInput`](crate::input::ListStreamingDistributionsInput).
@@ -12531,7 +12531,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12616,7 +12616,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -12678,7 +12678,7 @@ impl PublishFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PublishFunction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12768,7 +12768,7 @@ impl PublishFunctionInput {
             "PublishFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PublishFunctionInput`](crate::input::PublishFunctionInput).
@@ -12830,7 +12830,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12930,7 +12930,7 @@ impl TagResourceInput {
             "TagResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -13022,7 +13022,7 @@ impl TestFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestFunction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13126,7 +13126,7 @@ impl TestFunctionInput {
             "TestFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TestFunctionInput`](crate::input::TestFunctionInput).
@@ -13188,7 +13188,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13288,7 +13288,7 @@ impl UntagResourceInput {
             "UntagResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -13365,7 +13365,7 @@ impl UpdateCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCachePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13471,7 +13471,7 @@ impl UpdateCachePolicyInput {
             "UpdateCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCachePolicyInput`](crate::input::UpdateCachePolicyInput).
@@ -13555,7 +13555,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCloudFrontOriginAccessIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13665,7 +13665,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
             "UpdateCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCloudFrontOriginAccessIdentityInput`](crate::input::UpdateCloudFrontOriginAccessIdentityInput).
@@ -13742,7 +13742,7 @@ impl UpdateDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDistribution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13848,7 +13848,7 @@ impl UpdateDistributionInput {
             "UpdateDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDistributionInput`](crate::input::UpdateDistributionInput).
@@ -13931,7 +13931,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFieldLevelEncryptionConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14043,7 +14043,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
             "UpdateFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFieldLevelEncryptionConfigInput`](crate::input::UpdateFieldLevelEncryptionConfigInput).
@@ -14126,7 +14126,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFieldLevelEncryptionProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14238,7 +14238,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
             "UpdateFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFieldLevelEncryptionProfileInput`](crate::input::UpdateFieldLevelEncryptionProfileInput).
@@ -14330,7 +14330,7 @@ impl UpdateFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFunction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14434,7 +14434,7 @@ impl UpdateFunctionInput {
             "UpdateFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFunctionInput`](crate::input::UpdateFunctionInput).
@@ -14511,7 +14511,7 @@ impl UpdateKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateKeyGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14615,7 +14615,7 @@ impl UpdateKeyGroupInput {
             "UpdateKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateKeyGroupInput`](crate::input::UpdateKeyGroupInput).
@@ -14698,7 +14698,7 @@ impl UpdateOriginAccessControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOriginAccessControl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14809,7 +14809,7 @@ impl UpdateOriginAccessControlInput {
             "UpdateOriginAccessControl",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateOriginAccessControlInput`](crate::input::UpdateOriginAccessControlInput).
@@ -14892,7 +14892,7 @@ impl UpdateOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOriginRequestPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14999,7 +14999,7 @@ impl UpdateOriginRequestPolicyInput {
             "UpdateOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateOriginRequestPolicyInput`](crate::input::UpdateOriginRequestPolicyInput).
@@ -15076,7 +15076,7 @@ impl UpdatePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePublicKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15182,7 +15182,7 @@ impl UpdatePublicKeyInput {
             "UpdatePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePublicKeyInput`](crate::input::UpdatePublicKeyInput).
@@ -15302,7 +15302,7 @@ impl UpdateRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRealtimeLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15393,7 +15393,7 @@ impl UpdateRealtimeLogConfigInput {
             "UpdateRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRealtimeLogConfigInput`](crate::input::UpdateRealtimeLogConfigInput).
@@ -15478,7 +15478,7 @@ impl UpdateResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResponseHeadersPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15585,7 +15585,7 @@ impl UpdateResponseHeadersPolicyInput {
             "UpdateResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResponseHeadersPolicyInput`](crate::input::UpdateResponseHeadersPolicyInput).
@@ -15668,7 +15668,7 @@ impl UpdateStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStreamingDistribution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15779,7 +15779,7 @@ impl UpdateStreamingDistributionInput {
             "UpdateStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateStreamingDistributionInput`](crate::input::UpdateStreamingDistributionInput).

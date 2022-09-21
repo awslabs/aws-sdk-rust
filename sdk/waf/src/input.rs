@@ -54,7 +54,7 @@ impl CreateByteMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateByteMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -147,7 +147,7 @@ impl CreateByteMatchSetInput {
             "CreateByteMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateByteMatchSetInput`](crate::input::CreateByteMatchSetInput).
@@ -209,7 +209,7 @@ impl CreateGeoMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGeoMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -302,7 +302,7 @@ impl CreateGeoMatchSetInput {
             "CreateGeoMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetInput`](crate::input::CreateGeoMatchSetInput).
@@ -364,7 +364,7 @@ impl CreateIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIPSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -457,7 +457,7 @@ impl CreateIpSetInput {
             "CreateIPSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateIpSetInput`](crate::input::CreateIpSetInput).
@@ -576,7 +576,7 @@ impl CreateRateBasedRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRateBasedRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -671,7 +671,7 @@ impl CreateRateBasedRuleInput {
             "CreateRateBasedRule",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRateBasedRuleInput`](crate::input::CreateRateBasedRuleInput).
@@ -733,7 +733,7 @@ impl CreateRegexMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRegexMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -828,7 +828,7 @@ impl CreateRegexMatchSetInput {
             "CreateRegexMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetInput`](crate::input::CreateRegexMatchSetInput).
@@ -890,7 +890,7 @@ impl CreateRegexPatternSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRegexPatternSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -985,7 +985,7 @@ impl CreateRegexPatternSetInput {
             "CreateRegexPatternSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetInput`](crate::input::CreateRegexPatternSetInput).
@@ -1079,7 +1079,7 @@ impl CreateRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1172,7 +1172,7 @@ impl CreateRuleInput {
             "CreateRule",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::input::CreateRuleInput).
@@ -1267,7 +1267,7 @@ impl CreateRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1360,7 +1360,7 @@ impl CreateRuleGroupInput {
             "CreateRuleGroup",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
@@ -1424,7 +1424,7 @@ impl CreateSizeConstraintSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSizeConstraintSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1519,7 +1519,7 @@ impl CreateSizeConstraintSetInput {
             "CreateSizeConstraintSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSizeConstraintSetInput`](crate::input::CreateSizeConstraintSetInput).
@@ -1583,7 +1583,7 @@ impl CreateSqlInjectionMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSqlInjectionMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1675,7 +1675,7 @@ impl CreateSqlInjectionMatchSetInput {
             "CreateSqlInjectionMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetInput`](crate::input::CreateSqlInjectionMatchSetInput).
@@ -1785,7 +1785,7 @@ impl CreateWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWebACL,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1878,7 +1878,7 @@ impl CreateWebAclInput {
             "CreateWebACL",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateWebAclInput`](crate::input::CreateWebAclInput).
@@ -1967,7 +1967,7 @@ impl CreateWebAclMigrationStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWebACLMigrationStack,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2059,7 +2059,7 @@ impl CreateWebAclMigrationStackInput {
             "CreateWebACLMigrationStack",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackInput`](crate::input::CreateWebAclMigrationStackInput).
@@ -2121,7 +2121,7 @@ impl CreateXssMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateXssMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2214,7 +2214,7 @@ impl CreateXssMatchSetInput {
             "CreateXssMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateXssMatchSetInput`](crate::input::CreateXssMatchSetInput).
@@ -2279,7 +2279,7 @@ impl DeleteByteMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteByteMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2372,7 +2372,7 @@ impl DeleteByteMatchSetInput {
             "DeleteByteMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetInput`](crate::input::DeleteByteMatchSetInput).
@@ -2437,7 +2437,7 @@ impl DeleteGeoMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGeoMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2530,7 +2530,7 @@ impl DeleteGeoMatchSetInput {
             "DeleteGeoMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteGeoMatchSetInput`](crate::input::DeleteGeoMatchSetInput).
@@ -2592,7 +2592,7 @@ impl DeleteIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIPSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2685,7 +2685,7 @@ impl DeleteIpSetInput {
             "DeleteIPSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteIpSetInput`](crate::input::DeleteIpSetInput).
@@ -2737,7 +2737,7 @@ impl DeleteLoggingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoggingConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2832,7 +2832,7 @@ impl DeleteLoggingConfigurationInput {
             "DeleteLoggingConfiguration",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput).
@@ -2884,7 +2884,7 @@ impl DeletePermissionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePermissionPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2979,7 +2979,7 @@ impl DeletePermissionPolicyInput {
             "DeletePermissionPolicy",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyInput`](crate::input::DeletePermissionPolicyInput).
@@ -3041,7 +3041,7 @@ impl DeleteRateBasedRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRateBasedRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3136,7 +3136,7 @@ impl DeleteRateBasedRuleInput {
             "DeleteRateBasedRule",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleInput`](crate::input::DeleteRateBasedRuleInput).
@@ -3201,7 +3201,7 @@ impl DeleteRegexMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRegexMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3296,7 +3296,7 @@ impl DeleteRegexMatchSetInput {
             "DeleteRegexMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRegexMatchSetInput`](crate::input::DeleteRegexMatchSetInput).
@@ -3361,7 +3361,7 @@ impl DeleteRegexPatternSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRegexPatternSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3456,7 +3456,7 @@ impl DeleteRegexPatternSetInput {
             "DeleteRegexPatternSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetInput`](crate::input::DeleteRegexPatternSetInput).
@@ -3517,7 +3517,7 @@ impl DeleteRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3610,7 +3610,7 @@ impl DeleteRuleInput {
             "DeleteRule",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRuleInput`](crate::input::DeleteRuleInput).
@@ -3675,7 +3675,7 @@ impl DeleteRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3768,7 +3768,7 @@ impl DeleteRuleGroupInput {
             "DeleteRuleGroup",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
@@ -3835,7 +3835,7 @@ impl DeleteSizeConstraintSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSizeConstraintSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3930,7 +3930,7 @@ impl DeleteSizeConstraintSetInput {
             "DeleteSizeConstraintSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSizeConstraintSetInput`](crate::input::DeleteSizeConstraintSetInput).
@@ -3997,7 +3997,7 @@ impl DeleteSqlInjectionMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSqlInjectionMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4089,7 +4089,7 @@ impl DeleteSqlInjectionMatchSetInput {
             "DeleteSqlInjectionMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSqlInjectionMatchSetInput`](crate::input::DeleteSqlInjectionMatchSetInput).
@@ -4151,7 +4151,7 @@ impl DeleteWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWebACL,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4244,7 +4244,7 @@ impl DeleteWebAclInput {
             "DeleteWebACL",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteWebAclInput`](crate::input::DeleteWebAclInput).
@@ -4309,7 +4309,7 @@ impl DeleteXssMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteXssMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4402,7 +4402,7 @@ impl DeleteXssMatchSetInput {
             "DeleteXssMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteXssMatchSetInput`](crate::input::DeleteXssMatchSetInput).
@@ -4455,7 +4455,7 @@ impl GetByteMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetByteMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4548,7 +4548,7 @@ impl GetByteMatchSetInput {
             "GetByteMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetByteMatchSetInput`](crate::input::GetByteMatchSetInput).
@@ -4584,7 +4584,7 @@ impl GetChangeTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChangeToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4670,7 +4670,7 @@ impl GetChangeTokenInput {
             "GetChangeToken",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetChangeTokenInput`](crate::input::GetChangeTokenInput).
@@ -4720,7 +4720,7 @@ impl GetChangeTokenStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChangeTokenStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4815,7 +4815,7 @@ impl GetChangeTokenStatusInput {
             "GetChangeTokenStatus",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetChangeTokenStatusInput`](crate::input::GetChangeTokenStatusInput).
@@ -4868,7 +4868,7 @@ impl GetGeoMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGeoMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4961,7 +4961,7 @@ impl GetGeoMatchSetInput {
             "GetGeoMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetGeoMatchSetInput`](crate::input::GetGeoMatchSetInput).
@@ -5010,7 +5010,7 @@ impl GetIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIPSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5098,7 +5098,7 @@ impl GetIpSetInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetIPSet::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetIPSet", "waf"));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIpSetInput`](crate::input::GetIpSetInput).
@@ -5150,7 +5150,7 @@ impl GetLoggingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLoggingConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5245,7 +5245,7 @@ impl GetLoggingConfigurationInput {
             "GetLoggingConfiguration",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput).
@@ -5295,7 +5295,7 @@ impl GetPermissionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPermissionPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5388,7 +5388,7 @@ impl GetPermissionPolicyInput {
             "GetPermissionPolicy",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput).
@@ -5438,7 +5438,7 @@ impl GetRateBasedRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRateBasedRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5531,7 +5531,7 @@ impl GetRateBasedRuleInput {
             "GetRateBasedRule",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleInput`](crate::input::GetRateBasedRuleInput).
@@ -5595,7 +5595,7 @@ impl GetRateBasedRuleManagedKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRateBasedRuleManagedKeys,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5687,7 +5687,7 @@ impl GetRateBasedRuleManagedKeysInput {
             "GetRateBasedRuleManagedKeys",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysInput`](crate::input::GetRateBasedRuleManagedKeysInput).
@@ -5740,7 +5740,7 @@ impl GetRegexMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRegexMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5833,7 +5833,7 @@ impl GetRegexMatchSetInput {
             "GetRegexMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRegexMatchSetInput`](crate::input::GetRegexMatchSetInput).
@@ -5886,7 +5886,7 @@ impl GetRegexPatternSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRegexPatternSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5979,7 +5979,7 @@ impl GetRegexPatternSetInput {
             "GetRegexPatternSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRegexPatternSetInput`](crate::input::GetRegexPatternSetInput).
@@ -6028,7 +6028,7 @@ impl GetRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6116,7 +6116,7 @@ impl GetRuleInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetRule::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetRule", "waf"));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRuleInput`](crate::input::GetRuleInput).
@@ -6169,7 +6169,7 @@ impl GetRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6262,7 +6262,7 @@ impl GetRuleGroupInput {
             "GetRuleGroup",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRuleGroupInput`](crate::input::GetRuleGroupInput).
@@ -6359,7 +6359,7 @@ impl GetSampledRequestsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSampledRequests,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6452,7 +6452,7 @@ impl GetSampledRequestsInput {
             "GetSampledRequests",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSampledRequestsInput`](crate::input::GetSampledRequestsInput).
@@ -6505,7 +6505,7 @@ impl GetSizeConstraintSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSizeConstraintSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6600,7 +6600,7 @@ impl GetSizeConstraintSetInput {
             "GetSizeConstraintSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSizeConstraintSetInput`](crate::input::GetSizeConstraintSetInput).
@@ -6655,7 +6655,7 @@ impl GetSqlInjectionMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSqlInjectionMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6750,7 +6750,7 @@ impl GetSqlInjectionMatchSetInput {
             "GetSqlInjectionMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSqlInjectionMatchSetInput`](crate::input::GetSqlInjectionMatchSetInput).
@@ -6799,7 +6799,7 @@ impl GetWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWebACL,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6890,7 +6890,7 @@ impl GetWebAclInput {
                     "GetWebACL",
                     "waf",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWebAclInput`](crate::input::GetWebAclInput).
@@ -6943,7 +6943,7 @@ impl GetXssMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetXssMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7036,7 +7036,7 @@ impl GetXssMatchSetInput {
             "GetXssMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetXssMatchSetInput`](crate::input::GetXssMatchSetInput).
@@ -7115,7 +7115,7 @@ impl ListActivatedRulesInRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActivatedRulesInRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7207,7 +7207,7 @@ impl ListActivatedRulesInRuleGroupInput {
             "ListActivatedRulesInRuleGroup",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListActivatedRulesInRuleGroupInput`](crate::input::ListActivatedRulesInRuleGroupInput).
@@ -7269,7 +7269,7 @@ impl ListByteMatchSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListByteMatchSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7362,7 +7362,7 @@ impl ListByteMatchSetsInput {
             "ListByteMatchSets",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListByteMatchSetsInput`](crate::input::ListByteMatchSetsInput).
@@ -7424,7 +7424,7 @@ impl ListGeoMatchSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGeoMatchSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7517,7 +7517,7 @@ impl ListGeoMatchSetsInput {
             "ListGeoMatchSets",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListGeoMatchSetsInput`](crate::input::ListGeoMatchSetsInput).
@@ -7578,7 +7578,7 @@ impl ListIpSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIPSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7671,7 +7671,7 @@ impl ListIpSetsInput {
             "ListIPSets",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListIpSetsInput`](crate::input::ListIpSetsInput).
@@ -7735,7 +7735,7 @@ impl ListLoggingConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLoggingConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7830,7 +7830,7 @@ impl ListLoggingConfigurationsInput {
             "ListLoggingConfigurations",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput).
@@ -7892,7 +7892,7 @@ impl ListRateBasedRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRateBasedRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7985,7 +7985,7 @@ impl ListRateBasedRulesInput {
             "ListRateBasedRules",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRateBasedRulesInput`](crate::input::ListRateBasedRulesInput).
@@ -8047,7 +8047,7 @@ impl ListRegexMatchSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRegexMatchSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8140,7 +8140,7 @@ impl ListRegexMatchSetsInput {
             "ListRegexMatchSets",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRegexMatchSetsInput`](crate::input::ListRegexMatchSetsInput).
@@ -8202,7 +8202,7 @@ impl ListRegexPatternSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRegexPatternSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8297,7 +8297,7 @@ impl ListRegexPatternSetsInput {
             "ListRegexPatternSets",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput).
@@ -8359,7 +8359,7 @@ impl ListRuleGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRuleGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8452,7 +8452,7 @@ impl ListRuleGroupsInput {
             "ListRuleGroups",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
@@ -8513,7 +8513,7 @@ impl ListRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8604,7 +8604,7 @@ impl ListRulesInput {
                     "ListRules",
                     "waf",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRulesInput`](crate::input::ListRulesInput).
@@ -8666,7 +8666,7 @@ impl ListSizeConstraintSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSizeConstraintSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8761,7 +8761,7 @@ impl ListSizeConstraintSetsInput {
             "ListSizeConstraintSets",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSizeConstraintSetsInput`](crate::input::ListSizeConstraintSetsInput).
@@ -8825,7 +8825,7 @@ impl ListSqlInjectionMatchSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSqlInjectionMatchSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8917,7 +8917,7 @@ impl ListSqlInjectionMatchSetsInput {
             "ListSqlInjectionMatchSets",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSqlInjectionMatchSetsInput`](crate::input::ListSqlInjectionMatchSetsInput).
@@ -8981,7 +8981,7 @@ impl ListSubscribedRuleGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSubscribedRuleGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9076,7 +9076,7 @@ impl ListSubscribedRuleGroupsInput {
             "ListSubscribedRuleGroups",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsInput`](crate::input::ListSubscribedRuleGroupsInput).
@@ -9150,7 +9150,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9245,7 +9245,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -9307,7 +9307,7 @@ impl ListWebAcLsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWebACLs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9400,7 +9400,7 @@ impl ListWebAcLsInput {
             "ListWebACLs",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListWebAcLsInput`](crate::input::ListWebAcLsInput).
@@ -9462,7 +9462,7 @@ impl ListXssMatchSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListXssMatchSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9555,7 +9555,7 @@ impl ListXssMatchSetsInput {
             "ListXssMatchSets",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListXssMatchSetsInput`](crate::input::ListXssMatchSetsInput).
@@ -9614,7 +9614,7 @@ impl PutLoggingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLoggingConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9709,7 +9709,7 @@ impl PutLoggingConfigurationInput {
             "PutLoggingConfiguration",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationInput`](crate::input::PutLoggingConfigurationInput).
@@ -9771,7 +9771,7 @@ impl PutPermissionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPermissionPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9864,7 +9864,7 @@ impl PutPermissionPolicyInput {
             "PutPermissionPolicy",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput).
@@ -9935,7 +9935,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10028,7 +10028,7 @@ impl TagResourceInput {
             "TagResource",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -10099,7 +10099,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10192,7 +10192,7 @@ impl UntagResourceInput {
             "UntagResource",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -10288,7 +10288,7 @@ impl UpdateByteMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateByteMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10381,7 +10381,7 @@ impl UpdateByteMatchSetInput {
             "UpdateByteMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateByteMatchSetInput`](crate::input::UpdateByteMatchSetInput).
@@ -10475,7 +10475,7 @@ impl UpdateGeoMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGeoMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10568,7 +10568,7 @@ impl UpdateGeoMatchSetInput {
             "UpdateGeoMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateGeoMatchSetInput`](crate::input::UpdateGeoMatchSetInput).
@@ -10661,7 +10661,7 @@ impl UpdateIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIPSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10754,7 +10754,7 @@ impl UpdateIpSetInput {
             "UpdateIPSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateIpSetInput`](crate::input::UpdateIpSetInput).
@@ -10849,7 +10849,7 @@ impl UpdateRateBasedRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRateBasedRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10944,7 +10944,7 @@ impl UpdateRateBasedRuleInput {
             "UpdateRateBasedRule",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleInput`](crate::input::UpdateRateBasedRuleInput).
@@ -11030,7 +11030,7 @@ impl UpdateRegexMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRegexMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11125,7 +11125,7 @@ impl UpdateRegexMatchSetInput {
             "UpdateRegexMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRegexMatchSetInput`](crate::input::UpdateRegexMatchSetInput).
@@ -11211,7 +11211,7 @@ impl UpdateRegexPatternSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRegexPatternSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11306,7 +11306,7 @@ impl UpdateRegexPatternSetInput {
             "UpdateRegexPatternSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput).
@@ -11398,7 +11398,7 @@ impl UpdateRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11491,7 +11491,7 @@ impl UpdateRuleInput {
             "UpdateRule",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRuleInput`](crate::input::UpdateRuleInput).
@@ -11581,7 +11581,7 @@ impl UpdateRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11674,7 +11674,7 @@ impl UpdateRuleGroupInput {
             "UpdateRuleGroup",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
@@ -11773,7 +11773,7 @@ impl UpdateSizeConstraintSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSizeConstraintSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11868,7 +11868,7 @@ impl UpdateSizeConstraintSetInput {
             "UpdateSizeConstraintSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateSizeConstraintSetInput`](crate::input::UpdateSizeConstraintSetInput).
@@ -11967,7 +11967,7 @@ impl UpdateSqlInjectionMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSqlInjectionMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12059,7 +12059,7 @@ impl UpdateSqlInjectionMatchSetInput {
             "UpdateSqlInjectionMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateSqlInjectionMatchSetInput`](crate::input::UpdateSqlInjectionMatchSetInput).
@@ -12169,7 +12169,7 @@ impl UpdateWebAclInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWebACL,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12262,7 +12262,7 @@ impl UpdateWebAclInput {
             "UpdateWebACL",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateWebAclInput`](crate::input::UpdateWebAclInput).
@@ -12358,7 +12358,7 @@ impl UpdateXssMatchSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateXssMatchSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12451,7 +12451,7 @@ impl UpdateXssMatchSetInput {
             "UpdateXssMatchSet",
             "waf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateXssMatchSetInput`](crate::input::UpdateXssMatchSetInput).

@@ -45,7 +45,7 @@ impl BulkPublishInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BulkPublish,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -138,7 +138,7 @@ impl BulkPublishInput {
             "BulkPublish",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BulkPublishInput`](crate::input::BulkPublishInput).
@@ -215,7 +215,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -331,7 +331,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
@@ -408,7 +408,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -524,7 +524,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
@@ -579,7 +579,7 @@ impl DescribeIdentityPoolUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityPoolUsage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -672,7 +672,7 @@ impl DescribeIdentityPoolUsageInput {
             "DescribeIdentityPoolUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeIdentityPoolUsageInput`](crate::input::DescribeIdentityPoolUsageInput).
@@ -737,7 +737,7 @@ impl DescribeIdentityUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityUsage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -845,7 +845,7 @@ impl DescribeIdentityUsageInput {
             "DescribeIdentityUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeIdentityUsageInput`](crate::input::DescribeIdentityUsageInput).
@@ -898,7 +898,7 @@ impl GetBulkPublishDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBulkPublishDetails,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -991,7 +991,7 @@ impl GetBulkPublishDetailsInput {
             "GetBulkPublishDetails",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetBulkPublishDetailsInput`](crate::input::GetBulkPublishDetailsInput).
@@ -1044,7 +1044,7 @@ impl GetCognitoEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCognitoEvents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1137,7 +1137,7 @@ impl GetCognitoEventsInput {
             "GetCognitoEvents",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCognitoEventsInput`](crate::input::GetCognitoEventsInput).
@@ -1192,7 +1192,7 @@ impl GetIdentityPoolConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityPoolConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1285,7 +1285,7 @@ impl GetIdentityPoolConfigurationInput {
             "GetIdentityPoolConfiguration",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIdentityPoolConfigurationInput`](crate::input::GetIdentityPoolConfigurationInput).
@@ -1374,7 +1374,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1499,7 +1499,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDatasetsInput`](crate::input::ListDatasetsInput).
@@ -1561,7 +1561,7 @@ impl ListIdentityPoolUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityPoolUsage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1652,7 +1652,7 @@ impl ListIdentityPoolUsageInput {
             "ListIdentityPoolUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListIdentityPoolUsageInput`](crate::input::ListIdentityPoolUsageInput).
@@ -1780,7 +1780,7 @@ impl ListRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecords,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1925,7 +1925,7 @@ impl ListRecordsInput {
             "ListRecords",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRecordsInput`](crate::input::ListRecordsInput).
@@ -2014,7 +2014,7 @@ impl RegisterDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2136,7 +2136,7 @@ impl RegisterDeviceInput {
             "RegisterDevice",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterDeviceInput`](crate::input::RegisterDeviceInput).
@@ -2218,7 +2218,7 @@ impl SetCognitoEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetCognitoEvents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2325,7 +2325,7 @@ impl SetCognitoEventsInput {
             "SetCognitoEvents",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetCognitoEventsInput`](crate::input::SetCognitoEventsInput).
@@ -2407,7 +2407,7 @@ impl SetIdentityPoolConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityPoolConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2513,7 +2513,7 @@ impl SetIdentityPoolConfigurationInput {
             "SetIdentityPoolConfiguration",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetIdentityPoolConfigurationInput`](crate::input::SetIdentityPoolConfigurationInput).
@@ -2602,7 +2602,7 @@ impl SubscribeToDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SubscribeToDataset,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2732,7 +2732,7 @@ impl SubscribeToDatasetInput {
             "SubscribeToDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SubscribeToDatasetInput`](crate::input::SubscribeToDatasetInput).
@@ -2821,7 +2821,7 @@ impl UnsubscribeFromDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnsubscribeFromDataset,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2951,7 +2951,7 @@ impl UnsubscribeFromDatasetInput {
             "UnsubscribeFromDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UnsubscribeFromDatasetInput`](crate::input::UnsubscribeFromDatasetInput).
@@ -3091,7 +3091,7 @@ impl UpdateRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecords,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3222,7 +3222,7 @@ impl UpdateRecordsInput {
             "UpdateRecords",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRecordsInput`](crate::input::UpdateRecordsInput).

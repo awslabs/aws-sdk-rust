@@ -53,7 +53,7 @@ impl BatchDetectDominantLanguageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectDominantLanguage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -145,7 +145,7 @@ impl BatchDetectDominantLanguageInput {
             "BatchDetectDominantLanguage",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageInput`](crate::input::BatchDetectDominantLanguageInput).
@@ -219,7 +219,7 @@ impl BatchDetectEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectEntities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -312,7 +312,7 @@ impl BatchDetectEntitiesInput {
             "BatchDetectEntities",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesInput`](crate::input::BatchDetectEntitiesInput).
@@ -386,7 +386,7 @@ impl BatchDetectKeyPhrasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectKeyPhrases,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -481,7 +481,7 @@ impl BatchDetectKeyPhrasesInput {
             "BatchDetectKeyPhrases",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesInput`](crate::input::BatchDetectKeyPhrasesInput).
@@ -555,7 +555,7 @@ impl BatchDetectSentimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectSentiment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -650,7 +650,7 @@ impl BatchDetectSentimentInput {
             "BatchDetectSentiment",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDetectSentimentInput`](crate::input::BatchDetectSentimentInput).
@@ -724,7 +724,7 @@ impl BatchDetectSyntaxInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDetectSyntax,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -817,7 +817,7 @@ impl BatchDetectSyntaxInput {
             "BatchDetectSyntax",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxInput`](crate::input::BatchDetectSyntaxInput).
@@ -879,7 +879,7 @@ impl ClassifyDocumentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ClassifyDocument,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -972,7 +972,7 @@ impl ClassifyDocumentInput {
             "ClassifyDocument",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ClassifyDocumentInput`](crate::input::ClassifyDocumentInput).
@@ -1037,7 +1037,7 @@ impl ContainsPiiEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ContainsPiiEntities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1130,7 +1130,7 @@ impl ContainsPiiEntitiesInput {
             "ContainsPiiEntities",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesInput`](crate::input::ContainsPiiEntitiesInput).
@@ -1397,7 +1397,7 @@ impl CreateDocumentClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDocumentClassifier,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1495,7 +1495,7 @@ impl CreateDocumentClassifierInput {
             "CreateDocumentClassifier",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierInput`](crate::input::CreateDocumentClassifierInput).
@@ -1623,7 +1623,7 @@ impl CreateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1719,7 +1719,7 @@ impl CreateEndpointInput {
             "CreateEndpoint",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::input::CreateEndpointInput).
@@ -1950,7 +1950,7 @@ impl CreateEntityRecognizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEntityRecognizer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2048,7 +2048,7 @@ impl CreateEntityRecognizerInput {
             "CreateEntityRecognizer",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerInput`](crate::input::CreateEntityRecognizerInput).
@@ -2103,7 +2103,7 @@ impl DeleteDocumentClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDocumentClassifier,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2198,7 +2198,7 @@ impl DeleteDocumentClassifierInput {
             "DeleteDocumentClassifier",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierInput`](crate::input::DeleteDocumentClassifierInput).
@@ -2248,7 +2248,7 @@ impl DeleteEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2341,7 +2341,7 @@ impl DeleteEndpointInput {
             "DeleteEndpoint",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
@@ -2394,7 +2394,7 @@ impl DeleteEntityRecognizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEntityRecognizer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2489,7 +2489,7 @@ impl DeleteEntityRecognizerInput {
             "DeleteEntityRecognizer",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEntityRecognizerInput`](crate::input::DeleteEntityRecognizerInput).
@@ -2554,7 +2554,7 @@ impl DeleteResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2649,7 +2649,7 @@ impl DeleteResourcePolicyInput {
             "DeleteResourcePolicy",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
@@ -2701,7 +2701,7 @@ impl DescribeDocumentClassificationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDocumentClassificationJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2793,7 +2793,7 @@ impl DescribeDocumentClassificationJobInput {
             "DescribeDocumentClassificationJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobInput`](crate::input::DescribeDocumentClassificationJobInput).
@@ -2848,7 +2848,7 @@ impl DescribeDocumentClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDocumentClassifier,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2943,7 +2943,7 @@ impl DescribeDocumentClassifierInput {
             "DescribeDocumentClassifier",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassifierInput`](crate::input::DescribeDocumentClassifierInput).
@@ -2995,7 +2995,7 @@ impl DescribeDominantLanguageDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDominantLanguageDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3087,7 +3087,7 @@ impl DescribeDominantLanguageDetectionJobInput {
             "DescribeDominantLanguageDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDominantLanguageDetectionJobInput`](crate::input::DescribeDominantLanguageDetectionJobInput).
@@ -3137,7 +3137,7 @@ impl DescribeEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3230,7 +3230,7 @@ impl DescribeEndpointInput {
             "DescribeEndpoint",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::input::DescribeEndpointInput).
@@ -3282,7 +3282,7 @@ impl DescribeEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntitiesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3374,7 +3374,7 @@ impl DescribeEntitiesDetectionJobInput {
             "DescribeEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionJobInput`](crate::input::DescribeEntitiesDetectionJobInput).
@@ -3429,7 +3429,7 @@ impl DescribeEntityRecognizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntityRecognizer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3524,7 +3524,7 @@ impl DescribeEntityRecognizerInput {
             "DescribeEntityRecognizer",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEntityRecognizerInput`](crate::input::DescribeEntityRecognizerInput).
@@ -3576,7 +3576,7 @@ impl DescribeEventsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEventsDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3668,7 +3668,7 @@ impl DescribeEventsDetectionJobInput {
             "DescribeEventsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEventsDetectionJobInput`](crate::input::DescribeEventsDetectionJobInput).
@@ -3720,7 +3720,7 @@ impl DescribeKeyPhrasesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeKeyPhrasesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3812,7 +3812,7 @@ impl DescribeKeyPhrasesDetectionJobInput {
             "DescribeKeyPhrasesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeKeyPhrasesDetectionJobInput`](crate::input::DescribeKeyPhrasesDetectionJobInput).
@@ -3864,7 +3864,7 @@ impl DescribePiiEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePiiEntitiesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3956,7 +3956,7 @@ impl DescribePiiEntitiesDetectionJobInput {
             "DescribePiiEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePiiEntitiesDetectionJobInput`](crate::input::DescribePiiEntitiesDetectionJobInput).
@@ -4006,7 +4006,7 @@ impl DescribeResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourcePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4101,7 +4101,7 @@ impl DescribeResourcePolicyInput {
             "DescribeResourcePolicy",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
@@ -4153,7 +4153,7 @@ impl DescribeSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSentimentDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4245,7 +4245,7 @@ impl DescribeSentimentDetectionJobInput {
             "DescribeSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobInput`](crate::input::DescribeSentimentDetectionJobInput).
@@ -4297,7 +4297,7 @@ impl DescribeTargetedSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTargetedSentimentDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4389,7 +4389,7 @@ impl DescribeTargetedSentimentDetectionJobInput {
             "DescribeTargetedSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput).
@@ -4441,7 +4441,7 @@ impl DescribeTopicsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTopicsDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4533,7 +4533,7 @@ impl DescribeTopicsDetectionJobInput {
             "DescribeTopicsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobInput`](crate::input::DescribeTopicsDetectionJobInput).
@@ -4581,7 +4581,7 @@ impl DetectDominantLanguageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectDominantLanguage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4676,7 +4676,7 @@ impl DetectDominantLanguageInput {
             "DetectDominantLanguage",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectDominantLanguageInput`](crate::input::DetectDominantLanguageInput).
@@ -4759,7 +4759,7 @@ impl DetectEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectEntities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4852,7 +4852,7 @@ impl DetectEntitiesInput {
             "DetectEntities",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
@@ -4917,7 +4917,7 @@ impl DetectKeyPhrasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectKeyPhrases,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5010,7 +5010,7 @@ impl DetectKeyPhrasesInput {
             "DetectKeyPhrases",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesInput`](crate::input::DetectKeyPhrasesInput).
@@ -5075,7 +5075,7 @@ impl DetectPiiEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectPiiEntities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5168,7 +5168,7 @@ impl DetectPiiEntitiesInput {
             "DetectPiiEntities",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesInput`](crate::input::DetectPiiEntitiesInput).
@@ -5233,7 +5233,7 @@ impl DetectSentimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectSentiment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5326,7 +5326,7 @@ impl DetectSentimentInput {
             "DetectSentiment",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectSentimentInput`](crate::input::DetectSentimentInput).
@@ -5391,7 +5391,7 @@ impl DetectSyntaxInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectSyntax,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5484,7 +5484,7 @@ impl DetectSyntaxInput {
             "DetectSyntax",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectSyntaxInput`](crate::input::DetectSyntaxInput).
@@ -5620,7 +5620,7 @@ impl ImportModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5713,7 +5713,7 @@ impl ImportModelInput {
             "ImportModel",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ImportModelInput`](crate::input::ImportModelInput).
@@ -5792,7 +5792,7 @@ impl ListDocumentClassificationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDocumentClassificationJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5884,7 +5884,7 @@ impl ListDocumentClassificationJobsInput {
             "ListDocumentClassificationJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsInput`](crate::input::ListDocumentClassificationJobsInput).
@@ -5963,7 +5963,7 @@ impl ListDocumentClassifiersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDocumentClassifiers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6058,7 +6058,7 @@ impl ListDocumentClassifiersInput {
             "ListDocumentClassifiers",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDocumentClassifiersInput`](crate::input::ListDocumentClassifiersInput).
@@ -6122,7 +6122,7 @@ impl ListDocumentClassifierSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDocumentClassifierSummaries,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6214,7 +6214,7 @@ impl ListDocumentClassifierSummariesInput {
             "ListDocumentClassifierSummaries",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesInput`](crate::input::ListDocumentClassifierSummariesInput).
@@ -6293,7 +6293,7 @@ impl ListDominantLanguageDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDominantLanguageDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6385,7 +6385,7 @@ impl ListDominantLanguageDetectionJobsInput {
             "ListDominantLanguageDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsInput`](crate::input::ListDominantLanguageDetectionJobsInput).
@@ -6462,7 +6462,7 @@ impl ListEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpoints,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6555,7 +6555,7 @@ impl ListEndpointsInput {
             "ListEndpoints",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEndpointsInput`](crate::input::ListEndpointsInput).
@@ -6634,7 +6634,7 @@ impl ListEntitiesDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntitiesDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6729,7 +6729,7 @@ impl ListEntitiesDetectionJobsInput {
             "ListEntitiesDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionJobsInput`](crate::input::ListEntitiesDetectionJobsInput).
@@ -6806,7 +6806,7 @@ impl ListEntityRecognizersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntityRecognizers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6901,7 +6901,7 @@ impl ListEntityRecognizersInput {
             "ListEntityRecognizers",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEntityRecognizersInput`](crate::input::ListEntityRecognizersInput).
@@ -6965,7 +6965,7 @@ impl ListEntityRecognizerSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntityRecognizerSummaries,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7057,7 +7057,7 @@ impl ListEntityRecognizerSummariesInput {
             "ListEntityRecognizerSummaries",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesInput`](crate::input::ListEntityRecognizerSummariesInput).
@@ -7136,7 +7136,7 @@ impl ListEventsDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEventsDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7231,7 +7231,7 @@ impl ListEventsDetectionJobsInput {
             "ListEventsDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEventsDetectionJobsInput`](crate::input::ListEventsDetectionJobsInput).
@@ -7310,7 +7310,7 @@ impl ListKeyPhrasesDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListKeyPhrasesDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7402,7 +7402,7 @@ impl ListKeyPhrasesDetectionJobsInput {
             "ListKeyPhrasesDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListKeyPhrasesDetectionJobsInput`](crate::input::ListKeyPhrasesDetectionJobsInput).
@@ -7481,7 +7481,7 @@ impl ListPiiEntitiesDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPiiEntitiesDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7573,7 +7573,7 @@ impl ListPiiEntitiesDetectionJobsInput {
             "ListPiiEntitiesDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPiiEntitiesDetectionJobsInput`](crate::input::ListPiiEntitiesDetectionJobsInput).
@@ -7652,7 +7652,7 @@ impl ListSentimentDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSentimentDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7744,7 +7744,7 @@ impl ListSentimentDetectionJobsInput {
             "ListSentimentDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSentimentDetectionJobsInput`](crate::input::ListSentimentDetectionJobsInput).
@@ -7794,7 +7794,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7889,7 +7889,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -7968,7 +7968,7 @@ impl ListTargetedSentimentDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTargetedSentimentDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8060,7 +8060,7 @@ impl ListTargetedSentimentDetectionJobsInput {
             "ListTargetedSentimentDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput).
@@ -8139,7 +8139,7 @@ impl ListTopicsDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTopicsDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8234,7 +8234,7 @@ impl ListTopicsDetectionJobsInput {
             "ListTopicsDetectionJobs",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsInput`](crate::input::ListTopicsDetectionJobsInput).
@@ -8320,7 +8320,7 @@ impl PutResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourcePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8413,7 +8413,7 @@ impl PutResourcePolicyInput {
             "PutResourcePolicy",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
@@ -8599,7 +8599,7 @@ impl StartDocumentClassificationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDocumentClassificationJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8694,7 +8694,7 @@ impl StartDocumentClassificationJobInput {
             "StartDocumentClassificationJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartDocumentClassificationJobInput`](crate::input::StartDocumentClassificationJobInput).
@@ -8865,7 +8865,7 @@ impl StartDominantLanguageDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDominantLanguageDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8960,7 +8960,7 @@ impl StartDominantLanguageDetectionJobInput {
             "StartDominantLanguageDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobInput`](crate::input::StartDominantLanguageDetectionJobInput).
@@ -9161,7 +9161,7 @@ impl StartEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEntitiesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9259,7 +9259,7 @@ impl StartEntitiesDetectionJobInput {
             "StartEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobInput`](crate::input::StartEntitiesDetectionJobInput).
@@ -9428,7 +9428,7 @@ impl StartEventsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEventsDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9526,7 +9526,7 @@ impl StartEventsDetectionJobInput {
             "StartEventsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobInput`](crate::input::StartEventsDetectionJobInput).
@@ -9712,7 +9712,7 @@ impl StartKeyPhrasesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartKeyPhrasesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9807,7 +9807,7 @@ impl StartKeyPhrasesDetectionJobInput {
             "StartKeyPhrasesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartKeyPhrasesDetectionJobInput`](crate::input::StartKeyPhrasesDetectionJobInput).
@@ -9987,7 +9987,7 @@ impl StartPiiEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPiiEntitiesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10082,7 +10082,7 @@ impl StartPiiEntitiesDetectionJobInput {
             "StartPiiEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobInput`](crate::input::StartPiiEntitiesDetectionJobInput).
@@ -10268,7 +10268,7 @@ impl StartSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSentimentDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10363,7 +10363,7 @@ impl StartSentimentDetectionJobInput {
             "StartSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartSentimentDetectionJobInput`](crate::input::StartSentimentDetectionJobInput).
@@ -10549,7 +10549,7 @@ impl StartTargetedSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTargetedSentimentDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10644,7 +10644,7 @@ impl StartTargetedSentimentDetectionJobInput {
             "StartTargetedSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput).
@@ -10827,7 +10827,7 @@ impl StartTopicsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTopicsDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10925,7 +10925,7 @@ impl StartTopicsDetectionJobInput {
             "StartTopicsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobInput`](crate::input::StartTopicsDetectionJobInput).
@@ -10977,7 +10977,7 @@ impl StopDominantLanguageDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopDominantLanguageDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11069,7 +11069,7 @@ impl StopDominantLanguageDetectionJobInput {
             "StopDominantLanguageDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobInput`](crate::input::StopDominantLanguageDetectionJobInput).
@@ -11121,7 +11121,7 @@ impl StopEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEntitiesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11216,7 +11216,7 @@ impl StopEntitiesDetectionJobInput {
             "StopEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionJobInput`](crate::input::StopEntitiesDetectionJobInput).
@@ -11266,7 +11266,7 @@ impl StopEventsDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEventsDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11361,7 +11361,7 @@ impl StopEventsDetectionJobInput {
             "StopEventsDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobInput`](crate::input::StopEventsDetectionJobInput).
@@ -11413,7 +11413,7 @@ impl StopKeyPhrasesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopKeyPhrasesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11505,7 +11505,7 @@ impl StopKeyPhrasesDetectionJobInput {
             "StopKeyPhrasesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopKeyPhrasesDetectionJobInput`](crate::input::StopKeyPhrasesDetectionJobInput).
@@ -11557,7 +11557,7 @@ impl StopPiiEntitiesDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopPiiEntitiesDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11649,7 +11649,7 @@ impl StopPiiEntitiesDetectionJobInput {
             "StopPiiEntitiesDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopPiiEntitiesDetectionJobInput`](crate::input::StopPiiEntitiesDetectionJobInput).
@@ -11701,7 +11701,7 @@ impl StopSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopSentimentDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11796,7 +11796,7 @@ impl StopSentimentDetectionJobInput {
             "StopSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobInput`](crate::input::StopSentimentDetectionJobInput).
@@ -11848,7 +11848,7 @@ impl StopTargetedSentimentDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTargetedSentimentDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11940,7 +11940,7 @@ impl StopTargetedSentimentDetectionJobInput {
             "StopTargetedSentimentDetectionJob",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput).
@@ -11995,7 +11995,7 @@ impl StopTrainingDocumentClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTrainingDocumentClassifier,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12087,7 +12087,7 @@ impl StopTrainingDocumentClassifierInput {
             "StopTrainingDocumentClassifier",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierInput`](crate::input::StopTrainingDocumentClassifierInput).
@@ -12142,7 +12142,7 @@ impl StopTrainingEntityRecognizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTrainingEntityRecognizer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12234,7 +12234,7 @@ impl StopTrainingEntityRecognizerInput {
             "StopTrainingEntityRecognizer",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerInput`](crate::input::StopTrainingEntityRecognizerInput).
@@ -12305,7 +12305,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12398,7 +12398,7 @@ impl TagResourceInput {
             "TagResource",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -12469,7 +12469,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12562,7 +12562,7 @@ impl UntagResourceInput {
             "UntagResource",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -12657,7 +12657,7 @@ impl UpdateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12750,7 +12750,7 @@ impl UpdateEndpointInput {
             "UpdateEndpoint",
             "comprehend",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateEndpointInput`](crate::input::UpdateEndpointInput).

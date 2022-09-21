@@ -96,7 +96,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationCloudWatchLoggingOption,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -188,7 +188,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
             "AddApplicationCloudWatchLoggingOption",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionInput`](crate::input::AddApplicationCloudWatchLoggingOptionInput).
@@ -268,7 +268,7 @@ impl AddApplicationInputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationInput,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -361,7 +361,7 @@ impl AddApplicationInputInput {
             "AddApplicationInput",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddApplicationInputInput`](crate::input::AddApplicationInputInput).
@@ -464,7 +464,7 @@ impl AddApplicationInputProcessingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationInputProcessingConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -556,7 +556,7 @@ impl AddApplicationInputProcessingConfigurationInput {
             "AddApplicationInputProcessingConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationInput`](crate::input::AddApplicationInputProcessingConfigurationInput).
@@ -637,7 +637,7 @@ impl AddApplicationOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationOutput,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -732,7 +732,7 @@ impl AddApplicationOutputInput {
             "AddApplicationOutput",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddApplicationOutputInput`](crate::input::AddApplicationOutputInput).
@@ -817,7 +817,7 @@ impl AddApplicationReferenceDataSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationReferenceDataSource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -909,7 +909,7 @@ impl AddApplicationReferenceDataSourceInput {
             "AddApplicationReferenceDataSource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceInput`](crate::input::AddApplicationReferenceDataSourceInput).
@@ -1009,7 +1009,7 @@ impl AddApplicationVpcConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationVpcConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1101,7 +1101,7 @@ impl AddApplicationVpcConfigurationInput {
             "AddApplicationVpcConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationInput`](crate::input::AddApplicationVpcConfigurationInput).
@@ -1279,7 +1279,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1372,7 +1372,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
@@ -1454,7 +1454,7 @@ impl CreateApplicationPresignedUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplicationPresignedUrl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1546,7 +1546,7 @@ impl CreateApplicationPresignedUrlInput {
             "CreateApplicationPresignedUrl",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlInput`](crate::input::CreateApplicationPresignedUrlInput).
@@ -1616,7 +1616,7 @@ impl CreateApplicationSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplicationSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1711,7 +1711,7 @@ impl CreateApplicationSnapshotInput {
             "CreateApplicationSnapshot",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotInput`](crate::input::CreateApplicationSnapshotInput).
@@ -1779,7 +1779,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1872,7 +1872,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
@@ -1977,7 +1977,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationCloudWatchLoggingOption,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2069,7 +2069,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
             "DeleteApplicationCloudWatchLoggingOption",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput).
@@ -2153,7 +2153,7 @@ impl DeleteApplicationInputProcessingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationInputProcessingConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2245,7 +2245,7 @@ impl DeleteApplicationInputProcessingConfigurationInput {
             "DeleteApplicationInputProcessingConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationInput`](crate::input::DeleteApplicationInputProcessingConfigurationInput).
@@ -2328,7 +2328,7 @@ impl DeleteApplicationOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationOutput,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2423,7 +2423,7 @@ impl DeleteApplicationOutputInput {
             "DeleteApplicationOutput",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputInput`](crate::input::DeleteApplicationOutputInput).
@@ -2505,7 +2505,7 @@ impl DeleteApplicationReferenceDataSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationReferenceDataSource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2597,7 +2597,7 @@ impl DeleteApplicationReferenceDataSourceInput {
             "DeleteApplicationReferenceDataSource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceInput`](crate::input::DeleteApplicationReferenceDataSourceInput).
@@ -2682,7 +2682,7 @@ impl DeleteApplicationSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2777,7 +2777,7 @@ impl DeleteApplicationSnapshotInput {
             "DeleteApplicationSnapshot",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotInput`](crate::input::DeleteApplicationSnapshotInput).
@@ -2877,7 +2877,7 @@ impl DeleteApplicationVpcConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationVpcConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2969,7 +2969,7 @@ impl DeleteApplicationVpcConfigurationInput {
             "DeleteApplicationVpcConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationInput`](crate::input::DeleteApplicationVpcConfigurationInput).
@@ -3034,7 +3034,7 @@ impl DescribeApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3127,7 +3127,7 @@ impl DescribeApplicationInput {
             "DescribeApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInput`](crate::input::DescribeApplicationInput).
@@ -3197,7 +3197,7 @@ impl DescribeApplicationSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3289,7 +3289,7 @@ impl DescribeApplicationSnapshotInput {
             "DescribeApplicationSnapshot",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotInput`](crate::input::DescribeApplicationSnapshotInput).
@@ -3356,7 +3356,7 @@ impl DescribeApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3451,7 +3451,7 @@ impl DescribeApplicationVersionInput {
             "DescribeApplicationVersion",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionInput`](crate::input::DescribeApplicationVersionInput).
@@ -3569,7 +3569,7 @@ impl DiscoverInputSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DiscoverInputSchema,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3662,7 +3662,7 @@ impl DiscoverInputSchemaInput {
             "DiscoverInputSchema",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaInput`](crate::input::DiscoverInputSchemaInput).
@@ -3724,7 +3724,7 @@ impl ListApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplications,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3817,7 +3817,7 @@ impl ListApplicationsInput {
             "ListApplications",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput).
@@ -3896,7 +3896,7 @@ impl ListApplicationSnapshotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationSnapshots,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3991,7 +3991,7 @@ impl ListApplicationSnapshotsInput {
             "ListApplicationSnapshots",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsInput`](crate::input::ListApplicationSnapshotsInput).
@@ -4070,7 +4070,7 @@ impl ListApplicationVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4165,7 +4165,7 @@ impl ListApplicationVersionsInput {
             "ListApplicationVersions",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput).
@@ -4215,7 +4215,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4310,7 +4310,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -4378,7 +4378,7 @@ impl RollbackApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RollbackApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4471,7 +4471,7 @@ impl RollbackApplicationInput {
             "RollbackApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RollbackApplicationInput`](crate::input::RollbackApplicationInput).
@@ -4539,7 +4539,7 @@ impl StartApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4632,7 +4632,7 @@ impl StartApplicationInput {
             "StartApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartApplicationInput`](crate::input::StartApplicationInput).
@@ -4705,7 +4705,7 @@ impl StopApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4798,7 +4798,7 @@ impl StopApplicationInput {
             "StopApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopApplicationInput`](crate::input::StopApplicationInput).
@@ -4869,7 +4869,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4962,7 +4962,7 @@ impl TagResourceInput {
             "TagResource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -5033,7 +5033,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5126,7 +5126,7 @@ impl UntagResourceInput {
             "UntagResource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -5290,7 +5290,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5383,7 +5383,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
@@ -5460,7 +5460,7 @@ impl UpdateApplicationMaintenanceConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplicationMaintenanceConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5552,7 +5552,7 @@ impl UpdateApplicationMaintenanceConfigurationInput {
             "UpdateApplicationMaintenanceConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationInput`](crate::input::UpdateApplicationMaintenanceConfigurationInput).

@@ -45,7 +45,7 @@ impl DeleteHumanLoopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHumanLoop,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -138,7 +138,7 @@ impl DeleteHumanLoopInput {
             "DeleteHumanLoop",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput).
@@ -191,7 +191,7 @@ impl DescribeHumanLoopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHumanLoop,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -284,7 +284,7 @@ impl DescribeHumanLoopInput {
             "DescribeHumanLoop",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput).
@@ -406,7 +406,7 @@ impl ListHumanLoopsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHumanLoops,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -524,7 +524,7 @@ impl ListHumanLoopsInput {
             "ListHumanLoops",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput).
@@ -622,7 +622,7 @@ impl StartHumanLoopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartHumanLoop,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -710,7 +710,7 @@ impl StartHumanLoopInput {
             "StartHumanLoop",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartHumanLoopInput`](crate::input::StartHumanLoopInput).
@@ -763,7 +763,7 @@ impl StopHumanLoopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopHumanLoop,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -851,7 +851,7 @@ impl StopHumanLoopInput {
             "StopHumanLoop",
             "sagemakera2iruntime",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopHumanLoopInput`](crate::input::StopHumanLoopInput).

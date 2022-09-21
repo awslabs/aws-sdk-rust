@@ -70,7 +70,7 @@ impl CreateCallAnalyticsCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCallAnalyticsCategory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -162,7 +162,7 @@ impl CreateCallAnalyticsCategoryInput {
             "CreateCallAnalyticsCategory",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCallAnalyticsCategoryInput`](crate::input::CreateCallAnalyticsCategoryInput).
@@ -290,7 +290,7 @@ impl CreateLanguageModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLanguageModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -383,7 +383,7 @@ impl CreateLanguageModelInput {
             "CreateLanguageModel",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLanguageModelInput`](crate::input::CreateLanguageModelInput).
@@ -495,7 +495,7 @@ impl CreateMedicalVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMedicalVocabulary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -590,7 +590,7 @@ impl CreateMedicalVocabularyInput {
             "CreateMedicalVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMedicalVocabularyInput`](crate::input::CreateMedicalVocabularyInput).
@@ -731,7 +731,7 @@ impl CreateVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVocabulary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -824,7 +824,7 @@ impl CreateVocabularyInput {
             "CreateVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVocabularyInput`](crate::input::CreateVocabularyInput).
@@ -965,7 +965,7 @@ impl CreateVocabularyFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVocabularyFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1060,7 +1060,7 @@ impl CreateVocabularyFilterInput {
             "CreateVocabularyFilter",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVocabularyFilterInput`](crate::input::CreateVocabularyFilterInput).
@@ -1115,7 +1115,7 @@ impl DeleteCallAnalyticsCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCallAnalyticsCategory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1207,7 +1207,7 @@ impl DeleteCallAnalyticsCategoryInput {
             "DeleteCallAnalyticsCategory",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsCategoryInput`](crate::input::DeleteCallAnalyticsCategoryInput).
@@ -1260,7 +1260,7 @@ impl DeleteCallAnalyticsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCallAnalyticsJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1355,7 +1355,7 @@ impl DeleteCallAnalyticsJobInput {
             "DeleteCallAnalyticsJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsJobInput`](crate::input::DeleteCallAnalyticsJobInput).
@@ -1405,7 +1405,7 @@ impl DeleteLanguageModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLanguageModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1498,7 +1498,7 @@ impl DeleteLanguageModelInput {
             "DeleteLanguageModel",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLanguageModelInput`](crate::input::DeleteLanguageModelInput).
@@ -1556,7 +1556,7 @@ impl DeleteMedicalTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMedicalTranscriptionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1648,7 +1648,7 @@ impl DeleteMedicalTranscriptionJobInput {
             "DeleteMedicalTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMedicalTranscriptionJobInput`](crate::input::DeleteMedicalTranscriptionJobInput).
@@ -1703,7 +1703,7 @@ impl DeleteMedicalVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMedicalVocabulary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1798,7 +1798,7 @@ impl DeleteMedicalVocabularyInput {
             "DeleteMedicalVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMedicalVocabularyInput`](crate::input::DeleteMedicalVocabularyInput).
@@ -1851,7 +1851,7 @@ impl DeleteTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTranscriptionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1946,7 +1946,7 @@ impl DeleteTranscriptionJobInput {
             "DeleteTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTranscriptionJobInput`](crate::input::DeleteTranscriptionJobInput).
@@ -1999,7 +1999,7 @@ impl DeleteVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVocabulary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2092,7 +2092,7 @@ impl DeleteVocabularyInput {
             "DeleteVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyInput`](crate::input::DeleteVocabularyInput).
@@ -2145,7 +2145,7 @@ impl DeleteVocabularyFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVocabularyFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2240,7 +2240,7 @@ impl DeleteVocabularyFilterInput {
             "DeleteVocabularyFilter",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyFilterInput`](crate::input::DeleteVocabularyFilterInput).
@@ -2290,7 +2290,7 @@ impl DescribeLanguageModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLanguageModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2385,7 +2385,7 @@ impl DescribeLanguageModelInput {
             "DescribeLanguageModel",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLanguageModelInput`](crate::input::DescribeLanguageModelInput).
@@ -2440,7 +2440,7 @@ impl GetCallAnalyticsCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCallAnalyticsCategory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2535,7 +2535,7 @@ impl GetCallAnalyticsCategoryInput {
             "GetCallAnalyticsCategory",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCallAnalyticsCategoryInput`](crate::input::GetCallAnalyticsCategoryInput).
@@ -2588,7 +2588,7 @@ impl GetCallAnalyticsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCallAnalyticsJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2683,7 +2683,7 @@ impl GetCallAnalyticsJobInput {
             "GetCallAnalyticsJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCallAnalyticsJobInput`](crate::input::GetCallAnalyticsJobInput).
@@ -2741,7 +2741,7 @@ impl GetMedicalTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMedicalTranscriptionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2833,7 +2833,7 @@ impl GetMedicalTranscriptionJobInput {
             "GetMedicalTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMedicalTranscriptionJobInput`](crate::input::GetMedicalTranscriptionJobInput).
@@ -2886,7 +2886,7 @@ impl GetMedicalVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMedicalVocabulary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2981,7 +2981,7 @@ impl GetMedicalVocabularyInput {
             "GetMedicalVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMedicalVocabularyInput`](crate::input::GetMedicalVocabularyInput).
@@ -3034,7 +3034,7 @@ impl GetTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTranscriptionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3127,7 +3127,7 @@ impl GetTranscriptionJobInput {
             "GetTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTranscriptionJobInput`](crate::input::GetTranscriptionJobInput).
@@ -3180,7 +3180,7 @@ impl GetVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVocabulary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3273,7 +3273,7 @@ impl GetVocabularyInput {
             "GetVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetVocabularyInput`](crate::input::GetVocabularyInput).
@@ -3326,7 +3326,7 @@ impl GetVocabularyFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVocabularyFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3419,7 +3419,7 @@ impl GetVocabularyFilterInput {
             "GetVocabularyFilter",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetVocabularyFilterInput`](crate::input::GetVocabularyFilterInput).
@@ -3483,7 +3483,7 @@ impl ListCallAnalyticsCategoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCallAnalyticsCategories,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3592,7 +3592,7 @@ impl ListCallAnalyticsCategoriesInput {
             "ListCallAnalyticsCategories",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesInput`](crate::input::ListCallAnalyticsCategoriesInput).
@@ -3684,7 +3684,7 @@ impl ListCallAnalyticsJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCallAnalyticsJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3805,7 +3805,7 @@ impl ListCallAnalyticsJobsInput {
             "ListCallAnalyticsJobs",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCallAnalyticsJobsInput`](crate::input::ListCallAnalyticsJobsInput).
@@ -3897,7 +3897,7 @@ impl ListLanguageModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLanguageModels,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4019,7 +4019,7 @@ impl ListLanguageModelsInput {
             "ListLanguageModels",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLanguageModelsInput`](crate::input::ListLanguageModelsInput).
@@ -4113,7 +4113,7 @@ impl ListMedicalTranscriptionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMedicalTranscriptionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4231,7 +4231,7 @@ impl ListMedicalTranscriptionJobsInput {
             "ListMedicalTranscriptionJobs",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMedicalTranscriptionJobsInput`](crate::input::ListMedicalTranscriptionJobsInput).
@@ -4325,7 +4325,7 @@ impl ListMedicalVocabulariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMedicalVocabularies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4449,7 +4449,7 @@ impl ListMedicalVocabulariesInput {
             "ListMedicalVocabularies",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMedicalVocabulariesInput`](crate::input::ListMedicalVocabulariesInput).
@@ -4503,7 +4503,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4598,7 +4598,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -4690,7 +4690,7 @@ impl ListTranscriptionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTranscriptionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4811,7 +4811,7 @@ impl ListTranscriptionJobsInput {
             "ListTranscriptionJobs",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTranscriptionJobsInput`](crate::input::ListTranscriptionJobsInput).
@@ -4903,7 +4903,7 @@ impl ListVocabulariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVocabularies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5025,7 +5025,7 @@ impl ListVocabulariesInput {
             "ListVocabularies",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListVocabulariesInput`](crate::input::ListVocabulariesInput).
@@ -5102,7 +5102,7 @@ impl ListVocabularyFiltersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVocabularyFilters,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5220,7 +5220,7 @@ impl ListVocabularyFiltersInput {
             "ListVocabularyFilters",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListVocabularyFiltersInput`](crate::input::ListVocabularyFiltersInput).
@@ -5422,7 +5422,7 @@ impl StartCallAnalyticsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartCallAnalyticsJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5517,7 +5517,7 @@ impl StartCallAnalyticsJobInput {
             "StartCallAnalyticsJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartCallAnalyticsJobInput`](crate::input::StartCallAnalyticsJobInput).
@@ -5847,7 +5847,7 @@ impl StartMedicalTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMedicalTranscriptionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5939,7 +5939,7 @@ impl StartMedicalTranscriptionJobInput {
             "StartMedicalTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartMedicalTranscriptionJobInput`](crate::input::StartMedicalTranscriptionJobInput).
@@ -6394,7 +6394,7 @@ impl StartTranscriptionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTranscriptionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6489,7 +6489,7 @@ impl StartTranscriptionJobInput {
             "StartTranscriptionJob",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartTranscriptionJobInput`](crate::input::StartTranscriptionJobInput).
@@ -6566,7 +6566,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6659,7 +6659,7 @@ impl TagResourceInput {
             "TagResource",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -6734,7 +6734,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6827,7 +6827,7 @@ impl UntagResourceInput {
             "UntagResource",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -6903,7 +6903,7 @@ impl UpdateCallAnalyticsCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCallAnalyticsCategory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6995,7 +6995,7 @@ impl UpdateCallAnalyticsCategoryInput {
             "UpdateCallAnalyticsCategory",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryInput`](crate::input::UpdateCallAnalyticsCategoryInput).
@@ -7082,7 +7082,7 @@ impl UpdateMedicalVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMedicalVocabulary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7177,7 +7177,7 @@ impl UpdateMedicalVocabularyInput {
             "UpdateMedicalVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateMedicalVocabularyInput`](crate::input::UpdateMedicalVocabularyInput).
@@ -7293,7 +7293,7 @@ impl UpdateVocabularyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVocabulary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7386,7 +7386,7 @@ impl UpdateVocabularyInput {
             "UpdateVocabulary",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateVocabularyInput`](crate::input::UpdateVocabularyInput).
@@ -7483,7 +7483,7 @@ impl UpdateVocabularyFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVocabularyFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7578,7 +7578,7 @@ impl UpdateVocabularyFilterInput {
             "UpdateVocabularyFilter",
             "transcribe",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateVocabularyFilterInput`](crate::input::UpdateVocabularyFilterInput).

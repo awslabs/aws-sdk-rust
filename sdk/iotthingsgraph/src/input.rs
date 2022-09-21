@@ -70,7 +70,7 @@ impl AssociateEntityToThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateEntityToThing,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -165,7 +165,7 @@ impl AssociateEntityToThingInput {
             "AssociateEntityToThing",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateEntityToThingInput`](crate::input::AssociateEntityToThingInput).
@@ -232,7 +232,7 @@ impl CreateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFlowTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -325,7 +325,7 @@ impl CreateFlowTemplateInput {
             "CreateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFlowTemplateInput`](crate::input::CreateFlowTemplateInput).
@@ -474,7 +474,7 @@ impl CreateSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSystemInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -569,7 +569,7 @@ impl CreateSystemInstanceInput {
             "CreateSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSystemInstanceInput`](crate::input::CreateSystemInstanceInput).
@@ -636,7 +636,7 @@ impl CreateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSystemTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -731,7 +731,7 @@ impl CreateSystemTemplateInput {
             "CreateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSystemTemplateInput`](crate::input::CreateSystemTemplateInput).
@@ -783,7 +783,7 @@ impl DeleteFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFlowTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -876,7 +876,7 @@ impl DeleteFlowTemplateInput {
             "DeleteFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFlowTemplateInput`](crate::input::DeleteFlowTemplateInput).
@@ -912,7 +912,7 @@ impl DeleteNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNamespace,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -998,7 +998,7 @@ impl DeleteNamespaceInput {
             "DeleteNamespace",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
@@ -1046,7 +1046,7 @@ impl DeleteSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSystemInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1141,7 +1141,7 @@ impl DeleteSystemInstanceInput {
             "DeleteSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSystemInstanceInput`](crate::input::DeleteSystemInstanceInput).
@@ -1193,7 +1193,7 @@ impl DeleteSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSystemTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1288,7 +1288,7 @@ impl DeleteSystemTemplateInput {
             "DeleteSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSystemTemplateInput`](crate::input::DeleteSystemTemplateInput).
@@ -1340,7 +1340,7 @@ impl DeploySystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeploySystemInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1435,7 +1435,7 @@ impl DeploySystemInstanceInput {
             "DeploySystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeploySystemInstanceInput`](crate::input::DeploySystemInstanceInput).
@@ -1487,7 +1487,7 @@ impl DeprecateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateFlowTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1582,7 +1582,7 @@ impl DeprecateFlowTemplateInput {
             "DeprecateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeprecateFlowTemplateInput`](crate::input::DeprecateFlowTemplateInput).
@@ -1636,7 +1636,7 @@ impl DeprecateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateSystemTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1731,7 +1731,7 @@ impl DeprecateSystemTemplateInput {
             "DeprecateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeprecateSystemTemplateInput`](crate::input::DeprecateSystemTemplateInput).
@@ -1784,7 +1784,7 @@ impl DescribeNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNamespace,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1877,7 +1877,7 @@ impl DescribeNamespaceInput {
             "DescribeNamespace",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput).
@@ -1944,7 +1944,7 @@ impl DissociateEntityFromThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DissociateEntityFromThing,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2039,7 +2039,7 @@ impl DissociateEntityFromThingInput {
             "DissociateEntityFromThing",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DissociateEntityFromThingInput`](crate::input::DissociateEntityFromThingInput).
@@ -2114,7 +2114,7 @@ impl GetEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEntities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2207,7 +2207,7 @@ impl GetEntitiesInput {
             "GetEntities",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEntitiesInput`](crate::input::GetEntitiesInput).
@@ -2273,7 +2273,7 @@ impl GetFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFlowTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2366,7 +2366,7 @@ impl GetFlowTemplateInput {
             "GetFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFlowTemplateInput`](crate::input::GetFlowTemplateInput).
@@ -2446,7 +2446,7 @@ impl GetFlowTemplateRevisionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFlowTemplateRevisions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2541,7 +2541,7 @@ impl GetFlowTemplateRevisionsInput {
             "GetFlowTemplateRevisions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFlowTemplateRevisionsInput`](crate::input::GetFlowTemplateRevisionsInput).
@@ -2579,7 +2579,7 @@ impl GetNamespaceDeletionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNamespaceDeletionStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2664,7 +2664,7 @@ impl GetNamespaceDeletionStatusInput {
             "GetNamespaceDeletionStatus",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetNamespaceDeletionStatusInput`](crate::input::GetNamespaceDeletionStatusInput).
@@ -2716,7 +2716,7 @@ impl GetSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2809,7 +2809,7 @@ impl GetSystemInstanceInput {
             "GetSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSystemInstanceInput`](crate::input::GetSystemInstanceInput).
@@ -2875,7 +2875,7 @@ impl GetSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2968,7 +2968,7 @@ impl GetSystemTemplateInput {
             "GetSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSystemTemplateInput`](crate::input::GetSystemTemplateInput).
@@ -3048,7 +3048,7 @@ impl GetSystemTemplateRevisionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemTemplateRevisions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3140,7 +3140,7 @@ impl GetSystemTemplateRevisionsInput {
             "GetSystemTemplateRevisions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSystemTemplateRevisionsInput`](crate::input::GetSystemTemplateRevisionsInput).
@@ -3190,7 +3190,7 @@ impl GetUploadStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUploadStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3283,7 +3283,7 @@ impl GetUploadStatusInput {
             "GetUploadStatus",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetUploadStatusInput`](crate::input::GetUploadStatusInput).
@@ -3362,7 +3362,7 @@ impl ListFlowExecutionMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFlowExecutionMessages,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3457,7 +3457,7 @@ impl ListFlowExecutionMessagesInput {
             "ListFlowExecutionMessages",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFlowExecutionMessagesInput`](crate::input::ListFlowExecutionMessagesInput).
@@ -3531,7 +3531,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3626,7 +3626,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -3744,7 +3744,7 @@ impl SearchEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchEntities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3837,7 +3837,7 @@ impl SearchEntitiesInput {
             "SearchEntities",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchEntitiesInput`](crate::input::SearchEntitiesInput).
@@ -3959,7 +3959,7 @@ impl SearchFlowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchFlowExecutions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4054,7 +4054,7 @@ impl SearchFlowExecutionsInput {
             "SearchFlowExecutions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchFlowExecutionsInput`](crate::input::SearchFlowExecutionsInput).
@@ -4137,7 +4137,7 @@ impl SearchFlowTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchFlowTemplates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4230,7 +4230,7 @@ impl SearchFlowTemplatesInput {
             "SearchFlowTemplates",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchFlowTemplatesInput`](crate::input::SearchFlowTemplatesInput).
@@ -4315,7 +4315,7 @@ impl SearchSystemInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchSystemInstances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4410,7 +4410,7 @@ impl SearchSystemInstancesInput {
             "SearchSystemInstances",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchSystemInstancesInput`](crate::input::SearchSystemInstancesInput).
@@ -4493,7 +4493,7 @@ impl SearchSystemTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchSystemTemplates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4588,7 +4588,7 @@ impl SearchSystemTemplatesInput {
             "SearchSystemTemplates",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchSystemTemplatesInput`](crate::input::SearchSystemTemplatesInput).
@@ -4678,7 +4678,7 @@ impl SearchThingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchThings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4771,7 +4771,7 @@ impl SearchThingsInput {
             "SearchThings",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchThingsInput`](crate::input::SearchThingsInput).
@@ -4842,7 +4842,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4935,7 +4935,7 @@ impl TagResourceInput {
             "TagResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -4983,7 +4983,7 @@ impl UndeploySystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeploySystemInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5078,7 +5078,7 @@ impl UndeploySystemInstanceInput {
             "UndeploySystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UndeploySystemInstanceInput`](crate::input::UndeploySystemInstanceInput).
@@ -5151,7 +5151,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5244,7 +5244,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -5327,7 +5327,7 @@ impl UpdateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5420,7 +5420,7 @@ impl UpdateFlowTemplateInput {
             "UpdateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFlowTemplateInput`](crate::input::UpdateFlowTemplateInput).
@@ -5503,7 +5503,7 @@ impl UpdateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSystemTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5598,7 +5598,7 @@ impl UpdateSystemTemplateInput {
             "UpdateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateSystemTemplateInput`](crate::input::UpdateSystemTemplateInput).
@@ -5677,7 +5677,7 @@ impl UploadEntityDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UploadEntityDefinitions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5772,7 +5772,7 @@ impl UploadEntityDefinitionsInput {
             "UploadEntityDefinitions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UploadEntityDefinitionsInput`](crate::input::UploadEntityDefinitionsInput).

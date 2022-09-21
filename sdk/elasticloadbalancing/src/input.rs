@@ -71,7 +71,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -157,7 +157,7 @@ impl AddTagsInput {
                     "AddTags",
                     "elasticloadbalancing",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput).
@@ -233,7 +233,7 @@ impl ApplySecurityGroupsToLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApplySecurityGroupsToLoadBalancer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -320,7 +320,7 @@ impl ApplySecurityGroupsToLoadBalancerInput {
             "ApplySecurityGroupsToLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ApplySecurityGroupsToLoadBalancerInput`](crate::input::ApplySecurityGroupsToLoadBalancerInput).
@@ -396,7 +396,7 @@ impl AttachLoadBalancerToSubnetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachLoadBalancerToSubnets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -483,7 +483,7 @@ impl AttachLoadBalancerToSubnetsInput {
             "AttachLoadBalancerToSubnets",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerToSubnetsInput`](crate::input::AttachLoadBalancerToSubnetsInput).
@@ -551,7 +551,7 @@ impl ConfigureHealthCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfigureHealthCheck,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -641,7 +641,7 @@ impl ConfigureHealthCheckInput {
             "ConfigureHealthCheck",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfigureHealthCheckInput`](crate::input::ConfigureHealthCheckInput).
@@ -720,7 +720,7 @@ impl CreateAppCookieStickinessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppCookieStickinessPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -807,7 +807,7 @@ impl CreateAppCookieStickinessPolicyInput {
             "CreateAppCookieStickinessPolicy",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAppCookieStickinessPolicyInput`](crate::input::CreateAppCookieStickinessPolicyInput).
@@ -886,7 +886,7 @@ impl CreateLbCookieStickinessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLBCookieStickinessPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -973,7 +973,7 @@ impl CreateLbCookieStickinessPolicyInput {
             "CreateLBCookieStickinessPolicy",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLbCookieStickinessPolicyInput`](crate::input::CreateLbCookieStickinessPolicyInput).
@@ -1157,7 +1157,7 @@ impl CreateLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLoadBalancer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1245,7 +1245,7 @@ impl CreateLoadBalancerInput {
             "CreateLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
@@ -1321,7 +1321,7 @@ impl CreateLoadBalancerListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLoadBalancerListeners,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1408,7 +1408,7 @@ impl CreateLoadBalancerListenersInput {
             "CreateLoadBalancerListeners",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerListenersInput`](crate::input::CreateLoadBalancerListenersInput).
@@ -1512,7 +1512,7 @@ impl CreateLoadBalancerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLoadBalancerPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1602,7 +1602,7 @@ impl CreateLoadBalancerPolicyInput {
             "CreateLoadBalancerPolicy",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerPolicyInput`](crate::input::CreateLoadBalancerPolicyInput).
@@ -1655,7 +1655,7 @@ impl DeleteLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoadBalancer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1743,7 +1743,7 @@ impl DeleteLoadBalancerInput {
             "DeleteLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
@@ -1819,7 +1819,7 @@ impl DeleteLoadBalancerListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoadBalancerListeners,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1906,7 +1906,7 @@ impl DeleteLoadBalancerListenersInput {
             "DeleteLoadBalancerListeners",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerListenersInput`](crate::input::DeleteLoadBalancerListenersInput).
@@ -1973,7 +1973,7 @@ impl DeleteLoadBalancerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoadBalancerPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2063,7 +2063,7 @@ impl DeleteLoadBalancerPolicyInput {
             "DeleteLoadBalancerPolicy",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerPolicyInput`](crate::input::DeleteLoadBalancerPolicyInput).
@@ -2139,7 +2139,7 @@ impl DeregisterInstancesFromLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterInstancesFromLoadBalancer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2226,7 +2226,7 @@ impl DeregisterInstancesFromLoadBalancerInput {
             "DeregisterInstancesFromLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeregisterInstancesFromLoadBalancerInput`](crate::input::DeregisterInstancesFromLoadBalancerInput).
@@ -2288,7 +2288,7 @@ impl DescribeAccountLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountLimits,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2378,7 +2378,7 @@ impl DescribeAccountLimitsInput {
             "DescribeAccountLimits",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
@@ -2452,7 +2452,7 @@ impl DescribeInstanceHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstanceHealth,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2542,7 +2542,7 @@ impl DescribeInstanceHealthInput {
             "DescribeInstanceHealth",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInstanceHealthInput`](crate::input::DescribeInstanceHealthInput).
@@ -2597,7 +2597,7 @@ impl DescribeLoadBalancerAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancerAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2684,7 +2684,7 @@ impl DescribeLoadBalancerAttributesInput {
             "DescribeLoadBalancerAttributes",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput).
@@ -2760,7 +2760,7 @@ impl DescribeLoadBalancerPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancerPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2847,7 +2847,7 @@ impl DescribeLoadBalancerPoliciesInput {
             "DescribeLoadBalancerPolicies",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPoliciesInput`](crate::input::DescribeLoadBalancerPoliciesInput).
@@ -2908,7 +2908,7 @@ impl DescribeLoadBalancerPolicyTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancerPolicyTypes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2995,7 +2995,7 @@ impl DescribeLoadBalancerPolicyTypesInput {
             "DescribeLoadBalancerPolicyTypes",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPolicyTypesInput`](crate::input::DescribeLoadBalancerPolicyTypesInput).
@@ -3078,7 +3078,7 @@ impl DescribeLoadBalancersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3168,7 +3168,7 @@ impl DescribeLoadBalancersInput {
             "DescribeLoadBalancers",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
@@ -3227,7 +3227,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3315,7 +3315,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTagsInput`](crate::input::DescribeTagsInput).
@@ -3391,7 +3391,7 @@ impl DetachLoadBalancerFromSubnetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachLoadBalancerFromSubnets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3478,7 +3478,7 @@ impl DetachLoadBalancerFromSubnetsInput {
             "DetachLoadBalancerFromSubnets",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancerFromSubnetsInput`](crate::input::DetachLoadBalancerFromSubnetsInput).
@@ -3554,7 +3554,7 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableAvailabilityZonesForLoadBalancer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3641,7 +3641,7 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
             "DisableAvailabilityZonesForLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisableAvailabilityZonesForLoadBalancerInput`](crate::input::DisableAvailabilityZonesForLoadBalancerInput).
@@ -3717,7 +3717,7 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableAvailabilityZonesForLoadBalancer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3804,7 +3804,7 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
             "EnableAvailabilityZonesForLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`EnableAvailabilityZonesForLoadBalancerInput`](crate::input::EnableAvailabilityZonesForLoadBalancerInput).
@@ -3878,7 +3878,7 @@ impl ModifyLoadBalancerAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyLoadBalancerAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3965,7 +3965,7 @@ impl ModifyLoadBalancerAttributesInput {
             "ModifyLoadBalancerAttributes",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput).
@@ -4041,7 +4041,7 @@ impl RegisterInstancesWithLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterInstancesWithLoadBalancer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4128,7 +4128,7 @@ impl RegisterInstancesWithLoadBalancerInput {
             "RegisterInstancesWithLoadBalancer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterInstancesWithLoadBalancerInput`](crate::input::RegisterInstancesWithLoadBalancerInput).
@@ -4207,7 +4207,7 @@ impl RemoveTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4295,7 +4295,7 @@ impl RemoveTagsInput {
             "RemoveTags",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput).
@@ -4377,7 +4377,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetLoadBalancerListenerSSLCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4464,7 +4464,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
             "SetLoadBalancerListenerSSLCertificate",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerListenerSslCertificateInput`](crate::input::SetLoadBalancerListenerSslCertificateInput).
@@ -4552,7 +4552,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetLoadBalancerPoliciesForBackendServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4639,7 +4639,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
             "SetLoadBalancerPoliciesForBackendServer",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesForBackendServerInput`](crate::input::SetLoadBalancerPoliciesForBackendServerInput).
@@ -4727,7 +4727,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetLoadBalancerPoliciesOfListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4814,7 +4814,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
             "SetLoadBalancerPoliciesOfListener",
             "elasticloadbalancing",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesOfListenerInput`](crate::input::SetLoadBalancerPoliciesOfListenerInput).

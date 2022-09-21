@@ -102,7 +102,7 @@ impl CompleteSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompleteSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -196,7 +196,7 @@ impl CompleteSnapshotInput {
             "CompleteSnapshot",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CompleteSnapshotInput`](crate::input::CompleteSnapshotInput).
@@ -274,7 +274,7 @@ impl GetSnapshotBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSnapshotBlock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -394,7 +394,7 @@ impl GetSnapshotBlockInput {
             "GetSnapshotBlock",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSnapshotBlockInput`](crate::input::GetSnapshotBlockInput).
@@ -516,7 +516,7 @@ impl ListChangedBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChangedBlocks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -638,7 +638,7 @@ impl ListChangedBlocksInput {
             "ListChangedBlocks",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListChangedBlocksInput`](crate::input::ListChangedBlocksInput).
@@ -732,7 +732,7 @@ impl ListSnapshotBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSnapshotBlocks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -848,7 +848,7 @@ impl ListSnapshotBlocksInput {
             "ListSnapshotBlocks",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksInput`](crate::input::ListSnapshotBlocksInput).
@@ -984,7 +984,7 @@ impl PutSnapshotBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSnapshotBlock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1113,7 +1113,7 @@ impl PutSnapshotBlockInput {
             "PutSnapshotBlock",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutSnapshotBlockInput`](crate::input::PutSnapshotBlockInput).
@@ -1295,7 +1295,7 @@ impl StartSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1386,7 +1386,7 @@ impl StartSnapshotInput {
             "StartSnapshot",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartSnapshotInput`](crate::input::StartSnapshotInput).

@@ -45,7 +45,7 @@ impl AcceptAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -138,7 +138,7 @@ impl AcceptAttachmentInput {
             "AcceptAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AcceptAttachmentInput`](crate::input::AcceptAttachmentInput).
@@ -230,7 +230,7 @@ impl AssociateConnectPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateConnectPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -339,7 +339,7 @@ impl AssociateConnectPeerInput {
             "AssociateConnectPeer",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateConnectPeerInput`](crate::input::AssociateConnectPeerInput).
@@ -433,7 +433,7 @@ impl AssociateCustomerGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateCustomerGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -542,7 +542,7 @@ impl AssociateCustomerGatewayInput {
             "AssociateCustomerGateway",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateCustomerGatewayInput`](crate::input::AssociateCustomerGatewayInput).
@@ -619,7 +619,7 @@ impl AssociateLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateLink,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -726,7 +726,7 @@ impl AssociateLinkInput {
             "AssociateLink",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateLinkInput`](crate::input::AssociateLinkInput).
@@ -823,7 +823,7 @@ impl AssociateTransitGatewayConnectPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateTransitGatewayConnectPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -929,7 +929,7 @@ impl AssociateTransitGatewayConnectPeerInput {
             "AssociateTransitGatewayConnectPeer",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayConnectPeerInput`](crate::input::AssociateTransitGatewayConnectPeerInput).
@@ -1062,7 +1062,7 @@ impl CreateConnectAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnectAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1155,7 +1155,7 @@ impl CreateConnectAttachmentInput {
             "CreateConnectAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateConnectAttachmentInput`](crate::input::CreateConnectAttachmentInput).
@@ -1297,7 +1297,7 @@ impl CreateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1404,7 +1404,7 @@ impl CreateConnectionInput {
             "CreateConnection",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput).
@@ -1553,7 +1553,7 @@ impl CreateConnectPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnectPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1644,7 +1644,7 @@ impl CreateConnectPeerInput {
             "CreateConnectPeer",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateConnectPeerInput`](crate::input::CreateConnectPeerInput).
@@ -1757,7 +1757,7 @@ impl CreateCoreNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCoreNetwork,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1848,7 +1848,7 @@ impl CreateCoreNetworkInput {
             "CreateCoreNetwork",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCoreNetworkInput`](crate::input::CreateCoreNetworkInput).
@@ -2032,7 +2032,7 @@ impl CreateDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2139,7 +2139,7 @@ impl CreateDeviceInput {
             "CreateDevice",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDeviceInput`](crate::input::CreateDeviceInput).
@@ -2212,7 +2212,7 @@ impl CreateGlobalNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGlobalNetwork,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2300,7 +2300,7 @@ impl CreateGlobalNetworkInput {
             "CreateGlobalNetwork",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateGlobalNetworkInput`](crate::input::CreateGlobalNetworkInput).
@@ -2442,7 +2442,7 @@ impl CreateLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLink,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2549,7 +2549,7 @@ impl CreateLinkInput {
             "CreateLink",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLinkInput`](crate::input::CreateLinkInput).
@@ -2658,7 +2658,7 @@ impl CreateSiteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSite,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2765,7 +2765,7 @@ impl CreateSiteInput {
             "CreateSite",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSiteInput`](crate::input::CreateSiteInput).
@@ -2868,7 +2868,7 @@ impl CreateSiteToSiteVpnAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSiteToSiteVpnAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2958,7 +2958,7 @@ impl CreateSiteToSiteVpnAttachmentInput {
             "CreateSiteToSiteVpnAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSiteToSiteVpnAttachmentInput`](crate::input::CreateSiteToSiteVpnAttachmentInput).
@@ -3061,7 +3061,7 @@ impl CreateTransitGatewayPeeringInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTransitGatewayPeering,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3151,7 +3151,7 @@ impl CreateTransitGatewayPeeringInput {
             "CreateTransitGatewayPeering",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPeeringInput`](crate::input::CreateTransitGatewayPeeringInput).
@@ -3256,7 +3256,7 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTransitGatewayRouteTableAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3347,7 +3347,7 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
             "CreateTransitGatewayRouteTableAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAttachmentInput`](crate::input::CreateTransitGatewayRouteTableAttachmentInput).
@@ -3478,7 +3478,7 @@ impl CreateVpcAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3569,7 +3569,7 @@ impl CreateVpcAttachmentInput {
             "CreateVpcAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVpcAttachmentInput`](crate::input::CreateVpcAttachmentInput).
@@ -3622,7 +3622,7 @@ impl DeleteAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3715,7 +3715,7 @@ impl DeleteAttachmentInput {
             "DeleteAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAttachmentInput`](crate::input::DeleteAttachmentInput).
@@ -3783,7 +3783,7 @@ impl DeleteConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3891,7 +3891,7 @@ impl DeleteConnectionInput {
             "DeleteConnection",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
@@ -3944,7 +3944,7 @@ impl DeleteConnectPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnectPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4037,7 +4037,7 @@ impl DeleteConnectPeerInput {
             "DeleteConnectPeer",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConnectPeerInput`](crate::input::DeleteConnectPeerInput).
@@ -4090,7 +4090,7 @@ impl DeleteCoreNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCoreNetwork,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4183,7 +4183,7 @@ impl DeleteCoreNetworkInput {
             "DeleteCoreNetwork",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkInput`](crate::input::DeleteCoreNetworkInput).
@@ -4250,7 +4250,7 @@ impl DeleteCoreNetworkPolicyVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCoreNetworkPolicyVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4360,7 +4360,7 @@ impl DeleteCoreNetworkPolicyVersionInput {
             "DeleteCoreNetworkPolicyVersion",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkPolicyVersionInput`](crate::input::DeleteCoreNetworkPolicyVersionInput).
@@ -4425,7 +4425,7 @@ impl DeleteDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4533,7 +4533,7 @@ impl DeleteDeviceInput {
             "DeleteDevice",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDeviceInput`](crate::input::DeleteDeviceInput).
@@ -4586,7 +4586,7 @@ impl DeleteGlobalNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGlobalNetwork,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4679,7 +4679,7 @@ impl DeleteGlobalNetworkInput {
             "DeleteGlobalNetwork",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteGlobalNetworkInput`](crate::input::DeleteGlobalNetworkInput).
@@ -4743,7 +4743,7 @@ impl DeleteLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLink,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4851,7 +4851,7 @@ impl DeleteLinkInput {
             "DeleteLink",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLinkInput`](crate::input::DeleteLinkInput).
@@ -4901,7 +4901,7 @@ impl DeletePeeringInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePeering,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4990,7 +4990,7 @@ impl DeletePeeringInput {
             "DeletePeering",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePeeringInput`](crate::input::DeletePeeringInput).
@@ -5040,7 +5040,7 @@ impl DeleteResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5133,7 +5133,7 @@ impl DeleteResourcePolicyInput {
             "DeleteResourcePolicy",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
@@ -5197,7 +5197,7 @@ impl DeleteSiteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSite,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5305,7 +5305,7 @@ impl DeleteSiteInput {
             "DeleteSite",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSiteInput`](crate::input::DeleteSiteInput).
@@ -5375,7 +5375,7 @@ impl DeregisterTransitGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterTransitGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5477,7 +5477,7 @@ impl DeregisterTransitGatewayInput {
             "DeregisterTransitGateway",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayInput`](crate::input::DeregisterTransitGatewayInput).
@@ -5560,7 +5560,7 @@ impl DescribeGlobalNetworksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalNetworks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5659,7 +5659,7 @@ impl DescribeGlobalNetworksInput {
             "DescribeGlobalNetworks",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeGlobalNetworksInput`](crate::input::DescribeGlobalNetworksInput).
@@ -5729,7 +5729,7 @@ impl DisassociateConnectPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateConnectPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5837,7 +5837,7 @@ impl DisassociateConnectPeerInput {
             "DisassociateConnectPeer",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateConnectPeerInput`](crate::input::DisassociateConnectPeerInput).
@@ -5907,7 +5907,7 @@ impl DisassociateCustomerGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateCustomerGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6009,7 +6009,7 @@ impl DisassociateCustomerGatewayInput {
             "DisassociateCustomerGateway",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateCustomerGatewayInput`](crate::input::DisassociateCustomerGatewayInput).
@@ -6086,7 +6086,7 @@ impl DisassociateLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateLink,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6193,7 +6193,7 @@ impl DisassociateLinkInput {
             "DisassociateLink",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateLinkInput`](crate::input::DisassociateLinkInput).
@@ -6266,7 +6266,7 @@ impl DisassociateTransitGatewayConnectPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateTransitGatewayConnectPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6369,7 +6369,7 @@ impl DisassociateTransitGatewayConnectPeerInput {
             "DisassociateTransitGatewayConnectPeer",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayConnectPeerInput`](crate::input::DisassociateTransitGatewayConnectPeerInput).
@@ -6436,7 +6436,7 @@ impl ExecuteCoreNetworkChangeSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteCoreNetworkChangeSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6540,7 +6540,7 @@ impl ExecuteCoreNetworkChangeSetInput {
             "ExecuteCoreNetworkChangeSet",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExecuteCoreNetworkChangeSetInput`](crate::input::ExecuteCoreNetworkChangeSetInput).
@@ -6593,7 +6593,7 @@ impl GetConnectAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnectAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6686,7 +6686,7 @@ impl GetConnectAttachmentInput {
             "GetConnectAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetConnectAttachmentInput`](crate::input::GetConnectAttachmentInput).
@@ -6796,7 +6796,7 @@ impl GetConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnections,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6917,7 +6917,7 @@ impl GetConnectionsInput {
             "GetConnections",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetConnectionsInput`](crate::input::GetConnectionsInput).
@@ -6970,7 +6970,7 @@ impl GetConnectPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnectPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7063,7 +7063,7 @@ impl GetConnectPeerInput {
             "GetConnectPeer",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetConnectPeerInput`](crate::input::GetConnectPeerInput).
@@ -7163,7 +7163,7 @@ impl GetConnectPeerAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnectPeerAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7281,7 +7281,7 @@ impl GetConnectPeerAssociationsInput {
             "GetConnectPeerAssociations",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetConnectPeerAssociationsInput`](crate::input::GetConnectPeerAssociationsInput).
@@ -7334,7 +7334,7 @@ impl GetCoreNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCoreNetwork,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7427,7 +7427,7 @@ impl GetCoreNetworkInput {
             "GetCoreNetwork",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkInput`](crate::input::GetCoreNetworkInput).
@@ -7518,7 +7518,7 @@ impl GetCoreNetworkChangeEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCoreNetworkChangeEvents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7645,7 +7645,7 @@ impl GetCoreNetworkChangeEventsInput {
             "GetCoreNetworkChangeEvents",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeEventsInput`](crate::input::GetCoreNetworkChangeEventsInput).
@@ -7736,7 +7736,7 @@ impl GetCoreNetworkChangeSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCoreNetworkChangeSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7863,7 +7863,7 @@ impl GetCoreNetworkChangeSetInput {
             "GetCoreNetworkChangeSet",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeSetInput`](crate::input::GetCoreNetworkChangeSetInput).
@@ -7943,7 +7943,7 @@ impl GetCoreNetworkPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCoreNetworkPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8053,7 +8053,7 @@ impl GetCoreNetworkPolicyInput {
             "GetCoreNetworkPolicy",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkPolicyInput`](crate::input::GetCoreNetworkPolicyInput).
@@ -8153,7 +8153,7 @@ impl GetCustomerGatewayAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCustomerGatewayAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8271,7 +8271,7 @@ impl GetCustomerGatewayAssociationsInput {
             "GetCustomerGatewayAssociations",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCustomerGatewayAssociationsInput`](crate::input::GetCustomerGatewayAssociationsInput).
@@ -8380,7 +8380,7 @@ impl GetDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8498,7 +8498,7 @@ impl GetDevicesInput {
             "GetDevices",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDevicesInput`](crate::input::GetDevicesInput).
@@ -8599,7 +8599,7 @@ impl GetLinkAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLinkAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8715,7 +8715,7 @@ impl GetLinkAssociationsInput {
             "GetLinkAssociations",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLinkAssociationsInput`](crate::input::GetLinkAssociationsInput).
@@ -8848,7 +8848,7 @@ impl GetLinksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLinks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8970,7 +8970,7 @@ impl GetLinksInput {
                     "GetLinks",
                     "networkmanager",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLinksInput`](crate::input::GetLinksInput).
@@ -9108,7 +9108,7 @@ impl GetNetworkResourceCountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkResourceCounts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9224,7 +9224,7 @@ impl GetNetworkResourceCountsInput {
             "GetNetworkResourceCounts",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput).
@@ -9428,7 +9428,7 @@ impl GetNetworkResourceRelationshipsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkResourceRelationships,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9568,7 +9568,7 @@ impl GetNetworkResourceRelationshipsInput {
             "GetNetworkResourceRelationships",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput).
@@ -9770,7 +9770,7 @@ impl GetNetworkResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9910,7 +9910,7 @@ impl GetNetworkResourcesInput {
             "GetNetworkResources",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput).
@@ -10154,7 +10154,7 @@ impl GetNetworkRoutesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkRoutes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10261,7 +10261,7 @@ impl GetNetworkRoutesInput {
             "GetNetworkRoutes",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput).
@@ -10463,7 +10463,7 @@ impl GetNetworkTelemetryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkTelemetry,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10603,7 +10603,7 @@ impl GetNetworkTelemetryInput {
             "GetNetworkTelemetry",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput).
@@ -10653,7 +10653,7 @@ impl GetResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourcePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10746,7 +10746,7 @@ impl GetResourcePolicyInput {
             "GetResourcePolicy",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
@@ -10814,7 +10814,7 @@ impl GetRouteAnalysisInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRouteAnalysis,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10922,7 +10922,7 @@ impl GetRouteAnalysisInput {
             "GetRouteAnalysis",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput).
@@ -11019,7 +11019,7 @@ impl GetSitesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSites,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11132,7 +11132,7 @@ impl GetSitesInput {
                     "GetSites",
                     "networkmanager",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSitesInput`](crate::input::GetSitesInput).
@@ -11187,7 +11187,7 @@ impl GetSiteToSiteVpnAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSiteToSiteVpnAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11280,7 +11280,7 @@ impl GetSiteToSiteVpnAttachmentInput {
             "GetSiteToSiteVpnAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSiteToSiteVpnAttachmentInput`](crate::input::GetSiteToSiteVpnAttachmentInput).
@@ -11386,7 +11386,7 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTransitGatewayConnectPeerAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11504,7 +11504,7 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
             "GetTransitGatewayConnectPeerAssociations",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayConnectPeerAssociationsInput`](crate::input::GetTransitGatewayConnectPeerAssociationsInput).
@@ -11556,7 +11556,7 @@ impl GetTransitGatewayPeeringInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTransitGatewayPeering,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11649,7 +11649,7 @@ impl GetTransitGatewayPeeringInput {
             "GetTransitGatewayPeering",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayPeeringInput`](crate::input::GetTransitGatewayPeeringInput).
@@ -11749,7 +11749,7 @@ impl GetTransitGatewayRegistrationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTransitGatewayRegistrations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11867,7 +11867,7 @@ impl GetTransitGatewayRegistrationsInput {
             "GetTransitGatewayRegistrations",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRegistrationsInput`](crate::input::GetTransitGatewayRegistrationsInput).
@@ -11922,7 +11922,7 @@ impl GetTransitGatewayRouteTableAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTransitGatewayRouteTableAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12015,7 +12015,7 @@ impl GetTransitGatewayRouteTableAttachmentInput {
             "GetTransitGatewayRouteTableAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRouteTableAttachmentInput`](crate::input::GetTransitGatewayRouteTableAttachmentInput).
@@ -12068,7 +12068,7 @@ impl GetVpcAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVpcAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12161,7 +12161,7 @@ impl GetVpcAttachmentInput {
             "GetVpcAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetVpcAttachmentInput`](crate::input::GetVpcAttachmentInput).
@@ -12283,7 +12283,7 @@ impl ListAttachmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAttachments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12395,7 +12395,7 @@ impl ListAttachmentsInput {
             "ListAttachments",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAttachmentsInput`](crate::input::ListAttachmentsInput).
@@ -12487,7 +12487,7 @@ impl ListConnectPeersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConnectPeers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12590,7 +12590,7 @@ impl ListConnectPeersInput {
             "ListConnectPeers",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListConnectPeersInput`](crate::input::ListConnectPeersInput).
@@ -12669,7 +12669,7 @@ impl ListCoreNetworkPolicyVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCoreNetworkPolicyVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12779,7 +12779,7 @@ impl ListCoreNetworkPolicyVersionsInput {
             "ListCoreNetworkPolicyVersions",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCoreNetworkPolicyVersionsInput`](crate::input::ListCoreNetworkPolicyVersionsInput).
@@ -12841,7 +12841,7 @@ impl ListCoreNetworksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCoreNetworks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12932,7 +12932,7 @@ impl ListCoreNetworksInput {
             "ListCoreNetworks",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCoreNetworksInput`](crate::input::ListCoreNetworksInput).
@@ -12996,7 +12996,7 @@ impl ListOrganizationServiceAccessStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizationServiceAccessStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13087,7 +13087,7 @@ impl ListOrganizationServiceAccessStatusInput {
             "ListOrganizationServiceAccessStatus",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListOrganizationServiceAccessStatusInput`](crate::input::ListOrganizationServiceAccessStatusInput).
@@ -13206,7 +13206,7 @@ impl ListPeeringsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPeerings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13318,7 +13318,7 @@ impl ListPeeringsInput {
             "ListPeerings",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPeeringsInput`](crate::input::ListPeeringsInput).
@@ -13368,7 +13368,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13457,7 +13457,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -13561,7 +13561,7 @@ impl PutCoreNetworkPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutCoreNetworkPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13673,7 +13673,7 @@ impl PutCoreNetworkPolicyInput {
             "PutCoreNetworkPolicy",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutCoreNetworkPolicyInput`](crate::input::PutCoreNetworkPolicyInput).
@@ -13738,7 +13738,7 @@ impl PutResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourcePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13845,7 +13845,7 @@ impl PutResourcePolicyInput {
             "PutResourcePolicy",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
@@ -13913,7 +13913,7 @@ impl RegisterTransitGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterTransitGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14022,7 +14022,7 @@ impl RegisterTransitGatewayInput {
             "RegisterTransitGateway",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterTransitGatewayInput`](crate::input::RegisterTransitGatewayInput).
@@ -14075,7 +14075,7 @@ impl RejectAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14168,7 +14168,7 @@ impl RejectAttachmentInput {
             "RejectAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RejectAttachmentInput`](crate::input::RejectAttachmentInput).
@@ -14235,7 +14235,7 @@ impl RestoreCoreNetworkPolicyVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreCoreNetworkPolicyVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14339,7 +14339,7 @@ impl RestoreCoreNetworkPolicyVersionInput {
             "RestoreCoreNetworkPolicyVersion",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RestoreCoreNetworkPolicyVersionInput`](crate::input::RestoreCoreNetworkPolicyVersionInput).
@@ -14391,7 +14391,7 @@ impl StartOrganizationServiceAccessUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartOrganizationServiceAccessUpdate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14478,7 +14478,7 @@ impl StartOrganizationServiceAccessUpdateInput {
             "StartOrganizationServiceAccessUpdate",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartOrganizationServiceAccessUpdateInput`](crate::input::StartOrganizationServiceAccessUpdateInput).
@@ -14593,7 +14593,7 @@ impl StartRouteAnalysisInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartRouteAnalysis,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14700,7 +14700,7 @@ impl StartRouteAnalysisInput {
             "StartRouteAnalysis",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput).
@@ -14771,7 +14771,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14874,7 +14874,7 @@ impl TagResourceInput {
             "TagResource",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -14945,7 +14945,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15047,7 +15047,7 @@ impl UntagResourceInput {
             "UntagResource",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -15156,7 +15156,7 @@ impl UpdateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15278,7 +15278,7 @@ impl UpdateConnectionInput {
             "UpdateConnection",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::input::UpdateConnectionInput).
@@ -15343,7 +15343,7 @@ impl UpdateCoreNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCoreNetwork,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15450,7 +15450,7 @@ impl UpdateCoreNetworkInput {
             "UpdateCoreNetwork",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCoreNetworkInput`](crate::input::UpdateCoreNetworkInput).
@@ -15625,7 +15625,7 @@ impl UpdateDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15747,7 +15747,7 @@ impl UpdateDeviceInput {
             "UpdateDevice",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDeviceInput`](crate::input::UpdateDeviceInput).
@@ -15814,7 +15814,7 @@ impl UpdateGlobalNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGlobalNetwork,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15921,7 +15921,7 @@ impl UpdateGlobalNetworkInput {
             "UpdateGlobalNetwork",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateGlobalNetworkInput`](crate::input::UpdateGlobalNetworkInput).
@@ -16042,7 +16042,7 @@ impl UpdateLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLink,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16164,7 +16164,7 @@ impl UpdateLinkInput {
             "UpdateLink",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateLinkInput`](crate::input::UpdateLinkInput).
@@ -16260,7 +16260,7 @@ impl UpdateNetworkResourceMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNetworkResourceMetadata,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16381,7 +16381,7 @@ impl UpdateNetworkResourceMetadataInput {
             "UpdateNetworkResourceMetadata",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput).
@@ -16481,7 +16481,7 @@ impl UpdateSiteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSite,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16603,7 +16603,7 @@ impl UpdateSiteInput {
             "UpdateSite",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateSiteInput`](crate::input::UpdateSiteInput).
@@ -16710,7 +16710,7 @@ impl UpdateVpcAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVpcAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16817,7 +16817,7 @@ impl UpdateVpcAttachmentInput {
             "UpdateVpcAttachment",
             "networkmanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateVpcAttachmentInput`](crate::input::UpdateVpcAttachmentInput).

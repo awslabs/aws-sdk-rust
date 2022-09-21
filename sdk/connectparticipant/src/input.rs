@@ -80,7 +80,7 @@ impl CompleteAttachmentUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompleteAttachmentUpload,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -176,7 +176,7 @@ impl CompleteAttachmentUploadInput {
             "CompleteAttachmentUpload",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CompleteAttachmentUploadInput`](crate::input::CompleteAttachmentUploadInput).
@@ -266,7 +266,7 @@ impl CreateParticipantConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateParticipantConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -355,7 +355,7 @@ impl CreateParticipantConnectionInput {
             "CreateParticipantConnection",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateParticipantConnectionInput`](crate::input::CreateParticipantConnectionInput).
@@ -420,7 +420,7 @@ impl DisconnectParticipantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisconnectParticipant,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -515,7 +515,7 @@ impl DisconnectParticipantInput {
             "DisconnectParticipant",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisconnectParticipantInput`](crate::input::DisconnectParticipantInput).
@@ -583,7 +583,7 @@ impl GetAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAttachment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -672,7 +672,7 @@ impl GetAttachmentInput {
             "GetAttachment",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAttachmentInput`](crate::input::GetAttachmentInput).
@@ -803,7 +803,7 @@ impl GetTranscriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTranscript,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -892,7 +892,7 @@ impl GetTranscriptInput {
             "GetTranscript",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTranscriptInput`](crate::input::GetTranscriptInput).
@@ -988,7 +988,7 @@ impl SendEventInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendEvent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1078,7 +1078,7 @@ impl SendEventInput {
                     "SendEvent",
                     "connectparticipant",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput).
@@ -1167,7 +1167,7 @@ impl SendMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendMessage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1259,7 +1259,7 @@ impl SendMessageInput {
             "SendMessage",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendMessageInput`](crate::input::SendMessageInput).
@@ -1363,7 +1363,7 @@ impl StartAttachmentUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAttachmentUpload,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1459,7 +1459,7 @@ impl StartAttachmentUploadInput {
             "StartAttachmentUpload",
             "connectparticipant",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartAttachmentUploadInput`](crate::input::StartAttachmentUploadInput).

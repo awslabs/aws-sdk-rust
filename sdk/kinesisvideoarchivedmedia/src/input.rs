@@ -72,7 +72,7 @@ impl GetClipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetClip,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -158,7 +158,7 @@ impl GetClipInput {
                     "GetClip",
                     "kinesisvideoarchivedmedia",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetClipInput`](crate::input::GetClipInput).
@@ -359,7 +359,7 @@ impl GetDashStreamingSessionUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDASHStreamingSessionURL,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -446,7 +446,7 @@ impl GetDashStreamingSessionUrlInput {
             "GetDASHStreamingSessionURL",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDashStreamingSessionUrlInput`](crate::input::GetDashStreamingSessionUrlInput).
@@ -674,7 +674,7 @@ impl GetHlsStreamingSessionUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHLSStreamingSessionURL,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -761,7 +761,7 @@ impl GetHlsStreamingSessionUrlInput {
             "GetHLSStreamingSessionURL",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHlsStreamingSessionUrlInput`](crate::input::GetHlsStreamingSessionUrlInput).
@@ -976,7 +976,7 @@ impl GetImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImages,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1062,7 +1062,7 @@ impl GetImagesInput {
                     "GetImages",
                     "kinesisvideoarchivedmedia",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetImagesInput`](crate::input::GetImagesInput).
@@ -1147,7 +1147,7 @@ impl GetMediaForFragmentListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMediaForFragmentList,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1237,7 +1237,7 @@ impl GetMediaForFragmentListInput {
             "GetMediaForFragmentList",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListInput`](crate::input::GetMediaForFragmentListInput).
@@ -1338,7 +1338,7 @@ impl ListFragmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFragments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1426,7 +1426,7 @@ impl ListFragmentsInput {
             "ListFragments",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFragmentsInput`](crate::input::ListFragmentsInput).

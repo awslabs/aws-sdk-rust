@@ -68,7 +68,7 @@ impl CreateHomeRegionControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHomeRegionControl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -163,7 +163,7 @@ impl CreateHomeRegionControlInput {
             "CreateHomeRegionControl",
             "migrationhubconfig",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateHomeRegionControlInput`](crate::input::CreateHomeRegionControlInput).
@@ -263,7 +263,7 @@ impl DescribeHomeRegionControlsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHomeRegionControls,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -355,7 +355,7 @@ impl DescribeHomeRegionControlsInput {
             "DescribeHomeRegionControls",
             "migrationhubconfig",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeHomeRegionControlsInput`](crate::input::DescribeHomeRegionControlsInput).
@@ -391,7 +391,7 @@ impl GetHomeRegionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHomeRegion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -477,7 +477,7 @@ impl GetHomeRegionInput {
             "GetHomeRegion",
             "migrationhubconfig",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHomeRegionInput`](crate::input::GetHomeRegionInput).

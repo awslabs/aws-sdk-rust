@@ -145,7 +145,7 @@ impl BatchExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -235,7 +235,7 @@ impl BatchExecuteStatementInput {
             "BatchExecuteStatement",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
@@ -321,7 +321,7 @@ impl BeginTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BeginTransaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -409,7 +409,7 @@ impl BeginTransactionInput {
             "BeginTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BeginTransactionInput`](crate::input::BeginTransactionInput).
@@ -486,7 +486,7 @@ impl CommitTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CommitTransaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -574,7 +574,7 @@ impl CommitTransactionInput {
             "CommitTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::input::CommitTransactionInput).
@@ -684,7 +684,7 @@ impl ExecuteSqlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteSql,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -772,7 +772,7 @@ impl ExecuteSqlInput {
             "ExecuteSql",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExecuteSqlInput`](crate::input::ExecuteSqlInput).
@@ -978,7 +978,7 @@ impl ExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1066,7 +1066,7 @@ impl ExecuteStatementInput {
             "ExecuteStatement",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
@@ -1143,7 +1143,7 @@ impl RollbackTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RollbackTransaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1231,7 +1231,7 @@ impl RollbackTransactionInput {
             "RollbackTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RollbackTransactionInput`](crate::input::RollbackTransactionInput).

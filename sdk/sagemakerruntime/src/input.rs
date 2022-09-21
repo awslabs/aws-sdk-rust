@@ -158,7 +158,7 @@ impl InvokeEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InvokeEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -266,7 +266,7 @@ impl InvokeEndpointInput {
             "InvokeEndpoint",
             "sagemakerruntime",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InvokeEndpointInput`](crate::input::InvokeEndpointInput).
@@ -401,7 +401,7 @@ impl InvokeEndpointAsyncInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InvokeEndpointAsync,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -495,7 +495,7 @@ impl InvokeEndpointAsyncInput {
             "InvokeEndpointAsync",
             "sagemakerruntime",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput).

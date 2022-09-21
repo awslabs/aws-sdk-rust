@@ -90,7 +90,7 @@ impl CreateAppInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -181,7 +181,7 @@ impl CreateAppInstanceInput {
             "CreateAppInstance",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceInput`](crate::input::CreateAppInstanceInput).
@@ -249,7 +249,7 @@ impl CreateAppInstanceAdminInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppInstanceAdmin,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -358,7 +358,7 @@ impl CreateAppInstanceAdminInput {
             "CreateAppInstanceAdmin",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceAdminInput`](crate::input::CreateAppInstanceAdminInput).
@@ -486,7 +486,7 @@ impl CreateAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppInstanceUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -579,7 +579,7 @@ impl CreateAppInstanceUserInput {
             "CreateAppInstanceUser",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceUserInput`](crate::input::CreateAppInstanceUserInput).
@@ -632,7 +632,7 @@ impl DeleteAppInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -725,7 +725,7 @@ impl DeleteAppInstanceInput {
             "DeleteAppInstance",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceInput`](crate::input::DeleteAppInstanceInput).
@@ -793,7 +793,7 @@ impl DeleteAppInstanceAdminInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppInstanceAdmin,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -901,7 +901,7 @@ impl DeleteAppInstanceAdminInput {
             "DeleteAppInstanceAdmin",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceAdminInput`](crate::input::DeleteAppInstanceAdminInput).
@@ -954,7 +954,7 @@ impl DeleteAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppInstanceUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1047,7 +1047,7 @@ impl DeleteAppInstanceUserInput {
             "DeleteAppInstanceUser",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceUserInput`](crate::input::DeleteAppInstanceUserInput).
@@ -1114,7 +1114,7 @@ impl DeregisterAppInstanceUserEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterAppInstanceUserEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1222,7 +1222,7 @@ impl DeregisterAppInstanceUserEndpointInput {
             "DeregisterAppInstanceUserEndpoint",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput).
@@ -1275,7 +1275,7 @@ impl DescribeAppInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1368,7 +1368,7 @@ impl DescribeAppInstanceInput {
             "DescribeAppInstance",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceInput`](crate::input::DescribeAppInstanceInput).
@@ -1438,7 +1438,7 @@ impl DescribeAppInstanceAdminInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppInstanceAdmin,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1546,7 +1546,7 @@ impl DescribeAppInstanceAdminInput {
             "DescribeAppInstanceAdmin",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceAdminInput`](crate::input::DescribeAppInstanceAdminInput).
@@ -1601,7 +1601,7 @@ impl DescribeAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppInstanceUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1694,7 +1694,7 @@ impl DescribeAppInstanceUserInput {
             "DescribeAppInstanceUser",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserInput`](crate::input::DescribeAppInstanceUserInput).
@@ -1761,7 +1761,7 @@ impl DescribeAppInstanceUserEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppInstanceUserEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1869,7 +1869,7 @@ impl DescribeAppInstanceUserEndpointInput {
             "DescribeAppInstanceUserEndpoint",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput).
@@ -1924,7 +1924,7 @@ impl GetAppInstanceRetentionSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppInstanceRetentionSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2017,7 +2017,7 @@ impl GetAppInstanceRetentionSettingsInput {
             "GetAppInstanceRetentionSettings",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAppInstanceRetentionSettingsInput`](crate::input::GetAppInstanceRetentionSettingsInput).
@@ -2094,7 +2094,7 @@ impl ListAppInstanceAdminsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppInstanceAdmins,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2204,7 +2204,7 @@ impl ListAppInstanceAdminsInput {
             "ListAppInstanceAdmins",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput).
@@ -2266,7 +2266,7 @@ impl ListAppInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppInstances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2357,7 +2357,7 @@ impl ListAppInstancesInput {
             "ListAppInstances",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppInstancesInput`](crate::input::ListAppInstancesInput).
@@ -2436,7 +2436,7 @@ impl ListAppInstanceUserEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppInstanceUserEndpoints,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2546,7 +2546,7 @@ impl ListAppInstanceUserEndpointsInput {
             "ListAppInstanceUserEndpoints",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput).
@@ -2623,7 +2623,7 @@ impl ListAppInstanceUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppInstanceUsers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2720,7 +2720,7 @@ impl ListAppInstanceUsersInput {
             "ListAppInstanceUsers",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput).
@@ -2770,7 +2770,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2855,7 +2855,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -2929,7 +2929,7 @@ impl PutAppInstanceRetentionSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppInstanceRetentionSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3035,7 +3035,7 @@ impl PutAppInstanceRetentionSettingsInput {
             "PutAppInstanceRetentionSettings",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutAppInstanceRetentionSettingsInput`](crate::input::PutAppInstanceRetentionSettingsInput).
@@ -3186,7 +3186,7 @@ impl RegisterAppInstanceUserEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterAppInstanceUserEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3295,7 +3295,7 @@ impl RegisterAppInstanceUserEndpointInput {
             "RegisterAppInstanceUserEndpoint",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput).
@@ -3366,7 +3366,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3463,7 +3463,7 @@ impl TagResourceInput {
             "TagResource",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -3534,7 +3534,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3631,7 +3631,7 @@ impl UntagResourceInput {
             "UntagResource",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -3708,7 +3708,7 @@ impl UpdateAppInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAppInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3815,7 +3815,7 @@ impl UpdateAppInstanceInput {
             "UpdateAppInstance",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceInput`](crate::input::UpdateAppInstanceInput).
@@ -3892,7 +3892,7 @@ impl UpdateAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAppInstanceUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4001,7 +4001,7 @@ impl UpdateAppInstanceUserInput {
             "UpdateAppInstanceUser",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput).
@@ -4095,7 +4095,7 @@ impl UpdateAppInstanceUserEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAppInstanceUserEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4216,7 +4216,7 @@ impl UpdateAppInstanceUserEndpointInput {
             "UpdateAppInstanceUserEndpoint",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput).

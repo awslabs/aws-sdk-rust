@@ -94,7 +94,7 @@ use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::response::ParseHttpResponse;
 pub use aws_smithy_http::result::{SdkError, SdkSuccess};
-use aws_smithy_http::retry::ClassifyResponse;
+use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_http_tower::dispatch::DispatchLayer;
 use aws_smithy_http_tower::parse_response::ParseResponseLayer;
 use aws_smithy_types::retry::ProvideErrorKind;

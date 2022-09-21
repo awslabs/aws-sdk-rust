@@ -128,7 +128,7 @@ impl CreateAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -244,7 +244,7 @@ impl CreateAccessPointInput {
             "CreateAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
@@ -323,7 +323,7 @@ impl CreateAccessPointForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPointForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -444,7 +444,7 @@ impl CreateAccessPointForObjectLambdaInput {
             "CreateAccessPointForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaInput`](crate::input::CreateAccessPointForObjectLambdaInput).
@@ -662,7 +662,7 @@ impl CreateBucketInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBucket,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -783,7 +783,7 @@ impl CreateBucketInput {
             "CreateBucket",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateBucketInput`](crate::input::CreateBucketInput).
@@ -973,7 +973,7 @@ impl CreateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1075,7 +1075,7 @@ impl CreateJobInput {
                     "CreateJob",
                     "s3control",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput).
@@ -1154,7 +1154,7 @@ impl CreateMultiRegionAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMultiRegionAccessPoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1274,7 +1274,7 @@ impl CreateMultiRegionAccessPointInput {
             "CreateMultiRegionAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput).
@@ -1360,7 +1360,7 @@ impl DeleteAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1462,7 +1462,7 @@ impl DeleteAccessPointInput {
             "DeleteAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput).
@@ -1526,7 +1526,7 @@ impl DeleteAccessPointForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1634,7 +1634,7 @@ impl DeleteAccessPointForObjectLambdaInput {
             "DeleteAccessPointForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaInput`](crate::input::DeleteAccessPointForObjectLambdaInput).
@@ -1722,7 +1722,7 @@ impl DeleteAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1825,7 +1825,7 @@ impl DeleteAccessPointPolicyInput {
             "DeleteAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyInput`](crate::input::DeleteAccessPointPolicyInput).
@@ -1889,7 +1889,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointPolicyForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1998,7 +1998,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
             "DeleteAccessPointPolicyForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::input::DeleteAccessPointPolicyForObjectLambdaInput).
@@ -2084,7 +2084,7 @@ impl DeleteBucketInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucket,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2186,7 +2186,7 @@ impl DeleteBucketInput {
             "DeleteBucket",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBucketInput`](crate::input::DeleteBucketInput).
@@ -2274,7 +2274,7 @@ impl DeleteBucketLifecycleConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketLifecycleConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2382,7 +2382,7 @@ impl DeleteBucketLifecycleConfigurationInput {
             "DeleteBucketLifecycleConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationInput`](crate::input::DeleteBucketLifecycleConfigurationInput).
@@ -2468,7 +2468,7 @@ impl DeleteBucketPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2570,7 +2570,7 @@ impl DeleteBucketPolicyInput {
             "DeleteBucketPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput).
@@ -2656,7 +2656,7 @@ impl DeleteBucketTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2762,7 +2762,7 @@ impl DeleteBucketTaggingInput {
             "DeleteBucketTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput).
@@ -2824,7 +2824,7 @@ impl DeleteJobTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJobTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2926,7 +2926,7 @@ impl DeleteJobTaggingInput {
             "DeleteJobTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteJobTaggingInput`](crate::input::DeleteJobTaggingInput).
@@ -3005,7 +3005,7 @@ impl DeleteMultiRegionAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMultiRegionAccessPoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3125,7 +3125,7 @@ impl DeleteMultiRegionAccessPointInput {
             "DeleteMultiRegionAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput).
@@ -3177,7 +3177,7 @@ impl DeletePublicAccessBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePublicAccessBlock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3266,7 +3266,7 @@ impl DeletePublicAccessBlockInput {
             "DeletePublicAccessBlock",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockInput`](crate::input::DeletePublicAccessBlockInput).
@@ -3330,7 +3330,7 @@ impl DeleteStorageLensConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStorageLensConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3438,7 +3438,7 @@ impl DeleteStorageLensConfigurationInput {
             "DeleteStorageLensConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationInput`](crate::input::DeleteStorageLensConfigurationInput).
@@ -3502,7 +3502,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStorageLensConfigurationTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3611,7 +3611,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
             "DeleteStorageLensConfigurationTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingInput`](crate::input::DeleteStorageLensConfigurationTaggingInput).
@@ -3673,7 +3673,7 @@ impl DescribeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3775,7 +3775,7 @@ impl DescribeJobInput {
             "DescribeJob",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeJobInput`](crate::input::DescribeJobInput).
@@ -3842,7 +3842,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMultiRegionAccessPointOperation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3965,7 +3965,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
             "DescribeMultiRegionAccessPointOperation",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput).
@@ -4051,7 +4051,7 @@ impl GetAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4153,7 +4153,7 @@ impl GetAccessPointInput {
             "GetAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessPointInput`](crate::input::GetAccessPointInput).
@@ -4219,7 +4219,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointConfigurationForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4325,7 +4325,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
             "GetAccessPointConfigurationForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaInput`](crate::input::GetAccessPointConfigurationForObjectLambdaInput).
@@ -4390,7 +4390,7 @@ impl GetAccessPointForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4498,7 +4498,7 @@ impl GetAccessPointForObjectLambdaInput {
             "GetAccessPointForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaInput`](crate::input::GetAccessPointForObjectLambdaInput).
@@ -4584,7 +4584,7 @@ impl GetAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4687,7 +4687,7 @@ impl GetAccessPointPolicyInput {
             "GetAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyInput`](crate::input::GetAccessPointPolicyInput).
@@ -4751,7 +4751,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4860,7 +4860,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
             "GetAccessPointPolicyForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaInput`](crate::input::GetAccessPointPolicyForObjectLambdaInput).
@@ -4924,7 +4924,7 @@ impl GetAccessPointPolicyStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5031,7 +5031,7 @@ impl GetAccessPointPolicyStatusInput {
             "GetAccessPointPolicyStatus",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusInput`](crate::input::GetAccessPointPolicyStatusInput).
@@ -5097,7 +5097,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyStatusForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5203,7 +5203,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
             "GetAccessPointPolicyStatusForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaInput`](crate::input::GetAccessPointPolicyStatusForObjectLambdaInput).
@@ -5289,7 +5289,7 @@ impl GetBucketInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucket,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5389,7 +5389,7 @@ impl GetBucketInput {
                     "GetBucket",
                     "s3control",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetBucketInput`](crate::input::GetBucketInput).
@@ -5477,7 +5477,7 @@ impl GetBucketLifecycleConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucketLifecycleConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5585,7 +5585,7 @@ impl GetBucketLifecycleConfigurationInput {
             "GetBucketLifecycleConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationInput`](crate::input::GetBucketLifecycleConfigurationInput).
@@ -5671,7 +5671,7 @@ impl GetBucketPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucketPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5773,7 +5773,7 @@ impl GetBucketPolicyInput {
             "GetBucketPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput).
@@ -5859,7 +5859,7 @@ impl GetBucketTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucketTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5965,7 +5965,7 @@ impl GetBucketTaggingInput {
             "GetBucketTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput).
@@ -6027,7 +6027,7 @@ impl GetJobTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6129,7 +6129,7 @@ impl GetJobTaggingInput {
             "GetJobTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetJobTaggingInput`](crate::input::GetJobTaggingInput).
@@ -6193,7 +6193,7 @@ impl GetMultiRegionAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6310,7 +6310,7 @@ impl GetMultiRegionAccessPointInput {
             "GetMultiRegionAccessPoint",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput).
@@ -6374,7 +6374,7 @@ impl GetMultiRegionAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPointPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6496,7 +6496,7 @@ impl GetMultiRegionAccessPointPolicyInput {
             "GetMultiRegionAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput).
@@ -6560,7 +6560,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPointPolicyStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6683,7 +6683,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
             "GetMultiRegionAccessPointPolicyStatus",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput).
@@ -6733,7 +6733,7 @@ impl GetPublicAccessBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPublicAccessBlock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6822,7 +6822,7 @@ impl GetPublicAccessBlockInput {
             "GetPublicAccessBlock",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput).
@@ -6886,7 +6886,7 @@ impl GetStorageLensConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStorageLensConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6993,7 +6993,7 @@ impl GetStorageLensConfigurationInput {
             "GetStorageLensConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationInput`](crate::input::GetStorageLensConfigurationInput).
@@ -7057,7 +7057,7 @@ impl GetStorageLensConfigurationTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStorageLensConfigurationTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7166,7 +7166,7 @@ impl GetStorageLensConfigurationTaggingInput {
             "GetStorageLensConfigurationTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingInput`](crate::input::GetStorageLensConfigurationTaggingInput).
@@ -7276,7 +7276,7 @@ impl ListAccessPointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPoints,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7383,7 +7383,7 @@ impl ListAccessPointsInput {
             "ListAccessPoints",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAccessPointsInput`](crate::input::ListAccessPointsInput).
@@ -7459,7 +7459,7 @@ impl ListAccessPointsForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPointsForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7566,7 +7566,7 @@ impl ListAccessPointsForObjectLambdaInput {
             "ListAccessPointsForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaInput`](crate::input::ListAccessPointsForObjectLambdaInput).
@@ -7660,7 +7660,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7770,7 +7770,7 @@ impl ListJobsInput {
                     "ListJobs",
                     "s3control",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput).
@@ -7846,7 +7846,7 @@ impl ListMultiRegionAccessPointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMultiRegionAccessPoints,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7965,7 +7965,7 @@ impl ListMultiRegionAccessPointsInput {
             "ListMultiRegionAccessPoints",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput).
@@ -8055,7 +8055,7 @@ impl ListRegionalBucketsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRegionalBuckets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8159,7 +8159,7 @@ impl ListRegionalBucketsInput {
             "ListRegionalBuckets",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRegionalBucketsInput`](crate::input::ListRegionalBucketsInput).
@@ -8223,7 +8223,7 @@ impl ListStorageLensConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStorageLensConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8323,7 +8323,7 @@ impl ListStorageLensConfigurationsInput {
             "ListStorageLensConfigurations",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsInput`](crate::input::ListStorageLensConfigurationsInput).
@@ -8404,7 +8404,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointConfigurationForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8523,7 +8523,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
             "PutAccessPointConfigurationForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaInput`](crate::input::PutAccessPointConfigurationForObjectLambdaInput).
@@ -8622,7 +8622,7 @@ impl PutAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8741,7 +8741,7 @@ impl PutAccessPointPolicyInput {
             "PutAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyInput`](crate::input::PutAccessPointPolicyInput).
@@ -8817,7 +8817,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointPolicyForObjectLambda,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8939,7 +8939,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
             "PutAccessPointPolicyForObjectLambda",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaInput`](crate::input::PutAccessPointPolicyForObjectLambdaInput).
@@ -9022,7 +9022,7 @@ impl PutBucketLifecycleConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutBucketLifecycleConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9160,7 +9160,7 @@ impl PutBucketLifecycleConfigurationInput {
             "PutBucketLifecycleConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationInput`](crate::input::PutBucketLifecycleConfigurationInput).
@@ -9279,7 +9279,7 @@ impl PutBucketPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutBucketPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9409,7 +9409,7 @@ impl PutBucketPolicyInput {
             "PutBucketPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput).
@@ -9507,7 +9507,7 @@ impl PutBucketTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutBucketTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9641,7 +9641,7 @@ impl PutBucketTaggingInput {
             "PutBucketTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput).
@@ -9724,7 +9724,7 @@ impl PutJobTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutJobTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9840,7 +9840,7 @@ impl PutJobTaggingInput {
             "PutJobTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutJobTaggingInput`](crate::input::PutJobTaggingInput).
@@ -9922,7 +9922,7 @@ impl PutMultiRegionAccessPointPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutMultiRegionAccessPointPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10042,7 +10042,7 @@ impl PutMultiRegionAccessPointPolicyInput {
             "PutMultiRegionAccessPointPolicy",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput).
@@ -10111,7 +10111,7 @@ impl PutPublicAccessBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPublicAccessBlock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10216,7 +10216,7 @@ impl PutPublicAccessBlockInput {
             "PutPublicAccessBlock",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput).
@@ -10324,7 +10324,7 @@ impl PutStorageLensConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutStorageLensConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10444,7 +10444,7 @@ impl PutStorageLensConfigurationInput {
             "PutStorageLensConfiguration",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationInput`](crate::input::PutStorageLensConfigurationInput).
@@ -10533,7 +10533,7 @@ impl PutStorageLensConfigurationTaggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutStorageLensConfigurationTagging,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10655,7 +10655,7 @@ impl PutStorageLensConfigurationTaggingInput {
             "PutStorageLensConfigurationTagging",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingInput`](crate::input::PutStorageLensConfigurationTaggingInput).
@@ -10729,7 +10729,7 @@ impl UpdateJobPriorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobPriority,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10845,7 +10845,7 @@ impl UpdateJobPriorityInput {
             "UpdateJobPriority",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateJobPriorityInput`](crate::input::UpdateJobPriorityInput).
@@ -10937,7 +10937,7 @@ impl UpdateJobStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11059,7 +11059,7 @@ impl UpdateJobStatusInput {
             "UpdateJobStatus",
             "s3control",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateJobStatusInput`](crate::input::UpdateJobStatusInput).

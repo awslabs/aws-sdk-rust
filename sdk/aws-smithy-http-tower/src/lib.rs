@@ -62,6 +62,7 @@ mod tests {
     use aws_smithy_http::operation::{Operation, Request};
     use aws_smithy_http::response::ParseStrictResponse;
     use aws_smithy_http::result::ConnectorError;
+    use aws_smithy_http::retry::DefaultResponseRetryClassifier;
     use bytes::Bytes;
     use http::Response;
     use std::convert::{Infallible, TryInto};
@@ -102,7 +103,10 @@ mod tests {
         });
 
         let mut svc = ServiceBuilder::new()
-            .layer(ParseResponseLayer::<TestParseResponse, ()>::new())
+            .layer(ParseResponseLayer::<
+                TestParseResponse,
+                DefaultResponseRetryClassifier,
+            >::new())
             .layer(MapRequestLayer::for_mapper(AddHeader))
             .layer(DispatchLayer)
             .service(http_layer);

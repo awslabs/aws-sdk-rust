@@ -42,7 +42,7 @@ impl GetRawMessageContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRawMessageContent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -131,7 +131,7 @@ impl GetRawMessageContentInput {
             "GetRawMessageContent",
             "workmailmessageflow",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput).
@@ -196,7 +196,7 @@ impl PutRawMessageContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRawMessageContent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -301,7 +301,7 @@ impl PutRawMessageContentInput {
             "PutRawMessageContent",
             "workmailmessageflow",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput).

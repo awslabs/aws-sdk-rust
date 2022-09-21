@@ -152,7 +152,7 @@ impl SendCommandInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendCommand,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -245,7 +245,7 @@ impl SendCommandInput {
             "SendCommand",
             "qldbsession",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendCommandInput`](crate::input::SendCommandInput).

@@ -78,7 +78,7 @@ impl GetIceServerConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIceServerConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -166,7 +166,7 @@ impl GetIceServerConfigInput {
             "GetIceServerConfig",
             "kinesisvideosignaling",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIceServerConfigInput`](crate::input::GetIceServerConfigInput).
@@ -246,7 +246,7 @@ impl SendAlexaOfferToMasterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendAlexaOfferToMaster,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -337,7 +337,7 @@ impl SendAlexaOfferToMasterInput {
             "SendAlexaOfferToMaster",
             "kinesisvideosignaling",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterInput`](crate::input::SendAlexaOfferToMasterInput).

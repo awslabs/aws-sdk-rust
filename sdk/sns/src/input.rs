@@ -98,7 +98,7 @@ impl AddPermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddPermission,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -186,7 +186,7 @@ impl AddPermissionInput {
             "AddPermission",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddPermissionInput`](crate::input::AddPermissionInput).
@@ -238,7 +238,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckIfPhoneNumberIsOptedOut,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -325,7 +325,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
             "CheckIfPhoneNumberIsOptedOut",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CheckIfPhoneNumberIsOptedOutInput`](crate::input::CheckIfPhoneNumberIsOptedOutInput).
@@ -405,7 +405,7 @@ impl ConfirmSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmSubscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -493,7 +493,7 @@ impl ConfirmSubscriptionInput {
             "ConfirmSubscription",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmSubscriptionInput`](crate::input::ConfirmSubscriptionInput).
@@ -586,7 +586,7 @@ impl CreatePlatformApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlatformApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -676,7 +676,7 @@ impl CreatePlatformApplicationInput {
             "CreatePlatformApplication",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePlatformApplicationInput`](crate::input::CreatePlatformApplicationInput).
@@ -785,7 +785,7 @@ impl CreatePlatformEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlatformEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -875,7 +875,7 @@ impl CreatePlatformEndpointInput {
             "CreatePlatformEndpoint",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePlatformEndpointInput`](crate::input::CreatePlatformEndpointInput).
@@ -942,7 +942,7 @@ impl CreateSmsSandboxPhoneNumberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSMSSandboxPhoneNumber,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1029,7 +1029,7 @@ impl CreateSmsSandboxPhoneNumberInput {
             "CreateSMSSandboxPhoneNumber",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSmsSandboxPhoneNumberInput`](crate::input::CreateSmsSandboxPhoneNumberInput).
@@ -1177,7 +1177,7 @@ impl CreateTopicInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTopic,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1265,7 +1265,7 @@ impl CreateTopicInput {
             "CreateTopic",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTopicInput`](crate::input::CreateTopicInput).
@@ -1315,7 +1315,7 @@ impl DeleteEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1403,7 +1403,7 @@ impl DeleteEndpointInput {
             "DeleteEndpoint",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
@@ -1458,7 +1458,7 @@ impl DeletePlatformApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePlatformApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1548,7 +1548,7 @@ impl DeletePlatformApplicationInput {
             "DeletePlatformApplication",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePlatformApplicationInput`](crate::input::DeletePlatformApplicationInput).
@@ -1600,7 +1600,7 @@ impl DeleteSmsSandboxPhoneNumberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSMSSandboxPhoneNumber,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1687,7 +1687,7 @@ impl DeleteSmsSandboxPhoneNumberInput {
             "DeleteSMSSandboxPhoneNumber",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSmsSandboxPhoneNumberInput`](crate::input::DeleteSmsSandboxPhoneNumberInput).
@@ -1737,7 +1737,7 @@ impl DeleteTopicInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTopic,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1825,7 +1825,7 @@ impl DeleteTopicInput {
             "DeleteTopic",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTopicInput`](crate::input::DeleteTopicInput).
@@ -1875,7 +1875,7 @@ impl GetEndpointAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEndpointAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1965,7 +1965,7 @@ impl GetEndpointAttributesInput {
             "GetEndpointAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEndpointAttributesInput`](crate::input::GetEndpointAttributesInput).
@@ -2020,7 +2020,7 @@ impl GetPlatformApplicationAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPlatformApplicationAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2107,7 +2107,7 @@ impl GetPlatformApplicationAttributesInput {
             "GetPlatformApplicationAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPlatformApplicationAttributesInput`](crate::input::GetPlatformApplicationAttributesInput).
@@ -2170,7 +2170,7 @@ impl GetSmsAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSMSAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2258,7 +2258,7 @@ impl GetSmsAttributesInput {
             "GetSMSAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSmsAttributesInput`](crate::input::GetSmsAttributesInput).
@@ -2296,7 +2296,7 @@ impl GetSmsSandboxAccountStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSMSSandboxAccountStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2376,7 +2376,7 @@ impl GetSmsSandboxAccountStatusInput {
             "GetSMSSandboxAccountStatus",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSmsSandboxAccountStatusInput`](crate::input::GetSmsSandboxAccountStatusInput).
@@ -2431,7 +2431,7 @@ impl GetSubscriptionAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSubscriptionAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2521,7 +2521,7 @@ impl GetSubscriptionAttributesInput {
             "GetSubscriptionAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSubscriptionAttributesInput`](crate::input::GetSubscriptionAttributesInput).
@@ -2571,7 +2571,7 @@ impl GetTopicAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTopicAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2659,7 +2659,7 @@ impl GetTopicAttributesInput {
             "GetTopicAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTopicAttributesInput`](crate::input::GetTopicAttributesInput).
@@ -2726,7 +2726,7 @@ impl ListEndpointsByPlatformApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpointsByPlatformApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2813,7 +2813,7 @@ impl ListEndpointsByPlatformApplicationInput {
             "ListEndpointsByPlatformApplication",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEndpointsByPlatformApplicationInput`](crate::input::ListEndpointsByPlatformApplicationInput).
@@ -2875,7 +2875,7 @@ impl ListOriginationNumbersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOriginationNumbers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2965,7 +2965,7 @@ impl ListOriginationNumbersInput {
             "ListOriginationNumbers",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListOriginationNumbersInput`](crate::input::ListOriginationNumbersInput).
@@ -3017,7 +3017,7 @@ impl ListPhoneNumbersOptedOutInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPhoneNumbersOptedOut,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3107,7 +3107,7 @@ impl ListPhoneNumbersOptedOutInput {
             "ListPhoneNumbersOptedOut",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersOptedOutInput`](crate::input::ListPhoneNumbersOptedOutInput).
@@ -3159,7 +3159,7 @@ impl ListPlatformApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlatformApplications,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3249,7 +3249,7 @@ impl ListPlatformApplicationsInput {
             "ListPlatformApplications",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPlatformApplicationsInput`](crate::input::ListPlatformApplicationsInput).
@@ -3313,7 +3313,7 @@ impl ListSmsSandboxPhoneNumbersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSMSSandboxPhoneNumbers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3400,7 +3400,7 @@ impl ListSmsSandboxPhoneNumbersInput {
             "ListSMSSandboxPhoneNumbers",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSmsSandboxPhoneNumbersInput`](crate::input::ListSmsSandboxPhoneNumbersInput).
@@ -3450,7 +3450,7 @@ impl ListSubscriptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSubscriptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3538,7 +3538,7 @@ impl ListSubscriptionsInput {
             "ListSubscriptions",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSubscriptionsInput`](crate::input::ListSubscriptionsInput).
@@ -3602,7 +3602,7 @@ impl ListSubscriptionsByTopicInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSubscriptionsByTopic,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3692,7 +3692,7 @@ impl ListSubscriptionsByTopicInput {
             "ListSubscriptionsByTopic",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSubscriptionsByTopicInput`](crate::input::ListSubscriptionsByTopicInput).
@@ -3742,7 +3742,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3832,7 +3832,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -3881,7 +3881,7 @@ impl ListTopicsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTopics,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3969,7 +3969,7 @@ impl ListTopicsInput {
             "ListTopics",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTopicsInput`](crate::input::ListTopicsInput).
@@ -4019,7 +4019,7 @@ impl OptInPhoneNumberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::OptInPhoneNumber,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4107,7 +4107,7 @@ impl OptInPhoneNumberInput {
             "OptInPhoneNumber",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`OptInPhoneNumberInput`](crate::input::OptInPhoneNumberInput).
@@ -4340,7 +4340,7 @@ impl PublishInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Publish,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4423,7 +4423,7 @@ impl PublishInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::Publish::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("Publish", "sns"));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PublishInput`](crate::input::PublishInput).
@@ -4498,7 +4498,7 @@ impl PublishBatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PublishBatch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4586,7 +4586,7 @@ impl PublishBatchInput {
             "PublishBatch",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PublishBatchInput`](crate::input::PublishBatchInput).
@@ -4648,7 +4648,7 @@ impl RemovePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemovePermission,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4736,7 +4736,7 @@ impl RemovePermissionInput {
             "RemovePermission",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::input::RemovePermissionInput).
@@ -4825,7 +4825,7 @@ impl SetEndpointAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetEndpointAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4915,7 +4915,7 @@ impl SetEndpointAttributesInput {
             "SetEndpointAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetEndpointAttributesInput`](crate::input::SetEndpointAttributesInput).
@@ -5063,7 +5063,7 @@ impl SetPlatformApplicationAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetPlatformApplicationAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5150,7 +5150,7 @@ impl SetPlatformApplicationAttributesInput {
             "SetPlatformApplicationAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetPlatformApplicationAttributesInput`](crate::input::SetPlatformApplicationAttributesInput).
@@ -5267,7 +5267,7 @@ impl SetSmsAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetSMSAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5355,7 +5355,7 @@ impl SetSmsAttributesInput {
             "SetSMSAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetSmsAttributesInput`](crate::input::SetSmsAttributesInput).
@@ -5470,7 +5470,7 @@ impl SetSubscriptionAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetSubscriptionAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5560,7 +5560,7 @@ impl SetSubscriptionAttributesInput {
             "SetSubscriptionAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetSubscriptionAttributesInput`](crate::input::SetSubscriptionAttributesInput).
@@ -5676,7 +5676,7 @@ impl SetTopicAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetTopicAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5764,7 +5764,7 @@ impl SetTopicAttributesInput {
             "SetTopicAttributes",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetTopicAttributesInput`](crate::input::SetTopicAttributesInput).
@@ -5958,7 +5958,7 @@ impl SubscribeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Subscribe,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6044,7 +6044,7 @@ impl SubscribeInput {
                     "Subscribe",
                     "sns",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SubscribeInput`](crate::input::SubscribeInput).
@@ -6115,7 +6115,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6203,7 +6203,7 @@ impl TagResourceInput {
             "TagResource",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -6256,7 +6256,7 @@ impl UnsubscribeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Unsubscribe,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6344,7 +6344,7 @@ impl UnsubscribeInput {
             "Unsubscribe",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UnsubscribeInput`](crate::input::UnsubscribeInput).
@@ -6415,7 +6415,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6503,7 +6503,7 @@ impl UntagResourceInput {
             "UntagResource",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -6570,7 +6570,7 @@ impl VerifySmsSandboxPhoneNumberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifySMSSandboxPhoneNumber,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6657,7 +6657,7 @@ impl VerifySmsSandboxPhoneNumberInput {
             "VerifySMSSandboxPhoneNumber",
             "sns",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`VerifySmsSandboxPhoneNumberInput`](crate::input::VerifySmsSandboxPhoneNumberInput).

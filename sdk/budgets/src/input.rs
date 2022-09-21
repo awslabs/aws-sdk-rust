@@ -79,7 +79,7 @@ impl CreateBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBudget,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -172,7 +172,7 @@ impl CreateBudgetInput {
             "CreateBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateBudgetInput`](crate::input::CreateBudgetInput).
@@ -345,7 +345,7 @@ impl CreateBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBudgetAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -438,7 +438,7 @@ impl CreateBudgetActionInput {
             "CreateBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateBudgetActionInput`](crate::input::CreateBudgetActionInput).
@@ -536,7 +536,7 @@ impl CreateNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNotification,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -629,7 +629,7 @@ impl CreateNotificationInput {
             "CreateNotification",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateNotificationInput`](crate::input::CreateNotificationInput).
@@ -721,7 +721,7 @@ impl CreateSubscriberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSubscriber,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -814,7 +814,7 @@ impl CreateSubscriberInput {
             "CreateSubscriber",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSubscriberInput`](crate::input::CreateSubscriberInput).
@@ -876,7 +876,7 @@ impl DeleteBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBudget,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -969,7 +969,7 @@ impl DeleteBudgetInput {
             "DeleteBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBudgetInput`](crate::input::DeleteBudgetInput).
@@ -1043,7 +1043,7 @@ impl DeleteBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBudgetAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1136,7 +1136,7 @@ impl DeleteBudgetActionInput {
             "DeleteBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBudgetActionInput`](crate::input::DeleteBudgetActionInput).
@@ -1213,7 +1213,7 @@ impl DeleteNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotification,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1306,7 +1306,7 @@ impl DeleteNotificationInput {
             "DeleteNotification",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteNotificationInput`](crate::input::DeleteNotificationInput).
@@ -1398,7 +1398,7 @@ impl DeleteSubscriberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSubscriber,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1491,7 +1491,7 @@ impl DeleteSubscriberInput {
             "DeleteSubscriber",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput).
@@ -1553,7 +1553,7 @@ impl DescribeBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudget,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1646,7 +1646,7 @@ impl DescribeBudgetInput {
             "DescribeBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBudgetInput`](crate::input::DescribeBudgetInput).
@@ -1720,7 +1720,7 @@ impl DescribeBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1815,7 +1815,7 @@ impl DescribeBudgetActionInput {
             "DescribeBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionInput`](crate::input::DescribeBudgetActionInput).
@@ -1930,7 +1930,7 @@ impl DescribeBudgetActionHistoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionHistories,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2022,7 +2022,7 @@ impl DescribeBudgetActionHistoriesInput {
             "DescribeBudgetActionHistories",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesInput`](crate::input::DescribeBudgetActionHistoriesInput).
@@ -2098,7 +2098,7 @@ impl DescribeBudgetActionsForAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionsForAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2190,7 +2190,7 @@ impl DescribeBudgetActionsForAccountInput {
             "DescribeBudgetActionsForAccount",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountInput`](crate::input::DescribeBudgetActionsForAccountInput).
@@ -2278,7 +2278,7 @@ impl DescribeBudgetActionsForBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionsForBudget,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2370,7 +2370,7 @@ impl DescribeBudgetActionsForBudgetInput {
             "DescribeBudgetActionsForBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetInput`](crate::input::DescribeBudgetActionsForBudgetInput).
@@ -2446,7 +2446,7 @@ impl DescribeBudgetNotificationsForAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetNotificationsForAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2538,7 +2538,7 @@ impl DescribeBudgetNotificationsForAccountInput {
             "DescribeBudgetNotificationsForAccount",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountInput`](crate::input::DescribeBudgetNotificationsForAccountInput).
@@ -2641,7 +2641,7 @@ impl DescribeBudgetPerformanceHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetPerformanceHistory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2733,7 +2733,7 @@ impl DescribeBudgetPerformanceHistoryInput {
             "DescribeBudgetPerformanceHistory",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryInput`](crate::input::DescribeBudgetPerformanceHistoryInput).
@@ -2807,7 +2807,7 @@ impl DescribeBudgetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2900,7 +2900,7 @@ impl DescribeBudgetsInput {
             "DescribeBudgets",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBudgetsInput`](crate::input::DescribeBudgetsInput).
@@ -2988,7 +2988,7 @@ impl DescribeNotificationsForBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotificationsForBudget,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3080,7 +3080,7 @@ impl DescribeNotificationsForBudgetInput {
             "DescribeNotificationsForBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetInput`](crate::input::DescribeNotificationsForBudgetInput).
@@ -3183,7 +3183,7 @@ impl DescribeSubscribersForNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSubscribersForNotification,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3275,7 +3275,7 @@ impl DescribeSubscribersForNotificationInput {
             "DescribeSubscribersForNotification",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationInput`](crate::input::DescribeSubscribersForNotificationInput).
@@ -3364,7 +3364,7 @@ impl ExecuteBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteBudgetAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3457,7 +3457,7 @@ impl ExecuteBudgetActionInput {
             "ExecuteBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionInput`](crate::input::ExecuteBudgetActionInput).
@@ -3519,7 +3519,7 @@ impl UpdateBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBudget,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3612,7 +3612,7 @@ impl UpdateBudgetInput {
             "UpdateBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateBudgetInput`](crate::input::UpdateBudgetInput).
@@ -3782,7 +3782,7 @@ impl UpdateBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBudgetAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3875,7 +3875,7 @@ impl UpdateBudgetActionInput {
             "UpdateBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateBudgetActionInput`](crate::input::UpdateBudgetActionInput).
@@ -3967,7 +3967,7 @@ impl UpdateNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNotification,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4060,7 +4060,7 @@ impl UpdateNotificationInput {
             "UpdateNotification",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateNotificationInput`](crate::input::UpdateNotificationInput).
@@ -4167,7 +4167,7 @@ impl UpdateSubscriberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSubscriber,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4260,7 +4260,7 @@ impl UpdateSubscriberInput {
             "UpdateSubscriber",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput).

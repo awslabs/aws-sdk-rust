@@ -42,7 +42,7 @@ impl BuildSuggestersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BuildSuggesters,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -130,7 +130,7 @@ impl BuildSuggestersInput {
             "BuildSuggesters",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BuildSuggestersInput`](crate::input::BuildSuggestersInput).
@@ -180,7 +180,7 @@ impl CreateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -268,7 +268,7 @@ impl CreateDomainInput {
             "CreateDomain",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::input::CreateDomainInput).
@@ -333,7 +333,7 @@ impl DefineAnalysisSchemeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DefineAnalysisScheme,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -423,7 +423,7 @@ impl DefineAnalysisSchemeInput {
             "DefineAnalysisScheme",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeInput`](crate::input::DefineAnalysisSchemeInput).
@@ -488,7 +488,7 @@ impl DefineExpressionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DefineExpression,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -576,7 +576,7 @@ impl DefineExpressionInput {
             "DefineExpression",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DefineExpressionInput`](crate::input::DefineExpressionInput).
@@ -641,7 +641,7 @@ impl DefineIndexFieldInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DefineIndexField,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -729,7 +729,7 @@ impl DefineIndexFieldInput {
             "DefineIndexField",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DefineIndexFieldInput`](crate::input::DefineIndexFieldInput).
@@ -794,7 +794,7 @@ impl DefineSuggesterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DefineSuggester,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -882,7 +882,7 @@ impl DefineSuggesterInput {
             "DefineSuggester",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DefineSuggesterInput`](crate::input::DefineSuggesterInput).
@@ -947,7 +947,7 @@ impl DeleteAnalysisSchemeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnalysisScheme,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1037,7 +1037,7 @@ impl DeleteAnalysisSchemeInput {
             "DeleteAnalysisScheme",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeInput`](crate::input::DeleteAnalysisSchemeInput).
@@ -1087,7 +1087,7 @@ impl DeleteDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1175,7 +1175,7 @@ impl DeleteDomainInput {
             "DeleteDomain",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput).
@@ -1240,7 +1240,7 @@ impl DeleteExpressionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExpression,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1328,7 +1328,7 @@ impl DeleteExpressionInput {
             "DeleteExpression",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteExpressionInput`](crate::input::DeleteExpressionInput).
@@ -1393,7 +1393,7 @@ impl DeleteIndexFieldInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIndexField,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1481,7 +1481,7 @@ impl DeleteIndexFieldInput {
             "DeleteIndexField",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteIndexFieldInput`](crate::input::DeleteIndexFieldInput).
@@ -1546,7 +1546,7 @@ impl DeleteSuggesterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSuggester,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1634,7 +1634,7 @@ impl DeleteSuggesterInput {
             "DeleteSuggester",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSuggesterInput`](crate::input::DeleteSuggesterInput).
@@ -1719,7 +1719,7 @@ impl DescribeAnalysisSchemesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAnalysisSchemes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1809,7 +1809,7 @@ impl DescribeAnalysisSchemesInput {
             "DescribeAnalysisSchemes",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesInput`](crate::input::DescribeAnalysisSchemesInput).
@@ -1873,7 +1873,7 @@ impl DescribeAvailabilityOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAvailabilityOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1960,7 +1960,7 @@ impl DescribeAvailabilityOptionsInput {
             "DescribeAvailabilityOptions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsInput`](crate::input::DescribeAvailabilityOptionsInput).
@@ -2024,7 +2024,7 @@ impl DescribeDomainEndpointOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomainEndpointOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2111,7 +2111,7 @@ impl DescribeDomainEndpointOptionsInput {
             "DescribeDomainEndpointOptions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsInput`](crate::input::DescribeDomainEndpointOptionsInput).
@@ -2170,7 +2170,7 @@ impl DescribeDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomains,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2258,7 +2258,7 @@ impl DescribeDomainsInput {
             "DescribeDomains",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDomainsInput`](crate::input::DescribeDomainsInput).
@@ -2341,7 +2341,7 @@ impl DescribeExpressionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExpressions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2429,7 +2429,7 @@ impl DescribeExpressionsInput {
             "DescribeExpressions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeExpressionsInput`](crate::input::DescribeExpressionsInput).
@@ -2512,7 +2512,7 @@ impl DescribeIndexFieldsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIndexFields,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2600,7 +2600,7 @@ impl DescribeIndexFieldsInput {
             "DescribeIndexFields",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsInput`](crate::input::DescribeIndexFieldsInput).
@@ -2652,7 +2652,7 @@ impl DescribeScalingParametersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingParameters,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2742,7 +2742,7 @@ impl DescribeScalingParametersInput {
             "DescribeScalingParameters",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeScalingParametersInput`](crate::input::DescribeScalingParametersInput).
@@ -2806,7 +2806,7 @@ impl DescribeServiceAccessPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeServiceAccessPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2893,7 +2893,7 @@ impl DescribeServiceAccessPoliciesInput {
             "DescribeServiceAccessPolicies",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesInput`](crate::input::DescribeServiceAccessPoliciesInput).
@@ -2976,7 +2976,7 @@ impl DescribeSuggestersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSuggesters,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3064,7 +3064,7 @@ impl DescribeSuggestersInput {
             "DescribeSuggesters",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeSuggestersInput`](crate::input::DescribeSuggestersInput).
@@ -3114,7 +3114,7 @@ impl IndexDocumentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::IndexDocuments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3202,7 +3202,7 @@ impl IndexDocumentsInput {
             "IndexDocuments",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`IndexDocumentsInput`](crate::input::IndexDocumentsInput).
@@ -3238,7 +3238,7 @@ impl ListDomainNamesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomainNames,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3319,7 +3319,7 @@ impl ListDomainNamesInput {
             "ListDomainNames",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
@@ -3383,7 +3383,7 @@ impl UpdateAvailabilityOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAvailabilityOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3473,7 +3473,7 @@ impl UpdateAvailabilityOptionsInput {
             "UpdateAvailabilityOptions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsInput`](crate::input::UpdateAvailabilityOptionsInput).
@@ -3544,7 +3544,7 @@ impl UpdateDomainEndpointOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainEndpointOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3631,7 +3631,7 @@ impl UpdateDomainEndpointOptionsInput {
             "UpdateDomainEndpointOptions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsInput`](crate::input::UpdateDomainEndpointOptionsInput).
@@ -3698,7 +3698,7 @@ impl UpdateScalingParametersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateScalingParameters,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3788,7 +3788,7 @@ impl UpdateScalingParametersInput {
             "UpdateScalingParameters",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateScalingParametersInput`](crate::input::UpdateScalingParametersInput).
@@ -3855,7 +3855,7 @@ impl UpdateServiceAccessPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceAccessPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3942,7 +3942,7 @@ impl UpdateServiceAccessPoliciesInput {
             "UpdateServiceAccessPolicies",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesInput`](crate::input::UpdateServiceAccessPoliciesInput).

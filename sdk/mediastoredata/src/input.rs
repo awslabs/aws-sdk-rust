@@ -52,7 +52,7 @@ impl DeleteObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteObject,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -140,7 +140,7 @@ impl DeleteObjectInput {
             "DeleteObject",
             "mediastoredata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteObjectInput`](crate::input::DeleteObjectInput).
@@ -200,7 +200,7 @@ impl DescribeObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeObject,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -288,7 +288,7 @@ impl DescribeObjectInput {
             "DescribeObject",
             "mediastoredata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeObjectInput`](crate::input::DescribeObjectInput).
@@ -373,7 +373,7 @@ impl GetObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetObject,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -460,7 +460,7 @@ impl GetObjectInput {
                     "GetObject",
                     "mediastoredata",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetObjectInput`](crate::input::GetObjectInput).
@@ -549,7 +549,7 @@ impl ListItemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListItems,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -641,7 +641,7 @@ impl ListItemsInput {
                     "ListItems",
                     "mediastoredata",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListItemsInput`](crate::input::ListItemsInput).
@@ -790,7 +790,7 @@ impl PutObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutObject,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -895,7 +895,7 @@ impl PutObjectInput {
                     "PutObject",
                     "mediastoredata",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutObjectInput`](crate::input::PutObjectInput).

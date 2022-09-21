@@ -57,7 +57,7 @@ impl GetDeploymentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeployments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -145,7 +145,7 @@ impl GetDeploymentsInput {
             "GetDeployments",
             "sagemakeredge",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDeploymentsInput`](crate::input::GetDeploymentsInput).
@@ -210,7 +210,7 @@ impl GetDeviceRegistrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeviceRegistration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -300,7 +300,7 @@ impl GetDeviceRegistrationInput {
             "GetDeviceRegistration",
             "sagemakeredge",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput).
@@ -437,7 +437,7 @@ impl SendHeartbeatInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendHeartbeat,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -525,7 +525,7 @@ impl SendHeartbeatInput {
             "SendHeartbeat",
             "sagemakeredge",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendHeartbeatInput`](crate::input::SendHeartbeatInput).

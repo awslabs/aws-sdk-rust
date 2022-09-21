@@ -42,7 +42,7 @@ impl AcceptGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptGrant,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -135,7 +135,7 @@ impl AcceptGrantInput {
             "AcceptGrant",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AcceptGrantInput`](crate::input::AcceptGrantInput).
@@ -200,7 +200,7 @@ impl CheckInLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckInLicense,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -293,7 +293,7 @@ impl CheckInLicenseInput {
             "CheckInLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CheckInLicenseInput`](crate::input::CheckInLicenseInput).
@@ -428,7 +428,7 @@ impl CheckoutBorrowLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckoutBorrowLicense,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -523,7 +523,7 @@ impl CheckoutBorrowLicenseInput {
             "CheckoutBorrowLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseInput`](crate::input::CheckoutBorrowLicenseInput).
@@ -660,7 +660,7 @@ impl CheckoutLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckoutLicense,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -753,7 +753,7 @@ impl CheckoutLicenseInput {
             "CheckoutLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CheckoutLicenseInput`](crate::input::CheckoutLicenseInput).
@@ -882,7 +882,7 @@ impl CreateGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGrant,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -975,7 +975,7 @@ impl CreateGrantInput {
             "CreateGrant",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateGrantInput`](crate::input::CreateGrantInput).
@@ -1113,7 +1113,7 @@ impl CreateGrantVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGrantVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1206,7 +1206,7 @@ impl CreateGrantVersionInput {
             "CreateGrantVersion",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateGrantVersionInput`](crate::input::CreateGrantVersionInput).
@@ -1404,7 +1404,7 @@ impl CreateLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicense,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1497,7 +1497,7 @@ impl CreateLicenseInput {
             "CreateLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLicenseInput`](crate::input::CreateLicenseInput).
@@ -1690,7 +1690,7 @@ impl CreateLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1785,7 +1785,7 @@ impl CreateLicenseConfigurationInput {
             "CreateLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationInput`](crate::input::CreateLicenseConfigurationInput).
@@ -1875,7 +1875,7 @@ impl CreateLicenseConversionTaskForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseConversionTaskForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1967,7 +1967,7 @@ impl CreateLicenseConversionTaskForResourceInput {
             "CreateLicenseConversionTaskForResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceInput`](crate::input::CreateLicenseConversionTaskForResourceInput).
@@ -2126,7 +2126,7 @@ impl CreateLicenseManagerReportGeneratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseManagerReportGenerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2218,7 +2218,7 @@ impl CreateLicenseManagerReportGeneratorInput {
             "CreateLicenseManagerReportGenerator",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorInput`](crate::input::CreateLicenseManagerReportGeneratorInput).
@@ -2434,7 +2434,7 @@ impl CreateLicenseVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2529,7 +2529,7 @@ impl CreateLicenseVersionInput {
             "CreateLicenseVersion",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLicenseVersionInput`](crate::input::CreateLicenseVersionInput).
@@ -2645,7 +2645,7 @@ impl CreateTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2738,7 +2738,7 @@ impl CreateTokenInput {
             "CreateToken",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTokenInput`](crate::input::CreateTokenInput).
@@ -2815,7 +2815,7 @@ impl DeleteGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGrant,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2908,7 +2908,7 @@ impl DeleteGrantInput {
             "DeleteGrant",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteGrantInput`](crate::input::DeleteGrantInput).
@@ -2973,7 +2973,7 @@ impl DeleteLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicense,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3066,7 +3066,7 @@ impl DeleteLicenseInput {
             "DeleteLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLicenseInput`](crate::input::DeleteLicenseInput).
@@ -3121,7 +3121,7 @@ impl DeleteLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicenseConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3216,7 +3216,7 @@ impl DeleteLicenseConfigurationInput {
             "DeleteLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationInput`](crate::input::DeleteLicenseConfigurationInput).
@@ -3274,7 +3274,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicenseManagerReportGenerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3366,7 +3366,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
             "DeleteLicenseManagerReportGenerator",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLicenseManagerReportGeneratorInput`](crate::input::DeleteLicenseManagerReportGeneratorInput).
@@ -3416,7 +3416,7 @@ impl DeleteTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3509,7 +3509,7 @@ impl DeleteTokenInput {
             "DeleteToken",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTokenInput`](crate::input::DeleteTokenInput).
@@ -3576,7 +3576,7 @@ impl ExtendLicenseConsumptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExtendLicenseConsumption,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3671,7 +3671,7 @@ impl ExtendLicenseConsumptionInput {
             "ExtendLicenseConsumption",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionInput`](crate::input::ExtendLicenseConsumptionInput).
@@ -3742,7 +3742,7 @@ impl GetAccessTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3835,7 +3835,7 @@ impl GetAccessTokenInput {
             "GetAccessToken",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessTokenInput`](crate::input::GetAccessTokenInput).
@@ -3896,7 +3896,7 @@ impl GetGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGrant,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3987,7 +3987,7 @@ impl GetGrantInput {
                     "GetGrant",
                     "licensemanager",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetGrantInput`](crate::input::GetGrantInput).
@@ -4048,7 +4048,7 @@ impl GetLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicense,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4141,7 +4141,7 @@ impl GetLicenseInput {
             "GetLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLicenseInput`](crate::input::GetLicenseInput).
@@ -4196,7 +4196,7 @@ impl GetLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4291,7 +4291,7 @@ impl GetLicenseConfigurationInput {
             "GetLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLicenseConfigurationInput`](crate::input::GetLicenseConfigurationInput).
@@ -4346,7 +4346,7 @@ impl GetLicenseConversionTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseConversionTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4441,7 +4441,7 @@ impl GetLicenseConversionTaskInput {
             "GetLicenseConversionTask",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskInput`](crate::input::GetLicenseConversionTaskInput).
@@ -4499,7 +4499,7 @@ impl GetLicenseManagerReportGeneratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseManagerReportGenerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4591,7 +4591,7 @@ impl GetLicenseManagerReportGeneratorInput {
             "GetLicenseManagerReportGenerator",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLicenseManagerReportGeneratorInput`](crate::input::GetLicenseManagerReportGeneratorInput).
@@ -4641,7 +4641,7 @@ impl GetLicenseUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseUsage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4734,7 +4734,7 @@ impl GetLicenseUsageInput {
             "GetLicenseUsage",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLicenseUsageInput`](crate::input::GetLicenseUsageInput).
@@ -4770,7 +4770,7 @@ impl GetServiceSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4856,7 +4856,7 @@ impl GetServiceSettingsInput {
             "GetServiceSettings",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput).
@@ -4935,7 +4935,7 @@ impl ListAssociationsForLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociationsForLicenseConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5027,7 +5027,7 @@ impl ListAssociationsForLicenseConfigurationInput {
             "ListAssociationsForLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationInput`](crate::input::ListAssociationsForLicenseConfigurationInput).
@@ -5145,7 +5145,7 @@ impl ListDistributedGrantsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributedGrants,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5240,7 +5240,7 @@ impl ListDistributedGrantsInput {
             "ListDistributedGrants",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDistributedGrantsInput`](crate::input::ListDistributedGrantsInput).
@@ -5321,7 +5321,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFailuresForLicenseConfigurationOperations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5413,7 +5413,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
             "ListFailuresForLicenseConfigurationOperations",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsInput`](crate::input::ListFailuresForLicenseConfigurationOperationsInput).
@@ -5531,7 +5531,7 @@ impl ListLicenseConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5626,7 +5626,7 @@ impl ListLicenseConfigurationsInput {
             "ListLicenseConfigurations",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsInput`](crate::input::ListLicenseConfigurationsInput).
@@ -5711,7 +5711,7 @@ impl ListLicenseConversionTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseConversionTasks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5803,7 +5803,7 @@ impl ListLicenseConversionTasksInput {
             "ListLicenseConversionTasks",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksInput`](crate::input::ListLicenseConversionTasksInput).
@@ -5894,7 +5894,7 @@ impl ListLicenseManagerReportGeneratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseManagerReportGenerators,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5986,7 +5986,7 @@ impl ListLicenseManagerReportGeneratorsInput {
             "ListLicenseManagerReportGenerators",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsInput`](crate::input::ListLicenseManagerReportGeneratorsInput).
@@ -6102,7 +6102,7 @@ impl ListLicensesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenses,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6195,7 +6195,7 @@ impl ListLicensesInput {
             "ListLicenses",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLicensesInput`](crate::input::ListLicensesInput).
@@ -6271,7 +6271,7 @@ impl ListLicenseSpecificationsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseSpecificationsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6363,7 +6363,7 @@ impl ListLicenseSpecificationsForResourceInput {
             "ListLicenseSpecificationsForResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLicenseSpecificationsForResourceInput`](crate::input::ListLicenseSpecificationsForResourceInput).
@@ -6437,7 +6437,7 @@ impl ListLicenseVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6530,7 +6530,7 @@ impl ListLicenseVersionsInput {
             "ListLicenseVersions",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLicenseVersionsInput`](crate::input::ListLicenseVersionsInput).
@@ -6648,7 +6648,7 @@ impl ListReceivedGrantsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReceivedGrants,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6741,7 +6741,7 @@ impl ListReceivedGrantsInput {
             "ListReceivedGrants",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListReceivedGrantsInput`](crate::input::ListReceivedGrantsInput).
@@ -6859,7 +6859,7 @@ impl ListReceivedLicensesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReceivedLicenses,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6954,7 +6954,7 @@ impl ListReceivedLicensesInput {
             "ListReceivedLicenses",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
@@ -7055,7 +7055,7 @@ impl ListResourceInventoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceInventory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7150,7 +7150,7 @@ impl ListResourceInventoryInput {
             "ListResourceInventory",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResourceInventoryInput`](crate::input::ListResourceInventoryInput).
@@ -7200,7 +7200,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7295,7 +7295,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -7404,7 +7404,7 @@ impl ListTokensInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTokens,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7497,7 +7497,7 @@ impl ListTokensInput {
             "ListTokens",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTokensInput`](crate::input::ListTokensInput).
@@ -7607,7 +7607,7 @@ impl ListUsageForLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsageForLicenseConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7699,7 +7699,7 @@ impl ListUsageForLicenseConfigurationInput {
             "ListUsageForLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListUsageForLicenseConfigurationInput`](crate::input::ListUsageForLicenseConfigurationInput).
@@ -7749,7 +7749,7 @@ impl RejectGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectGrant,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7842,7 +7842,7 @@ impl RejectGrantInput {
             "RejectGrant",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RejectGrantInput`](crate::input::RejectGrantInput).
@@ -7913,7 +7913,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8006,7 +8006,7 @@ impl TagResourceInput {
             "TagResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -8077,7 +8077,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8170,7 +8170,7 @@ impl UntagResourceInput {
             "UntagResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -8347,7 +8347,7 @@ impl UpdateLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8442,7 +8442,7 @@ impl UpdateLicenseConfigurationInput {
             "UpdateLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationInput`](crate::input::UpdateLicenseConfigurationInput).
@@ -8598,7 +8598,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseManagerReportGenerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8690,7 +8690,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
             "UpdateLicenseManagerReportGenerator",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateLicenseManagerReportGeneratorInput`](crate::input::UpdateLicenseManagerReportGeneratorInput).
@@ -8792,7 +8792,7 @@ impl UpdateLicenseSpecificationsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseSpecificationsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8884,7 +8884,7 @@ impl UpdateLicenseSpecificationsForResourceInput {
             "UpdateLicenseSpecificationsForResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateLicenseSpecificationsForResourceInput`](crate::input::UpdateLicenseSpecificationsForResourceInput).
@@ -8986,7 +8986,7 @@ impl UpdateServiceSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9081,7 +9081,7 @@ impl UpdateServiceSettingsInput {
             "UpdateServiceSettings",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput).

@@ -21,7 +21,7 @@ use crate::{SdkError, SdkSuccess};
 
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::operation::Operation;
-use aws_smithy_http::retry::ClassifyResponse;
+use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
 
 use tracing::Instrument;
@@ -364,7 +364,7 @@ impl<Handler, R, T, E> tower::retry::Policy<Operation<Handler, R>, SdkSuccess<T>
     for RetryHandler
 where
     Handler: Clone,
-    R: ClassifyResponse<SdkSuccess<T>, SdkError<E>>,
+    R: ClassifyRetry<SdkSuccess<T>, SdkError<E>>,
 {
     type Future = BoxFuture<Self>;
 
@@ -373,8 +373,8 @@ where
         req: &Operation<Handler, R>,
         result: Result<&SdkSuccess<T>, &SdkError<E>>,
     ) -> Option<Self::Future> {
-        let policy = req.retry_policy();
-        let retry_kind = policy.classify(result);
+        let classifier = req.retry_classifier();
+        let retry_kind = classifier.classify_retry(result);
         self.retry_for(retry_kind)
     }
 

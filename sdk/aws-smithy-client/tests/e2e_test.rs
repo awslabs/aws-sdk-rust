@@ -3,9 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::test_operation::{TestOperationParser, TestPolicy};
+use crate::test_operation::{TestOperationParser, TestRetryClassifier};
 use aws_smithy_async::rt::sleep::TokioSleep;
-
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_client::Client;
 use aws_smithy_http::body::SdkBody;
@@ -20,7 +19,7 @@ mod test_operation {
     use aws_smithy_http::operation;
     use aws_smithy_http::response::ParseHttpResponse;
     use aws_smithy_http::result::SdkError;
-    use aws_smithy_http::retry::ClassifyResponse;
+    use aws_smithy_http::retry::ClassifyRetry;
     use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind, RetryKind};
     use bytes::Bytes;
     use std::error::Error;
@@ -67,14 +66,14 @@ mod test_operation {
     }
 
     #[derive(Clone)]
-    pub(super) struct TestPolicy;
+    pub(super) struct TestRetryClassifier;
 
-    impl<T, E> ClassifyResponse<T, SdkError<E>> for TestPolicy
+    impl<T, E> ClassifyRetry<T, SdkError<E>> for TestRetryClassifier
     where
         E: ProvideErrorKind + Debug,
         T: Debug,
     {
-        fn classify(&self, err: Result<&T, &SdkError<E>>) -> RetryKind {
+        fn classify_retry(&self, err: Result<&T, &SdkError<E>>) -> RetryKind {
             let kind = match err {
                 Err(SdkError::ServiceError { err, .. }) => err.retryable_error_kind(),
                 Ok(_) => return RetryKind::Unnecessary,
@@ -88,14 +87,14 @@ mod test_operation {
     }
 }
 
-fn test_operation() -> Operation<TestOperationParser, TestPolicy> {
+fn test_operation() -> Operation<TestOperationParser, TestRetryClassifier> {
     let req = operation::Request::new(
         http::Request::builder()
             .uri("https://test-service.test-region.amazonaws.com/")
             .body(SdkBody::from("request body"))
             .unwrap(),
     );
-    Operation::new(req, TestOperationParser).with_retry_policy(TestPolicy)
+    Operation::new(req, TestOperationParser).with_retry_classifier(TestRetryClassifier)
 }
 
 #[tokio::test]

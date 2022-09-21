@@ -64,7 +64,7 @@ impl AddCustomAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddCustomAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -157,7 +157,7 @@ impl AddCustomAttributesInput {
             "AddCustomAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddCustomAttributesInput`](crate::input::AddCustomAttributesInput).
@@ -231,7 +231,7 @@ impl AdminAddUserToGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminAddUserToGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -326,7 +326,7 @@ impl AdminAddUserToGroupInput {
             "AdminAddUserToGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminAddUserToGroupInput`](crate::input::AdminAddUserToGroupInput).
@@ -435,7 +435,7 @@ impl AdminConfirmSignUpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminConfirmSignUp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -528,7 +528,7 @@ impl AdminConfirmSignUpInput {
             "AdminConfirmSignUp",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminConfirmSignUpInput`](crate::input::AdminConfirmSignUpInput).
@@ -771,7 +771,7 @@ impl AdminCreateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminCreateUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -864,7 +864,7 @@ impl AdminCreateUserInput {
             "AdminCreateUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminCreateUserInput`](crate::input::AdminCreateUserInput).
@@ -926,7 +926,7 @@ impl AdminDeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminDeleteUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1019,7 +1019,7 @@ impl AdminDeleteUserInput {
             "AdminDeleteUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminDeleteUserInput`](crate::input::AdminDeleteUserInput).
@@ -1106,7 +1106,7 @@ impl AdminDeleteUserAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminDeleteUserAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1201,7 +1201,7 @@ impl AdminDeleteUserAttributesInput {
             "AdminDeleteUserAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminDeleteUserAttributesInput`](crate::input::AdminDeleteUserAttributesInput).
@@ -1268,7 +1268,7 @@ impl AdminDisableProviderForUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminDisableProviderForUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1360,7 +1360,7 @@ impl AdminDisableProviderForUserInput {
             "AdminDisableProviderForUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminDisableProviderForUserInput`](crate::input::AdminDisableProviderForUserInput).
@@ -1422,7 +1422,7 @@ impl AdminDisableUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminDisableUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1515,7 +1515,7 @@ impl AdminDisableUserInput {
             "AdminDisableUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminDisableUserInput`](crate::input::AdminDisableUserInput).
@@ -1577,7 +1577,7 @@ impl AdminEnableUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminEnableUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1670,7 +1670,7 @@ impl AdminEnableUserInput {
             "AdminEnableUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminEnableUserInput`](crate::input::AdminEnableUserInput).
@@ -1744,7 +1744,7 @@ impl AdminForgetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminForgetDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1837,7 +1837,7 @@ impl AdminForgetDeviceInput {
             "AdminForgetDevice",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminForgetDeviceInput`](crate::input::AdminForgetDeviceInput).
@@ -1911,7 +1911,7 @@ impl AdminGetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminGetDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2004,7 +2004,7 @@ impl AdminGetDeviceInput {
             "AdminGetDevice",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminGetDeviceInput`](crate::input::AdminGetDeviceInput).
@@ -2066,7 +2066,7 @@ impl AdminGetUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminGetUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2159,7 +2159,7 @@ impl AdminGetUserInput {
             "AdminGetUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminGetUserInput`](crate::input::AdminGetUserInput).
@@ -2410,7 +2410,7 @@ impl AdminInitiateAuthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminInitiateAuth,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2503,7 +2503,7 @@ impl AdminInitiateAuthInput {
             "AdminInitiateAuth",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminInitiateAuthInput`](crate::input::AdminInitiateAuthInput).
@@ -2601,7 +2601,7 @@ impl AdminLinkProviderForUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminLinkProviderForUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2696,7 +2696,7 @@ impl AdminLinkProviderForUserInput {
             "AdminLinkProviderForUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminLinkProviderForUserInput`](crate::input::AdminLinkProviderForUserInput).
@@ -2785,7 +2785,7 @@ impl AdminListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminListDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2878,7 +2878,7 @@ impl AdminListDevicesInput {
             "AdminListDevices",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminListDevicesInput`](crate::input::AdminListDevicesInput).
@@ -2964,7 +2964,7 @@ impl AdminListGroupsForUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminListGroupsForUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3059,7 +3059,7 @@ impl AdminListGroupsForUserInput {
             "AdminListGroupsForUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminListGroupsForUserInput`](crate::input::AdminListGroupsForUserInput).
@@ -3147,7 +3147,7 @@ impl AdminListUserAuthEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminListUserAuthEvents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3242,7 +3242,7 @@ impl AdminListUserAuthEventsInput {
             "AdminListUserAuthEvents",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminListUserAuthEventsInput`](crate::input::AdminListUserAuthEventsInput).
@@ -3318,7 +3318,7 @@ impl AdminRemoveUserFromGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminRemoveUserFromGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3413,7 +3413,7 @@ impl AdminRemoveUserFromGroupInput {
             "AdminRemoveUserFromGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminRemoveUserFromGroupInput`](crate::input::AdminRemoveUserFromGroupInput).
@@ -3522,7 +3522,7 @@ impl AdminResetUserPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminResetUserPassword,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3617,7 +3617,7 @@ impl AdminResetUserPasswordInput {
             "AdminResetUserPassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminResetUserPasswordInput`](crate::input::AdminResetUserPasswordInput).
@@ -3860,7 +3860,7 @@ impl AdminRespondToAuthChallengeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminRespondToAuthChallenge,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3952,7 +3952,7 @@ impl AdminRespondToAuthChallengeInput {
             "AdminRespondToAuthChallenge",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminRespondToAuthChallengeInput`](crate::input::AdminRespondToAuthChallengeInput).
@@ -4050,7 +4050,7 @@ impl AdminSetUserMfaPreferenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserMFAPreference,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4142,7 +4142,7 @@ impl AdminSetUserMfaPreferenceInput {
             "AdminSetUserMFAPreference",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminSetUserMfaPreferenceInput`](crate::input::AdminSetUserMfaPreferenceInput).
@@ -4228,7 +4228,7 @@ impl AdminSetUserPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserPassword,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4323,7 +4323,7 @@ impl AdminSetUserPasswordInput {
             "AdminSetUserPassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminSetUserPasswordInput`](crate::input::AdminSetUserPasswordInput).
@@ -4406,7 +4406,7 @@ impl AdminSetUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4501,7 +4501,7 @@ impl AdminSetUserSettingsInput {
             "AdminSetUserSettings",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminSetUserSettingsInput`](crate::input::AdminSetUserSettingsInput).
@@ -4592,7 +4592,7 @@ impl AdminUpdateAuthEventFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateAuthEventFeedback,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4684,7 +4684,7 @@ impl AdminUpdateAuthEventFeedbackInput {
             "AdminUpdateAuthEventFeedback",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminUpdateAuthEventFeedbackInput`](crate::input::AdminUpdateAuthEventFeedbackInput).
@@ -4779,7 +4779,7 @@ impl AdminUpdateDeviceStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateDeviceStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4874,7 +4874,7 @@ impl AdminUpdateDeviceStatusInput {
             "AdminUpdateDeviceStatus",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminUpdateDeviceStatusInput`](crate::input::AdminUpdateDeviceStatusInput).
@@ -5012,7 +5012,7 @@ impl AdminUpdateUserAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateUserAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5107,7 +5107,7 @@ impl AdminUpdateUserAttributesInput {
             "AdminUpdateUserAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminUpdateUserAttributesInput`](crate::input::AdminUpdateUserAttributesInput).
@@ -5169,7 +5169,7 @@ impl AdminUserGlobalSignOutInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminUserGlobalSignOut,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5264,7 +5264,7 @@ impl AdminUserGlobalSignOutInput {
             "AdminUserGlobalSignOut",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdminUserGlobalSignOutInput`](crate::input::AdminUserGlobalSignOutInput).
@@ -5326,7 +5326,7 @@ impl AssociateSoftwareTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateSoftwareToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5421,7 +5421,7 @@ impl AssociateSoftwareTokenInput {
             "AssociateSoftwareToken",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateSoftwareTokenInput`](crate::input::AssociateSoftwareTokenInput).
@@ -5501,7 +5501,7 @@ impl ChangePasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ChangePassword,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5595,7 +5595,7 @@ impl ChangePasswordInput {
             "ChangePassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ChangePasswordInput`](crate::input::ChangePasswordInput).
@@ -5688,7 +5688,7 @@ impl ConfirmDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5781,7 +5781,7 @@ impl ConfirmDeviceInput {
             "ConfirmDevice",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmDeviceInput`](crate::input::ConfirmDeviceInput).
@@ -5959,7 +5959,7 @@ impl ConfirmForgotPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmForgotPassword,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6055,7 +6055,7 @@ impl ConfirmForgotPasswordInput {
             "ConfirmForgotPassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmForgotPasswordInput`](crate::input::ConfirmForgotPasswordInput).
@@ -6233,7 +6233,7 @@ impl ConfirmSignUpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmSignUp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6327,7 +6327,7 @@ impl ConfirmSignUpInput {
             "ConfirmSignUp",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmSignUpInput`](crate::input::ConfirmSignUpInput).
@@ -6429,7 +6429,7 @@ impl CreateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6522,7 +6522,7 @@ impl CreateGroupInput {
             "CreateGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateGroupInput`](crate::input::CreateGroupInput).
@@ -6775,7 +6775,7 @@ impl CreateIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIdentityProvider,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6870,7 +6870,7 @@ impl CreateIdentityProviderInput {
             "CreateIdentityProvider",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateIdentityProviderInput`](crate::input::CreateIdentityProviderInput).
@@ -6966,7 +6966,7 @@ impl CreateResourceServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourceServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7061,7 +7061,7 @@ impl CreateResourceServerInput {
             "CreateResourceServer",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateResourceServerInput`](crate::input::CreateResourceServerInput).
@@ -7138,7 +7138,7 @@ impl CreateUserImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserImportJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7233,7 +7233,7 @@ impl CreateUserImportJobInput {
             "CreateUserImportJob",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateUserImportJobInput`](crate::input::CreateUserImportJobInput).
@@ -7679,7 +7679,7 @@ impl CreateUserPoolInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPool,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7772,7 +7772,7 @@ impl CreateUserPoolInput {
             "CreateUserPool",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateUserPoolInput`](crate::input::CreateUserPoolInput).
@@ -8347,7 +8347,7 @@ impl CreateUserPoolClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPoolClient,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8442,7 +8442,7 @@ impl CreateUserPoolClientInput {
             "CreateUserPoolClient",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateUserPoolClientInput`](crate::input::CreateUserPoolClientInput).
@@ -8523,7 +8523,7 @@ impl CreateUserPoolDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPoolDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8618,7 +8618,7 @@ impl CreateUserPoolDomainInput {
             "CreateUserPoolDomain",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateUserPoolDomainInput`](crate::input::CreateUserPoolDomainInput).
@@ -8680,7 +8680,7 @@ impl DeleteGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8773,7 +8773,7 @@ impl DeleteGroupInput {
             "DeleteGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteGroupInput`](crate::input::DeleteGroupInput).
@@ -8838,7 +8838,7 @@ impl DeleteIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentityProvider,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8933,7 +8933,7 @@ impl DeleteIdentityProviderInput {
             "DeleteIdentityProvider",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteIdentityProviderInput`](crate::input::DeleteIdentityProviderInput).
@@ -8995,7 +8995,7 @@ impl DeleteResourceServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9090,7 +9090,7 @@ impl DeleteResourceServerInput {
             "DeleteResourceServer",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResourceServerInput`](crate::input::DeleteResourceServerInput).
@@ -9139,7 +9139,7 @@ impl DeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9233,7 +9233,7 @@ impl DeleteUserInput {
             "DeleteUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteUserInput`](crate::input::DeleteUserInput).
@@ -9306,7 +9306,7 @@ impl DeleteUserAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9402,7 +9402,7 @@ impl DeleteUserAttributesInput {
             "DeleteUserAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteUserAttributesInput`](crate::input::DeleteUserAttributesInput).
@@ -9452,7 +9452,7 @@ impl DeleteUserPoolInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPool,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9545,7 +9545,7 @@ impl DeleteUserPoolInput {
             "DeleteUserPool",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteUserPoolInput`](crate::input::DeleteUserPoolInput).
@@ -9607,7 +9607,7 @@ impl DeleteUserPoolClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPoolClient,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9702,7 +9702,7 @@ impl DeleteUserPoolClientInput {
             "DeleteUserPoolClient",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteUserPoolClientInput`](crate::input::DeleteUserPoolClientInput).
@@ -9764,7 +9764,7 @@ impl DeleteUserPoolDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPoolDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9859,7 +9859,7 @@ impl DeleteUserPoolDomainInput {
             "DeleteUserPoolDomain",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteUserPoolDomainInput`](crate::input::DeleteUserPoolDomainInput).
@@ -9926,7 +9926,7 @@ impl DescribeIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityProvider,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10021,7 +10021,7 @@ impl DescribeIdentityProviderInput {
             "DescribeIdentityProvider",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderInput`](crate::input::DescribeIdentityProviderInput).
@@ -10083,7 +10083,7 @@ impl DescribeResourceServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourceServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10178,7 +10178,7 @@ impl DescribeResourceServerInput {
             "DescribeResourceServer",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeResourceServerInput`](crate::input::DescribeResourceServerInput).
@@ -10242,7 +10242,7 @@ impl DescribeRiskConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRiskConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10337,7 +10337,7 @@ impl DescribeRiskConfigurationInput {
             "DescribeRiskConfiguration",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRiskConfigurationInput`](crate::input::DescribeRiskConfigurationInput).
@@ -10399,7 +10399,7 @@ impl DescribeUserImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserImportJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10494,7 +10494,7 @@ impl DescribeUserImportJobInput {
             "DescribeUserImportJob",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeUserImportJobInput`](crate::input::DescribeUserImportJobInput).
@@ -10544,7 +10544,7 @@ impl DescribeUserPoolInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPool,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10637,7 +10637,7 @@ impl DescribeUserPoolInput {
             "DescribeUserPool",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeUserPoolInput`](crate::input::DescribeUserPoolInput).
@@ -10699,7 +10699,7 @@ impl DescribeUserPoolClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPoolClient,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10794,7 +10794,7 @@ impl DescribeUserPoolClientInput {
             "DescribeUserPoolClient",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeUserPoolClientInput`](crate::input::DescribeUserPoolClientInput).
@@ -10844,7 +10844,7 @@ impl DescribeUserPoolDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPoolDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10939,7 +10939,7 @@ impl DescribeUserPoolDomainInput {
             "DescribeUserPoolDomain",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeUserPoolDomainInput`](crate::input::DescribeUserPoolDomainInput).
@@ -11001,7 +11001,7 @@ impl ForgetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ForgetDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11094,7 +11094,7 @@ impl ForgetDeviceInput {
             "ForgetDevice",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ForgetDeviceInput`](crate::input::ForgetDeviceInput).
@@ -11245,7 +11245,7 @@ impl ForgotPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ForgotPassword,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11339,7 +11339,7 @@ impl ForgotPasswordInput {
             "ForgotPassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ForgotPasswordInput`](crate::input::ForgotPasswordInput).
@@ -11389,7 +11389,7 @@ impl GetCsvHeaderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCSVHeader,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11482,7 +11482,7 @@ impl GetCsvHeaderInput {
             "GetCSVHeader",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCsvHeaderInput`](crate::input::GetCsvHeaderInput).
@@ -11543,7 +11543,7 @@ impl GetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11634,7 +11634,7 @@ impl GetDeviceInput {
                     "GetDevice",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDeviceInput`](crate::input::GetDeviceInput).
@@ -11695,7 +11695,7 @@ impl GetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11786,7 +11786,7 @@ impl GetGroupInput {
                     "GetGroup",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetGroupInput`](crate::input::GetGroupInput).
@@ -11853,7 +11853,7 @@ impl GetIdentityProviderByIdentifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityProviderByIdentifier,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11945,7 +11945,7 @@ impl GetIdentityProviderByIdentifierInput {
             "GetIdentityProviderByIdentifier",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIdentityProviderByIdentifierInput`](crate::input::GetIdentityProviderByIdentifierInput).
@@ -11995,7 +11995,7 @@ impl GetSigningCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSigningCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12090,7 +12090,7 @@ impl GetSigningCertificateInput {
             "GetSigningCertificate",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSigningCertificateInput`](crate::input::GetSigningCertificateInput).
@@ -12152,7 +12152,7 @@ impl GetUiCustomizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUICustomization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12245,7 +12245,7 @@ impl GetUiCustomizationInput {
             "GetUICustomization",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetUiCustomizationInput`](crate::input::GetUiCustomizationInput).
@@ -12294,7 +12294,7 @@ impl GetUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUser,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12386,7 +12386,7 @@ impl GetUserInput {
                     "GetUser",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetUserInput`](crate::input::GetUserInput).
@@ -12500,7 +12500,7 @@ impl GetUserAttributeVerificationCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUserAttributeVerificationCode,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12593,7 +12593,7 @@ impl GetUserAttributeVerificationCodeInput {
             "GetUserAttributeVerificationCode",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetUserAttributeVerificationCodeInput`](crate::input::GetUserAttributeVerificationCodeInput).
@@ -12643,7 +12643,7 @@ impl GetUserPoolMfaConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUserPoolMfaConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12738,7 +12738,7 @@ impl GetUserPoolMfaConfigInput {
             "GetUserPoolMfaConfig",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetUserPoolMfaConfigInput`](crate::input::GetUserPoolMfaConfigInput).
@@ -12788,7 +12788,7 @@ impl GlobalSignOutInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GlobalSignOut,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12881,7 +12881,7 @@ impl GlobalSignOutInput {
             "GlobalSignOut",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GlobalSignOutInput`](crate::input::GlobalSignOutInput).
@@ -13118,7 +13118,7 @@ impl InitiateAuthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateAuth,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13212,7 +13212,7 @@ impl InitiateAuthInput {
             "InitiateAuth",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InitiateAuthInput`](crate::input::InitiateAuthInput).
@@ -13289,7 +13289,7 @@ impl ListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13382,7 +13382,7 @@ impl ListDevicesInput {
             "ListDevices",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDevicesInput`](crate::input::ListDevicesInput).
@@ -13455,7 +13455,7 @@ impl ListGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13548,7 +13548,7 @@ impl ListGroupsInput {
             "ListGroups",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListGroupsInput`](crate::input::ListGroupsInput).
@@ -13622,7 +13622,7 @@ impl ListIdentityProvidersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityProviders,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13717,7 +13717,7 @@ impl ListIdentityProvidersInput {
             "ListIdentityProviders",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListIdentityProvidersInput`](crate::input::ListIdentityProvidersInput).
@@ -13791,7 +13791,7 @@ impl ListResourceServersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceServers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13884,7 +13884,7 @@ impl ListResourceServersInput {
             "ListResourceServers",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResourceServersInput`](crate::input::ListResourceServersInput).
@@ -13934,7 +13934,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14029,7 +14029,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -14106,7 +14106,7 @@ impl ListUserImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUserImportJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14199,7 +14199,7 @@ impl ListUserImportJobsInput {
             "ListUserImportJobs",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListUserImportJobsInput`](crate::input::ListUserImportJobsInput).
@@ -14273,7 +14273,7 @@ impl ListUserPoolClientsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUserPoolClients,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14368,7 +14368,7 @@ impl ListUserPoolClientsInput {
             "ListUserPoolClients",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListUserPoolClientsInput`](crate::input::ListUserPoolClientsInput).
@@ -14430,7 +14430,7 @@ impl ListUserPoolsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUserPools,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14523,7 +14523,7 @@ impl ListUserPoolsInput {
             "ListUserPools",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListUserPoolsInput`](crate::input::ListUserPoolsInput).
@@ -14680,7 +14680,7 @@ impl ListUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14771,7 +14771,7 @@ impl ListUsersInput {
                     "ListUsers",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput).
@@ -14857,7 +14857,7 @@ impl ListUsersInGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsersInGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14950,7 +14950,7 @@ impl ListUsersInGroupInput {
             "ListUsersInGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListUsersInGroupInput`](crate::input::ListUsersInGroupInput).
@@ -15101,7 +15101,7 @@ impl ResendConfirmationCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResendConfirmationCode,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15197,7 +15197,7 @@ impl ResendConfirmationCodeInput {
             "ResendConfirmationCode",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ResendConfirmationCodeInput`](crate::input::ResendConfirmationCodeInput).
@@ -15412,7 +15412,7 @@ impl RespondToAuthChallengeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondToAuthChallenge,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15508,7 +15508,7 @@ impl RespondToAuthChallengeInput {
             "RespondToAuthChallenge",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RespondToAuthChallengeInput`](crate::input::RespondToAuthChallengeInput).
@@ -15585,7 +15585,7 @@ impl RevokeTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15678,7 +15678,7 @@ impl RevokeTokenInput {
             "RevokeToken",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RevokeTokenInput`](crate::input::RevokeTokenInput).
@@ -15800,7 +15800,7 @@ impl SetRiskConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetRiskConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15895,7 +15895,7 @@ impl SetRiskConfigurationInput {
             "SetRiskConfiguration",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetRiskConfigurationInput`](crate::input::SetRiskConfigurationInput).
@@ -15984,7 +15984,7 @@ impl SetUiCustomizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetUICustomization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16077,7 +16077,7 @@ impl SetUiCustomizationInput {
             "SetUICustomization",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetUiCustomizationInput`](crate::input::SetUiCustomizationInput).
@@ -16161,7 +16161,7 @@ impl SetUserMfaPreferenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetUserMFAPreference,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16256,7 +16256,7 @@ impl SetUserMfaPreferenceInput {
             "SetUserMFAPreference",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetUserMfaPreferenceInput`](crate::input::SetUserMfaPreferenceInput).
@@ -16365,7 +16365,7 @@ impl SetUserPoolMfaConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetUserPoolMfaConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16460,7 +16460,7 @@ impl SetUserPoolMfaConfigInput {
             "SetUserPoolMfaConfig",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetUserPoolMfaConfigInput`](crate::input::SetUserPoolMfaConfigInput).
@@ -16531,7 +16531,7 @@ impl SetUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetUserSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16625,7 +16625,7 @@ impl SetUserSettingsInput {
             "SetUserSettings",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetUserSettingsInput`](crate::input::SetUserSettingsInput).
@@ -16831,7 +16831,7 @@ impl SignUpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SignUp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16923,7 +16923,7 @@ impl SignUpInput {
                     "SignUp",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SignUpInput`](crate::input::SignUpInput).
@@ -16985,7 +16985,7 @@ impl StartUserImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartUserImportJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17078,7 +17078,7 @@ impl StartUserImportJobInput {
             "StartUserImportJob",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartUserImportJobInput`](crate::input::StartUserImportJobInput).
@@ -17140,7 +17140,7 @@ impl StopUserImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopUserImportJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17233,7 +17233,7 @@ impl StopUserImportJobInput {
             "StopUserImportJob",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopUserImportJobInput`](crate::input::StopUserImportJobInput).
@@ -17312,7 +17312,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17405,7 +17405,7 @@ impl TagResourceInput {
             "TagResource",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -17476,7 +17476,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17569,7 +17569,7 @@ impl UntagResourceInput {
             "UntagResource",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -17675,7 +17675,7 @@ impl UpdateAuthEventFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAuthEventFeedback,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17770,7 +17770,7 @@ impl UpdateAuthEventFeedbackInput {
             "UpdateAuthEventFeedback",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAuthEventFeedbackInput`](crate::input::UpdateAuthEventFeedbackInput).
@@ -17851,7 +17851,7 @@ impl UpdateDeviceStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDeviceStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17944,7 +17944,7 @@ impl UpdateDeviceStatusInput {
             "UpdateDeviceStatus",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDeviceStatusInput`](crate::input::UpdateDeviceStatusInput).
@@ -18042,7 +18042,7 @@ impl UpdateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18135,7 +18135,7 @@ impl UpdateGroupInput {
             "UpdateGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateGroupInput`](crate::input::UpdateGroupInput).
@@ -18279,7 +18279,7 @@ impl UpdateIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIdentityProvider,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18374,7 +18374,7 @@ impl UpdateIdentityProviderInput {
             "UpdateIdentityProvider",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderInput`](crate::input::UpdateIdentityProviderInput).
@@ -18470,7 +18470,7 @@ impl UpdateResourceServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18565,7 +18565,7 @@ impl UpdateResourceServerInput {
             "UpdateResourceServer",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResourceServerInput`](crate::input::UpdateResourceServerInput).
@@ -18687,7 +18687,7 @@ impl UpdateUserAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18783,7 +18783,7 @@ impl UpdateUserAttributesInput {
             "UpdateUserAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateUserAttributesInput`](crate::input::UpdateUserAttributesInput).
@@ -19145,7 +19145,7 @@ impl UpdateUserPoolInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPool,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19238,7 +19238,7 @@ impl UpdateUserPoolInput {
             "UpdateUserPool",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolInput`](crate::input::UpdateUserPoolInput).
@@ -19753,7 +19753,7 @@ impl UpdateUserPoolClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPoolClient,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19848,7 +19848,7 @@ impl UpdateUserPoolClientInput {
             "UpdateUserPoolClient",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolClientInput`](crate::input::UpdateUserPoolClientInput).
@@ -19927,7 +19927,7 @@ impl UpdateUserPoolDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPoolDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20022,7 +20022,7 @@ impl UpdateUserPoolDomainInput {
             "UpdateUserPoolDomain",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolDomainInput`](crate::input::UpdateUserPoolDomainInput).
@@ -20111,7 +20111,7 @@ impl VerifySoftwareTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifySoftwareToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20204,7 +20204,7 @@ impl VerifySoftwareTokenInput {
             "VerifySoftwareToken",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`VerifySoftwareTokenInput`](crate::input::VerifySoftwareTokenInput).
@@ -20281,7 +20281,7 @@ impl VerifyUserAttributeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyUserAttribute,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20375,7 +20375,7 @@ impl VerifyUserAttributeInput {
             "VerifyUserAttribute",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`VerifyUserAttributeInput`](crate::input::VerifyUserAttributeInput).

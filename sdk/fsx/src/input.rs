@@ -97,7 +97,7 @@ impl AssociateFileSystemAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateFileSystemAliases,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -192,7 +192,7 @@ impl AssociateFileSystemAliasesInput {
             "AssociateFileSystemAliases",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateFileSystemAliasesInput`](crate::input::AssociateFileSystemAliasesInput).
@@ -244,7 +244,7 @@ impl CancelDataRepositoryTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelDataRepositoryTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -339,7 +339,7 @@ impl CancelDataRepositoryTaskInput {
             "CancelDataRepositoryTask",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskInput`](crate::input::CancelDataRepositoryTaskInput).
@@ -482,7 +482,7 @@ impl CopyBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CopyBackup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -578,7 +578,7 @@ impl CopyBackupInput {
             "CopyBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CopyBackupInput`](crate::input::CopyBackupInput).
@@ -679,7 +679,7 @@ impl CreateBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBackup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -775,7 +775,7 @@ impl CreateBackupInput {
             "CreateBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateBackupInput`](crate::input::CreateBackupInput).
@@ -946,7 +946,7 @@ impl CreateDataRepositoryAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataRepositoryAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1041,7 +1041,7 @@ impl CreateDataRepositoryAssociationInput {
             "CreateDataRepositoryAssociation",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryAssociationInput`](crate::input::CreateDataRepositoryAssociationInput).
@@ -1191,7 +1191,7 @@ impl CreateDataRepositoryTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataRepositoryTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1289,7 +1289,7 @@ impl CreateDataRepositoryTaskInput {
             "CreateDataRepositoryTask",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryTaskInput`](crate::input::CreateDataRepositoryTaskInput).
@@ -1632,7 +1632,7 @@ impl CreateFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFileSystem,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1728,7 +1728,7 @@ impl CreateFileSystemInput {
             "CreateFileSystem",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFileSystemInput`](crate::input::CreateFileSystemInput).
@@ -2005,7 +2005,7 @@ impl CreateFileSystemFromBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFileSystemFromBackup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2100,7 +2100,7 @@ impl CreateFileSystemFromBackupInput {
             "CreateFileSystemFromBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFileSystemFromBackupInput`](crate::input::CreateFileSystemFromBackupInput).
@@ -2198,7 +2198,7 @@ impl CreateSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2294,7 +2294,7 @@ impl CreateSnapshotInput {
             "CreateSnapshot",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
@@ -2460,7 +2460,7 @@ impl CreateStorageVirtualMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStorageVirtualMachine,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2555,7 +2555,7 @@ impl CreateStorageVirtualMachineInput {
             "CreateStorageVirtualMachine",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateStorageVirtualMachineInput`](crate::input::CreateStorageVirtualMachineInput).
@@ -2694,7 +2694,7 @@ impl CreateVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVolume,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2790,7 +2790,7 @@ impl CreateVolumeInput {
             "CreateVolume",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVolumeInput`](crate::input::CreateVolumeInput).
@@ -2907,7 +2907,7 @@ impl CreateVolumeFromBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVolumeFromBackup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3005,7 +3005,7 @@ impl CreateVolumeFromBackupInput {
             "CreateVolumeFromBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVolumeFromBackupInput`](crate::input::CreateVolumeFromBackupInput).
@@ -3070,7 +3070,7 @@ impl DeleteBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3166,7 +3166,7 @@ impl DeleteBackupInput {
             "DeleteBackup",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBackupInput`](crate::input::DeleteBackupInput).
@@ -3248,7 +3248,7 @@ impl DeleteDataRepositoryAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataRepositoryAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3343,7 +3343,7 @@ impl DeleteDataRepositoryAssociationInput {
             "DeleteDataRepositoryAssociation",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationInput`](crate::input::DeleteDataRepositoryAssociationInput).
@@ -3468,7 +3468,7 @@ impl DeleteFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFileSystem,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3564,7 +3564,7 @@ impl DeleteFileSystemInput {
             "DeleteFileSystem",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemInput`](crate::input::DeleteFileSystemInput).
@@ -3629,7 +3629,7 @@ impl DeleteSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3725,7 +3725,7 @@ impl DeleteSnapshotInput {
             "DeleteSnapshot",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
@@ -3795,7 +3795,7 @@ impl DeleteStorageVirtualMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStorageVirtualMachine,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3890,7 +3890,7 @@ impl DeleteStorageVirtualMachineInput {
             "DeleteStorageVirtualMachine",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteStorageVirtualMachineInput`](crate::input::DeleteStorageVirtualMachineInput).
@@ -3993,7 +3993,7 @@ impl DeleteVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVolume,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4089,7 +4089,7 @@ impl DeleteVolumeInput {
             "DeleteVolume",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVolumeInput`](crate::input::DeleteVolumeInput).
@@ -4193,7 +4193,7 @@ impl DescribeBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4286,7 +4286,7 @@ impl DescribeBackupsInput {
             "DescribeBackups",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBackupsInput`](crate::input::DescribeBackupsInput).
@@ -4392,7 +4392,7 @@ impl DescribeDataRepositoryAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataRepositoryAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4484,7 +4484,7 @@ impl DescribeDataRepositoryAssociationsInput {
             "DescribeDataRepositoryAssociations",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsInput`](crate::input::DescribeDataRepositoryAssociationsInput).
@@ -4591,7 +4591,7 @@ impl DescribeDataRepositoryTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataRepositoryTasks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4683,7 +4683,7 @@ impl DescribeDataRepositoryTasksInput {
             "DescribeDataRepositoryTasks",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryTasksInput`](crate::input::DescribeDataRepositoryTasksInput).
@@ -4777,7 +4777,7 @@ impl DescribeFileSystemAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFileSystemAliases,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4875,7 +4875,7 @@ impl DescribeFileSystemAliasesInput {
             "DescribeFileSystemAliases",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemAliasesInput`](crate::input::DescribeFileSystemAliasesInput).
@@ -4958,7 +4958,7 @@ impl DescribeFileSystemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFileSystems,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5051,7 +5051,7 @@ impl DescribeFileSystemsInput {
             "DescribeFileSystems",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemsInput`](crate::input::DescribeFileSystemsInput).
@@ -5155,7 +5155,7 @@ impl DescribeSnapshotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSnapshots,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5248,7 +5248,7 @@ impl DescribeSnapshotsInput {
             "DescribeSnapshots",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput).
@@ -5359,7 +5359,7 @@ impl DescribeStorageVirtualMachinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStorageVirtualMachines,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5451,7 +5451,7 @@ impl DescribeStorageVirtualMachinesInput {
             "DescribeStorageVirtualMachines",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeStorageVirtualMachinesInput`](crate::input::DescribeStorageVirtualMachinesInput).
@@ -5555,7 +5555,7 @@ impl DescribeVolumesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVolumes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5648,7 +5648,7 @@ impl DescribeVolumesInput {
             "DescribeVolumes",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeVolumesInput`](crate::input::DescribeVolumesInput).
@@ -5739,7 +5739,7 @@ impl DisassociateFileSystemAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFileSystemAliases,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5834,7 +5834,7 @@ impl DisassociateFileSystemAliasesInput {
             "DisassociateFileSystemAliases",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateFileSystemAliasesInput`](crate::input::DisassociateFileSystemAliasesInput).
@@ -5908,7 +5908,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6003,7 +6003,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -6073,7 +6073,7 @@ impl ReleaseFileSystemNfsV3LocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReleaseFileSystemNfsV3Locks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6168,7 +6168,7 @@ impl ReleaseFileSystemNfsV3LocksInput {
             "ReleaseFileSystemNfsV3Locks",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksInput`](crate::input::ReleaseFileSystemNfsV3LocksInput).
@@ -6277,7 +6277,7 @@ impl RestoreVolumeFromSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreVolumeFromSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6375,7 +6375,7 @@ impl RestoreVolumeFromSnapshotInput {
             "RestoreVolumeFromSnapshot",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotInput`](crate::input::RestoreVolumeFromSnapshotInput).
@@ -6446,7 +6446,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6539,7 +6539,7 @@ impl TagResourceInput {
             "TagResource",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -6610,7 +6610,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6703,7 +6703,7 @@ impl UntagResourceInput {
             "UntagResource",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -6802,7 +6802,7 @@ impl UpdateDataRepositoryAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataRepositoryAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6897,7 +6897,7 @@ impl UpdateDataRepositoryAssociationInput {
             "UpdateDataRepositoryAssociation",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDataRepositoryAssociationInput`](crate::input::UpdateDataRepositoryAssociationInput).
@@ -7075,7 +7075,7 @@ impl UpdateFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFileSystem,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7171,7 +7171,7 @@ impl UpdateFileSystemInput {
             "UpdateFileSystem",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemInput`](crate::input::UpdateFileSystemInput).
@@ -7248,7 +7248,7 @@ impl UpdateSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7344,7 +7344,7 @@ impl UpdateSnapshotInput {
             "UpdateSnapshot",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
@@ -7448,7 +7448,7 @@ impl UpdateStorageVirtualMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStorageVirtualMachine,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7543,7 +7543,7 @@ impl UpdateStorageVirtualMachineInput {
             "UpdateStorageVirtualMachine",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateStorageVirtualMachineInput`](crate::input::UpdateStorageVirtualMachineInput).
@@ -7658,7 +7658,7 @@ impl UpdateVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVolume,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7754,7 +7754,7 @@ impl UpdateVolumeInput {
             "UpdateVolume",
             "fsx",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateVolumeInput`](crate::input::UpdateVolumeInput).

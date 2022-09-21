@@ -66,7 +66,7 @@ impl GetRoleCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoleCredentials,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -156,7 +156,7 @@ impl GetRoleCredentialsInput {
             "GetRoleCredentials",
             "sso",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRoleCredentialsInput`](crate::input::GetRoleCredentialsInput).
@@ -242,7 +242,7 @@ impl ListAccountRolesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountRoles,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -338,7 +338,7 @@ impl ListAccountRolesInput {
             "ListAccountRoles",
             "sso",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAccountRolesInput`](crate::input::ListAccountRolesInput).
@@ -412,7 +412,7 @@ impl ListAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccounts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -505,7 +505,7 @@ impl ListAccountsInput {
             "ListAccounts",
             "sso",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAccountsInput`](crate::input::ListAccountsInput).
@@ -554,7 +554,7 @@ impl LogoutInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Logout,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -625,7 +625,7 @@ impl LogoutInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::Logout::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("Logout", "sso"));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`LogoutInput`](crate::input::LogoutInput).

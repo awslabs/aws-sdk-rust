@@ -158,7 +158,7 @@ impl CountClosedWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountClosedWorkflowExecutions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -250,7 +250,7 @@ impl CountClosedWorkflowExecutionsInput {
             "CountClosedWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput).
@@ -374,7 +374,7 @@ impl CountOpenWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountOpenWorkflowExecutions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -466,7 +466,7 @@ impl CountOpenWorkflowExecutionsInput {
             "CountOpenWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput).
@@ -530,7 +530,7 @@ impl CountPendingActivityTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountPendingActivityTasks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -625,7 +625,7 @@ impl CountPendingActivityTasksInput {
             "CountPendingActivityTasks",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput).
@@ -689,7 +689,7 @@ impl CountPendingDecisionTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountPendingDecisionTasks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -784,7 +784,7 @@ impl CountPendingDecisionTasksInput {
             "CountPendingDecisionTasks",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput).
@@ -849,7 +849,7 @@ impl DeprecateActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateActivityType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -944,7 +944,7 @@ impl DeprecateActivityTypeInput {
             "DeprecateActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput).
@@ -992,7 +992,7 @@ impl DeprecateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1085,7 +1085,7 @@ impl DeprecateDomainInput {
             "DeprecateDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeprecateDomainInput`](crate::input::DeprecateDomainInput).
@@ -1150,7 +1150,7 @@ impl DeprecateWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateWorkflowType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1245,7 +1245,7 @@ impl DeprecateWorkflowTypeInput {
             "DeprecateWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput).
@@ -1310,7 +1310,7 @@ impl DescribeActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeActivityType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1405,7 +1405,7 @@ impl DescribeActivityTypeInput {
             "DescribeActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput).
@@ -1453,7 +1453,7 @@ impl DescribeDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1546,7 +1546,7 @@ impl DescribeDomainInput {
             "DescribeDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDomainInput`](crate::input::DescribeDomainInput).
@@ -1613,7 +1613,7 @@ impl DescribeWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflowExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1708,7 +1708,7 @@ impl DescribeWorkflowExecutionInput {
             "DescribeWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput).
@@ -1773,7 +1773,7 @@ impl DescribeWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflowType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1868,7 +1868,7 @@ impl DescribeWorkflowTypeInput {
             "DescribeWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput).
@@ -1976,7 +1976,7 @@ impl GetWorkflowExecutionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkflowExecutionHistory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2068,7 +2068,7 @@ impl GetWorkflowExecutionHistoryInput {
             "GetWorkflowExecutionHistory",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput).
@@ -2186,7 +2186,7 @@ impl ListActivityTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActivityTypes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2279,7 +2279,7 @@ impl ListActivityTypesInput {
             "ListActivityTypes",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListActivityTypesInput`](crate::input::ListActivityTypesInput).
@@ -2486,7 +2486,7 @@ impl ListClosedWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClosedWorkflowExecutions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2578,7 +2578,7 @@ impl ListClosedWorkflowExecutionsInput {
             "ListClosedWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput).
@@ -2672,7 +2672,7 @@ impl ListDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2765,7 +2765,7 @@ impl ListDomainsInput {
             "ListDomains",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput).
@@ -2930,7 +2930,7 @@ impl ListOpenWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOpenWorkflowExecutions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3022,7 +3022,7 @@ impl ListOpenWorkflowExecutionsInput {
             "ListOpenWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput).
@@ -3072,7 +3072,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3167,7 +3167,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -3285,7 +3285,7 @@ impl ListWorkflowTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkflowTypes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3378,7 +3378,7 @@ impl ListWorkflowTypesInput {
             "ListWorkflowTypes",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput).
@@ -3454,7 +3454,7 @@ impl PollForActivityTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PollForActivityTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3549,7 +3549,7 @@ impl PollForActivityTaskInput {
             "PollForActivityTask",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput).
@@ -3672,7 +3672,7 @@ impl PollForDecisionTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PollForDecisionTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3767,7 +3767,7 @@ impl PollForDecisionTaskInput {
             "PollForDecisionTask",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput).
@@ -3835,7 +3835,7 @@ impl RecordActivityTaskHeartbeatInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RecordActivityTaskHeartbeat,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3927,7 +3927,7 @@ impl RecordActivityTaskHeartbeatInput {
             "RecordActivityTaskHeartbeat",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput).
@@ -4133,7 +4133,7 @@ impl RegisterActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterActivityType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4228,7 +4228,7 @@ impl RegisterActivityTypeInput {
             "RegisterActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput).
@@ -4339,7 +4339,7 @@ impl RegisterDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4432,7 +4432,7 @@ impl RegisterDomainInput {
             "RegisterDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterDomainInput`](crate::input::RegisterDomainInput).
@@ -4646,7 +4646,7 @@ impl RegisterWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterWorkflowType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4741,7 +4741,7 @@ impl RegisterWorkflowTypeInput {
             "RegisterWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput).
@@ -4817,7 +4817,7 @@ impl RequestCancelWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestCancelWorkflowExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4909,7 +4909,7 @@ impl RequestCancelWorkflowExecutionInput {
             "RequestCancelWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput).
@@ -4977,7 +4977,7 @@ impl RespondActivityTaskCanceledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskCanceled,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5069,7 +5069,7 @@ impl RespondActivityTaskCanceledInput {
             "RespondActivityTaskCanceled",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput).
@@ -5137,7 +5137,7 @@ impl RespondActivityTaskCompletedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskCompleted,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5229,7 +5229,7 @@ impl RespondActivityTaskCompletedInput {
             "RespondActivityTaskCompleted",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput).
@@ -5309,7 +5309,7 @@ impl RespondActivityTaskFailedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskFailed,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5404,7 +5404,7 @@ impl RespondActivityTaskFailedInput {
             "RespondActivityTaskFailed",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput).
@@ -5496,7 +5496,7 @@ impl RespondDecisionTaskCompletedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondDecisionTaskCompleted,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5588,7 +5588,7 @@ impl RespondDecisionTaskCompletedInput {
             "RespondDecisionTaskCompleted",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput).
@@ -5688,7 +5688,7 @@ impl SignalWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SignalWorkflowExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5783,7 +5783,7 @@ impl SignalWorkflowExecutionInput {
             "SignalWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput).
@@ -6025,7 +6025,7 @@ impl StartWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartWorkflowExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6120,7 +6120,7 @@ impl StartWorkflowExecutionInput {
             "StartWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput).
@@ -6193,7 +6193,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6286,7 +6286,7 @@ impl TagResourceInput {
             "TagResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -6417,7 +6417,7 @@ impl TerminateWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateWorkflowExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6512,7 +6512,7 @@ impl TerminateWorkflowExecutionInput {
             "TerminateWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput).
@@ -6579,7 +6579,7 @@ impl UndeprecateActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateActivityType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6674,7 +6674,7 @@ impl UndeprecateActivityTypeInput {
             "UndeprecateActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput).
@@ -6722,7 +6722,7 @@ impl UndeprecateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6815,7 +6815,7 @@ impl UndeprecateDomainInput {
             "UndeprecateDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput).
@@ -6882,7 +6882,7 @@ impl UndeprecateWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateWorkflowType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6977,7 +6977,7 @@ impl UndeprecateWorkflowTypeInput {
             "UndeprecateWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput).
@@ -7048,7 +7048,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7141,7 +7141,7 @@ impl UntagResourceInput {
             "UntagResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).

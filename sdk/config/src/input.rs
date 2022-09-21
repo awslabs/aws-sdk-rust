@@ -75,7 +75,7 @@ impl BatchGetAggregateResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetAggregateResourceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -167,7 +167,7 @@ impl BatchGetAggregateResourceConfigInput {
             "BatchGetAggregateResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchGetAggregateResourceConfigInput`](crate::input::BatchGetAggregateResourceConfigInput).
@@ -226,7 +226,7 @@ impl BatchGetResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetResourceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -321,7 +321,7 @@ impl BatchGetResourceConfigInput {
             "BatchGetResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchGetResourceConfigInput`](crate::input::BatchGetResourceConfigInput).
@@ -391,7 +391,7 @@ impl DeleteAggregationAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAggregationAuthorization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -483,7 +483,7 @@ impl DeleteAggregationAuthorizationInput {
             "DeleteAggregationAuthorization",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAggregationAuthorizationInput`](crate::input::DeleteAggregationAuthorizationInput).
@@ -536,7 +536,7 @@ impl DeleteConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -629,7 +629,7 @@ impl DeleteConfigRuleInput {
             "DeleteConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConfigRuleInput`](crate::input::DeleteConfigRuleInput).
@@ -687,7 +687,7 @@ impl DeleteConfigurationAggregatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationAggregator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -779,7 +779,7 @@ impl DeleteConfigurationAggregatorInput {
             "DeleteConfigurationAggregator",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationAggregatorInput`](crate::input::DeleteConfigurationAggregatorInput).
@@ -837,7 +837,7 @@ impl DeleteConfigurationRecorderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationRecorder,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -929,7 +929,7 @@ impl DeleteConfigurationRecorderInput {
             "DeleteConfigurationRecorder",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationRecorderInput`](crate::input::DeleteConfigurationRecorderInput).
@@ -982,7 +982,7 @@ impl DeleteConformancePackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConformancePack,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1077,7 +1077,7 @@ impl DeleteConformancePackInput {
             "DeleteConformancePack",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConformancePackInput`](crate::input::DeleteConformancePackInput).
@@ -1130,7 +1130,7 @@ impl DeleteDeliveryChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeliveryChannel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1225,7 +1225,7 @@ impl DeleteDeliveryChannelInput {
             "DeleteDeliveryChannel",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDeliveryChannelInput`](crate::input::DeleteDeliveryChannelInput).
@@ -1280,7 +1280,7 @@ impl DeleteEvaluationResultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEvaluationResults,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1375,7 +1375,7 @@ impl DeleteEvaluationResultsInput {
             "DeleteEvaluationResults",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEvaluationResultsInput`](crate::input::DeleteEvaluationResultsInput).
@@ -1433,7 +1433,7 @@ impl DeleteOrganizationConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOrganizationConfigRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1525,7 +1525,7 @@ impl DeleteOrganizationConfigRuleInput {
             "DeleteOrganizationConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationConfigRuleInput`](crate::input::DeleteOrganizationConfigRuleInput).
@@ -1583,7 +1583,7 @@ impl DeleteOrganizationConformancePackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOrganizationConformancePack,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1675,7 +1675,7 @@ impl DeleteOrganizationConformancePackInput {
             "DeleteOrganizationConformancePack",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationConformancePackInput`](crate::input::DeleteOrganizationConformancePackInput).
@@ -1745,7 +1745,7 @@ impl DeletePendingAggregationRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePendingAggregationRequest,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1837,7 +1837,7 @@ impl DeletePendingAggregationRequestInput {
             "DeletePendingAggregationRequest",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePendingAggregationRequestInput`](crate::input::DeletePendingAggregationRequestInput).
@@ -1907,7 +1907,7 @@ impl DeleteRemediationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRemediationConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1999,7 +1999,7 @@ impl DeleteRemediationConfigurationInput {
             "DeleteRemediationConfiguration",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRemediationConfigurationInput`](crate::input::DeleteRemediationConfigurationInput).
@@ -2081,7 +2081,7 @@ impl DeleteRemediationExceptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRemediationExceptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2173,7 +2173,7 @@ impl DeleteRemediationExceptionsInput {
             "DeleteRemediationExceptions",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRemediationExceptionsInput`](crate::input::DeleteRemediationExceptionsInput).
@@ -2238,7 +2238,7 @@ impl DeleteResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2333,7 +2333,7 @@ impl DeleteResourceConfigInput {
             "DeleteResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResourceConfigInput`](crate::input::DeleteResourceConfigInput).
@@ -2391,7 +2391,7 @@ impl DeleteRetentionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRetentionConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2483,7 +2483,7 @@ impl DeleteRetentionConfigurationInput {
             "DeleteRetentionConfiguration",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRetentionConfigurationInput`](crate::input::DeleteRetentionConfigurationInput).
@@ -2533,7 +2533,7 @@ impl DeleteStoredQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStoredQuery,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2626,7 +2626,7 @@ impl DeleteStoredQueryInput {
             "DeleteStoredQuery",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteStoredQueryInput`](crate::input::DeleteStoredQueryInput).
@@ -2679,7 +2679,7 @@ impl DeliverConfigSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeliverConfigSnapshot,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2774,7 +2774,7 @@ impl DeliverConfigSnapshotInput {
             "DeliverConfigSnapshot",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeliverConfigSnapshotInput`](crate::input::DeliverConfigSnapshotInput).
@@ -2873,7 +2873,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAggregateComplianceByConfigRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2965,7 +2965,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
             "DescribeAggregateComplianceByConfigRules",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAggregateComplianceByConfigRulesInput`](crate::input::DescribeAggregateComplianceByConfigRulesInput).
@@ -3068,7 +3068,7 @@ impl DescribeAggregateComplianceByConformancePacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAggregateComplianceByConformancePacks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3160,7 +3160,7 @@ impl DescribeAggregateComplianceByConformancePacksInput {
             "DescribeAggregateComplianceByConformancePacks",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAggregateComplianceByConformancePacksInput`](crate::input::DescribeAggregateComplianceByConformancePacksInput).
@@ -3225,7 +3225,7 @@ impl DescribeAggregationAuthorizationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAggregationAuthorizations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3317,7 +3317,7 @@ impl DescribeAggregationAuthorizationsInput {
             "DescribeAggregationAuthorizations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAggregationAuthorizationsInput`](crate::input::DescribeAggregationAuthorizationsInput).
@@ -3414,7 +3414,7 @@ impl DescribeComplianceByConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComplianceByConfigRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3506,7 +3506,7 @@ impl DescribeComplianceByConfigRuleInput {
             "DescribeComplianceByConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeComplianceByConfigRuleInput`](crate::input::DescribeComplianceByConfigRuleInput).
@@ -3621,7 +3621,7 @@ impl DescribeComplianceByResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComplianceByResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3713,7 +3713,7 @@ impl DescribeComplianceByResourceInput {
             "DescribeComplianceByResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeComplianceByResourceInput`](crate::input::DescribeComplianceByResourceInput).
@@ -3802,7 +3802,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigRuleEvaluationStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3894,7 +3894,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
             "DescribeConfigRuleEvaluationStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigRuleEvaluationStatusInput`](crate::input::DescribeConfigRuleEvaluationStatusInput).
@@ -3965,7 +3965,7 @@ impl DescribeConfigRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4058,7 +4058,7 @@ impl DescribeConfigRulesInput {
             "DescribeConfigRules",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigRulesInput`](crate::input::DescribeConfigRulesInput).
@@ -4147,7 +4147,7 @@ impl DescribeConfigurationAggregatorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationAggregators,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4239,7 +4239,7 @@ impl DescribeConfigurationAggregatorsInput {
             "DescribeConfigurationAggregators",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationAggregatorsInput`](crate::input::DescribeConfigurationAggregatorsInput).
@@ -4355,7 +4355,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationAggregatorSourcesStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4447,7 +4447,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
             "DescribeConfigurationAggregatorSourcesStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationAggregatorSourcesStatusInput`](crate::input::DescribeConfigurationAggregatorSourcesStatusInput).
@@ -4513,7 +4513,7 @@ impl DescribeConfigurationRecordersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationRecorders,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4605,7 +4605,7 @@ impl DescribeConfigurationRecordersInput {
             "DescribeConfigurationRecorders",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRecordersInput`](crate::input::DescribeConfigurationRecordersInput).
@@ -4670,7 +4670,7 @@ impl DescribeConfigurationRecorderStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationRecorderStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4762,7 +4762,7 @@ impl DescribeConfigurationRecorderStatusInput {
             "DescribeConfigurationRecorderStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRecorderStatusInput`](crate::input::DescribeConfigurationRecorderStatusInput).
@@ -4856,7 +4856,7 @@ impl DescribeConformancePackComplianceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConformancePackCompliance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4948,7 +4948,7 @@ impl DescribeConformancePackComplianceInput {
             "DescribeConformancePackCompliance",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConformancePackComplianceInput`](crate::input::DescribeConformancePackComplianceInput).
@@ -5033,7 +5033,7 @@ impl DescribeConformancePacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConformancePacks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5128,7 +5128,7 @@ impl DescribeConformancePacksInput {
             "DescribeConformancePacks",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConformancePacksInput`](crate::input::DescribeConformancePacksInput).
@@ -5213,7 +5213,7 @@ impl DescribeConformancePackStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConformancePackStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5305,7 +5305,7 @@ impl DescribeConformancePackStatusInput {
             "DescribeConformancePackStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConformancePackStatusInput`](crate::input::DescribeConformancePackStatusInput).
@@ -5366,7 +5366,7 @@ impl DescribeDeliveryChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeliveryChannels,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5461,7 +5461,7 @@ impl DescribeDeliveryChannelsInput {
             "DescribeDeliveryChannels",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDeliveryChannelsInput`](crate::input::DescribeDeliveryChannelsInput).
@@ -5522,7 +5522,7 @@ impl DescribeDeliveryChannelStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeliveryChannelStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5614,7 +5614,7 @@ impl DescribeDeliveryChannelStatusInput {
             "DescribeDeliveryChannelStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDeliveryChannelStatusInput`](crate::input::DescribeDeliveryChannelStatusInput).
@@ -5703,7 +5703,7 @@ impl DescribeOrganizationConfigRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfigRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5795,7 +5795,7 @@ impl DescribeOrganizationConfigRulesInput {
             "DescribeOrganizationConfigRules",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigRulesInput`](crate::input::DescribeOrganizationConfigRulesInput).
@@ -5884,7 +5884,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfigRuleStatuses,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5976,7 +5976,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
             "DescribeOrganizationConfigRuleStatuses",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigRuleStatusesInput`](crate::input::DescribeOrganizationConfigRuleStatusesInput).
@@ -6065,7 +6065,7 @@ impl DescribeOrganizationConformancePacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConformancePacks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6157,7 +6157,7 @@ impl DescribeOrganizationConformancePacksInput {
             "DescribeOrganizationConformancePacks",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConformancePacksInput`](crate::input::DescribeOrganizationConformancePacksInput).
@@ -6248,7 +6248,7 @@ impl DescribeOrganizationConformancePackStatusesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConformancePackStatuses,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6340,7 +6340,7 @@ impl DescribeOrganizationConformancePackStatusesInput {
             "DescribeOrganizationConformancePackStatuses",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConformancePackStatusesInput`](crate::input::DescribeOrganizationConformancePackStatusesInput).
@@ -6405,7 +6405,7 @@ impl DescribePendingAggregationRequestsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePendingAggregationRequests,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6497,7 +6497,7 @@ impl DescribePendingAggregationRequestsInput {
             "DescribePendingAggregationRequests",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePendingAggregationRequestsInput`](crate::input::DescribePendingAggregationRequestsInput).
@@ -6558,7 +6558,7 @@ impl DescribeRemediationConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRemediationConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6650,7 +6650,7 @@ impl DescribeRemediationConfigurationsInput {
             "DescribeRemediationConfigurations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRemediationConfigurationsInput`](crate::input::DescribeRemediationConfigurationsInput).
@@ -6756,7 +6756,7 @@ impl DescribeRemediationExceptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRemediationExceptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6848,7 +6848,7 @@ impl DescribeRemediationExceptionsInput {
             "DescribeRemediationExceptions",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRemediationExceptionsInput`](crate::input::DescribeRemediationExceptionsInput).
@@ -6948,7 +6948,7 @@ impl DescribeRemediationExecutionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRemediationExecutionStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7040,7 +7040,7 @@ impl DescribeRemediationExecutionStatusInput {
             "DescribeRemediationExecutionStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRemediationExecutionStatusInput`](crate::input::DescribeRemediationExecutionStatusInput).
@@ -7121,7 +7121,7 @@ impl DescribeRetentionConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRetentionConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7213,7 +7213,7 @@ impl DescribeRetentionConfigurationsInput {
             "DescribeRetentionConfigurations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRetentionConfigurationsInput`](crate::input::DescribeRetentionConfigurationsInput).
@@ -7355,7 +7355,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateComplianceDetailsByConfigRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7447,7 +7447,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
             "GetAggregateComplianceDetailsByConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAggregateComplianceDetailsByConfigRuleInput`](crate::input::GetAggregateComplianceDetailsByConfigRuleInput).
@@ -7564,7 +7564,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateConfigRuleComplianceSummary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7656,7 +7656,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
             "GetAggregateConfigRuleComplianceSummary",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAggregateConfigRuleComplianceSummaryInput`](crate::input::GetAggregateConfigRuleComplianceSummaryInput).
@@ -7782,7 +7782,7 @@ impl GetAggregateConformancePackComplianceSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateConformancePackComplianceSummary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7874,7 +7874,7 @@ impl GetAggregateConformancePackComplianceSummaryInput {
             "GetAggregateConformancePackComplianceSummary",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAggregateConformancePackComplianceSummaryInput`](crate::input::GetAggregateConformancePackComplianceSummaryInput).
@@ -7987,7 +7987,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateDiscoveredResourceCounts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8079,7 +8079,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
             "GetAggregateDiscoveredResourceCounts",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAggregateDiscoveredResourceCountsInput`](crate::input::GetAggregateDiscoveredResourceCountsInput).
@@ -8156,7 +8156,7 @@ impl GetAggregateResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateResourceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8248,7 +8248,7 @@ impl GetAggregateResourceConfigInput {
             "GetAggregateResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAggregateResourceConfigInput`](crate::input::GetAggregateResourceConfigInput).
@@ -8351,7 +8351,7 @@ impl GetComplianceDetailsByConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceDetailsByConfigRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8443,7 +8443,7 @@ impl GetComplianceDetailsByConfigRuleInput {
             "GetComplianceDetailsByConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetComplianceDetailsByConfigRuleInput`](crate::input::GetComplianceDetailsByConfigRuleInput).
@@ -8546,7 +8546,7 @@ impl GetComplianceDetailsByResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceDetailsByResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8638,7 +8638,7 @@ impl GetComplianceDetailsByResourceInput {
             "GetComplianceDetailsByResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetComplianceDetailsByResourceInput`](crate::input::GetComplianceDetailsByResourceInput).
@@ -8676,7 +8676,7 @@ impl GetComplianceSummaryByConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceSummaryByConfigRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8761,7 +8761,7 @@ impl GetComplianceSummaryByConfigRuleInput {
             "GetComplianceSummaryByConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetComplianceSummaryByConfigRuleInput`](crate::input::GetComplianceSummaryByConfigRuleInput).
@@ -8824,7 +8824,7 @@ impl GetComplianceSummaryByResourceTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceSummaryByResourceType,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8916,7 +8916,7 @@ impl GetComplianceSummaryByResourceTypeInput {
             "GetComplianceSummaryByResourceType",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetComplianceSummaryByResourceTypeInput`](crate::input::GetComplianceSummaryByResourceTypeInput).
@@ -9010,7 +9010,7 @@ impl GetConformancePackComplianceDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConformancePackComplianceDetails,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9102,7 +9102,7 @@ impl GetConformancePackComplianceDetailsInput {
             "GetConformancePackComplianceDetails",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetConformancePackComplianceDetailsInput`](crate::input::GetConformancePackComplianceDetailsInput).
@@ -9187,7 +9187,7 @@ impl GetConformancePackComplianceSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConformancePackComplianceSummary,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9279,7 +9279,7 @@ impl GetConformancePackComplianceSummaryInput {
             "GetConformancePackComplianceSummary",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetConformancePackComplianceSummaryInput`](crate::input::GetConformancePackComplianceSummaryInput).
@@ -9332,7 +9332,7 @@ impl GetCustomRulePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCustomRulePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9427,7 +9427,7 @@ impl GetCustomRulePolicyInput {
             "GetCustomRulePolicy",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCustomRulePolicyInput`](crate::input::GetCustomRulePolicyInput).
@@ -9518,7 +9518,7 @@ impl GetDiscoveredResourceCountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDiscoveredResourceCounts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9610,7 +9610,7 @@ impl GetDiscoveredResourceCountsInput {
             "GetDiscoveredResourceCounts",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDiscoveredResourceCountsInput`](crate::input::GetDiscoveredResourceCountsInput).
@@ -9707,7 +9707,7 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOrganizationConfigRuleDetailedStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9799,7 +9799,7 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
             "GetOrganizationConfigRuleDetailedStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetOrganizationConfigRuleDetailedStatusInput`](crate::input::GetOrganizationConfigRuleDetailedStatusInput).
@@ -9902,7 +9902,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOrganizationConformancePackDetailedStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9994,7 +9994,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
             "GetOrganizationConformancePackDetailedStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetOrganizationConformancePackDetailedStatusInput`](crate::input::GetOrganizationConformancePackDetailedStatusInput).
@@ -10053,7 +10053,7 @@ impl GetOrganizationCustomRulePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOrganizationCustomRulePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10145,7 +10145,7 @@ impl GetOrganizationCustomRulePolicyInput {
             "GetOrganizationCustomRulePolicy",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetOrganizationCustomRulePolicyInput`](crate::input::GetOrganizationCustomRulePolicyInput).
@@ -10281,7 +10281,7 @@ impl GetResourceConfigHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceConfigHistory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10376,7 +10376,7 @@ impl GetResourceConfigHistoryInput {
             "GetResourceConfigHistory",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResourceConfigHistoryInput`](crate::input::GetResourceConfigHistoryInput).
@@ -10426,7 +10426,7 @@ impl GetStoredQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStoredQuery,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10519,7 +10519,7 @@ impl GetStoredQueryInput {
             "GetStoredQuery",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetStoredQueryInput`](crate::input::GetStoredQueryInput).
@@ -10631,7 +10631,7 @@ impl ListAggregateDiscoveredResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAggregateDiscoveredResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10723,7 +10723,7 @@ impl ListAggregateDiscoveredResourcesInput {
             "ListAggregateDiscoveredResources",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAggregateDiscoveredResourcesInput`](crate::input::ListAggregateDiscoveredResourcesInput).
@@ -10837,7 +10837,7 @@ impl ListConformancePackComplianceScoresInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConformancePackComplianceScores,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10929,7 +10929,7 @@ impl ListConformancePackComplianceScoresInput {
             "ListConformancePackComplianceScores",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListConformancePackComplianceScoresInput`](crate::input::ListConformancePackComplianceScoresInput).
@@ -11056,7 +11056,7 @@ impl ListDiscoveredResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDiscoveredResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11151,7 +11151,7 @@ impl ListDiscoveredResourcesInput {
             "ListDiscoveredResources",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
@@ -11213,7 +11213,7 @@ impl ListStoredQueriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStoredQueries,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11306,7 +11306,7 @@ impl ListStoredQueriesInput {
             "ListStoredQueries",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListStoredQueriesInput`](crate::input::ListStoredQueriesInput).
@@ -11380,7 +11380,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11475,7 +11475,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -11566,7 +11566,7 @@ impl PutAggregationAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAggregationAuthorization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11658,7 +11658,7 @@ impl PutAggregationAuthorizationInput {
             "PutAggregationAuthorization",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutAggregationAuthorizationInput`](crate::input::PutAggregationAuthorizationInput).
@@ -11732,7 +11732,7 @@ impl PutConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConfigRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11825,7 +11825,7 @@ impl PutConfigRuleInput {
             "PutConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutConfigRuleInput`](crate::input::PutConfigRuleInput).
@@ -11948,7 +11948,7 @@ impl PutConfigurationAggregatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConfigurationAggregator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12043,7 +12043,7 @@ impl PutConfigurationAggregatorInput {
             "PutConfigurationAggregator",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutConfigurationAggregatorInput`](crate::input::PutConfigurationAggregatorInput).
@@ -12101,7 +12101,7 @@ impl PutConfigurationRecorderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConfigurationRecorder,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12196,7 +12196,7 @@ impl PutConfigurationRecorderInput {
             "PutConfigurationRecorder",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutConfigurationRecorderInput`](crate::input::PutConfigurationRecorderInput).
@@ -12369,7 +12369,7 @@ impl PutConformancePackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConformancePack,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12462,7 +12462,7 @@ impl PutConformancePackInput {
             "PutConformancePack",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutConformancePackInput`](crate::input::PutConformancePackInput).
@@ -12515,7 +12515,7 @@ impl PutDeliveryChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDeliveryChannel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12608,7 +12608,7 @@ impl PutDeliveryChannelInput {
             "PutDeliveryChannel",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutDeliveryChannelInput`](crate::input::PutDeliveryChannelInput).
@@ -12695,7 +12695,7 @@ impl PutEvaluationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEvaluations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12788,7 +12788,7 @@ impl PutEvaluationsInput {
             "PutEvaluations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutEvaluationsInput`](crate::input::PutEvaluationsInput).
@@ -12856,7 +12856,7 @@ impl PutExternalEvaluationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutExternalEvaluation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12951,7 +12951,7 @@ impl PutExternalEvaluationInput {
             "PutExternalEvaluation",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutExternalEvaluationInput`](crate::input::PutExternalEvaluationInput).
@@ -13088,7 +13088,7 @@ impl PutOrganizationConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutOrganizationConfigRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13183,7 +13183,7 @@ impl PutOrganizationConfigRuleInput {
             "PutOrganizationConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutOrganizationConfigRuleInput`](crate::input::PutOrganizationConfigRuleInput).
@@ -13359,7 +13359,7 @@ impl PutOrganizationConformancePackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutOrganizationConformancePack,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13451,7 +13451,7 @@ impl PutOrganizationConformancePackInput {
             "PutOrganizationConformancePack",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutOrganizationConformancePackInput`](crate::input::PutOrganizationConformancePackInput).
@@ -13516,7 +13516,7 @@ impl PutRemediationConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRemediationConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13608,7 +13608,7 @@ impl PutRemediationConfigurationsInput {
             "PutRemediationConfigurations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutRemediationConfigurationsInput`](crate::input::PutRemediationConfigurationsInput).
@@ -13717,7 +13717,7 @@ impl PutRemediationExceptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRemediationExceptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13812,7 +13812,7 @@ impl PutRemediationExceptionsInput {
             "PutRemediationExceptions",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutRemediationExceptionsInput`](crate::input::PutRemediationExceptionsInput).
@@ -13963,7 +13963,7 @@ impl PutResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14056,7 +14056,7 @@ impl PutResourceConfigInput {
             "PutResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutResourceConfigInput`](crate::input::PutResourceConfigInput).
@@ -14112,7 +14112,7 @@ impl PutRetentionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRetentionConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14207,7 +14207,7 @@ impl PutRetentionConfigurationInput {
             "PutRetentionConfiguration",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutRetentionConfigurationInput`](crate::input::PutRetentionConfigurationInput).
@@ -14285,7 +14285,7 @@ impl PutStoredQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutStoredQuery,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14378,7 +14378,7 @@ impl PutStoredQueryInput {
             "PutStoredQuery",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutStoredQueryInput`](crate::input::PutStoredQueryInput).
@@ -14484,7 +14484,7 @@ impl SelectAggregateResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SelectAggregateResourceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14576,7 +14576,7 @@ impl SelectAggregateResourceConfigInput {
             "SelectAggregateResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SelectAggregateResourceConfigInput`](crate::input::SelectAggregateResourceConfigInput).
@@ -14650,7 +14650,7 @@ impl SelectResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SelectResourceConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14745,7 +14745,7 @@ impl SelectResourceConfigInput {
             "SelectResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SelectResourceConfigInput`](crate::input::SelectResourceConfigInput).
@@ -14806,7 +14806,7 @@ impl StartConfigRulesEvaluationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartConfigRulesEvaluation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14898,7 +14898,7 @@ impl StartConfigRulesEvaluationInput {
             "StartConfigRulesEvaluation",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartConfigRulesEvaluationInput`](crate::input::StartConfigRulesEvaluationInput).
@@ -14956,7 +14956,7 @@ impl StartConfigurationRecorderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartConfigurationRecorder,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15051,7 +15051,7 @@ impl StartConfigurationRecorderInput {
             "StartConfigurationRecorder",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartConfigurationRecorderInput`](crate::input::StartConfigurationRecorderInput).
@@ -15127,7 +15127,7 @@ impl StartRemediationExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartRemediationExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15222,7 +15222,7 @@ impl StartRemediationExecutionInput {
             "StartRemediationExecution",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartRemediationExecutionInput`](crate::input::StartRemediationExecutionInput).
@@ -15280,7 +15280,7 @@ impl StopConfigurationRecorderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopConfigurationRecorder,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15375,7 +15375,7 @@ impl StopConfigurationRecorderInput {
             "StopConfigurationRecorder",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopConfigurationRecorderInput`](crate::input::StopConfigurationRecorderInput).
@@ -15446,7 +15446,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15539,7 +15539,7 @@ impl TagResourceInput {
             "TagResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -15610,7 +15610,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15703,7 +15703,7 @@ impl UntagResourceInput {
             "UntagResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).

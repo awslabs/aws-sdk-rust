@@ -55,7 +55,7 @@ impl BatchAcknowledgeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchAcknowledgeAlarm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -145,7 +145,7 @@ impl BatchAcknowledgeAlarmInput {
             "BatchAcknowledgeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchAcknowledgeAlarmInput`](crate::input::BatchAcknowledgeAlarmInput).
@@ -205,7 +205,7 @@ impl BatchDeleteDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteDetector,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -293,7 +293,7 @@ impl BatchDeleteDetectorInput {
             "BatchDeleteDetector",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput).
@@ -356,7 +356,7 @@ impl BatchDisableAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisableAlarm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -444,7 +444,7 @@ impl BatchDisableAlarmInput {
             "BatchDisableAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput).
@@ -507,7 +507,7 @@ impl BatchEnableAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchEnableAlarm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -595,7 +595,7 @@ impl BatchEnableAlarmInput {
             "BatchEnableAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchEnableAlarmInput`](crate::input::BatchEnableAlarmInput).
@@ -654,7 +654,7 @@ impl BatchPutMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchPutMessage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -742,7 +742,7 @@ impl BatchPutMessageInput {
             "BatchPutMessage",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchPutMessageInput`](crate::input::BatchPutMessageInput).
@@ -805,7 +805,7 @@ impl BatchResetAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchResetAlarm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -893,7 +893,7 @@ impl BatchResetAlarmInput {
             "BatchResetAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchResetAlarmInput`](crate::input::BatchResetAlarmInput).
@@ -956,7 +956,7 @@ impl BatchSnoozeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchSnoozeAlarm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1044,7 +1044,7 @@ impl BatchSnoozeAlarmInput {
             "BatchSnoozeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchSnoozeAlarmInput`](crate::input::BatchSnoozeAlarmInput).
@@ -1104,7 +1104,7 @@ impl BatchUpdateDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateDetector,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1192,7 +1192,7 @@ impl BatchUpdateDetectorInput {
             "BatchUpdateDetector",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorInput`](crate::input::BatchUpdateDetectorInput).
@@ -1257,7 +1257,7 @@ impl DescribeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlarm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1361,7 +1361,7 @@ impl DescribeAlarmInput {
             "DescribeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAlarmInput`](crate::input::DescribeAlarmInput).
@@ -1426,7 +1426,7 @@ impl DescribeDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDetector,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1530,7 +1530,7 @@ impl DescribeDetectorInput {
             "DescribeDetector",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDetectorInput`](crate::input::DescribeDetectorInput).
@@ -1606,7 +1606,7 @@ impl ListAlarmsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAlarms,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1716,7 +1716,7 @@ impl ListAlarmsInput {
             "ListAlarms",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAlarmsInput`](crate::input::ListAlarmsInput).
@@ -1805,7 +1805,7 @@ impl ListDetectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDetectors,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1918,7 +1918,7 @@ impl ListDetectorsInput {
             "ListDetectors",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDetectorsInput`](crate::input::ListDetectorsInput).

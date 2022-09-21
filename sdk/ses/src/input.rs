@@ -70,7 +70,7 @@ impl CloneReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CloneReceiptRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -160,7 +160,7 @@ impl CloneReceiptRuleSetInput {
             "CloneReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CloneReceiptRuleSetInput`](crate::input::CloneReceiptRuleSetInput).
@@ -213,7 +213,7 @@ impl CreateConfigurationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +303,7 @@ impl CreateConfigurationSetInput {
             "CreateConfigurationSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
@@ -373,7 +373,7 @@ impl CreateConfigurationSetEventDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSetEventDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -460,7 +460,7 @@ impl CreateConfigurationSetEventDestinationInput {
             "CreateConfigurationSetEventDestination",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
@@ -532,7 +532,7 @@ impl CreateConfigurationSetTrackingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSetTrackingOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -619,7 +619,7 @@ impl CreateConfigurationSetTrackingOptionsInput {
             "CreateConfigurationSetTrackingOptions",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetTrackingOptionsInput`](crate::input::CreateConfigurationSetTrackingOptionsInput).
@@ -749,7 +749,7 @@ impl CreateCustomVerificationEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomVerificationEmailTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -836,7 +836,7 @@ impl CreateCustomVerificationEmailTemplateInput {
             "CreateCustomVerificationEmailTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCustomVerificationEmailTemplateInput`](crate::input::CreateCustomVerificationEmailTemplateInput).
@@ -889,7 +889,7 @@ impl CreateReceiptFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -977,7 +977,7 @@ impl CreateReceiptFilterInput {
             "CreateReceiptFilter",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateReceiptFilterInput`](crate::input::CreateReceiptFilterInput).
@@ -1054,7 +1054,7 @@ impl CreateReceiptRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1142,7 +1142,7 @@ impl CreateReceiptRuleInput {
             "CreateReceiptRule",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateReceiptRuleInput`](crate::input::CreateReceiptRuleInput).
@@ -1205,7 +1205,7 @@ impl CreateReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1295,7 +1295,7 @@ impl CreateReceiptRuleSetInput {
             "CreateReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateReceiptRuleSetInput`](crate::input::CreateReceiptRuleSetInput).
@@ -1345,7 +1345,7 @@ impl CreateTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1433,7 +1433,7 @@ impl CreateTemplateInput {
             "CreateTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTemplateInput`](crate::input::CreateTemplateInput).
@@ -1486,7 +1486,7 @@ impl DeleteConfigurationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1576,7 +1576,7 @@ impl DeleteConfigurationSetInput {
             "DeleteConfigurationSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
@@ -1646,7 +1646,7 @@ impl DeleteConfigurationSetEventDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSetEventDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1733,7 +1733,7 @@ impl DeleteConfigurationSetEventDestinationInput {
             "DeleteConfigurationSetEventDestination",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
@@ -1788,7 +1788,7 @@ impl DeleteConfigurationSetTrackingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSetTrackingOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1875,7 +1875,7 @@ impl DeleteConfigurationSetTrackingOptionsInput {
             "DeleteConfigurationSetTrackingOptions",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetTrackingOptionsInput`](crate::input::DeleteConfigurationSetTrackingOptionsInput).
@@ -1930,7 +1930,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomVerificationEmailTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2017,7 +2017,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
             "DeleteCustomVerificationEmailTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCustomVerificationEmailTemplateInput`](crate::input::DeleteCustomVerificationEmailTemplateInput).
@@ -2067,7 +2067,7 @@ impl DeleteIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2155,7 +2155,7 @@ impl DeleteIdentityInput {
             "DeleteIdentity",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteIdentityInput`](crate::input::DeleteIdentityInput).
@@ -2219,7 +2219,7 @@ impl DeleteIdentityPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentityPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2309,7 +2309,7 @@ impl DeleteIdentityPolicyInput {
             "DeleteIdentityPolicy",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteIdentityPolicyInput`](crate::input::DeleteIdentityPolicyInput).
@@ -2359,7 +2359,7 @@ impl DeleteReceiptFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2447,7 +2447,7 @@ impl DeleteReceiptFilterInput {
             "DeleteReceiptFilter",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteReceiptFilterInput`](crate::input::DeleteReceiptFilterInput).
@@ -2512,7 +2512,7 @@ impl DeleteReceiptRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2600,7 +2600,7 @@ impl DeleteReceiptRuleInput {
             "DeleteReceiptRule",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleInput`](crate::input::DeleteReceiptRuleInput).
@@ -2653,7 +2653,7 @@ impl DeleteReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2743,7 +2743,7 @@ impl DeleteReceiptRuleSetInput {
             "DeleteReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleSetInput`](crate::input::DeleteReceiptRuleSetInput).
@@ -2796,7 +2796,7 @@ impl DeleteTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2884,7 +2884,7 @@ impl DeleteTemplateInput {
             "DeleteTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTemplateInput`](crate::input::DeleteTemplateInput).
@@ -2939,7 +2939,7 @@ impl DeleteVerifiedEmailAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVerifiedEmailAddress,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3026,7 +3026,7 @@ impl DeleteVerifiedEmailAddressInput {
             "DeleteVerifiedEmailAddress",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedEmailAddressInput`](crate::input::DeleteVerifiedEmailAddressInput).
@@ -3064,7 +3064,7 @@ impl DescribeActiveReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeActiveReceiptRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3144,7 +3144,7 @@ impl DescribeActiveReceiptRuleSetInput {
             "DescribeActiveReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeActiveReceiptRuleSetInput`](crate::input::DescribeActiveReceiptRuleSetInput).
@@ -3224,7 +3224,7 @@ impl DescribeConfigurationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3314,7 +3314,7 @@ impl DescribeConfigurationSetInput {
             "DescribeConfigurationSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetInput`](crate::input::DescribeConfigurationSetInput).
@@ -3379,7 +3379,7 @@ impl DescribeReceiptRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReceiptRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3467,7 +3467,7 @@ impl DescribeReceiptRuleInput {
             "DescribeReceiptRule",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleInput`](crate::input::DescribeReceiptRuleInput).
@@ -3520,7 +3520,7 @@ impl DescribeReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReceiptRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3610,7 +3610,7 @@ impl DescribeReceiptRuleSetInput {
             "DescribeReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleSetInput`](crate::input::DescribeReceiptRuleSetInput).
@@ -3648,7 +3648,7 @@ impl GetAccountSendingEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccountSendingEnabled,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3731,7 +3731,7 @@ impl GetAccountSendingEnabledInput {
             "GetAccountSendingEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccountSendingEnabledInput`](crate::input::GetAccountSendingEnabledInput).
@@ -3786,7 +3786,7 @@ impl GetCustomVerificationEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCustomVerificationEmailTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3873,7 +3873,7 @@ impl GetCustomVerificationEmailTemplateInput {
             "GetCustomVerificationEmailTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCustomVerificationEmailTemplateInput`](crate::input::GetCustomVerificationEmailTemplateInput).
@@ -3934,7 +3934,7 @@ impl GetIdentityDkimAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityDkimAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4024,7 +4024,7 @@ impl GetIdentityDkimAttributesInput {
             "GetIdentityDkimAttributes",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIdentityDkimAttributesInput`](crate::input::GetIdentityDkimAttributesInput).
@@ -4085,7 +4085,7 @@ impl GetIdentityMailFromDomainAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityMailFromDomainAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4172,7 +4172,7 @@ impl GetIdentityMailFromDomainAttributesInput {
             "GetIdentityMailFromDomainAttributes",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIdentityMailFromDomainAttributesInput`](crate::input::GetIdentityMailFromDomainAttributesInput).
@@ -4233,7 +4233,7 @@ impl GetIdentityNotificationAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityNotificationAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4320,7 +4320,7 @@ impl GetIdentityNotificationAttributesInput {
             "GetIdentityNotificationAttributes",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIdentityNotificationAttributesInput`](crate::input::GetIdentityNotificationAttributesInput).
@@ -4393,7 +4393,7 @@ impl GetIdentityPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4481,7 +4481,7 @@ impl GetIdentityPoliciesInput {
             "GetIdentityPolicies",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIdentityPoliciesInput`](crate::input::GetIdentityPoliciesInput).
@@ -4542,7 +4542,7 @@ impl GetIdentityVerificationAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityVerificationAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4629,7 +4629,7 @@ impl GetIdentityVerificationAttributesInput {
             "GetIdentityVerificationAttributes",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetIdentityVerificationAttributesInput`](crate::input::GetIdentityVerificationAttributesInput).
@@ -4665,7 +4665,7 @@ impl GetSendQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSendQuota,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4746,7 +4746,7 @@ impl GetSendQuotaInput {
             "GetSendQuota",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSendQuotaInput`](crate::input::GetSendQuotaInput).
@@ -4782,7 +4782,7 @@ impl GetSendStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSendStatistics,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4863,7 +4863,7 @@ impl GetSendStatisticsInput {
             "GetSendStatistics",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSendStatisticsInput`](crate::input::GetSendStatisticsInput).
@@ -4916,7 +4916,7 @@ impl GetTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5004,7 +5004,7 @@ impl GetTemplateInput {
             "GetTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTemplateInput`](crate::input::GetTemplateInput).
@@ -5066,7 +5066,7 @@ impl ListConfigurationSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurationSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5156,7 +5156,7 @@ impl ListConfigurationSetsInput {
             "ListConfigurationSets",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
@@ -5220,7 +5220,7 @@ impl ListCustomVerificationEmailTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomVerificationEmailTemplates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5307,7 +5307,7 @@ impl ListCustomVerificationEmailTemplatesInput {
             "ListCustomVerificationEmailTemplates",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCustomVerificationEmailTemplatesInput`](crate::input::ListCustomVerificationEmailTemplatesInput).
@@ -5384,7 +5384,7 @@ impl ListIdentitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5472,7 +5472,7 @@ impl ListIdentitiesInput {
             "ListIdentities",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
@@ -5524,7 +5524,7 @@ impl ListIdentityPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5614,7 +5614,7 @@ impl ListIdentityPoliciesInput {
             "ListIdentityPolicies",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListIdentityPoliciesInput`](crate::input::ListIdentityPoliciesInput).
@@ -5650,7 +5650,7 @@ impl ListReceiptFiltersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReceiptFilters,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5731,7 +5731,7 @@ impl ListReceiptFiltersInput {
             "ListReceiptFilters",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListReceiptFiltersInput`](crate::input::ListReceiptFiltersInput).
@@ -5781,7 +5781,7 @@ impl ListReceiptRuleSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReceiptRuleSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5871,7 +5871,7 @@ impl ListReceiptRuleSetsInput {
             "ListReceiptRuleSets",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListReceiptRuleSetsInput`](crate::input::ListReceiptRuleSetsInput).
@@ -5933,7 +5933,7 @@ impl ListTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTemplates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6021,7 +6021,7 @@ impl ListTemplatesInput {
             "ListTemplates",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTemplatesInput`](crate::input::ListTemplatesInput).
@@ -6059,7 +6059,7 @@ impl ListVerifiedEmailAddressesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVerifiedEmailAddresses,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6139,7 +6139,7 @@ impl ListVerifiedEmailAddressesInput {
             "ListVerifiedEmailAddresses",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListVerifiedEmailAddressesInput`](crate::input::ListVerifiedEmailAddressesInput).
@@ -6209,7 +6209,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConfigurationSetDeliveryOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6296,7 +6296,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
             "PutConfigurationSetDeliveryOptions",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
@@ -6376,7 +6376,7 @@ impl PutIdentityPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutIdentityPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6464,7 +6464,7 @@ impl PutIdentityPolicyInput {
             "PutIdentityPolicy",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutIdentityPolicyInput`](crate::input::PutIdentityPolicyInput).
@@ -6538,7 +6538,7 @@ impl ReorderReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReorderReceiptRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6628,7 +6628,7 @@ impl ReorderReceiptRuleSetInput {
             "ReorderReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ReorderReceiptRuleSetInput`](crate::input::ReorderReceiptRuleSetInput).
@@ -6762,7 +6762,7 @@ impl SendBounceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendBounce,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6850,7 +6850,7 @@ impl SendBounceInput {
             "SendBounce",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendBounceInput`](crate::input::SendBounceInput).
@@ -7073,7 +7073,7 @@ impl SendBulkTemplatedEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendBulkTemplatedEmail,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7163,7 +7163,7 @@ impl SendBulkTemplatedEmailInput {
             "SendBulkTemplatedEmail",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendBulkTemplatedEmailInput`](crate::input::SendBulkTemplatedEmailInput).
@@ -7248,7 +7248,7 @@ impl SendCustomVerificationEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendCustomVerificationEmail,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7335,7 +7335,7 @@ impl SendCustomVerificationEmailInput {
             "SendCustomVerificationEmail",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendCustomVerificationEmailInput`](crate::input::SendCustomVerificationEmailInput).
@@ -7521,7 +7521,7 @@ impl SendEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendEmail,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7607,7 +7607,7 @@ impl SendEmailInput {
                     "SendEmail",
                     "ses",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendEmailInput`](crate::input::SendEmailInput).
@@ -7818,7 +7818,7 @@ impl SendRawEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendRawEmail,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7906,7 +7906,7 @@ impl SendRawEmailInput {
             "SendRawEmail",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendRawEmailInput`](crate::input::SendRawEmailInput).
@@ -8120,7 +8120,7 @@ impl SendTemplatedEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendTemplatedEmail,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8208,7 +8208,7 @@ impl SendTemplatedEmailInput {
             "SendTemplatedEmail",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendTemplatedEmailInput`](crate::input::SendTemplatedEmailInput).
@@ -8263,7 +8263,7 @@ impl SetActiveReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetActiveReceiptRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8353,7 +8353,7 @@ impl SetActiveReceiptRuleSetInput {
             "SetActiveReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetActiveReceiptRuleSetInput`](crate::input::SetActiveReceiptRuleSetInput).
@@ -8415,7 +8415,7 @@ impl SetIdentityDkimEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityDkimEnabled,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8505,7 +8505,7 @@ impl SetIdentityDkimEnabledInput {
             "SetIdentityDkimEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetIdentityDkimEnabledInput`](crate::input::SetIdentityDkimEnabledInput).
@@ -8569,7 +8569,7 @@ impl SetIdentityFeedbackForwardingEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityFeedbackForwardingEnabled,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8656,7 +8656,7 @@ impl SetIdentityFeedbackForwardingEnabledInput {
             "SetIdentityFeedbackForwardingEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetIdentityFeedbackForwardingEnabledInput`](crate::input::SetIdentityFeedbackForwardingEnabledInput).
@@ -8739,7 +8739,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityHeadersInNotificationsEnabled,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8826,7 +8826,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
             "SetIdentityHeadersInNotificationsEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetIdentityHeadersInNotificationsEnabledInput`](crate::input::SetIdentityHeadersInNotificationsEnabledInput).
@@ -8910,7 +8910,7 @@ impl SetIdentityMailFromDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityMailFromDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8997,7 +8997,7 @@ impl SetIdentityMailFromDomainInput {
             "SetIdentityMailFromDomain",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetIdentityMailFromDomainInput`](crate::input::SetIdentityMailFromDomainInput).
@@ -9082,7 +9082,7 @@ impl SetIdentityNotificationTopicInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityNotificationTopic,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9169,7 +9169,7 @@ impl SetIdentityNotificationTopicInput {
             "SetIdentityNotificationTopic",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetIdentityNotificationTopicInput`](crate::input::SetIdentityNotificationTopicInput).
@@ -9246,7 +9246,7 @@ impl SetReceiptRulePositionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetReceiptRulePosition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9336,7 +9336,7 @@ impl SetReceiptRulePositionInput {
             "SetReceiptRulePosition",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetReceiptRulePositionInput`](crate::input::SetReceiptRulePositionInput).
@@ -9404,7 +9404,7 @@ impl TestRenderTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestRenderTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9492,7 +9492,7 @@ impl TestRenderTemplateInput {
             "TestRenderTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TestRenderTemplateInput`](crate::input::TestRenderTemplateInput).
@@ -9544,7 +9544,7 @@ impl UpdateAccountSendingEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccountSendingEnabled,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9631,7 +9631,7 @@ impl UpdateAccountSendingEnabledInput {
             "UpdateAccountSendingEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAccountSendingEnabledInput`](crate::input::UpdateAccountSendingEnabledInput).
@@ -9701,7 +9701,7 @@ impl UpdateConfigurationSetEventDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetEventDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9788,7 +9788,7 @@ impl UpdateConfigurationSetEventDestinationInput {
             "UpdateConfigurationSetEventDestination",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
@@ -9857,7 +9857,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetReputationMetricsEnabled,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9944,7 +9944,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
             "UpdateConfigurationSetReputationMetricsEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::input::UpdateConfigurationSetReputationMetricsEnabledInput).
@@ -10012,7 +10012,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetSendingEnabled,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10099,7 +10099,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
             "UpdateConfigurationSetSendingEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetSendingEnabledInput`](crate::input::UpdateConfigurationSetSendingEnabledInput).
@@ -10171,7 +10171,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetTrackingOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10258,7 +10258,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
             "UpdateConfigurationSetTrackingOptions",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetTrackingOptionsInput`](crate::input::UpdateConfigurationSetTrackingOptionsInput).
@@ -10388,7 +10388,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomVerificationEmailTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10475,7 +10475,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
             "UpdateCustomVerificationEmailTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCustomVerificationEmailTemplateInput`](crate::input::UpdateCustomVerificationEmailTemplateInput).
@@ -10540,7 +10540,7 @@ impl UpdateReceiptRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateReceiptRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10628,7 +10628,7 @@ impl UpdateReceiptRuleInput {
             "UpdateReceiptRule",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateReceiptRuleInput`](crate::input::UpdateReceiptRuleInput).
@@ -10678,7 +10678,7 @@ impl UpdateTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10766,7 +10766,7 @@ impl UpdateTemplateInput {
             "UpdateTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
@@ -10816,7 +10816,7 @@ impl VerifyDomainDkimInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyDomainDkim,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10904,7 +10904,7 @@ impl VerifyDomainDkimInput {
             "VerifyDomainDkim",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`VerifyDomainDkimInput`](crate::input::VerifyDomainDkimInput).
@@ -10954,7 +10954,7 @@ impl VerifyDomainIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyDomainIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11044,7 +11044,7 @@ impl VerifyDomainIdentityInput {
             "VerifyDomainIdentity",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`VerifyDomainIdentityInput`](crate::input::VerifyDomainIdentityInput).
@@ -11097,7 +11097,7 @@ impl VerifyEmailAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyEmailAddress,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11185,7 +11185,7 @@ impl VerifyEmailAddressInput {
             "VerifyEmailAddress",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`VerifyEmailAddressInput`](crate::input::VerifyEmailAddressInput).
@@ -11238,7 +11238,7 @@ impl VerifyEmailIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyEmailIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11326,7 +11326,7 @@ impl VerifyEmailIdentityInput {
             "VerifyEmailIdentity",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`VerifyEmailIdentityInput`](crate::input::VerifyEmailIdentityInput).

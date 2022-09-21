@@ -265,7 +265,7 @@ impl DescribeDimensionKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDimensionKeys,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -360,7 +360,7 @@ impl DescribeDimensionKeysInput {
             "DescribeDimensionKeys",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDimensionKeysInput`](crate::input::DescribeDimensionKeysInput).
@@ -497,7 +497,7 @@ impl GetDimensionKeyDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDimensionKeyDetails,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -592,7 +592,7 @@ impl GetDimensionKeyDetailsInput {
             "GetDimensionKeyDetails",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsInput`](crate::input::GetDimensionKeyDetailsInput).
@@ -657,7 +657,7 @@ impl GetResourceMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceMetadata,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -750,7 +750,7 @@ impl GetResourceMetadataInput {
             "GetResourceMetadata",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput).
@@ -932,7 +932,7 @@ impl GetResourceMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceMetrics,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1025,7 +1025,7 @@ impl GetResourceMetricsInput {
             "GetResourceMetrics",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResourceMetricsInput`](crate::input::GetResourceMetricsInput).
@@ -1137,7 +1137,7 @@ impl ListAvailableResourceDimensionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableResourceDimensions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1229,7 +1229,7 @@ impl ListAvailableResourceDimensionsInput {
             "ListAvailableResourceDimensions",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput).
@@ -1353,7 +1353,7 @@ impl ListAvailableResourceMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableResourceMetrics,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1445,7 +1445,7 @@ impl ListAvailableResourceMetricsInput {
             "ListAvailableResourceMetrics",
             "pi",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput).

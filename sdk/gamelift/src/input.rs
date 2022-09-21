@@ -78,7 +78,7 @@ impl AcceptMatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptMatch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -171,7 +171,7 @@ impl AcceptMatchInput {
             "AcceptMatch",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AcceptMatchInput`](crate::input::AcceptMatchInput).
@@ -254,7 +254,7 @@ impl ClaimGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ClaimGameServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -347,7 +347,7 @@ impl ClaimGameServerInput {
             "ClaimGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ClaimGameServerInput`](crate::input::ClaimGameServerInput).
@@ -445,7 +445,7 @@ impl CreateAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -538,7 +538,7 @@ impl CreateAliasInput {
             "CreateAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAliasInput`](crate::input::CreateAliasInput).
@@ -653,7 +653,7 @@ impl CreateBuildInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBuild,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -746,7 +746,7 @@ impl CreateBuildInput {
             "CreateBuild",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateBuildInput`](crate::input::CreateBuildInput).
@@ -1127,7 +1127,7 @@ impl CreateFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFleet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1220,7 +1220,7 @@ impl CreateFleetInput {
             "CreateFleet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFleetInput`](crate::input::CreateFleetInput).
@@ -1292,7 +1292,7 @@ impl CreateFleetLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFleetLocations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1387,7 +1387,7 @@ impl CreateFleetLocationsInput {
             "CreateFleetLocations",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFleetLocationsInput`](crate::input::CreateFleetLocationsInput).
@@ -1622,7 +1622,7 @@ impl CreateGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGameServerGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1717,7 +1717,7 @@ impl CreateGameServerGroupInput {
             "CreateGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateGameServerGroupInput`](crate::input::CreateGameServerGroupInput).
@@ -1907,7 +1907,7 @@ impl CreateGameSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGameSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2000,7 +2000,7 @@ impl CreateGameSessionInput {
             "CreateGameSession",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateGameSessionInput`](crate::input::CreateGameSessionInput).
@@ -2190,7 +2190,7 @@ impl CreateGameSessionQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGameSessionQueue,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2285,7 +2285,7 @@ impl CreateGameSessionQueueInput {
             "CreateGameSessionQueue",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateGameSessionQueueInput`](crate::input::CreateGameSessionQueueInput).
@@ -2566,7 +2566,7 @@ impl CreateMatchmakingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMatchmakingConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2658,7 +2658,7 @@ impl CreateMatchmakingConfigurationInput {
             "CreateMatchmakingConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMatchmakingConfigurationInput`](crate::input::CreateMatchmakingConfigurationInput).
@@ -2746,7 +2746,7 @@ impl CreateMatchmakingRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMatchmakingRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2841,7 +2841,7 @@ impl CreateMatchmakingRuleSetInput {
             "CreateMatchmakingRuleSet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMatchmakingRuleSetInput`](crate::input::CreateMatchmakingRuleSetInput).
@@ -2918,7 +2918,7 @@ impl CreatePlayerSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlayerSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3011,7 +3011,7 @@ impl CreatePlayerSessionInput {
             "CreatePlayerSession",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionInput`](crate::input::CreatePlayerSessionInput).
@@ -3114,7 +3114,7 @@ impl CreatePlayerSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlayerSessions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3209,7 +3209,7 @@ impl CreatePlayerSessionsInput {
             "CreatePlayerSessions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionsInput`](crate::input::CreatePlayerSessionsInput).
@@ -3321,7 +3321,7 @@ impl CreateScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateScript,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3414,7 +3414,7 @@ impl CreateScriptInput {
             "CreateScript",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateScriptInput`](crate::input::CreateScriptInput).
@@ -3481,7 +3481,7 @@ impl CreateVpcPeeringAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcPeeringAuthorization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3573,7 +3573,7 @@ impl CreateVpcPeeringAuthorizationInput {
             "CreateVpcPeeringAuthorization",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVpcPeeringAuthorizationInput`](crate::input::CreateVpcPeeringAuthorizationInput).
@@ -3652,7 +3652,7 @@ impl CreateVpcPeeringConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcPeeringConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3744,7 +3744,7 @@ impl CreateVpcPeeringConnectionInput {
             "CreateVpcPeeringConnection",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVpcPeeringConnectionInput`](crate::input::CreateVpcPeeringConnectionInput).
@@ -3794,7 +3794,7 @@ impl DeleteAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3887,7 +3887,7 @@ impl DeleteAliasInput {
             "DeleteAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAliasInput`](crate::input::DeleteAliasInput).
@@ -3937,7 +3937,7 @@ impl DeleteBuildInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBuild,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4030,7 +4030,7 @@ impl DeleteBuildInput {
             "DeleteBuild",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBuildInput`](crate::input::DeleteBuildInput).
@@ -4080,7 +4080,7 @@ impl DeleteFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4173,7 +4173,7 @@ impl DeleteFleetInput {
             "DeleteFleet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFleetInput`](crate::input::DeleteFleetInput).
@@ -4244,7 +4244,7 @@ impl DeleteFleetLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleetLocations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4339,7 +4339,7 @@ impl DeleteFleetLocationsInput {
             "DeleteFleetLocations",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFleetLocationsInput`](crate::input::DeleteFleetLocationsInput).
@@ -4417,7 +4417,7 @@ impl DeleteGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGameServerGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4512,7 +4512,7 @@ impl DeleteGameServerGroupInput {
             "DeleteGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteGameServerGroupInput`](crate::input::DeleteGameServerGroupInput).
@@ -4560,7 +4560,7 @@ impl DeleteGameSessionQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGameSessionQueue,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4655,7 +4655,7 @@ impl DeleteGameSessionQueueInput {
             "DeleteGameSessionQueue",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteGameSessionQueueInput`](crate::input::DeleteGameSessionQueueInput).
@@ -4705,7 +4705,7 @@ impl DeleteMatchmakingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMatchmakingConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4797,7 +4797,7 @@ impl DeleteMatchmakingConfigurationInput {
             "DeleteMatchmakingConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMatchmakingConfigurationInput`](crate::input::DeleteMatchmakingConfigurationInput).
@@ -4847,7 +4847,7 @@ impl DeleteMatchmakingRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMatchmakingRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4942,7 +4942,7 @@ impl DeleteMatchmakingRuleSetInput {
             "DeleteMatchmakingRuleSet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMatchmakingRuleSetInput`](crate::input::DeleteMatchmakingRuleSetInput).
@@ -5004,7 +5004,7 @@ impl DeleteScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteScalingPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5097,7 +5097,7 @@ impl DeleteScalingPolicyInput {
             "DeleteScalingPolicy",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyInput`](crate::input::DeleteScalingPolicyInput).
@@ -5147,7 +5147,7 @@ impl DeleteScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteScript,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5240,7 +5240,7 @@ impl DeleteScriptInput {
             "DeleteScript",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteScriptInput`](crate::input::DeleteScriptInput).
@@ -5307,7 +5307,7 @@ impl DeleteVpcPeeringAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVpcPeeringAuthorization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5399,7 +5399,7 @@ impl DeleteVpcPeeringAuthorizationInput {
             "DeleteVpcPeeringAuthorization",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVpcPeeringAuthorizationInput`](crate::input::DeleteVpcPeeringAuthorizationInput).
@@ -5466,7 +5466,7 @@ impl DeleteVpcPeeringConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVpcPeeringConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5558,7 +5558,7 @@ impl DeleteVpcPeeringConnectionInput {
             "DeleteVpcPeeringConnection",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVpcPeeringConnectionInput`](crate::input::DeleteVpcPeeringConnectionInput).
@@ -5626,7 +5626,7 @@ impl DeregisterGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterGameServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5721,7 +5721,7 @@ impl DeregisterGameServerInput {
             "DeregisterGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeregisterGameServerInput`](crate::input::DeregisterGameServerInput).
@@ -5771,7 +5771,7 @@ impl DescribeAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5864,7 +5864,7 @@ impl DescribeAliasInput {
             "DescribeAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAliasInput`](crate::input::DescribeAliasInput).
@@ -5914,7 +5914,7 @@ impl DescribeBuildInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBuild,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6007,7 +6007,7 @@ impl DescribeBuildInput {
             "DescribeBuild",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeBuildInput`](crate::input::DescribeBuildInput).
@@ -6074,7 +6074,7 @@ impl DescribeEc2InstanceLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEC2InstanceLimits,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6169,7 +6169,7 @@ impl DescribeEc2InstanceLimitsInput {
             "DescribeEC2InstanceLimits",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEc2InstanceLimitsInput`](crate::input::DescribeEc2InstanceLimitsInput).
@@ -6254,7 +6254,7 @@ impl DescribeFleetAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6349,7 +6349,7 @@ impl DescribeFleetAttributesInput {
             "DescribeFleetAttributes",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFleetAttributesInput`](crate::input::DescribeFleetAttributesInput).
@@ -6432,7 +6432,7 @@ impl DescribeFleetCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetCapacity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6527,7 +6527,7 @@ impl DescribeFleetCapacityInput {
             "DescribeFleetCapacity",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFleetCapacityInput`](crate::input::DescribeFleetCapacityInput).
@@ -6631,7 +6631,7 @@ impl DescribeFleetEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetEvents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6724,7 +6724,7 @@ impl DescribeFleetEventsInput {
             "DescribeFleetEvents",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFleetEventsInput`](crate::input::DescribeFleetEventsInput).
@@ -6821,7 +6821,7 @@ impl DescribeFleetLocationAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6913,7 +6913,7 @@ impl DescribeFleetLocationAttributesInput {
             "DescribeFleetLocationAttributes",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationAttributesInput`](crate::input::DescribeFleetLocationAttributesInput).
@@ -6977,7 +6977,7 @@ impl DescribeFleetLocationCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationCapacity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7069,7 +7069,7 @@ impl DescribeFleetLocationCapacityInput {
             "DescribeFleetLocationCapacity",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationCapacityInput`](crate::input::DescribeFleetLocationCapacityInput).
@@ -7133,7 +7133,7 @@ impl DescribeFleetLocationUtilizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationUtilization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7225,7 +7225,7 @@ impl DescribeFleetLocationUtilizationInput {
             "DescribeFleetLocationUtilization",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationUtilizationInput`](crate::input::DescribeFleetLocationUtilizationInput).
@@ -7289,7 +7289,7 @@ impl DescribeFleetPortSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetPortSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7384,7 +7384,7 @@ impl DescribeFleetPortSettingsInput {
             "DescribeFleetPortSettings",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFleetPortSettingsInput`](crate::input::DescribeFleetPortSettingsInput).
@@ -7469,7 +7469,7 @@ impl DescribeFleetUtilizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetUtilization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7564,7 +7564,7 @@ impl DescribeFleetUtilizationInput {
             "DescribeFleetUtilization",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFleetUtilizationInput`](crate::input::DescribeFleetUtilizationInput).
@@ -7632,7 +7632,7 @@ impl DescribeGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7725,7 +7725,7 @@ impl DescribeGameServerInput {
             "DescribeGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeGameServerInput`](crate::input::DescribeGameServerInput).
@@ -7780,7 +7780,7 @@ impl DescribeGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServerGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7875,7 +7875,7 @@ impl DescribeGameServerGroupInput {
             "DescribeGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeGameServerGroupInput`](crate::input::DescribeGameServerGroupInput).
@@ -7975,7 +7975,7 @@ impl DescribeGameServerInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServerInstances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8067,7 +8067,7 @@ impl DescribeGameServerInstancesInput {
             "DescribeGameServerInstances",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeGameServerInstancesInput`](crate::input::DescribeGameServerInstancesInput).
@@ -8197,7 +8197,7 @@ impl DescribeGameSessionDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionDetails,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8289,7 +8289,7 @@ impl DescribeGameSessionDetailsInput {
             "DescribeGameSessionDetails",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionDetailsInput`](crate::input::DescribeGameSessionDetailsInput).
@@ -8341,7 +8341,7 @@ impl DescribeGameSessionPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionPlacement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8433,7 +8433,7 @@ impl DescribeGameSessionPlacementInput {
             "DescribeGameSessionPlacement",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionPlacementInput`](crate::input::DescribeGameSessionPlacementInput).
@@ -8518,7 +8518,7 @@ impl DescribeGameSessionQueuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionQueues,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8613,7 +8613,7 @@ impl DescribeGameSessionQueuesInput {
             "DescribeGameSessionQueues",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionQueuesInput`](crate::input::DescribeGameSessionQueuesInput).
@@ -8741,7 +8741,7 @@ impl DescribeGameSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8836,7 +8836,7 @@ impl DescribeGameSessionsInput {
             "DescribeGameSessions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionsInput`](crate::input::DescribeGameSessionsInput).
@@ -8934,7 +8934,7 @@ impl DescribeInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9027,7 +9027,7 @@ impl DescribeInstancesInput {
             "DescribeInstances",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInstancesInput`](crate::input::DescribeInstancesInput).
@@ -9086,7 +9086,7 @@ impl DescribeMatchmakingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmaking,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9179,7 +9179,7 @@ impl DescribeMatchmakingInput {
             "DescribeMatchmaking",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingInput`](crate::input::DescribeMatchmakingInput).
@@ -9279,7 +9279,7 @@ impl DescribeMatchmakingConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmakingConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9371,7 +9371,7 @@ impl DescribeMatchmakingConfigurationsInput {
             "DescribeMatchmakingConfigurations",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingConfigurationsInput`](crate::input::DescribeMatchmakingConfigurationsInput).
@@ -9456,7 +9456,7 @@ impl DescribeMatchmakingRuleSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmakingRuleSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9548,7 +9548,7 @@ impl DescribeMatchmakingRuleSetsInput {
             "DescribeMatchmakingRuleSets",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingRuleSetsInput`](crate::input::DescribeMatchmakingRuleSetsInput).
@@ -9684,7 +9684,7 @@ impl DescribePlayerSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePlayerSessions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9779,7 +9779,7 @@ impl DescribePlayerSessionsInput {
             "DescribePlayerSessions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePlayerSessionsInput`](crate::input::DescribePlayerSessionsInput).
@@ -9831,7 +9831,7 @@ impl DescribeRuntimeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRuntimeConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9923,7 +9923,7 @@ impl DescribeRuntimeConfigurationInput {
             "DescribeRuntimeConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRuntimeConfigurationInput`](crate::input::DescribeRuntimeConfigurationInput).
@@ -10044,7 +10044,7 @@ impl DescribeScalingPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10139,7 +10139,7 @@ impl DescribeScalingPoliciesInput {
             "DescribeScalingPolicies",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesInput`](crate::input::DescribeScalingPoliciesInput).
@@ -10189,7 +10189,7 @@ impl DescribeScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScript,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10282,7 +10282,7 @@ impl DescribeScriptInput {
             "DescribeScript",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeScriptInput`](crate::input::DescribeScriptInput).
@@ -10320,7 +10320,7 @@ impl DescribeVpcPeeringAuthorizationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVpcPeeringAuthorizations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10405,7 +10405,7 @@ impl DescribeVpcPeeringAuthorizationsInput {
             "DescribeVpcPeeringAuthorizations",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringAuthorizationsInput`](crate::input::DescribeVpcPeeringAuthorizationsInput).
@@ -10457,7 +10457,7 @@ impl DescribeVpcPeeringConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVpcPeeringConnections,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10549,7 +10549,7 @@ impl DescribeVpcPeeringConnectionsInput {
             "DescribeVpcPeeringConnections",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringConnectionsInput`](crate::input::DescribeVpcPeeringConnectionsInput).
@@ -10602,7 +10602,7 @@ impl GetGameSessionLogUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGameSessionLogUrl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10697,7 +10697,7 @@ impl GetGameSessionLogUrlInput {
             "GetGameSessionLogUrl",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetGameSessionLogUrlInput`](crate::input::GetGameSessionLogUrlInput).
@@ -10759,7 +10759,7 @@ impl GetInstanceAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInstanceAccess,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10852,7 +10852,7 @@ impl GetInstanceAccessInput {
             "GetInstanceAccess",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessInput`](crate::input::GetInstanceAccessInput).
@@ -10951,7 +10951,7 @@ impl ListAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAliases,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11044,7 +11044,7 @@ impl ListAliasesInput {
             "ListAliases",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAliasesInput`](crate::input::ListAliasesInput).
@@ -11129,7 +11129,7 @@ impl ListBuildsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBuilds,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11222,7 +11222,7 @@ impl ListBuildsInput {
             "ListBuilds",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListBuildsInput`](crate::input::ListBuildsInput).
@@ -11307,7 +11307,7 @@ impl ListFleetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFleets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11400,7 +11400,7 @@ impl ListFleetsInput {
             "ListFleets",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFleetsInput`](crate::input::ListFleetsInput).
@@ -11462,7 +11462,7 @@ impl ListGameServerGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGameServerGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11557,7 +11557,7 @@ impl ListGameServerGroupsInput {
             "ListGameServerGroups",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListGameServerGroupsInput`](crate::input::ListGameServerGroupsInput).
@@ -11649,7 +11649,7 @@ impl ListGameServersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGameServers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11742,7 +11742,7 @@ impl ListGameServersInput {
             "ListGameServers",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListGameServersInput`](crate::input::ListGameServersInput).
@@ -11804,7 +11804,7 @@ impl ListScriptsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListScripts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11897,7 +11897,7 @@ impl ListScriptsInput {
             "ListScripts",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListScriptsInput`](crate::input::ListScriptsInput).
@@ -11947,7 +11947,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12042,7 +12042,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -12255,7 +12255,7 @@ impl PutScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutScalingPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12348,7 +12348,7 @@ impl PutScalingPolicyInput {
             "PutScalingPolicy",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutScalingPolicyInput`](crate::input::PutScalingPolicyInput).
@@ -12458,7 +12458,7 @@ impl RegisterGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterGameServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12551,7 +12551,7 @@ impl RegisterGameServerInput {
             "RegisterGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterGameServerInput`](crate::input::RegisterGameServerInput).
@@ -12603,7 +12603,7 @@ impl RequestUploadCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestUploadCredentials,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12698,7 +12698,7 @@ impl RequestUploadCredentialsInput {
             "RequestUploadCredentials",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RequestUploadCredentialsInput`](crate::input::RequestUploadCredentialsInput).
@@ -12748,7 +12748,7 @@ impl ResolveAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResolveAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12841,7 +12841,7 @@ impl ResolveAliasInput {
             "ResolveAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ResolveAliasInput`](crate::input::ResolveAliasInput).
@@ -12916,7 +12916,7 @@ impl ResumeGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResumeGameServerGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13011,7 +13011,7 @@ impl ResumeGameServerGroupInput {
             "ResumeGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ResumeGameServerGroupInput`](crate::input::ResumeGameServerGroupInput).
@@ -13183,7 +13183,7 @@ impl SearchGameSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchGameSessions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13276,7 +13276,7 @@ impl SearchGameSessionsInput {
             "SearchGameSessions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchGameSessionsInput`](crate::input::SearchGameSessionsInput).
@@ -13359,7 +13359,7 @@ impl StartFleetActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFleetActions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13452,7 +13452,7 @@ impl StartFleetActionsInput {
             "StartFleetActions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartFleetActionsInput`](crate::input::StartFleetActionsInput).
@@ -13629,7 +13629,7 @@ impl StartGameSessionPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartGameSessionPlacement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13724,7 +13724,7 @@ impl StartGameSessionPlacementInput {
             "StartGameSessionPlacement",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartGameSessionPlacementInput`](crate::input::StartGameSessionPlacementInput).
@@ -13833,7 +13833,7 @@ impl StartMatchBackfillInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMatchBackfill,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13926,7 +13926,7 @@ impl StartMatchBackfillInput {
             "StartMatchBackfill",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartMatchBackfillInput`](crate::input::StartMatchBackfillInput).
@@ -14012,7 +14012,7 @@ impl StartMatchmakingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMatchmaking,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14105,7 +14105,7 @@ impl StartMatchmakingInput {
             "StartMatchmaking",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartMatchmakingInput`](crate::input::StartMatchmakingInput).
@@ -14188,7 +14188,7 @@ impl StopFleetActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopFleetActions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14281,7 +14281,7 @@ impl StopFleetActionsInput {
             "StopFleetActions",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopFleetActionsInput`](crate::input::StopFleetActionsInput).
@@ -14333,7 +14333,7 @@ impl StopGameSessionPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopGameSessionPlacement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14428,7 +14428,7 @@ impl StopGameSessionPlacementInput {
             "StopGameSessionPlacement",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopGameSessionPlacementInput`](crate::input::StopGameSessionPlacementInput).
@@ -14478,7 +14478,7 @@ impl StopMatchmakingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopMatchmaking,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14571,7 +14571,7 @@ impl StopMatchmakingInput {
             "StopMatchmaking",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopMatchmakingInput`](crate::input::StopMatchmakingInput).
@@ -14646,7 +14646,7 @@ impl SuspendGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SuspendGameServerGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14741,7 +14741,7 @@ impl SuspendGameServerGroupInput {
             "SuspendGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SuspendGameServerGroupInput`](crate::input::SuspendGameServerGroupInput).
@@ -14812,7 +14812,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14905,7 +14905,7 @@ impl TagResourceInput {
             "TagResource",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -14976,7 +14976,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15069,7 +15069,7 @@ impl UntagResourceInput {
             "UntagResource",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -15158,7 +15158,7 @@ impl UpdateAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15251,7 +15251,7 @@ impl UpdateAliasInput {
             "UpdateAlias",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAliasInput`](crate::input::UpdateAliasInput).
@@ -15325,7 +15325,7 @@ impl UpdateBuildInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBuild,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15418,7 +15418,7 @@ impl UpdateBuildInput {
             "UpdateBuild",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateBuildInput`](crate::input::UpdateBuildInput).
@@ -15559,7 +15559,7 @@ impl UpdateFleetAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15654,7 +15654,7 @@ impl UpdateFleetAttributesInput {
             "UpdateFleetAttributes",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFleetAttributesInput`](crate::input::UpdateFleetAttributesInput).
@@ -15752,7 +15752,7 @@ impl UpdateFleetCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetCapacity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15845,7 +15845,7 @@ impl UpdateFleetCapacityInput {
             "UpdateFleetCapacity",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFleetCapacityInput`](crate::input::UpdateFleetCapacityInput).
@@ -15944,7 +15944,7 @@ impl UpdateFleetPortSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetPortSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16039,7 +16039,7 @@ impl UpdateFleetPortSettingsInput {
             "UpdateFleetPortSettings",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFleetPortSettingsInput`](crate::input::UpdateFleetPortSettingsInput).
@@ -16156,7 +16156,7 @@ impl UpdateGameServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16249,7 +16249,7 @@ impl UpdateGameServerInput {
             "UpdateGameServer",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateGameServerInput`](crate::input::UpdateGameServerInput).
@@ -16380,7 +16380,7 @@ impl UpdateGameServerGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameServerGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16475,7 +16475,7 @@ impl UpdateGameServerGroupInput {
             "UpdateGameServerGroup",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateGameServerGroupInput`](crate::input::UpdateGameServerGroupInput).
@@ -16594,7 +16594,7 @@ impl UpdateGameSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16687,7 +16687,7 @@ impl UpdateGameSessionInput {
             "UpdateGameSession",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionInput`](crate::input::UpdateGameSessionInput).
@@ -16856,7 +16856,7 @@ impl UpdateGameSessionQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameSessionQueue,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16951,7 +16951,7 @@ impl UpdateGameSessionQueueInput {
             "UpdateGameSessionQueue",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionQueueInput`](crate::input::UpdateGameSessionQueueInput).
@@ -17211,7 +17211,7 @@ impl UpdateMatchmakingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMatchmakingConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17303,7 +17303,7 @@ impl UpdateMatchmakingConfigurationInput {
             "UpdateMatchmakingConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateMatchmakingConfigurationInput`](crate::input::UpdateMatchmakingConfigurationInput).
@@ -17370,7 +17370,7 @@ impl UpdateRuntimeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuntimeConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17465,7 +17465,7 @@ impl UpdateRuntimeConfigurationInput {
             "UpdateRuntimeConfiguration",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRuntimeConfigurationInput`](crate::input::UpdateRuntimeConfigurationInput).
@@ -17568,7 +17568,7 @@ impl UpdateScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateScript,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17661,7 +17661,7 @@ impl UpdateScriptInput {
             "UpdateScript",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateScriptInput`](crate::input::UpdateScriptInput).
@@ -17716,7 +17716,7 @@ impl ValidateMatchmakingRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ValidateMatchmakingRuleSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17808,7 +17808,7 @@ impl ValidateMatchmakingRuleSetInput {
             "ValidateMatchmakingRuleSet",
             "gamelift",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ValidateMatchmakingRuleSetInput`](crate::input::ValidateMatchmakingRuleSetInput).

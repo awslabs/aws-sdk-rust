@@ -45,7 +45,7 @@ impl GetRoutingControlStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoutingControlState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -140,7 +140,7 @@ impl GetRoutingControlStateInput {
             "GetRoutingControlState",
             "route53recoverycluster",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
@@ -217,7 +217,7 @@ impl ListRoutingControlsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRoutingControls,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -310,7 +310,7 @@ impl ListRoutingControlsInput {
             "ListRoutingControls",
             "route53recoverycluster",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
@@ -404,7 +404,7 @@ impl UpdateRoutingControlStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoutingControlState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -499,7 +499,7 @@ impl UpdateRoutingControlStateInput {
             "UpdateRoutingControlState",
             "route53recoverycluster",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput).
@@ -590,7 +590,7 @@ impl UpdateRoutingControlStatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoutingControlStates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -682,7 +682,7 @@ impl UpdateRoutingControlStatesInput {
             "UpdateRoutingControlStates",
             "route53recoverycluster",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput).

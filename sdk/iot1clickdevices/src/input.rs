@@ -44,7 +44,7 @@ impl ClaimDevicesByClaimCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ClaimDevicesByClaimCode,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -133,7 +133,7 @@ impl ClaimDevicesByClaimCodeInput {
             "ClaimDevicesByClaimCode",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeInput`](crate::input::ClaimDevicesByClaimCodeInput).
@@ -183,7 +183,7 @@ impl DescribeDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -272,7 +272,7 @@ impl DescribeDeviceInput {
             "DescribeDevice",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
@@ -353,7 +353,7 @@ impl FinalizeDeviceClaimInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::FinalizeDeviceClaim,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -460,7 +460,7 @@ impl FinalizeDeviceClaimInput {
             "FinalizeDeviceClaim",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimInput`](crate::input::FinalizeDeviceClaimInput).
@@ -510,7 +510,7 @@ impl GetDeviceMethodsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeviceMethods,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -599,7 +599,7 @@ impl GetDeviceMethodsInput {
             "GetDeviceMethods",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDeviceMethodsInput`](crate::input::GetDeviceMethodsInput).
@@ -649,7 +649,7 @@ impl InitiateDeviceClaimInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateDeviceClaim,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -742,7 +742,7 @@ impl InitiateDeviceClaimInput {
             "InitiateDeviceClaim",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimInput`](crate::input::InitiateDeviceClaimInput).
@@ -822,7 +822,7 @@ impl InvokeDeviceMethodInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InvokeDeviceMethod,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -925,7 +925,7 @@ impl InvokeDeviceMethodInput {
             "InvokeDeviceMethod",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodInput`](crate::input::InvokeDeviceMethodInput).
@@ -1029,7 +1029,7 @@ impl ListDeviceEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeviceEvents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1153,7 +1153,7 @@ impl ListDeviceEventsInput {
             "ListDeviceEvents",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDeviceEventsInput`](crate::input::ListDeviceEventsInput).
@@ -1227,7 +1227,7 @@ impl ListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1321,7 +1321,7 @@ impl ListDevicesInput {
             "ListDevices",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDevicesInput`](crate::input::ListDevicesInput).
@@ -1371,7 +1371,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1460,7 +1460,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -1541,7 +1541,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1644,7 +1644,7 @@ impl TagResourceInput {
             "TagResource",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -1694,7 +1694,7 @@ impl UnclaimDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnclaimDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1783,7 +1783,7 @@ impl UnclaimDeviceInput {
             "UnclaimDevice",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UnclaimDeviceInput`](crate::input::UnclaimDeviceInput).
@@ -1854,7 +1854,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1956,7 +1956,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -2018,7 +2018,7 @@ impl UpdateDeviceStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDeviceState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2121,7 +2121,7 @@ impl UpdateDeviceStateInput {
             "UpdateDeviceState",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDeviceStateInput`](crate::input::UpdateDeviceStateInput).

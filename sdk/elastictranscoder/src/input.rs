@@ -41,7 +41,7 @@ impl CancelJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -128,7 +128,7 @@ impl CancelJobInput {
                     "CancelJob",
                     "elastictranscoder",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CancelJobInput`](crate::input::CancelJobInput).
@@ -313,7 +313,7 @@ impl CreateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -399,7 +399,7 @@ impl CreateJobInput {
                     "CreateJob",
                     "elastictranscoder",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput).
@@ -680,7 +680,7 @@ impl CreatePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -768,7 +768,7 @@ impl CreatePipelineInput {
             "CreatePipeline",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePipelineInput`](crate::input::CreatePipelineInput).
@@ -887,7 +887,7 @@ impl CreatePresetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePreset,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -975,7 +975,7 @@ impl CreatePresetInput {
             "CreatePreset",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePresetInput`](crate::input::CreatePresetInput).
@@ -1023,7 +1023,7 @@ impl DeletePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1112,7 +1112,7 @@ impl DeletePipelineInput {
             "DeletePipeline",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePipelineInput`](crate::input::DeletePipelineInput).
@@ -1160,7 +1160,7 @@ impl DeletePresetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePreset,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1249,7 +1249,7 @@ impl DeletePresetInput {
             "DeletePreset",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePresetInput`](crate::input::DeletePresetInput).
@@ -1323,7 +1323,7 @@ impl ListJobsByPipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobsByPipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1430,7 +1430,7 @@ impl ListJobsByPipelineInput {
             "ListJobsByPipeline",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListJobsByPipelineInput`](crate::input::ListJobsByPipelineInput).
@@ -1504,7 +1504,7 @@ impl ListJobsByStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobsByStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1607,7 +1607,7 @@ impl ListJobsByStatusInput {
             "ListJobsByStatus",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListJobsByStatusInput`](crate::input::ListJobsByStatusInput).
@@ -1669,7 +1669,7 @@ impl ListPipelinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPipelines,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1757,7 +1757,7 @@ impl ListPipelinesInput {
             "ListPipelines",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPipelinesInput`](crate::input::ListPipelinesInput).
@@ -1819,7 +1819,7 @@ impl ListPresetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPresets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1907,7 +1907,7 @@ impl ListPresetsInput {
             "ListPresets",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPresetsInput`](crate::input::ListPresetsInput).
@@ -1954,7 +1954,7 @@ impl ReadJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReadJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2041,7 +2041,7 @@ impl ReadJobInput {
                     "ReadJob",
                     "elastictranscoder",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ReadJobInput`](crate::input::ReadJobInput).
@@ -2089,7 +2089,7 @@ impl ReadPipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReadPipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2178,7 +2178,7 @@ impl ReadPipelineInput {
             "ReadPipeline",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ReadPipelineInput`](crate::input::ReadPipelineInput).
@@ -2225,7 +2225,7 @@ impl ReadPresetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReadPreset,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2314,7 +2314,7 @@ impl ReadPresetInput {
             "ReadPreset",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ReadPresetInput`](crate::input::ReadPresetInput).
@@ -2411,7 +2411,7 @@ impl TestRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestRole,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2497,7 +2497,7 @@ impl TestRoleInput {
                     "TestRole",
                     "elastictranscoder",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TestRoleInput`](crate::input::TestRoleInput).
@@ -2755,7 +2755,7 @@ impl UpdatePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2858,7 +2858,7 @@ impl UpdatePipelineInput {
             "UpdatePipeline",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePipelineInput`](crate::input::UpdatePipelineInput).
@@ -2941,7 +2941,7 @@ impl UpdatePipelineNotificationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipelineNotifications,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3043,7 +3043,7 @@ impl UpdatePipelineNotificationsInput {
             "UpdatePipelineNotifications",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePipelineNotificationsInput`](crate::input::UpdatePipelineNotificationsInput).
@@ -3113,7 +3113,7 @@ impl UpdatePipelineStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipelineStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3218,7 +3218,7 @@ impl UpdatePipelineStatusInput {
             "UpdatePipelineStatus",
             "elastictranscoder",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePipelineStatusInput`](crate::input::UpdatePipelineStatusInput).

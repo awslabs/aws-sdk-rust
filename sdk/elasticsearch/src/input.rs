@@ -52,7 +52,7 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptInboundCrossClusterSearchConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -146,7 +146,7 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
             "AcceptInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionInput`](crate::input::AcceptInboundCrossClusterSearchConnectionInput).
@@ -217,7 +217,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +303,7 @@ impl AddTagsInput {
                     "AddTags",
                     "elasticsearchservice",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput).
@@ -365,7 +365,7 @@ impl AssociatePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociatePackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -473,7 +473,7 @@ impl AssociatePackageInput {
             "AssociatePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociatePackageInput`](crate::input::AssociatePackageInput).
@@ -527,7 +527,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelElasticsearchServiceSoftwareUpdate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -615,7 +615,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
             "CancelElasticsearchServiceSoftwareUpdate",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::input::CancelElasticsearchServiceSoftwareUpdateInput).
@@ -946,7 +946,7 @@ impl CreateElasticsearchDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateElasticsearchDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1036,7 +1036,7 @@ impl CreateElasticsearchDomainInput {
             "CreateElasticsearchDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainInput`](crate::input::CreateElasticsearchDomainInput).
@@ -1123,7 +1123,7 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOutboundCrossClusterSearchConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1211,7 +1211,7 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
             "CreateOutboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateOutboundCrossClusterSearchConnectionInput`](crate::input::CreateOutboundCrossClusterSearchConnectionInput).
@@ -1307,7 +1307,7 @@ impl CreatePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1395,7 +1395,7 @@ impl CreatePackageInput {
             "CreatePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePackageInput`](crate::input::CreatePackageInput).
@@ -1447,7 +1447,7 @@ impl DeleteElasticsearchDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteElasticsearchDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1540,7 +1540,7 @@ impl DeleteElasticsearchDomainInput {
             "DeleteElasticsearchDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainInput`](crate::input::DeleteElasticsearchDomainInput).
@@ -1578,7 +1578,7 @@ impl DeleteElasticsearchServiceRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteElasticsearchServiceRole,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1652,7 +1652,7 @@ impl DeleteElasticsearchServiceRoleInput {
             "DeleteElasticsearchServiceRole",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleInput`](crate::input::DeleteElasticsearchServiceRoleInput).
@@ -1712,7 +1712,7 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInboundCrossClusterSearchConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1806,7 +1806,7 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
             "DeleteInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteInboundCrossClusterSearchConnectionInput`](crate::input::DeleteInboundCrossClusterSearchConnectionInput).
@@ -1867,7 +1867,7 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOutboundCrossClusterSearchConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1961,7 +1961,7 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
             "DeleteOutboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteOutboundCrossClusterSearchConnectionInput`](crate::input::DeleteOutboundCrossClusterSearchConnectionInput).
@@ -2012,7 +2012,7 @@ impl DeletePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2105,7 +2105,7 @@ impl DeletePackageInput {
             "DeletePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePackageInput`](crate::input::DeletePackageInput).
@@ -2181,7 +2181,7 @@ impl DescribeDomainAutoTunesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomainAutoTunes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2290,7 +2290,7 @@ impl DescribeDomainAutoTunesInput {
             "DescribeDomainAutoTunes",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesInput`](crate::input::DescribeDomainAutoTunesInput).
@@ -2354,7 +2354,7 @@ impl DescribeDomainChangeProgressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomainChangeProgress,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2458,7 +2458,7 @@ impl DescribeDomainChangeProgressInput {
             "DescribeDomainChangeProgress",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput).
@@ -2510,7 +2510,7 @@ impl DescribeElasticsearchDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2603,7 +2603,7 @@ impl DescribeElasticsearchDomainInput {
             "DescribeElasticsearchDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainInput`](crate::input::DescribeElasticsearchDomainInput).
@@ -2655,7 +2655,7 @@ impl DescribeElasticsearchDomainConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomainConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2748,7 +2748,7 @@ impl DescribeElasticsearchDomainConfigInput {
             "DescribeElasticsearchDomainConfig",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainConfigInput`](crate::input::DescribeElasticsearchDomainConfigInput).
@@ -2809,7 +2809,7 @@ impl DescribeElasticsearchDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomains,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2896,7 +2896,7 @@ impl DescribeElasticsearchDomainsInput {
             "DescribeElasticsearchDomains",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsInput`](crate::input::DescribeElasticsearchDomainsInput).
@@ -2978,7 +2978,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchInstanceTypeLimits,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3097,7 +3097,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
             "DescribeElasticsearchInstanceTypeLimits",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::input::DescribeElasticsearchInstanceTypeLimitsInput).
@@ -3200,7 +3200,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInboundCrossClusterSearchConnections,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3288,7 +3288,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
             "DescribeInboundCrossClusterSearchConnections",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::input::DescribeInboundCrossClusterSearchConnectionsInput).
@@ -3392,7 +3392,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOutboundCrossClusterSearchConnections,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3480,7 +3480,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
             "DescribeOutboundCrossClusterSearchConnections",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::input::DescribeOutboundCrossClusterSearchConnectionsInput).
@@ -3565,7 +3565,7 @@ impl DescribePackagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePackages,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3653,7 +3653,7 @@ impl DescribePackagesInput {
             "DescribePackages",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePackagesInput`](crate::input::DescribePackagesInput).
@@ -3739,7 +3739,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservedElasticsearchInstanceOfferings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3834,7 +3834,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
             "DescribeReservedElasticsearchInstanceOfferings",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::input::DescribeReservedElasticsearchInstanceOfferingsInput).
@@ -3917,7 +3917,7 @@ impl DescribeReservedElasticsearchInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservedElasticsearchInstances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4015,7 +4015,7 @@ impl DescribeReservedElasticsearchInstancesInput {
             "DescribeReservedElasticsearchInstances",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesInput`](crate::input::DescribeReservedElasticsearchInstancesInput).
@@ -4077,7 +4077,7 @@ impl DissociatePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DissociatePackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4185,7 +4185,7 @@ impl DissociatePackageInput {
             "DissociatePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DissociatePackageInput`](crate::input::DissociatePackageInput).
@@ -4237,7 +4237,7 @@ impl GetCompatibleElasticsearchVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCompatibleElasticsearchVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4323,7 +4323,7 @@ impl GetCompatibleElasticsearchVersionsInput {
             "GetCompatibleElasticsearchVersions",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsInput`](crate::input::GetCompatibleElasticsearchVersionsInput).
@@ -4399,7 +4399,7 @@ impl GetPackageVersionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPackageVersionHistory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4509,7 +4509,7 @@ impl GetPackageVersionHistoryInput {
             "GetPackageVersionHistory",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryInput`](crate::input::GetPackageVersionHistoryInput).
@@ -4583,7 +4583,7 @@ impl GetUpgradeHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUpgradeHistory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4693,7 +4693,7 @@ impl GetUpgradeHistoryInput {
             "GetUpgradeHistory",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryInput`](crate::input::GetUpgradeHistoryInput).
@@ -4743,7 +4743,7 @@ impl GetUpgradeStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUpgradeStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4836,7 +4836,7 @@ impl GetUpgradeStatusInput {
             "GetUpgradeStatus",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetUpgradeStatusInput`](crate::input::GetUpgradeStatusInput).
@@ -4889,7 +4889,7 @@ impl ListDomainNamesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomainNames,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4974,7 +4974,7 @@ impl ListDomainNamesInput {
             "ListDomainNames",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
@@ -5048,7 +5048,7 @@ impl ListDomainsForPackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomainsForPackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5158,7 +5158,7 @@ impl ListDomainsForPackageInput {
             "ListDomainsForPackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDomainsForPackageInput`](crate::input::ListDomainsForPackageInput).
@@ -5249,7 +5249,7 @@ impl ListElasticsearchInstanceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListElasticsearchInstanceTypes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5362,7 +5362,7 @@ impl ListElasticsearchInstanceTypesInput {
             "ListElasticsearchInstanceTypes",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListElasticsearchInstanceTypesInput`](crate::input::ListElasticsearchInstanceTypesInput).
@@ -5426,7 +5426,7 @@ impl ListElasticsearchVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListElasticsearchVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5517,7 +5517,7 @@ impl ListElasticsearchVersionsInput {
             "ListElasticsearchVersions",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsInput`](crate::input::ListElasticsearchVersionsInput).
@@ -5591,7 +5591,7 @@ impl ListPackagesForDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPackagesForDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5701,7 +5701,7 @@ impl ListPackagesForDomainInput {
             "ListPackagesForDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPackagesForDomainInput`](crate::input::ListPackagesForDomainInput).
@@ -5748,7 +5748,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5831,7 +5831,7 @@ impl ListTagsInput {
                     "ListTags",
                     "elasticsearchservice",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
@@ -5920,7 +5920,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PurchaseReservedElasticsearchInstanceOffering,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6008,7 +6008,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
             "PurchaseReservedElasticsearchInstanceOffering",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PurchaseReservedElasticsearchInstanceOfferingInput`](crate::input::PurchaseReservedElasticsearchInstanceOfferingInput).
@@ -6069,7 +6069,7 @@ impl RejectInboundCrossClusterSearchConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectInboundCrossClusterSearchConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6163,7 +6163,7 @@ impl RejectInboundCrossClusterSearchConnectionInput {
             "RejectInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RejectInboundCrossClusterSearchConnectionInput`](crate::input::RejectInboundCrossClusterSearchConnectionInput).
@@ -6234,7 +6234,7 @@ impl RemoveTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6322,7 +6322,7 @@ impl RemoveTagsInput {
             "RemoveTags",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput).
@@ -6374,7 +6374,7 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartElasticsearchServiceSoftwareUpdate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6462,7 +6462,7 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
             "StartElasticsearchServiceSoftwareUpdate",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateInput`](crate::input::StartElasticsearchServiceSoftwareUpdateInput).
@@ -6769,7 +6769,7 @@ impl UpdateElasticsearchDomainConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateElasticsearchDomainConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6875,7 +6875,7 @@ impl UpdateElasticsearchDomainConfigInput {
             "UpdateElasticsearchDomainConfig",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigInput`](crate::input::UpdateElasticsearchDomainConfigInput).
@@ -6970,7 +6970,7 @@ impl UpdatePackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7058,7 +7058,7 @@ impl UpdatePackageInput {
             "UpdatePackage",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePackageInput`](crate::input::UpdatePackageInput).
@@ -7137,7 +7137,7 @@ impl UpgradeElasticsearchDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpgradeElasticsearchDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7227,7 +7227,7 @@ impl UpgradeElasticsearchDomainInput {
             "UpgradeElasticsearchDomain",
             "elasticsearchservice",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainInput`](crate::input::UpgradeElasticsearchDomainInput).

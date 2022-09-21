@@ -74,7 +74,7 @@ impl AddCustomRoutingEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddCustomRoutingEndpoints,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -169,7 +169,7 @@ impl AddCustomRoutingEndpointsInput {
             "AddCustomRoutingEndpoints",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddCustomRoutingEndpointsInput`](crate::input::AddCustomRoutingEndpointsInput).
@@ -217,7 +217,7 @@ impl AdvertiseByoipCidrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdvertiseByoipCidr,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -310,7 +310,7 @@ impl AdvertiseByoipCidrInput {
             "AdvertiseByoipCidr",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrInput`](crate::input::AdvertiseByoipCidrInput).
@@ -442,7 +442,7 @@ impl AllowCustomRoutingTrafficInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllowCustomRoutingTraffic,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -537,7 +537,7 @@ impl AllowCustomRoutingTrafficInput {
             "AllowCustomRoutingTraffic",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficInput`](crate::input::AllowCustomRoutingTrafficInput).
@@ -683,7 +683,7 @@ impl CreateAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccelerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -779,7 +779,7 @@ impl CreateAcceleratorInput {
             "CreateAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAcceleratorInput`](crate::input::CreateAcceleratorInput).
@@ -927,7 +927,7 @@ impl CreateCustomRoutingAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingAccelerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1022,7 +1022,7 @@ impl CreateCustomRoutingAcceleratorInput {
             "CreateCustomRoutingAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingAcceleratorInput`](crate::input::CreateCustomRoutingAcceleratorInput).
@@ -1131,7 +1131,7 @@ impl CreateCustomRoutingEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingEndpointGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1226,7 +1226,7 @@ impl CreateCustomRoutingEndpointGroupInput {
             "CreateCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingEndpointGroupInput`](crate::input::CreateCustomRoutingEndpointGroupInput).
@@ -1319,7 +1319,7 @@ impl CreateCustomRoutingListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1414,7 +1414,7 @@ impl CreateCustomRoutingListenerInput {
             "CreateCustomRoutingListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingListenerInput`](crate::input::CreateCustomRoutingListenerInput).
@@ -1627,7 +1627,7 @@ impl CreateEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpointGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1723,7 +1723,7 @@ impl CreateEndpointGroupInput {
             "CreateEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEndpointGroupInput`](crate::input::CreateEndpointGroupInput).
@@ -1845,7 +1845,7 @@ impl CreateListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1941,7 +1941,7 @@ impl CreateListenerInput {
             "CreateListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateListenerInput`](crate::input::CreateListenerInput).
@@ -1994,7 +1994,7 @@ impl DeleteAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccelerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2087,7 +2087,7 @@ impl DeleteAcceleratorInput {
             "DeleteAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAcceleratorInput`](crate::input::DeleteAcceleratorInput).
@@ -2142,7 +2142,7 @@ impl DeleteCustomRoutingAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingAccelerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2234,7 +2234,7 @@ impl DeleteCustomRoutingAcceleratorInput {
             "DeleteCustomRoutingAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingAcceleratorInput`](crate::input::DeleteCustomRoutingAcceleratorInput).
@@ -2289,7 +2289,7 @@ impl DeleteCustomRoutingEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingEndpointGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2381,7 +2381,7 @@ impl DeleteCustomRoutingEndpointGroupInput {
             "DeleteCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingEndpointGroupInput`](crate::input::DeleteCustomRoutingEndpointGroupInput).
@@ -2433,7 +2433,7 @@ impl DeleteCustomRoutingListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2525,7 +2525,7 @@ impl DeleteCustomRoutingListenerInput {
             "DeleteCustomRoutingListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingListenerInput`](crate::input::DeleteCustomRoutingListenerInput).
@@ -2578,7 +2578,7 @@ impl DeleteEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpointGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2671,7 +2671,7 @@ impl DeleteEndpointGroupInput {
             "DeleteEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEndpointGroupInput`](crate::input::DeleteEndpointGroupInput).
@@ -2721,7 +2721,7 @@ impl DeleteListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2814,7 +2814,7 @@ impl DeleteListenerInput {
             "DeleteListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteListenerInput`](crate::input::DeleteListenerInput).
@@ -2944,7 +2944,7 @@ impl DenyCustomRoutingTrafficInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DenyCustomRoutingTraffic,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3039,7 +3039,7 @@ impl DenyCustomRoutingTrafficInput {
             "DenyCustomRoutingTraffic",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DenyCustomRoutingTrafficInput`](crate::input::DenyCustomRoutingTrafficInput).
@@ -3087,7 +3087,7 @@ impl DeprovisionByoipCidrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprovisionByoipCidr,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3182,7 +3182,7 @@ impl DeprovisionByoipCidrInput {
             "DeprovisionByoipCidr",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeprovisionByoipCidrInput`](crate::input::DeprovisionByoipCidrInput).
@@ -3235,7 +3235,7 @@ impl DescribeAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccelerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3328,7 +3328,7 @@ impl DescribeAcceleratorInput {
             "DescribeAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorInput`](crate::input::DescribeAcceleratorInput).
@@ -3383,7 +3383,7 @@ impl DescribeAcceleratorAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAcceleratorAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3475,7 +3475,7 @@ impl DescribeAcceleratorAttributesInput {
             "DescribeAcceleratorAttributes",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesInput`](crate::input::DescribeAcceleratorAttributesInput).
@@ -3530,7 +3530,7 @@ impl DescribeCustomRoutingAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingAccelerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3622,7 +3622,7 @@ impl DescribeCustomRoutingAcceleratorInput {
             "DescribeCustomRoutingAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorInput`](crate::input::DescribeCustomRoutingAcceleratorInput).
@@ -3679,7 +3679,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingAcceleratorAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3771,7 +3771,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
             "DescribeCustomRoutingAcceleratorAttributes",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::input::DescribeCustomRoutingAcceleratorAttributesInput).
@@ -3827,7 +3827,7 @@ impl DescribeCustomRoutingEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingEndpointGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3919,7 +3919,7 @@ impl DescribeCustomRoutingEndpointGroupInput {
             "DescribeCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingEndpointGroupInput`](crate::input::DescribeCustomRoutingEndpointGroupInput).
@@ -3971,7 +3971,7 @@ impl DescribeCustomRoutingListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4063,7 +4063,7 @@ impl DescribeCustomRoutingListenerInput {
             "DescribeCustomRoutingListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingListenerInput`](crate::input::DescribeCustomRoutingListenerInput).
@@ -4116,7 +4116,7 @@ impl DescribeEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpointGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4211,7 +4211,7 @@ impl DescribeEndpointGroupInput {
             "DescribeEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupInput`](crate::input::DescribeEndpointGroupInput).
@@ -4261,7 +4261,7 @@ impl DescribeListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4354,7 +4354,7 @@ impl DescribeListenerInput {
             "DescribeListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeListenerInput`](crate::input::DescribeListenerInput).
@@ -4416,7 +4416,7 @@ impl ListAcceleratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccelerators,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4509,7 +4509,7 @@ impl ListAcceleratorsInput {
             "ListAccelerators",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAcceleratorsInput`](crate::input::ListAcceleratorsInput).
@@ -4571,7 +4571,7 @@ impl ListByoipCidrsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListByoipCidrs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4664,7 +4664,7 @@ impl ListByoipCidrsInput {
             "ListByoipCidrs",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListByoipCidrsInput`](crate::input::ListByoipCidrsInput).
@@ -4728,7 +4728,7 @@ impl ListCustomRoutingAcceleratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingAccelerators,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4820,7 +4820,7 @@ impl ListCustomRoutingAcceleratorsInput {
             "ListCustomRoutingAccelerators",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsInput`](crate::input::ListCustomRoutingAcceleratorsInput).
@@ -4896,7 +4896,7 @@ impl ListCustomRoutingEndpointGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingEndpointGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4988,7 +4988,7 @@ impl ListCustomRoutingEndpointGroupsInput {
             "ListCustomRoutingEndpointGroups",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsInput`](crate::input::ListCustomRoutingEndpointGroupsInput).
@@ -5067,7 +5067,7 @@ impl ListCustomRoutingListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingListeners,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5159,7 +5159,7 @@ impl ListCustomRoutingListenersInput {
             "ListCustomRoutingListeners",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingListenersInput`](crate::input::ListCustomRoutingListenersInput).
@@ -5253,7 +5253,7 @@ impl ListCustomRoutingPortMappingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingPortMappings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5345,7 +5345,7 @@ impl ListCustomRoutingPortMappingsInput {
             "ListCustomRoutingPortMappings",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsInput`](crate::input::ListCustomRoutingPortMappingsInput).
@@ -5438,7 +5438,7 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingPortMappingsByDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5530,7 +5530,7 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
             "ListCustomRoutingPortMappingsByDestination",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationInput`](crate::input::ListCustomRoutingPortMappingsByDestinationInput).
@@ -5605,7 +5605,7 @@ impl ListEndpointGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpointGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5698,7 +5698,7 @@ impl ListEndpointGroupsInput {
             "ListEndpointGroups",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEndpointGroupsInput`](crate::input::ListEndpointGroupsInput).
@@ -5775,7 +5775,7 @@ impl ListListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListListeners,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5868,7 +5868,7 @@ impl ListListenersInput {
             "ListListeners",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListListenersInput`](crate::input::ListListenersInput).
@@ -5918,7 +5918,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6013,7 +6013,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -6082,7 +6082,7 @@ impl ProvisionByoipCidrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ProvisionByoipCidr,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6175,7 +6175,7 @@ impl ProvisionByoipCidrInput {
             "ProvisionByoipCidr",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrInput`](crate::input::ProvisionByoipCidrInput).
@@ -6251,7 +6251,7 @@ impl RemoveCustomRoutingEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveCustomRoutingEndpoints,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6343,7 +6343,7 @@ impl RemoveCustomRoutingEndpointsInput {
             "RemoveCustomRoutingEndpoints",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsInput`](crate::input::RemoveCustomRoutingEndpointsInput).
@@ -6414,7 +6414,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6507,7 +6507,7 @@ impl TagResourceInput {
             "TagResource",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -6578,7 +6578,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6671,7 +6671,7 @@ impl UntagResourceInput {
             "UntagResource",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -6765,7 +6765,7 @@ impl UpdateAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccelerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6858,7 +6858,7 @@ impl UpdateAcceleratorInput {
             "UpdateAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAcceleratorInput`](crate::input::UpdateAcceleratorInput).
@@ -6961,7 +6961,7 @@ impl UpdateAcceleratorAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAcceleratorAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7053,7 +7053,7 @@ impl UpdateAcceleratorAttributesInput {
             "UpdateAcceleratorAttributes",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAcceleratorAttributesInput`](crate::input::UpdateAcceleratorAttributesInput).
@@ -7149,7 +7149,7 @@ impl UpdateCustomRoutingAcceleratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingAccelerator,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7241,7 +7241,7 @@ impl UpdateCustomRoutingAcceleratorInput {
             "UpdateCustomRoutingAccelerator",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorInput`](crate::input::UpdateCustomRoutingAcceleratorInput).
@@ -7346,7 +7346,7 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingAcceleratorAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7438,7 +7438,7 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
             "UpdateCustomRoutingAcceleratorAttributes",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorAttributesInput`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput).
@@ -7513,7 +7513,7 @@ impl UpdateCustomRoutingListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7605,7 +7605,7 @@ impl UpdateCustomRoutingListenerInput {
             "UpdateCustomRoutingListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerInput`](crate::input::UpdateCustomRoutingListenerInput).
@@ -7791,7 +7791,7 @@ impl UpdateEndpointGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpointGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7884,7 +7884,7 @@ impl UpdateEndpointGroupInput {
             "UpdateEndpointGroup",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupInput`](crate::input::UpdateEndpointGroupInput).
@@ -7988,7 +7988,7 @@ impl UpdateListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateListener,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8081,7 +8081,7 @@ impl UpdateListenerInput {
             "UpdateListener",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateListenerInput`](crate::input::UpdateListenerInput).
@@ -8129,7 +8129,7 @@ impl WithdrawByoipCidrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::WithdrawByoipCidr,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8222,7 +8222,7 @@ impl WithdrawByoipCidrInput {
             "WithdrawByoipCidr",
             "globalaccelerator",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrInput`](crate::input::WithdrawByoipCidrInput).

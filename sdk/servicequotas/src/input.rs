@@ -30,7 +30,7 @@ impl AssociateServiceQuotaTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateServiceQuotaTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -115,7 +115,7 @@ impl AssociateServiceQuotaTemplateInput {
             "AssociateServiceQuotaTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateServiceQuotaTemplateInput`](crate::input::AssociateServiceQuotaTemplateInput).
@@ -193,7 +193,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServiceQuotaIncreaseRequestFromTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -285,7 +285,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
             "DeleteServiceQuotaIncreaseRequestFromTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
@@ -324,7 +324,7 @@ impl DisassociateServiceQuotaTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateServiceQuotaTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -409,7 +409,7 @@ impl DisassociateServiceQuotaTemplateInput {
             "DisassociateServiceQuotaTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateServiceQuotaTemplateInput`](crate::input::DisassociateServiceQuotaTemplateInput).
@@ -447,7 +447,7 @@ impl GetAssociationForServiceQuotaTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssociationForServiceQuotaTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -532,7 +532,7 @@ impl GetAssociationForServiceQuotaTemplateInput {
             "GetAssociationForServiceQuotaTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAssociationForServiceQuotaTemplateInput`](crate::input::GetAssociationForServiceQuotaTemplateInput).
@@ -596,7 +596,7 @@ impl GetAwsDefaultServiceQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAWSDefaultServiceQuota,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -688,7 +688,7 @@ impl GetAwsDefaultServiceQuotaInput {
             "GetAWSDefaultServiceQuota",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaInput`](crate::input::GetAwsDefaultServiceQuotaInput).
@@ -740,7 +740,7 @@ impl GetRequestedServiceQuotaChangeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRequestedServiceQuotaChange,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -832,7 +832,7 @@ impl GetRequestedServiceQuotaChangeInput {
             "GetRequestedServiceQuotaChange",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRequestedServiceQuotaChangeInput`](crate::input::GetRequestedServiceQuotaChangeInput).
@@ -894,7 +894,7 @@ impl GetServiceQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceQuota,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -987,7 +987,7 @@ impl GetServiceQuotaInput {
             "GetServiceQuota",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetServiceQuotaInput`](crate::input::GetServiceQuotaInput).
@@ -1065,7 +1065,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceQuotaIncreaseRequestFromTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1157,7 +1157,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
             "GetServiceQuotaIncreaseRequestFromTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput).
@@ -1234,7 +1234,7 @@ impl ListAwsDefaultServiceQuotasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAWSDefaultServiceQuotas,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1326,7 +1326,7 @@ impl ListAwsDefaultServiceQuotasInput {
             "ListAWSDefaultServiceQuotas",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasInput`](crate::input::ListAwsDefaultServiceQuotasInput).
@@ -1417,7 +1417,7 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRequestedServiceQuotaChangeHistory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1509,7 +1509,7 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
             "ListRequestedServiceQuotaChangeHistory",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryInput`](crate::input::ListRequestedServiceQuotaChangeHistoryInput).
@@ -1614,7 +1614,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRequestedServiceQuotaChangeHistoryByQuota,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1706,7 +1706,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
             "ListRequestedServiceQuotaChangeHistoryByQuota",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput).
@@ -1797,7 +1797,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceQuotaIncreaseRequestsInTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1889,7 +1889,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
             "ListServiceQuotaIncreaseRequestsInTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput).
@@ -1964,7 +1964,7 @@ impl ListServiceQuotasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceQuotas,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2057,7 +2057,7 @@ impl ListServiceQuotasInput {
             "ListServiceQuotas",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListServiceQuotasInput`](crate::input::ListServiceQuotasInput).
@@ -2119,7 +2119,7 @@ impl ListServicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2212,7 +2212,7 @@ impl ListServicesInput {
             "ListServices",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput).
@@ -2262,7 +2262,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2357,7 +2357,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -2447,7 +2447,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutServiceQuotaIncreaseRequestIntoTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2539,7 +2539,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
             "PutServiceQuotaIncreaseRequestIntoTemplate",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput).
@@ -2616,7 +2616,7 @@ impl RequestServiceQuotaIncreaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestServiceQuotaIncrease,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2708,7 +2708,7 @@ impl RequestServiceQuotaIncreaseInput {
             "RequestServiceQuotaIncrease",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RequestServiceQuotaIncreaseInput`](crate::input::RequestServiceQuotaIncreaseInput).
@@ -2779,7 +2779,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2872,7 +2872,7 @@ impl TagResourceInput {
             "TagResource",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -2943,7 +2943,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3036,7 +3036,7 @@ impl UntagResourceInput {
             "UntagResource",
             "servicequotas",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).

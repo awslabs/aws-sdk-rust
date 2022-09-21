@@ -111,7 +111,7 @@ impl QueryForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::QueryForecast,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -204,7 +204,7 @@ impl QueryForecastInput {
             "QueryForecast",
             "forecastquery",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`QueryForecastInput`](crate::input::QueryForecastInput).
@@ -326,7 +326,7 @@ impl QueryWhatIfForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::QueryWhatIfForecast,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -421,7 +421,7 @@ impl QueryWhatIfForecastInput {
             "QueryWhatIfForecast",
             "forecastquery",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).

@@ -252,7 +252,7 @@ impl AssumeRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssumeRole,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -340,7 +340,7 @@ impl AssumeRoleInput {
             "AssumeRole",
             "sts",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssumeRoleInput`](crate::input::AssumeRoleInput).
@@ -490,7 +490,7 @@ impl AssumeRoleWithSamlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssumeRoleWithSAML,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -579,7 +579,7 @@ impl AssumeRoleWithSamlInput {
             "AssumeRoleWithSAML",
             "sts",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput).
@@ -747,7 +747,7 @@ impl AssumeRoleWithWebIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssumeRoleWithWebIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -835,7 +835,7 @@ impl AssumeRoleWithWebIdentityInput {
             "AssumeRoleWithWebIdentity",
             "sts",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssumeRoleWithWebIdentityInput`](crate::input::AssumeRoleWithWebIdentityInput).
@@ -890,7 +890,7 @@ impl DecodeAuthorizationMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DecodeAuthorizationMessage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -980,7 +980,7 @@ impl DecodeAuthorizationMessageInput {
             "DecodeAuthorizationMessage",
             "sts",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageInput`](crate::input::DecodeAuthorizationMessageInput).
@@ -1035,7 +1035,7 @@ impl GetAccessKeyInfoInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessKeyInfo,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1123,7 +1123,7 @@ impl GetAccessKeyInfoInput {
             "GetAccessKeyInfo",
             "sts",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccessKeyInfoInput`](crate::input::GetAccessKeyInfoInput).
@@ -1159,7 +1159,7 @@ impl GetCallerIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCallerIdentity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1240,7 +1240,7 @@ impl GetCallerIdentityInput {
             "GetCallerIdentity",
             "sts",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput).
@@ -1395,7 +1395,7 @@ impl GetFederationTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFederationToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1483,7 +1483,7 @@ impl GetFederationTokenInput {
             "GetFederationToken",
             "sts",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFederationTokenInput`](crate::input::GetFederationTokenInput).
@@ -1564,7 +1564,7 @@ impl GetSessionTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSessionToken,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1652,7 +1652,7 @@ impl GetSessionTokenInput {
             "GetSessionToken",
             "sts",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSessionTokenInput`](crate::input::GetSessionTokenInput).

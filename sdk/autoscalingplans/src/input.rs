@@ -86,7 +86,7 @@ impl CreateScalingPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateScalingPlan,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -179,7 +179,7 @@ impl CreateScalingPlanInput {
             "CreateScalingPlan",
             "autoscalingplans",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateScalingPlanInput`](crate::input::CreateScalingPlanInput).
@@ -244,7 +244,7 @@ impl DeleteScalingPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteScalingPlan,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -337,7 +337,7 @@ impl DeleteScalingPlanInput {
             "DeleteScalingPlan",
             "autoscalingplans",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteScalingPlanInput`](crate::input::DeleteScalingPlanInput).
@@ -428,7 +428,7 @@ impl DescribeScalingPlanResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingPlanResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -520,7 +520,7 @@ impl DescribeScalingPlanResourcesInput {
             "DescribeScalingPlanResources",
             "autoscalingplans",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesInput`](crate::input::DescribeScalingPlanResourcesInput).
@@ -641,7 +641,7 @@ impl DescribeScalingPlansInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingPlans,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -736,7 +736,7 @@ impl DescribeScalingPlansInput {
             "DescribeScalingPlans",
             "autoscalingplans",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlansInput`](crate::input::DescribeScalingPlansInput).
@@ -904,7 +904,7 @@ impl GetScalingPlanResourceForecastDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetScalingPlanResourceForecastData,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -996,7 +996,7 @@ impl GetScalingPlanResourceForecastDataInput {
             "GetScalingPlanResourceForecastData",
             "autoscalingplans",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataInput`](crate::input::GetScalingPlanResourceForecastDataInput).
@@ -1102,7 +1102,7 @@ impl UpdateScalingPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateScalingPlan,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1195,7 +1195,7 @@ impl UpdateScalingPlanInput {
             "UpdateScalingPlan",
             "autoscalingplans",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateScalingPlanInput`](crate::input::UpdateScalingPlanInput).

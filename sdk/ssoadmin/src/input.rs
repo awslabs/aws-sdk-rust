@@ -80,7 +80,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachCustomerManagedPolicyReferenceToPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -172,7 +172,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
             "AttachCustomerManagedPolicyReferenceToPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
@@ -256,7 +256,7 @@ impl AttachManagedPolicyToPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachManagedPolicyToPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -348,7 +348,7 @@ impl AttachManagedPolicyToPermissionSetInput {
             "AttachManagedPolicyToPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AttachManagedPolicyToPermissionSetInput`](crate::input::AttachManagedPolicyToPermissionSetInput).
@@ -469,7 +469,7 @@ impl CreateAccountAssignmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccountAssignment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -564,7 +564,7 @@ impl CreateAccountAssignmentInput {
             "CreateAccountAssignment",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAccountAssignmentInput`](crate::input::CreateAccountAssignmentInput).
@@ -638,7 +638,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInstanceAccessControlAttributeConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -730,7 +730,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
             "CreateInstanceAccessControlAttributeConfiguration",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput).
@@ -854,7 +854,7 @@ impl CreatePermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -947,7 +947,7 @@ impl CreatePermissionSetInput {
             "CreatePermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePermissionSetInput`](crate::input::CreatePermissionSetInput).
@@ -1068,7 +1068,7 @@ impl DeleteAccountAssignmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccountAssignment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1163,7 +1163,7 @@ impl DeleteAccountAssignmentInput {
             "DeleteAccountAssignment",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAccountAssignmentInput`](crate::input::DeleteAccountAssignmentInput).
@@ -1230,7 +1230,7 @@ impl DeleteInlinePolicyFromPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInlinePolicyFromPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1322,7 +1322,7 @@ impl DeleteInlinePolicyFromPermissionSetInput {
             "DeleteInlinePolicyFromPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteInlinePolicyFromPermissionSetInput`](crate::input::DeleteInlinePolicyFromPermissionSetInput).
@@ -1376,7 +1376,7 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInstanceAccessControlAttributeConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1468,7 +1468,7 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
             "DeleteInstanceAccessControlAttributeConfiguration",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput).
@@ -1539,7 +1539,7 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePermissionsBoundaryFromPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1631,7 +1631,7 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
             "DeletePermissionsBoundaryFromPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePermissionsBoundaryFromPermissionSetInput`](crate::input::DeletePermissionsBoundaryFromPermissionSetInput).
@@ -1697,7 +1697,7 @@ impl DeletePermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1790,7 +1790,7 @@ impl DeletePermissionSetInput {
             "DeletePermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePermissionSetInput`](crate::input::DeletePermissionSetInput).
@@ -1860,7 +1860,7 @@ impl DescribeAccountAssignmentCreationStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountAssignmentCreationStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1952,7 +1952,7 @@ impl DescribeAccountAssignmentCreationStatusInput {
             "DescribeAccountAssignmentCreationStatus",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentCreationStatusInput`](crate::input::DescribeAccountAssignmentCreationStatusInput).
@@ -2022,7 +2022,7 @@ impl DescribeAccountAssignmentDeletionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountAssignmentDeletionStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2114,7 +2114,7 @@ impl DescribeAccountAssignmentDeletionStatusInput {
             "DescribeAccountAssignmentDeletionStatus",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentDeletionStatusInput`](crate::input::DescribeAccountAssignmentDeletionStatusInput).
@@ -2168,7 +2168,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstanceAccessControlAttributeConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2260,7 +2260,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
             "DescribeInstanceAccessControlAttributeConfiguration",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput).
@@ -2326,7 +2326,7 @@ impl DescribePermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2421,7 +2421,7 @@ impl DescribePermissionSetInput {
             "DescribePermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePermissionSetInput`](crate::input::DescribePermissionSetInput).
@@ -2491,7 +2491,7 @@ impl DescribePermissionSetProvisioningStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePermissionSetProvisioningStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2583,7 +2583,7 @@ impl DescribePermissionSetProvisioningStatusInput {
             "DescribePermissionSetProvisioningStatus",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePermissionSetProvisioningStatusInput`](crate::input::DescribePermissionSetProvisioningStatusInput).
@@ -2671,7 +2671,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachCustomerManagedPolicyReferenceFromPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2763,7 +2763,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
             "DetachCustomerManagedPolicyReferenceFromPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetachCustomerManagedPolicyReferenceFromPermissionSetInput`](crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput).
@@ -2847,7 +2847,7 @@ impl DetachManagedPolicyFromPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachManagedPolicyFromPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2939,7 +2939,7 @@ impl DetachManagedPolicyFromPermissionSetInput {
             "DetachManagedPolicyFromPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetachManagedPolicyFromPermissionSetInput`](crate::input::DetachManagedPolicyFromPermissionSetInput).
@@ -3006,7 +3006,7 @@ impl GetInlinePolicyForPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInlinePolicyForPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3098,7 +3098,7 @@ impl GetInlinePolicyForPermissionSetInput {
             "GetInlinePolicyForPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetInlinePolicyForPermissionSetInput`](crate::input::GetInlinePolicyForPermissionSetInput).
@@ -3165,7 +3165,7 @@ impl GetPermissionsBoundaryForPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPermissionsBoundaryForPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3257,7 +3257,7 @@ impl GetPermissionsBoundaryForPermissionSetInput {
             "GetPermissionsBoundaryForPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPermissionsBoundaryForPermissionSetInput`](crate::input::GetPermissionsBoundaryForPermissionSetInput).
@@ -3348,7 +3348,7 @@ impl ListAccountAssignmentCreationStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountAssignmentCreationStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3440,7 +3440,7 @@ impl ListAccountAssignmentCreationStatusInput {
             "ListAccountAssignmentCreationStatus",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentCreationStatusInput`](crate::input::ListAccountAssignmentCreationStatusInput).
@@ -3531,7 +3531,7 @@ impl ListAccountAssignmentDeletionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountAssignmentDeletionStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3623,7 +3623,7 @@ impl ListAccountAssignmentDeletionStatusInput {
             "ListAccountAssignmentDeletionStatus",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentDeletionStatusInput`](crate::input::ListAccountAssignmentDeletionStatusInput).
@@ -3724,7 +3724,7 @@ impl ListAccountAssignmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountAssignments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3819,7 +3819,7 @@ impl ListAccountAssignmentsInput {
             "ListAccountAssignments",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsInput`](crate::input::ListAccountAssignmentsInput).
@@ -3925,7 +3925,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountsForProvisionedPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4017,7 +4017,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
             "ListAccountsForProvisionedPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAccountsForProvisionedPermissionSetInput`](crate::input::ListAccountsForProvisionedPermissionSetInput).
@@ -4110,7 +4110,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomerManagedPolicyReferencesInPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4202,7 +4202,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
             "ListCustomerManagedPolicyReferencesInPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCustomerManagedPolicyReferencesInPermissionSetInput`](crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput).
@@ -4266,7 +4266,7 @@ impl ListInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInstances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4359,7 +4359,7 @@ impl ListInstancesInput {
             "ListInstances",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListInstancesInput`](crate::input::ListInstancesInput).
@@ -4450,7 +4450,7 @@ impl ListManagedPoliciesInPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListManagedPoliciesInPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4542,7 +4542,7 @@ impl ListManagedPoliciesInPermissionSetInput {
             "ListManagedPoliciesInPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListManagedPoliciesInPermissionSetInput`](crate::input::ListManagedPoliciesInPermissionSetInput).
@@ -4633,7 +4633,7 @@ impl ListPermissionSetProvisioningStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPermissionSetProvisioningStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4725,7 +4725,7 @@ impl ListPermissionSetProvisioningStatusInput {
             "ListPermissionSetProvisioningStatus",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPermissionSetProvisioningStatusInput`](crate::input::ListPermissionSetProvisioningStatusInput).
@@ -4799,7 +4799,7 @@ impl ListPermissionSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPermissionSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4892,7 +4892,7 @@ impl ListPermissionSetsInput {
             "ListPermissionSets",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPermissionSetsInput`](crate::input::ListPermissionSetsInput).
@@ -4995,7 +4995,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPermissionSetsProvisionedToAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5087,7 +5087,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
             "ListPermissionSetsProvisionedToAccount",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPermissionSetsProvisionedToAccountInput`](crate::input::ListPermissionSetsProvisionedToAccountInput).
@@ -5161,7 +5161,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5256,7 +5256,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -5348,7 +5348,7 @@ impl ProvisionPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ProvisionPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5443,7 +5443,7 @@ impl ProvisionPermissionSetInput {
             "ProvisionPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ProvisionPermissionSetInput`](crate::input::ProvisionPermissionSetInput).
@@ -5525,7 +5525,7 @@ impl PutInlinePolicyToPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutInlinePolicyToPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5617,7 +5617,7 @@ impl PutInlinePolicyToPermissionSetInput {
             "PutInlinePolicyToPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutInlinePolicyToPermissionSetInput`](crate::input::PutInlinePolicyToPermissionSetInput).
@@ -5699,7 +5699,7 @@ impl PutPermissionsBoundaryToPermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPermissionsBoundaryToPermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5791,7 +5791,7 @@ impl PutPermissionsBoundaryToPermissionSetInput {
             "PutPermissionsBoundaryToPermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutPermissionsBoundaryToPermissionSetInput`](crate::input::PutPermissionsBoundaryToPermissionSetInput).
@@ -5874,7 +5874,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5967,7 +5967,7 @@ impl TagResourceInput {
             "TagResource",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -6050,7 +6050,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6143,7 +6143,7 @@ impl UntagResourceInput {
             "UntagResource",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -6217,7 +6217,7 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInstanceAccessControlAttributeConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6309,7 +6309,7 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
             "UpdateInstanceAccessControlAttributeConfiguration",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput).
@@ -6415,7 +6415,7 @@ impl UpdatePermissionSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePermissionSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6508,7 +6508,7 @@ impl UpdatePermissionSetInput {
             "UpdatePermissionSet",
             "ssoadmin",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePermissionSetInput`](crate::input::UpdatePermissionSetInput).

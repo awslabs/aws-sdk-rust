@@ -303,7 +303,7 @@ impl SearchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Search,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -436,7 +436,7 @@ impl SearchInput {
                     "Search",
                     "cloudsearchdomain",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchInput`](crate::input::SearchInput).
@@ -509,7 +509,7 @@ impl SuggestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Suggest,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -603,7 +603,7 @@ impl SuggestInput {
                     "Suggest",
                     "cloudsearchdomain",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SuggestInput`](crate::input::SuggestInput).
@@ -679,7 +679,7 @@ impl UploadDocumentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UploadDocuments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -778,7 +778,7 @@ impl UploadDocumentsInput {
             "UploadDocuments",
             "cloudsearchdomain",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UploadDocumentsInput`](crate::input::UploadDocumentsInput).

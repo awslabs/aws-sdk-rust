@@ -109,7 +109,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptDirectConnectGatewayAssociationProposal,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -201,7 +201,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
             "AcceptDirectConnectGatewayAssociationProposal",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput).
@@ -311,7 +311,7 @@ impl AllocateConnectionOnInterconnectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocateConnectionOnInterconnect,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -403,7 +403,7 @@ impl AllocateConnectionOnInterconnectInput {
             "AllocateConnectionOnInterconnect",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectInput`](crate::input::AllocateConnectionOnInterconnectInput).
@@ -533,7 +533,7 @@ impl AllocateHostedConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocateHostedConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -628,7 +628,7 @@ impl AllocateHostedConnectionInput {
             "AllocateHostedConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionInput`](crate::input::AllocateHostedConnectionInput).
@@ -718,7 +718,7 @@ impl AllocatePrivateVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocatePrivateVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -810,7 +810,7 @@ impl AllocatePrivateVirtualInterfaceInput {
             "AllocatePrivateVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AllocatePrivateVirtualInterfaceInput`](crate::input::AllocatePrivateVirtualInterfaceInput).
@@ -900,7 +900,7 @@ impl AllocatePublicVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocatePublicVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -992,7 +992,7 @@ impl AllocatePublicVirtualInterfaceInput {
             "AllocatePublicVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceInput`](crate::input::AllocatePublicVirtualInterfaceInput).
@@ -1082,7 +1082,7 @@ impl AllocateTransitVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AllocateTransitVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1174,7 +1174,7 @@ impl AllocateTransitVirtualInterfaceInput {
             "AllocateTransitVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceInput`](crate::input::AllocateTransitVirtualInterfaceInput).
@@ -1241,7 +1241,7 @@ impl AssociateConnectionWithLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateConnectionWithLag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1333,7 +1333,7 @@ impl AssociateConnectionWithLagInput {
             "AssociateConnectionWithLag",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagInput`](crate::input::AssociateConnectionWithLagInput).
@@ -1403,7 +1403,7 @@ impl AssociateHostedConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateHostedConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1498,7 +1498,7 @@ impl AssociateHostedConnectionInput {
             "AssociateHostedConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionInput`](crate::input::AssociateHostedConnectionInput).
@@ -1605,7 +1605,7 @@ impl AssociateMacSecKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateMacSecKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1698,7 +1698,7 @@ impl AssociateMacSecKeyInput {
             "AssociateMacSecKey",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyInput`](crate::input::AssociateMacSecKeyInput).
@@ -1768,7 +1768,7 @@ impl AssociateVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1863,7 +1863,7 @@ impl AssociateVirtualInterfaceInput {
             "AssociateVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceInput`](crate::input::AssociateVirtualInterfaceInput).
@@ -1916,7 +1916,7 @@ impl ConfirmConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2009,7 +2009,7 @@ impl ConfirmConnectionInput {
             "ConfirmConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmConnectionInput`](crate::input::ConfirmConnectionInput).
@@ -2064,7 +2064,7 @@ impl ConfirmCustomerAgreementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmCustomerAgreement,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2159,7 +2159,7 @@ impl ConfirmCustomerAgreementInput {
             "ConfirmCustomerAgreement",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementInput`](crate::input::ConfirmCustomerAgreementInput).
@@ -2244,7 +2244,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmPrivateVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2336,7 +2336,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
             "ConfirmPrivateVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceInput`](crate::input::ConfirmPrivateVirtualInterfaceInput).
@@ -2391,7 +2391,7 @@ impl ConfirmPublicVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmPublicVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2483,7 +2483,7 @@ impl ConfirmPublicVirtualInterfaceInput {
             "ConfirmPublicVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceInput`](crate::input::ConfirmPublicVirtualInterfaceInput).
@@ -2553,7 +2553,7 @@ impl ConfirmTransitVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmTransitVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2645,7 +2645,7 @@ impl ConfirmTransitVirtualInterfaceInput {
             "ConfirmTransitVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceInput`](crate::input::ConfirmTransitVirtualInterfaceInput).
@@ -2713,7 +2713,7 @@ impl CreateBgpPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBGPPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2806,7 +2806,7 @@ impl CreateBgpPeerInput {
             "CreateBGPPeer",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateBgpPeerInput`](crate::input::CreateBgpPeerInput).
@@ -2945,7 +2945,7 @@ impl CreateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3038,7 +3038,7 @@ impl CreateConnectionInput {
             "CreateConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput).
@@ -3108,7 +3108,7 @@ impl CreateDirectConnectGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDirectConnectGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3200,7 +3200,7 @@ impl CreateDirectConnectGatewayInput {
             "CreateDirectConnectGateway",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayInput`](crate::input::CreateDirectConnectGatewayInput).
@@ -3314,7 +3314,7 @@ impl CreateDirectConnectGatewayAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDirectConnectGatewayAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3406,7 +3406,7 @@ impl CreateDirectConnectGatewayAssociationInput {
             "CreateDirectConnectGatewayAssociation",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationInput`](crate::input::CreateDirectConnectGatewayAssociationInput).
@@ -3549,7 +3549,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDirectConnectGatewayAssociationProposal,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3641,7 +3641,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
             "CreateDirectConnectGatewayAssociationProposal",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalInput`](crate::input::CreateDirectConnectGatewayAssociationProposalInput).
@@ -3767,7 +3767,7 @@ impl CreateInterconnectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInterconnect,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3860,7 +3860,7 @@ impl CreateInterconnectInput {
             "CreateInterconnect",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateInterconnectInput`](crate::input::CreateInterconnectInput).
@@ -4036,7 +4036,7 @@ impl CreateLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4127,7 +4127,7 @@ impl CreateLagInput {
                     "CreateLag",
                     "directconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLagInput`](crate::input::CreateLagInput).
@@ -4201,7 +4201,7 @@ impl CreatePrivateVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePrivateVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4293,7 +4293,7 @@ impl CreatePrivateVirtualInterfaceInput {
             "CreatePrivateVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceInput`](crate::input::CreatePrivateVirtualInterfaceInput).
@@ -4367,7 +4367,7 @@ impl CreatePublicVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePublicVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4459,7 +4459,7 @@ impl CreatePublicVirtualInterfaceInput {
             "CreatePublicVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceInput`](crate::input::CreatePublicVirtualInterfaceInput).
@@ -4533,7 +4533,7 @@ impl CreateTransitVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTransitVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4625,7 +4625,7 @@ impl CreateTransitVirtualInterfaceInput {
             "CreateTransitVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceInput`](crate::input::CreateTransitVirtualInterfaceInput).
@@ -4717,7 +4717,7 @@ impl DeleteBgpPeerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBGPPeer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4810,7 +4810,7 @@ impl DeleteBgpPeerInput {
             "DeleteBGPPeer",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBgpPeerInput`](crate::input::DeleteBgpPeerInput).
@@ -4863,7 +4863,7 @@ impl DeleteConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4956,7 +4956,7 @@ impl DeleteConnectionInput {
             "DeleteConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
@@ -5011,7 +5011,7 @@ impl DeleteDirectConnectGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDirectConnectGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5103,7 +5103,7 @@ impl DeleteDirectConnectGatewayInput {
             "DeleteDirectConnectGateway",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayInput`](crate::input::DeleteDirectConnectGatewayInput).
@@ -5188,7 +5188,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDirectConnectGatewayAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5280,7 +5280,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
             "DeleteDirectConnectGatewayAssociation",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationInput`](crate::input::DeleteDirectConnectGatewayAssociationInput).
@@ -5334,7 +5334,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDirectConnectGatewayAssociationProposal,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5426,7 +5426,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
             "DeleteDirectConnectGatewayAssociationProposal",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::input::DeleteDirectConnectGatewayAssociationProposalInput).
@@ -5480,7 +5480,7 @@ impl DeleteInterconnectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInterconnect,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5573,7 +5573,7 @@ impl DeleteInterconnectInput {
             "DeleteInterconnect",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteInterconnectInput`](crate::input::DeleteInterconnectInput).
@@ -5622,7 +5622,7 @@ impl DeleteLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5713,7 +5713,7 @@ impl DeleteLagInput {
                     "DeleteLag",
                     "directconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLagInput`](crate::input::DeleteLagInput).
@@ -5766,7 +5766,7 @@ impl DeleteVirtualInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualInterface,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5861,7 +5861,7 @@ impl DeleteVirtualInterfaceInput {
             "DeleteVirtualInterface",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceInput`](crate::input::DeleteVirtualInterfaceInput).
@@ -5944,7 +5944,7 @@ impl DescribeConnectionLoaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnectionLoa,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6039,7 +6039,7 @@ impl DescribeConnectionLoaInput {
             "DescribeConnectionLoa",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaInput`](crate::input::DescribeConnectionLoaInput).
@@ -6092,7 +6092,7 @@ impl DescribeConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnections,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6185,7 +6185,7 @@ impl DescribeConnectionsInput {
             "DescribeConnections",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsInput`](crate::input::DescribeConnectionsInput).
@@ -6240,7 +6240,7 @@ impl DescribeConnectionsOnInterconnectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnectionsOnInterconnect,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6332,7 +6332,7 @@ impl DescribeConnectionsOnInterconnectInput {
             "DescribeConnectionsOnInterconnect",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectInput`](crate::input::DescribeConnectionsOnInterconnectInput).
@@ -6370,7 +6370,7 @@ impl DescribeCustomerMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomerMetadata,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6458,7 +6458,7 @@ impl DescribeCustomerMetadataInput {
             "DescribeCustomerMetadata",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataInput`](crate::input::DescribeCustomerMetadataInput).
@@ -6568,7 +6568,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectConnectGatewayAssociationProposals,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6660,7 +6660,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
             "DescribeDirectConnectGatewayAssociationProposals",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput).
@@ -6790,7 +6790,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectConnectGatewayAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6882,7 +6882,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
             "DescribeDirectConnectGatewayAssociations",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsInput`](crate::input::DescribeDirectConnectGatewayAssociationsInput).
@@ -6978,7 +6978,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectConnectGatewayAttachments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7070,7 +7070,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
             "DescribeDirectConnectGatewayAttachments",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsInput`](crate::input::DescribeDirectConnectGatewayAttachmentsInput).
@@ -7151,7 +7151,7 @@ impl DescribeDirectConnectGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectConnectGateways,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7243,7 +7243,7 @@ impl DescribeDirectConnectGatewaysInput {
             "DescribeDirectConnectGateways",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysInput`](crate::input::DescribeDirectConnectGatewaysInput).
@@ -7298,7 +7298,7 @@ impl DescribeHostedConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHostedConnections,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7393,7 +7393,7 @@ impl DescribeHostedConnectionsInput {
             "DescribeHostedConnections",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsInput`](crate::input::DescribeHostedConnectionsInput).
@@ -7478,7 +7478,7 @@ impl DescribeInterconnectLoaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInterconnectLoa,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7573,7 +7573,7 @@ impl DescribeInterconnectLoaInput {
             "DescribeInterconnectLoa",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaInput`](crate::input::DescribeInterconnectLoaInput).
@@ -7626,7 +7626,7 @@ impl DescribeInterconnectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInterconnects,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7721,7 +7721,7 @@ impl DescribeInterconnectsInput {
             "DescribeInterconnects",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInterconnectsInput`](crate::input::DescribeInterconnectsInput).
@@ -7771,7 +7771,7 @@ impl DescribeLagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7864,7 +7864,7 @@ impl DescribeLagsInput {
             "DescribeLags",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLagsInput`](crate::input::DescribeLagsInput).
@@ -7947,7 +7947,7 @@ impl DescribeLoaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoa,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8040,7 +8040,7 @@ impl DescribeLoaInput {
             "DescribeLoa",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLoaInput`](crate::input::DescribeLoaInput).
@@ -8076,7 +8076,7 @@ impl DescribeLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLocations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8162,7 +8162,7 @@ impl DescribeLocationsInput {
             "DescribeLocations",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLocationsInput`](crate::input::DescribeLocationsInput).
@@ -8232,7 +8232,7 @@ impl DescribeRouterConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRouterConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8324,7 +8324,7 @@ impl DescribeRouterConfigurationInput {
             "DescribeRouterConfiguration",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationInput`](crate::input::DescribeRouterConfigurationInput).
@@ -8383,7 +8383,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8476,7 +8476,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTagsInput`](crate::input::DescribeTagsInput).
@@ -8514,7 +8514,7 @@ impl DescribeVirtualGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualGateways,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8602,7 +8602,7 @@ impl DescribeVirtualGatewaysInput {
             "DescribeVirtualGateways",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysInput`](crate::input::DescribeVirtualGatewaysInput).
@@ -8672,7 +8672,7 @@ impl DescribeVirtualInterfacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualInterfaces,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8767,7 +8767,7 @@ impl DescribeVirtualInterfacesInput {
             "DescribeVirtualInterfaces",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesInput`](crate::input::DescribeVirtualInterfacesInput).
@@ -8834,7 +8834,7 @@ impl DisassociateConnectionFromLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateConnectionFromLag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8926,7 +8926,7 @@ impl DisassociateConnectionFromLagInput {
             "DisassociateConnectionFromLag",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateConnectionFromLagInput`](crate::input::DisassociateConnectionFromLagInput).
@@ -8995,7 +8995,7 @@ impl DisassociateMacSecKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMacSecKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9090,7 +9090,7 @@ impl DisassociateMacSecKeyInput {
             "DisassociateMacSecKey",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyInput`](crate::input::DisassociateMacSecKeyInput).
@@ -9216,7 +9216,7 @@ impl ListVirtualInterfaceTestHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualInterfaceTestHistory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9308,7 +9308,7 @@ impl ListVirtualInterfaceTestHistoryInput {
             "ListVirtualInterfaceTestHistory",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryInput`](crate::input::ListVirtualInterfaceTestHistoryInput).
@@ -9398,7 +9398,7 @@ impl StartBgpFailoverTestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBgpFailoverTest,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9493,7 +9493,7 @@ impl StartBgpFailoverTestInput {
             "StartBgpFailoverTest",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestInput`](crate::input::StartBgpFailoverTestInput).
@@ -9546,7 +9546,7 @@ impl StopBgpFailoverTestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopBgpFailoverTest,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9641,7 +9641,7 @@ impl StopBgpFailoverTestInput {
             "StopBgpFailoverTest",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopBgpFailoverTestInput`](crate::input::StopBgpFailoverTestInput).
@@ -9712,7 +9712,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9805,7 +9805,7 @@ impl TagResourceInput {
             "TagResource",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -9876,7 +9876,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9969,7 +9969,7 @@ impl UntagResourceInput {
             "UntagResource",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -10056,7 +10056,7 @@ impl UpdateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConnection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10149,7 +10149,7 @@ impl UpdateConnectionInput {
             "UpdateConnection",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::input::UpdateConnectionInput).
@@ -10222,7 +10222,7 @@ impl UpdateDirectConnectGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDirectConnectGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10314,7 +10314,7 @@ impl UpdateDirectConnectGatewayInput {
             "UpdateDirectConnectGateway",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayInput`](crate::input::UpdateDirectConnectGatewayInput).
@@ -10425,7 +10425,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDirectConnectGatewayAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10517,7 +10517,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
             "UpdateDirectConnectGatewayAssociation",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayAssociationInput`](crate::input::UpdateDirectConnectGatewayAssociationInput).
@@ -10607,7 +10607,7 @@ impl UpdateLagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10698,7 +10698,7 @@ impl UpdateLagInput {
                     "UpdateLag",
                     "directconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateLagInput`](crate::input::UpdateLagInput).
@@ -10792,7 +10792,7 @@ impl UpdateVirtualInterfaceAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualInterfaceAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10884,7 +10884,7 @@ impl UpdateVirtualInterfaceAttributesInput {
             "UpdateVirtualInterfaceAttributes",
             "directconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesInput`](crate::input::UpdateVirtualInterfaceAttributesInput).

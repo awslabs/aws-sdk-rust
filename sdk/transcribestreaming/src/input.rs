@@ -240,7 +240,7 @@ impl StartMedicalStreamTranscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMedicalStreamTranscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -339,7 +339,7 @@ impl StartMedicalStreamTranscriptionInput {
             "StartMedicalStreamTranscription",
             "transcribestreaming",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionInput`](crate::input::StartMedicalStreamTranscriptionInput).
@@ -781,7 +781,7 @@ impl StartStreamTranscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartStreamTranscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -879,7 +879,7 @@ impl StartStreamTranscriptionInput {
             "StartStreamTranscription",
             "transcribestreaming",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionInput`](crate::input::StartStreamTranscriptionInput).

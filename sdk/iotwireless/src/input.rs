@@ -83,7 +83,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateAwsAccountWithPartnerAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -173,7 +173,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
             "AssociateAwsAccountWithPartnerAccount",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountInput`](crate::input::AssociateAwsAccountWithPartnerAccountInput).
@@ -240,7 +240,7 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateMulticastGroupWithFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -342,7 +342,7 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
             "AssociateMulticastGroupWithFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput).
@@ -409,7 +409,7 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessDeviceWithFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -511,7 +511,7 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
             "AssociateWirelessDeviceWithFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput).
@@ -580,7 +580,7 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessDeviceWithMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -682,7 +682,7 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
             "AssociateWirelessDeviceWithMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput).
@@ -747,7 +747,7 @@ impl AssociateWirelessDeviceWithThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessDeviceWithThing,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -849,7 +849,7 @@ impl AssociateWirelessDeviceWithThingInput {
             "AssociateWirelessDeviceWithThing",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingInput`](crate::input::AssociateWirelessDeviceWithThingInput).
@@ -916,7 +916,7 @@ impl AssociateWirelessGatewayWithCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessGatewayWithCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1018,7 +1018,7 @@ impl AssociateWirelessGatewayWithCertificateInput {
             "AssociateWirelessGatewayWithCertificate",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateInput`](crate::input::AssociateWirelessGatewayWithCertificateInput).
@@ -1082,7 +1082,7 @@ impl AssociateWirelessGatewayWithThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessGatewayWithThing,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1184,7 +1184,7 @@ impl AssociateWirelessGatewayWithThingInput {
             "AssociateWirelessGatewayWithThing",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingInput`](crate::input::AssociateWirelessGatewayWithThingInput).
@@ -1234,7 +1234,7 @@ impl CancelMulticastGroupSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelMulticastGroupSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1323,7 +1323,7 @@ impl CancelMulticastGroupSessionInput {
             "CancelMulticastGroupSession",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput).
@@ -1460,7 +1460,7 @@ impl CreateDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1551,7 +1551,7 @@ impl CreateDestinationInput {
             "CreateDestination",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDestinationInput`](crate::input::CreateDestinationInput).
@@ -1652,7 +1652,7 @@ impl CreateDeviceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeviceProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1743,7 +1743,7 @@ impl CreateDeviceProfileInput {
             "CreateDeviceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDeviceProfileInput`](crate::input::CreateDeviceProfileInput).
@@ -1886,7 +1886,7 @@ impl CreateFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1977,7 +1977,7 @@ impl CreateFuotaTaskInput {
             "CreateFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput).
@@ -2090,7 +2090,7 @@ impl CreateMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2183,7 +2183,7 @@ impl CreateMulticastGroupInput {
             "CreateMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput).
@@ -2340,7 +2340,7 @@ impl CreateNetworkAnalyzerConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNetworkAnalyzerConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2431,7 +2431,7 @@ impl CreateNetworkAnalyzerConfigurationInput {
             "CreateNetworkAnalyzerConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationInput`](crate::input::CreateNetworkAnalyzerConfigurationInput).
@@ -2532,7 +2532,7 @@ impl CreateServiceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateServiceProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2625,7 +2625,7 @@ impl CreateServiceProfileInput {
             "CreateServiceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateServiceProfileInput`](crate::input::CreateServiceProfileInput).
@@ -2768,7 +2768,7 @@ impl CreateWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWirelessDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2861,7 +2861,7 @@ impl CreateWirelessDeviceInput {
             "CreateWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput).
@@ -2974,7 +2974,7 @@ impl CreateWirelessGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWirelessGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3067,7 +3067,7 @@ impl CreateWirelessGatewayInput {
             "CreateWirelessGateway",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayInput`](crate::input::CreateWirelessGatewayInput).
@@ -3137,7 +3137,7 @@ impl CreateWirelessGatewayTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWirelessGatewayTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3242,7 +3242,7 @@ impl CreateWirelessGatewayTaskInput {
             "CreateWirelessGatewayTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskInput`](crate::input::CreateWirelessGatewayTaskInput).
@@ -3357,7 +3357,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWirelessGatewayTaskDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3448,7 +3448,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
             "CreateWirelessGatewayTaskDefinition",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionInput`](crate::input::CreateWirelessGatewayTaskDefinitionInput).
@@ -3496,7 +3496,7 @@ impl DeleteDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3585,7 +3585,7 @@ impl DeleteDestinationInput {
             "DeleteDestination",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
@@ -3633,7 +3633,7 @@ impl DeleteDeviceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeviceProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3722,7 +3722,7 @@ impl DeleteDeviceProfileInput {
             "DeleteDeviceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDeviceProfileInput`](crate::input::DeleteDeviceProfileInput).
@@ -3770,7 +3770,7 @@ impl DeleteFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3858,7 +3858,7 @@ impl DeleteFuotaTaskInput {
             "DeleteFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput).
@@ -3906,7 +3906,7 @@ impl DeleteMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3995,7 +3995,7 @@ impl DeleteMulticastGroupInput {
             "DeleteMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput).
@@ -4050,7 +4050,7 @@ impl DeleteNetworkAnalyzerConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNetworkAnalyzerConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4143,7 +4143,7 @@ impl DeleteNetworkAnalyzerConfigurationInput {
             "DeleteNetworkAnalyzerConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationInput`](crate::input::DeleteNetworkAnalyzerConfigurationInput).
@@ -4220,7 +4220,7 @@ impl DeleteQueuedMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteQueuedMessages,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4326,7 +4326,7 @@ impl DeleteQueuedMessagesInput {
             "DeleteQueuedMessages",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput).
@@ -4374,7 +4374,7 @@ impl DeleteServiceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServiceProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4463,7 +4463,7 @@ impl DeleteServiceProfileInput {
             "DeleteServiceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput).
@@ -4511,7 +4511,7 @@ impl DeleteWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWirelessDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4600,7 +4600,7 @@ impl DeleteWirelessDeviceInput {
             "DeleteWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceInput`](crate::input::DeleteWirelessDeviceInput).
@@ -4648,7 +4648,7 @@ impl DeleteWirelessGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWirelessGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4737,7 +4737,7 @@ impl DeleteWirelessGatewayInput {
             "DeleteWirelessGateway",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayInput`](crate::input::DeleteWirelessGatewayInput).
@@ -4787,7 +4787,7 @@ impl DeleteWirelessGatewayTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWirelessGatewayTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4876,7 +4876,7 @@ impl DeleteWirelessGatewayTaskInput {
             "DeleteWirelessGatewayTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskInput`](crate::input::DeleteWirelessGatewayTaskInput).
@@ -4926,7 +4926,7 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWirelessGatewayTaskDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5015,7 +5015,7 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
             "DeleteWirelessGatewayTaskDefinition",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionInput`](crate::input::DeleteWirelessGatewayTaskDefinitionInput).
@@ -5087,7 +5087,7 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateAwsAccountFromPartnerAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5194,7 +5194,7 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
             "DisassociateAwsAccountFromPartnerAccount",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountInput`](crate::input::DisassociateAwsAccountFromPartnerAccountInput).
@@ -5261,7 +5261,7 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMulticastGroupFromFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5369,7 +5369,7 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
             "DisassociateMulticastGroupFromFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput).
@@ -5436,7 +5436,7 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessDeviceFromFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5544,7 +5544,7 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
             "DisassociateWirelessDeviceFromFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput).
@@ -5613,7 +5613,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessDeviceFromMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5721,7 +5721,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
             "DisassociateWirelessDeviceFromMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput).
@@ -5772,7 +5772,7 @@ impl DisassociateWirelessDeviceFromThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessDeviceFromThing,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5861,7 +5861,7 @@ impl DisassociateWirelessDeviceFromThingInput {
             "DisassociateWirelessDeviceFromThing",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingInput`](crate::input::DisassociateWirelessDeviceFromThingInput).
@@ -5911,7 +5911,7 @@ impl DisassociateWirelessGatewayFromCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessGatewayFromCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6000,7 +6000,7 @@ impl DisassociateWirelessGatewayFromCertificateInput {
             "DisassociateWirelessGatewayFromCertificate",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateInput`](crate::input::DisassociateWirelessGatewayFromCertificateInput).
@@ -6051,7 +6051,7 @@ impl DisassociateWirelessGatewayFromThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessGatewayFromThing,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6140,7 +6140,7 @@ impl DisassociateWirelessGatewayFromThingInput {
             "DisassociateWirelessGatewayFromThing",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingInput`](crate::input::DisassociateWirelessGatewayFromThingInput).
@@ -6188,7 +6188,7 @@ impl GetDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6277,7 +6277,7 @@ impl GetDestinationInput {
             "GetDestination",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDestinationInput`](crate::input::GetDestinationInput).
@@ -6325,7 +6325,7 @@ impl GetDeviceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeviceProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6414,7 +6414,7 @@ impl GetDeviceProfileInput {
             "GetDeviceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDeviceProfileInput`](crate::input::GetDeviceProfileInput).
@@ -6452,7 +6452,7 @@ impl GetEventConfigurationByResourceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEventConfigurationByResourceTypes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6527,7 +6527,7 @@ impl GetEventConfigurationByResourceTypesInput {
             "GetEventConfigurationByResourceTypes",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesInput`](crate::input::GetEventConfigurationByResourceTypesInput).
@@ -6575,7 +6575,7 @@ impl GetFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6663,7 +6663,7 @@ impl GetFuotaTaskInput {
             "GetFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput).
@@ -6701,7 +6701,7 @@ impl GetLogLevelsByResourceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLogLevelsByResourceTypes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6775,7 +6775,7 @@ impl GetLogLevelsByResourceTypesInput {
             "GetLogLevelsByResourceTypes",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput).
@@ -6823,7 +6823,7 @@ impl GetMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6912,7 +6912,7 @@ impl GetMulticastGroupInput {
             "GetMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput).
@@ -6962,7 +6962,7 @@ impl GetMulticastGroupSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMulticastGroupSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7051,7 +7051,7 @@ impl GetMulticastGroupSessionInput {
             "GetMulticastGroupSession",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput).
@@ -7106,7 +7106,7 @@ impl GetNetworkAnalyzerConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkAnalyzerConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7199,7 +7199,7 @@ impl GetNetworkAnalyzerConfigurationInput {
             "GetNetworkAnalyzerConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationInput`](crate::input::GetNetworkAnalyzerConfigurationInput).
@@ -7267,7 +7267,7 @@ impl GetPartnerAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPartnerAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7374,7 +7374,7 @@ impl GetPartnerAccountInput {
             "GetPartnerAccount",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPartnerAccountInput`](crate::input::GetPartnerAccountInput).
@@ -7442,7 +7442,7 @@ impl GetPositionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPosition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7549,7 +7549,7 @@ impl GetPositionInput {
             "GetPosition",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPositionInput`](crate::input::GetPositionInput).
@@ -7619,7 +7619,7 @@ impl GetPositionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPositionConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7726,7 +7726,7 @@ impl GetPositionConfigurationInput {
             "GetPositionConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPositionConfigurationInput`](crate::input::GetPositionConfigurationInput).
@@ -7808,7 +7808,7 @@ impl GetResourceEventConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceEventConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7921,7 +7921,7 @@ impl GetResourceEventConfigurationInput {
             "GetResourceEventConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput).
@@ -7989,7 +7989,7 @@ impl GetResourceLogLevelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceLogLevel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8096,7 +8096,7 @@ impl GetResourceLogLevelInput {
             "GetResourceLogLevel",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResourceLogLevelInput`](crate::input::GetResourceLogLevelInput).
@@ -8149,7 +8149,7 @@ impl GetServiceEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8237,7 +8237,7 @@ impl GetServiceEndpointInput {
             "GetServiceEndpoint",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetServiceEndpointInput`](crate::input::GetServiceEndpointInput).
@@ -8285,7 +8285,7 @@ impl GetServiceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8374,7 +8374,7 @@ impl GetServiceProfileInput {
             "GetServiceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetServiceProfileInput`](crate::input::GetServiceProfileInput).
@@ -8439,7 +8439,7 @@ impl GetWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8546,7 +8546,7 @@ impl GetWirelessDeviceInput {
             "GetWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceInput`](crate::input::GetWirelessDeviceInput).
@@ -8601,7 +8601,7 @@ impl GetWirelessDeviceStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessDeviceStatistics,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8694,7 +8694,7 @@ impl GetWirelessDeviceStatisticsInput {
             "GetWirelessDeviceStatistics",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsInput`](crate::input::GetWirelessDeviceStatisticsInput).
@@ -8759,7 +8759,7 @@ impl GetWirelessGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8866,7 +8866,7 @@ impl GetWirelessGatewayInput {
             "GetWirelessGateway",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayInput`](crate::input::GetWirelessGatewayInput).
@@ -8916,7 +8916,7 @@ impl GetWirelessGatewayCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9005,7 +9005,7 @@ impl GetWirelessGatewayCertificateInput {
             "GetWirelessGatewayCertificate",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateInput`](crate::input::GetWirelessGatewayCertificateInput).
@@ -9055,7 +9055,7 @@ impl GetWirelessGatewayFirmwareInformationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayFirmwareInformation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9148,7 +9148,7 @@ impl GetWirelessGatewayFirmwareInformationInput {
             "GetWirelessGatewayFirmwareInformation",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationInput`](crate::input::GetWirelessGatewayFirmwareInformationInput).
@@ -9203,7 +9203,7 @@ impl GetWirelessGatewayStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayStatistics,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9296,7 +9296,7 @@ impl GetWirelessGatewayStatisticsInput {
             "GetWirelessGatewayStatistics",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsInput`](crate::input::GetWirelessGatewayStatisticsInput).
@@ -9344,7 +9344,7 @@ impl GetWirelessGatewayTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9433,7 +9433,7 @@ impl GetWirelessGatewayTaskInput {
             "GetWirelessGatewayTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskInput`](crate::input::GetWirelessGatewayTaskInput).
@@ -9483,7 +9483,7 @@ impl GetWirelessGatewayTaskDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayTaskDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9572,7 +9572,7 @@ impl GetWirelessGatewayTaskDefinitionInput {
             "GetWirelessGatewayTaskDefinition",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionInput`](crate::input::GetWirelessGatewayTaskDefinitionInput).
@@ -9634,7 +9634,7 @@ impl ListDestinationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDestinations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9725,7 +9725,7 @@ impl ListDestinationsInput {
             "ListDestinations",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDestinationsInput`](crate::input::ListDestinationsInput).
@@ -9787,7 +9787,7 @@ impl ListDeviceProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeviceProfiles,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9878,7 +9878,7 @@ impl ListDeviceProfilesInput {
             "ListDeviceProfiles",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDeviceProfilesInput`](crate::input::ListDeviceProfilesInput).
@@ -9957,7 +9957,7 @@ impl ListEventConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEventConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10054,7 +10054,7 @@ impl ListEventConfigurationsInput {
             "ListEventConfigurations",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEventConfigurationsInput`](crate::input::ListEventConfigurationsInput).
@@ -10116,7 +10116,7 @@ impl ListFuotaTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFuotaTasks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10207,7 +10207,7 @@ impl ListFuotaTasksInput {
             "ListFuotaTasks",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput).
@@ -10269,7 +10269,7 @@ impl ListMulticastGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMulticastGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10360,7 +10360,7 @@ impl ListMulticastGroupsInput {
             "ListMulticastGroups",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput).
@@ -10436,7 +10436,7 @@ impl ListMulticastGroupsByFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMulticastGroupsByFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10542,7 +10542,7 @@ impl ListMulticastGroupsByFuotaTaskInput {
             "ListMulticastGroupsByFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput).
@@ -10606,7 +10606,7 @@ impl ListNetworkAnalyzerConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNetworkAnalyzerConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10698,7 +10698,7 @@ impl ListNetworkAnalyzerConfigurationsInput {
             "ListNetworkAnalyzerConfigurations",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsInput`](crate::input::ListNetworkAnalyzerConfigurationsInput).
@@ -10760,7 +10760,7 @@ impl ListPartnerAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPartnerAccounts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10851,7 +10851,7 @@ impl ListPartnerAccountsInput {
             "ListPartnerAccounts",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPartnerAccountsInput`](crate::input::ListPartnerAccountsInput).
@@ -10930,7 +10930,7 @@ impl ListPositionConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPositionConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11027,7 +11027,7 @@ impl ListPositionConfigurationsInput {
             "ListPositionConfigurations",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPositionConfigurationsInput`](crate::input::ListPositionConfigurationsInput).
@@ -11116,7 +11116,7 @@ impl ListQueuedMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListQueuedMessages,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11228,7 +11228,7 @@ impl ListQueuedMessagesInput {
             "ListQueuedMessages",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput).
@@ -11290,7 +11290,7 @@ impl ListServiceProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceProfiles,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11381,7 +11381,7 @@ impl ListServiceProfilesInput {
             "ListServiceProfiles",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput).
@@ -11431,7 +11431,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11519,7 +11519,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -11671,7 +11671,7 @@ impl ListWirelessDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWirelessDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11798,7 +11798,7 @@ impl ListWirelessDevicesInput {
             "ListWirelessDevices",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListWirelessDevicesInput`](crate::input::ListWirelessDevicesInput).
@@ -11860,7 +11860,7 @@ impl ListWirelessGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWirelessGateways,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11951,7 +11951,7 @@ impl ListWirelessGatewaysInput {
             "ListWirelessGateways",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysInput`](crate::input::ListWirelessGatewaysInput).
@@ -12034,7 +12034,7 @@ impl ListWirelessGatewayTaskDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWirelessGatewayTaskDefinitions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12132,7 +12132,7 @@ impl ListWirelessGatewayTaskDefinitionsInput {
             "ListWirelessGatewayTaskDefinitions",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsInput`](crate::input::ListWirelessGatewayTaskDefinitionsInput).
@@ -12229,7 +12229,7 @@ impl PutPositionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPositionConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12352,7 +12352,7 @@ impl PutPositionConfigurationInput {
             "PutPositionConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutPositionConfigurationInput`](crate::input::PutPositionConfigurationInput).
@@ -12432,7 +12432,7 @@ impl PutResourceLogLevelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourceLogLevel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12555,7 +12555,7 @@ impl PutResourceLogLevelInput {
             "PutResourceLogLevel",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutResourceLogLevelInput`](crate::input::PutResourceLogLevelInput).
@@ -12593,7 +12593,7 @@ impl ResetAllResourceLogLevelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResetAllResourceLogLevels,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12667,7 +12667,7 @@ impl ResetAllResourceLogLevelsInput {
             "ResetAllResourceLogLevels",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsInput`](crate::input::ResetAllResourceLogLevelsInput).
@@ -12735,7 +12735,7 @@ impl ResetResourceLogLevelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResetResourceLogLevel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12842,7 +12842,7 @@ impl ResetResourceLogLevelInput {
             "ResetResourceLogLevel",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelInput`](crate::input::ResetResourceLogLevelInput).
@@ -12921,7 +12921,7 @@ impl SendDataToMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendDataToMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13026,7 +13026,7 @@ impl SendDataToMulticastGroupInput {
             "SendDataToMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput).
@@ -13117,7 +13117,7 @@ impl SendDataToWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendDataToWirelessDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13222,7 +13222,7 @@ impl SendDataToWirelessDeviceInput {
             "SendDataToWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceInput`](crate::input::SendDataToWirelessDeviceInput).
@@ -13309,7 +13309,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13411,7 +13411,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
             "StartBulkAssociateWirelessDeviceWithMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput).
@@ -13500,7 +13500,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13602,7 +13602,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
             "StartBulkDisassociateWirelessDeviceFromMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput).
@@ -13669,7 +13669,7 @@ impl StartFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13771,7 +13771,7 @@ impl StartFuotaTaskInput {
             "StartFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput).
@@ -13838,7 +13838,7 @@ impl StartMulticastGroupSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMulticastGroupSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13940,7 +13940,7 @@ impl StartMulticastGroupSessionInput {
             "StartMulticastGroupSession",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput).
@@ -14011,7 +14011,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14113,7 +14113,7 @@ impl TagResourceInput {
             "TagResource",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -14161,7 +14161,7 @@ impl TestWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestWirelessDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14250,7 +14250,7 @@ impl TestWirelessDeviceInput {
             "TestWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TestWirelessDeviceInput`](crate::input::TestWirelessDeviceInput).
@@ -14321,7 +14321,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14414,7 +14414,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -14515,7 +14515,7 @@ impl UpdateDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14618,7 +14618,7 @@ impl UpdateDestinationInput {
             "UpdateDestination",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
@@ -14756,7 +14756,7 @@ impl UpdateEventConfigurationByResourceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEventConfigurationByResourceTypes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14844,7 +14844,7 @@ impl UpdateEventConfigurationByResourceTypesInput {
             "UpdateEventConfigurationByResourceTypes",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesInput`](crate::input::UpdateEventConfigurationByResourceTypesInput).
@@ -14963,7 +14963,7 @@ impl UpdateFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFuotaTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15065,7 +15065,7 @@ impl UpdateFuotaTaskInput {
             "UpdateFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput).
@@ -15170,7 +15170,7 @@ impl UpdateLogLevelsByResourceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLogLevelsByResourceTypes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15257,7 +15257,7 @@ impl UpdateLogLevelsByResourceTypesInput {
             "UpdateLogLevelsByResourceTypes",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesInput`](crate::input::UpdateLogLevelsByResourceTypesInput).
@@ -15346,7 +15346,7 @@ impl UpdateMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMulticastGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15451,7 +15451,7 @@ impl UpdateMulticastGroupInput {
             "UpdateMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput).
@@ -15623,7 +15623,7 @@ impl UpdateNetworkAnalyzerConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNetworkAnalyzerConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15729,7 +15729,7 @@ impl UpdateNetworkAnalyzerConfigurationInput {
             "UpdateNetworkAnalyzerConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationInput`](crate::input::UpdateNetworkAnalyzerConfigurationInput).
@@ -15812,7 +15812,7 @@ impl UpdatePartnerAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePartnerAccount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15935,7 +15935,7 @@ impl UpdatePartnerAccountInput {
             "UpdatePartnerAccount",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountInput`](crate::input::UpdatePartnerAccountInput).
@@ -16021,7 +16021,7 @@ impl UpdatePositionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePosition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16142,7 +16142,7 @@ impl UpdatePositionInput {
             "UpdatePosition",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePositionInput`](crate::input::UpdatePositionInput).
@@ -16311,7 +16311,7 @@ impl UpdateResourceEventConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceEventConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16437,7 +16437,7 @@ impl UpdateResourceEventConfigurationInput {
             "UpdateResourceEventConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput).
@@ -16541,7 +16541,7 @@ impl UpdateWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWirelessDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16646,7 +16646,7 @@ impl UpdateWirelessDeviceInput {
             "UpdateWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput).
@@ -16763,7 +16763,7 @@ impl UpdateWirelessGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWirelessGateway,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16868,7 +16868,7 @@ impl UpdateWirelessGatewayInput {
             "UpdateWirelessGateway",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayInput`](crate::input::UpdateWirelessGatewayInput).

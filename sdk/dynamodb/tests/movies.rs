@@ -4,24 +4,14 @@
  */
 
 use aws_sdk_dynamodb as dynamodb;
-
-use aws_http::retry::AwsErrorRetryPolicy;
-use aws_sdk_dynamodb::input::CreateTableInput;
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::operation::Operation;
-use aws_smithy_http::result::{SdkError, SdkSuccess};
-use aws_smithy_http::retry::ClassifyResponse;
-use aws_smithy_types::retry::RetryKind;
-use dynamodb::error::DescribeTableError;
-use dynamodb::input::{DescribeTableInput, PutItemInput, QueryInput};
 use dynamodb::model::{
     AttributeDefinition, AttributeValue, KeySchemaElement, KeyType, ProvisionedThroughput,
     ScalarAttributeType, TableStatus,
 };
-use dynamodb::operation::{CreateTable, DescribeTable};
-use dynamodb::output::DescribeTableOutput;
-use dynamodb::{Config, Credentials, Region};
+use dynamodb::output::QueryOutput;
+use dynamodb::{Client, Credentials, Region};
 use http::header::{HeaderName, AUTHORIZATION};
 use http::Uri;
 use serde_json::Value;
@@ -29,12 +19,9 @@ use std::collections::HashMap;
 use std::time::Duration;
 use tokio::time::Instant;
 
-use aws_sdk_dynamodb::middleware::DefaultMiddleware;
-use aws_smithy_client::Client as CoreClient;
-pub type Client<C> = CoreClient<C, DefaultMiddleware>;
-
-fn create_table(table_name: &str) -> CreateTableInput {
-    CreateTable::builder()
+async fn create_table(client: &Client, table_name: &str) {
+    client
+        .create_table()
         .table_name(table_name)
         .key_schema(
             KeySchemaElement::builder()
@@ -66,8 +53,9 @@ fn create_table(table_name: &str) -> CreateTableInput {
                 .write_capacity_units(10)
                 .build(),
         )
-        .build()
-        .expect("valid operation")
+        .send()
+        .await
+        .expect("failed to create table");
 }
 
 fn value_to_item(value: Value) -> AttributeValue {
@@ -83,90 +71,55 @@ fn value_to_item(value: Value) -> AttributeValue {
     }
 }
 
-fn add_item(table_name: impl Into<String>, item: Value) -> PutItemInput {
+async fn add_item(client: &Client, table_name: impl Into<String>, item: Value) {
     let attribute_value = match value_to_item(item) {
         AttributeValue::M(map) => map,
         other => panic!("can only insert top level values, got {:?}", other),
     };
 
-    PutItemInput::builder()
+    client
+        .put_item()
         .table_name(table_name)
         .set_item(Some(attribute_value))
-        .build()
-        .expect("valid operation")
+        .send()
+        .await
+        .expect("valid operation");
 }
 
-fn movies_in_year(table_name: &str, year: u16) -> QueryInput {
+async fn movies_in_year(client: &Client, table_name: &str, year: u16) -> QueryOutput {
     let mut expr_attrib_names = HashMap::new();
     expr_attrib_names.insert("#yr".to_string(), "year".to_string());
     let mut expr_attrib_values = HashMap::new();
     expr_attrib_values.insert(":yyyy".to_string(), AttributeValue::N(year.to_string()));
-    QueryInput::builder()
+
+    client
+        .query()
         .table_name(table_name)
         .key_condition_expression("#yr = :yyyy")
         .set_expression_attribute_names(Some(expr_attrib_names))
         .set_expression_attribute_values(Some(expr_attrib_values))
-        .build()
+        .send()
+        .await
         .expect("valid operation")
 }
 
-/// Hand-written waiter to retry every second until the table is out of `Creating` state
-#[derive(Clone)]
-struct WaitForReadyTable<R> {
-    inner: R,
-}
-
-impl<R> ClassifyResponse<SdkSuccess<DescribeTableOutput>, SdkError<DescribeTableError>>
-    for WaitForReadyTable<R>
-where
-    R: ClassifyResponse<SdkSuccess<DescribeTableOutput>, SdkError<DescribeTableError>>,
-{
-    fn classify(
-        &self,
-        response: Result<&SdkSuccess<DescribeTableOutput>, &SdkError<DescribeTableError>>,
-    ) -> RetryKind {
-        match self.inner.classify(response) {
-            RetryKind::UnretryableFailure | RetryKind::Unnecessary => (),
-            other => return other,
-        };
-        match response {
-            Ok(SdkSuccess { parsed, .. }) => {
-                if parsed
-                    .table
-                    .as_ref()
-                    .unwrap()
-                    .table_status
-                    .as_ref()
-                    .unwrap()
-                    == &TableStatus::Creating
-                {
-                    RetryKind::Explicit(Duration::from_secs(1))
-                } else {
-                    RetryKind::Unnecessary
-                }
+/// Poll the DescribeTable operation once per second until the table exists.
+async fn wait_for_ready_table(client: &Client, table_name: &str) {
+    loop {
+        if let Some(table) = client
+            .describe_table()
+            .table_name(table_name)
+            .send()
+            .await
+            .expect("success")
+            .table()
+        {
+            if !matches!(table.table_status, Some(TableStatus::Creating)) {
+                break;
             }
-            _ => RetryKind::UnretryableFailure,
         }
+        tokio::time::sleep(Duration::from_secs(1)).await;
     }
-}
-
-/// Construct a `DescribeTable` request with a policy to retry every second until the table
-/// is ready
-async fn wait_for_ready_table(
-    table_name: &str,
-    conf: &Config,
-) -> Operation<DescribeTable, WaitForReadyTable<AwsErrorRetryPolicy>> {
-    let operation = DescribeTableInput::builder()
-        .table_name(table_name)
-        .build()
-        .unwrap()
-        .make_operation(&conf)
-        .await
-        .expect("valid operation");
-    let waiting_policy = WaitForReadyTable {
-        inner: operation.retry_policy().clone(),
-    };
-    operation.with_retry_policy(waiting_policy)
 }
 
 /// Validate that time has passed with a 5ms tolerance
@@ -193,7 +146,6 @@ async fn movies_it() {
     // The waiter will retry 5 times
     tokio::time::pause();
     let conn = movies_it_test_connection(); // RecordingConnection::https();
-    let client = Client::new(conn.clone());
     let conf = dynamodb::Config::builder()
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::new(
@@ -204,21 +156,12 @@ async fn movies_it() {
             "test",
         ))
         .build();
-    client
-        .call(
-            create_table(table_name)
-                .make_operation(&conf)
-                .await
-                .expect("valid request"),
-        )
-        .await
-        .expect("failed to create table");
+    let client = Client::from_conf_conn(conf, conn.clone());
+
+    create_table(&client, table_name).await;
 
     let waiter_start = tokio::time::Instant::now();
-    client
-        .call(wait_for_ready_table(table_name, &conf).await)
-        .await
-        .expect("table should become ready");
+    wait_for_ready_table(&client, table_name).await;
 
     assert_time_passed(waiter_start, Duration::from_secs(4));
     // data.json contains 2 movies from 2013
@@ -228,37 +171,13 @@ async fn movies_it() {
         data => panic!("data must be an array, got: {:?}", data),
     };
     for item in data {
-        client
-            .call(
-                add_item(table_name, item.clone())
-                    .make_operation(&conf)
-                    .await
-                    .expect("valid request"),
-            )
-            .await
-            .expect("failed to insert item");
+        add_item(&client, table_name, item.clone()).await;
     }
-    let films_2222 = client
-        .call(
-            movies_in_year(table_name, 2222)
-                .make_operation(&conf)
-                .await
-                .expect("valid request"),
-        )
-        .await
-        .expect("query should succeed");
-    // this isn't back to the future, there are no movies from 2022
+    let films_2222 = movies_in_year(&client, table_name, 2222).await;
+    // this isn't "Back To The Future", there are no movies from 2222
     assert_eq!(films_2222.count, 0);
 
-    let films_2013 = client
-        .call(
-            movies_in_year(table_name, 2013)
-                .make_operation(&conf)
-                .await
-                .expect("valid request"),
-        )
-        .await
-        .expect("query should succeed");
+    let films_2013 = movies_in_year(&client, table_name, 2013).await;
     assert_eq!(films_2013.count, 2);
     let titles: Vec<AttributeValue> = films_2013
         .items

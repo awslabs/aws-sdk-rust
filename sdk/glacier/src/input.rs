@@ -66,7 +66,7 @@ impl AbortMultipartUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AbortMultipartUpload,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -196,7 +196,7 @@ impl AbortMultipartUploadInput {
             "AbortMultipartUpload",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
@@ -258,7 +258,7 @@ impl AbortVaultLockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AbortVaultLock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -373,7 +373,7 @@ impl AbortVaultLockInput {
             "AbortVaultLock",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AbortVaultLockInput`](crate::input::AbortVaultLockInput).
@@ -464,7 +464,7 @@ impl AddTagsToVaultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToVault,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -602,7 +602,7 @@ impl AddTagsToVaultInput {
             "AddTagsToVault",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddTagsToVaultInput`](crate::input::AddTagsToVaultInput).
@@ -702,7 +702,7 @@ impl CompleteMultipartUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompleteMultipartUpload,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -834,7 +834,7 @@ impl CompleteMultipartUploadInput {
             "CompleteMultipartUpload",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
@@ -908,7 +908,7 @@ impl CompleteVaultLockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompleteVaultLock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1038,7 +1038,7 @@ impl CompleteVaultLockInput {
             "CompleteVaultLock",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CompleteVaultLockInput`](crate::input::CompleteVaultLockInput).
@@ -1100,7 +1100,7 @@ impl CreateVaultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVault,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1215,7 +1215,7 @@ impl CreateVaultInput {
             "CreateVault",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVaultInput`](crate::input::CreateVaultInput).
@@ -1289,7 +1289,7 @@ impl DeleteArchiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteArchive,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1419,7 +1419,7 @@ impl DeleteArchiveInput {
             "DeleteArchive",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteArchiveInput`](crate::input::DeleteArchiveInput).
@@ -1481,7 +1481,7 @@ impl DeleteVaultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVault,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1596,7 +1596,7 @@ impl DeleteVaultInput {
             "DeleteVault",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVaultInput`](crate::input::DeleteVaultInput).
@@ -1660,7 +1660,7 @@ impl DeleteVaultAccessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVaultAccessPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1775,7 +1775,7 @@ impl DeleteVaultAccessPolicyInput {
             "DeleteVaultAccessPolicy",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVaultAccessPolicyInput`](crate::input::DeleteVaultAccessPolicyInput).
@@ -1839,7 +1839,7 @@ impl DeleteVaultNotificationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVaultNotifications,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1954,7 +1954,7 @@ impl DeleteVaultNotificationsInput {
             "DeleteVaultNotifications",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVaultNotificationsInput`](crate::input::DeleteVaultNotificationsInput).
@@ -2028,7 +2028,7 @@ impl DescribeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2158,7 +2158,7 @@ impl DescribeJobInput {
             "DescribeJob",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeJobInput`](crate::input::DescribeJobInput).
@@ -2220,7 +2220,7 @@ impl DescribeVaultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVault,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2335,7 +2335,7 @@ impl DescribeVaultInput {
             "DescribeVault",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeVaultInput`](crate::input::DescribeVaultInput).
@@ -2385,7 +2385,7 @@ impl GetDataRetrievalPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataRetrievalPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2485,7 +2485,7 @@ impl GetDataRetrievalPolicyInput {
             "GetDataRetrievalPolicy",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDataRetrievalPolicyInput`](crate::input::GetDataRetrievalPolicyInput).
@@ -2585,7 +2585,7 @@ impl GetJobOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobOutput,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2716,7 +2716,7 @@ impl GetJobOutputInput {
             "GetJobOutput",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetJobOutputInput`](crate::input::GetJobOutputInput).
@@ -2778,7 +2778,7 @@ impl GetVaultAccessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVaultAccessPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2893,7 +2893,7 @@ impl GetVaultAccessPolicyInput {
             "GetVaultAccessPolicy",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetVaultAccessPolicyInput`](crate::input::GetVaultAccessPolicyInput).
@@ -2955,7 +2955,7 @@ impl GetVaultLockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVaultLock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3070,7 +3070,7 @@ impl GetVaultLockInput {
             "GetVaultLock",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetVaultLockInput`](crate::input::GetVaultLockInput).
@@ -3132,7 +3132,7 @@ impl GetVaultNotificationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVaultNotifications,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3247,7 +3247,7 @@ impl GetVaultNotificationsInput {
             "GetVaultNotifications",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetVaultNotificationsInput`](crate::input::GetVaultNotificationsInput).
@@ -3324,7 +3324,7 @@ impl InitiateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3453,7 +3453,7 @@ impl InitiateJobInput {
             "InitiateJob",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InitiateJobInput`](crate::input::InitiateJobInput).
@@ -3546,7 +3546,7 @@ impl InitiateMultipartUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateMultipartUpload,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3663,7 +3663,7 @@ impl InitiateMultipartUploadInput {
             "InitiateMultipartUpload",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InitiateMultipartUploadInput`](crate::input::InitiateMultipartUploadInput).
@@ -3740,7 +3740,7 @@ impl InitiateVaultLockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateVaultLock,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3869,7 +3869,7 @@ impl InitiateVaultLockInput {
             "InitiateVaultLock",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InitiateVaultLockInput`](crate::input::InitiateVaultLockInput).
@@ -3978,7 +3978,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4113,7 +4113,7 @@ impl ListJobsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListJobs", "glacier",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput).
@@ -4199,7 +4199,7 @@ impl ListMultipartUploadsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMultipartUploads,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4331,7 +4331,7 @@ impl ListMultipartUploadsInput {
             "ListMultipartUploads",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
@@ -4428,7 +4428,7 @@ impl ListPartsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListParts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4573,7 +4573,7 @@ impl ListPartsInput {
                     "ListParts",
                     "glacier",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPartsInput`](crate::input::ListPartsInput).
@@ -4625,7 +4625,7 @@ impl ListProvisionedCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProvisionedCapacity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4725,7 +4725,7 @@ impl ListProvisionedCapacityInput {
             "ListProvisionedCapacity",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityInput`](crate::input::ListProvisionedCapacityInput).
@@ -4787,7 +4787,7 @@ impl ListTagsForVaultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForVault,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4902,7 +4902,7 @@ impl ListTagsForVaultInput {
             "ListTagsForVault",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForVaultInput`](crate::input::ListTagsForVaultInput).
@@ -4975,7 +4975,7 @@ impl ListVaultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVaults,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5088,7 +5088,7 @@ impl ListVaultsInput {
             "ListVaults",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListVaultsInput`](crate::input::ListVaultsInput).
@@ -5140,7 +5140,7 @@ impl PurchaseProvisionedCapacityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PurchaseProvisionedCapacity,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5240,7 +5240,7 @@ impl PurchaseProvisionedCapacityInput {
             "PurchaseProvisionedCapacity",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityInput`](crate::input::PurchaseProvisionedCapacityInput).
@@ -5323,7 +5323,7 @@ impl RemoveTagsFromVaultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromVault,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5463,7 +5463,7 @@ impl RemoveTagsFromVaultInput {
             "RemoveTagsFromVault",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromVaultInput`](crate::input::RemoveTagsFromVaultInput).
@@ -5528,7 +5528,7 @@ impl SetDataRetrievalPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetDataRetrievalPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5644,7 +5644,7 @@ impl SetDataRetrievalPolicyInput {
             "SetDataRetrievalPolicy",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetDataRetrievalPolicyInput`](crate::input::SetDataRetrievalPolicyInput).
@@ -5721,7 +5721,7 @@ impl SetVaultAccessPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetVaultAccessPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5850,7 +5850,7 @@ impl SetVaultAccessPolicyInput {
             "SetVaultAccessPolicy",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetVaultAccessPolicyInput`](crate::input::SetVaultAccessPolicyInput).
@@ -5931,7 +5931,7 @@ impl SetVaultNotificationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetVaultNotifications,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6062,7 +6062,7 @@ impl SetVaultNotificationsInput {
             "SetVaultNotifications",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SetVaultNotificationsInput`](crate::input::SetVaultNotificationsInput).
@@ -6166,7 +6166,7 @@ impl UploadArchiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UploadArchive,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6299,7 +6299,7 @@ impl UploadArchiveInput {
             "UploadArchive",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UploadArchiveInput`](crate::input::UploadArchiveInput).
@@ -6412,7 +6412,7 @@ impl UploadMultipartPartInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UploadMultipartPart,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6561,7 +6561,7 @@ impl UploadMultipartPartInput {
             "UploadMultipartPart",
             "glacier",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UploadMultipartPartInput`](crate::input::UploadMultipartPartInput).

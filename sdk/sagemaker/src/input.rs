@@ -84,7 +84,7 @@ impl AddAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -177,7 +177,7 @@ impl AddAssociationInput {
             "AddAssociation",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddAssociationInput`](crate::input::AddAssociationInput).
@@ -247,7 +247,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -338,7 +338,7 @@ impl AddTagsInput {
                     "AddTags",
                     "sagemaker",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput).
@@ -405,7 +405,7 @@ impl AssociateTrialComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateTrialComponent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -500,7 +500,7 @@ impl AssociateTrialComponentInput {
             "AssociateTrialComponent",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateTrialComponentInput`](crate::input::AssociateTrialComponentInput).
@@ -561,7 +561,7 @@ impl BatchDescribeModelPackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDescribeModelPackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -656,7 +656,7 @@ impl BatchDescribeModelPackageInput {
             "BatchDescribeModelPackage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDescribeModelPackageInput`](crate::input::BatchDescribeModelPackageInput).
@@ -825,7 +825,7 @@ impl CreateActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -918,7 +918,7 @@ impl CreateActionInput {
             "CreateAction",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateActionInput`](crate::input::CreateActionInput).
@@ -1103,7 +1103,7 @@ impl CreateAlgorithmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAlgorithm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1196,7 +1196,7 @@ impl CreateAlgorithmInput {
             "CreateAlgorithm",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAlgorithmInput`](crate::input::CreateAlgorithmInput).
@@ -1324,7 +1324,7 @@ impl CreateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1415,7 +1415,7 @@ impl CreateAppInput {
                     "CreateApp",
                     "sagemaker",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::input::CreateAppInput).
@@ -1508,7 +1508,7 @@ impl CreateAppImageConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppImageConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1603,7 +1603,7 @@ impl CreateAppImageConfigInput {
             "CreateAppImageConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAppImageConfigInput`](crate::input::CreateAppImageConfigInput).
@@ -1751,7 +1751,7 @@ impl CreateArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateArtifact,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1844,7 +1844,7 @@ impl CreateArtifactInput {
             "CreateArtifact",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateArtifactInput`](crate::input::CreateArtifactInput).
@@ -2044,7 +2044,7 @@ impl CreateAutoMlJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAutoMLJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2137,7 +2137,7 @@ impl CreateAutoMlJobInput {
             "CreateAutoMLJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAutoMlJobInput`](crate::input::CreateAutoMlJobInput).
@@ -2226,7 +2226,7 @@ impl CreateCodeRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCodeRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2321,7 +2321,7 @@ impl CreateCodeRepositoryInput {
             "CreateCodeRepository",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCodeRepositoryInput`](crate::input::CreateCodeRepositoryInput).
@@ -2498,7 +2498,7 @@ impl CreateCompilationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCompilationJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2593,7 +2593,7 @@ impl CreateCompilationJobInput {
             "CreateCompilationJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCompilationJobInput`](crate::input::CreateCompilationJobInput).
@@ -2732,7 +2732,7 @@ impl CreateContextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContext,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2825,7 +2825,7 @@ impl CreateContextInput {
             "CreateContext",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateContextInput`](crate::input::CreateContextInput).
@@ -3034,7 +3034,7 @@ impl CreateDataQualityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataQualityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3126,7 +3126,7 @@ impl CreateDataQualityJobDefinitionInput {
             "CreateDataQualityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDataQualityJobDefinitionInput`](crate::input::CreateDataQualityJobDefinitionInput).
@@ -3253,7 +3253,7 @@ impl CreateDeviceFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeviceFleet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3346,7 +3346,7 @@ impl CreateDeviceFleetInput {
             "CreateDeviceFleet",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDeviceFleetInput`](crate::input::CreateDeviceFleetInput).
@@ -3573,7 +3573,7 @@ impl CreateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3666,7 +3666,7 @@ impl CreateDomainInput {
             "CreateDomain",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::input::CreateDomainInput).
@@ -3800,7 +3800,7 @@ impl CreateEdgeDeploymentPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEdgeDeploymentPlan,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3895,7 +3895,7 @@ impl CreateEdgeDeploymentPlanInput {
             "CreateEdgeDeploymentPlan",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentPlanInput`](crate::input::CreateEdgeDeploymentPlanInput).
@@ -3971,7 +3971,7 @@ impl CreateEdgeDeploymentStageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEdgeDeploymentStage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4066,7 +4066,7 @@ impl CreateEdgeDeploymentStageInput {
             "CreateEdgeDeploymentStage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentStageInput`](crate::input::CreateEdgeDeploymentStageInput).
@@ -4221,7 +4221,7 @@ impl CreateEdgePackagingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEdgePackagingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4316,7 +4316,7 @@ impl CreateEdgePackagingJobInput {
             "CreateEdgePackagingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEdgePackagingJobInput`](crate::input::CreateEdgePackagingJobInput).
@@ -4420,7 +4420,7 @@ impl CreateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4513,7 +4513,7 @@ impl CreateEndpointInput {
             "CreateEndpoint",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::input::CreateEndpointInput).
@@ -4675,7 +4675,7 @@ impl CreateEndpointConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpointConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4770,7 +4770,7 @@ impl CreateEndpointConfigInput {
             "CreateEndpointConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEndpointConfigInput`](crate::input::CreateEndpointConfigInput).
@@ -4868,7 +4868,7 @@ impl CreateExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateExperiment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4961,7 +4961,7 @@ impl CreateExperimentInput {
             "CreateExperiment",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateExperimentInput`](crate::input::CreateExperimentInput).
@@ -5196,7 +5196,7 @@ impl CreateFeatureGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFeatureGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5289,7 +5289,7 @@ impl CreateFeatureGroupInput {
             "CreateFeatureGroup",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFeatureGroupInput`](crate::input::CreateFeatureGroupInput).
@@ -5443,7 +5443,7 @@ impl CreateFlowDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFlowDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5538,7 +5538,7 @@ impl CreateFlowDefinitionInput {
             "CreateFlowDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFlowDefinitionInput`](crate::input::CreateFlowDefinitionInput).
@@ -5627,7 +5627,7 @@ impl CreateHumanTaskUiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHumanTaskUi,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5720,7 +5720,7 @@ impl CreateHumanTaskUiInput {
             "CreateHumanTaskUi",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateHumanTaskUiInput`](crate::input::CreateHumanTaskUiInput).
@@ -5891,7 +5891,7 @@ impl CreateHyperParameterTuningJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHyperParameterTuningJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5983,7 +5983,7 @@ impl CreateHyperParameterTuningJobInput {
             "CreateHyperParameterTuningJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateHyperParameterTuningJobInput`](crate::input::CreateHyperParameterTuningJobInput).
@@ -6090,7 +6090,7 @@ impl CreateImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6183,7 +6183,7 @@ impl CreateImageInput {
             "CreateImage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateImageInput`](crate::input::CreateImageInput).
@@ -6273,7 +6273,7 @@ impl CreateImageVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImageVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6369,7 +6369,7 @@ impl CreateImageVersionInput {
             "CreateImageVersion",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateImageVersionInput`](crate::input::CreateImageVersionInput).
@@ -6533,7 +6533,7 @@ impl CreateInferenceRecommendationsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInferenceRecommendationsJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6625,7 +6625,7 @@ impl CreateInferenceRecommendationsJobInput {
             "CreateInferenceRecommendationsJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateInferenceRecommendationsJobInput`](crate::input::CreateInferenceRecommendationsJobInput).
@@ -6899,7 +6899,7 @@ impl CreateLabelingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLabelingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6992,7 +6992,7 @@ impl CreateLabelingJobInput {
             "CreateLabelingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLabelingJobInput`](crate::input::CreateLabelingJobInput).
@@ -7165,7 +7165,7 @@ impl CreateModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7258,7 +7258,7 @@ impl CreateModelInput {
             "CreateModel",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateModelInput`](crate::input::CreateModelInput).
@@ -7467,7 +7467,7 @@ impl CreateModelBiasJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModelBiasJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7559,7 +7559,7 @@ impl CreateModelBiasJobDefinitionInput {
             "CreateModelBiasJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateModelBiasJobDefinitionInput`](crate::input::CreateModelBiasJobDefinitionInput).
@@ -7772,7 +7772,7 @@ impl CreateModelExplainabilityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModelExplainabilityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7864,7 +7864,7 @@ impl CreateModelExplainabilityJobDefinitionInput {
             "CreateModelExplainabilityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateModelExplainabilityJobDefinitionInput`](crate::input::CreateModelExplainabilityJobDefinitionInput).
@@ -8227,7 +8227,7 @@ impl CreateModelPackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModelPackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8323,7 +8323,7 @@ impl CreateModelPackageInput {
             "CreateModelPackage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateModelPackageInput`](crate::input::CreateModelPackageInput).
@@ -8417,7 +8417,7 @@ impl CreateModelPackageGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModelPackageGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8512,7 +8512,7 @@ impl CreateModelPackageGroupInput {
             "CreateModelPackageGroup",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateModelPackageGroupInput`](crate::input::CreateModelPackageGroupInput).
@@ -8724,7 +8724,7 @@ impl CreateModelQualityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModelQualityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8816,7 +8816,7 @@ impl CreateModelQualityJobDefinitionInput {
             "CreateModelQualityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateModelQualityJobDefinitionInput`](crate::input::CreateModelQualityJobDefinitionInput).
@@ -8911,7 +8911,7 @@ impl CreateMonitoringScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMonitoringSchedule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9006,7 +9006,7 @@ impl CreateMonitoringScheduleInput {
             "CreateMonitoringSchedule",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateMonitoringScheduleInput`](crate::input::CreateMonitoringScheduleInput).
@@ -9321,7 +9321,7 @@ impl CreateNotebookInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNotebookInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9416,7 +9416,7 @@ impl CreateNotebookInstanceInput {
             "CreateNotebookInstance",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateNotebookInstanceInput`](crate::input::CreateNotebookInstanceInput).
@@ -9520,7 +9520,7 @@ impl CreateNotebookInstanceLifecycleConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNotebookInstanceLifecycleConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9612,7 +9612,7 @@ impl CreateNotebookInstanceLifecycleConfigInput {
             "CreateNotebookInstanceLifecycleConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateNotebookInstanceLifecycleConfigInput`](crate::input::CreateNotebookInstanceLifecycleConfigInput).
@@ -9796,7 +9796,7 @@ impl CreatePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9892,7 +9892,7 @@ impl CreatePipelineInput {
             "CreatePipeline",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePipelineInput`](crate::input::CreatePipelineInput).
@@ -9986,7 +9986,7 @@ impl CreatePresignedDomainUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePresignedDomainUrl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10081,7 +10081,7 @@ impl CreatePresignedDomainUrlInput {
             "CreatePresignedDomainUrl",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePresignedDomainUrlInput`](crate::input::CreatePresignedDomainUrlInput).
@@ -10151,7 +10151,7 @@ impl CreatePresignedNotebookInstanceUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePresignedNotebookInstanceUrl,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10243,7 +10243,7 @@ impl CreatePresignedNotebookInstanceUrlInput {
             "CreatePresignedNotebookInstanceUrl",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookInstanceUrlInput`](crate::input::CreatePresignedNotebookInstanceUrlInput).
@@ -10488,7 +10488,7 @@ impl CreateProcessingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProcessingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10581,7 +10581,7 @@ impl CreateProcessingJobInput {
             "CreateProcessingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateProcessingJobInput`](crate::input::CreateProcessingJobInput).
@@ -10686,7 +10686,7 @@ impl CreateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10779,7 +10779,7 @@ impl CreateProjectInput {
             "CreateProject",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput).
@@ -10895,7 +10895,7 @@ impl CreateStudioLifecycleConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStudioLifecycleConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10987,7 +10987,7 @@ impl CreateStudioLifecycleConfigInput {
             "CreateStudioLifecycleConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateStudioLifecycleConfigInput`](crate::input::CreateStudioLifecycleConfigInput).
@@ -11447,7 +11447,7 @@ impl CreateTrainingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrainingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11540,7 +11540,7 @@ impl CreateTrainingJobInput {
             "CreateTrainingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTrainingJobInput`](crate::input::CreateTrainingJobInput).
@@ -11804,7 +11804,7 @@ impl CreateTransformJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTransformJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11897,7 +11897,7 @@ impl CreateTransformJobInput {
             "CreateTransformJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTransformJobInput`](crate::input::CreateTransformJobInput).
@@ -12010,7 +12010,7 @@ impl CreateTrialInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrial,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12103,7 +12103,7 @@ impl CreateTrialInput {
             "CreateTrial",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTrialInput`](crate::input::CreateTrialInput).
@@ -12358,7 +12358,7 @@ impl CreateTrialComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrialComponent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12453,7 +12453,7 @@ impl CreateTrialComponentInput {
             "CreateTrialComponent",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTrialComponentInput`](crate::input::CreateTrialComponentInput).
@@ -12589,7 +12589,7 @@ impl CreateUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12682,7 +12682,7 @@ impl CreateUserProfileInput {
             "CreateUserProfile",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateUserProfileInput`](crate::input::CreateUserProfileInput).
@@ -12824,7 +12824,7 @@ impl CreateWorkforceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkforce,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12917,7 +12917,7 @@ impl CreateWorkforceInput {
             "CreateWorkforce",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateWorkforceInput`](crate::input::CreateWorkforceInput).
@@ -13067,7 +13067,7 @@ impl CreateWorkteamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkteam,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13160,7 +13160,7 @@ impl CreateWorkteamInput {
             "CreateWorkteam",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateWorkteamInput`](crate::input::CreateWorkteamInput).
@@ -13210,7 +13210,7 @@ impl DeleteActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13303,7 +13303,7 @@ impl DeleteActionInput {
             "DeleteAction",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteActionInput`](crate::input::DeleteActionInput).
@@ -13356,7 +13356,7 @@ impl DeleteAlgorithmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlgorithm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13449,7 +13449,7 @@ impl DeleteAlgorithmInput {
             "DeleteAlgorithm",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAlgorithmInput`](crate::input::DeleteAlgorithmInput).
@@ -13537,7 +13537,7 @@ impl DeleteAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13628,7 +13628,7 @@ impl DeleteAppInput {
                     "DeleteApp",
                     "sagemaker",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::input::DeleteAppInput).
@@ -13681,7 +13681,7 @@ impl DeleteAppImageConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppImageConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13776,7 +13776,7 @@ impl DeleteAppImageConfigInput {
             "DeleteAppImageConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppImageConfigInput`](crate::input::DeleteAppImageConfigInput).
@@ -13841,7 +13841,7 @@ impl DeleteArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteArtifact,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13934,7 +13934,7 @@ impl DeleteArtifactInput {
             "DeleteArtifact",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteArtifactInput`](crate::input::DeleteArtifactInput).
@@ -13999,7 +13999,7 @@ impl DeleteAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14092,7 +14092,7 @@ impl DeleteAssociationInput {
             "DeleteAssociation",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAssociationInput`](crate::input::DeleteAssociationInput).
@@ -14145,7 +14145,7 @@ impl DeleteCodeRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCodeRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14240,7 +14240,7 @@ impl DeleteCodeRepositoryInput {
             "DeleteCodeRepository",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCodeRepositoryInput`](crate::input::DeleteCodeRepositoryInput).
@@ -14290,7 +14290,7 @@ impl DeleteContextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContext,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14383,7 +14383,7 @@ impl DeleteContextInput {
             "DeleteContext",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteContextInput`](crate::input::DeleteContextInput).
@@ -14438,7 +14438,7 @@ impl DeleteDataQualityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataQualityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14530,7 +14530,7 @@ impl DeleteDataQualityJobDefinitionInput {
             "DeleteDataQualityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDataQualityJobDefinitionInput`](crate::input::DeleteDataQualityJobDefinitionInput).
@@ -14583,7 +14583,7 @@ impl DeleteDeviceFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeviceFleet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14676,7 +14676,7 @@ impl DeleteDeviceFleetInput {
             "DeleteDeviceFleet",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDeviceFleetInput`](crate::input::DeleteDeviceFleetInput).
@@ -14741,7 +14741,7 @@ impl DeleteDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14834,7 +14834,7 @@ impl DeleteDomainInput {
             "DeleteDomain",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput).
@@ -14889,7 +14889,7 @@ impl DeleteEdgeDeploymentPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEdgeDeploymentPlan,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14984,7 +14984,7 @@ impl DeleteEdgeDeploymentPlanInput {
             "DeleteEdgeDeploymentPlan",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentPlanInput`](crate::input::DeleteEdgeDeploymentPlanInput).
@@ -15051,7 +15051,7 @@ impl DeleteEdgeDeploymentStageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEdgeDeploymentStage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15146,7 +15146,7 @@ impl DeleteEdgeDeploymentStageInput {
             "DeleteEdgeDeploymentStage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentStageInput`](crate::input::DeleteEdgeDeploymentStageInput).
@@ -15199,7 +15199,7 @@ impl DeleteEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15292,7 +15292,7 @@ impl DeleteEndpointInput {
             "DeleteEndpoint",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
@@ -15345,7 +15345,7 @@ impl DeleteEndpointConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpointConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15440,7 +15440,7 @@ impl DeleteEndpointConfigInput {
             "DeleteEndpointConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEndpointConfigInput`](crate::input::DeleteEndpointConfigInput).
@@ -15493,7 +15493,7 @@ impl DeleteExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExperiment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15586,7 +15586,7 @@ impl DeleteExperimentInput {
             "DeleteExperiment",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteExperimentInput`](crate::input::DeleteExperimentInput).
@@ -15639,7 +15639,7 @@ impl DeleteFeatureGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFeatureGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15732,7 +15732,7 @@ impl DeleteFeatureGroupInput {
             "DeleteFeatureGroup",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFeatureGroupInput`](crate::input::DeleteFeatureGroupInput).
@@ -15785,7 +15785,7 @@ impl DeleteFlowDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFlowDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15880,7 +15880,7 @@ impl DeleteFlowDefinitionInput {
             "DeleteFlowDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFlowDefinitionInput`](crate::input::DeleteFlowDefinitionInput).
@@ -15933,7 +15933,7 @@ impl DeleteHumanTaskUiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHumanTaskUi,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16026,7 +16026,7 @@ impl DeleteHumanTaskUiInput {
             "DeleteHumanTaskUi",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteHumanTaskUiInput`](crate::input::DeleteHumanTaskUiInput).
@@ -16076,7 +16076,7 @@ impl DeleteImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16169,7 +16169,7 @@ impl DeleteImageInput {
             "DeleteImage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteImageInput`](crate::input::DeleteImageInput).
@@ -16231,7 +16231,7 @@ impl DeleteImageVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImageVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16324,7 +16324,7 @@ impl DeleteImageVersionInput {
             "DeleteImageVersion",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteImageVersionInput`](crate::input::DeleteImageVersionInput).
@@ -16374,7 +16374,7 @@ impl DeleteModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16467,7 +16467,7 @@ impl DeleteModelInput {
             "DeleteModel",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteModelInput`](crate::input::DeleteModelInput).
@@ -16522,7 +16522,7 @@ impl DeleteModelBiasJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModelBiasJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16614,7 +16614,7 @@ impl DeleteModelBiasJobDefinitionInput {
             "DeleteModelBiasJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteModelBiasJobDefinitionInput`](crate::input::DeleteModelBiasJobDefinitionInput).
@@ -16669,7 +16669,7 @@ impl DeleteModelExplainabilityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModelExplainabilityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16761,7 +16761,7 @@ impl DeleteModelExplainabilityJobDefinitionInput {
             "DeleteModelExplainabilityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteModelExplainabilityJobDefinitionInput`](crate::input::DeleteModelExplainabilityJobDefinitionInput).
@@ -16816,7 +16816,7 @@ impl DeleteModelPackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModelPackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16909,7 +16909,7 @@ impl DeleteModelPackageInput {
             "DeleteModelPackage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteModelPackageInput`](crate::input::DeleteModelPackageInput).
@@ -16964,7 +16964,7 @@ impl DeleteModelPackageGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModelPackageGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17059,7 +17059,7 @@ impl DeleteModelPackageGroupInput {
             "DeleteModelPackageGroup",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteModelPackageGroupInput`](crate::input::DeleteModelPackageGroupInput).
@@ -17114,7 +17114,7 @@ impl DeleteModelPackageGroupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModelPackageGroupPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17206,7 +17206,7 @@ impl DeleteModelPackageGroupPolicyInput {
             "DeleteModelPackageGroupPolicy",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteModelPackageGroupPolicyInput`](crate::input::DeleteModelPackageGroupPolicyInput).
@@ -17261,7 +17261,7 @@ impl DeleteModelQualityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModelQualityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17353,7 +17353,7 @@ impl DeleteModelQualityJobDefinitionInput {
             "DeleteModelQualityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteModelQualityJobDefinitionInput`](crate::input::DeleteModelQualityJobDefinitionInput).
@@ -17408,7 +17408,7 @@ impl DeleteMonitoringScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMonitoringSchedule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17503,7 +17503,7 @@ impl DeleteMonitoringScheduleInput {
             "DeleteMonitoringSchedule",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteMonitoringScheduleInput`](crate::input::DeleteMonitoringScheduleInput).
@@ -17556,7 +17556,7 @@ impl DeleteNotebookInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotebookInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17651,7 +17651,7 @@ impl DeleteNotebookInstanceInput {
             "DeleteNotebookInstance",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteNotebookInstanceInput`](crate::input::DeleteNotebookInstanceInput).
@@ -17711,7 +17711,7 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotebookInstanceLifecycleConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17803,7 +17803,7 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
             "DeleteNotebookInstanceLifecycleConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteNotebookInstanceLifecycleConfigInput`](crate::input::DeleteNotebookInstanceLifecycleConfigInput).
@@ -17871,7 +17871,7 @@ impl DeletePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17967,7 +17967,7 @@ impl DeletePipelineInput {
             "DeletePipeline",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePipelineInput`](crate::input::DeletePipelineInput).
@@ -18017,7 +18017,7 @@ impl DeleteProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18110,7 +18110,7 @@ impl DeleteProjectInput {
             "DeleteProject",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput).
@@ -18168,7 +18168,7 @@ impl DeleteStudioLifecycleConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStudioLifecycleConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18260,7 +18260,7 @@ impl DeleteStudioLifecycleConfigInput {
             "DeleteStudioLifecycleConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteStudioLifecycleConfigInput`](crate::input::DeleteStudioLifecycleConfigInput).
@@ -18330,7 +18330,7 @@ impl DeleteTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18423,7 +18423,7 @@ impl DeleteTagsInput {
             "DeleteTags",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTagsInput`](crate::input::DeleteTagsInput).
@@ -18473,7 +18473,7 @@ impl DeleteTrialInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTrial,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18566,7 +18566,7 @@ impl DeleteTrialInput {
             "DeleteTrial",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTrialInput`](crate::input::DeleteTrialInput).
@@ -18619,7 +18619,7 @@ impl DeleteTrialComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTrialComponent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18714,7 +18714,7 @@ impl DeleteTrialComponentInput {
             "DeleteTrialComponent",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTrialComponentInput`](crate::input::DeleteTrialComponentInput).
@@ -18779,7 +18779,7 @@ impl DeleteUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18872,7 +18872,7 @@ impl DeleteUserProfileInput {
             "DeleteUserProfile",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteUserProfileInput`](crate::input::DeleteUserProfileInput).
@@ -18925,7 +18925,7 @@ impl DeleteWorkforceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkforce,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19018,7 +19018,7 @@ impl DeleteWorkforceInput {
             "DeleteWorkforce",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteWorkforceInput`](crate::input::DeleteWorkforceInput).
@@ -19071,7 +19071,7 @@ impl DeleteWorkteamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkteam,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19164,7 +19164,7 @@ impl DeleteWorkteamInput {
             "DeleteWorkteam",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteWorkteamInput`](crate::input::DeleteWorkteamInput).
@@ -19238,7 +19238,7 @@ impl DeregisterDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19331,7 +19331,7 @@ impl DeregisterDevicesInput {
             "DeregisterDevices",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeregisterDevicesInput`](crate::input::DeregisterDevicesInput).
@@ -19381,7 +19381,7 @@ impl DescribeActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19474,7 +19474,7 @@ impl DescribeActionInput {
             "DescribeAction",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeActionInput`](crate::input::DescribeActionInput).
@@ -19527,7 +19527,7 @@ impl DescribeAlgorithmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlgorithm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19620,7 +19620,7 @@ impl DescribeAlgorithmInput {
             "DescribeAlgorithm",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAlgorithmInput`](crate::input::DescribeAlgorithmInput).
@@ -19709,7 +19709,7 @@ impl DescribeAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19802,7 +19802,7 @@ impl DescribeAppInput {
             "DescribeApp",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInput`](crate::input::DescribeAppInput).
@@ -19855,7 +19855,7 @@ impl DescribeAppImageConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppImageConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19950,7 +19950,7 @@ impl DescribeAppImageConfigInput {
             "DescribeAppImageConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppImageConfigInput`](crate::input::DescribeAppImageConfigInput).
@@ -20000,7 +20000,7 @@ impl DescribeArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeArtifact,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20093,7 +20093,7 @@ impl DescribeArtifactInput {
             "DescribeArtifact",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeArtifactInput`](crate::input::DescribeArtifactInput).
@@ -20146,7 +20146,7 @@ impl DescribeAutoMlJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAutoMLJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20239,7 +20239,7 @@ impl DescribeAutoMlJobInput {
             "DescribeAutoMLJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAutoMlJobInput`](crate::input::DescribeAutoMlJobInput).
@@ -20292,7 +20292,7 @@ impl DescribeCodeRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCodeRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20387,7 +20387,7 @@ impl DescribeCodeRepositoryInput {
             "DescribeCodeRepository",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCodeRepositoryInput`](crate::input::DescribeCodeRepositoryInput).
@@ -20440,7 +20440,7 @@ impl DescribeCompilationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCompilationJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20535,7 +20535,7 @@ impl DescribeCompilationJobInput {
             "DescribeCompilationJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCompilationJobInput`](crate::input::DescribeCompilationJobInput).
@@ -20585,7 +20585,7 @@ impl DescribeContextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeContext,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20678,7 +20678,7 @@ impl DescribeContextInput {
             "DescribeContext",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeContextInput`](crate::input::DescribeContextInput).
@@ -20733,7 +20733,7 @@ impl DescribeDataQualityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataQualityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20825,7 +20825,7 @@ impl DescribeDataQualityJobDefinitionInput {
             "DescribeDataQualityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDataQualityJobDefinitionInput`](crate::input::DescribeDataQualityJobDefinitionInput).
@@ -20902,7 +20902,7 @@ impl DescribeDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDevice,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20995,7 +20995,7 @@ impl DescribeDeviceInput {
             "DescribeDevice",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
@@ -21048,7 +21048,7 @@ impl DescribeDeviceFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeviceFleet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21141,7 +21141,7 @@ impl DescribeDeviceFleetInput {
             "DescribeDeviceFleet",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDeviceFleetInput`](crate::input::DescribeDeviceFleetInput).
@@ -21191,7 +21191,7 @@ impl DescribeDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21284,7 +21284,7 @@ impl DescribeDomainInput {
             "DescribeDomain",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDomainInput`](crate::input::DescribeDomainInput).
@@ -21363,7 +21363,7 @@ impl DescribeEdgeDeploymentPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEdgeDeploymentPlan,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21455,7 +21455,7 @@ impl DescribeEdgeDeploymentPlanInput {
             "DescribeEdgeDeploymentPlan",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEdgeDeploymentPlanInput`](crate::input::DescribeEdgeDeploymentPlanInput).
@@ -21510,7 +21510,7 @@ impl DescribeEdgePackagingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEdgePackagingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21605,7 +21605,7 @@ impl DescribeEdgePackagingJobInput {
             "DescribeEdgePackagingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEdgePackagingJobInput`](crate::input::DescribeEdgePackagingJobInput).
@@ -21658,7 +21658,7 @@ impl DescribeEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21751,7 +21751,7 @@ impl DescribeEndpointInput {
             "DescribeEndpoint",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::input::DescribeEndpointInput).
@@ -21804,7 +21804,7 @@ impl DescribeEndpointConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpointConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21899,7 +21899,7 @@ impl DescribeEndpointConfigInput {
             "DescribeEndpointConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEndpointConfigInput`](crate::input::DescribeEndpointConfigInput).
@@ -21952,7 +21952,7 @@ impl DescribeExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExperiment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22045,7 +22045,7 @@ impl DescribeExperimentInput {
             "DescribeExperiment",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeExperimentInput`](crate::input::DescribeExperimentInput).
@@ -22110,7 +22110,7 @@ impl DescribeFeatureGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFeatureGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22205,7 +22205,7 @@ impl DescribeFeatureGroupInput {
             "DescribeFeatureGroup",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFeatureGroupInput`](crate::input::DescribeFeatureGroupInput).
@@ -22272,7 +22272,7 @@ impl DescribeFeatureMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFeatureMetadata,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22367,7 +22367,7 @@ impl DescribeFeatureMetadataInput {
             "DescribeFeatureMetadata",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFeatureMetadataInput`](crate::input::DescribeFeatureMetadataInput).
@@ -22420,7 +22420,7 @@ impl DescribeFlowDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFlowDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22515,7 +22515,7 @@ impl DescribeFlowDefinitionInput {
             "DescribeFlowDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeFlowDefinitionInput`](crate::input::DescribeFlowDefinitionInput).
@@ -22568,7 +22568,7 @@ impl DescribeHumanTaskUiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHumanTaskUi,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22663,7 +22663,7 @@ impl DescribeHumanTaskUiInput {
             "DescribeHumanTaskUi",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeHumanTaskUiInput`](crate::input::DescribeHumanTaskUiInput).
@@ -22721,7 +22721,7 @@ impl DescribeHyperParameterTuningJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHyperParameterTuningJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22813,7 +22813,7 @@ impl DescribeHyperParameterTuningJobInput {
             "DescribeHyperParameterTuningJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeHyperParameterTuningJobInput`](crate::input::DescribeHyperParameterTuningJobInput).
@@ -22863,7 +22863,7 @@ impl DescribeImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22956,7 +22956,7 @@ impl DescribeImageInput {
             "DescribeImage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeImageInput`](crate::input::DescribeImageInput).
@@ -23018,7 +23018,7 @@ impl DescribeImageVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImageVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23113,7 +23113,7 @@ impl DescribeImageVersionInput {
             "DescribeImageVersion",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeImageVersionInput`](crate::input::DescribeImageVersionInput).
@@ -23165,7 +23165,7 @@ impl DescribeInferenceRecommendationsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInferenceRecommendationsJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23257,7 +23257,7 @@ impl DescribeInferenceRecommendationsJobInput {
             "DescribeInferenceRecommendationsJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInferenceRecommendationsJobInput`](crate::input::DescribeInferenceRecommendationsJobInput).
@@ -23310,7 +23310,7 @@ impl DescribeLabelingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLabelingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23403,7 +23403,7 @@ impl DescribeLabelingJobInput {
             "DescribeLabelingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLabelingJobInput`](crate::input::DescribeLabelingJobInput).
@@ -23456,7 +23456,7 @@ impl DescribeLineageGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLineageGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23551,7 +23551,7 @@ impl DescribeLineageGroupInput {
             "DescribeLineageGroup",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeLineageGroupInput`](crate::input::DescribeLineageGroupInput).
@@ -23601,7 +23601,7 @@ impl DescribeModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeModel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23694,7 +23694,7 @@ impl DescribeModelInput {
             "DescribeModel",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeModelInput`](crate::input::DescribeModelInput).
@@ -23749,7 +23749,7 @@ impl DescribeModelBiasJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeModelBiasJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23841,7 +23841,7 @@ impl DescribeModelBiasJobDefinitionInput {
             "DescribeModelBiasJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeModelBiasJobDefinitionInput`](crate::input::DescribeModelBiasJobDefinitionInput).
@@ -23898,7 +23898,7 @@ impl DescribeModelExplainabilityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeModelExplainabilityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23990,7 +23990,7 @@ impl DescribeModelExplainabilityJobDefinitionInput {
             "DescribeModelExplainabilityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeModelExplainabilityJobDefinitionInput`](crate::input::DescribeModelExplainabilityJobDefinitionInput).
@@ -24045,7 +24045,7 @@ impl DescribeModelPackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeModelPackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24140,7 +24140,7 @@ impl DescribeModelPackageInput {
             "DescribeModelPackage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageInput`](crate::input::DescribeModelPackageInput).
@@ -24195,7 +24195,7 @@ impl DescribeModelPackageGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeModelPackageGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24290,7 +24290,7 @@ impl DescribeModelPackageGroupInput {
             "DescribeModelPackageGroup",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageGroupInput`](crate::input::DescribeModelPackageGroupInput).
@@ -24345,7 +24345,7 @@ impl DescribeModelQualityJobDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeModelQualityJobDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24437,7 +24437,7 @@ impl DescribeModelQualityJobDefinitionInput {
             "DescribeModelQualityJobDefinition",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeModelQualityJobDefinitionInput`](crate::input::DescribeModelQualityJobDefinitionInput).
@@ -24492,7 +24492,7 @@ impl DescribeMonitoringScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMonitoringSchedule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24587,7 +24587,7 @@ impl DescribeMonitoringScheduleInput {
             "DescribeMonitoringSchedule",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeMonitoringScheduleInput`](crate::input::DescribeMonitoringScheduleInput).
@@ -24642,7 +24642,7 @@ impl DescribeNotebookInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotebookInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24737,7 +24737,7 @@ impl DescribeNotebookInstanceInput {
             "DescribeNotebookInstance",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeNotebookInstanceInput`](crate::input::DescribeNotebookInstanceInput).
@@ -24797,7 +24797,7 @@ impl DescribeNotebookInstanceLifecycleConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotebookInstanceLifecycleConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24889,7 +24889,7 @@ impl DescribeNotebookInstanceLifecycleConfigInput {
             "DescribeNotebookInstanceLifecycleConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeNotebookInstanceLifecycleConfigInput`](crate::input::DescribeNotebookInstanceLifecycleConfigInput).
@@ -24942,7 +24942,7 @@ impl DescribePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25035,7 +25035,7 @@ impl DescribePipelineInput {
             "DescribePipeline",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePipelineInput`](crate::input::DescribePipelineInput).
@@ -25090,7 +25090,7 @@ impl DescribePipelineDefinitionForExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePipelineDefinitionForExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25182,7 +25182,7 @@ impl DescribePipelineDefinitionForExecutionInput {
             "DescribePipelineDefinitionForExecution",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePipelineDefinitionForExecutionInput`](crate::input::DescribePipelineDefinitionForExecutionInput).
@@ -25237,7 +25237,7 @@ impl DescribePipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePipelineExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25332,7 +25332,7 @@ impl DescribePipelineExecutionInput {
             "DescribePipelineExecution",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePipelineExecutionInput`](crate::input::DescribePipelineExecutionInput).
@@ -25385,7 +25385,7 @@ impl DescribeProcessingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProcessingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25480,7 +25480,7 @@ impl DescribeProcessingJobInput {
             "DescribeProcessingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeProcessingJobInput`](crate::input::DescribeProcessingJobInput).
@@ -25530,7 +25530,7 @@ impl DescribeProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProject,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25623,7 +25623,7 @@ impl DescribeProjectInput {
             "DescribeProject",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput).
@@ -25681,7 +25681,7 @@ impl DescribeStudioLifecycleConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStudioLifecycleConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25773,7 +25773,7 @@ impl DescribeStudioLifecycleConfigInput {
             "DescribeStudioLifecycleConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeStudioLifecycleConfigInput`](crate::input::DescribeStudioLifecycleConfigInput).
@@ -25825,7 +25825,7 @@ impl DescribeSubscribedWorkteamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSubscribedWorkteam,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25920,7 +25920,7 @@ impl DescribeSubscribedWorkteamInput {
             "DescribeSubscribedWorkteam",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeSubscribedWorkteamInput`](crate::input::DescribeSubscribedWorkteamInput).
@@ -25973,7 +25973,7 @@ impl DescribeTrainingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrainingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26066,7 +26066,7 @@ impl DescribeTrainingJobInput {
             "DescribeTrainingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTrainingJobInput`](crate::input::DescribeTrainingJobInput).
@@ -26119,7 +26119,7 @@ impl DescribeTransformJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTransformJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26214,7 +26214,7 @@ impl DescribeTransformJobInput {
             "DescribeTransformJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTransformJobInput`](crate::input::DescribeTransformJobInput).
@@ -26264,7 +26264,7 @@ impl DescribeTrialInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrial,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26357,7 +26357,7 @@ impl DescribeTrialInput {
             "DescribeTrial",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTrialInput`](crate::input::DescribeTrialInput).
@@ -26410,7 +26410,7 @@ impl DescribeTrialComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrialComponent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26505,7 +26505,7 @@ impl DescribeTrialComponentInput {
             "DescribeTrialComponent",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTrialComponentInput`](crate::input::DescribeTrialComponentInput).
@@ -26570,7 +26570,7 @@ impl DescribeUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26663,7 +26663,7 @@ impl DescribeUserProfileInput {
             "DescribeUserProfile",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeUserProfileInput`](crate::input::DescribeUserProfileInput).
@@ -26716,7 +26716,7 @@ impl DescribeWorkforceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkforce,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26809,7 +26809,7 @@ impl DescribeWorkforceInput {
             "DescribeWorkforce",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeWorkforceInput`](crate::input::DescribeWorkforceInput).
@@ -26862,7 +26862,7 @@ impl DescribeWorkteamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkteam,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26955,7 +26955,7 @@ impl DescribeWorkteamInput {
             "DescribeWorkteam",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeWorkteamInput`](crate::input::DescribeWorkteamInput).
@@ -26993,7 +26993,7 @@ impl DisableSagemakerServicecatalogPortfolioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableSagemakerServicecatalogPortfolio,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27078,7 +27078,7 @@ impl DisableSagemakerServicecatalogPortfolioInput {
             "DisableSagemakerServicecatalogPortfolio",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisableSagemakerServicecatalogPortfolioInput`](crate::input::DisableSagemakerServicecatalogPortfolioInput).
@@ -27145,7 +27145,7 @@ impl DisassociateTrialComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateTrialComponent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27240,7 +27240,7 @@ impl DisassociateTrialComponentInput {
             "DisassociateTrialComponent",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateTrialComponentInput`](crate::input::DisassociateTrialComponentInput).
@@ -27278,7 +27278,7 @@ impl EnableSagemakerServicecatalogPortfolioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableSagemakerServicecatalogPortfolio,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27363,7 +27363,7 @@ impl EnableSagemakerServicecatalogPortfolioInput {
             "EnableSagemakerServicecatalogPortfolio",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`EnableSagemakerServicecatalogPortfolioInput`](crate::input::EnableSagemakerServicecatalogPortfolioInput).
@@ -27416,7 +27416,7 @@ impl GetDeviceFleetReportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeviceFleetReport,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27511,7 +27511,7 @@ impl GetDeviceFleetReportInput {
             "GetDeviceFleetReport",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDeviceFleetReportInput`](crate::input::GetDeviceFleetReportInput).
@@ -27564,7 +27564,7 @@ impl GetLineageGroupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLineageGroupPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27659,7 +27659,7 @@ impl GetLineageGroupPolicyInput {
             "GetLineageGroupPolicy",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLineageGroupPolicyInput`](crate::input::GetLineageGroupPolicyInput).
@@ -27714,7 +27714,7 @@ impl GetModelPackageGroupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetModelPackageGroupPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27806,7 +27806,7 @@ impl GetModelPackageGroupPolicyInput {
             "GetModelPackageGroupPolicy",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetModelPackageGroupPolicyInput`](crate::input::GetModelPackageGroupPolicyInput).
@@ -27844,7 +27844,7 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSagemakerServicecatalogPortfolioStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27929,7 +27929,7 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
             "GetSagemakerServicecatalogPortfolioStatus",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSagemakerServicecatalogPortfolioStatusInput`](crate::input::GetSagemakerServicecatalogPortfolioStatusInput).
@@ -27997,7 +27997,7 @@ impl GetSearchSuggestionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSearchSuggestions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28092,7 +28092,7 @@ impl GetSearchSuggestionsInput {
             "GetSearchSuggestions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSearchSuggestionsInput`](crate::input::GetSearchSuggestionsInput).
@@ -28238,7 +28238,7 @@ impl ListActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28331,7 +28331,7 @@ impl ListActionsInput {
             "ListActions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListActionsInput`](crate::input::ListActionsInput).
@@ -28468,7 +28468,7 @@ impl ListAlgorithmsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAlgorithms,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28561,7 +28561,7 @@ impl ListAlgorithmsInput {
             "ListAlgorithms",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAlgorithmsInput`](crate::input::ListAlgorithmsInput).
@@ -28728,7 +28728,7 @@ impl ListAppImageConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppImageConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28823,7 +28823,7 @@ impl ListAppImageConfigsInput {
             "ListAppImageConfigs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppImageConfigsInput`](crate::input::ListAppImageConfigsInput).
@@ -28941,7 +28941,7 @@ impl ListAppsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApps,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29032,7 +29032,7 @@ impl ListAppsInput {
                     "ListApps",
                     "sagemaker",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::input::ListAppsInput).
@@ -29181,7 +29181,7 @@ impl ListArtifactsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListArtifacts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29274,7 +29274,7 @@ impl ListArtifactsInput {
             "ListArtifacts",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListArtifactsInput`](crate::input::ListArtifactsInput).
@@ -29465,7 +29465,7 @@ impl ListAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29558,7 +29558,7 @@ impl ListAssociationsInput {
             "ListAssociations",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAssociationsInput`](crate::input::ListAssociationsInput).
@@ -29740,7 +29740,7 @@ impl ListAutoMlJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAutoMLJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29833,7 +29833,7 @@ impl ListAutoMlJobsInput {
             "ListAutoMLJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAutoMlJobsInput`](crate::input::ListAutoMlJobsInput).
@@ -29972,7 +29972,7 @@ impl ListCandidatesForAutoMlJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCandidatesForAutoMLJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30064,7 +30064,7 @@ impl ListCandidatesForAutoMlJobInput {
             "ListCandidatesForAutoMLJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCandidatesForAutoMlJobInput`](crate::input::ListCandidatesForAutoMlJobInput).
@@ -30231,7 +30231,7 @@ impl ListCodeRepositoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCodeRepositories,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30326,7 +30326,7 @@ impl ListCodeRepositoriesInput {
             "ListCodeRepositories",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCodeRepositoriesInput`](crate::input::ListCodeRepositoriesInput).
@@ -30508,7 +30508,7 @@ impl ListCompilationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCompilationJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30601,7 +30601,7 @@ impl ListCompilationJobsInput {
             "ListCompilationJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCompilationJobsInput`](crate::input::ListCompilationJobsInput).
@@ -30747,7 +30747,7 @@ impl ListContextsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContexts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30840,7 +30840,7 @@ impl ListContextsInput {
             "ListContexts",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListContextsInput`](crate::input::ListContextsInput).
@@ -30994,7 +30994,7 @@ impl ListDataQualityJobDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDataQualityJobDefinitions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31086,7 +31086,7 @@ impl ListDataQualityJobDefinitionsInput {
             "ListDataQualityJobDefinitions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDataQualityJobDefinitionsInput`](crate::input::ListDataQualityJobDefinitionsInput).
@@ -31253,7 +31253,7 @@ impl ListDeviceFleetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeviceFleets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31346,7 +31346,7 @@ impl ListDeviceFleetsInput {
             "ListDeviceFleets",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDeviceFleetsInput`](crate::input::ListDeviceFleetsInput).
@@ -31450,7 +31450,7 @@ impl ListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31543,7 +31543,7 @@ impl ListDevicesInput {
             "ListDevices",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDevicesInput`](crate::input::ListDevicesInput).
@@ -31605,7 +31605,7 @@ impl ListDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31698,7 +31698,7 @@ impl ListDomainsInput {
             "ListDomains",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput).
@@ -31882,7 +31882,7 @@ impl ListEdgeDeploymentPlansInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEdgeDeploymentPlans,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31977,7 +31977,7 @@ impl ListEdgeDeploymentPlansInput {
             "ListEdgeDeploymentPlans",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEdgeDeploymentPlansInput`](crate::input::ListEdgeDeploymentPlansInput).
@@ -32174,7 +32174,7 @@ impl ListEdgePackagingJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEdgePackagingJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32269,7 +32269,7 @@ impl ListEdgePackagingJobsInput {
             "ListEdgePackagingJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEdgePackagingJobsInput`](crate::input::ListEdgePackagingJobsInput).
@@ -32406,7 +32406,7 @@ impl ListEndpointConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpointConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32499,7 +32499,7 @@ impl ListEndpointConfigsInput {
             "ListEndpointConfigs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEndpointConfigsInput`](crate::input::ListEndpointConfigsInput).
@@ -32681,7 +32681,7 @@ impl ListEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpoints,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32774,7 +32774,7 @@ impl ListEndpointsInput {
             "ListEndpoints",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEndpointsInput`](crate::input::ListEndpointsInput).
@@ -32896,7 +32896,7 @@ impl ListExperimentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExperiments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32989,7 +32989,7 @@ impl ListExperimentsInput {
             "ListExperiments",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListExperimentsInput`](crate::input::ListExperimentsInput).
@@ -33164,7 +33164,7 @@ impl ListFeatureGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFeatureGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33257,7 +33257,7 @@ impl ListFeatureGroupsInput {
             "ListFeatureGroups",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFeatureGroupsInput`](crate::input::ListFeatureGroupsInput).
@@ -33364,7 +33364,7 @@ impl ListFlowDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFlowDefinitions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33457,7 +33457,7 @@ impl ListFlowDefinitionsInput {
             "ListFlowDefinitions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFlowDefinitionsInput`](crate::input::ListFlowDefinitionsInput).
@@ -33564,7 +33564,7 @@ impl ListHumanTaskUisInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHumanTaskUis,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33657,7 +33657,7 @@ impl ListHumanTaskUisInput {
             "ListHumanTaskUis",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHumanTaskUisInput`](crate::input::ListHumanTaskUisInput).
@@ -33844,7 +33844,7 @@ impl ListHyperParameterTuningJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHyperParameterTuningJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33936,7 +33936,7 @@ impl ListHyperParameterTuningJobsInput {
             "ListHyperParameterTuningJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHyperParameterTuningJobsInput`](crate::input::ListHyperParameterTuningJobsInput).
@@ -34102,7 +34102,7 @@ impl ListImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImages,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -34195,7 +34195,7 @@ impl ListImagesInput {
             "ListImages",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListImagesInput`](crate::input::ListImagesInput).
@@ -34359,7 +34359,7 @@ impl ListImageVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImageVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -34452,7 +34452,7 @@ impl ListImageVersionsInput {
             "ListImageVersions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListImageVersionsInput`](crate::input::ListImageVersionsInput).
@@ -34640,7 +34640,7 @@ impl ListInferenceRecommendationsJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInferenceRecommendationsJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -34732,7 +34732,7 @@ impl ListInferenceRecommendationsJobsInput {
             "ListInferenceRecommendationsJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput).
@@ -34911,7 +34911,7 @@ impl ListLabelingJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLabelingJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35004,7 +35004,7 @@ impl ListLabelingJobsInput {
             "ListLabelingJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLabelingJobsInput`](crate::input::ListLabelingJobsInput).
@@ -35162,7 +35162,7 @@ impl ListLabelingJobsForWorkteamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLabelingJobsForWorkteam,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35254,7 +35254,7 @@ impl ListLabelingJobsForWorkteamInput {
             "ListLabelingJobsForWorkteam",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLabelingJobsForWorkteamInput`](crate::input::ListLabelingJobsForWorkteamInput).
@@ -35376,7 +35376,7 @@ impl ListLineageGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLineageGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35469,7 +35469,7 @@ impl ListLineageGroupsInput {
             "ListLineageGroups",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLineageGroupsInput`](crate::input::ListLineageGroupsInput).
@@ -35623,7 +35623,7 @@ impl ListModelBiasJobDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListModelBiasJobDefinitions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35715,7 +35715,7 @@ impl ListModelBiasJobDefinitionsInput {
             "ListModelBiasJobDefinitions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListModelBiasJobDefinitionsInput`](crate::input::ListModelBiasJobDefinitionsInput).
@@ -35869,7 +35869,7 @@ impl ListModelExplainabilityJobDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListModelExplainabilityJobDefinitions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35961,7 +35961,7 @@ impl ListModelExplainabilityJobDefinitionsInput {
             "ListModelExplainabilityJobDefinitions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListModelExplainabilityJobDefinitionsInput`](crate::input::ListModelExplainabilityJobDefinitionsInput).
@@ -36042,7 +36042,7 @@ impl ListModelMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListModelMetadata,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36135,7 +36135,7 @@ impl ListModelMetadataInput {
             "ListModelMetadata",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListModelMetadataInput`](crate::input::ListModelMetadataInput).
@@ -36272,7 +36272,7 @@ impl ListModelPackageGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListModelPackageGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36367,7 +36367,7 @@ impl ListModelPackageGroupsInput {
             "ListModelPackageGroups",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListModelPackageGroupsInput`](crate::input::ListModelPackageGroupsInput).
@@ -36559,7 +36559,7 @@ impl ListModelPackagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListModelPackages,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36652,7 +36652,7 @@ impl ListModelPackagesInput {
             "ListModelPackages",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListModelPackagesInput`](crate::input::ListModelPackagesInput).
@@ -36806,7 +36806,7 @@ impl ListModelQualityJobDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListModelQualityJobDefinitions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36898,7 +36898,7 @@ impl ListModelQualityJobDefinitionsInput {
             "ListModelQualityJobDefinitions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListModelQualityJobDefinitionsInput`](crate::input::ListModelQualityJobDefinitionsInput).
@@ -37034,7 +37034,7 @@ impl ListModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListModels,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -37127,7 +37127,7 @@ impl ListModelsInput {
             "ListModels",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListModelsInput`](crate::input::ListModelsInput).
@@ -37389,7 +37389,7 @@ impl ListMonitoringExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMonitoringExecutions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -37484,7 +37484,7 @@ impl ListMonitoringExecutionsInput {
             "ListMonitoringExecutions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMonitoringExecutionsInput`](crate::input::ListMonitoringExecutionsInput).
@@ -37716,7 +37716,7 @@ impl ListMonitoringSchedulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMonitoringSchedules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -37811,7 +37811,7 @@ impl ListMonitoringSchedulesInput {
             "ListMonitoringSchedules",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMonitoringSchedulesInput`](crate::input::ListMonitoringSchedulesInput).
@@ -37988,7 +37988,7 @@ impl ListNotebookInstanceLifecycleConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNotebookInstanceLifecycleConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38080,7 +38080,7 @@ impl ListNotebookInstanceLifecycleConfigsInput {
             "ListNotebookInstanceLifecycleConfigs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListNotebookInstanceLifecycleConfigsInput`](crate::input::ListNotebookInstanceLifecycleConfigsInput).
@@ -38322,7 +38322,7 @@ impl ListNotebookInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNotebookInstances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38417,7 +38417,7 @@ impl ListNotebookInstancesInput {
             "ListNotebookInstances",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListNotebookInstancesInput`](crate::input::ListNotebookInstancesInput).
@@ -38554,7 +38554,7 @@ impl ListPipelineExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPipelineExecutions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38649,7 +38649,7 @@ impl ListPipelineExecutionsInput {
             "ListPipelineExecutions",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionsInput`](crate::input::ListPipelineExecutionsInput).
@@ -38743,7 +38743,7 @@ impl ListPipelineExecutionStepsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPipelineExecutionSteps,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38835,7 +38835,7 @@ impl ListPipelineExecutionStepsInput {
             "ListPipelineExecutionSteps",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionStepsInput`](crate::input::ListPipelineExecutionStepsInput).
@@ -38914,7 +38914,7 @@ impl ListPipelineParametersForExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPipelineParametersForExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39006,7 +39006,7 @@ impl ListPipelineParametersForExecutionInput {
             "ListPipelineParametersForExecution",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPipelineParametersForExecutionInput`](crate::input::ListPipelineParametersForExecutionInput).
@@ -39143,7 +39143,7 @@ impl ListPipelinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPipelines,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39236,7 +39236,7 @@ impl ListPipelinesInput {
             "ListPipelines",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPipelinesInput`](crate::input::ListPipelinesInput).
@@ -39415,7 +39415,7 @@ impl ListProcessingJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProcessingJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39508,7 +39508,7 @@ impl ListProcessingJobsInput {
             "ListProcessingJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListProcessingJobsInput`](crate::input::ListProcessingJobsInput).
@@ -39645,7 +39645,7 @@ impl ListProjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProjects,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39738,7 +39738,7 @@ impl ListProjectsInput {
             "ListProjects",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput).
@@ -39844,7 +39844,7 @@ impl ListStageDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStageDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39937,7 +39937,7 @@ impl ListStageDevicesInput {
             "ListStageDevices",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListStageDevicesInput`](crate::input::ListStageDevicesInput).
@@ -40124,7 +40124,7 @@ impl ListStudioLifecycleConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStudioLifecycleConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40216,7 +40216,7 @@ impl ListStudioLifecycleConfigsInput {
             "ListStudioLifecycleConfigs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListStudioLifecycleConfigsInput`](crate::input::ListStudioLifecycleConfigsInput).
@@ -40295,7 +40295,7 @@ impl ListSubscribedWorkteamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSubscribedWorkteams,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40390,7 +40390,7 @@ impl ListSubscribedWorkteamsInput {
             "ListSubscribedWorkteams",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSubscribedWorkteamsInput`](crate::input::ListSubscribedWorkteamsInput).
@@ -40463,7 +40463,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40554,7 +40554,7 @@ impl ListTagsInput {
                     "ListTags",
                     "sagemaker",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
@@ -40733,7 +40733,7 @@ impl ListTrainingJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrainingJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40826,7 +40826,7 @@ impl ListTrainingJobsInput {
             "ListTrainingJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrainingJobsInput`](crate::input::ListTrainingJobsInput).
@@ -40957,7 +40957,7 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrainingJobsForHyperParameterTuningJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -41049,7 +41049,7 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
             "ListTrainingJobsForHyperParameterTuningJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrainingJobsForHyperParameterTuningJobInput`](crate::input::ListTrainingJobsForHyperParameterTuningJobInput).
@@ -41229,7 +41229,7 @@ impl ListTransformJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTransformJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -41322,7 +41322,7 @@ impl ListTransformJobsInput {
             "ListTransformJobs",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTransformJobsInput`](crate::input::ListTransformJobsInput).
@@ -41483,7 +41483,7 @@ impl ListTrialComponentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrialComponents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -41576,7 +41576,7 @@ impl ListTrialComponentsInput {
             "ListTrialComponents",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrialComponentsInput`](crate::input::ListTrialComponentsInput).
@@ -41727,7 +41727,7 @@ impl ListTrialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrials,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -41820,7 +41820,7 @@ impl ListTrialsInput {
             "ListTrials",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrialsInput`](crate::input::ListTrialsInput).
@@ -41942,7 +41942,7 @@ impl ListUserProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUserProfiles,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42035,7 +42035,7 @@ impl ListUserProfilesInput {
             "ListUserProfiles",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListUserProfilesInput`](crate::input::ListUserProfilesInput).
@@ -42142,7 +42142,7 @@ impl ListWorkforcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkforces,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42235,7 +42235,7 @@ impl ListWorkforcesInput {
             "ListWorkforces",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListWorkforcesInput`](crate::input::ListWorkforcesInput).
@@ -42342,7 +42342,7 @@ impl ListWorkteamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkteams,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42435,7 +42435,7 @@ impl ListWorkteamsInput {
             "ListWorkteams",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListWorkteamsInput`](crate::input::ListWorkteamsInput).
@@ -42505,7 +42505,7 @@ impl PutModelPackageGroupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutModelPackageGroupPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42597,7 +42597,7 @@ impl PutModelPackageGroupPolicyInput {
             "PutModelPackageGroupPolicy",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutModelPackageGroupPolicyInput`](crate::input::PutModelPackageGroupPolicyInput).
@@ -42748,7 +42748,7 @@ impl QueryLineageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::QueryLineage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42841,7 +42841,7 @@ impl QueryLineageInput {
             "QueryLineage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`QueryLineageInput`](crate::input::QueryLineageInput).
@@ -42936,7 +42936,7 @@ impl RegisterDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43029,7 +43029,7 @@ impl RegisterDevicesInput {
             "RegisterDevices",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterDevicesInput`](crate::input::RegisterDevicesInput).
@@ -43126,7 +43126,7 @@ impl RenderUiTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RenderUiTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43219,7 +43219,7 @@ impl RenderUiTemplateInput {
             "RenderUiTemplate",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RenderUiTemplateInput`](crate::input::RenderUiTemplateInput).
@@ -43306,7 +43306,7 @@ impl RetryPipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RetryPipelineExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43404,7 +43404,7 @@ impl RetryPipelineExecutionInput {
             "RetryPipelineExecution",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RetryPipelineExecutionInput`](crate::input::RetryPipelineExecutionInput).
@@ -43522,7 +43522,7 @@ impl SearchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Search,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43613,7 +43613,7 @@ impl SearchInput {
                     "Search",
                     "sagemaker",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchInput`](crate::input::SearchInput).
@@ -43698,7 +43698,7 @@ impl SendPipelineExecutionStepFailureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendPipelineExecutionStepFailure,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43793,7 +43793,7 @@ impl SendPipelineExecutionStepFailureInput {
             "SendPipelineExecutionStepFailure",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendPipelineExecutionStepFailureInput`](crate::input::SendPipelineExecutionStepFailureInput).
@@ -43885,7 +43885,7 @@ impl SendPipelineExecutionStepSuccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendPipelineExecutionStepSuccess,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43980,7 +43980,7 @@ impl SendPipelineExecutionStepSuccessInput {
             "SendPipelineExecutionStepSuccess",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendPipelineExecutionStepSuccessInput`](crate::input::SendPipelineExecutionStepSuccessInput).
@@ -44047,7 +44047,7 @@ impl StartEdgeDeploymentStageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEdgeDeploymentStage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44142,7 +44142,7 @@ impl StartEdgeDeploymentStageInput {
             "StartEdgeDeploymentStage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartEdgeDeploymentStageInput`](crate::input::StartEdgeDeploymentStageInput).
@@ -44197,7 +44197,7 @@ impl StartMonitoringScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMonitoringSchedule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44292,7 +44292,7 @@ impl StartMonitoringScheduleInput {
             "StartMonitoringSchedule",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartMonitoringScheduleInput`](crate::input::StartMonitoringScheduleInput).
@@ -44345,7 +44345,7 @@ impl StartNotebookInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartNotebookInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44440,7 +44440,7 @@ impl StartNotebookInstanceInput {
             "StartNotebookInstance",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartNotebookInstanceInput`](crate::input::StartNotebookInstanceInput).
@@ -44584,7 +44584,7 @@ impl StartPipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPipelineExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44682,7 +44682,7 @@ impl StartPipelineExecutionInput {
             "StartPipelineExecution",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::input::StartPipelineExecutionInput).
@@ -44735,7 +44735,7 @@ impl StopAutoMlJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopAutoMLJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44828,7 +44828,7 @@ impl StopAutoMlJobInput {
             "StopAutoMLJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopAutoMlJobInput`](crate::input::StopAutoMlJobInput).
@@ -44881,7 +44881,7 @@ impl StopCompilationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopCompilationJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44974,7 +44974,7 @@ impl StopCompilationJobInput {
             "StopCompilationJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopCompilationJobInput`](crate::input::StopCompilationJobInput).
@@ -45041,7 +45041,7 @@ impl StopEdgeDeploymentStageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEdgeDeploymentStage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45136,7 +45136,7 @@ impl StopEdgeDeploymentStageInput {
             "StopEdgeDeploymentStage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopEdgeDeploymentStageInput`](crate::input::StopEdgeDeploymentStageInput).
@@ -45189,7 +45189,7 @@ impl StopEdgePackagingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEdgePackagingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45284,7 +45284,7 @@ impl StopEdgePackagingJobInput {
             "StopEdgePackagingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopEdgePackagingJobInput`](crate::input::StopEdgePackagingJobInput).
@@ -45342,7 +45342,7 @@ impl StopHyperParameterTuningJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopHyperParameterTuningJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45434,7 +45434,7 @@ impl StopHyperParameterTuningJobInput {
             "StopHyperParameterTuningJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopHyperParameterTuningJobInput`](crate::input::StopHyperParameterTuningJobInput).
@@ -45486,7 +45486,7 @@ impl StopInferenceRecommendationsJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopInferenceRecommendationsJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45578,7 +45578,7 @@ impl StopInferenceRecommendationsJobInput {
             "StopInferenceRecommendationsJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopInferenceRecommendationsJobInput`](crate::input::StopInferenceRecommendationsJobInput).
@@ -45631,7 +45631,7 @@ impl StopLabelingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopLabelingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45724,7 +45724,7 @@ impl StopLabelingJobInput {
             "StopLabelingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopLabelingJobInput`](crate::input::StopLabelingJobInput).
@@ -45777,7 +45777,7 @@ impl StopMonitoringScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopMonitoringSchedule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45872,7 +45872,7 @@ impl StopMonitoringScheduleInput {
             "StopMonitoringSchedule",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopMonitoringScheduleInput`](crate::input::StopMonitoringScheduleInput).
@@ -45925,7 +45925,7 @@ impl StopNotebookInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopNotebookInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46020,7 +46020,7 @@ impl StopNotebookInstanceInput {
             "StopNotebookInstance",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopNotebookInstanceInput`](crate::input::StopNotebookInstanceInput).
@@ -46088,7 +46088,7 @@ impl StopPipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopPipelineExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46186,7 +46186,7 @@ impl StopPipelineExecutionInput {
             "StopPipelineExecution",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopPipelineExecutionInput`](crate::input::StopPipelineExecutionInput).
@@ -46239,7 +46239,7 @@ impl StopProcessingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopProcessingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46332,7 +46332,7 @@ impl StopProcessingJobInput {
             "StopProcessingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopProcessingJobInput`](crate::input::StopProcessingJobInput).
@@ -46385,7 +46385,7 @@ impl StopTrainingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTrainingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46478,7 +46478,7 @@ impl StopTrainingJobInput {
             "StopTrainingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopTrainingJobInput`](crate::input::StopTrainingJobInput).
@@ -46531,7 +46531,7 @@ impl StopTransformJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTransformJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46624,7 +46624,7 @@ impl StopTransformJobInput {
             "StopTransformJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopTransformJobInput`](crate::input::StopTransformJobInput).
@@ -46751,7 +46751,7 @@ impl UpdateActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46844,7 +46844,7 @@ impl UpdateActionInput {
             "UpdateAction",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateActionInput`](crate::input::UpdateActionInput).
@@ -46916,7 +46916,7 @@ impl UpdateAppImageConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAppImageConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -47011,7 +47011,7 @@ impl UpdateAppImageConfigInput {
             "UpdateAppImageConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAppImageConfigInput`](crate::input::UpdateAppImageConfigInput).
@@ -47126,7 +47126,7 @@ impl UpdateArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateArtifact,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -47219,7 +47219,7 @@ impl UpdateArtifactInput {
             "UpdateArtifact",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateArtifactInput`](crate::input::UpdateArtifactInput).
@@ -47289,7 +47289,7 @@ impl UpdateCodeRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCodeRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -47384,7 +47384,7 @@ impl UpdateCodeRepositoryInput {
             "UpdateCodeRepository",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCodeRepositoryInput`](crate::input::UpdateCodeRepositoryInput).
@@ -47496,7 +47496,7 @@ impl UpdateContextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContext,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -47589,7 +47589,7 @@ impl UpdateContextInput {
             "UpdateContext",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateContextInput`](crate::input::UpdateContextInput).
@@ -47695,7 +47695,7 @@ impl UpdateDeviceFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDeviceFleet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -47788,7 +47788,7 @@ impl UpdateDeviceFleetInput {
             "UpdateDeviceFleet",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDeviceFleetInput`](crate::input::UpdateDeviceFleetInput).
@@ -47862,7 +47862,7 @@ impl UpdateDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDevices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -47955,7 +47955,7 @@ impl UpdateDevicesInput {
             "UpdateDevices",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDevicesInput`](crate::input::UpdateDevicesInput).
@@ -48039,7 +48039,7 @@ impl UpdateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomain,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -48132,7 +48132,7 @@ impl UpdateDomainInput {
             "UpdateDomain",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDomainInput`](crate::input::UpdateDomainInput).
@@ -48269,7 +48269,7 @@ impl UpdateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -48362,7 +48362,7 @@ impl UpdateEndpointInput {
             "UpdateEndpoint",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateEndpointInput`](crate::input::UpdateEndpointInput).
@@ -48442,7 +48442,7 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpointWeightsAndCapacities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -48534,7 +48534,7 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
             "UpdateEndpointWeightsAndCapacities",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateEndpointWeightsAndCapacitiesInput`](crate::input::UpdateEndpointWeightsAndCapacitiesInput).
@@ -48611,7 +48611,7 @@ impl UpdateExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateExperiment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -48704,7 +48704,7 @@ impl UpdateExperimentInput {
             "UpdateExperiment",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateExperimentInput`](crate::input::UpdateExperimentInput).
@@ -48779,7 +48779,7 @@ impl UpdateFeatureGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFeatureGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -48872,7 +48872,7 @@ impl UpdateFeatureGroupInput {
             "UpdateFeatureGroup",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupInput`](crate::input::UpdateFeatureGroupInput).
@@ -48992,7 +48992,7 @@ impl UpdateFeatureMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFeatureMetadata,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -49087,7 +49087,7 @@ impl UpdateFeatureMetadataInput {
             "UpdateFeatureMetadata",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFeatureMetadataInput`](crate::input::UpdateFeatureMetadataInput).
@@ -49194,7 +49194,7 @@ impl UpdateImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateImage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -49287,7 +49287,7 @@ impl UpdateImageInput {
             "UpdateImage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateImageInput`](crate::input::UpdateImageInput).
@@ -49457,7 +49457,7 @@ impl UpdateModelPackageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateModelPackage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -49550,7 +49550,7 @@ impl UpdateModelPackageInput {
             "UpdateModelPackage",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateModelPackageInput`](crate::input::UpdateModelPackageInput).
@@ -49624,7 +49624,7 @@ impl UpdateMonitoringScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMonitoringSchedule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -49719,7 +49719,7 @@ impl UpdateMonitoringScheduleInput {
             "UpdateMonitoringSchedule",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringScheduleInput`](crate::input::UpdateMonitoringScheduleInput).
@@ -50004,7 +50004,7 @@ impl UpdateNotebookInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNotebookInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -50099,7 +50099,7 @@ impl UpdateNotebookInstanceInput {
             "UpdateNotebookInstance",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateNotebookInstanceInput`](crate::input::UpdateNotebookInstanceInput).
@@ -50203,7 +50203,7 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNotebookInstanceLifecycleConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -50295,7 +50295,7 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
             "UpdateNotebookInstanceLifecycleConfig",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateNotebookInstanceLifecycleConfigInput`](crate::input::UpdateNotebookInstanceLifecycleConfigInput).
@@ -50443,7 +50443,7 @@ impl UpdatePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipeline,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -50536,7 +50536,7 @@ impl UpdatePipelineInput {
             "UpdatePipeline",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePipelineInput`](crate::input::UpdatePipelineInput).
@@ -50646,7 +50646,7 @@ impl UpdatePipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipelineExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -50741,7 +50741,7 @@ impl UpdatePipelineExecutionInput {
             "UpdatePipelineExecution",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePipelineExecutionInput`](crate::input::UpdatePipelineExecutionInput).
@@ -50847,7 +50847,7 @@ impl UpdateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProject,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -50940,7 +50940,7 @@ impl UpdateProjectInput {
             "UpdateProject",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput).
@@ -51033,7 +51033,7 @@ impl UpdateTrainingJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrainingJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -51126,7 +51126,7 @@ impl UpdateTrainingJobInput {
             "UpdateTrainingJob",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTrainingJobInput`](crate::input::UpdateTrainingJobInput).
@@ -51188,7 +51188,7 @@ impl UpdateTrialInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrial,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -51281,7 +51281,7 @@ impl UpdateTrialInput {
             "UpdateTrial",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTrialInput`](crate::input::UpdateTrialInput).
@@ -51555,7 +51555,7 @@ impl UpdateTrialComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrialComponent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -51650,7 +51650,7 @@ impl UpdateTrialComponentInput {
             "UpdateTrialComponent",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTrialComponentInput`](crate::input::UpdateTrialComponentInput).
@@ -51730,7 +51730,7 @@ impl UpdateUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserProfile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -51823,7 +51823,7 @@ impl UpdateUserProfileInput {
             "UpdateUserProfile",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileInput`](crate::input::UpdateUserProfileInput).
@@ -51927,7 +51927,7 @@ impl UpdateWorkforceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkforce,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -52020,7 +52020,7 @@ impl UpdateWorkforceInput {
             "UpdateWorkforce",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateWorkforceInput`](crate::input::UpdateWorkforceInput).
@@ -52132,7 +52132,7 @@ impl UpdateWorkteamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkteam,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -52225,7 +52225,7 @@ impl UpdateWorkteamInput {
             "UpdateWorkteam",
             "sagemaker",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateWorkteamInput`](crate::input::UpdateWorkteamInput).

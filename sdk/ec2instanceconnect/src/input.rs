@@ -73,7 +73,7 @@ impl SendSerialConsoleSshPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendSerialConsoleSSHPublicKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -165,7 +165,7 @@ impl SendSerialConsoleSshPublicKeyInput {
             "SendSerialConsoleSSHPublicKey",
             "ec2instanceconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyInput`](crate::input::SendSerialConsoleSshPublicKeyInput).
@@ -260,7 +260,7 @@ impl SendSshPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendSSHPublicKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -353,7 +353,7 @@ impl SendSshPublicKeyInput {
             "SendSSHPublicKey",
             "ec2instanceconnect",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SendSshPublicKeyInput`](crate::input::SendSshPublicKeyInput).

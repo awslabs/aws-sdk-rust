@@ -158,7 +158,7 @@ impl CreateCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCertificateAuthority,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -253,7 +253,7 @@ impl CreateCertificateAuthorityInput {
             "CreateCertificateAuthority",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityInput`](crate::input::CreateCertificateAuthorityInput).
@@ -344,7 +344,7 @@ impl CreateCertificateAuthorityAuditReportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCertificateAuthorityAuditReport,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -436,7 +436,7 @@ impl CreateCertificateAuthorityAuditReportInput {
             "CreateCertificateAuthorityAuditReport",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityAuditReportInput`](crate::input::CreateCertificateAuthorityAuditReportInput).
@@ -539,7 +539,7 @@ impl CreatePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePermission,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -632,7 +632,7 @@ impl CreatePermissionInput {
             "CreatePermission",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePermissionInput`](crate::input::CreatePermissionInput).
@@ -704,7 +704,7 @@ impl DeleteCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCertificateAuthority,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -799,7 +799,7 @@ impl DeleteCertificateAuthorityInput {
             "DeleteCertificateAuthority",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCertificateAuthorityInput`](crate::input::DeleteCertificateAuthorityInput).
@@ -881,7 +881,7 @@ impl DeletePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePermission,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -974,7 +974,7 @@ impl DeletePermissionInput {
             "DeletePermission",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePermissionInput`](crate::input::DeletePermissionInput).
@@ -1024,7 +1024,7 @@ impl DeletePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1117,7 +1117,7 @@ impl DeletePolicyInput {
             "DeletePolicy",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePolicyInput`](crate::input::DeletePolicyInput).
@@ -1174,7 +1174,7 @@ impl DescribeCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCertificateAuthority,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1266,7 +1266,7 @@ impl DescribeCertificateAuthorityInput {
             "DescribeCertificateAuthority",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityInput`](crate::input::DescribeCertificateAuthorityInput).
@@ -1338,7 +1338,7 @@ impl DescribeCertificateAuthorityAuditReportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCertificateAuthorityAuditReport,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1430,7 +1430,7 @@ impl DescribeCertificateAuthorityAuditReportInput {
             "DescribeCertificateAuthorityAuditReport",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityAuditReportInput`](crate::input::DescribeCertificateAuthorityAuditReportInput).
@@ -1502,7 +1502,7 @@ impl GetCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1595,7 +1595,7 @@ impl GetCertificateInput {
             "GetCertificate",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCertificateInput`](crate::input::GetCertificateInput).
@@ -1652,7 +1652,7 @@ impl GetCertificateAuthorityCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCertificateAuthorityCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1744,7 +1744,7 @@ impl GetCertificateAuthorityCertificateInput {
             "GetCertificateAuthorityCertificate",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCertificateInput`](crate::input::GetCertificateAuthorityCertificateInput).
@@ -1801,7 +1801,7 @@ impl GetCertificateAuthorityCsrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCertificateAuthorityCsr,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1893,7 +1893,7 @@ impl GetCertificateAuthorityCsrInput {
             "GetCertificateAuthorityCsr",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCsrInput`](crate::input::GetCertificateAuthorityCsrInput).
@@ -1942,7 +1942,7 @@ impl GetPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2033,7 +2033,7 @@ impl GetPolicyInput {
                     "GetPolicy",
                     "acmpca",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPolicyInput`](crate::input::GetPolicyInput).
@@ -2122,7 +2122,7 @@ impl ImportCertificateAuthorityCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportCertificateAuthorityCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2214,7 +2214,7 @@ impl ImportCertificateAuthorityCertificateInput {
             "ImportCertificateAuthorityCertificate",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ImportCertificateAuthorityCertificateInput`](crate::input::ImportCertificateAuthorityCertificateInput).
@@ -2397,7 +2397,7 @@ impl IssueCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::IssueCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2490,7 +2490,7 @@ impl IssueCertificateInput {
             "IssueCertificate",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`IssueCertificateInput`](crate::input::IssueCertificateInput).
@@ -2569,7 +2569,7 @@ impl ListCertificateAuthoritiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCertificateAuthorities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2664,7 +2664,7 @@ impl ListCertificateAuthoritiesInput {
             "ListCertificateAuthorities",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCertificateAuthoritiesInput`](crate::input::ListCertificateAuthoritiesInput).
@@ -2741,7 +2741,7 @@ impl ListPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPermissions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2834,7 +2834,7 @@ impl ListPermissionsInput {
             "ListPermissions",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPermissionsInput`](crate::input::ListPermissionsInput).
@@ -2912,7 +2912,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3002,7 +3002,7 @@ impl ListTagsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListTags", "acmpca",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
@@ -3065,7 +3065,7 @@ impl PutPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3156,7 +3156,7 @@ impl PutPolicyInput {
                     "PutPolicy",
                     "acmpca",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutPolicyInput`](crate::input::PutPolicyInput).
@@ -3213,7 +3213,7 @@ impl RestoreCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreCertificateAuthority,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3305,7 +3305,7 @@ impl RestoreCertificateAuthorityInput {
             "RestoreCertificateAuthority",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RestoreCertificateAuthorityInput`](crate::input::RestoreCertificateAuthorityInput).
@@ -3394,7 +3394,7 @@ impl RevokeCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeCertificate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3487,7 +3487,7 @@ impl RevokeCertificateInput {
             "RevokeCertificate",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RevokeCertificateInput`](crate::input::RevokeCertificateInput).
@@ -3565,7 +3565,7 @@ impl TagCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagCertificateAuthority,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3660,7 +3660,7 @@ impl TagCertificateAuthorityInput {
             "TagCertificateAuthority",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagCertificateAuthorityInput`](crate::input::TagCertificateAuthorityInput).
@@ -3738,7 +3738,7 @@ impl UntagCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagCertificateAuthority,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3833,7 +3833,7 @@ impl UntagCertificateAuthorityInput {
             "UntagCertificateAuthority",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagCertificateAuthorityInput`](crate::input::UntagCertificateAuthorityInput).
@@ -3924,7 +3924,7 @@ impl UpdateCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCertificateAuthority,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4019,7 +4019,7 @@ impl UpdateCertificateAuthorityInput {
             "UpdateCertificateAuthority",
             "acmpca",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCertificateAuthorityInput`](crate::input::UpdateCertificateAuthorityInput).

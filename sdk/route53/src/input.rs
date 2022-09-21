@@ -57,7 +57,7 @@ impl ActivateKeySigningKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ActivateKeySigningKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -166,7 +166,7 @@ impl ActivateKeySigningKeyInput {
             "ActivateKeySigningKey",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ActivateKeySigningKeyInput`](crate::input::ActivateKeySigningKeyInput).
@@ -247,7 +247,7 @@ impl AssociateVpcWithHostedZoneInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateVPCWithHostedZone,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -354,7 +354,7 @@ impl AssociateVpcWithHostedZoneInput {
             "AssociateVPCWithHostedZone",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput).
@@ -447,7 +447,7 @@ impl ChangeCidrCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ChangeCidrCollection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -552,7 +552,7 @@ impl ChangeCidrCollectionInput {
             "ChangeCidrCollection",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionInput`](crate::input::ChangeCidrCollectionInput).
@@ -622,7 +622,7 @@ impl ChangeResourceRecordSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ChangeResourceRecordSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -732,7 +732,7 @@ impl ChangeResourceRecordSetsInput {
             "ChangeResourceRecordSets",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsInput`](crate::input::ChangeResourceRecordSetsInput).
@@ -849,7 +849,7 @@ impl ChangeTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ChangeTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -973,7 +973,7 @@ impl ChangeTagsForResourceInput {
             "ChangeTagsForResource",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ChangeTagsForResourceInput`](crate::input::ChangeTagsForResourceInput).
@@ -1038,7 +1038,7 @@ impl CreateCidrCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCidrCollection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1128,7 +1128,7 @@ impl CreateCidrCollectionInput {
             "CreateCidrCollection",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCidrCollectionInput`](crate::input::CreateCidrCollectionInput).
@@ -1208,7 +1208,7 @@ impl CreateHealthCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHealthCheck,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1296,7 +1296,7 @@ impl CreateHealthCheckInput {
             "CreateHealthCheck",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateHealthCheckInput`](crate::input::CreateHealthCheckInput).
@@ -1419,7 +1419,7 @@ impl CreateHostedZoneInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHostedZone,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1507,7 +1507,7 @@ impl CreateHostedZoneInput {
             "CreateHostedZone",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateHostedZoneInput`](crate::input::CreateHostedZoneInput).
@@ -1688,7 +1688,7 @@ impl CreateKeySigningKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateKeySigningKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1778,7 +1778,7 @@ impl CreateKeySigningKeyInput {
             "CreateKeySigningKey",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateKeySigningKeyInput`](crate::input::CreateKeySigningKeyInput).
@@ -1855,7 +1855,7 @@ impl CreateQueryLoggingConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateQueryLoggingConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1946,7 +1946,7 @@ impl CreateQueryLoggingConfigInput {
             "CreateQueryLoggingConfig",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateQueryLoggingConfigInput`](crate::input::CreateQueryLoggingConfigInput).
@@ -2016,7 +2016,7 @@ impl CreateReusableDelegationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReusableDelegationSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2103,7 +2103,7 @@ impl CreateReusableDelegationSetInput {
             "CreateReusableDelegationSet",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateReusableDelegationSetInput`](crate::input::CreateReusableDelegationSetInput).
@@ -2177,7 +2177,7 @@ impl CreateTrafficPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrafficPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2265,7 +2265,7 @@ impl CreateTrafficPolicyInput {
             "CreateTrafficPolicy",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInput`](crate::input::CreateTrafficPolicyInput).
@@ -2371,7 +2371,7 @@ impl CreateTrafficPolicyInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrafficPolicyInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2459,7 +2459,7 @@ impl CreateTrafficPolicyInstanceInput {
             "CreateTrafficPolicyInstance",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInstanceInput`](crate::input::CreateTrafficPolicyInstanceInput).
@@ -2535,7 +2535,7 @@ impl CreateTrafficPolicyVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrafficPolicyVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2637,7 +2637,7 @@ impl CreateTrafficPolicyVersionInput {
             "CreateTrafficPolicyVersion",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyVersionInput`](crate::input::CreateTrafficPolicyVersionInput).
@@ -2704,7 +2704,7 @@ impl CreateVpcAssociationAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVPCAssociationAuthorization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2811,7 +2811,7 @@ impl CreateVpcAssociationAuthorizationInput {
             "CreateVPCAssociationAuthorization",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput).
@@ -2878,7 +2878,7 @@ impl DeactivateKeySigningKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeactivateKeySigningKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2987,7 +2987,7 @@ impl DeactivateKeySigningKeyInput {
             "DeactivateKeySigningKey",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeactivateKeySigningKeyInput`](crate::input::DeactivateKeySigningKeyInput).
@@ -3035,7 +3035,7 @@ impl DeleteCidrCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCidrCollection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3124,7 +3124,7 @@ impl DeleteCidrCollectionInput {
             "DeleteCidrCollection",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionInput`](crate::input::DeleteCidrCollectionInput).
@@ -3177,7 +3177,7 @@ impl DeleteHealthCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHealthCheck,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3270,7 +3270,7 @@ impl DeleteHealthCheckInput {
             "DeleteHealthCheck",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteHealthCheckInput`](crate::input::DeleteHealthCheckInput).
@@ -3318,7 +3318,7 @@ impl DeleteHostedZoneInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHostedZone,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3408,7 +3408,7 @@ impl DeleteHostedZoneInput {
             "DeleteHostedZone",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteHostedZoneInput`](crate::input::DeleteHostedZoneInput).
@@ -3473,7 +3473,7 @@ impl DeleteKeySigningKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteKeySigningKey,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3582,7 +3582,7 @@ impl DeleteKeySigningKeyInput {
             "DeleteKeySigningKey",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteKeySigningKeyInput`](crate::input::DeleteKeySigningKeyInput).
@@ -3632,7 +3632,7 @@ impl DeleteQueryLoggingConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteQueryLoggingConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3721,7 +3721,7 @@ impl DeleteQueryLoggingConfigInput {
             "DeleteQueryLoggingConfig",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteQueryLoggingConfigInput`](crate::input::DeleteQueryLoggingConfigInput).
@@ -3771,7 +3771,7 @@ impl DeleteReusableDelegationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReusableDelegationSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3861,7 +3861,7 @@ impl DeleteReusableDelegationSetInput {
             "DeleteReusableDelegationSet",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetInput`](crate::input::DeleteReusableDelegationSetInput).
@@ -3923,7 +3923,7 @@ impl DeleteTrafficPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTrafficPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4032,7 +4032,7 @@ impl DeleteTrafficPolicyInput {
             "DeleteTrafficPolicy",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInput`](crate::input::DeleteTrafficPolicyInput).
@@ -4086,7 +4086,7 @@ impl DeleteTrafficPolicyInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTrafficPolicyInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4175,7 +4175,7 @@ impl DeleteTrafficPolicyInstanceInput {
             "DeleteTrafficPolicyInstance",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInstanceInput`](crate::input::DeleteTrafficPolicyInstanceInput).
@@ -4242,7 +4242,7 @@ impl DeleteVpcAssociationAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVPCAssociationAuthorization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4349,7 +4349,7 @@ impl DeleteVpcAssociationAuthorizationInput {
             "DeleteVPCAssociationAuthorization",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput).
@@ -4404,7 +4404,7 @@ impl DisableHostedZoneDnssecInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableHostedZoneDNSSEC,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4498,7 +4498,7 @@ impl DisableHostedZoneDnssecInput {
             "DisableHostedZoneDNSSEC",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput).
@@ -4577,7 +4577,7 @@ impl DisassociateVpcFromHostedZoneInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateVPCFromHostedZone,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4684,7 +4684,7 @@ impl DisassociateVpcFromHostedZoneInput {
             "DisassociateVPCFromHostedZone",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput).
@@ -4737,7 +4737,7 @@ impl EnableHostedZoneDnssecInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableHostedZoneDNSSEC,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4831,7 +4831,7 @@ impl EnableHostedZoneDnssecInput {
             "EnableHostedZoneDNSSEC",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput).
@@ -4898,7 +4898,7 @@ impl GetAccountLimitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccountLimit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4987,7 +4987,7 @@ impl GetAccountLimitInput {
             "GetAccountLimit",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccountLimitInput`](crate::input::GetAccountLimitInput).
@@ -5034,7 +5034,7 @@ impl GetChangeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChange,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5122,7 +5122,7 @@ impl GetChangeInput {
                     "GetChange",
                     "route53",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetChangeInput`](crate::input::GetChangeInput).
@@ -5158,7 +5158,7 @@ impl GetCheckerIpRangesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCheckerIpRanges,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5232,7 +5232,7 @@ impl GetCheckerIpRangesInput {
             "GetCheckerIpRanges",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCheckerIpRangesInput`](crate::input::GetCheckerIpRangesInput).
@@ -5284,7 +5284,7 @@ impl GetDnssecInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDNSSEC,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5376,7 +5376,7 @@ impl GetDnssecInput {
                     "GetDNSSEC",
                     "route53",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDnssecInput`](crate::input::GetDnssecInput).
@@ -5474,7 +5474,7 @@ impl GetGeoLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGeoLocation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5574,7 +5574,7 @@ impl GetGeoLocationInput {
             "GetGeoLocation",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetGeoLocationInput`](crate::input::GetGeoLocationInput).
@@ -5627,7 +5627,7 @@ impl GetHealthCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHealthCheck,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5720,7 +5720,7 @@ impl GetHealthCheckInput {
             "GetHealthCheck",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHealthCheckInput`](crate::input::GetHealthCheckInput).
@@ -5756,7 +5756,7 @@ impl GetHealthCheckCountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHealthCheckCount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5830,7 +5830,7 @@ impl GetHealthCheckCountInput {
             "GetHealthCheckCount",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHealthCheckCountInput`](crate::input::GetHealthCheckCountInput).
@@ -5889,7 +5889,7 @@ impl GetHealthCheckLastFailureReasonInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHealthCheckLastFailureReason,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5982,7 +5982,7 @@ impl GetHealthCheckLastFailureReasonInput {
             "GetHealthCheckLastFailureReason",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHealthCheckLastFailureReasonInput`](crate::input::GetHealthCheckLastFailureReasonInput).
@@ -6039,7 +6039,7 @@ impl GetHealthCheckStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHealthCheckStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6132,7 +6132,7 @@ impl GetHealthCheckStatusInput {
             "GetHealthCheckStatus",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHealthCheckStatusInput`](crate::input::GetHealthCheckStatusInput).
@@ -6180,7 +6180,7 @@ impl GetHostedZoneInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHostedZone,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6270,7 +6270,7 @@ impl GetHostedZoneInput {
             "GetHostedZone",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHostedZoneInput`](crate::input::GetHostedZoneInput).
@@ -6306,7 +6306,7 @@ impl GetHostedZoneCountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHostedZoneCount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6380,7 +6380,7 @@ impl GetHostedZoneCountInput {
             "GetHostedZoneCount",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHostedZoneCountInput`](crate::input::GetHostedZoneCountInput).
@@ -6456,7 +6456,7 @@ impl GetHostedZoneLimitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHostedZoneLimit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6565,7 +6565,7 @@ impl GetHostedZoneLimitInput {
             "GetHostedZoneLimit",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetHostedZoneLimitInput`](crate::input::GetHostedZoneLimitInput).
@@ -6613,7 +6613,7 @@ impl GetQueryLoggingConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQueryLoggingConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6702,7 +6702,7 @@ impl GetQueryLoggingConfigInput {
             "GetQueryLoggingConfig",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetQueryLoggingConfigInput`](crate::input::GetQueryLoggingConfigInput).
@@ -6752,7 +6752,7 @@ impl GetReusableDelegationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReusableDelegationSet,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6842,7 +6842,7 @@ impl GetReusableDelegationSetInput {
             "GetReusableDelegationSet",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetInput`](crate::input::GetReusableDelegationSetInput).
@@ -6912,7 +6912,7 @@ impl GetReusableDelegationSetLimitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReusableDelegationSetLimit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7021,7 +7021,7 @@ impl GetReusableDelegationSetLimitInput {
             "GetReusableDelegationSetLimit",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetLimitInput`](crate::input::GetReusableDelegationSetLimitInput).
@@ -7083,7 +7083,7 @@ impl GetTrafficPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrafficPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7192,7 +7192,7 @@ impl GetTrafficPolicyInput {
             "GetTrafficPolicy",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInput`](crate::input::GetTrafficPolicyInput).
@@ -7242,7 +7242,7 @@ impl GetTrafficPolicyInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrafficPolicyInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7331,7 +7331,7 @@ impl GetTrafficPolicyInstanceInput {
             "GetTrafficPolicyInstance",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceInput`](crate::input::GetTrafficPolicyInstanceInput).
@@ -7369,7 +7369,7 @@ impl GetTrafficPolicyInstanceCountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrafficPolicyInstanceCount,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7444,7 +7444,7 @@ impl GetTrafficPolicyInstanceCountInput {
             "GetTrafficPolicyInstanceCount",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountInput`](crate::input::GetTrafficPolicyInstanceCountInput).
@@ -7536,7 +7536,7 @@ impl ListCidrBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCidrBlocks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7649,7 +7649,7 @@ impl ListCidrBlocksInput {
             "ListCidrBlocks",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCidrBlocksInput`](crate::input::ListCidrBlocksInput).
@@ -7713,7 +7713,7 @@ impl ListCidrCollectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCidrCollections,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7804,7 +7804,7 @@ impl ListCidrCollectionsInput {
             "ListCidrCollections",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCidrCollectionsInput`](crate::input::ListCidrCollectionsInput).
@@ -7883,7 +7883,7 @@ impl ListCidrLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCidrLocations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7993,7 +7993,7 @@ impl ListCidrLocationsInput {
             "ListCidrLocations",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCidrLocationsInput`](crate::input::ListCidrLocationsInput).
@@ -8092,7 +8092,7 @@ impl ListGeoLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGeoLocations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8198,7 +8198,7 @@ impl ListGeoLocationsInput {
             "ListGeoLocations",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListGeoLocationsInput`](crate::input::ListGeoLocationsInput).
@@ -8264,7 +8264,7 @@ impl ListHealthChecksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHealthChecks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8355,7 +8355,7 @@ impl ListHealthChecksInput {
             "ListHealthChecks",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHealthChecksInput`](crate::input::ListHealthChecksInput).
@@ -8436,7 +8436,7 @@ impl ListHostedZonesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHostedZones,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8533,7 +8533,7 @@ impl ListHostedZonesInput {
             "ListHostedZones",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHostedZonesInput`](crate::input::ListHostedZonesInput).
@@ -8612,7 +8612,7 @@ impl ListHostedZonesByNameInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHostedZonesByName,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8709,7 +8709,7 @@ impl ListHostedZonesByNameInput {
             "ListHostedZonesByName",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHostedZonesByNameInput`](crate::input::ListHostedZonesByNameInput).
@@ -8802,7 +8802,7 @@ impl ListHostedZonesByVpcInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHostedZonesByVPC,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8899,7 +8899,7 @@ impl ListHostedZonesByVpcInput {
             "ListHostedZonesByVPC",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput).
@@ -8986,7 +8986,7 @@ impl ListQueryLoggingConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListQueryLoggingConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9084,7 +9084,7 @@ impl ListQueryLoggingConfigsInput {
             "ListQueryLoggingConfigs",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListQueryLoggingConfigsInput`](crate::input::ListQueryLoggingConfigsInput).
@@ -9220,7 +9220,7 @@ impl ListResourceRecordSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceRecordSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9337,7 +9337,7 @@ impl ListResourceRecordSetsInput {
             "ListResourceRecordSets",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResourceRecordSetsInput`](crate::input::ListResourceRecordSetsInput).
@@ -9405,7 +9405,7 @@ impl ListReusableDelegationSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReusableDelegationSets,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9496,7 +9496,7 @@ impl ListReusableDelegationSetsInput {
             "ListReusableDelegationSets",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListReusableDelegationSetsInput`](crate::input::ListReusableDelegationSetsInput).
@@ -9569,7 +9569,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9677,7 +9677,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -9759,7 +9759,7 @@ impl ListTagsForResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9868,7 +9868,7 @@ impl ListTagsForResourcesInput {
             "ListTagsForResources",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput).
@@ -9935,7 +9935,7 @@ impl ListTrafficPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10029,7 +10029,7 @@ impl ListTrafficPoliciesInput {
             "ListTrafficPolicies",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrafficPoliciesInput`](crate::input::ListTrafficPoliciesInput).
@@ -10135,7 +10135,7 @@ impl ListTrafficPolicyInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicyInstances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10242,7 +10242,7 @@ impl ListTrafficPolicyInstancesInput {
             "ListTrafficPolicyInstances",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesInput`](crate::input::ListTrafficPolicyInstancesInput).
@@ -10346,7 +10346,7 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicyInstancesByHostedZone,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10450,7 +10450,7 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
             "ListTrafficPolicyInstancesByHostedZone",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByHostedZoneInput`](crate::input::ListTrafficPolicyInstancesByHostedZoneInput).
@@ -10589,7 +10589,7 @@ impl ListTrafficPolicyInstancesByPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicyInstancesByPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10705,7 +10705,7 @@ impl ListTrafficPolicyInstancesByPolicyInput {
             "ListTrafficPolicyInstancesByPolicy",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByPolicyInput`](crate::input::ListTrafficPolicyInstancesByPolicyInput).
@@ -10789,7 +10789,7 @@ impl ListTrafficPolicyVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicyVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10898,7 +10898,7 @@ impl ListTrafficPolicyVersionsInput {
             "ListTrafficPolicyVersions",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTrafficPolicyVersionsInput`](crate::input::ListTrafficPolicyVersionsInput).
@@ -10977,7 +10977,7 @@ impl ListVpcAssociationAuthorizationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVPCAssociationAuthorizations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11088,7 +11088,7 @@ impl ListVpcAssociationAuthorizationsInput {
             "ListVPCAssociationAuthorizations",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput).
@@ -11217,7 +11217,7 @@ impl TestDnsAnswerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestDNSAnswer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11335,7 +11335,7 @@ impl TestDnsAnswerInput {
             "TestDNSAnswer",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput).
@@ -11774,7 +11774,7 @@ impl UpdateHealthCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateHealthCheck,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11881,7 +11881,7 @@ impl UpdateHealthCheckInput {
             "UpdateHealthCheck",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateHealthCheckInput`](crate::input::UpdateHealthCheckInput).
@@ -11945,7 +11945,7 @@ impl UpdateHostedZoneCommentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateHostedZoneComment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12051,7 +12051,7 @@ impl UpdateHostedZoneCommentInput {
             "UpdateHostedZoneComment",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateHostedZoneCommentInput`](crate::input::UpdateHostedZoneCommentInput).
@@ -12127,7 +12127,7 @@ impl UpdateTrafficPolicyCommentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrafficPolicyComment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12249,7 +12249,7 @@ impl UpdateTrafficPolicyCommentInput {
             "UpdateTrafficPolicyComment",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyCommentInput`](crate::input::UpdateTrafficPolicyCommentInput).
@@ -12340,7 +12340,7 @@ impl UpdateTrafficPolicyInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrafficPolicyInstance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12442,7 +12442,7 @@ impl UpdateTrafficPolicyInstanceInput {
             "UpdateTrafficPolicyInstance",
             "route53",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyInstanceInput`](crate::input::UpdateTrafficPolicyInstanceInput).

@@ -5,6 +5,7 @@
 
 use crate::body::SdkBody;
 use crate::property_bag::{PropertyBag, SharedPropertyBag};
+use crate::retry::DefaultResponseRetryClassifier;
 use aws_smithy_types::date_time::DateTimeFormatError;
 use http::uri::InvalidUri;
 use std::borrow::Cow;
@@ -42,7 +43,7 @@ impl Metadata {
 #[derive(Clone, Debug)]
 pub struct Parts<H, R> {
     pub response_handler: H,
-    pub retry_policy: R,
+    pub retry_classifier: R,
     pub metadata: Option<Metadata>,
 }
 
@@ -166,6 +167,9 @@ impl From<DateTimeFormatError> for SerializationError {
     }
 }
 
+// Generics:
+// - H: Response handler
+// - R: Implementation of `ClassifyRetry`
 #[derive(Debug)]
 pub struct Operation<H, R> {
     request: Request,
@@ -203,19 +207,19 @@ impl<H, R> Operation<H, R> {
         self
     }
 
-    pub fn with_retry_policy<R2>(self, retry_policy: R2) -> Operation<H, R2> {
+    pub fn with_retry_classifier<R2>(self, retry_classifier: R2) -> Operation<H, R2> {
         Operation {
             request: self.request,
             parts: Parts {
                 response_handler: self.parts.response_handler,
-                retry_policy,
+                retry_classifier,
                 metadata: self.parts.metadata,
             },
         }
     }
 
-    pub fn retry_policy(&self) -> &R {
-        &self.parts.retry_policy
+    pub fn retry_classifier(&self) -> &R {
+        &self.parts.retry_classifier
     }
 
     pub fn try_clone(&self) -> Option<Self>
@@ -232,12 +236,15 @@ impl<H, R> Operation<H, R> {
 }
 
 impl<H> Operation<H, ()> {
-    pub fn new(request: Request, response_handler: H) -> Self {
+    pub fn new(
+        request: Request,
+        response_handler: H,
+    ) -> Operation<H, DefaultResponseRetryClassifier> {
         Operation {
             request,
             parts: Parts {
                 response_handler,
-                retry_policy: (),
+                retry_classifier: DefaultResponseRetryClassifier::new(),
                 metadata: None,
             },
         }

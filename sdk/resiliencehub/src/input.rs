@@ -66,7 +66,7 @@ impl AddDraftAppVersionResourceMappingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddDraftAppVersionResourceMappings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -154,7 +154,7 @@ impl AddDraftAppVersionResourceMappingsInput {
             "AddDraftAppVersionResourceMappings",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddDraftAppVersionResourceMappingsInput`](crate::input::AddDraftAppVersionResourceMappingsInput).
@@ -287,7 +287,7 @@ impl CreateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -376,7 +376,7 @@ impl CreateAppInput {
                     "CreateApp",
                     "resiliencehub",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::input::CreateAppInput).
@@ -625,7 +625,7 @@ impl CreateRecommendationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRecommendationTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -716,7 +716,7 @@ impl CreateRecommendationTemplateInput {
             "CreateRecommendationTemplate",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRecommendationTemplateInput`](crate::input::CreateRecommendationTemplateInput).
@@ -888,7 +888,7 @@ impl CreateResiliencyPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResiliencyPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -981,7 +981,7 @@ impl CreateResiliencyPolicyInput {
             "CreateResiliencyPolicy",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateResiliencyPolicyInput`](crate::input::CreateResiliencyPolicyInput).
@@ -1054,7 +1054,7 @@ impl DeleteAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1143,7 +1143,7 @@ impl DeleteAppInput {
                     "DeleteApp",
                     "resiliencehub",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::input::DeleteAppInput).
@@ -1208,7 +1208,7 @@ impl DeleteAppAssessmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppAssessment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1299,7 +1299,7 @@ impl DeleteAppAssessmentInput {
             "DeleteAppAssessment",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppAssessmentInput`](crate::input::DeleteAppAssessmentInput).
@@ -1369,7 +1369,7 @@ impl DeleteRecommendationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecommendationTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1460,7 +1460,7 @@ impl DeleteRecommendationTemplateInput {
             "DeleteRecommendationTemplate",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRecommendationTemplateInput`](crate::input::DeleteRecommendationTemplateInput).
@@ -1522,7 +1522,7 @@ impl DeleteResiliencyPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResiliencyPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1615,7 +1615,7 @@ impl DeleteResiliencyPolicyInput {
             "DeleteResiliencyPolicy",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResiliencyPolicyInput`](crate::input::DeleteResiliencyPolicyInput).
@@ -1665,7 +1665,7 @@ impl DescribeAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1753,7 +1753,7 @@ impl DescribeAppInput {
             "DescribeApp",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInput`](crate::input::DescribeAppInput).
@@ -1806,7 +1806,7 @@ impl DescribeAppAssessmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppAssessment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1896,7 +1896,7 @@ impl DescribeAppAssessmentInput {
             "DescribeAppAssessment",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppAssessmentInput`](crate::input::DescribeAppAssessmentInput).
@@ -1977,7 +1977,7 @@ impl DescribeAppVersionResourcesResolutionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppVersionResourcesResolutionStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2065,7 +2065,7 @@ impl DescribeAppVersionResourcesResolutionStatusInput {
             "DescribeAppVersionResourcesResolutionStatus",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionResourcesResolutionStatusInput`](crate::input::DescribeAppVersionResourcesResolutionStatusInput).
@@ -2130,7 +2130,7 @@ impl DescribeAppVersionTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppVersionTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2218,7 +2218,7 @@ impl DescribeAppVersionTemplateInput {
             "DescribeAppVersionTemplate",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionTemplateInput`](crate::input::DescribeAppVersionTemplateInput).
@@ -2272,7 +2272,7 @@ impl DescribeDraftAppVersionResourcesImportStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDraftAppVersionResourcesImportStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2363,7 +2363,7 @@ impl DescribeDraftAppVersionResourcesImportStatusInput {
             "DescribeDraftAppVersionResourcesImportStatus",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::input::DescribeDraftAppVersionResourcesImportStatusInput).
@@ -2416,7 +2416,7 @@ impl DescribeResiliencyPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResiliencyPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2506,7 +2506,7 @@ impl DescribeResiliencyPolicyInput {
             "DescribeResiliencyPolicy",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeResiliencyPolicyInput`](crate::input::DescribeResiliencyPolicyInput).
@@ -2601,7 +2601,7 @@ impl ImportResourcesToDraftAppVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportResourcesToDraftAppVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2689,7 +2689,7 @@ impl ImportResourcesToDraftAppVersionInput {
             "ImportResourcesToDraftAppVersion",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ImportResourcesToDraftAppVersionInput`](crate::input::ImportResourcesToDraftAppVersionInput).
@@ -2768,7 +2768,7 @@ impl ListAlarmRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAlarmRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2858,7 +2858,7 @@ impl ListAlarmRecommendationsInput {
             "ListAlarmRecommendations",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAlarmRecommendationsInput`](crate::input::ListAlarmRecommendationsInput).
@@ -3011,7 +3011,7 @@ impl ListAppAssessmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppAssessments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3134,7 +3134,7 @@ impl ListAppAssessmentsInput {
             "ListAppAssessments",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppAssessmentsInput`](crate::input::ListAppAssessmentsInput).
@@ -3213,7 +3213,7 @@ impl ListAppComponentCompliancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppComponentCompliances,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3301,7 +3301,7 @@ impl ListAppComponentCompliancesInput {
             "ListAppComponentCompliances",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppComponentCompliancesInput`](crate::input::ListAppComponentCompliancesInput).
@@ -3380,7 +3380,7 @@ impl ListAppComponentRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppComponentRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3468,7 +3468,7 @@ impl ListAppComponentRecommendationsInput {
             "ListAppComponentRecommendations",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppComponentRecommendationsInput`](crate::input::ListAppComponentRecommendationsInput).
@@ -3553,7 +3553,7 @@ impl ListAppsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApps,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3648,7 +3648,7 @@ impl ListAppsInput {
                     "ListApps",
                     "resiliencehub",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::input::ListAppsInput).
@@ -3736,7 +3736,7 @@ impl ListAppVersionResourceMappingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppVersionResourceMappings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3824,7 +3824,7 @@ impl ListAppVersionResourceMappingsInput {
             "ListAppVersionResourceMappings",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourceMappingsInput`](crate::input::ListAppVersionResourceMappingsInput).
@@ -3927,7 +3927,7 @@ impl ListAppVersionResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppVersionResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4017,7 +4017,7 @@ impl ListAppVersionResourcesInput {
             "ListAppVersionResources",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourcesInput`](crate::input::ListAppVersionResourcesInput).
@@ -4091,7 +4091,7 @@ impl ListAppVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4179,7 +4179,7 @@ impl ListAppVersionsInput {
             "ListAppVersions",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAppVersionsInput`](crate::input::ListAppVersionsInput).
@@ -4322,7 +4322,7 @@ impl ListRecommendationTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecommendationTemplates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4440,7 +4440,7 @@ impl ListRecommendationTemplatesInput {
             "ListRecommendationTemplates",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRecommendationTemplatesInput`](crate::input::ListRecommendationTemplatesInput).
@@ -4514,7 +4514,7 @@ impl ListResiliencyPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResiliencyPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4608,7 +4608,7 @@ impl ListResiliencyPoliciesInput {
             "ListResiliencyPolicies",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResiliencyPoliciesInput`](crate::input::ListResiliencyPoliciesInput).
@@ -4685,7 +4685,7 @@ impl ListSopRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSopRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4775,7 +4775,7 @@ impl ListSopRecommendationsInput {
             "ListSopRecommendations",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSopRecommendationsInput`](crate::input::ListSopRecommendationsInput).
@@ -4839,7 +4839,7 @@ impl ListSuggestedResiliencyPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSuggestedResiliencyPolicies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4931,7 +4931,7 @@ impl ListSuggestedResiliencyPoliciesInput {
             "ListSuggestedResiliencyPolicies",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSuggestedResiliencyPoliciesInput`](crate::input::ListSuggestedResiliencyPoliciesInput).
@@ -4981,7 +4981,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5070,7 +5070,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -5149,7 +5149,7 @@ impl ListTestRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTestRecommendations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5239,7 +5239,7 @@ impl ListTestRecommendationsInput {
             "ListTestRecommendations",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTestRecommendationsInput`](crate::input::ListTestRecommendationsInput).
@@ -5342,7 +5342,7 @@ impl ListUnsupportedAppVersionResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUnsupportedAppVersionResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5430,7 +5430,7 @@ impl ListUnsupportedAppVersionResourcesInput {
             "ListUnsupportedAppVersionResources",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListUnsupportedAppVersionResourcesInput`](crate::input::ListUnsupportedAppVersionResourcesInput).
@@ -5480,7 +5480,7 @@ impl PublishAppVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PublishAppVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5568,7 +5568,7 @@ impl PublishAppVersionInput {
             "PublishAppVersion",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PublishAppVersionInput`](crate::input::PublishAppVersionInput).
@@ -5635,7 +5635,7 @@ impl PutDraftAppVersionTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDraftAppVersionTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5723,7 +5723,7 @@ impl PutDraftAppVersionTemplateInput {
             "PutDraftAppVersionTemplate",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutDraftAppVersionTemplateInput`](crate::input::PutDraftAppVersionTemplateInput).
@@ -5880,7 +5880,7 @@ impl RemoveDraftAppVersionResourceMappingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveDraftAppVersionResourceMappings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5968,7 +5968,7 @@ impl RemoveDraftAppVersionResourceMappingsInput {
             "RemoveDraftAppVersionResourceMappings",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RemoveDraftAppVersionResourceMappingsInput`](crate::input::RemoveDraftAppVersionResourceMappingsInput).
@@ -6032,7 +6032,7 @@ impl ResolveAppVersionResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResolveAppVersionResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6120,7 +6120,7 @@ impl ResolveAppVersionResourcesInput {
             "ResolveAppVersionResources",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ResolveAppVersionResourcesInput`](crate::input::ResolveAppVersionResourcesInput).
@@ -6238,7 +6238,7 @@ impl StartAppAssessmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAppAssessment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6329,7 +6329,7 @@ impl StartAppAssessmentInput {
             "StartAppAssessment",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartAppAssessmentInput`](crate::input::StartAppAssessmentInput).
@@ -6408,7 +6408,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6511,7 +6511,7 @@ impl TagResourceInput {
             "TagResource",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -6582,7 +6582,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6684,7 +6684,7 @@ impl UntagResourceInput {
             "UntagResource",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -6788,7 +6788,7 @@ impl UpdateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApp,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6874,7 +6874,7 @@ impl UpdateAppInput {
                     "UpdateApp",
                     "resiliencehub",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAppInput`](crate::input::UpdateAppInput).
@@ -7017,7 +7017,7 @@ impl UpdateResiliencyPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResiliencyPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7107,7 +7107,7 @@ impl UpdateResiliencyPolicyInput {
             "UpdateResiliencyPolicy",
             "resiliencehub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResiliencyPolicyInput`](crate::input::UpdateResiliencyPolicyInput).

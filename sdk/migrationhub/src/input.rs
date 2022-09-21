@@ -89,7 +89,7 @@ impl AssociateCreatedArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateCreatedArtifact,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -184,7 +184,7 @@ impl AssociateCreatedArtifactInput {
             "AssociateCreatedArtifact",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateCreatedArtifactInput`](crate::input::AssociateCreatedArtifactInput).
@@ -281,7 +281,7 @@ impl AssociateDiscoveredResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateDiscoveredResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -373,7 +373,7 @@ impl AssociateDiscoveredResourceInput {
             "AssociateDiscoveredResource",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceInput`](crate::input::AssociateDiscoveredResourceInput).
@@ -443,7 +443,7 @@ impl CreateProgressUpdateStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProgressUpdateStream,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -535,7 +535,7 @@ impl CreateProgressUpdateStreamInput {
             "CreateProgressUpdateStream",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamInput`](crate::input::CreateProgressUpdateStreamInput).
@@ -605,7 +605,7 @@ impl DeleteProgressUpdateStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProgressUpdateStream,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -697,7 +697,7 @@ impl DeleteProgressUpdateStreamInput {
             "DeleteProgressUpdateStream",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteProgressUpdateStreamInput`](crate::input::DeleteProgressUpdateStreamInput).
@@ -752,7 +752,7 @@ impl DescribeApplicationStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -847,7 +847,7 @@ impl DescribeApplicationStateInput {
             "DescribeApplicationState",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeApplicationStateInput`](crate::input::DescribeApplicationStateInput).
@@ -915,7 +915,7 @@ impl DescribeMigrationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMigrationTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1010,7 +1010,7 @@ impl DescribeMigrationTaskInput {
             "DescribeMigrationTask",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskInput`](crate::input::DescribeMigrationTaskInput).
@@ -1107,7 +1107,7 @@ impl DisassociateCreatedArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateCreatedArtifact,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1199,7 +1199,7 @@ impl DisassociateCreatedArtifactInput {
             "DisassociateCreatedArtifact",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactInput`](crate::input::DisassociateCreatedArtifactInput).
@@ -1296,7 +1296,7 @@ impl DisassociateDiscoveredResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateDiscoveredResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1388,7 +1388,7 @@ impl DisassociateDiscoveredResourceInput {
             "DisassociateDiscoveredResource",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateDiscoveredResourceInput`](crate::input::DisassociateDiscoveredResourceInput).
@@ -1468,7 +1468,7 @@ impl ImportMigrationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportMigrationTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1561,7 +1561,7 @@ impl ImportMigrationTaskInput {
             "ImportMigrationTask",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ImportMigrationTaskInput`](crate::input::ImportMigrationTaskInput).
@@ -1644,7 +1644,7 @@ impl ListApplicationStatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationStates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1739,7 +1739,7 @@ impl ListApplicationStatesInput {
             "ListApplicationStates",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListApplicationStatesInput`](crate::input::ListApplicationStatesInput).
@@ -1831,7 +1831,7 @@ impl ListCreatedArtifactsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCreatedArtifacts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1926,7 +1926,7 @@ impl ListCreatedArtifactsInput {
             "ListCreatedArtifacts",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsInput`](crate::input::ListCreatedArtifactsInput).
@@ -2020,7 +2020,7 @@ impl ListDiscoveredResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDiscoveredResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2115,7 +2115,7 @@ impl ListDiscoveredResourcesInput {
             "ListDiscoveredResources",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
@@ -2192,7 +2192,7 @@ impl ListMigrationTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMigrationTasks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2285,7 +2285,7 @@ impl ListMigrationTasksInput {
             "ListMigrationTasks",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListMigrationTasksInput`](crate::input::ListMigrationTasksInput).
@@ -2349,7 +2349,7 @@ impl ListProgressUpdateStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProgressUpdateStreams,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2444,7 +2444,7 @@ impl ListProgressUpdateStreamsInput {
             "ListProgressUpdateStreams",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListProgressUpdateStreamsInput`](crate::input::ListProgressUpdateStreamsInput).
@@ -2539,7 +2539,7 @@ impl NotifyApplicationStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyApplicationState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2634,7 +2634,7 @@ impl NotifyApplicationStateInput {
             "NotifyApplicationState",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`NotifyApplicationStateInput`](crate::input::NotifyApplicationStateInput).
@@ -2755,7 +2755,7 @@ impl NotifyMigrationTaskStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyMigrationTaskState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2850,7 +2850,7 @@ impl NotifyMigrationTaskStateInput {
             "NotifyMigrationTaskState",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateInput`](crate::input::NotifyMigrationTaskStateInput).
@@ -2966,7 +2966,7 @@ impl PutResourceAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourceAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3061,7 +3061,7 @@ impl PutResourceAttributesInput {
             "PutResourceAttributes",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutResourceAttributesInput`](crate::input::PutResourceAttributesInput).

@@ -54,7 +54,7 @@ impl DeleteThingShadowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteThingShadow,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -154,7 +154,7 @@ impl DeleteThingShadowInput {
             "DeleteThingShadow",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
@@ -202,7 +202,7 @@ impl GetRetainedMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRetainedMessage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -291,7 +291,7 @@ impl GetRetainedMessageInput {
             "GetRetainedMessage",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
@@ -353,7 +353,7 @@ impl GetThingShadowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetThingShadow,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -453,7 +453,7 @@ impl GetThingShadowInput {
             "GetThingShadow",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetThingShadowInput`](crate::input::GetThingShadowInput).
@@ -529,7 +529,7 @@ impl ListNamedShadowsForThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNamedShadowsForThing,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -639,7 +639,7 @@ impl ListNamedShadowsForThingInput {
             "ListNamedShadowsForThing",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput).
@@ -701,7 +701,7 @@ impl ListRetainedMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRetainedMessages,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -792,7 +792,7 @@ impl ListRetainedMessagesInput {
             "ListRetainedMessages",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
@@ -885,7 +885,7 @@ impl PublishInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Publish,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1006,7 +1006,7 @@ impl PublishInput {
                     "Publish",
                     "iotdataplane",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PublishInput`](crate::input::PublishInput).
@@ -1080,7 +1080,7 @@ impl UpdateThingShadowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateThingShadow,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1194,7 +1194,7 @@ impl UpdateThingShadowInput {
             "UpdateThingShadow",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).

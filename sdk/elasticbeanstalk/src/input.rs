@@ -60,7 +60,7 @@ impl AbortEnvironmentUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AbortEnvironmentUpdate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -150,7 +150,7 @@ impl AbortEnvironmentUpdateInput {
             "AbortEnvironmentUpdate",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AbortEnvironmentUpdateInput`](crate::input::AbortEnvironmentUpdateInput).
@@ -232,7 +232,7 @@ impl ApplyEnvironmentManagedActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApplyEnvironmentManagedAction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -319,7 +319,7 @@ impl ApplyEnvironmentManagedActionInput {
             "ApplyEnvironmentManagedAction",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ApplyEnvironmentManagedActionInput`](crate::input::ApplyEnvironmentManagedActionInput).
@@ -389,7 +389,7 @@ impl AssociateEnvironmentOperationsRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateEnvironmentOperationsRole,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -476,7 +476,7 @@ impl AssociateEnvironmentOperationsRoleInput {
             "AssociateEnvironmentOperationsRole",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateEnvironmentOperationsRoleInput`](crate::input::AssociateEnvironmentOperationsRoleInput).
@@ -526,7 +526,7 @@ impl CheckDnsAvailabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckDNSAvailability,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -616,7 +616,7 @@ impl CheckDnsAvailabilityInput {
             "CheckDNSAvailability",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CheckDnsAvailabilityInput`](crate::input::CheckDnsAvailabilityInput).
@@ -702,7 +702,7 @@ impl ComposeEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ComposeEnvironments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -790,7 +790,7 @@ impl ComposeEnvironmentsInput {
             "ComposeEnvironments",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ComposeEnvironmentsInput`](crate::input::ComposeEnvironmentsInput).
@@ -897,7 +897,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -985,7 +985,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
@@ -1177,7 +1177,7 @@ impl CreateApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplicationVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1267,7 +1267,7 @@ impl CreateApplicationVersionInput {
             "CreateApplicationVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput).
@@ -1465,7 +1465,7 @@ impl CreateConfigurationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1552,7 +1552,7 @@ impl CreateConfigurationTemplateInput {
             "CreateConfigurationTemplate",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateConfigurationTemplateInput`](crate::input::CreateConfigurationTemplateInput).
@@ -1826,7 +1826,7 @@ impl CreateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1914,7 +1914,7 @@ impl CreateEnvironmentInput {
             "CreateEnvironment",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
@@ -2057,7 +2057,7 @@ impl CreatePlatformVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlatformVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2147,7 +2147,7 @@ impl CreatePlatformVersionInput {
             "CreatePlatformVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePlatformVersionInput`](crate::input::CreatePlatformVersionInput).
@@ -2183,7 +2183,7 @@ impl CreateStorageLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStorageLocation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2266,7 +2266,7 @@ impl CreateStorageLocationInput {
             "CreateStorageLocation",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateStorageLocationInput`](crate::input::CreateStorageLocationInput).
@@ -2331,7 +2331,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2419,7 +2419,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
@@ -2501,7 +2501,7 @@ impl DeleteApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2591,7 +2591,7 @@ impl DeleteApplicationVersionInput {
             "DeleteApplicationVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApplicationVersionInput`](crate::input::DeleteApplicationVersionInput).
@@ -2661,7 +2661,7 @@ impl DeleteConfigurationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2748,7 +2748,7 @@ impl DeleteConfigurationTemplateInput {
             "DeleteConfigurationTemplate",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationTemplateInput`](crate::input::DeleteConfigurationTemplateInput).
@@ -2818,7 +2818,7 @@ impl DeleteEnvironmentConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironmentConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2905,7 +2905,7 @@ impl DeleteEnvironmentConfigurationInput {
             "DeleteEnvironmentConfiguration",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentConfigurationInput`](crate::input::DeleteEnvironmentConfigurationInput).
@@ -2955,7 +2955,7 @@ impl DeletePlatformVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePlatformVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3045,7 +3045,7 @@ impl DeletePlatformVersionInput {
             "DeletePlatformVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePlatformVersionInput`](crate::input::DeletePlatformVersionInput).
@@ -3083,7 +3083,7 @@ impl DescribeAccountAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountAttributes,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3166,7 +3166,7 @@ impl DescribeAccountAttributesInput {
             "DescribeAccountAttributes",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
@@ -3225,7 +3225,7 @@ impl DescribeApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplications,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3313,7 +3313,7 @@ impl DescribeApplicationsInput {
             "DescribeApplications",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput).
@@ -3417,7 +3417,7 @@ impl DescribeApplicationVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3504,7 +3504,7 @@ impl DescribeApplicationVersionsInput {
             "DescribeApplicationVersions",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionsInput`](crate::input::DescribeApplicationVersionsInput).
@@ -3637,7 +3637,7 @@ impl DescribeConfigurationOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3724,7 +3724,7 @@ impl DescribeConfigurationOptionsInput {
             "DescribeConfigurationOptions",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationOptionsInput`](crate::input::DescribeConfigurationOptionsInput).
@@ -3813,7 +3813,7 @@ impl DescribeConfigurationSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3900,7 +3900,7 @@ impl DescribeConfigurationSettingsInput {
             "DescribeConfigurationSettings",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSettingsInput`](crate::input::DescribeConfigurationSettingsInput).
@@ -3996,7 +3996,7 @@ impl DescribeEnvironmentHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironmentHealth,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4086,7 +4086,7 @@ impl DescribeEnvironmentHealthInput {
             "DescribeEnvironmentHealth",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentHealthInput`](crate::input::DescribeEnvironmentHealthInput).
@@ -4180,7 +4180,7 @@ impl DescribeEnvironmentManagedActionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironmentManagedActionHistory,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4267,7 +4267,7 @@ impl DescribeEnvironmentManagedActionHistoryInput {
             "DescribeEnvironmentManagedActionHistory",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionHistoryInput`](crate::input::DescribeEnvironmentManagedActionHistoryInput).
@@ -4352,7 +4352,7 @@ impl DescribeEnvironmentManagedActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironmentManagedActions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4439,7 +4439,7 @@ impl DescribeEnvironmentManagedActionsInput {
             "DescribeEnvironmentManagedActions",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionsInput`](crate::input::DescribeEnvironmentManagedActionsInput).
@@ -4513,7 +4513,7 @@ impl DescribeEnvironmentResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironmentResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4600,7 +4600,7 @@ impl DescribeEnvironmentResourcesInput {
             "DescribeEnvironmentResources",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentResourcesInput`](crate::input::DescribeEnvironmentResourcesInput).
@@ -4769,7 +4769,7 @@ impl DescribeEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEnvironments,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4857,7 +4857,7 @@ impl DescribeEnvironmentsInput {
             "DescribeEnvironments",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput).
@@ -5063,7 +5063,7 @@ impl DescribeEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEvents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5151,7 +5151,7 @@ impl DescribeEventsInput {
             "DescribeEvents",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput).
@@ -5255,7 +5255,7 @@ impl DescribeInstancesHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstancesHealth,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5345,7 +5345,7 @@ impl DescribeInstancesHealthInput {
             "DescribeInstancesHealth",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInstancesHealthInput`](crate::input::DescribeInstancesHealthInput).
@@ -5397,7 +5397,7 @@ impl DescribePlatformVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePlatformVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5487,7 +5487,7 @@ impl DescribePlatformVersionInput {
             "DescribePlatformVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePlatformVersionInput`](crate::input::DescribePlatformVersionInput).
@@ -5542,7 +5542,7 @@ impl DisassociateEnvironmentOperationsRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateEnvironmentOperationsRole,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5629,7 +5629,7 @@ impl DisassociateEnvironmentOperationsRoleInput {
             "DisassociateEnvironmentOperationsRole",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateEnvironmentOperationsRoleInput`](crate::input::DisassociateEnvironmentOperationsRoleInput).
@@ -5667,7 +5667,7 @@ impl ListAvailableSolutionStacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableSolutionStacks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5747,7 +5747,7 @@ impl ListAvailableSolutionStacksInput {
             "ListAvailableSolutionStacks",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAvailableSolutionStacksInput`](crate::input::ListAvailableSolutionStacksInput).
@@ -5878,7 +5878,7 @@ impl ListPlatformBranchesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlatformBranches,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5968,7 +5968,7 @@ impl ListPlatformBranchesInput {
             "ListPlatformBranches",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPlatformBranchesInput`](crate::input::ListPlatformBranchesInput).
@@ -6053,7 +6053,7 @@ impl ListPlatformVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlatformVersions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6143,7 +6143,7 @@ impl ListPlatformVersionsInput {
             "ListPlatformVersions",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPlatformVersionsInput`](crate::input::ListPlatformVersionsInput).
@@ -6195,7 +6195,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6285,7 +6285,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -6357,7 +6357,7 @@ impl RebuildEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RebuildEnvironment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6445,7 +6445,7 @@ impl RebuildEnvironmentInput {
             "RebuildEnvironment",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RebuildEnvironmentInput`](crate::input::RebuildEnvironmentInput).
@@ -6536,7 +6536,7 @@ impl RequestEnvironmentInfoInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestEnvironmentInfo,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6626,7 +6626,7 @@ impl RequestEnvironmentInfoInput {
             "RequestEnvironmentInfo",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RequestEnvironmentInfoInput`](crate::input::RequestEnvironmentInfoInput).
@@ -6698,7 +6698,7 @@ impl RestartAppServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestartAppServer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6786,7 +6786,7 @@ impl RestartAppServerInput {
             "RestartAppServer",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RestartAppServerInput`](crate::input::RestartAppServerInput).
@@ -6879,7 +6879,7 @@ impl RetrieveEnvironmentInfoInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RetrieveEnvironmentInfo,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6969,7 +6969,7 @@ impl RetrieveEnvironmentInfoInput {
             "RetrieveEnvironmentInfo",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RetrieveEnvironmentInfoInput`](crate::input::RetrieveEnvironmentInfoInput).
@@ -7078,7 +7078,7 @@ impl SwapEnvironmentCnamEsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SwapEnvironmentCNAMEs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7168,7 +7168,7 @@ impl SwapEnvironmentCnamEsInput {
             "SwapEnvironmentCNAMEs",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SwapEnvironmentCnamEsInput`](crate::input::SwapEnvironmentCnamEsInput).
@@ -7278,7 +7278,7 @@ impl TerminateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateEnvironment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7366,7 +7366,7 @@ impl TerminateEnvironmentInput {
             "TerminateEnvironment",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TerminateEnvironmentInput`](crate::input::TerminateEnvironmentInput).
@@ -7433,7 +7433,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7521,7 +7521,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
@@ -7595,7 +7595,7 @@ impl UpdateApplicationResourceLifecycleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplicationResourceLifecycle,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7682,7 +7682,7 @@ impl UpdateApplicationResourceLifecycleInput {
             "UpdateApplicationResourceLifecycle",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateApplicationResourceLifecycleInput`](crate::input::UpdateApplicationResourceLifecycleInput).
@@ -7768,7 +7768,7 @@ impl UpdateApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplicationVersion,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7858,7 +7858,7 @@ impl UpdateApplicationVersionInput {
             "UpdateApplicationVersion",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateApplicationVersionInput`](crate::input::UpdateApplicationVersionInput).
@@ -7990,7 +7990,7 @@ impl UpdateConfigurationTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8077,7 +8077,7 @@ impl UpdateConfigurationTemplateInput {
             "UpdateConfigurationTemplate",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationTemplateInput`](crate::input::UpdateConfigurationTemplateInput).
@@ -8308,7 +8308,7 @@ impl UpdateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnvironment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8396,7 +8396,7 @@ impl UpdateEnvironmentInput {
             "UpdateEnvironment",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
@@ -8494,7 +8494,7 @@ impl UpdateTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8584,7 +8584,7 @@ impl UpdateTagsForResourceInput {
             "UpdateTagsForResource",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTagsForResourceInput`](crate::input::UpdateTagsForResourceInput).
@@ -8695,7 +8695,7 @@ impl ValidateConfigurationSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ValidateConfigurationSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8782,7 +8782,7 @@ impl ValidateConfigurationSettingsInput {
             "ValidateConfigurationSettings",
             "elasticbeanstalk",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ValidateConfigurationSettingsInput`](crate::input::ValidateConfigurationSettingsInput).

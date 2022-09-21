@@ -40,7 +40,7 @@ impl DeleteLexiconInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLexicon,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -129,7 +129,7 @@ impl DeleteLexiconInput {
             "DeleteLexicon",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLexiconInput`](crate::input::DeleteLexiconInput).
@@ -223,7 +223,7 @@ impl DescribeVoicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVoices,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -326,7 +326,7 @@ impl DescribeVoicesInput {
             "DescribeVoices",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeVoicesInput`](crate::input::DescribeVoicesInput).
@@ -373,7 +373,7 @@ impl GetLexiconInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLexicon,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -462,7 +462,7 @@ impl GetLexiconInput {
             "GetLexicon",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLexiconInput`](crate::input::GetLexiconInput).
@@ -512,7 +512,7 @@ impl GetSpeechSynthesisTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSpeechSynthesisTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -601,7 +601,7 @@ impl GetSpeechSynthesisTaskInput {
             "GetSpeechSynthesisTask",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput).
@@ -651,7 +651,7 @@ impl ListLexiconsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLexicons,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -736,7 +736,7 @@ impl ListLexiconsInput {
             "ListLexicons",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLexiconsInput`](crate::input::ListLexiconsInput).
@@ -812,7 +812,7 @@ impl ListSpeechSynthesisTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSpeechSynthesisTasks,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -906,7 +906,7 @@ impl ListSpeechSynthesisTasksInput {
             "ListSpeechSynthesisTasks",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput).
@@ -967,7 +967,7 @@ impl PutLexiconInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLexicon,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1070,7 +1070,7 @@ impl PutLexiconInput {
             "PutLexicon",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutLexiconInput`](crate::input::PutLexiconInput).
@@ -1294,7 +1294,7 @@ impl StartSpeechSynthesisTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSpeechSynthesisTask,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1384,7 +1384,7 @@ impl StartSpeechSynthesisTaskInput {
             "StartSpeechSynthesisTask",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput).
@@ -1577,7 +1577,7 @@ impl SynthesizeSpeechInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SynthesizeSpeech,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1702,7 +1702,7 @@ impl SynthesizeSpeechInput {
             "SynthesizeSpeech",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     ///
@@ -1757,7 +1757,7 @@ impl SynthesizeSpeechInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SynthesizeSpeech,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1845,7 +1845,7 @@ impl SynthesizeSpeechInput {
             "SynthesizeSpeech",
             "polly",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput).

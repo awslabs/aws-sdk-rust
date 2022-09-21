@@ -75,7 +75,7 @@ impl AddLfTagsToResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddLFTagsToResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -165,7 +165,7 @@ impl AddLfTagsToResourceInput {
             "AddLFTagsToResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AddLfTagsToResourceInput`](crate::input::AddLfTagsToResourceInput).
@@ -259,7 +259,7 @@ impl AssumeDecoratedRoleWithSamlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssumeDecoratedRoleWithSAML,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -346,7 +346,7 @@ impl AssumeDecoratedRoleWithSamlInput {
             "AssumeDecoratedRoleWithSAML",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssumeDecoratedRoleWithSamlInput`](crate::input::AssumeDecoratedRoleWithSamlInput).
@@ -418,7 +418,7 @@ impl BatchGrantPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGrantPermissions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -508,7 +508,7 @@ impl BatchGrantPermissionsInput {
             "BatchGrantPermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchGrantPermissionsInput`](crate::input::BatchGrantPermissionsInput).
@@ -580,7 +580,7 @@ impl BatchRevokePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchRevokePermissions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -670,7 +670,7 @@ impl BatchRevokePermissionsInput {
             "BatchRevokePermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchRevokePermissionsInput`](crate::input::BatchRevokePermissionsInput).
@@ -723,7 +723,7 @@ impl CancelTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelTransaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -811,7 +811,7 @@ impl CancelTransactionInput {
             "CancelTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CancelTransactionInput`](crate::input::CancelTransactionInput).
@@ -864,7 +864,7 @@ impl CommitTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CommitTransaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -952,7 +952,7 @@ impl CommitTransactionInput {
             "CommitTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::input::CommitTransactionInput).
@@ -1005,7 +1005,7 @@ impl CreateDataCellsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataCellsFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1095,7 +1095,7 @@ impl CreateDataCellsFilterInput {
             "CreateDataCellsFilter",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput).
@@ -1178,7 +1178,7 @@ impl CreateLfTagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLFTag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1266,7 +1266,7 @@ impl CreateLfTagInput {
             "CreateLFTag",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateLfTagInput`](crate::input::CreateLfTagInput).
@@ -1358,7 +1358,7 @@ impl DeleteDataCellsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataCellsFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1448,7 +1448,7 @@ impl DeleteDataCellsFilterInput {
             "DeleteDataCellsFilter",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput).
@@ -1510,7 +1510,7 @@ impl DeleteLfTagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLFTag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1598,7 +1598,7 @@ impl DeleteLfTagInput {
             "DeleteLFTag",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteLfTagInput`](crate::input::DeleteLfTagInput).
@@ -1711,7 +1711,7 @@ impl DeleteObjectsOnCancelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteObjectsOnCancel,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1801,7 +1801,7 @@ impl DeleteObjectsOnCancelInput {
             "DeleteObjectsOnCancel",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput).
@@ -1851,7 +1851,7 @@ impl DeregisterResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1939,7 +1939,7 @@ impl DeregisterResourceInput {
             "DeregisterResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeregisterResourceInput`](crate::input::DeregisterResourceInput).
@@ -1989,7 +1989,7 @@ impl DescribeResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2077,7 +2077,7 @@ impl DescribeResourceInput {
             "DescribeResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeResourceInput`](crate::input::DescribeResourceInput).
@@ -2130,7 +2130,7 @@ impl DescribeTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTransaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2218,7 +2218,7 @@ impl DescribeTransactionInput {
             "DescribeTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTransactionInput`](crate::input::DescribeTransactionInput).
@@ -2271,7 +2271,7 @@ impl ExtendTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExtendTransaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2359,7 +2359,7 @@ impl ExtendTransactionInput {
             "ExtendTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ExtendTransactionInput`](crate::input::ExtendTransactionInput).
@@ -2409,7 +2409,7 @@ impl GetDataLakeSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataLakeSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2499,7 +2499,7 @@ impl GetDataLakeSettingsInput {
             "GetDataLakeSettings",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDataLakeSettingsInput`](crate::input::GetDataLakeSettingsInput).
@@ -2587,7 +2587,7 @@ impl GetEffectivePermissionsForPathInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEffectivePermissionsForPath,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2675,7 +2675,7 @@ impl GetEffectivePermissionsForPathInput {
             "GetEffectivePermissionsForPath",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetEffectivePermissionsForPathInput`](crate::input::GetEffectivePermissionsForPathInput).
@@ -2736,7 +2736,7 @@ impl GetLfTagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLFTag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2822,7 +2822,7 @@ impl GetLfTagInput {
                     "GetLFTag",
                     "lakeformation",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetLfTagInput`](crate::input::GetLfTagInput).
@@ -2872,7 +2872,7 @@ impl GetQueryStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQueryState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2962,7 +2962,7 @@ impl GetQueryStateInput {
             "GetQueryState",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetQueryStateInput`](crate::input::GetQueryStateInput).
@@ -3012,7 +3012,7 @@ impl GetQueryStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQueryStatistics,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3102,7 +3102,7 @@ impl GetQueryStatisticsInput {
             "GetQueryStatistics",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput).
@@ -3176,7 +3176,7 @@ impl GetResourceLfTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceLFTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3264,7 +3264,7 @@ impl GetResourceLfTagsInput {
             "GetResourceLFTags",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResourceLfTagsInput`](crate::input::GetResourceLfTagsInput).
@@ -3420,7 +3420,7 @@ impl GetTableObjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTableObjects,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3508,7 +3508,7 @@ impl GetTableObjectsInput {
             "GetTableObjects",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTableObjectsInput`](crate::input::GetTableObjectsInput).
@@ -3645,7 +3645,7 @@ impl GetTemporaryGluePartitionCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTemporaryGluePartitionCredentials,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3733,7 +3733,7 @@ impl GetTemporaryGluePartitionCredentialsInput {
             "GetTemporaryGluePartitionCredentials",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTemporaryGluePartitionCredentialsInput`](crate::input::GetTemporaryGluePartitionCredentialsInput).
@@ -3855,7 +3855,7 @@ impl GetTemporaryGlueTableCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTemporaryGlueTableCredentials,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3943,7 +3943,7 @@ impl GetTemporaryGlueTableCredentialsInput {
             "GetTemporaryGlueTableCredentials",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTemporaryGlueTableCredentialsInput`](crate::input::GetTemporaryGlueTableCredentialsInput).
@@ -4020,7 +4020,7 @@ impl GetWorkUnitResultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkUnitResults,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4110,7 +4110,7 @@ impl GetWorkUnitResultsInput {
             "GetWorkUnitResults",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput).
@@ -4184,7 +4184,7 @@ impl GetWorkUnitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkUnits,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4274,7 +4274,7 @@ impl GetWorkUnitsInput {
             "GetWorkUnits",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput).
@@ -4396,7 +4396,7 @@ impl GrantPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GrantPermissions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4484,7 +4484,7 @@ impl GrantPermissionsInput {
             "GrantPermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GrantPermissionsInput`](crate::input::GrantPermissionsInput).
@@ -4561,7 +4561,7 @@ impl ListDataCellsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDataCellsFilter,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4651,7 +4651,7 @@ impl ListDataCellsFilterInput {
             "ListDataCellsFilter",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput).
@@ -4739,7 +4739,7 @@ impl ListLfTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLFTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4827,7 +4827,7 @@ impl ListLfTagsInput {
             "ListLFTags",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListLfTagsInput`](crate::input::ListLfTagsInput).
@@ -4960,7 +4960,7 @@ impl ListPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPermissions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5048,7 +5048,7 @@ impl ListPermissionsInput {
             "ListPermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPermissionsInput`](crate::input::ListPermissionsInput).
@@ -5132,7 +5132,7 @@ impl ListResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5220,7 +5220,7 @@ impl ListResourcesInput {
             "ListResources",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput).
@@ -5338,7 +5338,7 @@ impl ListTableStorageOptimizersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTableStorageOptimizers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5425,7 +5425,7 @@ impl ListTableStorageOptimizersInput {
             "ListTableStorageOptimizers",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput).
@@ -5514,7 +5514,7 @@ impl ListTransactionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTransactions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5602,7 +5602,7 @@ impl ListTransactionsInput {
             "ListTransactions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTransactionsInput`](crate::input::ListTransactionsInput).
@@ -5667,7 +5667,7 @@ impl PutDataLakeSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDataLakeSettings,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5757,7 +5757,7 @@ impl PutDataLakeSettingsInput {
             "PutDataLakeSettings",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutDataLakeSettingsInput`](crate::input::PutDataLakeSettingsInput).
@@ -5833,7 +5833,7 @@ impl RegisterResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5921,7 +5921,7 @@ impl RegisterResourceInput {
             "RegisterResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RegisterResourceInput`](crate::input::RegisterResourceInput).
@@ -6006,7 +6006,7 @@ impl RemoveLfTagsFromResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveLFTagsFromResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6096,7 +6096,7 @@ impl RemoveLfTagsFromResourceInput {
             "RemoveLFTagsFromResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RemoveLfTagsFromResourceInput`](crate::input::RemoveLfTagsFromResourceInput).
@@ -6216,7 +6216,7 @@ impl RevokePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokePermissions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6304,7 +6304,7 @@ impl RevokePermissionsInput {
             "RevokePermissions",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RevokePermissionsInput`](crate::input::RevokePermissionsInput).
@@ -6401,7 +6401,7 @@ impl SearchDatabasesByLfTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchDatabasesByLFTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6491,7 +6491,7 @@ impl SearchDatabasesByLfTagsInput {
             "SearchDatabasesByLFTags",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchDatabasesByLfTagsInput`](crate::input::SearchDatabasesByLfTagsInput).
@@ -6586,7 +6586,7 @@ impl SearchTablesByLfTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchTablesByLFTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6676,7 +6676,7 @@ impl SearchTablesByLfTagsInput {
             "SearchTablesByLFTags",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`SearchTablesByLfTagsInput`](crate::input::SearchTablesByLfTagsInput).
@@ -6741,7 +6741,7 @@ impl StartQueryPlanningInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartQueryPlanning,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6831,7 +6831,7 @@ impl StartQueryPlanningInput {
             "StartQueryPlanning",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput).
@@ -6884,7 +6884,7 @@ impl StartTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTransaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6972,7 +6972,7 @@ impl StartTransactionInput {
             "StartTransaction",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartTransactionInput`](crate::input::StartTransactionInput).
@@ -7076,7 +7076,7 @@ impl UpdateLfTagInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLFTag,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7164,7 +7164,7 @@ impl UpdateLfTagInput {
             "UpdateLFTag",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateLfTagInput`](crate::input::UpdateLfTagInput).
@@ -7226,7 +7226,7 @@ impl UpdateResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7314,7 +7314,7 @@ impl UpdateResourceInput {
             "UpdateResource",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResourceInput`](crate::input::UpdateResourceInput).
@@ -7428,7 +7428,7 @@ impl UpdateTableObjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTableObjects,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7516,7 +7516,7 @@ impl UpdateTableObjectsInput {
             "UpdateTableObjects",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput).
@@ -7630,7 +7630,7 @@ impl UpdateTableStorageOptimizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTableStorageOptimizer,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7717,7 +7717,7 @@ impl UpdateTableStorageOptimizerInput {
             "UpdateTableStorageOptimizer",
             "lakeformation",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput).

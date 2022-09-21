@@ -67,7 +67,7 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateApprovalRuleTemplateWithRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -159,7 +159,7 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
             "AssociateApprovalRuleTemplateWithRepository",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateApprovalRuleTemplateWithRepositoryInput`](crate::input::AssociateApprovalRuleTemplateWithRepositoryInput).
@@ -245,7 +245,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchAssociateApprovalRuleTemplateWithRepositories,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -337,7 +337,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
             "BatchAssociateApprovalRuleTemplateWithRepositories",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesInput`](crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput).
@@ -536,7 +536,7 @@ impl BatchDescribeMergeConflictsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDescribeMergeConflicts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -628,7 +628,7 @@ impl BatchDescribeMergeConflictsInput {
             "BatchDescribeMergeConflicts",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsInput`](crate::input::BatchDescribeMergeConflictsInput).
@@ -713,7 +713,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisassociateApprovalRuleTemplateFromRepositories,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -805,7 +805,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
             "BatchDisassociateApprovalRuleTemplateFromRepositories",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesInput`](crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput).
@@ -885,7 +885,7 @@ impl BatchGetCommitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetCommits,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -978,7 +978,7 @@ impl BatchGetCommitsInput {
             "BatchGetCommits",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchGetCommitsInput`](crate::input::BatchGetCommitsInput).
@@ -1041,7 +1041,7 @@ impl BatchGetRepositoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetRepositories,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1136,7 +1136,7 @@ impl BatchGetRepositoriesInput {
             "BatchGetRepositories",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchGetRepositoriesInput`](crate::input::BatchGetRepositoriesInput).
@@ -1252,7 +1252,7 @@ impl CreateApprovalRuleTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApprovalRuleTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1344,7 +1344,7 @@ impl CreateApprovalRuleTemplateInput {
             "CreateApprovalRuleTemplate",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateApprovalRuleTemplateInput`](crate::input::CreateApprovalRuleTemplateInput).
@@ -1421,7 +1421,7 @@ impl CreateBranchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBranch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1514,7 +1514,7 @@ impl CreateBranchInput {
             "CreateBranch",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateBranchInput`](crate::input::CreateBranchInput).
@@ -1709,7 +1709,7 @@ impl CreateCommitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCommit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1802,7 +1802,7 @@ impl CreateCommitInput {
             "CreateCommit",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCommitInput`](crate::input::CreateCommitInput).
@@ -1904,7 +1904,7 @@ impl CreatePullRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePullRequest,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2000,7 +2000,7 @@ impl CreatePullRequestInput {
             "CreatePullRequest",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePullRequestInput`](crate::input::CreatePullRequestInput).
@@ -2107,7 +2107,7 @@ impl CreatePullRequestApprovalRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePullRequestApprovalRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2199,7 +2199,7 @@ impl CreatePullRequestApprovalRuleInput {
             "CreatePullRequestApprovalRule",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreatePullRequestApprovalRuleInput`](crate::input::CreatePullRequestApprovalRuleInput).
@@ -2304,7 +2304,7 @@ impl CreateRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2397,7 +2397,7 @@ impl CreateRepositoryInput {
             "CreateRepository",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
@@ -2604,7 +2604,7 @@ impl CreateUnreferencedMergeCommitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUnreferencedMergeCommit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2696,7 +2696,7 @@ impl CreateUnreferencedMergeCommitInput {
             "CreateUnreferencedMergeCommit",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateUnreferencedMergeCommitInput`](crate::input::CreateUnreferencedMergeCommitInput).
@@ -2754,7 +2754,7 @@ impl DeleteApprovalRuleTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApprovalRuleTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2846,7 +2846,7 @@ impl DeleteApprovalRuleTemplateInput {
             "DeleteApprovalRuleTemplate",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteApprovalRuleTemplateInput`](crate::input::DeleteApprovalRuleTemplateInput).
@@ -2911,7 +2911,7 @@ impl DeleteBranchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBranch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3004,7 +3004,7 @@ impl DeleteBranchInput {
             "DeleteBranch",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteBranchInput`](crate::input::DeleteBranchInput).
@@ -3054,7 +3054,7 @@ impl DeleteCommentContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCommentContent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3149,7 +3149,7 @@ impl DeleteCommentContentInput {
             "DeleteCommentContent",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCommentContentInput`](crate::input::DeleteCommentContentInput).
@@ -3291,7 +3291,7 @@ impl DeleteFileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3384,7 +3384,7 @@ impl DeleteFileInput {
             "DeleteFile",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFileInput`](crate::input::DeleteFileInput).
@@ -3454,7 +3454,7 @@ impl DeletePullRequestApprovalRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePullRequestApprovalRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3546,7 +3546,7 @@ impl DeletePullRequestApprovalRuleInput {
             "DeletePullRequestApprovalRule",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePullRequestApprovalRuleInput`](crate::input::DeletePullRequestApprovalRuleInput).
@@ -3599,7 +3599,7 @@ impl DeleteRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3692,7 +3692,7 @@ impl DeleteRepositoryInput {
             "DeleteRepository",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
@@ -3867,7 +3867,7 @@ impl DescribeMergeConflictsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMergeConflicts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3962,7 +3962,7 @@ impl DescribeMergeConflictsInput {
             "DescribeMergeConflicts",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeMergeConflictsInput`](crate::input::DescribeMergeConflictsInput).
@@ -4071,7 +4071,7 @@ impl DescribePullRequestEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePullRequestEvents,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4166,7 +4166,7 @@ impl DescribePullRequestEventsInput {
             "DescribePullRequestEvents",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePullRequestEventsInput`](crate::input::DescribePullRequestEventsInput).
@@ -4241,7 +4241,7 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateApprovalRuleTemplateFromRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4333,7 +4333,7 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInput {
             "DisassociateApprovalRuleTemplateFromRepository",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::input::DisassociateApprovalRuleTemplateFromRepositoryInput).
@@ -4401,7 +4401,7 @@ impl EvaluatePullRequestApprovalRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EvaluatePullRequestApprovalRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4493,7 +4493,7 @@ impl EvaluatePullRequestApprovalRulesInput {
             "EvaluatePullRequestApprovalRules",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`EvaluatePullRequestApprovalRulesInput`](crate::input::EvaluatePullRequestApprovalRulesInput).
@@ -4551,7 +4551,7 @@ impl GetApprovalRuleTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApprovalRuleTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4646,7 +4646,7 @@ impl GetApprovalRuleTemplateInput {
             "GetApprovalRuleTemplate",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetApprovalRuleTemplateInput`](crate::input::GetApprovalRuleTemplateInput).
@@ -4710,7 +4710,7 @@ impl GetBlobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBlob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4801,7 +4801,7 @@ impl GetBlobInput {
                     "GetBlob",
                     "codecommit",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetBlobInput`](crate::input::GetBlobInput).
@@ -4865,7 +4865,7 @@ impl GetBranchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBranch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4956,7 +4956,7 @@ impl GetBranchInput {
                     "GetBranch",
                     "codecommit",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetBranchInput`](crate::input::GetBranchInput).
@@ -5005,7 +5005,7 @@ impl GetCommentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5098,7 +5098,7 @@ impl GetCommentInput {
             "GetComment",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCommentInput`](crate::input::GetCommentInput).
@@ -5187,7 +5187,7 @@ impl GetCommentReactionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCommentReactions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5280,7 +5280,7 @@ impl GetCommentReactionsInput {
             "GetCommentReactions",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCommentReactionsInput`](crate::input::GetCommentReactionsInput).
@@ -5389,7 +5389,7 @@ impl GetCommentsForComparedCommitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCommentsForComparedCommit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5481,7 +5481,7 @@ impl GetCommentsForComparedCommitInput {
             "GetCommentsForComparedCommit",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitInput`](crate::input::GetCommentsForComparedCommitInput).
@@ -5605,7 +5605,7 @@ impl GetCommentsForPullRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCommentsForPullRequest,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5697,7 +5697,7 @@ impl GetCommentsForPullRequestInput {
             "GetCommentsForPullRequest",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCommentsForPullRequestInput`](crate::input::GetCommentsForPullRequestInput).
@@ -5761,7 +5761,7 @@ impl GetCommitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCommit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5852,7 +5852,7 @@ impl GetCommitInput {
                     "GetCommit",
                     "codecommit",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCommitInput`](crate::input::GetCommitInput).
@@ -5983,7 +5983,7 @@ impl GetDifferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDifferences,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6076,7 +6076,7 @@ impl GetDifferencesInput {
             "GetDifferences",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDifferencesInput`](crate::input::GetDifferencesInput).
@@ -6155,7 +6155,7 @@ impl GetFileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6246,7 +6246,7 @@ impl GetFileInput {
                     "GetFile",
                     "codecommit",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFileInput`](crate::input::GetFileInput).
@@ -6325,7 +6325,7 @@ impl GetFolderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFolder,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6416,7 +6416,7 @@ impl GetFolderInput {
                     "GetFolder",
                     "codecommit",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFolderInput`](crate::input::GetFolderInput).
@@ -6540,7 +6540,7 @@ impl GetMergeCommitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMergeCommit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6633,7 +6633,7 @@ impl GetMergeCommitInput {
             "GetMergeCommit",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMergeCommitInput`](crate::input::GetMergeCommitInput).
@@ -6796,7 +6796,7 @@ impl GetMergeConflictsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMergeConflicts,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6889,7 +6889,7 @@ impl GetMergeConflictsInput {
             "GetMergeConflicts",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMergeConflictsInput`](crate::input::GetMergeConflictsInput).
@@ -7013,7 +7013,7 @@ impl GetMergeOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMergeOptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7106,7 +7106,7 @@ impl GetMergeOptionsInput {
             "GetMergeOptions",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetMergeOptionsInput`](crate::input::GetMergeOptionsInput).
@@ -7159,7 +7159,7 @@ impl GetPullRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPullRequest,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7252,7 +7252,7 @@ impl GetPullRequestInput {
             "GetPullRequest",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPullRequestInput`](crate::input::GetPullRequestInput).
@@ -7319,7 +7319,7 @@ impl GetPullRequestApprovalStatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPullRequestApprovalStates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7411,7 +7411,7 @@ impl GetPullRequestApprovalStatesInput {
             "GetPullRequestApprovalStates",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPullRequestApprovalStatesInput`](crate::input::GetPullRequestApprovalStatesInput).
@@ -7478,7 +7478,7 @@ impl GetPullRequestOverrideStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPullRequestOverrideState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7570,7 +7570,7 @@ impl GetPullRequestOverrideStateInput {
             "GetPullRequestOverrideState",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPullRequestOverrideStateInput`](crate::input::GetPullRequestOverrideStateInput).
@@ -7623,7 +7623,7 @@ impl GetRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7716,7 +7716,7 @@ impl GetRepositoryInput {
             "GetRepository",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRepositoryInput`](crate::input::GetRepositoryInput).
@@ -7769,7 +7769,7 @@ impl GetRepositoryTriggersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRepositoryTriggers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7864,7 +7864,7 @@ impl GetRepositoryTriggersInput {
             "GetRepositoryTriggers",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRepositoryTriggersInput`](crate::input::GetRepositoryTriggersInput).
@@ -7928,7 +7928,7 @@ impl ListApprovalRuleTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApprovalRuleTemplates,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8023,7 +8023,7 @@ impl ListApprovalRuleTemplatesInput {
             "ListApprovalRuleTemplates",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListApprovalRuleTemplatesInput`](crate::input::ListApprovalRuleTemplatesInput).
@@ -8104,7 +8104,7 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociatedApprovalRuleTemplatesForRepository,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8196,7 +8196,7 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
             "ListAssociatedApprovalRuleTemplatesForRepository",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListAssociatedApprovalRuleTemplatesForRepositoryInput`](crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput).
@@ -8263,7 +8263,7 @@ impl ListBranchesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBranches,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8356,7 +8356,7 @@ impl ListBranchesInput {
             "ListBranches",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListBranchesInput`](crate::input::ListBranchesInput).
@@ -8460,7 +8460,7 @@ impl ListPullRequestsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPullRequests,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8553,7 +8553,7 @@ impl ListPullRequestsInput {
             "ListPullRequests",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPullRequestsInput`](crate::input::ListPullRequestsInput).
@@ -8627,7 +8627,7 @@ impl ListRepositoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRepositories,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8720,7 +8720,7 @@ impl ListRepositoriesInput {
             "ListRepositories",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
@@ -8802,7 +8802,7 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRepositoriesForApprovalRuleTemplate,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8894,7 +8894,7 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
             "ListRepositoriesForApprovalRuleTemplate",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRepositoriesForApprovalRuleTemplateInput`](crate::input::ListRepositoriesForApprovalRuleTemplateInput).
@@ -8956,7 +8956,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9051,7 +9051,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -9154,7 +9154,7 @@ impl MergeBranchesByFastForwardInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MergeBranchesByFastForward,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9246,7 +9246,7 @@ impl MergeBranchesByFastForwardInput {
             "MergeBranchesByFastForward",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`MergeBranchesByFastForwardInput`](crate::input::MergeBranchesByFastForwardInput).
@@ -9451,7 +9451,7 @@ impl MergeBranchesBySquashInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MergeBranchesBySquash,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9546,7 +9546,7 @@ impl MergeBranchesBySquashInput {
             "MergeBranchesBySquash",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`MergeBranchesBySquashInput`](crate::input::MergeBranchesBySquashInput).
@@ -9753,7 +9753,7 @@ impl MergeBranchesByThreeWayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MergeBranchesByThreeWay,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9848,7 +9848,7 @@ impl MergeBranchesByThreeWayInput {
             "MergeBranchesByThreeWay",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`MergeBranchesByThreeWayInput`](crate::input::MergeBranchesByThreeWayInput).
@@ -9933,7 +9933,7 @@ impl MergePullRequestByFastForwardInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MergePullRequestByFastForward,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10025,7 +10025,7 @@ impl MergePullRequestByFastForwardInput {
             "MergePullRequestByFastForward",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`MergePullRequestByFastForwardInput`](crate::input::MergePullRequestByFastForwardInput).
@@ -10214,7 +10214,7 @@ impl MergePullRequestBySquashInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MergePullRequestBySquash,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10309,7 +10309,7 @@ impl MergePullRequestBySquashInput {
             "MergePullRequestBySquash",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`MergePullRequestBySquashInput`](crate::input::MergePullRequestBySquashInput).
@@ -10498,7 +10498,7 @@ impl MergePullRequestByThreeWayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MergePullRequestByThreeWay,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10590,7 +10590,7 @@ impl MergePullRequestByThreeWayInput {
             "MergePullRequestByThreeWay",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`MergePullRequestByThreeWayInput`](crate::input::MergePullRequestByThreeWayInput).
@@ -10672,7 +10672,7 @@ impl OverridePullRequestApprovalRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::OverridePullRequestApprovalRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10764,7 +10764,7 @@ impl OverridePullRequestApprovalRulesInput {
             "OverridePullRequestApprovalRules",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`OverridePullRequestApprovalRulesInput`](crate::input::OverridePullRequestApprovalRulesInput).
@@ -10888,7 +10888,7 @@ impl PostCommentForComparedCommitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PostCommentForComparedCommit,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10983,7 +10983,7 @@ impl PostCommentForComparedCommitInput {
             "PostCommentForComparedCommit",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PostCommentForComparedCommitInput`](crate::input::PostCommentForComparedCommitInput).
@@ -11122,7 +11122,7 @@ impl PostCommentForPullRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PostCommentForPullRequest,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11217,7 +11217,7 @@ impl PostCommentForPullRequestInput {
             "PostCommentForPullRequest",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PostCommentForPullRequestInput`](crate::input::PostCommentForPullRequestInput).
@@ -11294,7 +11294,7 @@ impl PostCommentReplyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PostCommentReply,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11390,7 +11390,7 @@ impl PostCommentReplyInput {
             "PostCommentReply",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PostCommentReplyInput`](crate::input::PostCommentReplyInput).
@@ -11455,7 +11455,7 @@ impl PutCommentReactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutCommentReaction,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11548,7 +11548,7 @@ impl PutCommentReactionInput {
             "PutCommentReaction",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutCommentReactionInput`](crate::input::PutCommentReactionInput).
@@ -11714,7 +11714,7 @@ impl PutFileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutFile,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11805,7 +11805,7 @@ impl PutFileInput {
                     "PutFile",
                     "codecommit",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutFileInput`](crate::input::PutFileInput).
@@ -11879,7 +11879,7 @@ impl PutRepositoryTriggersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRepositoryTriggers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11974,7 +11974,7 @@ impl PutRepositoryTriggersInput {
             "PutRepositoryTriggers",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutRepositoryTriggersInput`](crate::input::PutRepositoryTriggersInput).
@@ -12053,7 +12053,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12146,7 +12146,7 @@ impl TagResourceInput {
             "TagResource",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -12220,7 +12220,7 @@ impl TestRepositoryTriggersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestRepositoryTriggers,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12315,7 +12315,7 @@ impl TestRepositoryTriggersInput {
             "TestRepositoryTriggers",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TestRepositoryTriggersInput`](crate::input::TestRepositoryTriggersInput).
@@ -12386,7 +12386,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12479,7 +12479,7 @@ impl UntagResourceInput {
             "UntagResource",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -12570,7 +12570,7 @@ impl UpdateApprovalRuleTemplateContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApprovalRuleTemplateContent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12662,7 +12662,7 @@ impl UpdateApprovalRuleTemplateContentInput {
             "UpdateApprovalRuleTemplateContent",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateContentInput`](crate::input::UpdateApprovalRuleTemplateContentInput).
@@ -12738,7 +12738,7 @@ impl UpdateApprovalRuleTemplateDescriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApprovalRuleTemplateDescription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12830,7 +12830,7 @@ impl UpdateApprovalRuleTemplateDescriptionInput {
             "UpdateApprovalRuleTemplateDescription",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateDescriptionInput`](crate::input::UpdateApprovalRuleTemplateDescriptionInput).
@@ -12906,7 +12906,7 @@ impl UpdateApprovalRuleTemplateNameInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApprovalRuleTemplateName,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12998,7 +12998,7 @@ impl UpdateApprovalRuleTemplateNameInput {
             "UpdateApprovalRuleTemplateName",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateNameInput`](crate::input::UpdateApprovalRuleTemplateNameInput).
@@ -13060,7 +13060,7 @@ impl UpdateCommentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateComment,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13153,7 +13153,7 @@ impl UpdateCommentInput {
             "UpdateComment",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCommentInput`](crate::input::UpdateCommentInput).
@@ -13221,7 +13221,7 @@ impl UpdateDefaultBranchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDefaultBranch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13314,7 +13314,7 @@ impl UpdateDefaultBranchInput {
             "UpdateDefaultBranch",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDefaultBranchInput`](crate::input::UpdateDefaultBranchInput).
@@ -13439,7 +13439,7 @@ impl UpdatePullRequestApprovalRuleContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePullRequestApprovalRuleContent,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13531,7 +13531,7 @@ impl UpdatePullRequestApprovalRuleContentInput {
             "UpdatePullRequestApprovalRuleContent",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalRuleContentInput`](crate::input::UpdatePullRequestApprovalRuleContentInput).
@@ -13613,7 +13613,7 @@ impl UpdatePullRequestApprovalStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePullRequestApprovalState,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13705,7 +13705,7 @@ impl UpdatePullRequestApprovalStateInput {
             "UpdatePullRequestApprovalState",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalStateInput`](crate::input::UpdatePullRequestApprovalStateInput).
@@ -13772,7 +13772,7 @@ impl UpdatePullRequestDescriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePullRequestDescription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13864,7 +13864,7 @@ impl UpdatePullRequestDescriptionInput {
             "UpdatePullRequestDescription",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestDescriptionInput`](crate::input::UpdatePullRequestDescriptionInput).
@@ -13934,7 +13934,7 @@ impl UpdatePullRequestStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePullRequestStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14029,7 +14029,7 @@ impl UpdatePullRequestStatusInput {
             "UpdatePullRequestStatus",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusInput`](crate::input::UpdatePullRequestStatusInput).
@@ -14094,7 +14094,7 @@ impl UpdatePullRequestTitleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePullRequestTitle,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14189,7 +14189,7 @@ impl UpdatePullRequestTitleInput {
             "UpdatePullRequestTitle",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestTitleInput`](crate::input::UpdatePullRequestTitleInput).
@@ -14259,7 +14259,7 @@ impl UpdateRepositoryDescriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRepositoryDescription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14351,7 +14351,7 @@ impl UpdateRepositoryDescriptionInput {
             "UpdateRepositoryDescription",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryDescriptionInput`](crate::input::UpdateRepositoryDescriptionInput).
@@ -14413,7 +14413,7 @@ impl UpdateRepositoryNameInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRepositoryName,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14508,7 +14508,7 @@ impl UpdateRepositoryNameInput {
             "UpdateRepositoryName",
             "codecommit",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryNameInput`](crate::input::UpdateRepositoryNameInput).

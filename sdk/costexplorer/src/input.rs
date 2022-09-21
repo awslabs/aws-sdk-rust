@@ -86,7 +86,7 @@ impl CreateAnomalyMonitorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAnomalyMonitor,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -181,7 +181,7 @@ impl CreateAnomalyMonitorInput {
             "CreateAnomalyMonitor",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAnomalyMonitorInput`](crate::input::CreateAnomalyMonitorInput).
@@ -277,7 +277,7 @@ impl CreateAnomalySubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAnomalySubscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -372,7 +372,7 @@ impl CreateAnomalySubscriptionInput {
             "CreateAnomalySubscription",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateAnomalySubscriptionInput`](crate::input::CreateAnomalySubscriptionInput).
@@ -541,7 +541,7 @@ impl CreateCostCategoryDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCostCategoryDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -633,7 +633,7 @@ impl CreateCostCategoryDefinitionInput {
             "CreateCostCategoryDefinition",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateCostCategoryDefinitionInput`](crate::input::CreateCostCategoryDefinitionInput).
@@ -683,7 +683,7 @@ impl DeleteAnomalyMonitorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnomalyMonitor,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -778,7 +778,7 @@ impl DeleteAnomalyMonitorInput {
             "DeleteAnomalyMonitor",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorInput`](crate::input::DeleteAnomalyMonitorInput).
@@ -833,7 +833,7 @@ impl DeleteAnomalySubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnomalySubscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -928,7 +928,7 @@ impl DeleteAnomalySubscriptionInput {
             "DeleteAnomalySubscription",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAnomalySubscriptionInput`](crate::input::DeleteAnomalySubscriptionInput).
@@ -983,7 +983,7 @@ impl DeleteCostCategoryDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCostCategoryDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1075,7 +1075,7 @@ impl DeleteCostCategoryDefinitionInput {
             "DeleteCostCategoryDefinition",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteCostCategoryDefinitionInput`](crate::input::DeleteCostCategoryDefinitionInput).
@@ -1142,7 +1142,7 @@ impl DescribeCostCategoryDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCostCategoryDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1234,7 +1234,7 @@ impl DescribeCostCategoryDefinitionInput {
             "DescribeCostCategoryDefinition",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionInput`](crate::input::DescribeCostCategoryDefinitionInput).
@@ -1356,7 +1356,7 @@ impl GetAnomaliesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalies,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1449,7 +1449,7 @@ impl GetAnomaliesInput {
             "GetAnomalies",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAnomaliesInput`](crate::input::GetAnomaliesInput).
@@ -1535,7 +1535,7 @@ impl GetAnomalyMonitorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalyMonitors,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1628,7 +1628,7 @@ impl GetAnomalyMonitorsInput {
             "GetAnomalyMonitors",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAnomalyMonitorsInput`](crate::input::GetAnomalyMonitorsInput).
@@ -1728,7 +1728,7 @@ impl GetAnomalySubscriptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalySubscriptions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1823,7 +1823,7 @@ impl GetAnomalySubscriptionsInput {
             "GetAnomalySubscriptions",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAnomalySubscriptionsInput`](crate::input::GetAnomalySubscriptionsInput).
@@ -1976,7 +1976,7 @@ impl GetCostAndUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostAndUsage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2069,7 +2069,7 @@ impl GetCostAndUsageInput {
             "GetCostAndUsage",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCostAndUsageInput`](crate::input::GetCostAndUsageInput).
@@ -2222,7 +2222,7 @@ impl GetCostAndUsageWithResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostAndUsageWithResources,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2314,7 +2314,7 @@ impl GetCostAndUsageWithResourcesInput {
             "GetCostAndUsageWithResources",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCostAndUsageWithResourcesInput`](crate::input::GetCostAndUsageWithResourcesInput).
@@ -2505,7 +2505,7 @@ impl GetCostCategoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostCategories,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2598,7 +2598,7 @@ impl GetCostCategoriesInput {
             "GetCostCategories",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCostCategoriesInput`](crate::input::GetCostCategoriesInput).
@@ -2770,7 +2770,7 @@ impl GetCostForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostForecast,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2863,7 +2863,7 @@ impl GetCostForecastInput {
             "GetCostForecast",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetCostForecastInput`](crate::input::GetCostForecastInput).
@@ -3160,7 +3160,7 @@ impl GetDimensionValuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDimensionValues,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3253,7 +3253,7 @@ impl GetDimensionValuesInput {
             "GetDimensionValues",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDimensionValuesInput`](crate::input::GetDimensionValuesInput).
@@ -3511,7 +3511,7 @@ impl GetReservationCoverageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReservationCoverage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3606,7 +3606,7 @@ impl GetReservationCoverageInput {
             "GetReservationCoverage",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetReservationCoverageInput`](crate::input::GetReservationCoverageInput).
@@ -3805,7 +3805,7 @@ impl GetReservationPurchaseRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReservationPurchaseRecommendation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3897,7 +3897,7 @@ impl GetReservationPurchaseRecommendationInput {
             "GetReservationPurchaseRecommendation",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetReservationPurchaseRecommendationInput`](crate::input::GetReservationPurchaseRecommendationInput).
@@ -4114,7 +4114,7 @@ impl GetReservationUtilizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReservationUtilization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4209,7 +4209,7 @@ impl GetReservationUtilizationInput {
             "GetReservationUtilization",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetReservationUtilizationInput`](crate::input::GetReservationUtilizationInput).
@@ -4337,7 +4337,7 @@ impl GetRightsizingRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRightsizingRecommendation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4429,7 +4429,7 @@ impl GetRightsizingRecommendationInput {
             "GetRightsizingRecommendation",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetRightsizingRecommendationInput`](crate::input::GetRightsizingRecommendationInput).
@@ -4632,7 +4632,7 @@ impl GetSavingsPlansCoverageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansCoverage,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4727,7 +4727,7 @@ impl GetSavingsPlansCoverageInput {
             "GetSavingsPlansCoverage",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansCoverageInput`](crate::input::GetSavingsPlansCoverageInput).
@@ -4889,7 +4889,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansPurchaseRecommendation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4981,7 +4981,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
             "GetSavingsPlansPurchaseRecommendation",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansPurchaseRecommendationInput`](crate::input::GetSavingsPlansPurchaseRecommendationInput).
@@ -5116,7 +5116,7 @@ impl GetSavingsPlansUtilizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansUtilization,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5208,7 +5208,7 @@ impl GetSavingsPlansUtilizationInput {
             "GetSavingsPlansUtilization",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationInput`](crate::input::GetSavingsPlansUtilizationInput).
@@ -5374,7 +5374,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansUtilizationDetails,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5466,7 +5466,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
             "GetSavingsPlansUtilizationDetails",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationDetailsInput`](crate::input::GetSavingsPlansUtilizationDetailsInput).
@@ -5649,7 +5649,7 @@ impl GetTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5740,7 +5740,7 @@ impl GetTagsInput {
                     "GetTags",
                     "costexplorer",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetTagsInput`](crate::input::GetTagsInput).
@@ -5906,7 +5906,7 @@ impl GetUsageForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUsageForecast,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5999,7 +5999,7 @@ impl GetUsageForecastInput {
             "GetUsageForecast",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetUsageForecastInput`](crate::input::GetUsageForecastInput).
@@ -6112,7 +6112,7 @@ impl ListCostAllocationTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCostAllocationTags,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6207,7 +6207,7 @@ impl ListCostAllocationTagsInput {
             "ListCostAllocationTags",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput).
@@ -6283,7 +6283,7 @@ impl ListCostCategoryDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCostCategoryDefinitions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6375,7 +6375,7 @@ impl ListCostCategoryDefinitionsInput {
             "ListCostCategoryDefinitions",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsInput`](crate::input::ListCostCategoryDefinitionsInput).
@@ -6425,7 +6425,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6520,7 +6520,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -6585,7 +6585,7 @@ impl ProvideAnomalyFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ProvideAnomalyFeedback,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6680,7 +6680,7 @@ impl ProvideAnomalyFeedbackInput {
             "ProvideAnomalyFeedback",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackInput`](crate::input::ProvideAnomalyFeedbackInput).
@@ -6771,7 +6771,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6864,7 +6864,7 @@ impl TagResourceInput {
             "TagResource",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -6935,7 +6935,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7028,7 +7028,7 @@ impl UntagResourceInput {
             "UntagResource",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -7090,7 +7090,7 @@ impl UpdateAnomalyMonitorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnomalyMonitor,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7185,7 +7185,7 @@ impl UpdateAnomalyMonitorInput {
             "UpdateAnomalyMonitor",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorInput`](crate::input::UpdateAnomalyMonitorInput).
@@ -7324,7 +7324,7 @@ impl UpdateAnomalySubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnomalySubscription,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7419,7 +7419,7 @@ impl UpdateAnomalySubscriptionInput {
             "UpdateAnomalySubscription",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateAnomalySubscriptionInput`](crate::input::UpdateAnomalySubscriptionInput).
@@ -7484,7 +7484,7 @@ impl UpdateCostAllocationTagsStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCostAllocationTagsStatus,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7576,7 +7576,7 @@ impl UpdateCostAllocationTagsStatusInput {
             "UpdateCostAllocationTagsStatus",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput).
@@ -7707,7 +7707,7 @@ impl UpdateCostCategoryDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCostCategoryDefinition,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7799,7 +7799,7 @@ impl UpdateCostCategoryDefinitionInput {
             "UpdateCostCategoryDefinition",
             "costexplorer",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionInput`](crate::input::UpdateCostCategoryDefinitionInput).

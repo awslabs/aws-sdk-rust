@@ -95,7 +95,7 @@ impl AnalyzeDocumentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AnalyzeDocument,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -188,7 +188,7 @@ impl AnalyzeDocumentInput {
             "AnalyzeDocument",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput).
@@ -248,7 +248,7 @@ impl AnalyzeExpenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AnalyzeExpense,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -341,7 +341,7 @@ impl AnalyzeExpenseInput {
             "AnalyzeExpense",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput).
@@ -399,7 +399,7 @@ impl AnalyzeIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AnalyzeID,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -490,7 +490,7 @@ impl AnalyzeIdInput {
                     "AnalyzeID",
                     "textract",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AnalyzeIdInput`](crate::input::AnalyzeIdInput).
@@ -542,7 +542,7 @@ impl DetectDocumentTextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectDocumentText,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -635,7 +635,7 @@ impl DetectDocumentTextInput {
             "DetectDocumentText",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput).
@@ -709,7 +709,7 @@ impl GetDocumentAnalysisInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDocumentAnalysis,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -802,7 +802,7 @@ impl GetDocumentAnalysisInput {
             "GetDocumentAnalysis",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput).
@@ -878,7 +878,7 @@ impl GetDocumentTextDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDocumentTextDetection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -973,7 +973,7 @@ impl GetDocumentTextDetectionInput {
             "GetDocumentTextDetection",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionInput`](crate::input::GetDocumentTextDetectionInput).
@@ -1047,7 +1047,7 @@ impl GetExpenseAnalysisInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetExpenseAnalysis,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1140,7 +1140,7 @@ impl GetExpenseAnalysisInput {
             "GetExpenseAnalysis",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput).
@@ -1298,7 +1298,7 @@ impl StartDocumentAnalysisInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDocumentAnalysis,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1393,7 +1393,7 @@ impl StartDocumentAnalysisInput {
             "StartDocumentAnalysis",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput).
@@ -1517,7 +1517,7 @@ impl StartDocumentTextDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDocumentTextDetection,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1609,7 +1609,7 @@ impl StartDocumentTextDetectionInput {
             "StartDocumentTextDetection",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionInput`](crate::input::StartDocumentTextDetectionInput).
@@ -1731,7 +1731,7 @@ impl StartExpenseAnalysisInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartExpenseAnalysis,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1826,7 +1826,7 @@ impl StartExpenseAnalysisInput {
             "StartExpenseAnalysis",
             "textract",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput).

@@ -78,7 +78,7 @@ impl DeleteSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -208,7 +208,7 @@ impl DeleteSessionInput {
             "DeleteSession",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSessionInput`](crate::input::DeleteSessionInput).
@@ -293,7 +293,7 @@ impl GetSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -423,7 +423,7 @@ impl GetSessionInput {
             "GetSession",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput).
@@ -596,7 +596,7 @@ impl PutSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSession,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -741,7 +741,7 @@ impl PutSessionInput {
             "PutSession",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutSessionInput`](crate::input::PutSessionInput).
@@ -885,7 +885,7 @@ impl RecognizeTextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RecognizeText,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1029,7 +1029,7 @@ impl RecognizeTextInput {
             "RecognizeText",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RecognizeTextInput`](crate::input::RecognizeTextInput).
@@ -1254,7 +1254,7 @@ impl RecognizeUtteranceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RecognizeUtterance,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1404,7 +1404,7 @@ impl RecognizeUtteranceInput {
             "RecognizeUtterance",
             "lexruntimev2",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`RecognizeUtteranceInput`](crate::input::RecognizeUtteranceInput).

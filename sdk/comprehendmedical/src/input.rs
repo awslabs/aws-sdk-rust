@@ -44,7 +44,7 @@ impl DescribeEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntitiesDetectionV2Job,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -136,7 +136,7 @@ impl DescribeEntitiesDetectionV2JobInput {
             "DescribeEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobInput`](crate::input::DescribeEntitiesDetectionV2JobInput).
@@ -188,7 +188,7 @@ impl DescribeIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeICD10CMInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -280,7 +280,7 @@ impl DescribeIcd10CmInferenceJobInput {
             "DescribeICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeIcd10CmInferenceJobInput`](crate::input::DescribeIcd10CmInferenceJobInput).
@@ -332,7 +332,7 @@ impl DescribePhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePHIDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -427,7 +427,7 @@ impl DescribePhiDetectionJobInput {
             "DescribePHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobInput`](crate::input::DescribePhiDetectionJobInput).
@@ -479,7 +479,7 @@ impl DescribeRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRxNormInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -571,7 +571,7 @@ impl DescribeRxNormInferenceJobInput {
             "DescribeRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobInput`](crate::input::DescribeRxNormInferenceJobInput).
@@ -623,7 +623,7 @@ impl DescribeSnomedctInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSNOMEDCTInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -715,7 +715,7 @@ impl DescribeSnomedctInferenceJobInput {
             "DescribeSNOMEDCTInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput).
@@ -763,7 +763,7 @@ impl DetectEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectEntities,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -856,7 +856,7 @@ impl DetectEntitiesInput {
             "DetectEntities",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
@@ -904,7 +904,7 @@ impl DetectEntitiesV2Input {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectEntitiesV2,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -997,7 +997,7 @@ impl DetectEntitiesV2Input {
             "DetectEntitiesV2",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Input`](crate::input::DetectEntitiesV2Input).
@@ -1044,7 +1044,7 @@ impl DetectPhiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectPHI,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1135,7 +1135,7 @@ impl DetectPhiInput {
                     "DetectPHI",
                     "comprehendmedical",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetectPhiInput`](crate::input::DetectPhiInput).
@@ -1183,7 +1183,7 @@ impl InferIcd10CmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InferICD10CM,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1276,7 +1276,7 @@ impl InferIcd10CmInput {
             "InferICD10CM",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InferIcd10CmInput`](crate::input::InferIcd10CmInput).
@@ -1324,7 +1324,7 @@ impl InferRxNormInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InferRxNorm,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1417,7 +1417,7 @@ impl InferRxNormInput {
             "InferRxNorm",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InferRxNormInput`](crate::input::InferRxNormInput).
@@ -1465,7 +1465,7 @@ impl InferSnomedctInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InferSNOMEDCT,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1558,7 +1558,7 @@ impl InferSnomedctInput {
             "InferSNOMEDCT",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`InferSnomedctInput`](crate::input::InferSnomedctInput).
@@ -1637,7 +1637,7 @@ impl ListEntitiesDetectionV2JobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntitiesDetectionV2Jobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1729,7 +1729,7 @@ impl ListEntitiesDetectionV2JobsInput {
             "ListEntitiesDetectionV2Jobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsInput`](crate::input::ListEntitiesDetectionV2JobsInput).
@@ -1808,7 +1808,7 @@ impl ListIcd10CmInferenceJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListICD10CMInferenceJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1903,7 +1903,7 @@ impl ListIcd10CmInferenceJobsInput {
             "ListICD10CMInferenceJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsInput`](crate::input::ListIcd10CmInferenceJobsInput).
@@ -1980,7 +1980,7 @@ impl ListPhiDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPHIDetectionJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2075,7 +2075,7 @@ impl ListPhiDetectionJobsInput {
             "ListPHIDetectionJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsInput`](crate::input::ListPhiDetectionJobsInput).
@@ -2154,7 +2154,7 @@ impl ListRxNormInferenceJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRxNormInferenceJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2249,7 +2249,7 @@ impl ListRxNormInferenceJobsInput {
             "ListRxNormInferenceJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsInput`](crate::input::ListRxNormInferenceJobsInput).
@@ -2328,7 +2328,7 @@ impl ListSnomedctInferenceJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSNOMEDCTInferenceJobs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2423,7 +2423,7 @@ impl ListSnomedctInferenceJobsInput {
             "ListSNOMEDCTInferenceJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput).
@@ -2562,7 +2562,7 @@ impl StartEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEntitiesDetectionV2Job,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2657,7 +2657,7 @@ impl StartEntitiesDetectionV2JobInput {
             "StartEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionV2JobInput`](crate::input::StartEntitiesDetectionV2JobInput).
@@ -2796,7 +2796,7 @@ impl StartIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartICD10CMInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2894,7 +2894,7 @@ impl StartIcd10CmInferenceJobInput {
             "StartICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobInput`](crate::input::StartIcd10CmInferenceJobInput).
@@ -3031,7 +3031,7 @@ impl StartPhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPHIDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3129,7 +3129,7 @@ impl StartPhiDetectionJobInput {
             "StartPHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartPhiDetectionJobInput`](crate::input::StartPhiDetectionJobInput).
@@ -3268,7 +3268,7 @@ impl StartRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartRxNormInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3366,7 +3366,7 @@ impl StartRxNormInferenceJobInput {
             "StartRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobInput`](crate::input::StartRxNormInferenceJobInput).
@@ -3505,7 +3505,7 @@ impl StartSnomedctInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSNOMEDCTInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3603,7 +3603,7 @@ impl StartSnomedctInferenceJobInput {
             "StartSNOMEDCTInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput).
@@ -3655,7 +3655,7 @@ impl StopEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEntitiesDetectionV2Job,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3747,7 +3747,7 @@ impl StopEntitiesDetectionV2JobInput {
             "StopEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobInput`](crate::input::StopEntitiesDetectionV2JobInput).
@@ -3799,7 +3799,7 @@ impl StopIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopICD10CMInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3894,7 +3894,7 @@ impl StopIcd10CmInferenceJobInput {
             "StopICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobInput`](crate::input::StopIcd10CmInferenceJobInput).
@@ -3944,7 +3944,7 @@ impl StopPhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopPHIDetectionJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4039,7 +4039,7 @@ impl StopPhiDetectionJobInput {
             "StopPHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobInput`](crate::input::StopPhiDetectionJobInput).
@@ -4089,7 +4089,7 @@ impl StopRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopRxNormInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4184,7 +4184,7 @@ impl StopRxNormInferenceJobInput {
             "StopRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobInput`](crate::input::StopRxNormInferenceJobInput).
@@ -4236,7 +4236,7 @@ impl StopSnomedctInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopSNOMEDCTInferenceJob,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4331,7 +4331,7 @@ impl StopSnomedctInferenceJobInput {
             "StopSNOMEDCTInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput).

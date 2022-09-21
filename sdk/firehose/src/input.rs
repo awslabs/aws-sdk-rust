@@ -270,7 +270,7 @@ impl CreateDeliveryStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeliveryStream,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -365,7 +365,7 @@ impl CreateDeliveryStreamInput {
             "CreateDeliveryStream",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
@@ -432,7 +432,7 @@ impl DeleteDeliveryStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeliveryStream,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -527,7 +527,7 @@ impl DeleteDeliveryStreamInput {
             "DeleteDeliveryStream",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput).
@@ -610,7 +610,7 @@ impl DescribeDeliveryStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeliveryStream,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -705,7 +705,7 @@ impl DescribeDeliveryStreamInput {
             "DescribeDeliveryStream",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput).
@@ -798,7 +798,7 @@ impl ListDeliveryStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeliveryStreams,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -891,7 +891,7 @@ impl ListDeliveryStreamsInput {
             "ListDeliveryStreams",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput).
@@ -973,7 +973,7 @@ impl ListTagsForDeliveryStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForDeliveryStream,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1065,7 +1065,7 @@ impl ListTagsForDeliveryStreamInput {
             "ListTagsForDeliveryStream",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput).
@@ -1129,7 +1129,7 @@ impl PutRecordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRecord,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1220,7 +1220,7 @@ impl PutRecordInput {
                     "PutRecord",
                     "firehose",
                 ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput).
@@ -1294,7 +1294,7 @@ impl PutRecordBatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRecordBatch,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1387,7 +1387,7 @@ impl PutRecordBatchInput {
             "PutRecordBatch",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutRecordBatchInput`](crate::input::PutRecordBatchInput).
@@ -1462,7 +1462,7 @@ impl StartDeliveryStreamEncryptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDeliveryStreamEncryption,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1554,7 +1554,7 @@ impl StartDeliveryStreamEncryptionInput {
             "StartDeliveryStreamEncryption",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput).
@@ -1609,7 +1609,7 @@ impl StopDeliveryStreamEncryptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopDeliveryStreamEncryption,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1701,7 +1701,7 @@ impl StopDeliveryStreamEncryptionInput {
             "StopDeliveryStreamEncryption",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput).
@@ -1775,7 +1775,7 @@ impl TagDeliveryStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagDeliveryStream,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1868,7 +1868,7 @@ impl TagDeliveryStreamInput {
             "TagDeliveryStream",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput).
@@ -1942,7 +1942,7 @@ impl UntagDeliveryStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagDeliveryStream,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2035,7 +2035,7 @@ impl UntagDeliveryStreamInput {
             "UntagDeliveryStream",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput).
@@ -2253,7 +2253,7 @@ impl UpdateDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDestination,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2346,7 +2346,7 @@ impl UpdateDestinationInput {
             "UpdateDestination",
             "firehose",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).

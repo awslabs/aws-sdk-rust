@@ -14,7 +14,7 @@ use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation::{Operation, Request};
 use aws_smithy_http::response::ParseStrictResponse;
 use aws_smithy_http::result::{SdkError, SdkSuccess};
-use aws_smithy_http::retry::ClassifyResponse;
+use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
 use aws_smithy_types::timeout;
 use aws_smithy_types::tristate::TriState;
@@ -58,7 +58,7 @@ impl HttpCredentialProvider {
     fn operation(
         &self,
         auth: Option<HeaderValue>,
-    ) -> Operation<CredentialsResponseParser, HttpCredentialRetryPolicy> {
+    ) -> Operation<CredentialsResponseParser, HttpCredentialRetryClassifier> {
         let mut http_req = http::Request::builder()
             .uri(&self.uri)
             .header(ACCEPT, "application/json");
@@ -73,7 +73,7 @@ impl HttpCredentialProvider {
                 provider_name: self.provider_name,
             },
         )
-        .with_retry_policy(HttpCredentialRetryPolicy)
+        .with_retry_classifier(HttpCredentialRetryClassifier)
     }
 }
 
@@ -165,12 +165,12 @@ impl ParseStrictResponse for CredentialsResponseParser {
 }
 
 #[derive(Clone, Debug)]
-struct HttpCredentialRetryPolicy;
+struct HttpCredentialRetryClassifier;
 
-impl ClassifyResponse<SdkSuccess<Credentials>, SdkError<CredentialsError>>
-    for HttpCredentialRetryPolicy
+impl ClassifyRetry<SdkSuccess<Credentials>, SdkError<CredentialsError>>
+    for HttpCredentialRetryClassifier
 {
-    fn classify(
+    fn classify_retry(
         &self,
         response: Result<&SdkSuccess<credentials::Credentials>, &SdkError<CredentialsError>>,
     ) -> RetryKind {
@@ -206,12 +206,14 @@ impl ClassifyResponse<SdkSuccess<Credentials>, SdkError<CredentialsError>>
 
 #[cfg(test)]
 mod test {
-    use crate::http_credential_provider::{CredentialsResponseParser, HttpCredentialRetryPolicy};
+    use crate::http_credential_provider::{
+        CredentialsResponseParser, HttpCredentialRetryClassifier,
+    };
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::operation;
     use aws_smithy_http::response::ParseStrictResponse;
     use aws_smithy_http::result::{SdkError, SdkSuccess};
-    use aws_smithy_http::retry::ClassifyResponse;
+    use aws_smithy_http::retry::ClassifyRetry;
     use aws_smithy_types::retry::{ErrorKind, RetryKind};
     use aws_types::credentials::CredentialsError;
     use aws_types::Credentials;
@@ -245,7 +247,7 @@ mod test {
             .unwrap();
 
         assert_eq!(
-            HttpCredentialRetryPolicy.classify(sdk_resp(bad_response).as_ref()),
+            HttpCredentialRetryClassifier.classify_retry(sdk_resp(bad_response).as_ref()),
             RetryKind::Error(ErrorKind::ServerError)
         );
     }
@@ -266,7 +268,7 @@ mod test {
         let sdk_result = sdk_resp(ok_response);
 
         assert_eq!(
-            HttpCredentialRetryPolicy.classify(sdk_result.as_ref()),
+            HttpCredentialRetryClassifier.classify_retry(sdk_result.as_ref()),
             RetryKind::Unnecessary
         );
 
@@ -281,7 +283,7 @@ mod test {
             .unwrap();
         let sdk_result = sdk_resp(error_response);
         assert_eq!(
-            HttpCredentialRetryPolicy.classify(sdk_result.as_ref()),
+            HttpCredentialRetryClassifier.classify_retry(sdk_result.as_ref()),
             RetryKind::UnretryableFailure
         );
         let sdk_error = sdk_result.expect_err("should be error");

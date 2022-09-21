@@ -141,7 +141,7 @@ impl AssociateFirewallRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateFirewallRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -236,7 +236,7 @@ impl AssociateFirewallRuleGroupInput {
             "AssociateFirewallRuleGroup",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupInput`](crate::input::AssociateFirewallRuleGroupInput).
@@ -306,7 +306,7 @@ impl AssociateResolverEndpointIpAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateResolverEndpointIpAddress,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -398,7 +398,7 @@ impl AssociateResolverEndpointIpAddressInput {
             "AssociateResolverEndpointIpAddress",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateResolverEndpointIpAddressInput`](crate::input::AssociateResolverEndpointIpAddressInput).
@@ -472,7 +472,7 @@ impl AssociateResolverQueryLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateResolverQueryLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -564,7 +564,7 @@ impl AssociateResolverQueryLogConfigInput {
             "AssociateResolverQueryLogConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateResolverQueryLogConfigInput`](crate::input::AssociateResolverQueryLogConfigInput).
@@ -641,7 +641,7 @@ impl AssociateResolverRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateResolverRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -736,7 +736,7 @@ impl AssociateResolverRuleInput {
             "AssociateResolverRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AssociateResolverRuleInput`](crate::input::AssociateResolverRuleInput).
@@ -824,7 +824,7 @@ impl CreateFirewallDomainListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFirewallDomainList,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -922,7 +922,7 @@ impl CreateFirewallDomainListInput {
             "CreateFirewallDomainList",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFirewallDomainListInput`](crate::input::CreateFirewallDomainListInput).
@@ -1131,7 +1131,7 @@ impl CreateFirewallRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFirewallRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1227,7 +1227,7 @@ impl CreateFirewallRuleInput {
             "CreateFirewallRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFirewallRuleInput`](crate::input::CreateFirewallRuleInput).
@@ -1315,7 +1315,7 @@ impl CreateFirewallRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFirewallRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1413,7 +1413,7 @@ impl CreateFirewallRuleGroupInput {
             "CreateFirewallRuleGroup",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateFirewallRuleGroupInput`](crate::input::CreateFirewallRuleGroupInput).
@@ -1564,7 +1564,7 @@ impl CreateResolverEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResolverEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1659,7 +1659,7 @@ impl CreateResolverEndpointInput {
             "CreateResolverEndpoint",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateResolverEndpointInput`](crate::input::CreateResolverEndpointInput).
@@ -1772,7 +1772,7 @@ impl CreateResolverQueryLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResolverQueryLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1867,7 +1867,7 @@ impl CreateResolverQueryLogConfigInput {
             "CreateResolverQueryLogConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateResolverQueryLogConfigInput`](crate::input::CreateResolverQueryLogConfigInput).
@@ -2024,7 +2024,7 @@ impl CreateResolverRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResolverRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2117,7 +2117,7 @@ impl CreateResolverRuleInput {
             "CreateResolverRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateResolverRuleInput`](crate::input::CreateResolverRuleInput).
@@ -2172,7 +2172,7 @@ impl DeleteFirewallDomainListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFirewallDomainList,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2267,7 +2267,7 @@ impl DeleteFirewallDomainListInput {
             "DeleteFirewallDomainList",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFirewallDomainListInput`](crate::input::DeleteFirewallDomainListInput).
@@ -2335,7 +2335,7 @@ impl DeleteFirewallRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFirewallRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2428,7 +2428,7 @@ impl DeleteFirewallRuleInput {
             "DeleteFirewallRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleInput`](crate::input::DeleteFirewallRuleInput).
@@ -2483,7 +2483,7 @@ impl DeleteFirewallRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFirewallRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2578,7 +2578,7 @@ impl DeleteFirewallRuleGroupInput {
             "DeleteFirewallRuleGroup",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleGroupInput`](crate::input::DeleteFirewallRuleGroupInput).
@@ -2631,7 +2631,7 @@ impl DeleteResolverEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResolverEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2726,7 +2726,7 @@ impl DeleteResolverEndpointInput {
             "DeleteResolverEndpoint",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResolverEndpointInput`](crate::input::DeleteResolverEndpointInput).
@@ -2784,7 +2784,7 @@ impl DeleteResolverQueryLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResolverQueryLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2876,7 +2876,7 @@ impl DeleteResolverQueryLogConfigInput {
             "DeleteResolverQueryLogConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResolverQueryLogConfigInput`](crate::input::DeleteResolverQueryLogConfigInput).
@@ -2929,7 +2929,7 @@ impl DeleteResolverRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResolverRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3022,7 +3022,7 @@ impl DeleteResolverRuleInput {
             "DeleteResolverRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteResolverRuleInput`](crate::input::DeleteResolverRuleInput).
@@ -3080,7 +3080,7 @@ impl DisassociateFirewallRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFirewallRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3172,7 +3172,7 @@ impl DisassociateFirewallRuleGroupInput {
             "DisassociateFirewallRuleGroup",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateFirewallRuleGroupInput`](crate::input::DisassociateFirewallRuleGroupInput).
@@ -3242,7 +3242,7 @@ impl DisassociateResolverEndpointIpAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateResolverEndpointIpAddress,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3334,7 +3334,7 @@ impl DisassociateResolverEndpointIpAddressInput {
             "DisassociateResolverEndpointIpAddress",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateResolverEndpointIpAddressInput`](crate::input::DisassociateResolverEndpointIpAddressInput).
@@ -3404,7 +3404,7 @@ impl DisassociateResolverQueryLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateResolverQueryLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3496,7 +3496,7 @@ impl DisassociateResolverQueryLogConfigInput {
             "DisassociateResolverQueryLogConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateResolverQueryLogConfigInput`](crate::input::DisassociateResolverQueryLogConfigInput).
@@ -3563,7 +3563,7 @@ impl DisassociateResolverRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateResolverRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3658,7 +3658,7 @@ impl DisassociateResolverRuleInput {
             "DisassociateResolverRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleInput`](crate::input::DisassociateResolverRuleInput).
@@ -3708,7 +3708,7 @@ impl GetFirewallConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFirewallConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3801,7 +3801,7 @@ impl GetFirewallConfigInput {
             "GetFirewallConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFirewallConfigInput`](crate::input::GetFirewallConfigInput).
@@ -3854,7 +3854,7 @@ impl GetFirewallDomainListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFirewallDomainList,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3949,7 +3949,7 @@ impl GetFirewallDomainListInput {
             "GetFirewallDomainList",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFirewallDomainListInput`](crate::input::GetFirewallDomainListInput).
@@ -4002,7 +4002,7 @@ impl GetFirewallRuleGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFirewallRuleGroup,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4097,7 +4097,7 @@ impl GetFirewallRuleGroupInput {
             "GetFirewallRuleGroup",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupInput`](crate::input::GetFirewallRuleGroupInput).
@@ -4155,7 +4155,7 @@ impl GetFirewallRuleGroupAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFirewallRuleGroupAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4247,7 +4247,7 @@ impl GetFirewallRuleGroupAssociationInput {
             "GetFirewallRuleGroupAssociation",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupAssociationInput`](crate::input::GetFirewallRuleGroupAssociationInput).
@@ -4297,7 +4297,7 @@ impl GetFirewallRuleGroupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFirewallRuleGroupPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4389,7 +4389,7 @@ impl GetFirewallRuleGroupPolicyInput {
             "GetFirewallRuleGroupPolicy",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyInput`](crate::input::GetFirewallRuleGroupPolicyInput).
@@ -4439,7 +4439,7 @@ impl GetResolverConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4532,7 +4532,7 @@ impl GetResolverConfigInput {
             "GetResolverConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverConfigInput`](crate::input::GetResolverConfigInput).
@@ -4584,7 +4584,7 @@ impl GetResolverDnssecConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverDnssecConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4679,7 +4679,7 @@ impl GetResolverDnssecConfigInput {
             "GetResolverDnssecConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigInput`](crate::input::GetResolverDnssecConfigInput).
@@ -4732,7 +4732,7 @@ impl GetResolverEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4825,7 +4825,7 @@ impl GetResolverEndpointInput {
             "GetResolverEndpoint",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverEndpointInput`](crate::input::GetResolverEndpointInput).
@@ -4883,7 +4883,7 @@ impl GetResolverQueryLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverQueryLogConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4975,7 +4975,7 @@ impl GetResolverQueryLogConfigInput {
             "GetResolverQueryLogConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigInput`](crate::input::GetResolverQueryLogConfigInput).
@@ -5035,7 +5035,7 @@ impl GetResolverQueryLogConfigAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverQueryLogConfigAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5127,7 +5127,7 @@ impl GetResolverQueryLogConfigAssociationInput {
             "GetResolverQueryLogConfigAssociation",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigAssociationInput`](crate::input::GetResolverQueryLogConfigAssociationInput).
@@ -5177,7 +5177,7 @@ impl GetResolverQueryLogConfigPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverQueryLogConfigPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5269,7 +5269,7 @@ impl GetResolverQueryLogConfigPolicyInput {
             "GetResolverQueryLogConfigPolicy",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyInput`](crate::input::GetResolverQueryLogConfigPolicyInput).
@@ -5322,7 +5322,7 @@ impl GetResolverRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5415,7 +5415,7 @@ impl GetResolverRuleInput {
             "GetResolverRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverRuleInput`](crate::input::GetResolverRuleInput).
@@ -5473,7 +5473,7 @@ impl GetResolverRuleAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverRuleAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5565,7 +5565,7 @@ impl GetResolverRuleAssociationInput {
             "GetResolverRuleAssociation",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverRuleAssociationInput`](crate::input::GetResolverRuleAssociationInput).
@@ -5613,7 +5613,7 @@ impl GetResolverRulePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResolverRulePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5708,7 +5708,7 @@ impl GetResolverRulePolicyInput {
             "GetResolverRulePolicy",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetResolverRulePolicyInput`](crate::input::GetResolverRulePolicyInput).
@@ -5793,7 +5793,7 @@ impl ImportFirewallDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportFirewallDomains,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5888,7 +5888,7 @@ impl ImportFirewallDomainsInput {
             "ImportFirewallDomains",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ImportFirewallDomainsInput`](crate::input::ImportFirewallDomainsInput).
@@ -5954,7 +5954,7 @@ impl ListFirewallConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFirewallConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6047,7 +6047,7 @@ impl ListFirewallConfigsInput {
             "ListFirewallConfigs",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFirewallConfigsInput`](crate::input::ListFirewallConfigsInput).
@@ -6115,7 +6115,7 @@ impl ListFirewallDomainListsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFirewallDomainLists,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6210,7 +6210,7 @@ impl ListFirewallDomainListsInput {
             "ListFirewallDomainLists",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainListsInput`](crate::input::ListFirewallDomainListsInput).
@@ -6291,7 +6291,7 @@ impl ListFirewallDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFirewallDomains,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6384,7 +6384,7 @@ impl ListFirewallDomainsInput {
             "ListFirewallDomains",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainsInput`](crate::input::ListFirewallDomainsInput).
@@ -6506,7 +6506,7 @@ impl ListFirewallRuleGroupAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFirewallRuleGroupAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6598,7 +6598,7 @@ impl ListFirewallRuleGroupAssociationsInput {
             "ListFirewallRuleGroupAssociations",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupAssociationsInput`](crate::input::ListFirewallRuleGroupAssociationsInput).
@@ -6664,7 +6664,7 @@ impl ListFirewallRuleGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFirewallRuleGroups,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6759,7 +6759,7 @@ impl ListFirewallRuleGroupsInput {
             "ListFirewallRuleGroups",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsInput`](crate::input::ListFirewallRuleGroupsInput).
@@ -6878,7 +6878,7 @@ impl ListFirewallRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFirewallRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6971,7 +6971,7 @@ impl ListFirewallRulesInput {
             "ListFirewallRules",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFirewallRulesInput`](crate::input::ListFirewallRulesInput).
@@ -7037,7 +7037,7 @@ impl ListResolverConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResolverConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7130,7 +7130,7 @@ impl ListResolverConfigsInput {
             "ListResolverConfigs",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResolverConfigsInput`](crate::input::ListResolverConfigsInput).
@@ -7219,7 +7219,7 @@ impl ListResolverDnssecConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResolverDnssecConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7314,7 +7314,7 @@ impl ListResolverDnssecConfigsInput {
             "ListResolverDnssecConfigs",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResolverDnssecConfigsInput`](crate::input::ListResolverDnssecConfigsInput).
@@ -7395,7 +7395,7 @@ impl ListResolverEndpointIpAddressesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResolverEndpointIpAddresses,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7487,7 +7487,7 @@ impl ListResolverEndpointIpAddressesInput {
             "ListResolverEndpointIpAddresses",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesInput`](crate::input::ListResolverEndpointIpAddressesInput).
@@ -7576,7 +7576,7 @@ impl ListResolverEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResolverEndpoints,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7671,7 +7671,7 @@ impl ListResolverEndpointsInput {
             "ListResolverEndpoints",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointsInput`](crate::input::ListResolverEndpointsInput).
@@ -7843,7 +7843,7 @@ impl ListResolverQueryLogConfigAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResolverQueryLogConfigAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7935,7 +7935,7 @@ impl ListResolverQueryLogConfigAssociationsInput {
             "ListResolverQueryLogConfigAssociations",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigAssociationsInput`](crate::input::ListResolverQueryLogConfigAssociationsInput).
@@ -8107,7 +8107,7 @@ impl ListResolverQueryLogConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResolverQueryLogConfigs,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8199,7 +8199,7 @@ impl ListResolverQueryLogConfigsInput {
             "ListResolverQueryLogConfigs",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsInput`](crate::input::ListResolverQueryLogConfigsInput).
@@ -8290,7 +8290,7 @@ impl ListResolverRuleAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResolverRuleAssociations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8382,7 +8382,7 @@ impl ListResolverRuleAssociationsInput {
             "ListResolverRuleAssociations",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResolverRuleAssociationsInput`](crate::input::ListResolverRuleAssociationsInput).
@@ -8471,7 +8471,7 @@ impl ListResolverRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResolverRules,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8564,7 +8564,7 @@ impl ListResolverRulesInput {
             "ListResolverRules",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListResolverRulesInput`](crate::input::ListResolverRulesInput).
@@ -8640,7 +8640,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8735,7 +8735,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
@@ -8802,7 +8802,7 @@ impl PutFirewallRuleGroupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutFirewallRuleGroupPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8894,7 +8894,7 @@ impl PutFirewallRuleGroupPolicyInput {
             "PutFirewallRuleGroupPolicy",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyInput`](crate::input::PutFirewallRuleGroupPolicyInput).
@@ -8978,7 +8978,7 @@ impl PutResolverQueryLogConfigPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResolverQueryLogConfigPolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9070,7 +9070,7 @@ impl PutResolverQueryLogConfigPolicyInput {
             "PutResolverQueryLogConfigPolicy",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutResolverQueryLogConfigPolicyInput`](crate::input::PutResolverQueryLogConfigPolicyInput).
@@ -9151,7 +9151,7 @@ impl PutResolverRulePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResolverRulePolicy,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9246,7 +9246,7 @@ impl PutResolverRulePolicyInput {
             "PutResolverRulePolicy",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyInput`](crate::input::PutResolverRulePolicyInput).
@@ -9333,7 +9333,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9426,7 +9426,7 @@ impl TagResourceInput {
             "TagResource",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
@@ -9513,7 +9513,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9606,7 +9606,7 @@ impl UntagResourceInput {
             "UntagResource",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
@@ -9681,7 +9681,7 @@ impl UpdateFirewallConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFirewallConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9776,7 +9776,7 @@ impl UpdateFirewallConfigInput {
             "UpdateFirewallConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFirewallConfigInput`](crate::input::UpdateFirewallConfigInput).
@@ -9887,7 +9887,7 @@ impl UpdateFirewallDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFirewallDomains,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9982,7 +9982,7 @@ impl UpdateFirewallDomainsInput {
             "UpdateFirewallDomains",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsInput`](crate::input::UpdateFirewallDomainsInput).
@@ -10168,7 +10168,7 @@ impl UpdateFirewallRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFirewallRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10261,7 +10261,7 @@ impl UpdateFirewallRuleInput {
             "UpdateFirewallRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleInput`](crate::input::UpdateFirewallRuleInput).
@@ -10363,7 +10363,7 @@ impl UpdateFirewallRuleGroupAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFirewallRuleGroupAssociation,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10455,7 +10455,7 @@ impl UpdateFirewallRuleGroupAssociationInput {
             "UpdateFirewallRuleGroupAssociation",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleGroupAssociationInput`](crate::input::UpdateFirewallRuleGroupAssociationInput).
@@ -10530,7 +10530,7 @@ impl UpdateResolverConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResolverConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10625,7 +10625,7 @@ impl UpdateResolverConfigInput {
             "UpdateResolverConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResolverConfigInput`](crate::input::UpdateResolverConfigInput).
@@ -10692,7 +10692,7 @@ impl UpdateResolverDnssecConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResolverDnssecConfig,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10784,7 +10784,7 @@ impl UpdateResolverDnssecConfigInput {
             "UpdateResolverDnssecConfig",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResolverDnssecConfigInput`](crate::input::UpdateResolverDnssecConfigInput).
@@ -10849,7 +10849,7 @@ impl UpdateResolverEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResolverEndpoint,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10944,7 +10944,7 @@ impl UpdateResolverEndpointInput {
             "UpdateResolverEndpoint",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointInput`](crate::input::UpdateResolverEndpointInput).
@@ -11012,7 +11012,7 @@ impl UpdateResolverRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResolverRule,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11105,7 +11105,7 @@ impl UpdateResolverRuleInput {
             "UpdateResolverRule",
             "route53resolver",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateResolverRuleInput`](crate::input::UpdateResolverRuleInput).

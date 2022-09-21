@@ -172,7 +172,7 @@ impl CreateSlackChannelConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSlackChannelConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -260,7 +260,7 @@ impl CreateSlackChannelConfigurationInput {
             "CreateSlackChannelConfiguration",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateSlackChannelConfigurationInput`](crate::input::CreateSlackChannelConfigurationInput).
@@ -296,7 +296,7 @@ impl DeleteAccountAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccountAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -370,7 +370,7 @@ impl DeleteAccountAliasInput {
             "DeleteAccountAlias",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
@@ -434,7 +434,7 @@ impl DeleteSlackChannelConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSlackChannelConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -522,7 +522,7 @@ impl DeleteSlackChannelConfigurationInput {
             "DeleteSlackChannelConfiguration",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSlackChannelConfigurationInput`](crate::input::DeleteSlackChannelConfigurationInput).
@@ -574,7 +574,7 @@ impl DeleteSlackWorkspaceConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSlackWorkspaceConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -662,7 +662,7 @@ impl DeleteSlackWorkspaceConfigurationInput {
             "DeleteSlackWorkspaceConfiguration",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteSlackWorkspaceConfigurationInput`](crate::input::DeleteSlackWorkspaceConfigurationInput).
@@ -698,7 +698,7 @@ impl GetAccountAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccountAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -772,7 +772,7 @@ impl GetAccountAliasInput {
             "GetAccountAlias",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
@@ -824,7 +824,7 @@ impl ListSlackChannelConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSlackChannelConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -912,7 +912,7 @@ impl ListSlackChannelConfigurationsInput {
             "ListSlackChannelConfigurations",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSlackChannelConfigurationsInput`](crate::input::ListSlackChannelConfigurationsInput).
@@ -964,7 +964,7 @@ impl ListSlackWorkspaceConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSlackWorkspaceConfigurations,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1052,7 +1052,7 @@ impl ListSlackWorkspaceConfigurationsInput {
             "ListSlackWorkspaceConfigurations",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListSlackWorkspaceConfigurationsInput`](crate::input::ListSlackWorkspaceConfigurationsInput).
@@ -1105,7 +1105,7 @@ impl PutAccountAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccountAlias,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1193,7 +1193,7 @@ impl PutAccountAliasInput {
             "PutAccountAlias",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
@@ -1373,7 +1373,7 @@ impl UpdateSlackChannelConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSlackChannelConfiguration,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1461,7 +1461,7 @@ impl UpdateSlackChannelConfigurationInput {
             "UpdateSlackChannelConfiguration",
             "supportapp",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateSlackChannelConfigurationInput`](crate::input::UpdateSlackChannelConfigurationInput).

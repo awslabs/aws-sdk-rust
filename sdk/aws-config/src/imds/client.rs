@@ -23,7 +23,7 @@ use aws_smithy_http::endpoint::Endpoint;
 use aws_smithy_http::operation;
 use aws_smithy_http::operation::{Metadata, Operation};
 use aws_smithy_http::response::ParseStrictResponse;
-use aws_smithy_http::retry::ClassifyResponse;
+use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_http_tower::map_request::{
     AsyncMapRequestLayer, AsyncMapRequestService, MapRequestLayer, MapRequestService,
 };
@@ -232,7 +232,7 @@ impl Client {
     fn make_operation(
         &self,
         path: &str,
-    ) -> Result<Operation<ImdsGetResponseHandler, ImdsErrorPolicy>, ImdsError> {
+    ) -> Result<Operation<ImdsGetResponseHandler, ImdsResponseRetryClassifier>, ImdsError> {
         let mut base_uri: Uri = path.parse().map_err(|_| ImdsError::InvalidPath)?;
         self.inner.endpoint.set_endpoint(&mut base_uri, None);
         let request = http::Request::builder()
@@ -243,7 +243,7 @@ impl Client {
         request.properties_mut().insert(user_agent());
         Ok(Operation::new(request, ImdsGetResponseHandler)
             .with_metadata(Metadata::new("get", "imds"))
-            .with_retry_policy(ImdsErrorPolicy))
+            .with_retry_classifier(ImdsResponseRetryClassifier))
     }
 }
 
@@ -706,9 +706,9 @@ impl Display for TokenError {
 impl Error for TokenError {}
 
 #[derive(Clone)]
-struct ImdsErrorPolicy;
+struct ImdsResponseRetryClassifier;
 
-impl ImdsErrorPolicy {
+impl ImdsResponseRetryClassifier {
     fn classify(response: &operation::Response) -> RetryKind {
         let status = response.http().status();
         match status {
@@ -721,7 +721,7 @@ impl ImdsErrorPolicy {
     }
 }
 
-/// IMDS Retry Policy
+/// IMDS Response Retry Classifier
 ///
 /// Possible status codes:
 /// - 200 (OK)
@@ -730,12 +730,12 @@ impl ImdsErrorPolicy {
 /// - 403 (IMDS disabled): **Not Retryable**
 /// - 404 (Not found): **Not Retryable**
 /// - >=500 (server error): **Retryable**
-impl<T, E> ClassifyResponse<SdkSuccess<T>, SdkError<E>> for ImdsErrorPolicy {
-    fn classify(&self, response: Result<&SdkSuccess<T>, &SdkError<E>>) -> RetryKind {
+impl<T, E> ClassifyRetry<SdkSuccess<T>, SdkError<E>> for ImdsResponseRetryClassifier {
+    fn classify_retry(&self, response: Result<&SdkSuccess<T>, &SdkError<E>>) -> RetryKind {
         match response {
             Ok(_) => RetryKind::Unnecessary,
             Err(SdkError::ResponseError { raw, .. }) | Err(SdkError::ServiceError { raw, .. }) => {
-                ImdsErrorPolicy::classify(raw)
+                Self::classify(raw)
             }
             _ => RetryKind::UnretryableFailure,
         }
@@ -744,7 +744,7 @@ impl<T, E> ClassifyResponse<SdkSuccess<T>, SdkError<E>> for ImdsErrorPolicy {
 
 #[cfg(test)]
 pub(crate) mod test {
-    use crate::imds::client::{Client, EndpointMode, ImdsErrorPolicy};
+    use crate::imds::client::{Client, EndpointMode, ImdsResponseRetryClassifier};
     use crate::provider_config::ProviderConfig;
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
@@ -1033,9 +1033,9 @@ pub(crate) mod test {
     /// Successful responses should classify as `RetryKind::Unnecessary`
     #[test]
     fn successful_response_properly_classified() {
-        use aws_smithy_http::retry::ClassifyResponse;
+        use aws_smithy_http::retry::ClassifyRetry;
 
-        let policy = ImdsErrorPolicy;
+        let classifier = ImdsResponseRetryClassifier;
         fn response_200() -> operation::Response {
             operation::Response::new(imds_response("").map(|_| SdkBody::empty()))
         }
@@ -1045,7 +1045,7 @@ pub(crate) mod test {
         };
         assert_eq!(
             RetryKind::Unnecessary,
-            policy.classify(Ok::<_, &SdkError<()>>(&success))
+            classifier.classify_retry(Ok::<_, &SdkError<()>>(&success))
         );
 
         // Emulate a failure to parse the response body (using an io error since it's easy to construct in a test)
@@ -1055,7 +1055,7 @@ pub(crate) mod test {
         };
         assert_eq!(
             RetryKind::UnretryableFailure,
-            policy.classify(Err::<&SdkSuccess<()>, _>(&failure))
+            classifier.classify_retry(Err::<&SdkSuccess<()>, _>(&failure))
         );
     }
 

@@ -78,7 +78,7 @@ impl DescribeJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -206,7 +206,7 @@ impl DescribeJobExecutionInput {
             "DescribeJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput).
@@ -258,7 +258,7 @@ impl GetPendingJobExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPendingJobExecutions,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -347,7 +347,7 @@ impl GetPendingJobExecutionsInput {
             "GetPendingJobExecutions",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsInput`](crate::input::GetPendingJobExecutionsInput).
@@ -440,7 +440,7 @@ impl StartNextPendingJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartNextPendingJobExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -546,7 +546,7 @@ impl StartNextPendingJobExecutionInput {
             "StartNextPendingJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionInput`](crate::input::StartNextPendingJobExecutionInput).
@@ -712,7 +712,7 @@ impl UpdateJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobExecution,
-            aws_http::retry::AwsErrorRetryPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -834,7 +834,7 @@ impl UpdateJobExecutionInput {
             "UpdateJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateJobExecutionInput`](crate::input::UpdateJobExecutionInput).

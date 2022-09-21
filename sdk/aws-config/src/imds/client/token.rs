@@ -38,7 +38,7 @@ use aws_types::os_shim_internal::TimeSource;
 use http::{HeaderValue, Uri};
 
 use crate::cache::ExpiringCache;
-use crate::imds::client::{ImdsError, ImdsErrorPolicy, TokenError};
+use crate::imds::client::{ImdsError, ImdsResponseRetryClassifier, TokenError};
 
 /// Token Refresh Buffer
 ///
@@ -143,7 +143,7 @@ impl TokenMiddleware {
         request.properties_mut().insert(super::user_agent());
 
         let operation = Operation::new(request, self.token_parser.clone())
-            .with_retry_policy(ImdsErrorPolicy)
+            .with_retry_classifier(ImdsResponseRetryClassifier)
             .with_metadata(Metadata::new("get-token", "imds"));
         let response = self
             .client
