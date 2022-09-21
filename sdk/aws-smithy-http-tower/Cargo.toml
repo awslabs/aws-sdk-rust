@@ -30,5 +30,5 @@ version = "0.4.4"
 features = ["util"]
 
 [dev-dependencies.tokio]
-version = "1"
+version = "1.8.4"
 features = ["full"]
