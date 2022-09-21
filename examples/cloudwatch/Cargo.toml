@@ -6,7 +6,7 @@ edition = "2018"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.48.0"
+version = "0.49.0"
 
 [dependencies.aws-sdk-cloudwatch]
 path = "../../sdk/cloudwatch"

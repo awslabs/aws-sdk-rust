@@ -16,7 +16,7 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.48.0"
+aws-config = "0.49.0"
 aws-sdk-voiceid = "0.19.0"
 tokio = { version = "1", features = ["full"] }
 ```
