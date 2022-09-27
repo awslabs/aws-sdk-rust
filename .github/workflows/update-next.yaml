@@ -1,0 +1,59 @@
+# This workflow updates the `next` branch with freshly generated
+# code from the latest smithy-rs and models that reside in aws-sdk-rust.
+name: Update `next`
+on:
+  workflow_dispatch:
+  # TODO: Remove on PR
+  pull_request:
+
+jobs:
+  update-next:
+    name: Update `next`
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Check out `smithy-rs`
+        uses: actions/checkout@v3
+        with:
+          repository: awslabs/smithy-rs
+          ref: main
+          path: smithy-rs
+      - name: Check out `aws-sdk-rust`
+        uses: actions/checkout@v3
+        with:
+          repository: awslabs/aws-sdk-rust
+          ref: main
+          path: aws-sdk-rust
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      # Rust is only used to `rustfmt` the generated code; doesn't need to match MSRV
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Delete old SDK
+        run: |
+      - name: Generate a fresh SDK
+        run: |
+          WORKSPACE="$(pwd)"
+          cd smithy-rs
+          ./gradlew aws:sdk:assemble --info -Paws.sdk.models.path="${WORKSPACE}/aws-sdk-rust/aws-models"
+      - name: Update `aws-sdk-rust/next`
+        run: |
+          set -eux
+          cd aws-sdk-rust
+          git checkout origin/main -b next
+
+          # Delete the old SDK
+          rm -rf sdk examples
+          rm -f versions.toml Cargo.toml index.md
+
+          # Copy in the new SDK
+          mv ../smithy-rs/aws/sdk/build/aws-sdk/* .
+          git add .
+          git -c 'user.name=AWS SDK Rust Bot' -c 'user.email=aws-sdk-rust-primary@amazon.com' commit -m 'Update `aws-sdk-rust/next`' --allow-empty
+          git push origin next:next --force
