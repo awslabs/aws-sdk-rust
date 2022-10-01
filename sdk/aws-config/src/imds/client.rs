@@ -555,9 +555,16 @@ impl Builder {
     /// Build an IMDSv2 Client
     pub async fn build(self) -> Result<Client, BuildError> {
         let config = self.config.unwrap_or_default();
+        let http_timeout_env = config
+            .env()
+            .get(env::TIMEOUT)
+            .ok()
+            .map(|s| s.parse::<f64>().ok())
+            .flatten()
+            .map(Duration::from_secs_f64);
         let http_timeout_config = timeout::Http::new()
-            .with_connect_timeout(self.connect_timeout.or(DEFAULT_CONNECT_TIMEOUT).into())
-            .with_read_timeout(self.read_timeout.or(DEFAULT_READ_TIMEOUT).into());
+            .with_connect_timeout(self.connect_timeout.or(http_timeout_env.or(DEFAULT_CONNECT_TIMEOUT)).into())
+            .with_read_timeout(self.read_timeout.or(http_timeout_env.or(DEFAULT_READ_TIMEOUT)).into());
         let http_settings = HttpSettings::default().with_http_timeout_config(http_timeout_config);
         let connector = expect_connector(config.connector(&http_settings));
         let endpoint_source = self
@@ -565,8 +572,14 @@ impl Builder {
             .unwrap_or_else(|| EndpointSource::Env(config.env(), config.fs()));
         let endpoint = endpoint_source.endpoint(self.mode_override).await?;
         let endpoint = Endpoint::immutable(endpoint);
+        let max_attempts_env = config
+            .env()
+            .get(env::NUM_ATTEMPTS)
+            .ok()
+            .map(|s| s.parse::<u32>().ok())
+            .flatten();
         let retry_config = retry::Config::default()
-            .with_max_attempts(self.max_attempts.unwrap_or(DEFAULT_ATTEMPTS));
+            .with_max_attempts(self.max_attempts.unwrap_or(max_attempts_env.unwrap_or(DEFAULT_ATTEMPTS)));
         let timeout_config = timeout::Config::default();
         let token_loader = token::TokenMiddleware::new(
             connector.clone(),
@@ -599,6 +612,8 @@ impl Builder {
 mod env {
     pub(super) const ENDPOINT: &str = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
     pub(super) const ENDPOINT_MODE: &str = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
+    pub(super) const NUM_ATTEMPTS: &str = "AWS_METADATA_SERVICE_NUM_ATTEMPTS";
+    pub(super) const TIMEOUT: &str = "AWS_METADATA_SERVICE_TIMEOUT";
 }
 
 mod profile_keys {
