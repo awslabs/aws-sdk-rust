@@ -454,7 +454,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>\n            <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that\n\t\t\tyou want to route traffic to.</p>\n\t\t       <p>When creating resource record sets for a private hosted zone, note the\n\t\t\tfollowing:</p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>Creating geolocation alias resource record sets or latency alias resource\n\t\t\t\t\trecord sets in a private hosted zone is unsupported.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>For information about creating failover resource record sets in a private\n\t\t\t\t\thosted zone, see <a href=\"https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html\">Configuring Failover in a Private Hosted Zone</a>.</p>\n\t\t\t         </li>\n         </ul>"
+                "smithy.api#documentation": "<p>\n            <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that\n\t\t\tyou want to route traffic to.</p>\n\t\t       <p>When creating resource record sets for a private hosted zone, note the\n\t\t\tfollowing:</p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>For information about creating failover resource record sets in a private\n\t\t\t\t\thosted zone, see <a href=\"https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html\">Configuring Failover in a Private Hosted Zone</a>.</p>\n\t\t\t         </li>\n         </ul>"
             }
         },
         "com.amazonaws.route53#AssociateVPCComment": {
@@ -1282,6 +1282,10 @@
                     {
                         "value": "me-south-1",
                         "name": "me_south_1"
+                    },
+                    {
+                        "value": "me-central-1",
+                        "name": "me_central_1"
                     },
                     {
                         "value": "ap-south-1",
@@ -8097,7 +8101,7 @@
                 "AliasTarget": {
                     "target": "com.amazonaws.route53#AliasTarget",
                     "traits": {
-                        "smithy.api#documentation": "<p>\n            <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that\n\t\t\tyou want to route traffic to. </p>\n\t\t       <p>If you're creating resource records sets for a private hosted zone, note the\n\t\t\tfollowing:</p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>You can't create an alias resource record set in a private hosted zone to\n\t\t\t\t\troute traffic to a CloudFront distribution.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>Creating geolocation alias resource record sets or latency alias resource\n\t\t\t\t\trecord sets in a private hosted zone is unsupported.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>For information about creating failover resource record sets in a private\n\t\t\t\t\thosted zone, see <a href=\"https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html\">Configuring Failover in a Private Hosted Zone</a> in the\n\t\t\t\t\t\t<i>Amazon Route 53 Developer Guide</i>.</p>\n\t\t\t         </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>\n            <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that\n\t\t\tyou want to route traffic to. </p>\n\t\t       <p>If you're creating resource records sets for a private hosted zone, note the\n\t\t\tfollowing:</p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>You can't create an alias resource record set in a private hosted zone to\n\t\t\t\t\troute traffic to a CloudFront distribution.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>For information about creating failover resource record sets in a private\n\t\t\t\t\thosted zone, see <a href=\"https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html\">Configuring Failover in a Private Hosted Zone</a> in the\n\t\t\t\t\t\t<i>Amazon Route 53 Developer Guide</i>.</p>\n\t\t\t         </li>\n         </ul>"
                     }
                 },
                 "HealthCheckId": {
@@ -9705,6 +9709,10 @@
                     {
                         "value": "us-isob-east-1",
                         "name": "us_isob_east_1"
+                    },
+                    {
+                        "value": "me-central-1",
+                        "name": "me_central_1"
                     },
                     {
                         "value": "ap-southeast-1",
