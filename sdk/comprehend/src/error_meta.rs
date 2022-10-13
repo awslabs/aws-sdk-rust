@@ -33,7 +33,7 @@ pub enum Error {
     TooManyTagKeysException(crate::error::TooManyTagKeysException),
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -207,6 +207,27 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDetectTargetedSentimentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::BatchDetectTargetedSentimentError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::BatchDetectTargetedSentimentErrorKind::BatchSizeLimitExceededException(inner) => Error::BatchSizeLimitExceededException(inner),
+                crate::error::BatchDetectTargetedSentimentErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::BatchDetectTargetedSentimentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::BatchDetectTargetedSentimentErrorKind::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
+                crate::error::BatchDetectTargetedSentimentErrorKind::UnsupportedLanguageException(inner) => Error::UnsupportedLanguageException(inner),
+                crate::error::BatchDetectTargetedSentimentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1049,6 +1070,36 @@ where
                     Error::UnsupportedLanguageException(inner)
                 }
                 crate::error::DetectSyntaxErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectTargetedSentimentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DetectTargetedSentimentError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DetectTargetedSentimentErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::DetectTargetedSentimentErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DetectTargetedSentimentErrorKind::TextSizeLimitExceededException(
+                    inner,
+                ) => Error::TextSizeLimitExceededException(inner),
+                crate::error::DetectTargetedSentimentErrorKind::UnsupportedLanguageException(
+                    inner,
+                ) => Error::UnsupportedLanguageException(inner),
+                crate::error::DetectTargetedSentimentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

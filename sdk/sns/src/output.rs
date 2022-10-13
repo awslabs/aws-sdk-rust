@@ -361,6 +361,36 @@ impl RemovePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutDataProtectionPolicyOutput {}
+impl std::fmt::Debug for PutDataProtectionPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutDataProtectionPolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput).
+pub mod put_data_protection_policy_output {
+
+    /// A builder for [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput).
+        pub fn build(self) -> crate::output::PutDataProtectionPolicyOutput {
+            crate::output::PutDataProtectionPolicyOutput {}
+        }
+    }
+}
+impl PutDataProtectionPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput).
+    pub fn builder() -> crate::output::put_data_protection_policy_output::Builder {
+        crate::output::put_data_protection_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishBatchOutput {
     /// <p>A list of successful <code>PublishBatch</code> responses.</p>
     #[doc(hidden)]
@@ -1980,6 +2010,64 @@ impl GetEndpointAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetEndpointAttributesOutput`](crate::output::GetEndpointAttributesOutput).
     pub fn builder() -> crate::output::get_endpoint_attributes_output::Builder {
         crate::output::get_endpoint_attributes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDataProtectionPolicyOutput {
+    /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
+    #[doc(hidden)]
+    pub data_protection_policy: std::option::Option<std::string::String>,
+}
+impl GetDataProtectionPolicyOutput {
+    /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
+    pub fn data_protection_policy(&self) -> std::option::Option<&str> {
+        self.data_protection_policy.as_deref()
+    }
+}
+impl std::fmt::Debug for GetDataProtectionPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDataProtectionPolicyOutput");
+        formatter.field("data_protection_policy", &self.data_protection_policy);
+        formatter.finish()
+    }
+}
+/// See [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput).
+pub mod get_data_protection_policy_output {
+
+    /// A builder for [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_protection_policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
+        pub fn data_protection_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_protection_policy = Some(input.into());
+            self
+        }
+        /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
+        pub fn set_data_protection_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_protection_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput).
+        pub fn build(self) -> crate::output::GetDataProtectionPolicyOutput {
+            crate::output::GetDataProtectionPolicyOutput {
+                data_protection_policy: self.data_protection_policy,
+            }
+        }
+    }
+}
+impl GetDataProtectionPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput).
+    pub fn builder() -> crate::output::get_data_protection_policy_output::Builder {
+        crate::output::get_data_protection_policy_output::Builder::default()
     }
 }
 

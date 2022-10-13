@@ -136,6 +136,7 @@ impl Client {
     ///   - [`destination_configuration(DestinationConfiguration)`](crate::client::fluent_builders::CreateRecordingConfiguration::destination_configuration) / [`set_destination_configuration(Option<DestinationConfiguration>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_destination_configuration): <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     ///   - [`thumbnail_configuration(ThumbnailConfiguration)`](crate::client::fluent_builders::CreateRecordingConfiguration::thumbnail_configuration) / [`set_thumbnail_configuration(Option<ThumbnailConfiguration>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_thumbnail_configuration): <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+    ///   - [`recording_reconnect_window_seconds(i32)`](crate::client::fluent_builders::CreateRecordingConfiguration::recording_reconnect_window_seconds) / [`set_recording_reconnect_window_seconds(i32)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_recording_reconnect_window_seconds): <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
     /// - On success, responds with [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput) with field(s):
     ///   - [`recording_configuration(Option<RecordingConfiguration>)`](crate::output::CreateRecordingConfigurationOutput::recording_configuration): (undocumented)
     /// - On failure, responds with [`SdkError<CreateRecordingConfigurationError>`](crate::error::CreateRecordingConfigurationError)
@@ -881,6 +882,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ThumbnailConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_thumbnail_configuration(input);
+            self
+        }
+        /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
+        pub fn recording_reconnect_window_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.recording_reconnect_window_seconds(input);
+            self
+        }
+        /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
+        pub fn set_recording_reconnect_window_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_recording_reconnect_window_seconds(input);
             self
         }
     }

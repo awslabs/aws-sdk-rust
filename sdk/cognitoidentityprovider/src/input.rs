@@ -7388,12 +7388,12 @@ pub mod create_user_pool_input {
             self.username_attributes = input;
             self
         }
-        /// <p>A string representing the SMS verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn sms_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.sms_verification_message = Some(input.into());
             self
         }
-        /// <p>A string representing the SMS verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_sms_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7401,12 +7401,12 @@ pub mod create_user_pool_input {
             self.sms_verification_message = input;
             self
         }
-        /// <p>A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn email_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_verification_message = Some(input.into());
             self
         }
-        /// <p>A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_email_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7414,12 +7414,12 @@ pub mod create_user_pool_input {
             self.email_verification_message = input;
             self
         }
-        /// <p>A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn email_verification_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_verification_subject = Some(input.into());
             self
         }
-        /// <p>A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_email_verification_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7813,6 +7813,7 @@ pub mod create_user_pool_client_input {
             std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
         pub(crate) enable_token_revocation: std::option::Option<bool>,
         pub(crate) enable_propagate_additional_user_context_data: std::option::Option<bool>,
+        pub(crate) auth_session_validity: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
@@ -8302,6 +8303,16 @@ pub mod create_user_pool_client_input {
             self.enable_propagate_additional_user_context_data = input;
             self
         }
+        /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+        pub fn auth_session_validity(mut self, input: i32) -> Self {
+            self.auth_session_validity = Some(input);
+            self
+        }
+        /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+        pub fn set_auth_session_validity(mut self, input: std::option::Option<i32>) -> Self {
+            self.auth_session_validity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateUserPoolClientInput`](crate::input::CreateUserPoolClientInput).
         pub fn build(
             self,
@@ -8332,6 +8343,7 @@ pub mod create_user_pool_client_input {
                 enable_token_revocation: self.enable_token_revocation,
                 enable_propagate_additional_user_context_data: self
                     .enable_propagate_additional_user_context_data,
+                auth_session_validity: self.auth_session_validity,
             })
         }
     }
@@ -18883,12 +18895,12 @@ pub mod update_user_pool_input {
             self.auto_verified_attributes = input;
             self
         }
-        /// <p>A container with information about the SMS verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn sms_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.sms_verification_message = Some(input.into());
             self
         }
-        /// <p>A container with information about the SMS verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_sms_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18896,12 +18908,12 @@ pub mod update_user_pool_input {
             self.sms_verification_message = input;
             self
         }
-        /// <p>The contents of the email verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn email_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_verification_message = Some(input.into());
             self
         }
-        /// <p>The contents of the email verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_email_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18909,12 +18921,12 @@ pub mod update_user_pool_input {
             self.email_verification_message = input;
             self
         }
-        /// <p>The subject of the email verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn email_verification_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_verification_subject = Some(input.into());
             self
         }
-        /// <p>The subject of the email verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_email_verification_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19279,6 +19291,7 @@ pub mod update_user_pool_client_input {
             std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
         pub(crate) enable_token_revocation: std::option::Option<bool>,
         pub(crate) enable_propagate_additional_user_context_data: std::option::Option<bool>,
+        pub(crate) auth_session_validity: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The user pool ID for the user pool where you want to update the user pool client.</p>
@@ -19708,6 +19721,16 @@ pub mod update_user_pool_client_input {
             self.enable_propagate_additional_user_context_data = input;
             self
         }
+        /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+        pub fn auth_session_validity(mut self, input: i32) -> Self {
+            self.auth_session_validity = Some(input);
+            self
+        }
+        /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+        pub fn set_auth_session_validity(mut self, input: std::option::Option<i32>) -> Self {
+            self.auth_session_validity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateUserPoolClientInput`](crate::input::UpdateUserPoolClientInput).
         pub fn build(
             self,
@@ -19738,6 +19761,7 @@ pub mod update_user_pool_client_input {
                 enable_token_revocation: self.enable_token_revocation,
                 enable_propagate_additional_user_context_data: self
                     .enable_propagate_additional_user_context_data,
+                auth_session_validity: self.auth_session_validity,
             })
         }
     }
@@ -20638,6 +20662,9 @@ pub struct UpdateUserPoolClientInput {
     /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
     #[doc(hidden)]
     pub enable_propagate_additional_user_context_data: std::option::Option<bool>,
+    /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+    #[doc(hidden)]
+    pub auth_session_validity: std::option::Option<i32>,
 }
 impl UpdateUserPoolClientInput {
     /// <p>The user pool ID for the user pool where you want to update the user pool client.</p>
@@ -20791,6 +20818,10 @@ impl UpdateUserPoolClientInput {
     pub fn enable_propagate_additional_user_context_data(&self) -> std::option::Option<bool> {
         self.enable_propagate_additional_user_context_data
     }
+    /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+    pub fn auth_session_validity(&self) -> std::option::Option<i32> {
+        self.auth_session_validity
+    }
 }
 impl std::fmt::Debug for UpdateUserPoolClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20828,6 +20859,7 @@ impl std::fmt::Debug for UpdateUserPoolClientInput {
             "enable_propagate_additional_user_context_data",
             &self.enable_propagate_additional_user_context_data,
         );
+        formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.finish()
     }
 }
@@ -20849,13 +20881,13 @@ pub struct UpdateUserPoolInput {
     #[doc(hidden)]
     pub auto_verified_attributes:
         std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
-    /// <p>A container with information about the SMS verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub sms_verification_message: std::option::Option<std::string::String>,
-    /// <p>The contents of the email verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub email_verification_message: std::option::Option<std::string::String>,
-    /// <p>The subject of the email verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub email_verification_subject: std::option::Option<std::string::String>,
     /// <p>The template for verification messages.</p>
@@ -20921,15 +20953,15 @@ impl UpdateUserPoolInput {
     ) -> std::option::Option<&[crate::model::VerifiedAttributeType]> {
         self.auto_verified_attributes.as_deref()
     }
-    /// <p>A container with information about the SMS verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn sms_verification_message(&self) -> std::option::Option<&str> {
         self.sms_verification_message.as_deref()
     }
-    /// <p>The contents of the email verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn email_verification_message(&self) -> std::option::Option<&str> {
         self.email_verification_message.as_deref()
     }
-    /// <p>The subject of the email verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn email_verification_subject(&self) -> std::option::Option<&str> {
         self.email_verification_subject.as_deref()
     }
@@ -23708,6 +23740,9 @@ pub struct CreateUserPoolClientInput {
     /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
     #[doc(hidden)]
     pub enable_propagate_additional_user_context_data: std::option::Option<bool>,
+    /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+    #[doc(hidden)]
+    pub auth_session_validity: std::option::Option<i32>,
 }
 impl CreateUserPoolClientInput {
     /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
@@ -23891,6 +23926,10 @@ impl CreateUserPoolClientInput {
     pub fn enable_propagate_additional_user_context_data(&self) -> std::option::Option<bool> {
         self.enable_propagate_additional_user_context_data
     }
+    /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+    pub fn auth_session_validity(&self) -> std::option::Option<i32> {
+        self.auth_session_validity
+    }
 }
 impl std::fmt::Debug for CreateUserPoolClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23928,6 +23967,7 @@ impl std::fmt::Debug for CreateUserPoolClientInput {
             "enable_propagate_additional_user_context_data",
             &self.enable_propagate_additional_user_context_data,
         );
+        formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.finish()
     }
 }
@@ -23961,13 +24001,13 @@ pub struct CreateUserPoolInput {
     #[doc(hidden)]
     pub username_attributes:
         std::option::Option<std::vec::Vec<crate::model::UsernameAttributeType>>,
-    /// <p>A string representing the SMS verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub sms_verification_message: std::option::Option<std::string::String>,
-    /// <p>A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub email_verification_message: std::option::Option<std::string::String>,
-    /// <p>A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub email_verification_subject: std::option::Option<std::string::String>,
     /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
@@ -24049,15 +24089,15 @@ impl CreateUserPoolInput {
     ) -> std::option::Option<&[crate::model::UsernameAttributeType]> {
         self.username_attributes.as_deref()
     }
-    /// <p>A string representing the SMS verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn sms_verification_message(&self) -> std::option::Option<&str> {
         self.sms_verification_message.as_deref()
     }
-    /// <p>A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn email_verification_message(&self) -> std::option::Option<&str> {
         self.email_verification_message.as_deref()
     }
-    /// <p>A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn email_verification_subject(&self) -> std::option::Option<&str> {
         self.email_verification_subject.as_deref()
     }

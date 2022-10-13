@@ -234,6 +234,64 @@ impl UpdateFileSystemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFileCacheOutput {
+    /// <p>A description of the cache that was updated.</p>
+    #[doc(hidden)]
+    pub file_cache: std::option::Option<crate::model::FileCache>,
+}
+impl UpdateFileCacheOutput {
+    /// <p>A description of the cache that was updated.</p>
+    pub fn file_cache(&self) -> std::option::Option<&crate::model::FileCache> {
+        self.file_cache.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateFileCacheOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFileCacheOutput");
+        formatter.field("file_cache", &self.file_cache);
+        formatter.finish()
+    }
+}
+/// See [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
+pub mod update_file_cache_output {
+
+    /// A builder for [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_cache: std::option::Option<crate::model::FileCache>,
+    }
+    impl Builder {
+        /// <p>A description of the cache that was updated.</p>
+        pub fn file_cache(mut self, input: crate::model::FileCache) -> Self {
+            self.file_cache = Some(input);
+            self
+        }
+        /// <p>A description of the cache that was updated.</p>
+        pub fn set_file_cache(
+            mut self,
+            input: std::option::Option<crate::model::FileCache>,
+        ) -> Self {
+            self.file_cache = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
+        pub fn build(self) -> crate::output::UpdateFileCacheOutput {
+            crate::output::UpdateFileCacheOutput {
+                file_cache: self.file_cache,
+            }
+        }
+    }
+}
+impl UpdateFileCacheOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
+    pub fn builder() -> crate::output::update_file_cache_output::Builder {
+        crate::output::update_file_cache_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataRepositoryAssociationOutput {
     /// <p>The response object returned after the data repository association is updated.</p>
     #[doc(hidden)]
@@ -1063,6 +1121,90 @@ impl DescribeFileSystemAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFileCachesOutput {
+    /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
+    #[doc(hidden)]
+    pub file_caches: std::option::Option<std::vec::Vec<crate::model::FileCache>>,
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFileCachesOutput {
+    /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
+    pub fn file_caches(&self) -> std::option::Option<&[crate::model::FileCache]> {
+        self.file_caches.as_deref()
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFileCachesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFileCachesOutput");
+        formatter.field("file_caches", &self.file_caches);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
+pub mod describe_file_caches_output {
+
+    /// A builder for [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_caches: std::option::Option<std::vec::Vec<crate::model::FileCache>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `file_caches`.
+        ///
+        /// To override the contents of this collection use [`set_file_caches`](Self::set_file_caches).
+        ///
+        /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
+        pub fn file_caches(mut self, input: crate::model::FileCache) -> Self {
+            let mut v = self.file_caches.unwrap_or_default();
+            v.push(input);
+            self.file_caches = Some(v);
+            self
+        }
+        /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
+        pub fn set_file_caches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FileCache>>,
+        ) -> Self {
+            self.file_caches = input;
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
+        pub fn build(self) -> crate::output::DescribeFileCachesOutput {
+            crate::output::DescribeFileCachesOutput {
+                file_caches: self.file_caches,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeFileCachesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
+    pub fn builder() -> crate::output::describe_file_caches_output::Builder {
+        crate::output::describe_file_caches_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataRepositoryTasksOutput {
     /// <p>The collection of data repository task descriptions returned.</p>
     #[doc(hidden)]
@@ -1151,7 +1293,7 @@ impl DescribeDataRepositoryTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataRepositoryAssociationsOutput {
-    /// <p>An array of one ore more data repository association descriptions.</p>
+    /// <p>An array of one or more data repository association descriptions.</p>
     #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
@@ -1159,7 +1301,7 @@ pub struct DescribeDataRepositoryAssociationsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDataRepositoryAssociationsOutput {
-    /// <p>An array of one ore more data repository association descriptions.</p>
+    /// <p>An array of one or more data repository association descriptions.</p>
     pub fn associations(&self) -> std::option::Option<&[crate::model::DataRepositoryAssociation]> {
         self.associations.as_deref()
     }
@@ -1191,14 +1333,14 @@ pub mod describe_data_repository_associations_output {
         ///
         /// To override the contents of this collection use [`set_associations`](Self::set_associations).
         ///
-        /// <p>An array of one ore more data repository association descriptions.</p>
+        /// <p>An array of one or more data repository association descriptions.</p>
         pub fn associations(mut self, input: crate::model::DataRepositoryAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
             v.push(input);
             self.associations = Some(v);
             self
         }
-        /// <p>An array of one ore more data repository association descriptions.</p>
+        /// <p>An array of one or more data repository association descriptions.</p>
         pub fn set_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
@@ -1750,6 +1892,87 @@ impl DeleteFileSystemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFileCacheOutput {
+    /// <p>The ID of the cache that's being deleted.</p>
+    #[doc(hidden)]
+    pub file_cache_id: std::option::Option<std::string::String>,
+    /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
+    #[doc(hidden)]
+    pub lifecycle: std::option::Option<crate::model::FileCacheLifecycle>,
+}
+impl DeleteFileCacheOutput {
+    /// <p>The ID of the cache that's being deleted.</p>
+    pub fn file_cache_id(&self) -> std::option::Option<&str> {
+        self.file_cache_id.as_deref()
+    }
+    /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileCacheLifecycle> {
+        self.lifecycle.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteFileCacheOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFileCacheOutput");
+        formatter.field("file_cache_id", &self.file_cache_id);
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.finish()
+    }
+}
+/// See [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
+pub mod delete_file_cache_output {
+
+    /// A builder for [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_cache_id: std::option::Option<std::string::String>,
+        pub(crate) lifecycle: std::option::Option<crate::model::FileCacheLifecycle>,
+    }
+    impl Builder {
+        /// <p>The ID of the cache that's being deleted.</p>
+        pub fn file_cache_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the cache that's being deleted.</p>
+        pub fn set_file_cache_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_id = input;
+            self
+        }
+        /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
+        pub fn lifecycle(mut self, input: crate::model::FileCacheLifecycle) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLifecycle>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
+        pub fn build(self) -> crate::output::DeleteFileCacheOutput {
+            crate::output::DeleteFileCacheOutput {
+                file_cache_id: self.file_cache_id,
+                lifecycle: self.lifecycle,
+            }
+        }
+    }
+}
+impl DeleteFileCacheOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
+    pub fn builder() -> crate::output::delete_file_cache_output::Builder {
+        crate::output::delete_file_cache_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataRepositoryAssociationOutput {
     /// <p>The ID of the data repository association being deleted.</p>
     #[doc(hidden)]
@@ -2271,6 +2494,64 @@ impl CreateFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
     pub fn builder() -> crate::output::create_file_system_output::Builder {
         crate::output::create_file_system_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFileCacheOutput {
+    /// <p>A description of the cache that was created.</p>
+    #[doc(hidden)]
+    pub file_cache: std::option::Option<crate::model::FileCacheCreating>,
+}
+impl CreateFileCacheOutput {
+    /// <p>A description of the cache that was created.</p>
+    pub fn file_cache(&self) -> std::option::Option<&crate::model::FileCacheCreating> {
+        self.file_cache.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateFileCacheOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFileCacheOutput");
+        formatter.field("file_cache", &self.file_cache);
+        formatter.finish()
+    }
+}
+/// See [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
+pub mod create_file_cache_output {
+
+    /// A builder for [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_cache: std::option::Option<crate::model::FileCacheCreating>,
+    }
+    impl Builder {
+        /// <p>A description of the cache that was created.</p>
+        pub fn file_cache(mut self, input: crate::model::FileCacheCreating) -> Self {
+            self.file_cache = Some(input);
+            self
+        }
+        /// <p>A description of the cache that was created.</p>
+        pub fn set_file_cache(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheCreating>,
+        ) -> Self {
+            self.file_cache = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
+        pub fn build(self) -> crate::output::CreateFileCacheOutput {
+            crate::output::CreateFileCacheOutput {
+                file_cache: self.file_cache,
+            }
+        }
+    }
+}
+impl CreateFileCacheOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
+    pub fn builder() -> crate::output::create_file_cache_output::Builder {
+        crate::output::create_file_cache_output::Builder::default()
     }
 }
 

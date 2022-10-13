@@ -463,9 +463,9 @@ pub struct UnprocessableEntityException {
     /// <ul>
     /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
     /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
-    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding..</p></li>
-    /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Amazon Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
+    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+    /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -506,9 +506,9 @@ pub mod unprocessable_entity_exception {
         /// <ul>
         /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
         /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
-        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding..</p></li>
-        /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Amazon Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
+        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+        /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
         /// </ul>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
@@ -518,9 +518,9 @@ pub mod unprocessable_entity_exception {
         /// <ul>
         /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
         /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
-        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding..</p></li>
-        /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Amazon Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
+        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+        /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
         /// </ul>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
@@ -865,6 +865,156 @@ impl std::error::Error for BatchGetCustomDataIdentifiersError {
             BatchGetCustomDataIdentifiersErrorKind::ThrottlingException(_inner) => Some(_inner),
             BatchGetCustomDataIdentifiersErrorKind::ValidationException(_inner) => Some(_inner),
             BatchGetCustomDataIdentifiersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateAllowList` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateAllowListError {
+    /// Kind of error that occurred.
+    pub kind: CreateAllowListErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateAllowList` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateAllowListErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to a versioning conflict for a specified resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because a specified resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Provides information about an error that occurred due to one or more service quotas for an account.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateAllowListError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateAllowListErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateAllowListErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateAllowListErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateAllowListErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateAllowListErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateAllowListErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateAllowListErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateAllowListErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateAllowListError {
+    fn code(&self) -> Option<&str> {
+        CreateAllowListError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateAllowListError {
+    /// Creates a new `CreateAllowListError`.
+    pub fn new(kind: CreateAllowListErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateAllowListError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateAllowListErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateAllowListError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateAllowListErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateAllowListErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAllowListErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAllowListErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateAllowListErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateAllowListErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAllowListErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAllowListErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAllowListErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAllowListErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAllowListErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAllowListErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateAllowListErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `CreateAllowListErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateAllowListErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateAllowListError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateAllowListErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateAllowListErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateAllowListErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateAllowListErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateAllowListErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateAllowListErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateAllowListErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateAllowListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1969,6 +2119,137 @@ impl std::error::Error for DeclineInvitationsError {
             DeclineInvitationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeclineInvitationsErrorKind::ValidationException(_inner) => Some(_inner),
             DeclineInvitationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteAllowList` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteAllowListError {
+    /// Kind of error that occurred.
+    pub kind: DeleteAllowListErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteAllowList` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteAllowListErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because a specified resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteAllowListError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteAllowListErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteAllowListErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteAllowListErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteAllowListErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteAllowListErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteAllowListErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteAllowListError {
+    fn code(&self) -> Option<&str> {
+        DeleteAllowListError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteAllowListError {
+    /// Creates a new `DeleteAllowListError`.
+    pub fn new(kind: DeleteAllowListErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteAllowListError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteAllowListErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteAllowListError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteAllowListErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteAllowListErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAllowListErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAllowListErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAllowListErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAllowListErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAllowListErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAllowListErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAllowListErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteAllowListErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAllowListErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteAllowListError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteAllowListErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteAllowListErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteAllowListErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteAllowListErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteAllowListErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteAllowListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4414,6 +4695,134 @@ impl std::error::Error for GetAdministratorAccountError {
             GetAdministratorAccountErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetAdministratorAccountErrorKind::ValidationException(_inner) => Some(_inner),
             GetAdministratorAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetAllowList` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetAllowListError {
+    /// Kind of error that occurred.
+    pub kind: GetAllowListErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetAllowList` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetAllowListErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because a specified resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetAllowListError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetAllowListErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetAllowListErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetAllowListErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetAllowListErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetAllowListErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetAllowListErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetAllowListError {
+    fn code(&self) -> Option<&str> {
+        GetAllowListError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetAllowListError {
+    /// Creates a new `GetAllowListError`.
+    pub fn new(kind: GetAllowListErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetAllowListError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetAllowListErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetAllowListError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetAllowListErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetAllowListErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetAllowListErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetAllowListErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAllowListErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAllowListErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAllowListErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAllowListErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetAllowListErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetAllowListErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetAllowListErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetAllowListError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetAllowListErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetAllowListErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetAllowListErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetAllowListErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetAllowListErrorKind::ValidationException(_inner) => Some(_inner),
+            GetAllowListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6925,6 +7334,126 @@ impl std::error::Error for GetUsageTotalsError {
     }
 }
 
+/// Error type for the `ListAllowLists` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAllowListsError {
+    /// Kind of error that occurred.
+    pub kind: ListAllowListsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAllowLists` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAllowListsErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAllowListsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAllowListsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListAllowListsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListAllowListsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListAllowListsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListAllowListsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAllowListsError {
+    fn code(&self) -> Option<&str> {
+        ListAllowListsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAllowListsError {
+    /// Creates a new `ListAllowListsError`.
+    pub fn new(kind: ListAllowListsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAllowListsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAllowListsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAllowListsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAllowListsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAllowListsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAllowListsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAllowListsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAllowListsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAllowListsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListAllowListsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListAllowListsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListAllowListsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListAllowListsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAllowListsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListAllowListsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListAllowListsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListAllowListsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListAllowListsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListClassificationJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9038,6 +9567,137 @@ impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateAllowList` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateAllowListError {
+    /// Kind of error that occurred.
+    pub kind: UpdateAllowListErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateAllowList` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateAllowListErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because a specified resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateAllowListError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateAllowListErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateAllowListErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateAllowListErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateAllowListErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateAllowListErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateAllowListErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateAllowListError {
+    fn code(&self) -> Option<&str> {
+        UpdateAllowListError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateAllowListError {
+    /// Creates a new `UpdateAllowListError`.
+    pub fn new(kind: UpdateAllowListErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateAllowListError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateAllowListErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateAllowListError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateAllowListErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateAllowListErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAllowListErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAllowListErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAllowListErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAllowListErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAllowListErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAllowListErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAllowListErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateAllowListErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAllowListErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateAllowListError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateAllowListErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateAllowListErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateAllowListErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateAllowListErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateAllowListErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateAllowListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

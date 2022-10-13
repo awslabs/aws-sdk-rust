@@ -15,9 +15,7 @@ Because administrators define the infrastructure and tooling that Proton deploys
 
 When developers select a specific infrastructure and tooling set, Proton deploys their applications. To monitor their applications that are running on Proton, developers need permissions to the service _create_, _list_, _update_ and _delete_ API operations and the service instance _list_ and _update_ API operations.
 
-To learn more about Proton administration, see the [Proton Administrator Guide](https://docs.aws.amazon.com/proton/latest/adminguide/Welcome.html).
-
-To learn more about deploying serverless and containerized applications on Proton, see the [Proton User Guide](https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html).
+To learn more about Proton, see the [Proton User Guide](https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html).
 
 __Ensuring Idempotency__
 
@@ -103,7 +101,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.49.0"
-aws-sdk-proton = "0.19.0"
+aws-sdk-proton = "0.20.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

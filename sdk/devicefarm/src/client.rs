@@ -145,6 +145,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_name): <p>The project's name.</p>
     ///   - [`default_job_timeout_minutes(i32)`](crate::client::fluent_builders::CreateProject::default_job_timeout_minutes) / [`set_default_job_timeout_minutes(Option<i32>)`](crate::client::fluent_builders::CreateProject::set_default_job_timeout_minutes): <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateProject::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateProject::set_vpc_config): <p>The VPC security groups and subnets that are attached to a project.</p>
     /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::output::CreateProjectOutput::project): <p>The newly created project.</p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
@@ -165,7 +166,7 @@ impl Client {
     ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_client_id): <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>  <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     ///   - [`configuration(CreateRemoteAccessSessionConfiguration)`](crate::client::fluent_builders::CreateRemoteAccessSession::configuration) / [`set_configuration(Option<CreateRemoteAccessSessionConfiguration>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_configuration): <p>The configuration information for the remote access session request.</p>
     ///   - [`interaction_mode(InteractionMode)`](crate::client::fluent_builders::CreateRemoteAccessSession::interaction_mode) / [`set_interaction_mode(Option<InteractionMode>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_interaction_mode): <p>The interaction mode of the remote access session. Valid values are:</p>  <ul>   <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>   <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>   <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>  </ul>
-    ///   - [`skip_app_resign(bool)`](crate::client::fluent_builders::CreateRemoteAccessSession::skip_app_resign) / [`set_skip_app_resign(Option<bool>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_skip_app_resign): <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>  <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+    ///   - [`skip_app_resign(bool)`](crate::client::fluent_builders::CreateRemoteAccessSession::skip_app_resign) / [`set_skip_app_resign(Option<bool>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_skip_app_resign): <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>  <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
     /// - On success, responds with [`CreateRemoteAccessSessionOutput`](crate::output::CreateRemoteAccessSessionOutput) with field(s):
     ///   - [`remote_access_session(Option<RemoteAccessSession>)`](crate::output::CreateRemoteAccessSessionOutput::remote_access_session): <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
     /// - On failure, responds with [`SdkError<CreateRemoteAccessSessionError>`](crate::error::CreateRemoteAccessSessionError)
@@ -992,6 +993,7 @@ impl Client {
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_arn): <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_name): <p>A string that represents the new name of the project that you are updating.</p>
     ///   - [`default_job_timeout_minutes(i32)`](crate::client::fluent_builders::UpdateProject::default_job_timeout_minutes) / [`set_default_job_timeout_minutes(Option<i32>)`](crate::client::fluent_builders::UpdateProject::set_default_job_timeout_minutes): <p>The number of minutes a test run in the project executes before it times out.</p>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::UpdateProject::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::UpdateProject::set_vpc_config): <p>The VPC security groups and subnets that are attached to a project.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::output::UpdateProjectOutput::project): <p>The project to update.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
@@ -1577,6 +1579,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_job_timeout_minutes(input);
             self
         }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_config(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateRemoteAccessSession`.
     ///
@@ -1786,13 +1801,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.inner = self.inner.skip_app_resign(input);
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_app_resign(input);
             self
@@ -8493,6 +8508,19 @@ pub mod fluent_builders {
         /// <p>The number of minutes a test run in the project executes before it times out.</p>
         pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_default_job_timeout_minutes(input);
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_config(input);
             self
         }
     }

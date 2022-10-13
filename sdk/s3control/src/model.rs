@@ -2039,6 +2039,197 @@ impl S3Tag {
     }
 }
 
+/// <p>Describes the versioning state of an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html">PutBucketVersioning</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VersioningConfiguration {
+    /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
+    #[doc(hidden)]
+    pub mfa_delete: std::option::Option<crate::model::MfaDelete>,
+    /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::BucketVersioningStatus>,
+}
+impl VersioningConfiguration {
+    /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
+    pub fn mfa_delete(&self) -> std::option::Option<&crate::model::MfaDelete> {
+        self.mfa_delete.as_ref()
+    }
+    /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::BucketVersioningStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for VersioningConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VersioningConfiguration");
+        formatter.field("mfa_delete", &self.mfa_delete);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`VersioningConfiguration`](crate::model::VersioningConfiguration).
+pub mod versioning_configuration {
+
+    /// A builder for [`VersioningConfiguration`](crate::model::VersioningConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mfa_delete: std::option::Option<crate::model::MfaDelete>,
+        pub(crate) status: std::option::Option<crate::model::BucketVersioningStatus>,
+    }
+    impl Builder {
+        /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
+        pub fn mfa_delete(mut self, input: crate::model::MfaDelete) -> Self {
+            self.mfa_delete = Some(input);
+            self
+        }
+        /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
+        pub fn set_mfa_delete(
+            mut self,
+            input: std::option::Option<crate::model::MfaDelete>,
+        ) -> Self {
+            self.mfa_delete = input;
+            self
+        }
+        /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
+        pub fn status(mut self, input: crate::model::BucketVersioningStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::BucketVersioningStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VersioningConfiguration`](crate::model::VersioningConfiguration).
+        pub fn build(self) -> crate::model::VersioningConfiguration {
+            crate::model::VersioningConfiguration {
+                mfa_delete: self.mfa_delete,
+                status: self.status,
+            }
+        }
+    }
+}
+impl VersioningConfiguration {
+    /// Creates a new builder-style object to manufacture [`VersioningConfiguration`](crate::model::VersioningConfiguration).
+    pub fn builder() -> crate::model::versioning_configuration::Builder {
+        crate::model::versioning_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BucketVersioningStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Suspended,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BucketVersioningStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Enabled" => BucketVersioningStatus::Enabled,
+            "Suspended" => BucketVersioningStatus::Suspended,
+            other => BucketVersioningStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BucketVersioningStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BucketVersioningStatus::from(s))
+    }
+}
+impl BucketVersioningStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BucketVersioningStatus::Enabled => "Enabled",
+            BucketVersioningStatus::Suspended => "Suspended",
+            BucketVersioningStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Enabled", "Suspended"]
+    }
+}
+impl AsRef<str> for BucketVersioningStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MfaDelete {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MfaDelete {
+    fn from(s: &str) -> Self {
+        match s {
+            "Disabled" => MfaDelete::Disabled,
+            "Enabled" => MfaDelete::Enabled,
+            other => MfaDelete::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MfaDelete {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MfaDelete::from(s))
+    }
+}
+impl MfaDelete {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MfaDelete::Disabled => "Disabled",
+            MfaDelete::Enabled => "Enabled",
+            MfaDelete::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
+}
+impl AsRef<str> for MfaDelete {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3544,6 +3735,12 @@ impl AwsLambdaTransformation {
 pub enum ObjectLambdaTransformationConfigurationAction {
     #[allow(missing_docs)] // documentation missing in model
     GetObject,
+    #[allow(missing_docs)] // documentation missing in model
+    HeadObject,
+    #[allow(missing_docs)] // documentation missing in model
+    ListObjects,
+    #[allow(missing_docs)] // documentation missing in model
+    ListObjectsV2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -3551,6 +3748,9 @@ impl std::convert::From<&str> for ObjectLambdaTransformationConfigurationAction 
     fn from(s: &str) -> Self {
         match s {
             "GetObject" => ObjectLambdaTransformationConfigurationAction::GetObject,
+            "HeadObject" => ObjectLambdaTransformationConfigurationAction::HeadObject,
+            "ListObjects" => ObjectLambdaTransformationConfigurationAction::ListObjects,
+            "ListObjectsV2" => ObjectLambdaTransformationConfigurationAction::ListObjectsV2,
             other => ObjectLambdaTransformationConfigurationAction::Unknown(other.to_owned()),
         }
     }
@@ -3567,12 +3767,15 @@ impl ObjectLambdaTransformationConfigurationAction {
     pub fn as_str(&self) -> &str {
         match self {
             ObjectLambdaTransformationConfigurationAction::GetObject => "GetObject",
+            ObjectLambdaTransformationConfigurationAction::HeadObject => "HeadObject",
+            ObjectLambdaTransformationConfigurationAction::ListObjects => "ListObjects",
+            ObjectLambdaTransformationConfigurationAction::ListObjectsV2 => "ListObjectsV2",
             ObjectLambdaTransformationConfigurationAction::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["GetObject"]
+        &["GetObject", "HeadObject", "ListObjects", "ListObjectsV2"]
     }
 }
 impl AsRef<str> for ObjectLambdaTransformationConfigurationAction {
@@ -3597,6 +3800,10 @@ pub enum ObjectLambdaAllowedFeature {
     GetObjectPartNumber,
     #[allow(missing_docs)] // documentation missing in model
     GetObjectRange,
+    #[allow(missing_docs)] // documentation missing in model
+    HeadObjectPartNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    HeadObjectRange,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -3605,6 +3812,8 @@ impl std::convert::From<&str> for ObjectLambdaAllowedFeature {
         match s {
             "GetObject-PartNumber" => ObjectLambdaAllowedFeature::GetObjectPartNumber,
             "GetObject-Range" => ObjectLambdaAllowedFeature::GetObjectRange,
+            "HeadObject-PartNumber" => ObjectLambdaAllowedFeature::HeadObjectPartNumber,
+            "HeadObject-Range" => ObjectLambdaAllowedFeature::HeadObjectRange,
             other => ObjectLambdaAllowedFeature::Unknown(other.to_owned()),
         }
     }
@@ -3622,12 +3831,19 @@ impl ObjectLambdaAllowedFeature {
         match self {
             ObjectLambdaAllowedFeature::GetObjectPartNumber => "GetObject-PartNumber",
             ObjectLambdaAllowedFeature::GetObjectRange => "GetObject-Range",
+            ObjectLambdaAllowedFeature::HeadObjectPartNumber => "HeadObject-PartNumber",
+            ObjectLambdaAllowedFeature::HeadObjectRange => "HeadObject-Range",
             ObjectLambdaAllowedFeature::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["GetObject-PartNumber", "GetObject-Range"]
+        &[
+            "GetObject-PartNumber",
+            "GetObject-Range",
+            "HeadObject-PartNumber",
+            "HeadObject-Range",
+        ]
     }
 }
 impl AsRef<str> for ObjectLambdaAllowedFeature {
@@ -3913,7 +4129,7 @@ pub struct MultiRegionAccessPointReport {
     #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The current status of the Multi-Region Access Point.</p>
-    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
@@ -3941,7 +4157,7 @@ impl MultiRegionAccessPointReport {
         self.public_access_block.as_ref()
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
-    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::MultiRegionAccessPointStatus> {
         self.status.as_ref()
     }
@@ -4029,13 +4245,13 @@ pub mod multi_region_access_point_report {
             self
         }
         /// <p>The current status of the Multi-Region Access Point.</p>
-        /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+        /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
         pub fn status(mut self, input: crate::model::MultiRegionAccessPointStatus) -> Self {
             self.status = Some(input);
             self
         }
         /// <p>The current status of the Multi-Region Access Point.</p>
-        /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+        /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
@@ -5342,6 +5558,61 @@ impl EstablishedMultiRegionAccessPointPolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MfaDeleteStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MfaDeleteStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Disabled" => MfaDeleteStatus::Disabled,
+            "Enabled" => MfaDeleteStatus::Enabled,
+            other => MfaDeleteStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MfaDeleteStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MfaDeleteStatus::from(s))
+    }
+}
+impl MfaDeleteStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MfaDeleteStatus::Disabled => "Disabled",
+            MfaDeleteStatus::Enabled => "Enabled",
+            MfaDeleteStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
+}
+impl AsRef<str> for MfaDeleteStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A container for the information about an asynchronous operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5613,7 +5884,7 @@ pub struct AsyncErrorDetails {
     /// <p>A string that uniquely identifies the error condition.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
-    /// <p>A generic descritpion of the error condition in English.</p>
+    /// <p>A generic description of the error condition in English.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource associated with the error.</p>
@@ -5628,7 +5899,7 @@ impl AsyncErrorDetails {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>A generic descritpion of the error condition in English.</p>
+    /// <p>A generic description of the error condition in English.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -5673,12 +5944,12 @@ pub mod async_error_details {
             self.code = input;
             self
         }
-        /// <p>A generic descritpion of the error condition in English.</p>
+        /// <p>A generic description of the error condition in English.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>A generic descritpion of the error condition in English.</p>
+        /// <p>A generic description of the error condition in English.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -7647,12 +7918,12 @@ impl GeneratedManifestEncryption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsekmsEncryption {
-    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl SsekmsEncryption {
-    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
@@ -7673,12 +7944,12 @@ pub mod ssekms_encryption {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self

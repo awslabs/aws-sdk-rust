@@ -1091,7 +1091,7 @@ impl AsRef<str> for MatchOption {
 
 /// <p>The values that are available for a tag.</p>
 /// <p>If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags.</p>
-/// <p>If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.</p>
+/// <p>If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagValues {
@@ -1208,7 +1208,7 @@ impl TagValues {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionValues {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::model::Dimension>,
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
@@ -1219,7 +1219,7 @@ pub struct DimensionValues {
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
 }
 impl DimensionValues {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
     pub fn key(&self) -> std::option::Option<&crate::model::Dimension> {
         self.key.as_ref()
     }
@@ -1252,12 +1252,12 @@ pub mod dimension_values {
         pub(crate) match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
     }
     impl Builder {
-        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
         pub fn key(mut self, input: crate::model::Dimension) -> Self {
             self.key = Some(input);
             self
         }
-        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
         pub fn set_key(mut self, input: std::option::Option<crate::model::Dimension>) -> Self {
             self.key = input;
             self
@@ -13850,10 +13850,10 @@ pub struct CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p>The effective state data of your Cost Category.</p>
+    /// <p>The effective start date of your Cost Category.</p>
     #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
-    /// <p>The effective end data of your Cost Category.</p>
+    /// <p>The effective end date of your Cost Category.</p>
     #[doc(hidden)]
     pub effective_end: std::option::Option<std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
@@ -13882,11 +13882,11 @@ impl CostCategory {
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>The effective state data of your Cost Category.</p>
+    /// <p>The effective start date of your Cost Category.</p>
     pub fn effective_start(&self) -> std::option::Option<&str> {
         self.effective_start.as_deref()
     }
-    /// <p>The effective end data of your Cost Category.</p>
+    /// <p>The effective end date of your Cost Category.</p>
     pub fn effective_end(&self) -> std::option::Option<&str> {
         self.effective_end.as_deref()
     }
@@ -13966,12 +13966,12 @@ pub mod cost_category {
             self.cost_category_arn = input;
             self
         }
-        /// <p>The effective state data of your Cost Category.</p>
+        /// <p>The effective start date of your Cost Category.</p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_start = Some(input.into());
             self
         }
-        /// <p>The effective state data of your Cost Category.</p>
+        /// <p>The effective start date of your Cost Category.</p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13979,12 +13979,12 @@ pub mod cost_category {
             self.effective_start = input;
             self
         }
-        /// <p>The effective end data of your Cost Category.</p>
+        /// <p>The effective end date of your Cost Category.</p>
         pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_end = Some(input.into());
             self
         }
-        /// <p>The effective end data of your Cost Category.</p>
+        /// <p>The effective end date of your Cost Category.</p>
         pub fn set_effective_end(
             mut self,
             input: std::option::Option<std::string::String>,

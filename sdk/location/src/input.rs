@@ -5935,7 +5935,7 @@ pub mod get_map_sprites_input {
         /// <li> <p> <code>sprites.png</code> </p> </li>
         /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
         /// </ul>
-        /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
+        /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
         /// <ul>
         /// <li> <p> <code>sprites.json</code> </p> </li>
         /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
@@ -5949,7 +5949,7 @@ pub mod get_map_sprites_input {
         /// <li> <p> <code>sprites.png</code> </p> </li>
         /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
         /// </ul>
-        /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
+        /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
         /// <ul>
         /// <li> <p> <code>sprites.json</code> </p> </li>
         /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
@@ -6470,6 +6470,205 @@ impl GetMapTileInput {
     }
 }
 
+/// See [`GetPlaceInput`](crate::input::GetPlaceInput).
+pub mod get_place_input {
+
+    /// A builder for [`GetPlaceInput`](crate::input::GetPlaceInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) place_id: std::option::Option<std::string::String>,
+        pub(crate) language: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the place index resource that you want to use for the search.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the place index resource that you want to use for the search.</p>
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        /// <p>The identifier of the place to find.</p>
+        pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.place_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the place to find.</p>
+        pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.place_id = input;
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language = Some(input.into());
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPlaceInput`](crate::input::GetPlaceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetPlaceInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::GetPlaceInput {
+                index_name: self.index_name,
+                place_id: self.place_id,
+                language: self.language,
+            })
+        }
+    }
+}
+impl GetPlaceInput {
+    /// Consumes the builder and constructs an Operation<[`GetPlace`](crate::operation::GetPlace)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetPlace,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetPlaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_38 = &_input.index_name;
+                let input_38 = input_38.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "index_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let index_name = aws_smithy_http::label::fmt_string(input_38, false);
+                if index_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "index_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_39 = &_input.place_id;
+                let input_39 = input_39.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "place_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let place_id = aws_smithy_http::label::fmt_string(input_39, false);
+                if place_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "place_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/places/v0/indexes/{IndexName}/places/{PlaceId}",
+                    IndexName = index_name,
+                    PlaceId = place_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::GetPlaceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_40) = &_input.language {
+                    query.push_kv("language", &aws_smithy_http::query::fmt_string(&inner_40));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetPlaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetPlace::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetPlace", "location",
+                ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetPlaceInput`](crate::input::GetPlaceInput).
+    pub fn builder() -> crate::input::get_place_input::Builder {
+        crate::input::get_place_input::Builder::default()
+    }
+}
+
 /// See [`ListDevicePositionsInput`](crate::input::ListDevicePositionsInput).
 pub mod list_device_positions_input {
 
@@ -6548,14 +6747,14 @@ impl ListDevicePositionsInput {
                 _input: &crate::input::ListDevicePositionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.tracker_name;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_41 = &_input.tracker_name;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let tracker_name = aws_smithy_http::label::fmt_string(input_38, false);
+                let tracker_name = aws_smithy_http::label::fmt_string(input_41, false);
                 if tracker_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
@@ -6899,14 +7098,14 @@ impl ListGeofencesInput {
                 _input: &crate::input::ListGeofencesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_39 = &_input.collection_name;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_42 = &_input.collection_name;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let collection_name = aws_smithy_http::label::fmt_string(input_39, false);
+                let collection_name = aws_smithy_http::label::fmt_string(input_42, false);
                 if collection_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
@@ -7530,14 +7729,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.resource_arn;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_43 = &_input.resource_arn;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_43, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -7699,14 +7898,14 @@ impl ListTrackerConsumersInput {
                 _input: &crate::input::ListTrackerConsumersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.tracker_name;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_44 = &_input.tracker_name;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let tracker_name = aws_smithy_http::label::fmt_string(input_41, false);
+                let tracker_name = aws_smithy_http::label::fmt_string(input_44, false);
                 if tracker_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
@@ -8050,28 +8249,28 @@ impl PutGeofenceInput {
                 _input: &crate::input::PutGeofenceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.collection_name;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_45 = &_input.collection_name;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let collection_name = aws_smithy_http::label::fmt_string(input_42, false);
+                let collection_name = aws_smithy_http::label::fmt_string(input_45, false);
                 if collection_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_43 = &_input.geofence_id;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_46 = &_input.geofence_id;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "geofence_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let geofence_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let geofence_id = aws_smithy_http::label::fmt_string(input_46, false);
                 if geofence_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "geofence_id",
@@ -8282,14 +8481,14 @@ impl SearchPlaceIndexForPositionInput {
                 _input: &crate::input::SearchPlaceIndexForPositionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_44 = &_input.index_name;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_47 = &_input.index_name;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let index_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let index_name = aws_smithy_http::label::fmt_string(input_47, false);
                 if index_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
@@ -8567,14 +8766,14 @@ impl SearchPlaceIndexForSuggestionsInput {
                 _input: &crate::input::SearchPlaceIndexForSuggestionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.index_name;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_48 = &_input.index_name;
+                let input_48 = input_48.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let index_name = aws_smithy_http::label::fmt_string(input_45, false);
+                let index_name = aws_smithy_http::label::fmt_string(input_48, false);
                 if index_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
@@ -8852,14 +9051,14 @@ impl SearchPlaceIndexForTextInput {
                 _input: &crate::input::SearchPlaceIndexForTextInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_46 = &_input.index_name;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_49 = &_input.index_name;
+                let input_49 = input_49.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let index_name = aws_smithy_http::label::fmt_string(input_46, false);
+                let index_name = aws_smithy_http::label::fmt_string(input_49, false);
                 if index_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
@@ -9068,14 +9267,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_47 = &_input.resource_arn;
-                let input_47 = input_47.as_ref().ok_or(
+                let input_50 = &_input.resource_arn;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_47, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_50, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -9250,14 +9449,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_48 = &_input.resource_arn;
-                let input_48 = input_48.as_ref().ok_or(
+                let input_51 = &_input.resource_arn;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_48, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_51, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -9273,9 +9472,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.tag_keys {
-                    for inner_50 in inner_49 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_50));
+                if let Some(inner_52) = &_input.tag_keys {
+                    for inner_53 in inner_52 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_53));
                     }
                 }
                 Ok(())
@@ -9461,14 +9660,14 @@ impl UpdateGeofenceCollectionInput {
                 _input: &crate::input::UpdateGeofenceCollectionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_51 = &_input.collection_name;
-                let input_51 = input_51.as_ref().ok_or(
+                let input_54 = &_input.collection_name;
+                let input_54 = input_54.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let collection_name = aws_smithy_http::label::fmt_string(input_51, false);
+                let collection_name = aws_smithy_http::label::fmt_string(input_54, false);
                 if collection_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
@@ -9656,14 +9855,14 @@ impl UpdateMapInput {
                 _input: &crate::input::UpdateMapInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_52 = &_input.map_name;
-                let input_52 = input_52.as_ref().ok_or(
+                let input_55 = &_input.map_name;
+                let input_55 = input_55.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let map_name = aws_smithy_http::label::fmt_string(input_52, false);
+                let map_name = aws_smithy_http::label::fmt_string(input_55, false);
                 if map_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
@@ -9863,14 +10062,14 @@ impl UpdatePlaceIndexInput {
                 _input: &crate::input::UpdatePlaceIndexInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_53 = &_input.index_name;
-                let input_53 = input_53.as_ref().ok_or(
+                let input_56 = &_input.index_name;
+                let input_56 = input_56.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let index_name = aws_smithy_http::label::fmt_string(input_53, false);
+                let index_name = aws_smithy_http::label::fmt_string(input_56, false);
                 if index_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
@@ -10060,14 +10259,14 @@ impl UpdateRouteCalculatorInput {
                 _input: &crate::input::UpdateRouteCalculatorInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_54 = &_input.calculator_name;
-                let input_54 = input_54.as_ref().ok_or(
+                let input_57 = &_input.calculator_name;
+                let input_57 = input_57.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let calculator_name = aws_smithy_http::label::fmt_string(input_54, false);
+                let calculator_name = aws_smithy_http::label::fmt_string(input_57, false);
                 if calculator_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
@@ -10300,14 +10499,14 @@ impl UpdateTrackerInput {
                 _input: &crate::input::UpdateTrackerInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_55 = &_input.tracker_name;
-                let input_55 = input_55.as_ref().ok_or(
+                let input_58 = &_input.tracker_name;
+                let input_58 = input_58.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let tracker_name = aws_smithy_http::label::fmt_string(input_55, false);
+                let tracker_name = aws_smithy_http::label::fmt_string(input_58, false);
                 if tracker_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
@@ -11898,6 +12097,52 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPlaceInput {
+    /// <p>The name of the place index resource that you want to use for the search.</p>
+    #[doc(hidden)]
+    pub index_name: std::option::Option<std::string::String>,
+    /// <p>The identifier of the place to find.</p>
+    #[doc(hidden)]
+    pub place_id: std::option::Option<std::string::String>,
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+    /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+    /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    #[doc(hidden)]
+    pub language: std::option::Option<std::string::String>,
+}
+impl GetPlaceInput {
+    /// <p>The name of the place index resource that you want to use for the search.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The identifier of the place to find.</p>
+    pub fn place_id(&self) -> std::option::Option<&str> {
+        self.place_id.as_deref()
+    }
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+    /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+    /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
+}
+impl std::fmt::Debug for GetPlaceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetPlaceInput");
+        formatter.field("index_name", &self.index_name);
+        formatter.field("place_id", &self.place_id);
+        formatter.field("language", &self.language);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaceIndexesInput {
     /// <p>An optional limit for the maximum number of results returned in a single call.</p>
     /// <p>Default value: <code>100</code> </p>
@@ -12237,7 +12482,7 @@ pub struct GetMapSpritesInput {
     /// <li> <p> <code>sprites.png</code> </p> </li>
     /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
     /// </ul>
-    /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
     /// <li> <p> <code>sprites.json</code> </p> </li>
     /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
@@ -12255,7 +12500,7 @@ impl GetMapSpritesInput {
     /// <li> <p> <code>sprites.png</code> </p> </li>
     /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
     /// </ul>
-    /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
     /// <li> <p> <code>sprites.json</code> </p> </li>
     /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>

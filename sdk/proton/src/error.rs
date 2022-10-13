@@ -134,7 +134,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+/// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -1315,7 +1315,7 @@ pub enum CreateComponentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1473,7 +1473,7 @@ pub enum CreateEnvironmentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1635,7 +1635,7 @@ pub enum CreateEnvironmentAccountConnectionErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed to register with the service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1814,7 +1814,7 @@ pub enum CreateEnvironmentTemplateErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed to register with the service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1976,7 +1976,7 @@ pub enum CreateEnvironmentTemplateVersionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2160,7 +2160,7 @@ pub enum CreateRepositoryErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed to register with the service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2315,7 +2315,7 @@ pub enum CreateServiceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2468,7 +2468,7 @@ pub enum CreateServiceTemplateErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed to register with the service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2626,7 +2626,7 @@ pub enum CreateServiceTemplateVersionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2799,7 +2799,7 @@ pub enum CreateTemplateSyncConfigErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed to register with the service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -9494,7 +9494,7 @@ pub enum NotifyResourceDeploymentStatusChangeErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -10301,7 +10301,7 @@ pub enum UpdateComponentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -11118,7 +11118,7 @@ pub enum UpdateServiceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),

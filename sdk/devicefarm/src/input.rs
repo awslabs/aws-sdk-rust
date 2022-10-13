@@ -699,6 +699,7 @@ pub mod create_project_input {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) default_job_timeout_minutes: std::option::Option<i32>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
     }
     impl Builder {
         /// <p>The project's name.</p>
@@ -721,6 +722,19 @@ pub mod create_project_input {
             self.default_job_timeout_minutes = input;
             self
         }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateProjectInput`](crate::input::CreateProjectInput).
         pub fn build(
             self,
@@ -729,6 +743,7 @@ pub mod create_project_input {
             Ok(crate::input::CreateProjectInput {
                 name: self.name,
                 default_job_timeout_minutes: self.default_job_timeout_minutes,
+                vpc_config: self.vpc_config,
             })
         }
     }
@@ -1009,13 +1024,13 @@ pub mod create_remote_access_session_input {
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -12283,6 +12298,7 @@ pub mod update_project_input {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) default_job_timeout_minutes: std::option::Option<i32>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
@@ -12315,6 +12331,19 @@ pub mod update_project_input {
             self.default_job_timeout_minutes = input;
             self
         }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::input::UpdateProjectInput).
         pub fn build(
             self,
@@ -12324,6 +12353,7 @@ pub mod update_project_input {
                 arn: self.arn,
                 name: self.name,
                 default_job_timeout_minutes: self.default_job_timeout_minutes,
+                vpc_config: self.vpc_config,
             })
         }
     }
@@ -13176,6 +13206,9 @@ pub struct UpdateProjectInput {
     /// <p>The number of minutes a test run in the project executes before it times out.</p>
     #[doc(hidden)]
     pub default_job_timeout_minutes: std::option::Option<i32>,
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    #[doc(hidden)]
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
 }
 impl UpdateProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
@@ -13190,6 +13223,10 @@ impl UpdateProjectInput {
     pub fn default_job_timeout_minutes(&self) -> std::option::Option<i32> {
         self.default_job_timeout_minutes
     }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13200,6 +13237,7 @@ impl std::fmt::Debug for UpdateProjectInput {
             "default_job_timeout_minutes",
             &self.default_job_timeout_minutes,
         );
+        formatter.field("vpc_config", &self.vpc_config);
         formatter.finish()
     }
 }
@@ -15705,7 +15743,7 @@ pub struct CreateRemoteAccessSessionInput {
     #[doc(hidden)]
     pub interaction_mode: std::option::Option<crate::model::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
     #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
 }
@@ -15765,7 +15803,7 @@ impl CreateRemoteAccessSessionInput {
         self.interaction_mode.as_ref()
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -15799,6 +15837,9 @@ pub struct CreateProjectInput {
     /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
     #[doc(hidden)]
     pub default_job_timeout_minutes: std::option::Option<i32>,
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    #[doc(hidden)]
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
 }
 impl CreateProjectInput {
     /// <p>The project's name.</p>
@@ -15809,6 +15850,10 @@ impl CreateProjectInput {
     pub fn default_job_timeout_minutes(&self) -> std::option::Option<i32> {
         self.default_job_timeout_minutes
     }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15818,6 +15863,7 @@ impl std::fmt::Debug for CreateProjectInput {
             "default_job_timeout_minutes",
             &self.default_job_timeout_minutes,
         );
+        formatter.field("vpc_config", &self.vpc_config);
         formatter.finish()
     }
 }

@@ -3630,12 +3630,12 @@ pub mod send_api_asset_input {
             self.method = input;
             self
         }
-        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -3941,7 +3941,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A label that consists of a customer-defined key and an optional value.
+        /// <p>A label that consists of a customer-defined key and an optional value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3952,7 +3952,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// A label that consists of a customer-defined key and an optional value.
+        /// <p>A label that consists of a customer-defined key and an optional value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4121,14 +4121,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// The key tags.
+        /// <p>The key tags.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// The key tags.
+        /// <p>The key tags.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5050,7 +5050,7 @@ impl UpdateRevisionInput {
     }
 }
 
-/// <p>The request body for UpdateRevision.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRevisionInput {
@@ -5096,7 +5096,7 @@ impl std::fmt::Debug for UpdateRevisionInput {
     }
 }
 
-/// <p>The request body for UpdateEventAction.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventActionInput {
@@ -5126,7 +5126,7 @@ impl std::fmt::Debug for UpdateEventActionInput {
     }
 }
 
-/// <p>The request body for UpdateDataSet.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetInput {
@@ -5164,7 +5164,7 @@ impl std::fmt::Debug for UpdateDataSetInput {
     }
 }
 
-/// <p>The request body for UpdateAsset.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetInput {
@@ -5217,7 +5217,7 @@ pub struct UntagResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// The key tags.
+    /// <p>The key tags.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -5226,7 +5226,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// The key tags.
+    /// <p>The key tags.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -5240,14 +5240,14 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
-/// <p>The request body for TagResource.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// A label that consists of a customer-defined key and an optional value.
+    /// <p>A label that consists of a customer-defined key and an optional value.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5257,7 +5257,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// A label that consists of a customer-defined key and an optional value.
+    /// <p>A label that consists of a customer-defined key and an optional value.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5296,7 +5296,7 @@ impl std::fmt::Debug for StartJobInput {
     }
 }
 
-/// <p>The request body for SendApiAsset.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendApiAssetInput {
@@ -5320,7 +5320,7 @@ pub struct SendApiAssetInput {
     /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
     #[doc(hidden)]
     pub method: std::option::Option<std::string::String>,
-    /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+    /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Revision ID value for the API request.</p>
@@ -5358,7 +5358,7 @@ impl SendApiAssetInput {
     pub fn method(&self) -> std::option::Option<&str> {
         self.method.as_deref()
     }
-    /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+    /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
@@ -5382,7 +5382,7 @@ impl std::fmt::Debug for SendApiAssetInput {
     }
 }
 
-/// <p>The request body for RevokeRevision.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeRevisionInput {
@@ -5894,7 +5894,7 @@ impl std::fmt::Debug for DeleteAssetInput {
     }
 }
 
-/// <p>The request body for CreateRevision.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRevisionInput {
@@ -5936,7 +5936,7 @@ impl std::fmt::Debug for CreateRevisionInput {
     }
 }
 
-/// <p>The request body for CreateJob.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
@@ -5966,7 +5966,7 @@ impl std::fmt::Debug for CreateJobInput {
     }
 }
 
-/// <p>The request body for CreateEventAction.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventActionInput {
@@ -5996,7 +5996,7 @@ impl std::fmt::Debug for CreateEventActionInput {
     }
 }
 
-/// <p>The request body for CreateDataSet.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSetInput {

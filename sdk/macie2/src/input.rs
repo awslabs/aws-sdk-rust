@@ -318,12 +318,224 @@ impl BatchGetCustomDataIdentifiersInput {
     }
 }
 
+/// See [`CreateAllowListInput`](crate::input::CreateAllowListInput).
+pub mod create_allow_list_input {
+
+    /// A builder for [`CreateAllowListInput`](crate::input::CreateAllowListInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) criteria: std::option::Option<crate::model::AllowListCriteria>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+        pub fn criteria(mut self, input: crate::model::AllowListCriteria) -> Self {
+            self.criteria = Some(input);
+            self
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+        pub fn set_criteria(
+            mut self,
+            input: std::option::Option<crate::model::AllowListCriteria>,
+        ) -> Self {
+            self.criteria = input;
+            self
+        }
+        /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
+        /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
+        /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAllowListInput`](crate::input::CreateAllowListInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateAllowListInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateAllowListInput {
+                client_token: self.client_token,
+                criteria: self.criteria,
+                description: self.description,
+                name: self.name,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl CreateAllowListInput {
+    /// Consumes the builder and constructs an Operation<[`CreateAllowList`](crate::operation::CreateAllowList)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateAllowList,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateAllowListInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/allow-lists").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateAllowListInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_allow_list(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAllowList::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAllowList",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateAllowListInput`](crate::input::CreateAllowListInput).
+    pub fn builder() -> crate::input::create_allow_list_input::Builder {
+        crate::input::create_allow_list_input::Builder::default()
+    }
+}
+
 /// See [`CreateClassificationJobInput`](crate::input::CreateClassificationJobInput).
 pub mod create_classification_job_input {
 
     /// A builder for [`CreateClassificationJobInput`](crate::input::CreateClassificationJobInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) allow_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) custom_data_identifier_ids:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -343,6 +555,25 @@ pub mod create_classification_job_input {
         >,
     }
     impl Builder {
+        /// Appends an item to `allow_list_ids`.
+        ///
+        /// To override the contents of this collection use [`set_allow_list_ids`](Self::set_allow_list_ids).
+        ///
+        /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
+        pub fn allow_list_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.allow_list_ids.unwrap_or_default();
+            v.push(input.into());
+            self.allow_list_ids = Some(v);
+            self
+        }
+        /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
+        pub fn set_allow_list_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.allow_list_ids = input;
+            self
+        }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
@@ -547,6 +778,7 @@ pub mod create_classification_job_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateClassificationJobInput {
+                allow_list_ids: self.allow_list_ids,
                 client_token: self.client_token,
                 custom_data_identifier_ids: self.custom_data_identifier_ids,
                 description: self.description,
@@ -1849,6 +2081,175 @@ impl DeclineInvitationsInput {
     }
 }
 
+/// See [`DeleteAllowListInput`](crate::input::DeleteAllowListInput).
+pub mod delete_allow_list_input {
+
+    /// A builder for [`DeleteAllowListInput`](crate::input::DeleteAllowListInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) ignore_job_checks: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
+        /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+        pub fn ignore_job_checks(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ignore_job_checks = Some(input.into());
+            self
+        }
+        /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
+        /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+        pub fn set_ignore_job_checks(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ignore_job_checks = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteAllowListInput`](crate::input::DeleteAllowListInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteAllowListInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteAllowListInput {
+                id: self.id,
+                ignore_job_checks: self.ignore_job_checks,
+            })
+        }
+    }
+}
+impl DeleteAllowListInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteAllowList`](crate::operation::DeleteAllowList)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteAllowList,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteAllowListInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_1 = &_input.id;
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let id = aws_smithy_http::label::fmt_string(input_1, false);
+                if id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/allow-lists/{id}", id = id).expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::DeleteAllowListInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_2) = &_input.ignore_job_checks {
+                    query.push_kv(
+                        "ignoreJobChecks",
+                        &aws_smithy_http::query::fmt_string(&inner_2),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteAllowListInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAllowList::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAllowList",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteAllowListInput`](crate::input::DeleteAllowListInput).
+    pub fn builder() -> crate::input::delete_allow_list_input::Builder {
+        crate::input::delete_allow_list_input::Builder::default()
+    }
+}
+
 /// See [`DeleteCustomDataIdentifierInput`](crate::input::DeleteCustomDataIdentifierInput).
 pub mod delete_custom_data_identifier_input {
 
@@ -1858,12 +2259,12 @@ pub mod delete_custom_data_identifier_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1899,14 +2300,14 @@ impl DeleteCustomDataIdentifierInput {
                 _input: &crate::input::DeleteCustomDataIdentifierInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_1 = &_input.id;
-                let input_1 = input_1.as_ref().ok_or(
+                let input_3 = &_input.id;
+                let input_3 = input_3.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_1, false);
+                let id = aws_smithy_http::label::fmt_string(input_3, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -1997,12 +2398,12 @@ pub mod delete_findings_filter_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2036,14 +2437,14 @@ impl DeleteFindingsFilterInput {
                 _input: &crate::input::DeleteFindingsFilterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_2 = &_input.id;
-                let input_2 = input_2.as_ref().ok_or(
+                let input_4 = &_input.id;
+                let input_4 = input_4.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_2, false);
+                let id = aws_smithy_http::label::fmt_string(input_4, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -2281,12 +2682,12 @@ pub mod delete_member_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2320,14 +2721,14 @@ impl DeleteMemberInput {
                 _input: &crate::input::DeleteMemberInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_3 = &_input.id;
-                let input_3 = input_3.as_ref().ok_or(
+                let input_5 = &_input.id;
+                let input_5 = input_5.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_3, false);
+                let id = aws_smithy_http::label::fmt_string(input_5, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -2660,14 +3061,14 @@ impl DescribeClassificationJobInput {
                 _input: &crate::input::DescribeClassificationJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_4 = &_input.job_id;
-                let input_4 = input_4.as_ref().ok_or(
+                let input_6 = &_input.job_id;
+                let input_6 = input_6.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_6, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -3033,10 +3434,10 @@ impl DisableOrganizationAdminAccountInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.admin_account_id {
+                if let Some(inner_7) = &_input.admin_account_id {
                     query.push_kv(
                         "adminAccountId",
-                        &aws_smithy_http::query::fmt_string(&inner_5),
+                        &aws_smithy_http::query::fmt_string(&inner_7),
                     );
                 }
                 Ok(())
@@ -3346,12 +3747,12 @@ pub mod disassociate_member_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3385,14 +3786,14 @@ impl DisassociateMemberInput {
                 _input: &crate::input::DisassociateMemberInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_6 = &_input.id;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_8 = &_input.id;
+                let input_8 = input_8.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_6, false);
+                let id = aws_smithy_http::label::fmt_string(input_8, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -3496,7 +3897,7 @@ pub mod enable_macie_input {
             self.client_token = input;
             self
         }
-        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -3504,7 +3905,7 @@ pub mod enable_macie_input {
             self.finding_publishing_frequency = Some(input);
             self
         }
-        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -3915,6 +4316,142 @@ impl GetAdministratorAccountInput {
     }
 }
 
+/// See [`GetAllowListInput`](crate::input::GetAllowListInput).
+pub mod get_allow_list_input {
+
+    /// A builder for [`GetAllowListInput`](crate::input::GetAllowListInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAllowListInput`](crate::input::GetAllowListInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetAllowListInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetAllowListInput { id: self.id })
+        }
+    }
+}
+impl GetAllowListInput {
+    /// Consumes the builder and constructs an Operation<[`GetAllowList`](crate::operation::GetAllowList)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetAllowList,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetAllowListInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_9 = &_input.id;
+                let input_9 = input_9.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let id = aws_smithy_http::label::fmt_string(input_9, false);
+                if id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/allow-lists/{id}", id = id).expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetAllowListInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAllowList::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAllowList",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetAllowListInput`](crate::input::GetAllowListInput).
+    pub fn builder() -> crate::input::get_allow_list_input::Builder {
+        crate::input::get_allow_list_input::Builder::default()
+    }
+}
+
 /// See [`GetBucketStatisticsInput`](crate::input::GetBucketStatisticsInput).
 pub mod get_bucket_statistics_input {
 
@@ -4175,12 +4712,12 @@ pub mod get_custom_data_identifier_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4216,14 +4753,14 @@ impl GetCustomDataIdentifierInput {
                 _input: &crate::input::GetCustomDataIdentifierInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_7 = &_input.id;
-                let input_7 = input_7.as_ref().ok_or(
+                let input_10 = &_input.id;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_7, false);
+                let id = aws_smithy_http::label::fmt_string(input_10, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -4476,12 +5013,12 @@ pub mod get_findings_filter_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4515,14 +5052,14 @@ impl GetFindingsFilterInput {
                 _input: &crate::input::GetFindingsFilterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_8 = &_input.id;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_11 = &_input.id;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_8, false);
+                let id = aws_smithy_http::label::fmt_string(input_11, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -5250,12 +5787,12 @@ pub mod get_member_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5288,14 +5825,14 @@ impl GetMemberInput {
                 _input: &crate::input::GetMemberInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_9 = &_input.id;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_12 = &_input.id;
+                let input_12 = input_12.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_9, false);
+                let id = aws_smithy_http::label::fmt_string(input_12, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -5536,14 +6073,14 @@ impl GetSensitiveDataOccurrencesInput {
                 _input: &crate::input::GetSensitiveDataOccurrencesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_10 = &_input.finding_id;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_13 = &_input.finding_id;
+                let input_13 = input_13.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "finding_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let finding_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let finding_id = aws_smithy_http::label::fmt_string(input_13, false);
                 if finding_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "finding_id",
@@ -5681,14 +6218,14 @@ impl GetSensitiveDataOccurrencesAvailabilityInput {
                 _input: &crate::input::GetSensitiveDataOccurrencesAvailabilityInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.finding_id;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_14 = &_input.finding_id;
+                let input_14 = input_14.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "finding_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let finding_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let finding_id = aws_smithy_http::label::fmt_string(input_14, false);
                 if finding_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "finding_id",
@@ -6034,8 +6571,8 @@ impl GetUsageTotalsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.time_range {
-                    query.push_kv("timeRange", &aws_smithy_http::query::fmt_string(&inner_12));
+                if let Some(inner_15) = &_input.time_range {
+                    query.push_kv("timeRange", &aws_smithy_http::query::fmt_string(&inner_15));
                 }
                 Ok(())
             }
@@ -6108,6 +6645,159 @@ impl GetUsageTotalsInput {
     /// Creates a new builder-style object to manufacture [`GetUsageTotalsInput`](crate::input::GetUsageTotalsInput).
     pub fn builder() -> crate::input::get_usage_totals_input::Builder {
         crate::input::get_usage_totals_input::Builder::default()
+    }
+}
+
+/// See [`ListAllowListsInput`](crate::input::ListAllowListsInput).
+pub mod list_allow_lists_input {
+
+    /// A builder for [`ListAllowListsInput`](crate::input::ListAllowListsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAllowListsInput`](crate::input::ListAllowListsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListAllowListsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListAllowListsInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListAllowListsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAllowLists`](crate::operation::ListAllowLists)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAllowLists,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAllowListsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/allow-lists").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListAllowListsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if _input.max_results != 0 {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
+                }
+                if let Some(inner_16) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAllowListsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAllowLists::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAllowLists",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAllowListsInput`](crate::input::ListAllowListsInput).
+    pub fn builder() -> crate::input::list_allow_lists_input::Builder {
+        crate::input::list_allow_lists_input::Builder::default()
     }
 }
 
@@ -6703,8 +7393,8 @@ impl ListFindingsFiltersInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                if let Some(inner_17) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
                 }
                 Ok(())
             }
@@ -6856,8 +7546,8 @@ impl ListInvitationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_14) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_14));
+                if let Some(inner_18) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
                 Ok(())
             }
@@ -7164,13 +7854,13 @@ impl ListMembersInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_15) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                if let Some(inner_19) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
                 }
-                if let Some(inner_16) = &_input.only_associated {
+                if let Some(inner_20) = &_input.only_associated {
                     query.push_kv(
                         "onlyAssociated",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
+                        &aws_smithy_http::query::fmt_string(&inner_20),
                     );
                 }
                 Ok(())
@@ -7325,8 +8015,8 @@ impl ListOrganizationAdminAccountsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_17) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                if let Some(inner_21) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
                 }
                 Ok(())
             }
@@ -7411,12 +8101,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7452,14 +8142,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.resource_arn;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_22 = &_input.resource_arn;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_22, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -8046,12 +8736,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8115,14 +8805,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.resource_arn;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_23 = &_input.resource_arn;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_19, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_23, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -8436,12 +9126,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8450,14 +9140,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
+        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
+        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8497,14 +9187,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_20 = &_input.resource_arn;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_24 = &_input.resource_arn;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_20, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_24, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -8520,9 +9210,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_21) = &_input.tag_keys {
-                    for inner_22 in inner_21 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_22));
+                if let Some(inner_25) = &_input.tag_keys {
+                    for inner_26 in inner_25 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_26));
                     }
                 }
                 Ok(())
@@ -8596,6 +9286,199 @@ impl UntagResourceInput {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UpdateAllowListInput`](crate::input::UpdateAllowListInput).
+pub mod update_allow_list_input {
+
+    /// A builder for [`UpdateAllowListInput`](crate::input::UpdateAllowListInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) criteria: std::option::Option<crate::model::AllowListCriteria>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
+        /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+        pub fn criteria(mut self, input: crate::model::AllowListCriteria) -> Self {
+            self.criteria = Some(input);
+            self
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
+        /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+        pub fn set_criteria(
+            mut self,
+            input: std::option::Option<crate::model::AllowListCriteria>,
+        ) -> Self {
+            self.criteria = input;
+            self
+        }
+        /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAllowListInput`](crate::input::UpdateAllowListInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateAllowListInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateAllowListInput {
+                criteria: self.criteria,
+                description: self.description,
+                id: self.id,
+                name: self.name,
+            })
+        }
+    }
+}
+impl UpdateAllowListInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAllowList`](crate::operation::UpdateAllowList)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateAllowList,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateAllowListInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_27 = &_input.id;
+                let input_27 = input_27.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let id = aws_smithy_http::label::fmt_string(input_27, false);
+                if id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/allow-lists/{id}", id = id).expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateAllowListInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_allow_list(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAllowList::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAllowList",
+            "macie2",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateAllowListInput`](crate::input::UpdateAllowListInput).
+    pub fn builder() -> crate::input::update_allow_list_input::Builder {
+        crate::input::update_allow_list_input::Builder::default()
     }
 }
 
@@ -8676,14 +9559,14 @@ impl UpdateClassificationJobInput {
                 _input: &crate::input::UpdateClassificationJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.job_id;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_28 = &_input.job_id;
+                let input_28 = input_28.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_28, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -8833,12 +9716,12 @@ pub mod update_findings_filter_input {
             self.finding_criteria = input;
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8915,14 +9798,14 @@ impl UpdateFindingsFilterInput {
                 _input: &crate::input::UpdateFindingsFilterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_24 = &_input.id;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_29 = &_input.id;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_24, false);
+                let id = aws_smithy_http::label::fmt_string(input_29, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -9031,7 +9914,7 @@ pub mod update_macie_session_input {
         pub(crate) status: std::option::Option<crate::model::MacieStatus>,
     }
     impl Builder {
-        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -9039,7 +9922,7 @@ pub mod update_macie_session_input {
             self.finding_publishing_frequency = Some(input);
             self
         }
-        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -9187,12 +10070,12 @@ pub mod update_member_session_input {
         pub(crate) status: std::option::Option<crate::model::MacieStatus>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9239,14 +10122,14 @@ impl UpdateMemberSessionInput {
                 _input: &crate::input::UpdateMemberSessionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_25 = &_input.id;
-                let input_25 = input_25.as_ref().ok_or(
+                let input_30 = &_input.id;
+                let input_30 = input_30.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_25, false);
+                let id = aws_smithy_http::label::fmt_string(input_30, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -9673,7 +10556,7 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMemberSessionInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
@@ -9681,7 +10564,7 @@ pub struct UpdateMemberSessionInput {
     pub status: std::option::Option<crate::model::MacieStatus>,
 }
 impl UpdateMemberSessionInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -9703,7 +10586,7 @@ impl std::fmt::Debug for UpdateMemberSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMacieSessionInput {
-    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
@@ -9711,7 +10594,7 @@ pub struct UpdateMacieSessionInput {
     pub status: std::option::Option<crate::model::MacieStatus>,
 }
 impl UpdateMacieSessionInput {
-    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub fn finding_publishing_frequency(
         &self,
     ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
@@ -9748,7 +10631,7 @@ pub struct UpdateFindingsFilterInput {
     /// <p>The criteria to use to filter findings.</p>
     #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
@@ -9776,7 +10659,7 @@ impl UpdateFindingsFilterInput {
     pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -9851,20 +10734,68 @@ impl std::fmt::Debug for UpdateClassificationJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAllowListInput {
+    /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
+    /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+    #[doc(hidden)]
+    pub criteria: std::option::Option<crate::model::AllowListCriteria>,
+    /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl UpdateAllowListInput {
+    /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
+    /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+    pub fn criteria(&self) -> std::option::Option<&crate::model::AllowListCriteria> {
+        self.criteria.as_ref()
+    }
+    /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateAllowListInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAllowListInput");
+        formatter.field("criteria", &self.criteria);
+        formatter.field("description", &self.description);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
+    /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
+    /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -9936,7 +10867,7 @@ impl std::fmt::Debug for TestCustomDataIdentifierInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>
@@ -9946,7 +10877,7 @@ pub struct TagResourceInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -10079,12 +11010,12 @@ impl std::fmt::Debug for PutClassificationExportConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -10372,6 +11303,36 @@ impl std::fmt::Debug for ListClassificationJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAllowListsInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    #[doc(hidden)]
+    pub max_results: i32,
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAllowListsInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAllowListsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAllowListsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageTotalsInput {
     /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
     #[doc(hidden)]
@@ -10504,12 +11465,12 @@ impl std::fmt::Debug for GetRevealConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetMemberInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -10630,12 +11591,12 @@ impl std::fmt::Debug for GetFindingsPublicationConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsFilterInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFindingsFilterInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -10682,12 +11643,12 @@ impl std::fmt::Debug for GetFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomDataIdentifierInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCustomDataIdentifierInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -10729,6 +11690,28 @@ impl std::fmt::Debug for GetBucketStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketStatisticsInput");
         formatter.field("account_id", &self.account_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAllowListInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetAllowListInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetAllowListInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetAllowListInput");
+        formatter.field("id", &self.id);
         formatter.finish()
     }
 }
@@ -10781,7 +11764,7 @@ pub struct EnableMacieInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
@@ -10793,7 +11776,7 @@ impl EnableMacieInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub fn finding_publishing_frequency(
         &self,
     ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
@@ -10821,12 +11804,12 @@ impl std::fmt::Debug for EnableMacieInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMemberInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DisassociateMemberInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -10989,12 +11972,12 @@ impl std::fmt::Debug for DescribeBucketsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMemberInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteMemberInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -11033,12 +12016,12 @@ impl std::fmt::Debug for DeleteInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFindingsFilterInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteFindingsFilterInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -11055,12 +12038,12 @@ impl std::fmt::Debug for DeleteFindingsFilterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomDataIdentifierInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteCustomDataIdentifierInput {
-    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -11069,6 +12052,38 @@ impl std::fmt::Debug for DeleteCustomDataIdentifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCustomDataIdentifierInput");
         formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAllowListInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
+    /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+    #[doc(hidden)]
+    pub ignore_job_checks: std::option::Option<std::string::String>,
+}
+impl DeleteAllowListInput {
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
+    /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+    pub fn ignore_job_checks(&self) -> std::option::Option<&str> {
+        self.ignore_job_checks.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteAllowListInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAllowListInput");
+        formatter.field("id", &self.id);
+        formatter.field("ignore_job_checks", &self.ignore_job_checks);
         formatter.finish()
     }
 }
@@ -11376,6 +12391,9 @@ impl std::fmt::Debug for CreateCustomDataIdentifierInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClassificationJobInput {
+    /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
+    #[doc(hidden)]
+    pub allow_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -11430,6 +12448,10 @@ pub struct CreateClassificationJobInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateClassificationJobInput {
+    /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
+    pub fn allow_list_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.allow_list_ids.as_deref()
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
@@ -11501,6 +12523,7 @@ impl CreateClassificationJobInput {
 impl std::fmt::Debug for CreateClassificationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClassificationJobInput");
+        formatter.field("allow_list_ids", &self.allow_list_ids);
         formatter.field("client_token", &self.client_token);
         formatter.field(
             "custom_data_identifier_ids",
@@ -11521,6 +12544,66 @@ impl std::fmt::Debug for CreateClassificationJobInput {
         formatter.field("s3_job_definition", &self.s3_job_definition);
         formatter.field("sampling_percentage", &self.sampling_percentage);
         formatter.field("schedule_frequency", &self.schedule_frequency);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAllowListInput {
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+    #[doc(hidden)]
+    pub criteria: std::option::Option<crate::model::AllowListCriteria>,
+    /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
+    /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateAllowListInput {
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+    pub fn criteria(&self) -> std::option::Option<&crate::model::AllowListCriteria> {
+        self.criteria.as_ref()
+    }
+    /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
+    /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateAllowListInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAllowListInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("criteria", &self.criteria);
+        formatter.field("description", &self.description);
+        formatter.field("name", &self.name);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

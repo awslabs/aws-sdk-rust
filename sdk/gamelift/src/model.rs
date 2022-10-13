@@ -10115,6 +10115,54 @@ pub enum Ec2InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     C5aXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    C5d12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C5d18xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C5d24xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C5d2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C5d4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C5d9xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C5dLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C5dXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6a12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6a16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6a24xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6a2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6a4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6a8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6aLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6aXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6i12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6i16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6i24xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6i2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6i4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6i8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6iLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6iXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     M32xlarge,
     #[allow(missing_docs)] // documentation missing in model
     M3Large,
@@ -10219,6 +10267,22 @@ pub enum Ec2InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     R5aXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    R5d12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R5d16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R5d24xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R5d2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R5d4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R5d8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R5dLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R5dXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     T2Large,
     #[allow(missing_docs)] // documentation missing in model
     T2Medium,
@@ -10258,6 +10322,30 @@ impl std::convert::From<&str> for Ec2InstanceType {
             "c5a.8xlarge" => Ec2InstanceType::C5a8xlarge,
             "c5a.large" => Ec2InstanceType::C5aLarge,
             "c5a.xlarge" => Ec2InstanceType::C5aXlarge,
+            "c5d.12xlarge" => Ec2InstanceType::C5d12xlarge,
+            "c5d.18xlarge" => Ec2InstanceType::C5d18xlarge,
+            "c5d.24xlarge" => Ec2InstanceType::C5d24xlarge,
+            "c5d.2xlarge" => Ec2InstanceType::C5d2xlarge,
+            "c5d.4xlarge" => Ec2InstanceType::C5d4xlarge,
+            "c5d.9xlarge" => Ec2InstanceType::C5d9xlarge,
+            "c5d.large" => Ec2InstanceType::C5dLarge,
+            "c5d.xlarge" => Ec2InstanceType::C5dXlarge,
+            "c6a.12xlarge" => Ec2InstanceType::C6a12xlarge,
+            "c6a.16xlarge" => Ec2InstanceType::C6a16xlarge,
+            "c6a.24xlarge" => Ec2InstanceType::C6a24xlarge,
+            "c6a.2xlarge" => Ec2InstanceType::C6a2xlarge,
+            "c6a.4xlarge" => Ec2InstanceType::C6a4xlarge,
+            "c6a.8xlarge" => Ec2InstanceType::C6a8xlarge,
+            "c6a.large" => Ec2InstanceType::C6aLarge,
+            "c6a.xlarge" => Ec2InstanceType::C6aXlarge,
+            "c6i.12xlarge" => Ec2InstanceType::C6i12xlarge,
+            "c6i.16xlarge" => Ec2InstanceType::C6i16xlarge,
+            "c6i.24xlarge" => Ec2InstanceType::C6i24xlarge,
+            "c6i.2xlarge" => Ec2InstanceType::C6i2xlarge,
+            "c6i.4xlarge" => Ec2InstanceType::C6i4xlarge,
+            "c6i.8xlarge" => Ec2InstanceType::C6i8xlarge,
+            "c6i.large" => Ec2InstanceType::C6iLarge,
+            "c6i.xlarge" => Ec2InstanceType::C6iXlarge,
             "m3.2xlarge" => Ec2InstanceType::M32xlarge,
             "m3.large" => Ec2InstanceType::M3Large,
             "m3.medium" => Ec2InstanceType::M3Medium,
@@ -10310,6 +10398,14 @@ impl std::convert::From<&str> for Ec2InstanceType {
             "r5a.8xlarge" => Ec2InstanceType::R5a8xlarge,
             "r5a.large" => Ec2InstanceType::R5aLarge,
             "r5a.xlarge" => Ec2InstanceType::R5aXlarge,
+            "r5d.12xlarge" => Ec2InstanceType::R5d12xlarge,
+            "r5d.16xlarge" => Ec2InstanceType::R5d16xlarge,
+            "r5d.24xlarge" => Ec2InstanceType::R5d24xlarge,
+            "r5d.2xlarge" => Ec2InstanceType::R5d2xlarge,
+            "r5d.4xlarge" => Ec2InstanceType::R5d4xlarge,
+            "r5d.8xlarge" => Ec2InstanceType::R5d8xlarge,
+            "r5d.large" => Ec2InstanceType::R5dLarge,
+            "r5d.xlarge" => Ec2InstanceType::R5dXlarge,
             "t2.large" => Ec2InstanceType::T2Large,
             "t2.medium" => Ec2InstanceType::T2Medium,
             "t2.micro" => Ec2InstanceType::T2Micro,
@@ -10355,6 +10451,30 @@ impl Ec2InstanceType {
             Ec2InstanceType::C5a8xlarge => "c5a.8xlarge",
             Ec2InstanceType::C5aLarge => "c5a.large",
             Ec2InstanceType::C5aXlarge => "c5a.xlarge",
+            Ec2InstanceType::C5d12xlarge => "c5d.12xlarge",
+            Ec2InstanceType::C5d18xlarge => "c5d.18xlarge",
+            Ec2InstanceType::C5d24xlarge => "c5d.24xlarge",
+            Ec2InstanceType::C5d2xlarge => "c5d.2xlarge",
+            Ec2InstanceType::C5d4xlarge => "c5d.4xlarge",
+            Ec2InstanceType::C5d9xlarge => "c5d.9xlarge",
+            Ec2InstanceType::C5dLarge => "c5d.large",
+            Ec2InstanceType::C5dXlarge => "c5d.xlarge",
+            Ec2InstanceType::C6a12xlarge => "c6a.12xlarge",
+            Ec2InstanceType::C6a16xlarge => "c6a.16xlarge",
+            Ec2InstanceType::C6a24xlarge => "c6a.24xlarge",
+            Ec2InstanceType::C6a2xlarge => "c6a.2xlarge",
+            Ec2InstanceType::C6a4xlarge => "c6a.4xlarge",
+            Ec2InstanceType::C6a8xlarge => "c6a.8xlarge",
+            Ec2InstanceType::C6aLarge => "c6a.large",
+            Ec2InstanceType::C6aXlarge => "c6a.xlarge",
+            Ec2InstanceType::C6i12xlarge => "c6i.12xlarge",
+            Ec2InstanceType::C6i16xlarge => "c6i.16xlarge",
+            Ec2InstanceType::C6i24xlarge => "c6i.24xlarge",
+            Ec2InstanceType::C6i2xlarge => "c6i.2xlarge",
+            Ec2InstanceType::C6i4xlarge => "c6i.4xlarge",
+            Ec2InstanceType::C6i8xlarge => "c6i.8xlarge",
+            Ec2InstanceType::C6iLarge => "c6i.large",
+            Ec2InstanceType::C6iXlarge => "c6i.xlarge",
             Ec2InstanceType::M32xlarge => "m3.2xlarge",
             Ec2InstanceType::M3Large => "m3.large",
             Ec2InstanceType::M3Medium => "m3.medium",
@@ -10407,6 +10527,14 @@ impl Ec2InstanceType {
             Ec2InstanceType::R5a8xlarge => "r5a.8xlarge",
             Ec2InstanceType::R5aLarge => "r5a.large",
             Ec2InstanceType::R5aXlarge => "r5a.xlarge",
+            Ec2InstanceType::R5d12xlarge => "r5d.12xlarge",
+            Ec2InstanceType::R5d16xlarge => "r5d.16xlarge",
+            Ec2InstanceType::R5d24xlarge => "r5d.24xlarge",
+            Ec2InstanceType::R5d2xlarge => "r5d.2xlarge",
+            Ec2InstanceType::R5d4xlarge => "r5d.4xlarge",
+            Ec2InstanceType::R5d8xlarge => "r5d.8xlarge",
+            Ec2InstanceType::R5dLarge => "r5d.large",
+            Ec2InstanceType::R5dXlarge => "r5d.xlarge",
             Ec2InstanceType::T2Large => "t2.large",
             Ec2InstanceType::T2Medium => "t2.medium",
             Ec2InstanceType::T2Micro => "t2.micro",
@@ -10443,6 +10571,30 @@ impl Ec2InstanceType {
             "c5a.8xlarge",
             "c5a.large",
             "c5a.xlarge",
+            "c5d.12xlarge",
+            "c5d.18xlarge",
+            "c5d.24xlarge",
+            "c5d.2xlarge",
+            "c5d.4xlarge",
+            "c5d.9xlarge",
+            "c5d.large",
+            "c5d.xlarge",
+            "c6a.12xlarge",
+            "c6a.16xlarge",
+            "c6a.24xlarge",
+            "c6a.2xlarge",
+            "c6a.4xlarge",
+            "c6a.8xlarge",
+            "c6a.large",
+            "c6a.xlarge",
+            "c6i.12xlarge",
+            "c6i.16xlarge",
+            "c6i.24xlarge",
+            "c6i.2xlarge",
+            "c6i.4xlarge",
+            "c6i.8xlarge",
+            "c6i.large",
+            "c6i.xlarge",
             "m3.2xlarge",
             "m3.large",
             "m3.medium",
@@ -10495,6 +10647,14 @@ impl Ec2InstanceType {
             "r5a.8xlarge",
             "r5a.large",
             "r5a.xlarge",
+            "r5d.12xlarge",
+            "r5d.16xlarge",
+            "r5d.24xlarge",
+            "r5d.2xlarge",
+            "r5d.4xlarge",
+            "r5d.8xlarge",
+            "r5d.large",
+            "r5d.xlarge",
             "t2.large",
             "t2.medium",
             "t2.micro",

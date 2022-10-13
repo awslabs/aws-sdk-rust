@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerTargetsLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -40,12 +40,12 @@ pub mod trigger_targets_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -69,7 +69,7 @@ impl TriggerTargetsLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -105,12 +105,12 @@ pub mod throttling_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -134,7 +134,7 @@ impl ThrottlingException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagSetListLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -170,12 +170,12 @@ pub mod tag_set_list_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -199,7 +199,7 @@ impl TagSetListLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleHookLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -235,12 +235,12 @@ pub mod lifecycle_hook_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -264,7 +264,7 @@ impl LifecycleHookLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTriggerConfigException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -300,12 +300,12 @@ pub mod invalid_trigger_config_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -329,7 +329,7 @@ impl InvalidTriggerConfigException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTrafficRoutingConfigurationException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -365,12 +365,12 @@ pub mod invalid_traffic_routing_configuration_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -394,7 +394,7 @@ impl InvalidTrafficRoutingConfigurationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetGroupPairException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -430,12 +430,12 @@ pub mod invalid_target_group_pair_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -459,7 +459,7 @@ impl InvalidTargetGroupPairException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -495,12 +495,12 @@ pub mod invalid_tag_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -524,7 +524,7 @@ impl InvalidTagException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRoleException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -560,12 +560,12 @@ pub mod invalid_role_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -589,7 +589,7 @@ impl InvalidRoleException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOnPremisesTagCombinationException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -625,12 +625,12 @@ pub mod invalid_on_premises_tag_combination_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -654,7 +654,7 @@ impl InvalidOnPremisesTagCombinationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLoadBalancerInfoException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -690,12 +690,12 @@ pub mod invalid_load_balancer_info_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -719,7 +719,7 @@ impl InvalidLoadBalancerInfoException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -755,12 +755,12 @@ pub mod invalid_input_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -784,7 +784,7 @@ impl InvalidInputException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEcsServiceException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -820,12 +820,12 @@ pub mod invalid_ecs_service_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -849,7 +849,7 @@ impl InvalidEcsServiceException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEc2TagException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -885,12 +885,12 @@ pub mod invalid_ec2_tag_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -914,7 +914,7 @@ impl InvalidEc2TagException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEc2TagCombinationException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -953,12 +953,12 @@ pub mod invalid_ec2_tag_combination_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -982,7 +982,7 @@ impl InvalidEc2TagCombinationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentStyleException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1018,12 +1018,12 @@ pub mod invalid_deployment_style_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1047,7 +1047,7 @@ impl InvalidDeploymentStyleException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentGroupNameException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1083,12 +1083,12 @@ pub mod invalid_deployment_group_name_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1112,7 +1112,7 @@ impl InvalidDeploymentGroupNameException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentConfigNameException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1148,12 +1148,12 @@ pub mod invalid_deployment_config_name_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1177,7 +1177,7 @@ impl InvalidDeploymentConfigNameException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBlueGreenDeploymentConfigurationException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1213,12 +1213,12 @@ pub mod invalid_blue_green_deployment_configuration_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1243,7 +1243,7 @@ impl InvalidBlueGreenDeploymentConfigurationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutoScalingGroupException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1279,12 +1279,12 @@ pub mod invalid_auto_scaling_group_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1308,7 +1308,7 @@ impl InvalidAutoScalingGroupException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutoRollbackConfigException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1344,12 +1344,12 @@ pub mod invalid_auto_rollback_config_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1373,7 +1373,7 @@ impl InvalidAutoRollbackConfigException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApplicationNameException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1409,12 +1409,12 @@ pub mod invalid_application_name_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1445,7 +1445,7 @@ impl InvalidApplicationNameException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAlarmConfigException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1481,12 +1481,12 @@ pub mod invalid_alarm_config_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1510,7 +1510,7 @@ impl InvalidAlarmConfigException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsServiceMappingLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1549,12 +1549,12 @@ pub mod ecs_service_mapping_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1578,7 +1578,7 @@ impl EcsServiceMappingLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupNameRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1614,12 +1614,12 @@ pub mod deployment_group_name_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1639,11 +1639,11 @@ impl DeploymentGroupNameRequiredException {
     }
 }
 
-/// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+/// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupDoesNotExistException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1679,12 +1679,12 @@ pub mod deployment_group_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1704,11 +1704,11 @@ impl DeploymentGroupDoesNotExistException {
     }
 }
 
-/// <p>A deployment group with the specified name with the IAM user or AWS account already exists.</p>
+/// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupAlreadyExistsException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1744,12 +1744,12 @@ pub mod deployment_group_already_exists_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1769,11 +1769,11 @@ impl DeploymentGroupAlreadyExistsException {
     }
 }
 
-/// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+/// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigDoesNotExistException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1809,12 +1809,12 @@ pub mod deployment_config_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1838,7 +1838,7 @@ impl DeploymentConfigDoesNotExistException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationNameRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1874,12 +1874,12 @@ pub mod application_name_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1899,11 +1899,11 @@ impl ApplicationNameRequiredException {
     }
 }
 
-/// <p>The application does not exist with the IAM user or AWS account.</p>
+/// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationDoesNotExistException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1939,12 +1939,12 @@ pub mod application_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1968,7 +1968,7 @@ impl ApplicationDoesNotExistException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmsLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2004,12 +2004,12 @@ pub mod alarms_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2029,11 +2029,11 @@ impl AlarmsLimitExceededException {
     }
 }
 
-/// <p>An application with the specified name with the IAM user or AWS account already exists.</p>
+/// <p>An application with the specified name with the IAM user or Amazon Web Services account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationAlreadyExistsException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2069,12 +2069,12 @@ pub mod application_already_exists_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2098,7 +2098,7 @@ impl ApplicationAlreadyExistsException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2134,12 +2134,12 @@ pub mod tag_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2163,7 +2163,7 @@ impl TagRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceArnRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2199,12 +2199,12 @@ pub mod resource_arn_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2228,7 +2228,7 @@ impl ResourceArnRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagsToAddException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2264,12 +2264,12 @@ pub mod invalid_tags_to_add_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2293,7 +2293,7 @@ impl InvalidTagsToAddException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2329,12 +2329,12 @@ pub mod invalid_arn_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2358,7 +2358,7 @@ impl InvalidArnException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArnNotSupportedException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2394,12 +2394,12 @@ pub mod arn_not_supported_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2423,7 +2423,7 @@ impl ArnNotSupportedException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedActionForDeploymentTypeException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2459,12 +2459,12 @@ pub mod unsupported_action_for_deployment_type_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2488,7 +2488,7 @@ impl UnsupportedActionForDeploymentTypeException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentIdException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2524,12 +2524,12 @@ pub mod invalid_deployment_id_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2553,7 +2553,7 @@ impl InvalidDeploymentIdException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentIdRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2589,12 +2589,12 @@ pub mod deployment_id_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2614,11 +2614,11 @@ impl DeploymentIdRequiredException {
     }
 }
 
-/// <p>The deployment with the IAM user or AWS account does not exist.</p>
+/// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentDoesNotExistException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2654,12 +2654,12 @@ pub mod deployment_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2683,7 +2683,7 @@ impl DeploymentDoesNotExistException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentAlreadyCompletedException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2719,12 +2719,12 @@ pub mod deployment_already_completed_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2748,7 +2748,7 @@ impl DeploymentAlreadyCompletedException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentNotStartedException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2784,12 +2784,12 @@ pub mod deployment_not_started_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2813,7 +2813,7 @@ impl DeploymentNotStartedException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2849,12 +2849,12 @@ pub mod tag_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2878,7 +2878,7 @@ impl TagLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceNameException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2914,12 +2914,12 @@ pub mod invalid_instance_name_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2943,7 +2943,7 @@ impl InvalidInstanceNameException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceNotRegisteredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2979,12 +2979,12 @@ pub mod instance_not_registered_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3008,7 +3008,7 @@ impl InstanceNotRegisteredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceNameRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3044,12 +3044,12 @@ pub mod instance_name_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3073,7 +3073,7 @@ impl InstanceNameRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3109,12 +3109,12 @@ pub mod instance_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3138,7 +3138,7 @@ impl InstanceLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultipleIamArnsProvidedException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3174,12 +3174,12 @@ pub mod multiple_iam_arns_provided_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3203,7 +3203,7 @@ impl MultipleIamArnsProvidedException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIamUserArnException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3239,12 +3239,12 @@ pub mod invalid_iam_user_arn_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3268,7 +3268,7 @@ impl InvalidIamUserArnException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIamSessionArnException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3304,12 +3304,12 @@ pub mod invalid_iam_session_arn_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3333,7 +3333,7 @@ impl InvalidIamSessionArnException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceNameAlreadyRegisteredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3369,12 +3369,12 @@ pub mod instance_name_already_registered_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3398,7 +3398,7 @@ impl InstanceNameAlreadyRegisteredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamUserArnRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3434,12 +3434,12 @@ pub mod iam_user_arn_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3463,7 +3463,7 @@ impl IamUserArnRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamUserArnAlreadyRegisteredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3499,12 +3499,12 @@ pub mod iam_user_arn_already_registered_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3528,7 +3528,7 @@ impl IamUserArnAlreadyRegisteredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamSessionArnAlreadyRegisteredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3564,12 +3564,12 @@ pub mod iam_session_arn_already_registered_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3593,7 +3593,7 @@ impl IamSessionArnAlreadyRegisteredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamArnRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3629,12 +3629,12 @@ pub mod iam_arn_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3658,7 +3658,7 @@ impl IamArnRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3694,12 +3694,12 @@ pub mod revision_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3723,7 +3723,7 @@ impl RevisionRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRevisionException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3759,12 +3759,12 @@ pub mod invalid_revision_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3788,7 +3788,7 @@ impl InvalidRevisionException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescriptionTooLongException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3824,12 +3824,12 @@ pub mod description_too_long_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3853,7 +3853,7 @@ impl DescriptionTooLongException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleEventAlreadyCompletedException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3889,12 +3889,12 @@ pub mod lifecycle_event_already_completed_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3918,7 +3918,7 @@ impl LifecycleEventAlreadyCompletedException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLifecycleEventHookExecutionStatusException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -3954,12 +3954,12 @@ pub mod invalid_lifecycle_event_hook_execution_status_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3984,7 +3984,7 @@ impl InvalidLifecycleEventHookExecutionStatusException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLifecycleEventHookExecutionIdException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4020,12 +4020,12 @@ pub mod invalid_lifecycle_event_hook_execution_id_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4049,7 +4049,7 @@ impl InvalidLifecycleEventHookExecutionIdException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagFilterException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4085,12 +4085,12 @@ pub mod invalid_tag_filter_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4114,7 +4114,7 @@ impl InvalidTagFilterException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRegistrationStatusException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4150,12 +4150,12 @@ pub mod invalid_registration_status_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4179,7 +4179,7 @@ impl InvalidRegistrationStatusException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4215,12 +4215,12 @@ pub mod invalid_next_token_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4244,7 +4244,7 @@ impl InvalidNextTokenException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceValidationException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4280,12 +4280,12 @@ pub mod resource_validation_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4309,7 +4309,7 @@ impl ResourceValidationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotSupportedException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4345,12 +4345,12 @@ pub mod operation_not_supported_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4374,7 +4374,7 @@ impl OperationNotSupportedException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceTypeException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4410,12 +4410,12 @@ pub mod invalid_instance_type_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4439,7 +4439,7 @@ impl InvalidInstanceTypeException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceStatusException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4475,12 +4475,12 @@ pub mod invalid_instance_status_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4504,7 +4504,7 @@ impl InvalidInstanceStatusException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentInstanceTypeException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4540,12 +4540,12 @@ pub mod invalid_deployment_instance_type_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4569,7 +4569,7 @@ impl InvalidDeploymentInstanceTypeException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTimeRangeException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4605,12 +4605,12 @@ pub mod invalid_time_range_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4634,7 +4634,7 @@ impl InvalidTimeRangeException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidExternalIdException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4670,12 +4670,12 @@ pub mod invalid_external_id_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4699,7 +4699,7 @@ impl InvalidExternalIdException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentStatusException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4735,12 +4735,12 @@ pub mod invalid_deployment_status_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4764,7 +4764,7 @@ impl InvalidDeploymentStatusException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetFilterNameException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4800,12 +4800,12 @@ pub mod invalid_target_filter_name_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4829,7 +4829,7 @@ impl InvalidTargetFilterNameException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidComputePlatformException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4865,12 +4865,12 @@ pub mod invalid_compute_platform_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4894,7 +4894,7 @@ impl InvalidComputePlatformException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSortOrderException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4930,12 +4930,12 @@ pub mod invalid_sort_order_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4959,7 +4959,7 @@ impl InvalidSortOrderException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSortByException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4995,12 +4995,12 @@ pub mod invalid_sort_by_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5024,7 +5024,7 @@ impl InvalidSortByException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeyPrefixFilterException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5060,12 +5060,12 @@ pub mod invalid_key_prefix_filter_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5089,7 +5089,7 @@ impl InvalidKeyPrefixFilterException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeployedStateFilterException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5125,12 +5125,12 @@ pub mod invalid_deployed_state_filter_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5154,7 +5154,7 @@ impl InvalidDeployedStateFilterException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBucketNameFilterException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5190,12 +5190,12 @@ pub mod invalid_bucket_name_filter_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5219,7 +5219,7 @@ impl InvalidBucketNameFilterException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketNameFilterRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5255,12 +5255,12 @@ pub mod bucket_name_filter_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5284,7 +5284,7 @@ impl BucketNameFilterRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentTargetIdException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5320,12 +5320,12 @@ pub mod invalid_deployment_target_id_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5349,7 +5349,7 @@ impl InvalidDeploymentTargetIdException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTargetIdRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5385,12 +5385,12 @@ pub mod deployment_target_id_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5414,7 +5414,7 @@ impl DeploymentTargetIdRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTargetDoesNotExistException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5450,12 +5450,12 @@ pub mod deployment_target_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5482,7 +5482,7 @@ impl DeploymentTargetDoesNotExistException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIdRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5518,12 +5518,12 @@ pub mod instance_id_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5550,7 +5550,7 @@ impl InstanceIdRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceDoesNotExistException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5586,12 +5586,12 @@ pub mod instance_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5615,7 +5615,7 @@ impl InstanceDoesNotExistException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigNameRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5651,12 +5651,12 @@ pub mod deployment_config_name_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5676,11 +5676,11 @@ impl DeploymentConfigNameRequiredException {
     }
 }
 
-/// <p>The named revision does not exist with the IAM user or AWS account.</p>
+/// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionDoesNotExistException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5716,12 +5716,12 @@ pub mod revision_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5745,7 +5745,7 @@ impl RevisionDoesNotExistException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGitHubAccountTokenNameException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5781,12 +5781,12 @@ pub mod invalid_git_hub_account_token_name_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5810,7 +5810,7 @@ impl InvalidGitHubAccountTokenNameException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitHubAccountTokenNameRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5846,12 +5846,12 @@ pub mod git_hub_account_token_name_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5875,7 +5875,7 @@ impl GitHubAccountTokenNameRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitHubAccountTokenDoesNotExistException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5911,12 +5911,12 @@ pub mod git_hub_account_token_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5940,7 +5940,7 @@ impl GitHubAccountTokenDoesNotExistException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5976,12 +5976,12 @@ pub mod invalid_operation_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6005,7 +6005,7 @@ impl InvalidOperationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigInUseException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6041,12 +6041,12 @@ pub mod deployment_config_in_use_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6070,7 +6070,7 @@ impl DeploymentConfigInUseException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleRequiredException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6106,12 +6106,12 @@ pub mod role_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6135,7 +6135,7 @@ impl RoleRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6171,12 +6171,12 @@ pub mod deployment_group_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6200,7 +6200,7 @@ impl DeploymentGroupLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMinimumHealthyHostValueException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6236,12 +6236,12 @@ pub mod invalid_minimum_healthy_host_value_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6265,7 +6265,7 @@ impl InvalidMinimumHealthyHostValueException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6301,12 +6301,12 @@ pub mod deployment_config_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6326,11 +6326,11 @@ impl DeploymentConfigLimitExceededException {
     }
 }
 
-/// <p>A deployment configuration with the specified name with the IAM user or AWS account already exists.</p>
+/// <p>A deployment configuration with the specified name with the IAM user or Amazon Web Services account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigAlreadyExistsException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6366,12 +6366,12 @@ pub mod deployment_config_already_exists_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6391,11 +6391,11 @@ impl DeploymentConfigAlreadyExistsException {
     }
 }
 
-/// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
+/// <p>The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUpdateOutdatedInstancesOnlyValueException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6431,12 +6431,12 @@ pub mod invalid_update_outdated_instances_only_value_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6467,7 +6467,7 @@ impl InvalidUpdateOutdatedInstancesOnlyValueException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetInstancesException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6503,12 +6503,12 @@ pub mod invalid_target_instances_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6528,11 +6528,11 @@ impl InvalidTargetInstancesException {
     }
 }
 
-/// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
+/// <p>The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIgnoreApplicationStopFailuresValueException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6568,12 +6568,12 @@ pub mod invalid_ignore_application_stop_failures_value_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6598,7 +6598,7 @@ impl InvalidIgnoreApplicationStopFailuresValueException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGitHubAccountTokenException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6634,12 +6634,12 @@ pub mod invalid_git_hub_account_token_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6659,11 +6659,11 @@ impl InvalidGitHubAccountTokenException {
     }
 }
 
-/// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
+/// <p>An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFileExistsBehaviorException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6699,12 +6699,12 @@ pub mod invalid_file_exists_behavior_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6728,7 +6728,7 @@ impl InvalidFileExistsBehaviorException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6764,12 +6764,12 @@ pub mod deployment_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6793,7 +6793,7 @@ impl DeploymentLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6829,12 +6829,12 @@ pub mod application_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6858,7 +6858,7 @@ impl ApplicationLimitExceededException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentWaitTypeException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6894,12 +6894,12 @@ pub mod invalid_deployment_wait_type_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6923,7 +6923,7 @@ impl InvalidDeploymentWaitTypeException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentIsNotInReadyStateException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6959,12 +6959,12 @@ pub mod deployment_is_not_in_ready_state_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6988,7 +6988,7 @@ impl DeploymentIsNotInReadyStateException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchLimitExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -7024,12 +7024,12 @@ pub mod batch_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -7049,11 +7049,11 @@ impl BatchLimitExceededException {
     }
 }
 
-/// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
+/// <p> The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTargetListSizeExceededException {
-    /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -7089,12 +7089,12 @@ pub mod deployment_target_list_size_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+        /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -7306,7 +7306,7 @@ pub struct BatchGetApplicationRevisionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetApplicationRevisionsErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
@@ -7476,7 +7476,7 @@ pub struct BatchGetApplicationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetApplicationsErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
@@ -7606,13 +7606,13 @@ pub struct BatchGetDeploymentGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetDeploymentGroupsErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>
     BatchLimitExceededException(crate::error::BatchLimitExceededException),
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),
@@ -7791,7 +7791,7 @@ pub struct BatchGetDeploymentInstancesError {
 pub enum BatchGetDeploymentInstancesErrorKind {
     /// <p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>
     BatchLimitExceededException(crate::error::BatchLimitExceededException),
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -8094,7 +8094,7 @@ pub struct BatchGetDeploymentTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetDeploymentTargetsErrorKind {
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -8104,7 +8104,7 @@ pub enum BatchGetDeploymentTargetsErrorKind {
     DeploymentTargetDoesNotExistException(crate::error::DeploymentTargetDoesNotExistException),
     /// <p> A deployment target ID was not provided. </p>
     DeploymentTargetIdRequiredException(crate::error::DeploymentTargetIdRequiredException),
-    /// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
+    /// <p> The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
     DeploymentTargetListSizeExceededException(
         crate::error::DeploymentTargetListSizeExceededException,
     ),
@@ -8445,7 +8445,7 @@ pub struct ContinueDeploymentError {
 pub enum ContinueDeploymentErrorKind {
     /// <p>The deployment is already complete.</p>
     DeploymentAlreadyCompletedException(crate::error::DeploymentAlreadyCompletedException),
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -8629,7 +8629,7 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>An application with the specified name with the IAM user or AWS account already exists.</p>
+    /// <p>An application with the specified name with the IAM user or Amazon Web Services account already exists.</p>
     ApplicationAlreadyExistsException(crate::error::ApplicationAlreadyExistsException),
     /// <p>More applications were attempted to be created than are allowed.</p>
     ApplicationLimitExceededException(crate::error::ApplicationLimitExceededException),
@@ -8777,13 +8777,15 @@ pub struct CreateDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDeploymentErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
+    AlarmsLimitExceededException(crate::error::AlarmsLimitExceededException),
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
-    /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),
@@ -8791,6 +8793,15 @@ pub enum CreateDeploymentErrorKind {
     DeploymentLimitExceededException(crate::error::DeploymentLimitExceededException),
     /// <p>The description is too long.</p>
     DescriptionTooLongException(crate::error::DescriptionTooLongException),
+    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
+    /// <ul>
+    /// <li> <p>The alarm list is null.</p> </li>
+    /// <li> <p>The alarm object is null.</p> </li>
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
+    /// </ul>
+    InvalidAlarmConfigException(crate::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled, but an invalid triggering event type or no event types were listed.</p>
@@ -8801,11 +8812,11 @@ pub enum CreateDeploymentErrorKind {
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    /// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
+    /// <p>An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
     InvalidFileExistsBehaviorException(crate::error::InvalidFileExistsBehaviorException),
     /// <p>The GitHub token is not valid.</p>
     InvalidGitHubAccountTokenException(crate::error::InvalidGitHubAccountTokenException),
-    /// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
+    /// <p>The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidIgnoreApplicationStopFailuresValueException(
         crate::error::InvalidIgnoreApplicationStopFailuresValueException,
     ),
@@ -8827,11 +8838,11 @@ pub enum CreateDeploymentErrorKind {
     InvalidTrafficRoutingConfigurationException(
         crate::error::InvalidTrafficRoutingConfigurationException,
     ),
-    /// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
+    /// <p>The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidUpdateOutdatedInstancesOnlyValueException(
         crate::error::InvalidUpdateOutdatedInstancesOnlyValueException,
     ),
-    /// <p>The named revision does not exist with the IAM user or AWS account.</p>
+    /// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
     RevisionDoesNotExistException(crate::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
@@ -8843,6 +8854,7 @@ pub enum CreateDeploymentErrorKind {
 impl std::fmt::Display for CreateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateDeploymentErrorKind::AlarmsLimitExceededException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
@@ -8856,6 +8868,7 @@ impl std::fmt::Display for CreateDeploymentError {
             }
             CreateDeploymentErrorKind::DeploymentLimitExceededException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::DescriptionTooLongException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::InvalidAlarmConfigException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_inner) => _inner.fmt(f),
@@ -8935,6 +8948,13 @@ impl CreateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::AlarmsLimitExceededException`.
+    pub fn is_alarms_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeploymentErrorKind::AlarmsLimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
@@ -8982,6 +9002,13 @@ impl CreateDeploymentError {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::DescriptionTooLongException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidAlarmConfigException`.
+    pub fn is_invalid_alarm_config_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeploymentErrorKind::InvalidAlarmConfigException(_)
         )
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidApplicationNameException`.
@@ -9107,6 +9134,7 @@ impl CreateDeploymentError {
 impl std::error::Error for CreateDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateDeploymentErrorKind::AlarmsLimitExceededException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
@@ -9116,6 +9144,7 @@ impl std::error::Error for CreateDeploymentError {
             CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::DeploymentLimitExceededException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::DescriptionTooLongException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::InvalidAlarmConfigException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_inner) => Some(_inner),
@@ -9157,7 +9186,7 @@ pub struct CreateDeploymentConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDeploymentConfigErrorKind {
-    /// <p>A deployment configuration with the specified name with the IAM user or AWS account already exists.</p>
+    /// <p>A deployment configuration with the specified name with the IAM user or Amazon Web Services account already exists.</p>
     DeploymentConfigAlreadyExistsException(crate::error::DeploymentConfigAlreadyExistsException),
     /// <p>The deployment configurations limit was exceeded.</p>
     DeploymentConfigLimitExceededException(crate::error::DeploymentConfigLimitExceededException),
@@ -9348,13 +9377,13 @@ pub struct CreateDeploymentGroupError {
 pub enum CreateDeploymentGroupErrorKind {
     /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
     AlarmsLimitExceededException(crate::error::AlarmsLimitExceededException),
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or AWS account already exists.</p>
+    /// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::error::DeploymentGroupAlreadyExistsException),
     /// <p> The deployment groups limit was exceeded.</p>
     DeploymentGroupLimitExceededException(crate::error::DeploymentGroupLimitExceededException),
@@ -10635,7 +10664,7 @@ pub struct GetApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApplicationErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
@@ -10750,7 +10779,7 @@ pub struct GetApplicationRevisionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApplicationRevisionErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
@@ -10758,7 +10787,7 @@ pub enum GetApplicationRevisionErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The revision was specified in an invalid format.</p>
     InvalidRevisionException(crate::error::InvalidRevisionException),
-    /// <p>The named revision does not exist with the IAM user or AWS account.</p>
+    /// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
     RevisionDoesNotExistException(crate::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
@@ -10910,7 +10939,7 @@ pub struct GetDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentErrorKind {
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -11025,7 +11054,7 @@ pub struct GetDeploymentConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentConfigErrorKind {
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
     /// <p>The deployment configuration name was not specified.</p>
     DeploymentConfigNameRequiredException(crate::error::DeploymentConfigNameRequiredException),
@@ -11163,13 +11192,13 @@ pub struct GetDeploymentGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentGroupErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
-    /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),
@@ -11338,7 +11367,7 @@ pub struct GetDeploymentInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentInstanceErrorKind {
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -11507,7 +11536,7 @@ pub struct GetDeploymentTargetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentTargetErrorKind {
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -11804,7 +11833,7 @@ pub struct ListApplicationRevisionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListApplicationRevisionsErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
@@ -12210,7 +12239,7 @@ pub struct ListDeploymentGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeploymentGroupsErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
@@ -12340,7 +12369,7 @@ pub struct ListDeploymentInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeploymentInstancesErrorKind {
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -12556,11 +12585,11 @@ pub struct ListDeploymentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeploymentsErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
-    /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),
@@ -12759,7 +12788,7 @@ pub struct ListDeploymentTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeploymentTargetsErrorKind {
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -13294,7 +13323,7 @@ pub struct PutLifecycleEventHookExecutionStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLifecycleEventHookExecutionStatusErrorKind {
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -13487,7 +13516,7 @@ pub struct RegisterApplicationRevisionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterApplicationRevisionErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
@@ -14069,7 +14098,7 @@ pub struct SkipWaitTimeForInstanceTerminationError {
 pub enum SkipWaitTimeForInstanceTerminationErrorKind {
     /// <p>The deployment is already complete.</p>
     DeploymentAlreadyCompletedException(crate::error::DeploymentAlreadyCompletedException),
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -14247,9 +14276,9 @@ pub struct StopDeploymentError {
 pub enum StopDeploymentErrorKind {
     /// <p>The deployment is already complete.</p>
     DeploymentAlreadyCompletedException(crate::error::DeploymentAlreadyCompletedException),
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
-    /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
@@ -14399,13 +14428,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
     ArnNotSupportedException(crate::error::ArnNotSupportedException),
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
-    /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p> The specified ARN is not in a valid format. </p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -14563,13 +14592,13 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
     ArnNotSupportedException(crate::error::ArnNotSupportedException),
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
-    /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p> The specified ARN is not in a valid format. </p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -14727,9 +14756,9 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// <p>An application with the specified name with the IAM user or AWS account already exists.</p>
+    /// <p>An application with the specified name with the IAM user or Amazon Web Services account already exists.</p>
     ApplicationAlreadyExistsException(crate::error::ApplicationAlreadyExistsException),
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
@@ -14855,15 +14884,15 @@ pub struct UpdateDeploymentGroupError {
 pub enum UpdateDeploymentGroupErrorKind {
     /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
     AlarmsLimitExceededException(crate::error::AlarmsLimitExceededException),
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or AWS account already exists.</p>
+    /// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::error::DeploymentGroupAlreadyExistsException),
-    /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),

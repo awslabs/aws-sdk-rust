@@ -168,6 +168,8 @@ pub enum Error {
     InvalidRole(crate::error::InvalidRole),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::error::InvalidSchedule),
+    /// <p>The tag key or value isn't valid.</p>
+    InvalidTag(crate::error::InvalidTag),
     /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
     /// <p>TargetMap parameter isn't valid.</p>
@@ -360,6 +362,7 @@ impl std::fmt::Display for Error {
             Error::InvalidResultAttributeException(inner) => inner.fmt(f),
             Error::InvalidRole(inner) => inner.fmt(f),
             Error::InvalidSchedule(inner) => inner.fmt(f),
+            Error::InvalidTag(inner) => inner.fmt(f),
             Error::InvalidTarget(inner) => inner.fmt(f),
             Error::InvalidTargetMaps(inner) => inner.fmt(f),
             Error::InvalidTypeNameException(inner) => inner.fmt(f),
@@ -578,6 +581,9 @@ where
                 }
                 crate::error::CreateAssociationErrorKind::InvalidSchedule(inner) => {
                     Error::InvalidSchedule(inner)
+                }
+                crate::error::CreateAssociationErrorKind::InvalidTag(inner) => {
+                    Error::InvalidTag(inner)
                 }
                 crate::error::CreateAssociationErrorKind::InvalidTarget(inner) => {
                     Error::InvalidTarget(inner)

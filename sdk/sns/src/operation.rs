@@ -365,6 +365,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTopic {
     }
 }
 
+/// Operation shape for `GetDataProtectionPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_data_protection_policy`](crate::client::Client::get_data_protection_policy).
+///
+/// See [`crate::client::fluent_builders::GetDataProtectionPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetDataProtectionPolicy {
+    _private: (),
+}
+impl GetDataProtectionPolicy {
+    /// Creates a new builder-style object to manufacture [`GetDataProtectionPolicyInput`](crate::input::GetDataProtectionPolicyInput).
+    pub fn builder() -> crate::input::get_data_protection_policy_input::Builder {
+        crate::input::get_data_protection_policy_input::Builder::default()
+    }
+    /// Creates a new `GetDataProtectionPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataProtectionPolicy {
+    type Output = std::result::Result<
+        crate::output::GetDataProtectionPolicyOutput,
+        crate::error::GetDataProtectionPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_data_protection_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_data_protection_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetEndpointAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -966,6 +1000,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishBatch {
             crate::operation_deser::parse_publish_batch_error(response)
         } else {
             crate::operation_deser::parse_publish_batch_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutDataProtectionPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_data_protection_policy`](crate::client::Client::put_data_protection_policy).
+///
+/// See [`crate::client::fluent_builders::PutDataProtectionPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutDataProtectionPolicy {
+    _private: (),
+}
+impl PutDataProtectionPolicy {
+    /// Creates a new builder-style object to manufacture [`PutDataProtectionPolicyInput`](crate::input::PutDataProtectionPolicyInput).
+    pub fn builder() -> crate::input::put_data_protection_policy_input::Builder {
+        crate::input::put_data_protection_policy_input::Builder::default()
+    }
+    /// Creates a new `PutDataProtectionPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutDataProtectionPolicy {
+    type Output = std::result::Result<
+        crate::output::PutDataProtectionPolicyOutput,
+        crate::error::PutDataProtectionPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_data_protection_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_data_protection_policy_response(response)
         }
     }
 }

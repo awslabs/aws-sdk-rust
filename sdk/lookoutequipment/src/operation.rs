@@ -65,6 +65,72 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInferenceScheduler
     }
 }
 
+/// Operation shape for `CreateLabel`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_label`](crate::client::Client::create_label).
+///
+/// See [`crate::client::fluent_builders::CreateLabel`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLabel {
+    _private: (),
+}
+impl CreateLabel {
+    /// Creates a new builder-style object to manufacture [`CreateLabelInput`](crate::input::CreateLabelInput).
+    pub fn builder() -> crate::input::create_label_input::Builder {
+        crate::input::create_label_input::Builder::default()
+    }
+    /// Creates a new `CreateLabel` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLabel {
+    type Output =
+        std::result::Result<crate::output::CreateLabelOutput, crate::error::CreateLabelError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_label_error(response)
+        } else {
+            crate::operation_deser::parse_create_label_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateLabelGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_label_group`](crate::client::Client::create_label_group).
+///
+/// See [`crate::client::fluent_builders::CreateLabelGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLabelGroup {
+    _private: (),
+}
+impl CreateLabelGroup {
+    /// Creates a new builder-style object to manufacture [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
+    pub fn builder() -> crate::input::create_label_group_input::Builder {
+        crate::input::create_label_group_input::Builder::default()
+    }
+    /// Creates a new `CreateLabelGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLabelGroup {
+    type Output = std::result::Result<
+        crate::output::CreateLabelGroupOutput,
+        crate::error::CreateLabelGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_label_group_error(response)
+        } else {
+            crate::operation_deser::parse_create_label_group_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateModel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -159,6 +225,72 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInferenceScheduler
             crate::operation_deser::parse_delete_inference_scheduler_error(response)
         } else {
             crate::operation_deser::parse_delete_inference_scheduler_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLabel`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_label`](crate::client::Client::delete_label).
+///
+/// See [`crate::client::fluent_builders::DeleteLabel`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteLabel {
+    _private: (),
+}
+impl DeleteLabel {
+    /// Creates a new builder-style object to manufacture [`DeleteLabelInput`](crate::input::DeleteLabelInput).
+    pub fn builder() -> crate::input::delete_label_input::Builder {
+        crate::input::delete_label_input::Builder::default()
+    }
+    /// Creates a new `DeleteLabel` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLabel {
+    type Output =
+        std::result::Result<crate::output::DeleteLabelOutput, crate::error::DeleteLabelError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_label_error(response)
+        } else {
+            crate::operation_deser::parse_delete_label_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLabelGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_label_group`](crate::client::Client::delete_label_group).
+///
+/// See [`crate::client::fluent_builders::DeleteLabelGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteLabelGroup {
+    _private: (),
+}
+impl DeleteLabelGroup {
+    /// Creates a new builder-style object to manufacture [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
+    pub fn builder() -> crate::input::delete_label_group_input::Builder {
+        crate::input::delete_label_group_input::Builder::default()
+    }
+    /// Creates a new `DeleteLabelGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLabelGroup {
+    type Output = std::result::Result<
+        crate::output::DeleteLabelGroupOutput,
+        crate::error::DeleteLabelGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_label_group_error(response)
+        } else {
+            crate::operation_deser::parse_delete_label_group_response(response)
         }
     }
 }
@@ -293,6 +425,72 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInferenceSchedul
             crate::operation_deser::parse_describe_inference_scheduler_error(response)
         } else {
             crate::operation_deser::parse_describe_inference_scheduler_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeLabel`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_label`](crate::client::Client::describe_label).
+///
+/// See [`crate::client::fluent_builders::DescribeLabel`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeLabel {
+    _private: (),
+}
+impl DescribeLabel {
+    /// Creates a new builder-style object to manufacture [`DescribeLabelInput`](crate::input::DescribeLabelInput).
+    pub fn builder() -> crate::input::describe_label_input::Builder {
+        crate::input::describe_label_input::Builder::default()
+    }
+    /// Creates a new `DescribeLabel` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeLabel {
+    type Output =
+        std::result::Result<crate::output::DescribeLabelOutput, crate::error::DescribeLabelError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_label_error(response)
+        } else {
+            crate::operation_deser::parse_describe_label_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeLabelGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_label_group`](crate::client::Client::describe_label_group).
+///
+/// See [`crate::client::fluent_builders::DescribeLabelGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeLabelGroup {
+    _private: (),
+}
+impl DescribeLabelGroup {
+    /// Creates a new builder-style object to manufacture [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
+    pub fn builder() -> crate::input::describe_label_group_input::Builder {
+        crate::input::describe_label_group_input::Builder::default()
+    }
+    /// Creates a new `DescribeLabelGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeLabelGroup {
+    type Output = std::result::Result<
+        crate::output::DescribeLabelGroupOutput,
+        crate::error::DescribeLabelGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_label_group_error(response)
+        } else {
+            crate::operation_deser::parse_describe_label_group_response(response)
         }
     }
 }
@@ -493,6 +691,72 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInferenceSchedulers 
             crate::operation_deser::parse_list_inference_schedulers_error(response)
         } else {
             crate::operation_deser::parse_list_inference_schedulers_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListLabelGroups`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_label_groups`](crate::client::Client::list_label_groups).
+///
+/// See [`crate::client::fluent_builders::ListLabelGroups`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListLabelGroups {
+    _private: (),
+}
+impl ListLabelGroups {
+    /// Creates a new builder-style object to manufacture [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
+    pub fn builder() -> crate::input::list_label_groups_input::Builder {
+        crate::input::list_label_groups_input::Builder::default()
+    }
+    /// Creates a new `ListLabelGroups` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListLabelGroups {
+    type Output = std::result::Result<
+        crate::output::ListLabelGroupsOutput,
+        crate::error::ListLabelGroupsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_label_groups_error(response)
+        } else {
+            crate::operation_deser::parse_list_label_groups_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListLabels`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_labels`](crate::client::Client::list_labels).
+///
+/// See [`crate::client::fluent_builders::ListLabels`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListLabels {
+    _private: (),
+}
+impl ListLabels {
+    /// Creates a new builder-style object to manufacture [`ListLabelsInput`](crate::input::ListLabelsInput).
+    pub fn builder() -> crate::input::list_labels_input::Builder {
+        crate::input::list_labels_input::Builder::default()
+    }
+    /// Creates a new `ListLabels` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListLabels {
+    type Output =
+        std::result::Result<crate::output::ListLabelsOutput, crate::error::ListLabelsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_labels_error(response)
+        } else {
+            crate::operation_deser::parse_list_labels_response(response)
         }
     }
 }
@@ -793,6 +1057,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInferenceScheduler
             crate::operation_deser::parse_update_inference_scheduler_error(response)
         } else {
             crate::operation_deser::parse_update_inference_scheduler_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateLabelGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_label_group`](crate::client::Client::update_label_group).
+///
+/// See [`crate::client::fluent_builders::UpdateLabelGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateLabelGroup {
+    _private: (),
+}
+impl UpdateLabelGroup {
+    /// Creates a new builder-style object to manufacture [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
+    pub fn builder() -> crate::input::update_label_group_input::Builder {
+        crate::input::update_label_group_input::Builder::default()
+    }
+    /// Creates a new `UpdateLabelGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateLabelGroup {
+    type Output = std::result::Result<
+        crate::output::UpdateLabelGroupOutput,
+        crate::error::UpdateLabelGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_label_group_error(response)
+        } else {
+            crate::operation_deser::parse_update_label_group_response(response)
         }
     }
 }

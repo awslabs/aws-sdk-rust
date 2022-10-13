@@ -2774,16 +2774,16 @@ pub mod create_custom_db_engine_version_input {
             self.database_installation_files_s3_prefix = input;
             self
         }
-        /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
-        /// <p>If you have an existing symmetric KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-        /// <p>You can choose the same symmetric key when you create a CEV and a DB instance, or choose different keys.</p>
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+        /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
-        /// <p>If you have an existing symmetric KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-        /// <p>You can choose the same symmetric key when you create a CEV and a DB instance, or choose different keys.</p>
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+        /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -3823,7 +3823,7 @@ pub mod create_db_cluster_input {
             self.enable_global_write_forwarding = input;
             self
         }
-        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -3831,7 +3831,7 @@ pub mod create_db_cluster_input {
             self.db_cluster_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -5080,7 +5080,7 @@ pub mod create_db_instance_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-        /// <li> <p>It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+        /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
         /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
         /// </ul>
         pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5144,7 +5144,7 @@ pub mod create_db_instance_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-        /// <li> <p>It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+        /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
         /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
         /// </ul>
         pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5551,9 +5551,9 @@ pub mod create_db_instance_input {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-        /// <li> <p>First character must be a letter</p> </li>
-        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// <li> <p>It must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_parameter_group_name = Some(input.into());
@@ -5563,9 +5563,9 @@ pub mod create_db_instance_input {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-        /// <li> <p>First character must be a letter</p> </li>
-        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// <li> <p>It must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn set_db_parameter_group_name(
             mut self,
@@ -7748,12 +7748,12 @@ pub mod create_db_proxy_input {
             self.db_proxy_name = input;
             self
         }
-        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>.</p>
+        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
         pub fn engine_family(mut self, input: crate::model::EngineFamily) -> Self {
             self.engine_family = Some(input);
             self
         }
-        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>.</p>
+        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
         pub fn set_engine_family(
             mut self,
             input: std::option::Option<crate::model::EngineFamily>,
@@ -8083,12 +8083,12 @@ pub mod create_db_proxy_endpoint_input {
             self.vpc_security_group_ids = input;
             self
         }
-        /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+        /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
         pub fn target_role(mut self, input: crate::model::DbProxyEndpointTargetRole) -> Self {
             self.target_role = Some(input);
             self
         }
-        /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+        /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
         pub fn set_target_role(
             mut self,
             input: std::option::Option<crate::model::DbProxyEndpointTargetRole>,
@@ -22733,14 +22733,14 @@ pub mod modify_db_cluster_input {
             self.enable_global_write_forwarding = input;
             self
         }
-        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_db_cluster_instance_class(
@@ -23802,15 +23802,17 @@ pub mod modify_db_instance_input {
             self.allocated_storage = input;
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB instance class support for RDS Custom for SQL Server</a>.</p>
-        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request. </p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
+        /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
         /// <p>Default: Uses existing setting</p>
         pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB instance class support for RDS Custom for SQL Server</a>.</p>
-        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request. </p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
+        /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
         /// <p>Default: Uses existing setting</p>
         pub fn set_db_instance_class(
             mut self,
@@ -30524,14 +30526,14 @@ pub mod restore_db_cluster_from_snapshot_input {
             self.domain_iam_role_name = input;
             self
         }
-        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_db_cluster_instance_class(
@@ -31278,14 +31280,14 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.engine_mode = input;
             self
         }
-        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_db_cluster_instance_class(
@@ -38251,7 +38253,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     #[doc(hidden)]
     pub engine_mode: std::option::Option<std::string::String>,
-    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     #[doc(hidden)]
@@ -38472,7 +38474,7 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn engine_mode(&self) -> std::option::Option<&str> {
         self.engine_mode.as_deref()
     }
-    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
@@ -38744,7 +38746,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     #[doc(hidden)]
     pub domain_iam_role_name: std::option::Option<std::string::String>,
-    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     #[doc(hidden)]
@@ -38978,7 +38980,7 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
-    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
@@ -40678,8 +40680,9 @@ pub struct ModifyDbInstanceInput {
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
     #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB instance class support for RDS Custom for SQL Server</a>.</p>
-    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request. </p>
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
+    /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
     /// <p>Default: Uses existing setting</p>
     #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
@@ -41028,8 +41031,9 @@ impl ModifyDbInstanceInput {
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB instance class support for RDS Custom for SQL Server</a>.</p>
-    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request. </p>
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
+    /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
     /// <p>Default: Uses existing setting</p>
     pub fn db_instance_class(&self) -> std::option::Option<&str> {
         self.db_instance_class.as_deref()
@@ -41823,7 +41827,7 @@ pub struct ModifyDbClusterInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     #[doc(hidden)]
     pub enable_global_write_forwarding: std::option::Option<bool>,
-    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     #[doc(hidden)]
@@ -42100,7 +42104,7 @@ impl ModifyDbClusterInput {
     pub fn enable_global_write_forwarding(&self) -> std::option::Option<bool> {
         self.enable_global_write_forwarding
     }
-    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
@@ -46596,7 +46600,7 @@ pub struct CreateDbProxyEndpointInput {
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
     #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     #[doc(hidden)]
     pub target_role: std::option::Option<crate::model::DbProxyEndpointTargetRole>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -46620,7 +46624,7 @@ impl CreateDbProxyEndpointInput {
     pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
-    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     pub fn target_role(&self) -> std::option::Option<&crate::model::DbProxyEndpointTargetRole> {
         self.target_role.as_ref()
     }
@@ -46649,7 +46653,7 @@ pub struct CreateDbProxyInput {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     #[doc(hidden)]
     pub db_proxy_name: std::option::Option<std::string::String>,
-    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>.</p>
+    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
     #[doc(hidden)]
     pub engine_family: std::option::Option<crate::model::EngineFamily>,
     /// <p>The authorization mechanism that the proxy uses.</p>
@@ -46682,7 +46686,7 @@ impl CreateDbProxyInput {
     pub fn db_proxy_name(&self) -> std::option::Option<&str> {
         self.db_proxy_name.as_deref()
     }
-    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>.</p>
+    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
     pub fn engine_family(&self) -> std::option::Option<&crate::model::EngineFamily> {
         self.engine_family.as_ref()
     }
@@ -47462,7 +47466,7 @@ pub struct CreateDbInstanceInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+    /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
     /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -47626,9 +47630,9 @@ pub struct CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>It must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
@@ -47995,7 +47999,7 @@ impl CreateDbInstanceInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+    /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
     /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
     /// </ul>
     pub fn db_name(&self) -> std::option::Option<&str> {
@@ -48171,9 +48175,9 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>It must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
@@ -49099,7 +49103,7 @@ pub struct CreateDbClusterInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     #[doc(hidden)]
     pub enable_global_write_forwarding: std::option::Option<bool>,
-    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -49493,7 +49497,7 @@ impl CreateDbClusterInput {
     pub fn enable_global_write_forwarding(&self) -> std::option::Option<bool> {
         self.enable_global_write_forwarding
     }
-    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -49712,9 +49716,9 @@ pub struct CreateCustomDbEngineVersionInput {
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
     #[doc(hidden)]
     pub database_installation_files_s3_prefix: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
-    /// <p>If you have an existing symmetric KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    /// <p>You can choose the same symmetric key when you create a CEV and a DB instance, or choose different keys.</p>
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+    /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>An optional description of your CEV.</p>
@@ -49778,9 +49782,9 @@ impl CreateCustomDbEngineVersionInput {
     pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<&str> {
         self.database_installation_files_s3_prefix.as_deref()
     }
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
-    /// <p>If you have an existing symmetric KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    /// <p>You can choose the same symmetric key when you create a CEV and a DB instance, or choose different keys.</p>
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+    /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }

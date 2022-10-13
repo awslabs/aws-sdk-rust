@@ -616,14 +616,14 @@ pub mod create_bucket_input {
             self
         }
         /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
-        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
         /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
-        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
@@ -5974,6 +5974,174 @@ impl GetBucketTaggingInput {
     }
 }
 
+/// See [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
+pub mod get_bucket_versioning_input {
+
+    /// A builder for [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) bucket: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetBucketVersioningInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetBucketVersioningInput {
+                account_id: self.account_id,
+                bucket: self.bucket,
+            })
+        }
+    }
+}
+impl GetBucketVersioningInput {
+    /// Consumes the builder and constructs an Operation<[`GetBucketVersioning`](crate::operation::GetBucketVersioning)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetBucketVersioning,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetBucketVersioningInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_28 = &_input.bucket;
+                let input_28 = input_28.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bucket",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let bucket = aws_smithy_http::label::fmt_string(input_28, false);
+                if bucket.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bucket",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v20180820/bucket/{Bucket}/versioning",
+                    Bucket = bucket
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetBucketVersioningInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                let builder = crate::http_serde::add_headers_get_bucket_versioning(input, builder)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = {
+            let account_id = self.account_id.as_deref().unwrap_or_default();
+            if account_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+            }
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
+                "{AccountId}.",
+                AccountId = account_id
+            ))
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        signing_config.signing_options.content_sha256_header = true;
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetBucketVersioning::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetBucketVersioning",
+            "s3control",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
+    pub fn builder() -> crate::input::get_bucket_versioning_input::Builder {
+        crate::input::get_bucket_versioning_input::Builder::default()
+    }
+}
+
 /// See [`GetJobTaggingInput`](crate::input::GetJobTaggingInput).
 pub mod get_job_tagging_input {
 
@@ -6036,14 +6204,14 @@ impl GetJobTaggingInput {
                 _input: &crate::input::GetJobTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_28 = &_input.job_id;
-                let input_28 = input_28.as_ref().ok_or(
+                let input_29 = &_input.job_id;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_28, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_29, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -6202,14 +6370,14 @@ impl GetMultiRegionAccessPointInput {
                 _input: &crate::input::GetMultiRegionAccessPointInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_29 = &_input.name;
-                let input_29 = input_29.as_ref().ok_or(
+                let input_30 = &_input.name;
+                let input_30 = input_30.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_29, false);
+                let name = aws_smithy_http::label::fmt_string(input_30, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -6383,14 +6551,14 @@ impl GetMultiRegionAccessPointPolicyInput {
                 _input: &crate::input::GetMultiRegionAccessPointPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_30 = &_input.name;
-                let input_30 = input_30.as_ref().ok_or(
+                let input_31 = &_input.name;
+                let input_31 = input_31.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_30, false);
+                let name = aws_smithy_http::label::fmt_string(input_31, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -6569,14 +6737,14 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                 _input: &crate::input::GetMultiRegionAccessPointPolicyStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.name;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_32 = &_input.name;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_31, false);
+                let name = aws_smithy_http::label::fmt_string(input_32, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -6895,14 +7063,14 @@ impl GetStorageLensConfigurationInput {
                 _input: &crate::input::GetStorageLensConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_32 = &_input.config_id;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_33 = &_input.config_id;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let config_id = aws_smithy_http::label::fmt_string(input_33, false);
                 if config_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
@@ -7066,14 +7234,14 @@ impl GetStorageLensConfigurationTaggingInput {
                 _input: &crate::input::GetStorageLensConfigurationTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_33 = &_input.config_id;
-                let input_33 = input_33.as_ref().ok_or(
+                let input_34 = &_input.config_id;
+                let input_34 = input_34.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let config_id = aws_smithy_http::label::fmt_string(input_34, false);
                 if config_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
@@ -7293,11 +7461,11 @@ impl ListAccessPointsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.bucket {
-                    query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_34));
+                if let Some(inner_35) = &_input.bucket {
+                    query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_35));
                 }
-                if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                if let Some(inner_36) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -7477,8 +7645,8 @@ impl ListAccessPointsForObjectLambdaInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                if let Some(inner_37) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -7677,21 +7845,21 @@ impl ListJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_37) = &_input.job_statuses {
-                    for inner_38 in inner_37 {
+                if let Some(inner_38) = &_input.job_statuses {
+                    for inner_39 in inner_38 {
                         query.push_kv(
                             "jobStatuses",
-                            &aws_smithy_http::query::fmt_string(&inner_38),
+                            &aws_smithy_http::query::fmt_string(&inner_39),
                         );
                     }
                 }
-                if let Some(inner_39) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_39));
+                if let Some(inner_40) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
-                if let Some(inner_40) = &_input.max_results {
+                if let Some(inner_41) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_40).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
                     );
                 }
                 Ok(())
@@ -7863,8 +8031,8 @@ impl ListMultiRegionAccessPointsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_41) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                if let Some(inner_42) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -8016,15 +8184,15 @@ pub mod list_regional_buckets_input {
             self.max_results = input;
             self
         }
-        /// <p>The ID of the Outposts.</p> <note>
-        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// <p>The ID of the Outposts resource.</p> <note>
+        /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Outposts.</p> <note>
-        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// <p>The ID of the Outposts resource.</p> <note>
+        /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
@@ -8072,8 +8240,8 @@ impl ListRegionalBucketsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_42) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                if let Some(inner_43) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -8240,8 +8408,8 @@ impl ListStorageLensConfigurationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_43) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                if let Some(inner_44) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
                 }
                 Ok(())
             }
@@ -8413,14 +8581,14 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
                 _input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_44 = &_input.name;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_45 = &_input.name;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_44, false);
+                let name = aws_smithy_http::label::fmt_string(input_45, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -8631,14 +8799,14 @@ impl PutAccessPointPolicyInput {
                 _input: &crate::input::PutAccessPointPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.name;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_46 = &_input.name;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_45, false);
+                let name = aws_smithy_http::label::fmt_string(input_46, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -8826,14 +8994,14 @@ impl PutAccessPointPolicyForObjectLambdaInput {
                 _input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_46 = &_input.name;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_47 = &_input.name;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_46, false);
+                let name = aws_smithy_http::label::fmt_string(input_47, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -9031,14 +9199,14 @@ impl PutBucketLifecycleConfigurationInput {
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_47 = &_input.bucket;
-                let input_47 = input_47.as_ref().ok_or(
+                let input_48 = &_input.bucket;
+                let input_48 = input_48.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_47, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_48, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -9288,14 +9456,14 @@ impl PutBucketPolicyInput {
                 _input: &crate::input::PutBucketPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_48 = &_input.bucket;
-                let input_48 = input_48.as_ref().ok_or(
+                let input_49 = &_input.bucket;
+                let input_49 = input_49.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_48, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_49, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -9516,14 +9684,14 @@ impl PutBucketTaggingInput {
                 _input: &crate::input::PutBucketTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_49 = &_input.bucket;
-                let input_49 = input_49.as_ref().ok_or(
+                let input_50 = &_input.bucket;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_49, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_50, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -9650,6 +9818,235 @@ impl PutBucketTaggingInput {
     }
 }
 
+/// See [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
+pub mod put_bucket_versioning_input {
+
+    /// A builder for [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) mfa: std::option::Option<std::string::String>,
+        pub(crate) versioning_configuration:
+            std::option::Option<crate::model::VersioningConfiguration>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
+        pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mfa = Some(input.into());
+            self
+        }
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
+        pub fn set_mfa(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mfa = input;
+            self
+        }
+        /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+        pub fn versioning_configuration(
+            mut self,
+            input: crate::model::VersioningConfiguration,
+        ) -> Self {
+            self.versioning_configuration = Some(input);
+            self
+        }
+        /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+        pub fn set_versioning_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VersioningConfiguration>,
+        ) -> Self {
+            self.versioning_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PutBucketVersioningInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PutBucketVersioningInput {
+                account_id: self.account_id,
+                bucket: self.bucket,
+                mfa: self.mfa,
+                versioning_configuration: self.versioning_configuration,
+            })
+        }
+    }
+}
+impl PutBucketVersioningInput {
+    /// Consumes the builder and constructs an Operation<[`PutBucketVersioning`](crate::operation::PutBucketVersioning)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutBucketVersioning,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutBucketVersioningInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_51 = &_input.bucket;
+                let input_51 = input_51.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bucket",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let bucket = aws_smithy_http::label::fmt_string(input_51, false);
+                if bucket.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bucket",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v20180820/bucket/{Bucket}/versioning",
+                    Bucket = bucket
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutBucketVersioningInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                let builder = crate::http_serde::add_headers_put_bucket_versioning(input, builder)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/xml",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_put_bucket_versioning_input(
+                &self.versioning_configuration,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let endpoint_prefix = {
+            let account_id = self.account_id.as_deref().unwrap_or_default();
+            if account_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+            }
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
+                "{AccountId}.",
+                AccountId = account_id
+            ))
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
+        request = request.augment(|mut req, _| {
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
+            let checksum = <md5::Md5 as md5::Digest>::digest(data);
+            req.headers_mut().insert(
+                http::header::HeaderName::from_static("content-md5"),
+                aws_smithy_types::base64::encode(&checksum[..])
+                    .parse()
+                    .expect("checksum is valid header value"),
+            );
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        signing_config.signing_options.content_sha256_header = true;
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutBucketVersioning::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutBucketVersioning",
+            "s3control",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
+    pub fn builder() -> crate::input::put_bucket_versioning_input::Builder {
+        crate::input::put_bucket_versioning_input::Builder::default()
+    }
+}
+
 /// See [`PutJobTaggingInput`](crate::input::PutJobTaggingInput).
 pub mod put_job_tagging_input {
 
@@ -9733,14 +10130,14 @@ impl PutJobTaggingInput {
                 _input: &crate::input::PutJobTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_50 = &_input.job_id;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_52 = &_input.job_id;
+                let input_52 = input_52.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_52, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -10333,14 +10730,14 @@ impl PutStorageLensConfigurationInput {
                 _input: &crate::input::PutStorageLensConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_51 = &_input.config_id;
-                let input_51 = input_51.as_ref().ok_or(
+                let input_53 = &_input.config_id;
+                let input_53 = input_53.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let config_id = aws_smithy_http::label::fmt_string(input_53, false);
                 if config_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
@@ -10542,14 +10939,14 @@ impl PutStorageLensConfigurationTaggingInput {
                 _input: &crate::input::PutStorageLensConfigurationTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_52 = &_input.config_id;
-                let input_52 = input_52.as_ref().ok_or(
+                let input_54 = &_input.config_id;
+                let input_54 = input_54.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let config_id = aws_smithy_http::label::fmt_string(input_54, false);
                 if config_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
@@ -10738,14 +11135,14 @@ impl UpdateJobPriorityInput {
                 _input: &crate::input::UpdateJobPriorityInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_53 = &_input.job_id;
-                let input_53 = input_53.as_ref().ok_or(
+                let input_55 = &_input.job_id;
+                let input_55 = input_55.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_55, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -10946,14 +11343,14 @@ impl UpdateJobStatusInput {
                 _input: &crate::input::UpdateJobStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_54 = &_input.job_id;
-                let input_54 = input_54.as_ref().ok_or(
+                let input_56 = &_input.job_id;
+                let input_56 = input_56.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_54, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_56, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -10969,16 +11366,16 @@ impl UpdateJobStatusInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_55) = &_input.requested_job_status {
+                if let Some(inner_57) = &_input.requested_job_status {
                     query.push_kv(
                         "requestedJobStatus",
-                        &aws_smithy_http::query::fmt_string(&inner_55),
+                        &aws_smithy_http::query::fmt_string(&inner_57),
                     );
                 }
-                if let Some(inner_56) = &_input.status_update_reason {
+                if let Some(inner_58) = &_input.status_update_reason {
                     query.push_kv(
                         "statusUpdateReason",
-                        &aws_smithy_http::query::fmt_string(&inner_56),
+                        &aws_smithy_http::query::fmt_string(&inner_58),
                     );
                 }
                 Ok(())
@@ -11366,6 +11763,54 @@ impl std::fmt::Debug for PutJobTaggingInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutBucketVersioningInput {
+    /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
+    #[doc(hidden)]
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
+    #[doc(hidden)]
+    pub mfa: std::option::Option<std::string::String>,
+    /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+    #[doc(hidden)]
+    pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
+}
+impl PutBucketVersioningInput {
+    /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
+    pub fn mfa(&self) -> std::option::Option<&str> {
+        self.mfa.as_deref()
+    }
+    /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+    pub fn versioning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::VersioningConfiguration> {
+        self.versioning_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for PutBucketVersioningInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutBucketVersioningInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("bucket", &self.bucket);
+        formatter.field("mfa", &self.mfa);
+        formatter.field("versioning_configuration", &self.versioning_configuration);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -11723,8 +12168,8 @@ pub struct ListRegionalBucketsInput {
     /// <p></p>
     #[doc(hidden)]
     pub max_results: i32,
-    /// <p>The ID of the Outposts.</p> <note>
-    /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+    /// <p>The ID of the Outposts resource.</p> <note>
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
@@ -11742,8 +12187,8 @@ impl ListRegionalBucketsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The ID of the Outposts.</p> <note>
-    /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+    /// <p>The ID of the Outposts resource.</p> <note>
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
@@ -12150,6 +12595,36 @@ impl std::fmt::Debug for GetJobTaggingInput {
         let mut formatter = f.debug_struct("GetJobTaggingInput");
         formatter.field("account_id", &self.account_id);
         formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBucketVersioningInput {
+    /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+    #[doc(hidden)]
+    pub bucket: std::option::Option<std::string::String>,
+}
+impl GetBucketVersioningInput {
+    /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+}
+impl std::fmt::Debug for GetBucketVersioningInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBucketVersioningInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("bucket", &self.bucket);
         formatter.finish()
     }
 }
@@ -13410,7 +13885,7 @@ pub struct CreateBucketInput {
     #[doc(hidden)]
     pub object_lock_enabled_for_bucket: bool,
     /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
-    /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
@@ -13471,7 +13946,7 @@ impl CreateBucketInput {
         self.object_lock_enabled_for_bucket
     }
     /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
-    /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()

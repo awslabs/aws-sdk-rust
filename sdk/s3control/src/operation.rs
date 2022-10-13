@@ -1061,6 +1061,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketTagging {
     }
 }
 
+/// Operation shape for `GetBucketVersioning`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_bucket_versioning`](crate::client::Client::get_bucket_versioning).
+///
+/// See [`crate::client::fluent_builders::GetBucketVersioning`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBucketVersioning {
+    _private: (),
+}
+impl GetBucketVersioning {
+    /// Creates a new builder-style object to manufacture [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
+    pub fn builder() -> crate::input::get_bucket_versioning_input::Builder {
+        crate::input::get_bucket_versioning_input::Builder::default()
+    }
+    /// Creates a new `GetBucketVersioning` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetBucketVersioning {
+    type Output = std::result::Result<
+        crate::output::GetBucketVersioningOutput,
+        crate::error::GetBucketVersioningError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_bucket_versioning_error(response)
+        } else {
+            crate::operation_deser::parse_get_bucket_versioning_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetJobTagging`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1709,6 +1743,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketTagging {
             crate::operation_deser::parse_put_bucket_tagging_error(response)
         } else {
             crate::operation_deser::parse_put_bucket_tagging_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutBucketVersioning`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_bucket_versioning`](crate::client::Client::put_bucket_versioning).
+///
+/// See [`crate::client::fluent_builders::PutBucketVersioning`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutBucketVersioning {
+    _private: (),
+}
+impl PutBucketVersioning {
+    /// Creates a new builder-style object to manufacture [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
+    pub fn builder() -> crate::input::put_bucket_versioning_input::Builder {
+        crate::input::put_bucket_versioning_input::Builder::default()
+    }
+    /// Creates a new `PutBucketVersioning` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutBucketVersioning {
+    type Output = std::result::Result<
+        crate::output::PutBucketVersioningOutput,
+        crate::error::PutBucketVersioningError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_bucket_versioning_error(response)
+        } else {
+            crate::operation_deser::parse_put_bucket_versioning_response(response)
         }
     }
 }

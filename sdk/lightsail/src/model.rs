@@ -534,6 +534,8 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     UpdateDomainEntry,
     #[allow(missing_docs)] // documentation missing in model
+    UpdateInstanceMetadataOptions,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateLoadBalancerAttribute,
     #[allow(missing_docs)] // documentation missing in model
     UpdateRelationalDatabase,
@@ -625,6 +627,7 @@ impl std::convert::From<&str> for OperationType {
             "UpdateDistribution" => OperationType::UpdateDistribution,
             "UpdateDistributionBundle" => OperationType::UpdateDistributionBundle,
             "UpdateDomainEntry" => OperationType::UpdateDomainEntry,
+            "UpdateInstanceMetadataOptions" => OperationType::UpdateInstanceMetadataOptions,
             "UpdateLoadBalancerAttribute" => OperationType::UpdateLoadBalancerAttribute,
             "UpdateRelationalDatabase" => OperationType::UpdateRelationalDatabase,
             "UpdateRelationalDatabaseParameters" => {
@@ -725,6 +728,7 @@ impl OperationType {
             OperationType::UpdateDistribution => "UpdateDistribution",
             OperationType::UpdateDistributionBundle => "UpdateDistributionBundle",
             OperationType::UpdateDomainEntry => "UpdateDomainEntry",
+            OperationType::UpdateInstanceMetadataOptions => "UpdateInstanceMetadataOptions",
             OperationType::UpdateLoadBalancerAttribute => "UpdateLoadBalancerAttribute",
             OperationType::UpdateRelationalDatabase => "UpdateRelationalDatabase",
             OperationType::UpdateRelationalDatabaseParameters => {
@@ -812,6 +816,7 @@ impl OperationType {
             "UpdateDistribution",
             "UpdateDistributionBundle",
             "UpdateDomainEntry",
+            "UpdateInstanceMetadataOptions",
             "UpdateLoadBalancerAttribute",
             "UpdateRelationalDatabase",
             "UpdateRelationalDatabaseParameters",
@@ -1456,6 +1461,171 @@ impl LoadBalancerAttributeName {
     }
 }
 impl AsRef<str> for LoadBalancerAttributeName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HttpProtocolIpv6 {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HttpProtocolIpv6 {
+    fn from(s: &str) -> Self {
+        match s {
+            "disabled" => HttpProtocolIpv6::Disabled,
+            "enabled" => HttpProtocolIpv6::Enabled,
+            other => HttpProtocolIpv6::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HttpProtocolIpv6 {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HttpProtocolIpv6::from(s))
+    }
+}
+impl HttpProtocolIpv6 {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HttpProtocolIpv6::Disabled => "disabled",
+            HttpProtocolIpv6::Enabled => "enabled",
+            HttpProtocolIpv6::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["disabled", "enabled"]
+    }
+}
+impl AsRef<str> for HttpProtocolIpv6 {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HttpEndpoint {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HttpEndpoint {
+    fn from(s: &str) -> Self {
+        match s {
+            "disabled" => HttpEndpoint::Disabled,
+            "enabled" => HttpEndpoint::Enabled,
+            other => HttpEndpoint::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HttpEndpoint {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HttpEndpoint::from(s))
+    }
+}
+impl HttpEndpoint {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HttpEndpoint::Disabled => "disabled",
+            HttpEndpoint::Enabled => "enabled",
+            HttpEndpoint::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["disabled", "enabled"]
+    }
+}
+impl AsRef<str> for HttpEndpoint {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HttpTokens {
+    #[allow(missing_docs)] // documentation missing in model
+    Optional,
+    #[allow(missing_docs)] // documentation missing in model
+    Required,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HttpTokens {
+    fn from(s: &str) -> Self {
+        match s {
+            "optional" => HttpTokens::Optional,
+            "required" => HttpTokens::Required,
+            other => HttpTokens::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HttpTokens {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HttpTokens::from(s))
+    }
+}
+impl HttpTokens {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HttpTokens::Optional => "optional",
+            HttpTokens::Required => "required",
+            HttpTokens::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["optional", "required"]
+    }
+}
+impl AsRef<str> for HttpTokens {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -14393,6 +14563,9 @@ pub struct Instance {
     /// <p>The name of the SSH key being used to connect to the instance (e.g., <code>LightsailDefaultKeyPair</code>).</p>
     #[doc(hidden)]
     pub ssh_key_name: std::option::Option<std::string::String>,
+    /// <p>The metadata options for the Amazon Lightsail instance.</p>
+    #[doc(hidden)]
+    pub metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
 }
 impl Instance {
     /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
@@ -14480,6 +14653,10 @@ impl Instance {
     pub fn ssh_key_name(&self) -> std::option::Option<&str> {
         self.ssh_key_name.as_deref()
     }
+    /// <p>The metadata options for the Amazon Lightsail instance.</p>
+    pub fn metadata_options(&self) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
+        self.metadata_options.as_ref()
+    }
 }
 impl std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14505,6 +14682,7 @@ impl std::fmt::Debug for Instance {
         formatter.field("state", &self.state);
         formatter.field("username", &self.username);
         formatter.field("ssh_key_name", &self.ssh_key_name);
+        formatter.field("metadata_options", &self.metadata_options);
         formatter.finish()
     }
 }
@@ -14535,6 +14713,7 @@ pub mod instance {
         pub(crate) state: std::option::Option<crate::model::InstanceState>,
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) ssh_key_name: std::option::Option<std::string::String>,
+        pub(crate) metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
     }
     impl Builder {
         /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
@@ -14806,6 +14985,19 @@ pub mod instance {
             self.ssh_key_name = input;
             self
         }
+        /// <p>The metadata options for the Amazon Lightsail instance.</p>
+        pub fn metadata_options(mut self, input: crate::model::InstanceMetadataOptions) -> Self {
+            self.metadata_options = Some(input);
+            self
+        }
+        /// <p>The metadata options for the Amazon Lightsail instance.</p>
+        pub fn set_metadata_options(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataOptions>,
+        ) -> Self {
+            self.metadata_options = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
@@ -14830,6 +15022,7 @@ pub mod instance {
                 state: self.state,
                 username: self.username,
                 ssh_key_name: self.ssh_key_name,
+                metadata_options: self.metadata_options,
             }
         }
     }
@@ -14838,6 +15031,251 @@ impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
     pub fn builder() -> crate::model::instance::Builder {
         crate::model::instance::Builder::default()
+    }
+}
+
+/// <p>The metadata options for the instance.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceMetadataOptions {
+    /// <p>The state of the metadata option changes.</p>
+    /// <p>The following states are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
+    /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::InstanceMetadataState>,
+    /// <p>The state of token usage for your instance metadata requests.</p>
+    /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+    /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub http_tokens: std::option::Option<crate::model::HttpTokens>,
+    /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
+    /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
+    #[doc(hidden)]
+    pub http_endpoint: std::option::Option<crate::model::HttpEndpoint>,
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther.</p>
+    #[doc(hidden)]
+    pub http_put_response_hop_limit: std::option::Option<i32>,
+    /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    #[doc(hidden)]
+    pub http_protocol_ipv6: std::option::Option<crate::model::HttpProtocolIpv6>,
+}
+impl InstanceMetadataOptions {
+    /// <p>The state of the metadata option changes.</p>
+    /// <p>The following states are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
+    /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&crate::model::InstanceMetadataState> {
+        self.state.as_ref()
+    }
+    /// <p>The state of token usage for your instance metadata requests.</p>
+    /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+    /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// </important>
+    pub fn http_tokens(&self) -> std::option::Option<&crate::model::HttpTokens> {
+        self.http_tokens.as_ref()
+    }
+    /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
+    /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
+    pub fn http_endpoint(&self) -> std::option::Option<&crate::model::HttpEndpoint> {
+        self.http_endpoint.as_ref()
+    }
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther.</p>
+    pub fn http_put_response_hop_limit(&self) -> std::option::Option<i32> {
+        self.http_put_response_hop_limit
+    }
+    /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    pub fn http_protocol_ipv6(&self) -> std::option::Option<&crate::model::HttpProtocolIpv6> {
+        self.http_protocol_ipv6.as_ref()
+    }
+}
+impl std::fmt::Debug for InstanceMetadataOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceMetadataOptions");
+        formatter.field("state", &self.state);
+        formatter.field("http_tokens", &self.http_tokens);
+        formatter.field("http_endpoint", &self.http_endpoint);
+        formatter.field(
+            "http_put_response_hop_limit",
+            &self.http_put_response_hop_limit,
+        );
+        formatter.field("http_protocol_ipv6", &self.http_protocol_ipv6);
+        formatter.finish()
+    }
+}
+/// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
+pub mod instance_metadata_options {
+
+    /// A builder for [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) state: std::option::Option<crate::model::InstanceMetadataState>,
+        pub(crate) http_tokens: std::option::Option<crate::model::HttpTokens>,
+        pub(crate) http_endpoint: std::option::Option<crate::model::HttpEndpoint>,
+        pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
+        pub(crate) http_protocol_ipv6: std::option::Option<crate::model::HttpProtocolIpv6>,
+    }
+    impl Builder {
+        /// <p>The state of the metadata option changes.</p>
+        /// <p>The following states are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
+        /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+        /// </ul>
+        pub fn state(mut self, input: crate::model::InstanceMetadataState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the metadata option changes.</p>
+        /// <p>The following states are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
+        /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+        /// </ul>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The state of token usage for your instance metadata requests.</p>
+        /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+        /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+        /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        /// </important>
+        pub fn http_tokens(mut self, input: crate::model::HttpTokens) -> Self {
+            self.http_tokens = Some(input);
+            self
+        }
+        /// <p>The state of token usage for your instance metadata requests.</p>
+        /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+        /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+        /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+        /// </important>
+        pub fn set_http_tokens(
+            mut self,
+            input: std::option::Option<crate::model::HttpTokens>,
+        ) -> Self {
+            self.http_tokens = input;
+            self
+        }
+        /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
+        /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
+        pub fn http_endpoint(mut self, input: crate::model::HttpEndpoint) -> Self {
+            self.http_endpoint = Some(input);
+            self
+        }
+        /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
+        /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
+        pub fn set_http_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::HttpEndpoint>,
+        ) -> Self {
+            self.http_endpoint = input;
+            self
+        }
+        /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther.</p>
+        pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
+            self.http_put_response_hop_limit = Some(input);
+            self
+        }
+        /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther.</p>
+        pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.http_put_response_hop_limit = input;
+            self
+        }
+        /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+        pub fn http_protocol_ipv6(mut self, input: crate::model::HttpProtocolIpv6) -> Self {
+            self.http_protocol_ipv6 = Some(input);
+            self
+        }
+        /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+        pub fn set_http_protocol_ipv6(
+            mut self,
+            input: std::option::Option<crate::model::HttpProtocolIpv6>,
+        ) -> Self {
+            self.http_protocol_ipv6 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
+        pub fn build(self) -> crate::model::InstanceMetadataOptions {
+            crate::model::InstanceMetadataOptions {
+                state: self.state,
+                http_tokens: self.http_tokens,
+                http_endpoint: self.http_endpoint,
+                http_put_response_hop_limit: self.http_put_response_hop_limit,
+                http_protocol_ipv6: self.http_protocol_ipv6,
+            }
+        }
+    }
+}
+impl InstanceMetadataOptions {
+    /// Creates a new builder-style object to manufacture [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
+    pub fn builder() -> crate::model::instance_metadata_options::Builder {
+        crate::model::instance_metadata_options::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InstanceMetadataState {
+    #[allow(missing_docs)] // documentation missing in model
+    Applied,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InstanceMetadataState {
+    fn from(s: &str) -> Self {
+        match s {
+            "applied" => InstanceMetadataState::Applied,
+            "pending" => InstanceMetadataState::Pending,
+            other => InstanceMetadataState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InstanceMetadataState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstanceMetadataState::from(s))
+    }
+}
+impl InstanceMetadataState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstanceMetadataState::Applied => "applied",
+            InstanceMetadataState::Pending => "pending",
+            InstanceMetadataState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["applied", "pending"]
+    }
+}
+impl AsRef<str> for InstanceMetadataState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -15971,6 +16409,8 @@ pub enum InstanceMetricName {
     #[allow(missing_docs)] // documentation missing in model
     CpuUtilization,
     #[allow(missing_docs)] // documentation missing in model
+    MetadataNoToken,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkIn,
     #[allow(missing_docs)] // documentation missing in model
     NetworkOut,
@@ -15989,6 +16429,7 @@ impl std::convert::From<&str> for InstanceMetricName {
             "BurstCapacityPercentage" => InstanceMetricName::BurstCapacityPercentage,
             "BurstCapacityTime" => InstanceMetricName::BurstCapacityTime,
             "CPUUtilization" => InstanceMetricName::CpuUtilization,
+            "MetadataNoToken" => InstanceMetricName::MetadataNoToken,
             "NetworkIn" => InstanceMetricName::NetworkIn,
             "NetworkOut" => InstanceMetricName::NetworkOut,
             "StatusCheckFailed" => InstanceMetricName::StatusCheckFailed,
@@ -16012,6 +16453,7 @@ impl InstanceMetricName {
             InstanceMetricName::BurstCapacityPercentage => "BurstCapacityPercentage",
             InstanceMetricName::BurstCapacityTime => "BurstCapacityTime",
             InstanceMetricName::CpuUtilization => "CPUUtilization",
+            InstanceMetricName::MetadataNoToken => "MetadataNoToken",
             InstanceMetricName::NetworkIn => "NetworkIn",
             InstanceMetricName::NetworkOut => "NetworkOut",
             InstanceMetricName::StatusCheckFailed => "StatusCheckFailed",
@@ -16026,6 +16468,7 @@ impl InstanceMetricName {
             "BurstCapacityPercentage",
             "BurstCapacityTime",
             "CPUUtilization",
+            "MetadataNoToken",
             "NetworkIn",
             "NetworkOut",
             "StatusCheckFailed",

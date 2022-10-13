@@ -252,6 +252,17 @@ impl Client {
     pub fn delete_connector(&self) -> fluent_builders::DeleteConnector {
         fluent_builders::DeleteConnector::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteHostKey`](crate::client::fluent_builders::DeleteHostKey) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DeleteHostKey::set_server_id): <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::DeleteHostKey::set_host_key_id): <p>The ID of the host key that you are deleting.</p>
+    /// - On success, responds with [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteHostKeyError>`](crate::error::DeleteHostKeyError)
+    pub fn delete_host_key(&self) -> fluent_builders::DeleteHostKey {
+        fluent_builders::DeleteHostKey::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteProfile`](crate::client::fluent_builders::DeleteProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -360,6 +371,17 @@ impl Client {
     pub fn describe_execution(&self) -> fluent_builders::DescribeExecution {
         fluent_builders::DescribeExecution::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeHostKey`](crate::client::fluent_builders::DescribeHostKey) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::DescribeHostKey::set_server_id): <p>Provide the ID of the server that contains the host key that you want described.</p>
+    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::DescribeHostKey::set_host_key_id): <p>Provide the ID of the host key that you want described.</p>
+    /// - On success, responds with [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput) with field(s):
+    ///   - [`host_key(Option<DescribedHostKey>)`](crate::output::DescribeHostKeyOutput::host_key): <p>Returns the details for the specified host key.</p>
+    /// - On failure, responds with [`SdkError<DescribeHostKeyError>`](crate::error::DescribeHostKeyError)
+    pub fn describe_host_key(&self) -> fluent_builders::DescribeHostKey {
+        fluent_builders::DescribeHostKey::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeProfile`](crate::client::fluent_builders::DescribeProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -428,6 +450,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<ImportCertificateError>`](crate::error::ImportCertificateError)
     pub fn import_certificate(&self) -> fluent_builders::ImportCertificate {
         fluent_builders::ImportCertificate::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ImportHostKey`](crate::client::fluent_builders::ImportHostKey) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::ImportHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::ImportHostKey::set_server_id): <p>Provide the ID of the server that contains the host key that you are importing.</p>
+    ///   - [`host_key_body(impl Into<String>)`](crate::client::fluent_builders::ImportHostKey::host_key_body) / [`set_host_key_body(Option<String>)`](crate::client::fluent_builders::ImportHostKey::set_host_key_body): <p>The public key portion of an SSH key pair.</p>  <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::ImportHostKey::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::ImportHostKey::set_description): <p>Enter a text description to identify this host key.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportHostKey::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportHostKey::set_tags): <p>Key-value pairs that can be used to group and search for host keys.</p>
+    /// - On success, responds with [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::ImportHostKeyOutput::server_id): <p>Returns the server ID that contains the imported key.</p>
+    ///   - [`host_key_id(Option<String>)`](crate::output::ImportHostKeyOutput::host_key_id): <p>Returns the host key ID for the imported key.</p>
+    /// - On failure, responds with [`SdkError<ImportHostKeyError>`](crate::error::ImportHostKeyError)
+    pub fn import_host_key(&self) -> fluent_builders::ImportHostKey {
+        fluent_builders::ImportHostKey::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ImportSshPublicKey`](crate::client::fluent_builders::ImportSshPublicKey) operation.
     ///
@@ -512,6 +548,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::error::ListExecutionsError)
     pub fn list_executions(&self) -> fluent_builders::ListExecutions {
         fluent_builders::ListExecutions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListHostKeys`](crate::client::fluent_builders::ListHostKeys) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHostKeys::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHostKeys::set_max_results): <p>The maximum number of host keys to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHostKeys::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHostKeys::set_next_token): <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::ListHostKeys::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::ListHostKeys::set_server_id): <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+    /// - On success, responds with [`ListHostKeysOutput`](crate::output::ListHostKeysOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListHostKeysOutput::next_token): <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::ListHostKeysOutput::server_id): <p>Returns the server ID that contains the listed host keys.</p>
+    ///   - [`host_keys(Option<Vec<ListedHostKey>>)`](crate::output::ListHostKeysOutput::host_keys): <p>Returns an array, where each item contains the details of a host key.</p>
+    /// - On failure, responds with [`SdkError<ListHostKeysError>`](crate::error::ListHostKeysError)
+    pub fn list_host_keys(&self) -> fluent_builders::ListHostKeys {
+        fluent_builders::ListHostKeys::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProfiles`](crate::client::fluent_builders::ListProfiles) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProfiles::into_paginator).
@@ -740,6 +790,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateConnectorError>`](crate::error::UpdateConnectorError)
     pub fn update_connector(&self) -> fluent_builders::UpdateConnector {
         fluent_builders::UpdateConnector::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateHostKey`](crate::client::fluent_builders::UpdateHostKey) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_server_id): <p>Provide the ID of the server that contains the host key that you are updating.</p>
+    ///   - [`host_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::host_key_id) / [`set_host_key_id(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_host_key_id): <p>Provide the ID of the host key that you are updating.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateHostKey::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateHostKey::set_description): <p>Provide an updated description for the host key.</p>
+    /// - On success, responds with [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::UpdateHostKeyOutput::server_id): <p>Returns the server ID for the server that contains the updated host key.</p>
+    ///   - [`host_key_id(Option<String>)`](crate::output::UpdateHostKeyOutput::host_key_id): <p>Returns the host key ID for the updated host key.</p>
+    /// - On failure, responds with [`SdkError<UpdateHostKeyError>`](crate::error::UpdateHostKeyError)
+    pub fn update_host_key(&self) -> fluent_builders::UpdateHostKey {
+        fluent_builders::UpdateHostKey::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateProfile`](crate::client::fluent_builders::UpdateProfile) operation.
     ///
@@ -2504,6 +2567,93 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteHostKey`.
+    ///
+    /// <p>Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteHostKey {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_host_key_input::Builder,
+    }
+    impl DeleteHostKey {
+        /// Creates a new `DeleteHostKey`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteHostKey,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteHostKeyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteHostKeyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteHostKeyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_server_id(input);
+            self
+        }
+        /// <p>The ID of the host key that you are deleting.</p>
+        pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_key_id(input.into());
+            self
+        }
+        /// <p>The ID of the host key that you are deleting.</p>
+        pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_host_key_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteProfile`.
     ///
     /// <p>Deletes the profile that's specified in the <code>ProfileId</code> parameter.</p>
@@ -3351,6 +3501,93 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeHostKey`.
+    ///
+    /// <p>Returns the details of the host key that's specified by the <code>HostKeyId</code> and <code>ServerId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeHostKey {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_host_key_input::Builder,
+    }
+    impl DescribeHostKey {
+        /// Creates a new `DescribeHostKey`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DescribeHostKey,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeHostKeyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeHostKeyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeHostKeyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_server_id(input);
+            self
+        }
+        /// <p>Provide the ID of the host key that you want described.</p>
+        pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_key_id(input.into());
+            self
+        }
+        /// <p>Provide the ID of the host key that you want described.</p>
+        pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_host_key_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeProfile`.
     ///
     /// <p>Returns the details of the profile that's specified by the <code>ProfileId</code>.</p>
@@ -3909,6 +4146,125 @@ pub mod fluent_builders {
             self
         }
         /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ImportHostKey`.
+    ///
+    /// <p>Adds a host key to the server specified by the <code>ServerId</code> parameter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ImportHostKey {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::import_host_key_input::Builder,
+    }
+    impl ImportHostKey {
+        /// Creates a new `ImportHostKey`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ImportHostKey,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ImportHostKeyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ImportHostKeyOutput,
+            aws_smithy_http::result::SdkError<crate::error::ImportHostKeyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_server_id(input);
+            self
+        }
+        /// <p>The public key portion of an SSH key pair.</p>
+        /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+        pub fn host_key_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_key_body(input.into());
+            self
+        }
+        /// <p>The public key portion of an SSH key pair.</p>
+        /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+        pub fn set_host_key_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_host_key_body(input);
+            self
+        }
+        /// <p>Enter a text description to identify this host key.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>Enter a text description to identify this host key.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for host keys.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for host keys.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4522,6 +4878,103 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workflow_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListHostKeys`.
+    ///
+    /// <p>Returns a list of host keys for the server specified by the <code>ServerId</code> paramter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListHostKeys {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_host_keys_input::Builder,
+    }
+    impl ListHostKeys {
+        /// Creates a new `ListHostKeys`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListHostKeys,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListHostKeysError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListHostKeysOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListHostKeysError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The maximum number of host keys to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of host keys to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_server_id(input);
             self
         }
     }
@@ -6402,6 +6855,103 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_logging_role(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateHostKey`.
+    ///
+    /// <p>Updates the description for the host key specified by the specified by the <code>ServerId</code> and <code>HostKeyId</code> parameters.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateHostKey {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_host_key_input::Builder,
+    }
+    impl UpdateHostKey {
+        /// Creates a new `UpdateHostKey`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateHostKey,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateHostKeyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateHostKeyOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateHostKeyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_server_id(input);
+            self
+        }
+        /// <p>Provide the ID of the host key that you are updating.</p>
+        pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_key_id(input.into());
+            self
+        }
+        /// <p>Provide the ID of the host key that you are updating.</p>
+        pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_host_key_id(input);
+            self
+        }
+        /// <p>Provide an updated description for the host key.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>Provide an updated description for the host key.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }

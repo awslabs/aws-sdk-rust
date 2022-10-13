@@ -199,6 +199,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataRepositoryTask
     }
 }
 
+/// Operation shape for `CreateFileCache`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_file_cache`](crate::client::Client::create_file_cache).
+///
+/// See [`crate::client::fluent_builders::CreateFileCache`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateFileCache {
+    _private: (),
+}
+impl CreateFileCache {
+    /// Creates a new builder-style object to manufacture [`CreateFileCacheInput`](crate::input::CreateFileCacheInput).
+    pub fn builder() -> crate::input::create_file_cache_input::Builder {
+        crate::input::create_file_cache_input::Builder::default()
+    }
+    /// Creates a new `CreateFileCache` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateFileCache {
+    type Output = std::result::Result<
+        crate::output::CreateFileCacheOutput,
+        crate::error::CreateFileCacheError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_file_cache_error(response)
+        } else {
+            crate::operation_deser::parse_create_file_cache_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -465,6 +499,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataRepositoryAsso
     }
 }
 
+/// Operation shape for `DeleteFileCache`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_file_cache`](crate::client::Client::delete_file_cache).
+///
+/// See [`crate::client::fluent_builders::DeleteFileCache`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteFileCache {
+    _private: (),
+}
+impl DeleteFileCache {
+    /// Creates a new builder-style object to manufacture [`DeleteFileCacheInput`](crate::input::DeleteFileCacheInput).
+    pub fn builder() -> crate::input::delete_file_cache_input::Builder {
+        crate::input::delete_file_cache_input::Builder::default()
+    }
+    /// Creates a new `DeleteFileCache` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteFileCache {
+    type Output = std::result::Result<
+        crate::output::DeleteFileCacheOutput,
+        crate::error::DeleteFileCacheError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_file_cache_error(response)
+        } else {
+            crate::operation_deser::parse_delete_file_cache_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -695,6 +763,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataRepositoryTa
             crate::operation_deser::parse_describe_data_repository_tasks_error(response)
         } else {
             crate::operation_deser::parse_describe_data_repository_tasks_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeFileCaches`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_file_caches`](crate::client::Client::describe_file_caches).
+///
+/// See [`crate::client::fluent_builders::DescribeFileCaches`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeFileCaches {
+    _private: (),
+}
+impl DescribeFileCaches {
+    /// Creates a new builder-style object to manufacture [`DescribeFileCachesInput`](crate::input::DescribeFileCachesInput).
+    pub fn builder() -> crate::input::describe_file_caches_input::Builder {
+        crate::input::describe_file_caches_input::Builder::default()
+    }
+    /// Creates a new `DescribeFileCaches` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeFileCaches {
+    type Output = std::result::Result<
+        crate::output::DescribeFileCachesOutput,
+        crate::error::DescribeFileCachesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_file_caches_error(response)
+        } else {
+            crate::operation_deser::parse_describe_file_caches_response(response)
         }
     }
 }
@@ -1099,6 +1201,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataRepositoryAsso
             crate::operation_deser::parse_update_data_repository_association_error(response)
         } else {
             crate::operation_deser::parse_update_data_repository_association_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateFileCache`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_file_cache`](crate::client::Client::update_file_cache).
+///
+/// See [`crate::client::fluent_builders::UpdateFileCache`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateFileCache {
+    _private: (),
+}
+impl UpdateFileCache {
+    /// Creates a new builder-style object to manufacture [`UpdateFileCacheInput`](crate::input::UpdateFileCacheInput).
+    pub fn builder() -> crate::input::update_file_cache_input::Builder {
+        crate::input::update_file_cache_input::Builder::default()
+    }
+    /// Creates a new `UpdateFileCache` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateFileCache {
+    type Output = std::result::Result<
+        crate::output::UpdateFileCacheOutput,
+        crate::error::UpdateFileCacheError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_file_cache_error(response)
+        } else {
+            crate::operation_deser::parse_update_file_cache_response(response)
         }
     }
 }

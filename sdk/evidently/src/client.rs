@@ -161,6 +161,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_name): <p>The name for the project.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProject::set_description): <p>An optional description of the project.</p>
     ///   - [`data_delivery(ProjectDataDeliveryConfig)`](crate::client::fluent_builders::CreateProject::data_delivery) / [`set_data_delivery(Option<ProjectDataDeliveryConfig>)`](crate::client::fluent_builders::CreateProject::set_data_delivery): <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
+    ///   - [`app_config_resource(ProjectAppConfigResourceConfig)`](crate::client::fluent_builders::CreateProject::app_config_resource) / [`set_app_config_resource(Option<ProjectAppConfigResourceConfig>)`](crate::client::fluent_builders::CreateProject::set_app_config_resource): <p>Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"> Client-side evaluation - powered by AppConfig.</a> </p>  <p>This parameter is a structure that contains information about the AppConfig application and environment that will be used as for client-side evaluation.</p>  <p>To create a project that uses client-side evaluation, you must have the <code>evidently:ExportProjectAsConfiguration</code> permission.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateProject::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProject::set_tags): <p>Assigns one or more tags (key-value pairs) to the project.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a project.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::output::CreateProjectOutput::project): <p>A structure that contains information about the created project.</p>
@@ -172,7 +173,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSegment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSegment::set_name): <p>A name for the segment.</p>
-    ///   - [`pattern(impl Into<String>)`](crate::client::fluent_builders::CreateSegment::pattern) / [`set_pattern(Option<String>)`](crate::client::fluent_builders::CreateSegment::set_pattern): <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    ///   - [`pattern(impl Into<String>)`](crate::client::fluent_builders::CreateSegment::pattern) / [`set_pattern(Option<String>)`](crate::client::fluent_builders::CreateSegment::set_pattern): <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSegment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSegment::set_description): <p>An optional description for this segment.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSegment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSegment::set_tags): <p>Assigns one or more tags (key-value pairs) to the segment.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a segment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     /// - On success, responds with [`CreateSegmentOutput`](crate::output::CreateSegmentOutput) with field(s):
@@ -570,6 +571,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project): <p>The name or ARN of the project to update.</p>
+    ///   - [`app_config_resource(ProjectAppConfigResourceConfig)`](crate::client::fluent_builders::UpdateProject::app_config_resource) / [`set_app_config_resource(Option<ProjectAppConfigResourceConfig>)`](crate::client::fluent_builders::UpdateProject::set_app_config_resource): <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>  <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_description): <p>An optional description of the project.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::output::UpdateProjectOutput::project): <p>A structure containing information about the updated project.</p>
@@ -1403,6 +1405,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_delivery(input);
             self
         }
+        /// <p>Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"> Client-side evaluation - powered by AppConfig.</a> </p>
+        /// <p>This parameter is a structure that contains information about the AppConfig application and environment that will be used as for client-side evaluation.</p>
+        /// <p>To create a project that uses client-side evaluation, you must have the <code>evidently:ExportProjectAsConfiguration</code> permission.</p>
+        pub fn app_config_resource(
+            mut self,
+            input: crate::model::ProjectAppConfigResourceConfig,
+        ) -> Self {
+            self.inner = self.inner.app_config_resource(input);
+            self
+        }
+        /// <p>Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"> Client-side evaluation - powered by AppConfig.</a> </p>
+        /// <p>This parameter is a structure that contains information about the AppConfig application and environment that will be used as for client-side evaluation.</p>
+        /// <p>To create a project that uses client-side evaluation, you must have the <code>evidently:ExportProjectAsConfiguration</code> permission.</p>
+        pub fn set_app_config_resource(
+            mut self,
+            input: std::option::Option<crate::model::ProjectAppConfigResourceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_app_config_resource(input);
+            self
+        }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -1438,8 +1460,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSegment`.
     ///
     /// <p>Use this operation to define a <i>segment</i> of your audience. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
-    /// <p>Using a segment in an experiment limits that experiment to evaluate only the users who match the segment criteria. Using one or more segments in a launch allow you to define different traffic splits for the different audience segments.</p>
-    /// <p>For more information about segment pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    /// <p>Using a segment in an experiment limits that experiment to evaluate only the users who match the segment criteria. Using one or more segments in a launch allows you to define different traffic splits for the different audience segments.</p>
+    /// <p>For more information about segment pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
     /// <p>The pattern that you define for a segment is matched against the value of <code>evaluationContext</code>, which is passed into Evidently in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation, when Evidently assigns a feature variation to a user.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSegment {
@@ -1514,12 +1536,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+        /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pattern(input.into());
             self
         }
-        /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+        /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_pattern(input);
             self
@@ -2191,7 +2213,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetExperimentResults`.
     ///
-    /// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment.</p>
+    /// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment. Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during the experiment do not find statistical significance.</p>
     /// <p>Experiment results are available up to 63 days after the start of the experiment. They are not available after that because of CloudWatch data retention policies.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExperimentResults {
@@ -4849,6 +4871,24 @@ pub mod fluent_builders {
         /// <p>The name or ARN of the project to update.</p>
         pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project(input);
+            self
+        }
+        /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
+        /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
+        pub fn app_config_resource(
+            mut self,
+            input: crate::model::ProjectAppConfigResourceConfig,
+        ) -> Self {
+            self.inner = self.inner.app_config_resource(input);
+            self
+        }
+        /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
+        /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
+        pub fn set_app_config_resource(
+            mut self,
+            input: std::option::Option<crate::model::ProjectAppConfigResourceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_app_config_resource(input);
             self
         }
         /// <p>An optional description of the project.</p>

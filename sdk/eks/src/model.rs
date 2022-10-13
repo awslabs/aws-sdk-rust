@@ -850,31 +850,41 @@ impl AsRef<str> for UpdateStatus {
     }
 }
 
-/// <p>An object representing a node group launch template specification. The launch template cannot include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-/// <p>Specify either <code>name</code> or <code>id</code>, but not both.</p>
+/// <p>An object representing a node group launch template specification. The launch template can't include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+/// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateSpecification {
     /// <p>The name of the launch template.</p>
+    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
+    /// <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p>
+    /// <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p>
+    /// <p>Default: The default version of the launch template.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The ID of the launch template.</p>
+    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl LaunchTemplateSpecification {
     /// <p>The name of the launch template.</p>
+    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
+    /// <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p>
+    /// <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p>
+    /// <p>Default: The default version of the launch template.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The ID of the launch template.</p>
+    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -900,31 +910,41 @@ pub mod launch_template_specification {
     }
     impl Builder {
         /// <p>The name of the launch template.</p>
+        /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the launch template.</p>
+        /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The version of the launch template to use. If no version is specified, then the template's default version is used.</p>
+        /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
+        /// <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p>
+        /// <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p>
+        /// <p>Default: The default version of the launch template.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the launch template to use. If no version is specified, then the template's default version is used.</p>
+        /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
+        /// <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p>
+        /// <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p>
+        /// <p>Default: The default version of the launch template.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
         /// <p>The ID of the launch template.</p>
+        /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the launch template.</p>
+        /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1906,6 +1926,8 @@ pub enum ResolveConflicts {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Overwrite,
+    #[allow(missing_docs)] // documentation missing in model
+    Preserve,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -1914,6 +1936,7 @@ impl std::convert::From<&str> for ResolveConflicts {
         match s {
             "NONE" => ResolveConflicts::None,
             "OVERWRITE" => ResolveConflicts::Overwrite,
+            "PRESERVE" => ResolveConflicts::Preserve,
             other => ResolveConflicts::Unknown(other.to_owned()),
         }
     }
@@ -1931,12 +1954,13 @@ impl ResolveConflicts {
         match self {
             ResolveConflicts::None => "NONE",
             ResolveConflicts::Overwrite => "OVERWRITE",
+            ResolveConflicts::Preserve => "PRESERVE",
             ResolveConflicts::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["NONE", "OVERWRITE"]
+        &["NONE", "OVERWRITE", "PRESERVE"]
     }
 }
 impl AsRef<str> for ResolveConflicts {
@@ -2002,6 +2026,15 @@ pub struct Cluster {
     /// <p>The configuration used to connect to a cluster for registration.</p>
     #[doc(hidden)]
     pub connector_config: std::option::Option<crate::model::ConnectorConfigResponse>,
+    /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    #[doc(hidden)]
+    pub health: std::option::Option<crate::model::ClusterHealth>,
+    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    #[doc(hidden)]
+    pub outpost_config: std::option::Option<crate::model::OutpostConfigResponse>,
 }
 impl Cluster {
     /// <p>The name of the cluster.</p>
@@ -2077,6 +2110,18 @@ impl Cluster {
     pub fn connector_config(&self) -> std::option::Option<&crate::model::ConnectorConfigResponse> {
         self.connector_config.as_ref()
     }
+    /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::ClusterHealth> {
+        self.health.as_ref()
+    }
+    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    pub fn outpost_config(&self) -> std::option::Option<&crate::model::OutpostConfigResponse> {
+        self.outpost_config.as_ref()
+    }
 }
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2098,6 +2143,9 @@ impl std::fmt::Debug for Cluster {
         formatter.field("tags", &self.tags);
         formatter.field("encryption_config", &self.encryption_config);
         formatter.field("connector_config", &self.connector_config);
+        formatter.field("id", &self.id);
+        formatter.field("health", &self.health);
+        formatter.field("outpost_config", &self.outpost_config);
         formatter.finish()
     }
 }
@@ -2128,6 +2176,9 @@ pub mod cluster {
         pub(crate) encryption_config:
             std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
         pub(crate) connector_config: std::option::Option<crate::model::ConnectorConfigResponse>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) health: std::option::Option<crate::model::ClusterHealth>,
+        pub(crate) outpost_config: std::option::Option<crate::model::OutpostConfigResponse>,
     }
     impl Builder {
         /// <p>The name of the cluster.</p>
@@ -2351,6 +2402,42 @@ pub mod cluster {
             self.connector_config = input;
             self
         }
+        /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+        pub fn health(mut self, input: crate::model::ClusterHealth) -> Self {
+            self.health = Some(input);
+            self
+        }
+        /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+        pub fn set_health(
+            mut self,
+            input: std::option::Option<crate::model::ClusterHealth>,
+        ) -> Self {
+            self.health = input;
+            self
+        }
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+        pub fn outpost_config(mut self, input: crate::model::OutpostConfigResponse) -> Self {
+            self.outpost_config = Some(input);
+            self
+        }
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+        pub fn set_outpost_config(
+            mut self,
+            input: std::option::Option<crate::model::OutpostConfigResponse>,
+        ) -> Self {
+            self.outpost_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
@@ -2371,6 +2458,9 @@ pub mod cluster {
                 tags: self.tags,
                 encryption_config: self.encryption_config,
                 connector_config: self.connector_config,
+                id: self.id,
+                health: self.health,
+                outpost_config: self.outpost_config,
             }
         }
     }
@@ -2379,6 +2469,348 @@ impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
     pub fn builder() -> crate::model::cluster::Builder {
         crate::model::cluster::Builder::default()
+    }
+}
+
+/// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OutpostConfigResponse {
+    /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
+    #[doc(hidden)]
+    pub outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
+    #[doc(hidden)]
+    pub control_plane_instance_type: std::option::Option<std::string::String>,
+}
+impl OutpostConfigResponse {
+    /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
+    pub fn outpost_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.outpost_arns.as_deref()
+    }
+    /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
+    pub fn control_plane_instance_type(&self) -> std::option::Option<&str> {
+        self.control_plane_instance_type.as_deref()
+    }
+}
+impl std::fmt::Debug for OutpostConfigResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OutpostConfigResponse");
+        formatter.field("outpost_arns", &self.outpost_arns);
+        formatter.field(
+            "control_plane_instance_type",
+            &self.control_plane_instance_type,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
+pub mod outpost_config_response {
+
+    /// A builder for [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) control_plane_instance_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `outpost_arns`.
+        ///
+        /// To override the contents of this collection use [`set_outpost_arns`](Self::set_outpost_arns).
+        ///
+        /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
+        pub fn outpost_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.outpost_arns.unwrap_or_default();
+            v.push(input.into());
+            self.outpost_arns = Some(v);
+            self
+        }
+        /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
+        pub fn set_outpost_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.outpost_arns = input;
+            self
+        }
+        /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
+        pub fn control_plane_instance_type(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.control_plane_instance_type = Some(input.into());
+            self
+        }
+        /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
+        pub fn set_control_plane_instance_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.control_plane_instance_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
+        pub fn build(self) -> crate::model::OutpostConfigResponse {
+            crate::model::OutpostConfigResponse {
+                outpost_arns: self.outpost_arns,
+                control_plane_instance_type: self.control_plane_instance_type,
+            }
+        }
+    }
+}
+impl OutpostConfigResponse {
+    /// Creates a new builder-style object to manufacture [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
+    pub fn builder() -> crate::model::outpost_config_response::Builder {
+        crate::model::outpost_config_response::Builder::default()
+    }
+}
+
+/// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClusterHealth {
+    /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
+    #[doc(hidden)]
+    pub issues: std::option::Option<std::vec::Vec<crate::model::ClusterIssue>>,
+}
+impl ClusterHealth {
+    /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
+    pub fn issues(&self) -> std::option::Option<&[crate::model::ClusterIssue]> {
+        self.issues.as_deref()
+    }
+}
+impl std::fmt::Debug for ClusterHealth {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClusterHealth");
+        formatter.field("issues", &self.issues);
+        formatter.finish()
+    }
+}
+/// See [`ClusterHealth`](crate::model::ClusterHealth).
+pub mod cluster_health {
+
+    /// A builder for [`ClusterHealth`](crate::model::ClusterHealth).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) issues: std::option::Option<std::vec::Vec<crate::model::ClusterIssue>>,
+    }
+    impl Builder {
+        /// Appends an item to `issues`.
+        ///
+        /// To override the contents of this collection use [`set_issues`](Self::set_issues).
+        ///
+        /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
+        pub fn issues(mut self, input: crate::model::ClusterIssue) -> Self {
+            let mut v = self.issues.unwrap_or_default();
+            v.push(input);
+            self.issues = Some(v);
+            self
+        }
+        /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
+        pub fn set_issues(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClusterIssue>>,
+        ) -> Self {
+            self.issues = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClusterHealth`](crate::model::ClusterHealth).
+        pub fn build(self) -> crate::model::ClusterHealth {
+            crate::model::ClusterHealth {
+                issues: self.issues,
+            }
+        }
+    }
+}
+impl ClusterHealth {
+    /// Creates a new builder-style object to manufacture [`ClusterHealth`](crate::model::ClusterHealth).
+    pub fn builder() -> crate::model::cluster_health::Builder {
+        crate::model::cluster_health::Builder::default()
+    }
+}
+
+/// <p>An issue with your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClusterIssue {
+    /// <p>The error code of the issue.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<crate::model::ClusterIssueCode>,
+    /// <p>A description of the issue.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The resource IDs that the issue relates to.</p>
+    #[doc(hidden)]
+    pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ClusterIssue {
+    /// <p>The error code of the issue.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::ClusterIssueCode> {
+        self.code.as_ref()
+    }
+    /// <p>A description of the issue.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The resource IDs that the issue relates to.</p>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for ClusterIssue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClusterIssue");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("resource_ids", &self.resource_ids);
+        formatter.finish()
+    }
+}
+/// See [`ClusterIssue`](crate::model::ClusterIssue).
+pub mod cluster_issue {
+
+    /// A builder for [`ClusterIssue`](crate::model::ClusterIssue).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<crate::model::ClusterIssueCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The error code of the issue.</p>
+        pub fn code(mut self, input: crate::model::ClusterIssueCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        /// <p>The error code of the issue.</p>
+        pub fn set_code(
+            mut self,
+            input: std::option::Option<crate::model::ClusterIssueCode>,
+        ) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A description of the issue.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description of the issue.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Appends an item to `resource_ids`.
+        ///
+        /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
+        ///
+        /// <p>The resource IDs that the issue relates to.</p>
+        pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.resource_ids.unwrap_or_default();
+            v.push(input.into());
+            self.resource_ids = Some(v);
+            self
+        }
+        /// <p>The resource IDs that the issue relates to.</p>
+        pub fn set_resource_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.resource_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClusterIssue`](crate::model::ClusterIssue).
+        pub fn build(self) -> crate::model::ClusterIssue {
+            crate::model::ClusterIssue {
+                code: self.code,
+                message: self.message,
+                resource_ids: self.resource_ids,
+            }
+        }
+    }
+}
+impl ClusterIssue {
+    /// Creates a new builder-style object to manufacture [`ClusterIssue`](crate::model::ClusterIssue).
+    pub fn builder() -> crate::model::cluster_issue::Builder {
+        crate::model::cluster_issue::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClusterIssueCode {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    ClusterUnreachable,
+    #[allow(missing_docs)] // documentation missing in model
+    ConfigurationConflict,
+    #[allow(missing_docs)] // documentation missing in model
+    InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotFound,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClusterIssueCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AccessDenied" => ClusterIssueCode::AccessDenied,
+            "ClusterUnreachable" => ClusterIssueCode::ClusterUnreachable,
+            "ConfigurationConflict" => ClusterIssueCode::ConfigurationConflict,
+            "InternalFailure" => ClusterIssueCode::InternalFailure,
+            "ResourceLimitExceeded" => ClusterIssueCode::ResourceLimitExceeded,
+            "ResourceNotFound" => ClusterIssueCode::ResourceNotFound,
+            other => ClusterIssueCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClusterIssueCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClusterIssueCode::from(s))
+    }
+}
+impl ClusterIssueCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClusterIssueCode::AccessDenied => "AccessDenied",
+            ClusterIssueCode::ClusterUnreachable => "ClusterUnreachable",
+            ClusterIssueCode::ConfigurationConflict => "ConfigurationConflict",
+            ClusterIssueCode::InternalFailure => "InternalFailure",
+            ClusterIssueCode::ResourceLimitExceeded => "ResourceLimitExceeded",
+            ClusterIssueCode::ResourceNotFound => "ResourceNotFound",
+            ClusterIssueCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDenied",
+            "ClusterUnreachable",
+            "ConfigurationConflict",
+            "InternalFailure",
+            "ResourceLimitExceeded",
+            "ResourceNotFound",
+        ]
+    }
+}
+impl AsRef<str> for ClusterIssueCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4974,12 +5406,12 @@ impl AsRef<str> for NodegroupStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProviderConfigResponse {
-    /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     #[doc(hidden)]
     pub oidc: std::option::Option<crate::model::OidcIdentityProviderConfig>,
 }
 impl IdentityProviderConfigResponse {
-    /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn oidc(&self) -> std::option::Option<&crate::model::OidcIdentityProviderConfig> {
         self.oidc.as_ref()
     }
@@ -5000,12 +5432,12 @@ pub mod identity_provider_config_response {
         pub(crate) oidc: std::option::Option<crate::model::OidcIdentityProviderConfig>,
     }
     impl Builder {
-        /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+        /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn oidc(mut self, input: crate::model::OidcIdentityProviderConfig) -> Self {
             self.oidc = Some(input);
             self
         }
-        /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+        /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn set_oidc(
             mut self,
             input: std::option::Option<crate::model::OidcIdentityProviderConfig>,
@@ -5026,7 +5458,7 @@ impl IdentityProviderConfigResponse {
     }
 }
 
-/// <p>An object that represents the configuration for an OpenID Connect (OIDC) identity provider. </p>
+/// <p>An object representing the configuration for an OpenID Connect (OIDC) identity provider. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OidcIdentityProviderConfig {
@@ -5881,7 +6313,7 @@ pub struct AddonInfo {
     /// <p>The type of the add-on.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>An object that represents information about available add-on versions and compatible Kubernetes versions.</p>
+    /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
     #[doc(hidden)]
     pub addon_versions: std::option::Option<std::vec::Vec<crate::model::AddonVersionInfo>>,
 }
@@ -5894,7 +6326,7 @@ impl AddonInfo {
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>An object that represents information about available add-on versions and compatible Kubernetes versions.</p>
+    /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
     pub fn addon_versions(&self) -> std::option::Option<&[crate::model::AddonVersionInfo]> {
         self.addon_versions.as_deref()
     }
@@ -5944,14 +6376,14 @@ pub mod addon_info {
         ///
         /// To override the contents of this collection use [`set_addon_versions`](Self::set_addon_versions).
         ///
-        /// <p>An object that represents information about available add-on versions and compatible Kubernetes versions.</p>
+        /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
         pub fn addon_versions(mut self, input: crate::model::AddonVersionInfo) -> Self {
             let mut v = self.addon_versions.unwrap_or_default();
             v.push(input);
             self.addon_versions = Some(v);
             self
         }
-        /// <p>An object that represents information about available add-on versions and compatible Kubernetes versions.</p>
+        /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
         pub fn set_addon_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddonVersionInfo>>,
@@ -5986,7 +6418,7 @@ pub struct AddonVersionInfo {
     /// <p>The architectures that the version supports.</p>
     #[doc(hidden)]
     pub architecture: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An object that represents the compatibilities of a version.</p>
+    /// <p>An object representing the compatibilities of a version.</p>
     #[doc(hidden)]
     pub compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
 }
@@ -5999,7 +6431,7 @@ impl AddonVersionInfo {
     pub fn architecture(&self) -> std::option::Option<&[std::string::String]> {
         self.architecture.as_deref()
     }
-    /// <p>An object that represents the compatibilities of a version.</p>
+    /// <p>An object representing the compatibilities of a version.</p>
     pub fn compatibilities(&self) -> std::option::Option<&[crate::model::Compatibility]> {
         self.compatibilities.as_deref()
     }
@@ -6060,14 +6492,14 @@ pub mod addon_version_info {
         ///
         /// To override the contents of this collection use [`set_compatibilities`](Self::set_compatibilities).
         ///
-        /// <p>An object that represents the compatibilities of a version.</p>
+        /// <p>An object representing the compatibilities of a version.</p>
         pub fn compatibilities(mut self, input: crate::model::Compatibility) -> Self {
             let mut v = self.compatibilities.unwrap_or_default();
             v.push(input);
             self.compatibilities = Some(v);
             self
         }
-        /// <p>An object that represents the compatibilities of a version.</p>
+        /// <p>An object representing the compatibilities of a version.</p>
         pub fn set_compatibilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
@@ -6215,7 +6647,7 @@ pub struct Addon {
     /// <p>The version of the add-on.</p>
     #[doc(hidden)]
     pub addon_version: std::option::Option<std::string::String>,
-    /// <p>An object that represents the health of the add-on.</p>
+    /// <p>An object representing the health of the add-on.</p>
     #[doc(hidden)]
     pub health: std::option::Option<crate::model::AddonHealth>,
     /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
@@ -6252,7 +6684,7 @@ impl Addon {
     pub fn addon_version(&self) -> std::option::Option<&str> {
         self.addon_version.as_deref()
     }
-    /// <p>An object that represents the health of the add-on.</p>
+    /// <p>An object representing the health of the add-on.</p>
     pub fn health(&self) -> std::option::Option<&crate::model::AddonHealth> {
         self.health.as_ref()
     }
@@ -6359,12 +6791,12 @@ pub mod addon {
             self.addon_version = input;
             self
         }
-        /// <p>An object that represents the health of the add-on.</p>
+        /// <p>An object representing the health of the add-on.</p>
         pub fn health(mut self, input: crate::model::AddonHealth) -> Self {
             self.health = Some(input);
             self
         }
-        /// <p>An object that represents the health of the add-on.</p>
+        /// <p>An object representing the health of the add-on.</p>
         pub fn set_health(mut self, input: std::option::Option<crate::model::AddonHealth>) -> Self {
             self.health = input;
             self
@@ -6471,12 +6903,12 @@ impl Addon {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddonHealth {
-    /// <p>An object that represents the add-on's health issues.</p>
+    /// <p>An object representing the health issues for an add-on.</p>
     #[doc(hidden)]
     pub issues: std::option::Option<std::vec::Vec<crate::model::AddonIssue>>,
 }
 impl AddonHealth {
-    /// <p>An object that represents the add-on's health issues.</p>
+    /// <p>An object representing the health issues for an add-on.</p>
     pub fn issues(&self) -> std::option::Option<&[crate::model::AddonIssue]> {
         self.issues.as_deref()
     }
@@ -6501,14 +6933,14 @@ pub mod addon_health {
         ///
         /// To override the contents of this collection use [`set_issues`](Self::set_issues).
         ///
-        /// <p>An object that represents the add-on's health issues.</p>
+        /// <p>An object representing the health issues for an add-on.</p>
         pub fn issues(mut self, input: crate::model::AddonIssue) -> Self {
             let mut v = self.issues.unwrap_or_default();
             v.push(input);
             self.issues = Some(v);
             self
         }
-        /// <p>An object that represents the add-on's health issues.</p>
+        /// <p>An object representing the health issues for an add-on.</p>
         pub fn set_issues(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddonIssue>>,
@@ -6751,6 +7183,8 @@ pub enum AddonStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6764,6 +7198,7 @@ impl std::convert::From<&str> for AddonStatus {
             "DEGRADED" => AddonStatus::Degraded,
             "DELETE_FAILED" => AddonStatus::DeleteFailed,
             "DELETING" => AddonStatus::Deleting,
+            "UPDATE_FAILED" => AddonStatus::UpdateFailed,
             "UPDATING" => AddonStatus::Updating,
             other => AddonStatus::Unknown(other.to_owned()),
         }
@@ -6786,6 +7221,7 @@ impl AddonStatus {
             AddonStatus::Degraded => "DEGRADED",
             AddonStatus::DeleteFailed => "DELETE_FAILED",
             AddonStatus::Deleting => "DELETING",
+            AddonStatus::UpdateFailed => "UPDATE_FAILED",
             AddonStatus::Updating => "UPDATING",
             AddonStatus::Unknown(s) => s.as_ref(),
         }
@@ -6799,6 +7235,7 @@ impl AddonStatus {
             "DEGRADED",
             "DELETE_FAILED",
             "DELETING",
+            "UPDATE_FAILED",
             "UPDATING",
         ]
     }
@@ -6806,6 +7243,127 @@ impl AddonStatus {
 impl AsRef<str> for AddonStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating a local Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OutpostConfigRequest {
+    /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
+    #[doc(hidden)]
+    pub outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p>
+    /// <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p>
+    /// <ul>
+    /// <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li>
+    /// <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li>
+    /// <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li>
+    /// </ul>
+    /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
+    #[doc(hidden)]
+    pub control_plane_instance_type: std::option::Option<std::string::String>,
+}
+impl OutpostConfigRequest {
+    /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
+    pub fn outpost_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.outpost_arns.as_deref()
+    }
+    /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p>
+    /// <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p>
+    /// <ul>
+    /// <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li>
+    /// <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li>
+    /// <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li>
+    /// </ul>
+    /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
+    pub fn control_plane_instance_type(&self) -> std::option::Option<&str> {
+        self.control_plane_instance_type.as_deref()
+    }
+}
+impl std::fmt::Debug for OutpostConfigRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OutpostConfigRequest");
+        formatter.field("outpost_arns", &self.outpost_arns);
+        formatter.field(
+            "control_plane_instance_type",
+            &self.control_plane_instance_type,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
+pub mod outpost_config_request {
+
+    /// A builder for [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) control_plane_instance_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `outpost_arns`.
+        ///
+        /// To override the contents of this collection use [`set_outpost_arns`](Self::set_outpost_arns).
+        ///
+        /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
+        pub fn outpost_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.outpost_arns.unwrap_or_default();
+            v.push(input.into());
+            self.outpost_arns = Some(v);
+            self
+        }
+        /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
+        pub fn set_outpost_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.outpost_arns = input;
+            self
+        }
+        /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p>
+        /// <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p>
+        /// <ul>
+        /// <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li>
+        /// <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li>
+        /// <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li>
+        /// </ul>
+        /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
+        pub fn control_plane_instance_type(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.control_plane_instance_type = Some(input.into());
+            self
+        }
+        /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p>
+        /// <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p>
+        /// <ul>
+        /// <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li>
+        /// <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li>
+        /// <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li>
+        /// </ul>
+        /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
+        pub fn set_control_plane_instance_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.control_plane_instance_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
+        pub fn build(self) -> crate::model::OutpostConfigRequest {
+            crate::model::OutpostConfigRequest {
+                outpost_arns: self.outpost_arns,
+                control_plane_instance_type: self.control_plane_instance_type,
+            }
+        }
+    }
+}
+impl OutpostConfigRequest {
+    /// Creates a new builder-style object to manufacture [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
+    pub fn builder() -> crate::model::outpost_config_request::Builder {
+        crate::model::outpost_config_request::Builder::default()
     }
 }
 

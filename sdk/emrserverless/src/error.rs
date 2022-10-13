@@ -65,71 +65,6 @@ impl ValidationException {
     }
 }
 
-/// <p>Request processing failed because of an error or failure with the service.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalServerException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InternalServerException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalServerException {}
-/// See [`InternalServerException`](crate::error::InternalServerException).
-pub mod internal_server_exception {
-
-    /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
-        pub fn build(self) -> crate::error::InternalServerException {
-            crate::error::InternalServerException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InternalServerException {
-    /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
-    pub fn builder() -> crate::error::internal_server_exception::Builder {
-        crate::error::internal_server_exception::Builder::default()
-    }
-}
-
 /// <p>The specified resource was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -154,8 +89,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -192,6 +127,71 @@ impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
+    }
+}
+
+/// <p>Request processing failed because of an error or failure with the service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServerException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InternalServerException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InternalServerException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InternalServerException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalServerException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalServerException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalServerException {}
+/// See [`InternalServerException`](crate::error::InternalServerException).
+pub mod internal_server_exception {
+
+    /// A builder for [`InternalServerException`](crate::error::InternalServerException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
+        pub fn build(self) -> crate::error::InternalServerException {
+            crate::error::InternalServerException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InternalServerException {
+    /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
+    pub fn builder() -> crate::error::internal_server_exception::Builder {
+        crate::error::internal_server_exception::Builder::default()
     }
 }
 
@@ -772,6 +772,121 @@ impl std::error::Error for GetApplicationError {
             GetApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetApplicationErrorKind::ValidationException(_inner) => Some(_inner),
             GetApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetDashboardForJobRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDashboardForJobRunError {
+    /// Kind of error that occurred.
+    pub kind: GetDashboardForJobRunErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetDashboardForJobRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDashboardForJobRunErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetDashboardForJobRunError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDashboardForJobRunErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetDashboardForJobRunErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetDashboardForJobRunErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetDashboardForJobRunErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDashboardForJobRunError {
+    fn code(&self) -> Option<&str> {
+        GetDashboardForJobRunError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDashboardForJobRunError {
+    /// Creates a new `GetDashboardForJobRunError`.
+    pub fn new(kind: GetDashboardForJobRunErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDashboardForJobRunError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDashboardForJobRunErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDashboardForJobRunError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDashboardForJobRunErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDashboardForJobRunErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDashboardForJobRunErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDashboardForJobRunErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDashboardForJobRunErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDashboardForJobRunErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDashboardForJobRunErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetDashboardForJobRunError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDashboardForJobRunErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetDashboardForJobRunErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetDashboardForJobRunErrorKind::ValidationException(_inner) => Some(_inner),
+            GetDashboardForJobRunErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

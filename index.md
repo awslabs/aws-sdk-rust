@@ -38,6 +38,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Comprehend Medical | [aws-sdk-comprehendmedical](https://crates.io/crates/aws-sdk-comprehendmedical) ([docs](https://docs.rs/aws-sdk-comprehendmedical)) |
 | AWS Compute Optimizer | [aws-sdk-computeoptimizer](https://crates.io/crates/aws-sdk-computeoptimizer) ([docs](https://docs.rs/aws-sdk-computeoptimizer)) |
 | AWS Config | [aws-sdk-config](https://crates.io/crates/aws-sdk-config) ([docs](https://docs.rs/aws-sdk-config)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/config)) |
+| AWS Control Tower | [aws-sdk-controltower](https://crates.io/crates/aws-sdk-controltower) ([docs](https://docs.rs/aws-sdk-controltower)) |
 | AWS Cost Explorer Service | [aws-sdk-costexplorer](https://crates.io/crates/aws-sdk-costexplorer) ([docs](https://docs.rs/aws-sdk-costexplorer)) |
 | AWS Cost and Usage Report Service | [aws-sdk-costandusagereport](https://crates.io/crates/aws-sdk-costandusagereport) ([docs](https://docs.rs/aws-sdk-costandusagereport)) |
 | AWS Data Exchange | [aws-sdk-dataexchange](https://crates.io/crates/aws-sdk-dataexchange) ([docs](https://docs.rs/aws-sdk-dataexchange)) |
@@ -72,6 +73,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS IoT Events | [aws-sdk-iotevents](https://crates.io/crates/aws-sdk-iotevents) ([docs](https://docs.rs/aws-sdk-iotevents)) |
 | AWS IoT Events Data | [aws-sdk-ioteventsdata](https://crates.io/crates/aws-sdk-ioteventsdata) ([docs](https://docs.rs/aws-sdk-ioteventsdata)) |
 | AWS IoT Fleet Hub | [aws-sdk-iotfleethub](https://crates.io/crates/aws-sdk-iotfleethub) ([docs](https://docs.rs/aws-sdk-iotfleethub)) |
+| AWS IoT FleetWise | [aws-sdk-iotfleetwise](https://crates.io/crates/aws-sdk-iotfleetwise) ([docs](https://docs.rs/aws-sdk-iotfleetwise)) |
 | AWS IoT Greengrass V2 | [aws-sdk-greengrassv2](https://crates.io/crates/aws-sdk-greengrassv2) ([docs](https://docs.rs/aws-sdk-greengrassv2)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/greengrassv2)) |
 | AWS IoT Jobs Data Plane | [aws-sdk-iotjobsdataplane](https://crates.io/crates/aws-sdk-iotjobsdataplane) ([docs](https://docs.rs/aws-sdk-iotjobsdataplane)) |
 | AWS IoT Secure Tunneling | [aws-sdk-iotsecuretunneling](https://crates.io/crates/aws-sdk-iotsecuretunneling) ([docs](https://docs.rs/aws-sdk-iotsecuretunneling)) |
@@ -91,6 +93,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS MediaTailor | [aws-sdk-mediatailor](https://crates.io/crates/aws-sdk-mediatailor) ([docs](https://docs.rs/aws-sdk-mediatailor)) |
 | AWS Migration Hub | [aws-sdk-migrationhub](https://crates.io/crates/aws-sdk-migrationhub) ([docs](https://docs.rs/aws-sdk-migrationhub)) |
 | AWS Migration Hub Config | [aws-sdk-migrationhubconfig](https://crates.io/crates/aws-sdk-migrationhubconfig) ([docs](https://docs.rs/aws-sdk-migrationhubconfig)) |
+| AWS Migration Hub Orchestrator | [aws-sdk-migrationhuborchestrator](https://crates.io/crates/aws-sdk-migrationhuborchestrator) ([docs](https://docs.rs/aws-sdk-migrationhuborchestrator)) |
 | AWS Migration Hub Refactor Spaces | [aws-sdk-migrationhubrefactorspaces](https://crates.io/crates/aws-sdk-migrationhubrefactorspaces) ([docs](https://docs.rs/aws-sdk-migrationhubrefactorspaces)) |
 | AWS Mobile | [aws-sdk-mobile](https://crates.io/crates/aws-sdk-mobile) ([docs](https://docs.rs/aws-sdk-mobile)) |
 | AWS Network Firewall | [aws-sdk-networkfirewall](https://crates.io/crates/aws-sdk-networkfirewall) ([docs](https://docs.rs/aws-sdk-networkfirewall)) |
@@ -174,6 +177,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Cognito Identity Provider | [aws-sdk-cognitoidentityprovider](https://crates.io/crates/aws-sdk-cognitoidentityprovider) ([docs](https://docs.rs/aws-sdk-cognitoidentityprovider)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cognitoidentityprovider)) |
 | Amazon Cognito Sync | [aws-sdk-cognitosync](https://crates.io/crates/aws-sdk-cognitosync) ([docs](https://docs.rs/aws-sdk-cognitosync)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cognitosync)) |
 | Amazon Comprehend | [aws-sdk-comprehend](https://crates.io/crates/aws-sdk-comprehend) ([docs](https://docs.rs/aws-sdk-comprehend)) |
+| Amazon Connect Cases | [aws-sdk-connectcases](https://crates.io/crates/aws-sdk-connectcases) ([docs](https://docs.rs/aws-sdk-connectcases)) |
 | Amazon Connect Contact Lens | [aws-sdk-connectcontactlens](https://crates.io/crates/aws-sdk-connectcontactlens) ([docs](https://docs.rs/aws-sdk-connectcontactlens)) |
 | Amazon Connect Customer Profiles | [aws-sdk-customerprofiles](https://crates.io/crates/aws-sdk-customerprofiles) ([docs](https://docs.rs/aws-sdk-customerprofiles)) |
 | Amazon Connect Participant Service | [aws-sdk-connectparticipant](https://crates.io/crates/aws-sdk-connectparticipant) ([docs](https://docs.rs/aws-sdk-connectparticipant)) |

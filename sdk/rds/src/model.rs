@@ -12198,7 +12198,7 @@ pub struct DbSnapshot {
     #[doc(hidden)]
     pub original_snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the most recent transaction applied to the database that you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the system time that the snapshot completed.</p>
-    /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27: Switchover</p>
+    /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours.</p>
     #[doc(hidden)]
     pub snapshot_database_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
@@ -12330,7 +12330,7 @@ impl DbSnapshot {
         self.original_snapshot_create_time.as_ref()
     }
     /// <p>The timestamp of the most recent transaction applied to the database that you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the system time that the snapshot completed.</p>
-    /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27: Switchover</p>
+    /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours.</p>
     pub fn snapshot_database_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_database_time.as_ref()
     }
@@ -12802,13 +12802,13 @@ pub mod db_snapshot {
             self
         }
         /// <p>The timestamp of the most recent transaction applied to the database that you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the system time that the snapshot completed.</p>
-        /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27: Switchover</p>
+        /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours.</p>
         pub fn snapshot_database_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_database_time = Some(input);
             self
         }
         /// <p>The timestamp of the most recent transaction applied to the database that you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the system time that the snapshot completed.</p>
-        /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27: Switchover</p>
+        /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours.</p>
         pub fn set_snapshot_database_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -13110,7 +13110,7 @@ pub struct ConnectionPoolConfigurationInfo {
     /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     #[doc(hidden)]
     pub connection_borrow_timeout: i32,
-    /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+    /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
     #[doc(hidden)]
     pub session_pinning_filters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
@@ -13130,7 +13130,7 @@ impl ConnectionPoolConfigurationInfo {
     pub fn connection_borrow_timeout(&self) -> i32 {
         self.connection_borrow_timeout
     }
-    /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+    /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
     pub fn session_pinning_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.session_pinning_filters.as_deref()
     }
@@ -13200,14 +13200,14 @@ pub mod connection_pool_configuration_info {
         ///
         /// To override the contents of this collection use [`set_session_pinning_filters`](Self::set_session_pinning_filters).
         ///
-        /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+        /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
         pub fn session_pinning_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.session_pinning_filters.unwrap_or_default();
             v.push(input.into());
             self.session_pinning_filters = Some(v);
             self
         }
-        /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+        /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
         pub fn set_session_pinning_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13249,13 +13249,13 @@ impl ConnectionPoolConfigurationInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionPoolConfiguration {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
-    /// <p>Default: 100</p>
-    /// <p>Constraints: between 1 and 100</p>
+    /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
+    /// <p>Constraints: Must be between 1 and 100.</p>
     #[doc(hidden)]
     pub max_connections_percent: std::option::Option<i32>,
     /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
-    /// <p>Default: 50</p>
-    /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
+    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
+    /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
     #[doc(hidden)]
     pub max_idle_connections_percent: std::option::Option<i32>,
     /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
@@ -13274,14 +13274,14 @@ pub struct ConnectionPoolConfiguration {
 }
 impl ConnectionPoolConfiguration {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
-    /// <p>Default: 100</p>
-    /// <p>Constraints: between 1 and 100</p>
+    /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
+    /// <p>Constraints: Must be between 1 and 100.</p>
     pub fn max_connections_percent(&self) -> std::option::Option<i32> {
         self.max_connections_percent
     }
     /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
-    /// <p>Default: 50</p>
-    /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
+    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
+    /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
     pub fn max_idle_connections_percent(&self) -> std::option::Option<i32> {
         self.max_idle_connections_percent
     }
@@ -13330,29 +13330,29 @@ pub mod connection_pool_configuration {
     }
     impl Builder {
         /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
-        /// <p>Default: 100</p>
-        /// <p>Constraints: between 1 and 100</p>
+        /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
+        /// <p>Constraints: Must be between 1 and 100.</p>
         pub fn max_connections_percent(mut self, input: i32) -> Self {
             self.max_connections_percent = Some(input);
             self
         }
         /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
-        /// <p>Default: 100</p>
-        /// <p>Constraints: between 1 and 100</p>
+        /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
+        /// <p>Constraints: Must be between 1 and 100.</p>
         pub fn set_max_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.max_connections_percent = input;
             self
         }
         /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
-        /// <p>Default: 50</p>
-        /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
+        /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
+        /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
         pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
             self.max_idle_connections_percent = Some(input);
             self
         }
         /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
-        /// <p>Default: 50</p>
-        /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
+        /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
+        /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
         pub fn set_max_idle_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.max_idle_connections_percent = input;
             self
@@ -13862,7 +13862,7 @@ pub struct DbProxy {
     /// <p>The current status of this proxy. A status of <code>available</code> means the proxy is ready to handle requests. Other values indicate that you must wait for the proxy to be ready, or take some action to resolve an issue.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DbProxyStatus>,
-    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
     #[doc(hidden)]
     pub engine_family: std::option::Option<std::string::String>,
     /// <p>Provides the VPC ID of the DB proxy.</p>
@@ -13914,7 +13914,7 @@ impl DbProxy {
     pub fn status(&self) -> std::option::Option<&crate::model::DbProxyStatus> {
         self.status.as_ref()
     }
-    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
     pub fn engine_family(&self) -> std::option::Option<&str> {
         self.engine_family.as_deref()
     }
@@ -14045,12 +14045,12 @@ pub mod db_proxy {
             self.status = input;
             self
         }
-        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
         pub fn engine_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_family = Some(input.into());
             self
         }
-        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
         pub fn set_engine_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14250,7 +14250,7 @@ pub struct UserAuthConfigInfo {
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     #[doc(hidden)]
     pub iam_auth: std::option::Option<crate::model::IamAuthMode>,
 }
@@ -14271,7 +14271,7 @@ impl UserAuthConfigInfo {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub fn iam_auth(&self) -> std::option::Option<&crate::model::IamAuthMode> {
         self.iam_auth.as_ref()
     }
@@ -14343,12 +14343,12 @@ pub mod user_auth_config_info {
             self.secret_arn = input;
             self
         }
-        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
         pub fn iam_auth(mut self, input: crate::model::IamAuthMode) -> Self {
             self.iam_auth = Some(input);
             self
         }
-        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
         pub fn set_iam_auth(
             mut self,
             input: std::option::Option<crate::model::IamAuthMode>,
@@ -14390,6 +14390,8 @@ pub enum IamAuthMode {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Required,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14398,6 +14400,7 @@ impl std::convert::From<&str> for IamAuthMode {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => IamAuthMode::Disabled,
+            "ENABLED" => IamAuthMode::Enabled,
             "REQUIRED" => IamAuthMode::Required,
             other => IamAuthMode::Unknown(other.to_owned()),
         }
@@ -14415,13 +14418,14 @@ impl IamAuthMode {
     pub fn as_str(&self) -> &str {
         match self {
             IamAuthMode::Disabled => "DISABLED",
+            IamAuthMode::Enabled => "ENABLED",
             IamAuthMode::Required => "REQUIRED",
             IamAuthMode::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["DISABLED", "REQUIRED"]
+        &["DISABLED", "ENABLED", "REQUIRED"]
     }
 }
 impl AsRef<str> for IamAuthMode {
@@ -14590,7 +14594,7 @@ pub struct UserAuthConfig {
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     #[doc(hidden)]
     pub iam_auth: std::option::Option<crate::model::IamAuthMode>,
 }
@@ -14611,7 +14615,7 @@ impl UserAuthConfig {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub fn iam_auth(&self) -> std::option::Option<&crate::model::IamAuthMode> {
         self.iam_auth.as_ref()
     }
@@ -14683,12 +14687,12 @@ pub mod user_auth_config {
             self.secret_arn = input;
             self
         }
-        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
         pub fn iam_auth(mut self, input: crate::model::IamAuthMode) -> Self {
             self.iam_auth = Some(input);
             self
         }
-        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
         pub fn set_iam_auth(
             mut self,
             input: std::option::Option<crate::model::IamAuthMode>,
@@ -21712,6 +21716,8 @@ pub enum EngineFamily {
     Mysql,
     #[allow(missing_docs)] // documentation missing in model
     Postgresql,
+    #[allow(missing_docs)] // documentation missing in model
+    Sqlserver,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -21720,6 +21726,7 @@ impl std::convert::From<&str> for EngineFamily {
         match s {
             "MYSQL" => EngineFamily::Mysql,
             "POSTGRESQL" => EngineFamily::Postgresql,
+            "SQLSERVER" => EngineFamily::Sqlserver,
             other => EngineFamily::Unknown(other.to_owned()),
         }
     }
@@ -21737,12 +21744,13 @@ impl EngineFamily {
         match self {
             EngineFamily::Mysql => "MYSQL",
             EngineFamily::Postgresql => "POSTGRESQL",
+            EngineFamily::Sqlserver => "SQLSERVER",
             EngineFamily::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["MYSQL", "POSTGRESQL"]
+        &["MYSQL", "POSTGRESQL", "SQLSERVER"]
     }
 }
 impl AsRef<str> for EngineFamily {

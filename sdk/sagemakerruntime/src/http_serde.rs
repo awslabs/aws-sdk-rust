@@ -122,6 +122,23 @@ pub fn add_headers_invoke_endpoint(
             builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
         }
     }
+    if let Some(inner_15) = &input.enable_explanations {
+        let formatted_16 = AsRef::<str>::as_ref(inner_15);
+        if !formatted_16.is_empty() {
+            let header_value = formatted_16;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::BuildError::InvalidField {
+                        field: "enable_explanations",
+                        details: format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    }
+                })?;
+            builder = builder.header("X-Amzn-SageMaker-Enable-Explanations", header_value);
+        }
+    }
     Ok(builder)
 }
 
@@ -129,10 +146,10 @@ pub fn add_headers_invoke_endpoint_async(
     input: &crate::input::InvokeEndpointAsyncInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
-    if let Some(inner_15) = &input.content_type {
-        let formatted_16 = AsRef::<str>::as_ref(inner_15);
-        if !formatted_16.is_empty() {
-            let header_value = formatted_16;
+    if let Some(inner_17) = &input.content_type {
+        let formatted_18 = AsRef::<str>::as_ref(inner_17);
+        if !formatted_18.is_empty() {
+            let header_value = formatted_18;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -146,10 +163,10 @@ pub fn add_headers_invoke_endpoint_async(
             builder = builder.header("X-Amzn-SageMaker-Content-Type", header_value);
         }
     }
-    if let Some(inner_17) = &input.accept {
-        let formatted_18 = AsRef::<str>::as_ref(inner_17);
-        if !formatted_18.is_empty() {
-            let header_value = formatted_18;
+    if let Some(inner_19) = &input.accept {
+        let formatted_20 = AsRef::<str>::as_ref(inner_19);
+        if !formatted_20.is_empty() {
+            let header_value = formatted_20;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -163,10 +180,10 @@ pub fn add_headers_invoke_endpoint_async(
             builder = builder.header("X-Amzn-SageMaker-Accept", header_value);
         }
     }
-    if let Some(inner_19) = &input.custom_attributes {
-        let formatted_20 = AsRef::<str>::as_ref(inner_19);
-        if !formatted_20.is_empty() {
-            let header_value = formatted_20;
+    if let Some(inner_21) = &input.custom_attributes {
+        let formatted_22 = AsRef::<str>::as_ref(inner_21);
+        if !formatted_22.is_empty() {
+            let header_value = formatted_22;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -180,10 +197,10 @@ pub fn add_headers_invoke_endpoint_async(
             builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
         }
     }
-    if let Some(inner_21) = &input.inference_id {
-        let formatted_22 = AsRef::<str>::as_ref(inner_21);
-        if !formatted_22.is_empty() {
-            let header_value = formatted_22;
+    if let Some(inner_23) = &input.inference_id {
+        let formatted_24 = AsRef::<str>::as_ref(inner_23);
+        if !formatted_24.is_empty() {
+            let header_value = formatted_24;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -197,10 +214,10 @@ pub fn add_headers_invoke_endpoint_async(
             builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
         }
     }
-    if let Some(inner_23) = &input.input_location {
-        let formatted_24 = AsRef::<str>::as_ref(inner_23);
-        if !formatted_24.is_empty() {
-            let header_value = formatted_24;
+    if let Some(inner_25) = &input.input_location {
+        let formatted_26 = AsRef::<str>::as_ref(inner_25);
+        if !formatted_26.is_empty() {
+            let header_value = formatted_26;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -214,11 +231,11 @@ pub fn add_headers_invoke_endpoint_async(
             builder = builder.header("X-Amzn-SageMaker-InputLocation", header_value);
         }
     }
-    if let Some(inner_25) = &input.request_ttl_seconds {
-        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_25);
-        let formatted_26 = encoder.encode();
-        if !formatted_26.is_empty() {
-            let header_value = formatted_26;
+    if let Some(inner_27) = &input.request_ttl_seconds {
+        let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_27);
+        let formatted_28 = encoder.encode();
+        if !formatted_28.is_empty() {
+            let header_value = formatted_28;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {

@@ -1624,6 +1624,58 @@ pub fn parse_create_client_vpn_route_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_coip_cidr_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateCoipCidrOutput, crate::error::CreateCoipCidrError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateCoipCidrError::unhandled)?;
+    Err(crate::error::CreateCoipCidrError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_coip_cidr_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateCoipCidrOutput, crate::error::CreateCoipCidrError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_coip_cidr_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_coip_cidr(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateCoipCidrError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_coip_pool_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateCoipPoolOutput, crate::error::CreateCoipPoolError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateCoipPoolError::unhandled)?;
+    Err(crate::error::CreateCoipPoolError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_coip_pool_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateCoipPoolOutput, crate::error::CreateCoipPoolError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_coip_pool_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_coip_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateCoipPoolError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_customer_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2181,6 +2233,73 @@ pub fn parse_create_local_gateway_route_response(
             output,
         )
         .map_err(crate::error::CreateLocalGatewayRouteError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_local_gateway_route_table_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocalGatewayRouteTableOutput,
+    crate::error::CreateLocalGatewayRouteTableError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateLocalGatewayRouteTableError::unhandled)?;
+    Err(crate::error::CreateLocalGatewayRouteTableError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_local_gateway_route_table_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocalGatewayRouteTableOutput,
+    crate::error::CreateLocalGatewayRouteTableError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_local_gateway_route_table_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_local_gateway_route_table(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateLocalGatewayRouteTableError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_local_gateway_route_table_virtual_interface_group_association_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+    crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response).map_err(
+        crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled,
+    )?;
+    Err(
+        crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::generic(
+            generic,
+        ),
+    )
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_local_gateway_route_table_virtual_interface_group_association_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+    crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_local_gateway_route_table_virtual_interface_group_association(response.body().as_ref(), output).map_err(crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled)?;
         output.build()
     })
 }
@@ -3764,6 +3883,58 @@ pub fn parse_delete_client_vpn_route_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_coip_cidr_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteCoipCidrOutput, crate::error::DeleteCoipCidrError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteCoipCidrError::unhandled)?;
+    Err(crate::error::DeleteCoipCidrError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_coip_cidr_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteCoipCidrOutput, crate::error::DeleteCoipCidrError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_coip_cidr_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_coip_cidr(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteCoipCidrError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_coip_pool_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteCoipPoolOutput, crate::error::DeleteCoipPoolError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteCoipPoolError::unhandled)?;
+    Err(crate::error::DeleteCoipPoolError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_coip_pool_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteCoipPoolOutput, crate::error::DeleteCoipPoolError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_coip_pool_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_coip_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteCoipPoolError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_customer_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4181,6 +4352,73 @@ pub fn parse_delete_local_gateway_route_response(
             output,
         )
         .map_err(crate::error::DeleteLocalGatewayRouteError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_local_gateway_route_table_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteLocalGatewayRouteTableOutput,
+    crate::error::DeleteLocalGatewayRouteTableError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteLocalGatewayRouteTableError::unhandled)?;
+    Err(crate::error::DeleteLocalGatewayRouteTableError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_local_gateway_route_table_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteLocalGatewayRouteTableOutput,
+    crate::error::DeleteLocalGatewayRouteTableError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_local_gateway_route_table_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_local_gateway_route_table(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteLocalGatewayRouteTableError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_local_gateway_route_table_virtual_interface_group_association_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+    crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response).map_err(
+        crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled,
+    )?;
+    Err(
+        crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::generic(
+            generic,
+        ),
+    )
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_local_gateway_route_table_virtual_interface_group_association_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+    crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_local_gateway_route_table_virtual_interface_group_association(response.body().as_ref(), output).map_err(crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled)?;
         output.build()
     })
 }
@@ -13481,6 +13719,38 @@ pub fn parse_modify_launch_template_response(
             output,
         )
         .map_err(crate::error::ModifyLaunchTemplateError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_local_gateway_route_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyLocalGatewayRouteOutput,
+    crate::error::ModifyLocalGatewayRouteError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyLocalGatewayRouteError::unhandled)?;
+    Err(crate::error::ModifyLocalGatewayRouteError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_local_gateway_route_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyLocalGatewayRouteOutput,
+    crate::error::ModifyLocalGatewayRouteError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_local_gateway_route_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_local_gateway_route(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyLocalGatewayRouteError::unhandled)?;
         output.build()
     })
 }

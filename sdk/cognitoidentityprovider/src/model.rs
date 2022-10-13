@@ -251,6 +251,9 @@ pub struct UserPoolClientType {
     /// <p>You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     #[doc(hidden)]
     pub enable_propagate_additional_user_context_data: std::option::Option<bool>,
+    /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+    #[doc(hidden)]
+    pub auth_session_validity: std::option::Option<i32>,
 }
 impl UserPoolClientType {
     /// <p>The user pool ID for the user pool client.</p>
@@ -418,6 +421,10 @@ impl UserPoolClientType {
     pub fn enable_propagate_additional_user_context_data(&self) -> std::option::Option<bool> {
         self.enable_propagate_additional_user_context_data
     }
+    /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+    pub fn auth_session_validity(&self) -> std::option::Option<i32> {
+        self.auth_session_validity
+    }
 }
 impl std::fmt::Debug for UserPoolClientType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -458,6 +465,7 @@ impl std::fmt::Debug for UserPoolClientType {
             "enable_propagate_additional_user_context_data",
             &self.enable_propagate_additional_user_context_data,
         );
+        formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.finish()
     }
 }
@@ -496,6 +504,7 @@ pub mod user_pool_client_type {
             std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
         pub(crate) enable_token_revocation: std::option::Option<bool>,
         pub(crate) enable_propagate_additional_user_context_data: std::option::Option<bool>,
+        pub(crate) auth_session_validity: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The user pool ID for the user pool client.</p>
@@ -968,6 +977,16 @@ pub mod user_pool_client_type {
             self.enable_propagate_additional_user_context_data = input;
             self
         }
+        /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+        pub fn auth_session_validity(mut self, input: i32) -> Self {
+            self.auth_session_validity = Some(input);
+            self
+        }
+        /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+        pub fn set_auth_session_validity(mut self, input: std::option::Option<i32>) -> Self {
+            self.auth_session_validity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserPoolClientType`](crate::model::UserPoolClientType).
         pub fn build(self) -> crate::model::UserPoolClientType {
             crate::model::UserPoolClientType {
@@ -996,6 +1015,7 @@ pub mod user_pool_client_type {
                 enable_token_revocation: self.enable_token_revocation,
                 enable_propagate_additional_user_context_data: self
                     .enable_propagate_additional_user_context_data,
+                auth_session_validity: self.auth_session_validity,
             }
         }
     }
@@ -2531,29 +2551,32 @@ impl AsRef<str> for EmailSendingAccountType {
     }
 }
 
-/// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
-/// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+/// <p>The device-remembering configuration for a user pool. A <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html"> DescribeUserPool</a> request returns a null value for this object when the user pool isn't configured to remember devices. When device remembering is active, you can remember a user's device with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">ConfirmDevice</a> API request. Additionally. when the property <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>true</code>, you must follow <code>ConfirmDevice</code> with an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request that sets the user's device to <code>remembered</code> or <code>not_remembered</code>.</p>
+/// <p>To sign in with a remembered device, include <code>DEVICE_KEY</code> in the authentication parameters in your user's <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"> InitiateAuth</a> request. If your app doesn't include a <code>DEVICE_KEY</code> parameter, the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html#API_InitiateAuth_ResponseSyntax">response</a> from Amazon Cognito includes newly-generated <code>DEVICE_KEY</code> and <code>DEVICE_GROUP_KEY</code> values under <code>NewDeviceMetadata</code>. Store these values to use in future device-authentication requests.</p> <note>
+/// <p>When you provide a value for any property of <code>DeviceConfiguration</code>, you activate the device remembering for the user pool.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceConfigurationType {
-    /// <p>When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
-    /// <p>Regardless of the value of this field, users that sign in with new devices that have not been confirmed or remembered must provide a second factor if your user pool requires MFA.</p>
+    /// <p>When true, a remembered device can sign in with device authentication instead of SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
+    /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
     /// </note>
     #[doc(hidden)]
     pub challenge_required_on_new_device: bool,
-    /// <p>When true, Amazon Cognito doesn't remember newly-confirmed devices. Users who want to authenticate with their device can instead opt in to remembering their device. To collect a choice from your user, create an input prompt in your app and return the value that the user chooses in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request.</p>
+    /// <p>When true, Amazon Cognito doesn't automatically remember a user's device when your app sends a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html"> ConfirmDevice</a> API request. In your app, create a prompt for your user to choose whether they want to remember their device. Return the user's choice in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html"> UpdateDeviceStatus</a> API request.</p>
+    /// <p>When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito immediately remembers devices that you register in a <code>ConfirmDevice</code> API request.</p>
     #[doc(hidden)]
     pub device_only_remembered_on_user_prompt: bool,
 }
 impl DeviceConfigurationType {
-    /// <p>When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
-    /// <p>Regardless of the value of this field, users that sign in with new devices that have not been confirmed or remembered must provide a second factor if your user pool requires MFA.</p>
+    /// <p>When true, a remembered device can sign in with device authentication instead of SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
+    /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
     /// </note>
     pub fn challenge_required_on_new_device(&self) -> bool {
         self.challenge_required_on_new_device
     }
-    /// <p>When true, Amazon Cognito doesn't remember newly-confirmed devices. Users who want to authenticate with their device can instead opt in to remembering their device. To collect a choice from your user, create an input prompt in your app and return the value that the user chooses in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request.</p>
+    /// <p>When true, Amazon Cognito doesn't automatically remember a user's device when your app sends a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html"> ConfirmDevice</a> API request. In your app, create a prompt for your user to choose whether they want to remember their device. Return the user's choice in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html"> UpdateDeviceStatus</a> API request.</p>
+    /// <p>When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito immediately remembers devices that you register in a <code>ConfirmDevice</code> API request.</p>
     pub fn device_only_remembered_on_user_prompt(&self) -> bool {
         self.device_only_remembered_on_user_prompt
     }
@@ -2582,15 +2605,15 @@ pub mod device_configuration_type {
         pub(crate) device_only_remembered_on_user_prompt: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
-        /// <p>Regardless of the value of this field, users that sign in with new devices that have not been confirmed or remembered must provide a second factor if your user pool requires MFA.</p>
+        /// <p>When true, a remembered device can sign in with device authentication instead of SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
+        /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
         /// </note>
         pub fn challenge_required_on_new_device(mut self, input: bool) -> Self {
             self.challenge_required_on_new_device = Some(input);
             self
         }
-        /// <p>When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
-        /// <p>Regardless of the value of this field, users that sign in with new devices that have not been confirmed or remembered must provide a second factor if your user pool requires MFA.</p>
+        /// <p>When true, a remembered device can sign in with device authentication instead of SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
+        /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
         /// </note>
         pub fn set_challenge_required_on_new_device(
             mut self,
@@ -2599,12 +2622,14 @@ pub mod device_configuration_type {
             self.challenge_required_on_new_device = input;
             self
         }
-        /// <p>When true, Amazon Cognito doesn't remember newly-confirmed devices. Users who want to authenticate with their device can instead opt in to remembering their device. To collect a choice from your user, create an input prompt in your app and return the value that the user chooses in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request.</p>
+        /// <p>When true, Amazon Cognito doesn't automatically remember a user's device when your app sends a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html"> ConfirmDevice</a> API request. In your app, create a prompt for your user to choose whether they want to remember their device. Return the user's choice in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html"> UpdateDeviceStatus</a> API request.</p>
+        /// <p>When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito immediately remembers devices that you register in a <code>ConfirmDevice</code> API request.</p>
         pub fn device_only_remembered_on_user_prompt(mut self, input: bool) -> Self {
             self.device_only_remembered_on_user_prompt = Some(input);
             self
         }
-        /// <p>When true, Amazon Cognito doesn't remember newly-confirmed devices. Users who want to authenticate with their device can instead opt in to remembering their device. To collect a choice from your user, create an input prompt in your app and return the value that the user chooses in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request.</p>
+        /// <p>When true, Amazon Cognito doesn't automatically remember a user's device when your app sends a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html"> ConfirmDevice</a> API request. In your app, create a prompt for your user to choose whether they want to remember their device. Return the user's choice in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html"> UpdateDeviceStatus</a> API request.</p>
+        /// <p>When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito immediately remembers devices that you register in a <code>ConfirmDevice</code> API request.</p>
         pub fn set_device_only_remembered_on_user_prompt(
             mut self,
             input: std::option::Option<bool>,
@@ -9118,13 +9143,13 @@ pub struct UserPoolType {
     #[doc(hidden)]
     pub username_attributes:
         std::option::Option<std::vec::Vec<crate::model::UsernameAttributeType>>,
-    /// <p>The contents of the SMS verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub sms_verification_message: std::option::Option<std::string::String>,
-    /// <p>The contents of the email verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub email_verification_message: std::option::Option<std::string::String>,
-    /// <p>The subject of the email verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     #[doc(hidden)]
     pub email_verification_subject: std::option::Option<std::string::String>,
     /// <p>The template for verification messages.</p>
@@ -9257,15 +9282,15 @@ impl UserPoolType {
     ) -> std::option::Option<&[crate::model::UsernameAttributeType]> {
         self.username_attributes.as_deref()
     }
-    /// <p>The contents of the SMS verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn sms_verification_message(&self) -> std::option::Option<&str> {
         self.sms_verification_message.as_deref()
     }
-    /// <p>The contents of the email verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn email_verification_message(&self) -> std::option::Option<&str> {
         self.email_verification_message.as_deref()
     }
-    /// <p>The subject of the email verification message.</p>
+    /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn email_verification_subject(&self) -> std::option::Option<&str> {
         self.email_verification_subject.as_deref()
     }
@@ -9650,12 +9675,12 @@ pub mod user_pool_type {
             self.username_attributes = input;
             self
         }
-        /// <p>The contents of the SMS verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn sms_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.sms_verification_message = Some(input.into());
             self
         }
-        /// <p>The contents of the SMS verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_sms_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9663,12 +9688,12 @@ pub mod user_pool_type {
             self.sms_verification_message = input;
             self
         }
-        /// <p>The contents of the email verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn email_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_verification_message = Some(input.into());
             self
         }
-        /// <p>The contents of the email verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_email_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9676,12 +9701,12 @@ pub mod user_pool_type {
             self.email_verification_message = input;
             self
         }
-        /// <p>The subject of the email verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn email_verification_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_verification_subject = Some(input.into());
             self
         }
-        /// <p>The subject of the email verification message.</p>
+        /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
         pub fn set_email_verification_subject(
             mut self,
             input: std::option::Option<std::string::String>,

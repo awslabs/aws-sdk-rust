@@ -2401,6 +2401,11 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_inspector2_string_filter_list(tokens)?
                                 );
                             }
+                            "fixAvailable" => {
+                                builder = builder.set_fix_available(
+                                    crate::json_deser::deser_list_com_amazonaws_inspector2_string_filter_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4185,6 +4190,18 @@ where
                             "packageVulnerabilityDetails" => {
                                 builder = builder.set_package_vulnerability_details(
                                     crate::json_deser::deser_structure_crate_model_package_vulnerability_details(tokens)?
+                                );
+                            }
+                            "fixAvailable" => {
+                                builder = builder.set_fix_available(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::FixAvailable::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7108,6 +7125,15 @@ where
                             }
                             "fixedInVersion" => {
                                 builder = builder.set_fixed_in_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "remediation" => {
+                                builder = builder.set_remediation(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

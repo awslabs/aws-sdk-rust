@@ -7,6 +7,8 @@ AWS IoT Things Graph provides an integrated set of tools that enable developers 
 
 For more information about how AWS IoT Things Graph works, see the [User Guide](https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html).
 
+The AWS IoT Things Graph service is discontinued.
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -19,7 +21,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.49.0"
-aws-sdk-iotthingsgraph = "0.19.0"
+aws-sdk-iotthingsgraph = "0.20.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

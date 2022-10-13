@@ -73,6 +73,8 @@ pub enum SnowballCapacity {
     #[allow(missing_docs)] // documentation missing in model
     T14,
     #[allow(missing_docs)] // documentation missing in model
+    T32,
+    #[allow(missing_docs)] // documentation missing in model
     T42,
     #[allow(missing_docs)] // documentation missing in model
     T50,
@@ -91,6 +93,7 @@ impl std::convert::From<&str> for SnowballCapacity {
             "NoPreference" => SnowballCapacity::NoPreference,
             "T100" => SnowballCapacity::T100,
             "T14" => SnowballCapacity::T14,
+            "T32" => SnowballCapacity::T32,
             "T42" => SnowballCapacity::T42,
             "T50" => SnowballCapacity::T50,
             "T8" => SnowballCapacity::T8,
@@ -114,6 +117,7 @@ impl SnowballCapacity {
             SnowballCapacity::NoPreference => "NoPreference",
             SnowballCapacity::T100 => "T100",
             SnowballCapacity::T14 => "T14",
+            SnowballCapacity::T32 => "T32",
             SnowballCapacity::T42 => "T42",
             SnowballCapacity::T50 => "T50",
             SnowballCapacity::T8 => "T8",
@@ -128,6 +132,7 @@ impl SnowballCapacity {
             "NoPreference",
             "T100",
             "T14",
+            "T32",
             "T42",
             "T50",
             "T8",
@@ -1488,7 +1493,7 @@ pub struct LongTermPricingListEntry {
     /// <p>The status of the long-term pricing type.</p>
     #[doc(hidden)]
     pub long_term_pricing_status: std::option::Option<std::string::String>,
-    /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
+    /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
     #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
@@ -1530,7 +1535,7 @@ impl LongTermPricingListEntry {
     pub fn long_term_pricing_status(&self) -> std::option::Option<&str> {
         self.long_term_pricing_status.as_deref()
     }
-    /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
+    /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
     pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
@@ -1686,12 +1691,12 @@ pub mod long_term_pricing_list_entry {
             self.long_term_pricing_status = input;
             self
         }
-        /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
+        /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
+        /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1768,6 +1773,8 @@ pub enum SnowballType {
     Snc1Ssd,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
+    #[allow(missing_docs)] // documentation missing in model
+    V35C,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -1781,6 +1788,7 @@ impl std::convert::From<&str> for SnowballType {
             "SNC1_HDD" => SnowballType::Snc1Hdd,
             "SNC1_SSD" => SnowballType::Snc1Ssd,
             "STANDARD" => SnowballType::Standard,
+            "V3_5C" => SnowballType::V35C,
             other => SnowballType::Unknown(other.to_owned()),
         }
     }
@@ -1803,13 +1811,14 @@ impl SnowballType {
             SnowballType::Snc1Hdd => "SNC1_HDD",
             SnowballType::Snc1Ssd => "SNC1_SSD",
             SnowballType::Standard => "STANDARD",
+            SnowballType::V35C => "V3_5C",
             SnowballType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
-            "EDGE", "EDGE_C", "EDGE_CG", "EDGE_S", "SNC1_HDD", "SNC1_SSD", "STANDARD",
+            "EDGE", "EDGE_C", "EDGE_CG", "EDGE_S", "SNC1_HDD", "SNC1_SSD", "STANDARD", "V3_5C",
         ]
     }
 }

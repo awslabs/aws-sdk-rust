@@ -6260,6 +6260,9 @@ pub struct ListIntegrationItem {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    #[doc(hidden)]
+    pub is_unstructured: std::option::Option<bool>,
 }
 impl ListIntegrationItem {
     /// <p>The unique name of the domain.</p>
@@ -6300,6 +6303,10 @@ impl ListIntegrationItem {
     pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
+    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    pub fn is_unstructured(&self) -> std::option::Option<bool> {
+        self.is_unstructured
+    }
 }
 impl std::fmt::Debug for ListIntegrationItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6312,6 +6319,7 @@ impl std::fmt::Debug for ListIntegrationItem {
         formatter.field("tags", &self.tags);
         formatter.field("object_type_names", &self.object_type_names);
         formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("is_unstructured", &self.is_unstructured);
         formatter.finish()
     }
 }
@@ -6333,6 +6341,7 @@ pub mod list_integration_item {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) is_unstructured: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -6454,6 +6463,16 @@ pub mod list_integration_item {
             self.workflow_id = input;
             self
         }
+        /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+        pub fn is_unstructured(mut self, input: bool) -> Self {
+            self.is_unstructured = Some(input);
+            self
+        }
+        /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+        pub fn set_is_unstructured(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_unstructured = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListIntegrationItem`](crate::model::ListIntegrationItem).
         pub fn build(self) -> crate::model::ListIntegrationItem {
             crate::model::ListIntegrationItem {
@@ -6465,6 +6484,7 @@ pub mod list_integration_item {
                 tags: self.tags,
                 object_type_names: self.object_type_names,
                 workflow_id: self.workflow_id,
+                is_unstructured: self.is_unstructured,
             }
         }
     }

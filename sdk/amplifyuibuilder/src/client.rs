@@ -104,6 +104,19 @@ impl Client {
     pub fn create_component(&self) -> fluent_builders::CreateComponent {
         fluent_builders::CreateComponent::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateForm`](crate::client::fluent_builders::CreateForm) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateForm::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateForm::set_app_id): <p>The unique ID of the Amplify app to associate with the form.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateForm::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::CreateForm::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateForm::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateForm::set_client_token): <p>The unique client token.</p>
+    ///   - [`form_to_create(CreateFormData)`](crate::client::fluent_builders::CreateForm::form_to_create) / [`set_form_to_create(Option<CreateFormData>)`](crate::client::fluent_builders::CreateForm::set_form_to_create): <p>Represents the configuration of the form to create.</p>
+    /// - On success, responds with [`CreateFormOutput`](crate::output::CreateFormOutput) with field(s):
+    ///   - [`entity(Option<Form>)`](crate::output::CreateFormOutput::entity): <p>Describes the configuration of the new form.</p>
+    /// - On failure, responds with [`SdkError<CreateFormError>`](crate::error::CreateFormError)
+    pub fn create_form(&self) -> fluent_builders::CreateForm {
+        fluent_builders::CreateForm::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateTheme`](crate::client::fluent_builders::CreateTheme) operation.
     ///
     /// - The fluent builder is configurable:
@@ -128,6 +141,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::error::DeleteComponentError)
     pub fn delete_component(&self) -> fluent_builders::DeleteComponent {
         fluent_builders::DeleteComponent::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteForm`](crate::client::fluent_builders::DeleteForm) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteForm::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteForm::set_app_id): <p>The unique ID of the Amplify app associated with the form to delete.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteForm::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::DeleteForm::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteForm::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteForm::set_id): <p>The unique ID of the form to delete.</p>
+    /// - On success, responds with [`DeleteFormOutput`](crate::output::DeleteFormOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFormError>`](crate::error::DeleteFormError)
+    pub fn delete_form(&self) -> fluent_builders::DeleteForm {
+        fluent_builders::DeleteForm::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteTheme`](crate::client::fluent_builders::DeleteTheme) operation.
     ///
@@ -168,6 +193,20 @@ impl Client {
     pub fn export_components(&self) -> fluent_builders::ExportComponents {
         fluent_builders::ExportComponents::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ExportForms`](crate::client::fluent_builders::ExportForms) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ExportForms::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ExportForms::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ExportForms::set_app_id): <p>The unique ID of the Amplify app to export forms to.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ExportForms::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ExportForms::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ExportForms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ExportForms::set_next_token): <p>The token to request the next page of results.</p>
+    /// - On success, responds with [`ExportFormsOutput`](crate::output::ExportFormsOutput) with field(s):
+    ///   - [`entities(Option<Vec<Form>>)`](crate::output::ExportFormsOutput::entities): <p>Represents the configuration of the exported forms.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ExportFormsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ExportFormsError>`](crate::error::ExportFormsError)
+    pub fn export_forms(&self) -> fluent_builders::ExportForms {
+        fluent_builders::ExportForms::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ExportThemes`](crate::client::fluent_builders::ExportThemes) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ExportThemes::into_paginator).
     ///
@@ -193,6 +232,29 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::error::GetComponentError)
     pub fn get_component(&self) -> fluent_builders::GetComponent {
         fluent_builders::GetComponent::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetForm`](crate::client::fluent_builders::GetForm) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetForm::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetForm::set_app_id): <p>The unique ID of the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::GetForm::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::GetForm::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetForm::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetForm::set_id): <p>The unique ID of the form.</p>
+    /// - On success, responds with [`GetFormOutput`](crate::output::GetFormOutput) with field(s):
+    ///   - [`form(Option<Form>)`](crate::output::GetFormOutput::form): <p>Represents the configuration settings for the form.</p>
+    /// - On failure, responds with [`SdkError<GetFormError>`](crate::error::GetFormError)
+    pub fn get_form(&self) -> fluent_builders::GetForm {
+        fluent_builders::GetForm::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetMetadata`](crate::client::fluent_builders::GetMetadata) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetMetadata::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetMetadata::set_app_id): <p>The unique ID of the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::GetMetadata::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::GetMetadata::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    /// - On success, responds with [`GetMetadataOutput`](crate::output::GetMetadataOutput) with field(s):
+    ///   - [`features(Option<HashMap<String, String>>)`](crate::output::GetMetadataOutput::features): <p>Represents the configuration settings for the features metadata.</p>
+    /// - On failure, responds with [`SdkError<GetMetadataError>`](crate::error::GetMetadataError)
+    pub fn get_metadata(&self) -> fluent_builders::GetMetadata {
+        fluent_builders::GetMetadata::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetTheme`](crate::client::fluent_builders::GetTheme) operation.
     ///
@@ -221,6 +283,21 @@ impl Client {
     pub fn list_components(&self) -> fluent_builders::ListComponents {
         fluent_builders::ListComponents::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListForms`](crate::client::fluent_builders::ListForms) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListForms::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ListForms::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ListForms::set_app_id): <p>The unique ID for the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ListForms::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ListForms::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListForms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListForms::set_next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListForms::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListForms::set_max_results): <p>The maximum number of forms to retrieve.</p>
+    /// - On success, responds with [`ListFormsOutput`](crate::output::ListFormsOutput) with field(s):
+    ///   - [`entities(Option<Vec<FormSummary>>)`](crate::output::ListFormsOutput::entities): <p>The list of forms for the Amplify app.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFormsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListFormsError>`](crate::error::ListFormsError)
+    pub fn list_forms(&self) -> fluent_builders::ListForms {
+        fluent_builders::ListForms::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListThemes`](crate::client::fluent_builders::ListThemes) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThemes::into_paginator).
     ///
@@ -235,6 +312,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListThemesError>`](crate::error::ListThemesError)
     pub fn list_themes(&self) -> fluent_builders::ListThemes {
         fluent_builders::ListThemes::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutMetadataFlag`](crate::client::fluent_builders::PutMetadataFlag) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::PutMetadataFlag::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::PutMetadataFlag::set_app_id): <p>The unique ID for the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::PutMetadataFlag::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::PutMetadataFlag::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`feature_name(impl Into<String>)`](crate::client::fluent_builders::PutMetadataFlag::feature_name) / [`set_feature_name(Option<String>)`](crate::client::fluent_builders::PutMetadataFlag::set_feature_name): <p>The name of the feature associated with the metadata.</p>
+    ///   - [`body(PutMetadataFlagBody)`](crate::client::fluent_builders::PutMetadataFlag::body) / [`set_body(Option<PutMetadataFlagBody>)`](crate::client::fluent_builders::PutMetadataFlag::set_body): <p>The metadata information to store.</p>
+    /// - On success, responds with [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput)
+
+    /// - On failure, responds with [`SdkError<PutMetadataFlagError>`](crate::error::PutMetadataFlagError)
+    pub fn put_metadata_flag(&self) -> fluent_builders::PutMetadataFlag {
+        fluent_builders::PutMetadataFlag::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`RefreshToken`](crate::client::fluent_builders::RefreshToken) operation.
     ///
@@ -261,6 +351,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateComponentError>`](crate::error::UpdateComponentError)
     pub fn update_component(&self) -> fluent_builders::UpdateComponent {
         fluent_builders::UpdateComponent::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateForm`](crate::client::fluent_builders::UpdateForm) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateForm::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateForm::set_app_id): <p>The unique ID for the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateForm::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::UpdateForm::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateForm::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateForm::set_id): <p>The unique ID for the form.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateForm::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateForm::set_client_token): <p>The unique client token.</p>
+    ///   - [`updated_form(UpdateFormData)`](crate::client::fluent_builders::UpdateForm::updated_form) / [`set_updated_form(Option<UpdateFormData>)`](crate::client::fluent_builders::UpdateForm::set_updated_form): <p>The request accepts the following data in JSON format.</p>
+    /// - On success, responds with [`UpdateFormOutput`](crate::output::UpdateFormOutput) with field(s):
+    ///   - [`entity(Option<Form>)`](crate::output::UpdateFormOutput::entity): <p>Describes the configuration of the updated form.</p>
+    /// - On failure, responds with [`SdkError<UpdateFormError>`](crate::error::UpdateFormError)
+    pub fn update_form(&self) -> fluent_builders::UpdateForm {
+        fluent_builders::UpdateForm::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateTheme`](crate::client::fluent_builders::UpdateTheme) operation.
     ///
@@ -394,6 +498,119 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CreateComponentData>,
         ) -> Self {
             self.inner = self.inner.set_component_to_create(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateForm`.
+    ///
+    /// <p>Creates a new form for an Amplify app.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateForm {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_form_input::Builder,
+    }
+    impl CreateForm {
+        /// Creates a new `CreateForm`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateForm,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateFormError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateFormOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateFormError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the Amplify app to associate with the form.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the Amplify app to associate with the form.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The unique client token.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The unique client token.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>Represents the configuration of the form to create.</p>
+        pub fn form_to_create(mut self, input: crate::model::CreateFormData) -> Self {
+            self.inner = self.inner.form_to_create(input);
+            self
+        }
+        /// <p>Represents the configuration of the form to create.</p>
+        pub fn set_form_to_create(
+            mut self,
+            input: std::option::Option<crate::model::CreateFormData>,
+        ) -> Self {
+            self.inner = self.inner.set_form_to_create(input);
             self
         }
     }
@@ -605,6 +822,106 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the component to delete.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteForm`.
+    ///
+    /// <p>Deletes a form from an Amplify app.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteForm {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_form_input::Builder,
+    }
+    impl DeleteForm {
+        /// Creates a new `DeleteForm`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteForm,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteFormError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteFormOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteFormError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the Amplify app associated with the form to delete.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the Amplify app associated with the form to delete.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The unique ID of the form to delete.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique ID of the form to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -909,6 +1226,112 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ExportForms`.
+    ///
+    /// <p>Exports form configurations to code that is ready to integrate into an Amplify app.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ExportForms {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::export_forms_input::Builder,
+    }
+    impl ExportForms {
+        /// Creates a new `ExportForms`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ExportForms,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ExportFormsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ExportFormsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ExportFormsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ExportFormsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ExportFormsPaginator {
+            crate::paginator::ExportFormsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The unique ID of the Amplify app to export forms to.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the Amplify app to export forms to.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ExportThemes`.
     ///
     /// <p>Exports theme configurations to code that is ready to integrate into an Amplify app.</p>
@@ -1112,6 +1535,196 @@ pub mod fluent_builders {
         /// <p>The unique ID of the component.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetForm`.
+    ///
+    /// <p>Returns an existing form for an Amplify app.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetForm {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_form_input::Builder,
+    }
+    impl GetForm {
+        /// Creates a new `GetForm`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetForm,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetFormError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetFormOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetFormError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the Amplify app.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the Amplify app.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The unique ID of the form.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique ID of the form.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetMetadata`.
+    ///
+    /// <p>Returns existing metadata for an Amplify app.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetMetadata {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_metadata_input::Builder,
+    }
+    impl GetMetadata {
+        /// Creates a new `GetMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetMetadata,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetMetadataError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetMetadataError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the Amplify app.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the Amplify app.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
             self
         }
     }
@@ -1331,6 +1944,122 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListForms`.
+    ///
+    /// <p>Retrieves a list of forms for a specified Amplify app and backend environment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListForms {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_forms_input::Builder,
+    }
+    impl ListForms {
+        /// Creates a new `ListForms`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListForms,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListFormsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListFormsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListFormsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFormsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFormsPaginator {
+            crate::paginator::ListFormsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The unique ID for the Amplify app.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
+            self
+        }
+        /// <p>The unique ID for the Amplify app.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of forms to retrieve.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of forms to retrieve.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListThemes`.
     ///
     /// <p>Retrieves a list of themes for a specified Amplify app and backend environment.</p>
@@ -1444,6 +2173,119 @@ pub mod fluent_builders {
         /// <p>The maximum number of theme results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutMetadataFlag`.
+    ///
+    /// <p>Stores the metadata information about a feature on a form or view.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutMetadataFlag {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_metadata_flag_input::Builder,
+    }
+    impl PutMetadataFlag {
+        /// Creates a new `PutMetadataFlag`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::PutMetadataFlag,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutMetadataFlagError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutMetadataFlagOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutMetadataFlagError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID for the Amplify app.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
+            self
+        }
+        /// <p>The unique ID for the Amplify app.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The name of the feature associated with the metadata.</p>
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input.into());
+            self
+        }
+        /// <p>The name of the feature associated with the metadata.</p>
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_feature_name(input);
+            self
+        }
+        /// <p>The metadata information to store.</p>
+        pub fn body(mut self, input: crate::model::PutMetadataFlagBody) -> Self {
+            self.inner = self.inner.body(input);
+            self
+        }
+        /// <p>The metadata information to store.</p>
+        pub fn set_body(
+            mut self,
+            input: std::option::Option<crate::model::PutMetadataFlagBody>,
+        ) -> Self {
+            self.inner = self.inner.set_body(input);
             self
         }
     }
@@ -1660,6 +2502,129 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::UpdateComponentData>,
         ) -> Self {
             self.inner = self.inner.set_updated_component(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateForm`.
+    ///
+    /// <p>Updates an existing form.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateForm {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_form_input::Builder,
+    }
+    impl UpdateForm {
+        /// Creates a new `UpdateForm`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateForm,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateFormError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateFormOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateFormError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID for the Amplify app.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
+            self
+        }
+        /// <p>The unique ID for the Amplify app.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_app_id(input);
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The unique ID for the form.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique ID for the form.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The unique client token.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The unique client token.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The request accepts the following data in JSON format.</p>
+        pub fn updated_form(mut self, input: crate::model::UpdateFormData) -> Self {
+            self.inner = self.inner.updated_form(input);
+            self
+        }
+        /// <p>The request accepts the following data in JSON format.</p>
+        pub fn set_updated_form(
+            mut self,
+            input: std::option::Option<crate::model::UpdateFormData>,
+        ) -> Self {
+            self.inner = self.inner.set_updated_form(input);
             self
         }
     }

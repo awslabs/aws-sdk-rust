@@ -39,6 +39,9 @@ pub struct UpdateSlotTypeOutput {
     /// <p>Provides information about the external source of the slot type's definition.</p>
     #[doc(hidden)]
     pub external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
+    /// <p>Specifications for a composite slot type.</p>
+    #[doc(hidden)]
+    pub composite_slot_type_setting: std::option::Option<crate::model::CompositeSlotTypeSetting>,
 }
 impl UpdateSlotTypeOutput {
     /// <p>The unique identifier of the updated slot type.</p>
@@ -93,6 +96,12 @@ impl UpdateSlotTypeOutput {
     ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
+    /// <p>Specifications for a composite slot type.</p>
+    pub fn composite_slot_type_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::CompositeSlotTypeSetting> {
+        self.composite_slot_type_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSlotTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -112,6 +121,10 @@ impl std::fmt::Debug for UpdateSlotTypeOutput {
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
         formatter.field("external_source_setting", &self.external_source_setting);
+        formatter.field(
+            "composite_slot_type_setting",
+            &self.composite_slot_type_setting,
+        );
         formatter.finish()
     }
 }
@@ -136,6 +149,8 @@ pub mod update_slot_type_output {
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) external_source_setting:
             std::option::Option<crate::model::ExternalSourceSetting>,
+        pub(crate) composite_slot_type_setting:
+            std::option::Option<crate::model::CompositeSlotTypeSetting>,
     }
     impl Builder {
         /// <p>The unique identifier of the updated slot type.</p>
@@ -291,6 +306,22 @@ pub mod update_slot_type_output {
             self.external_source_setting = input;
             self
         }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn composite_slot_type_setting(
+            mut self,
+            input: crate::model::CompositeSlotTypeSetting,
+        ) -> Self {
+            self.composite_slot_type_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn set_composite_slot_type_setting(
+            mut self,
+            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        ) -> Self {
+            self.composite_slot_type_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSlotTypeOutput`](crate::output::UpdateSlotTypeOutput).
         pub fn build(self) -> crate::output::UpdateSlotTypeOutput {
             crate::output::UpdateSlotTypeOutput {
@@ -306,6 +337,7 @@ pub mod update_slot_type_output {
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
                 external_source_setting: self.external_source_setting,
+                composite_slot_type_setting: self.composite_slot_type_setting,
             }
         }
     }
@@ -360,6 +392,9 @@ pub struct UpdateSlotOutput {
     /// <p>Indicates whether the slot accepts multiple values in one response.</p>
     #[doc(hidden)]
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    #[doc(hidden)]
+    pub sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
 }
 impl UpdateSlotOutput {
     /// <p>The unique identifier of the slot that was updated.</p>
@@ -418,6 +453,10 @@ impl UpdateSlotOutput {
     ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::model::SubSlotSetting> {
+        self.sub_slot_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSlotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -435,6 +474,7 @@ impl std::fmt::Debug for UpdateSlotOutput {
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
         formatter.field("multiple_values_setting", &self.multiple_values_setting);
+        formatter.field("sub_slot_setting", &self.sub_slot_setting);
         formatter.finish()
     }
 }
@@ -459,6 +499,7 @@ pub mod update_slot_output {
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) multiple_values_setting:
             std::option::Option<crate::model::MultipleValuesSetting>,
+        pub(crate) sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
     }
     impl Builder {
         /// <p>The unique identifier of the slot that was updated.</p>
@@ -612,6 +653,19 @@ pub mod update_slot_output {
             self.multiple_values_setting = input;
             self
         }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
+            self.sub_slot_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn set_sub_slot_setting(
+            mut self,
+            input: std::option::Option<crate::model::SubSlotSetting>,
+        ) -> Self {
+            self.sub_slot_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSlotOutput`](crate::output::UpdateSlotOutput).
         pub fn build(self) -> crate::output::UpdateSlotOutput {
             crate::output::UpdateSlotOutput {
@@ -628,6 +682,7 @@ pub mod update_slot_output {
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
                 multiple_values_setting: self.multiple_values_setting,
+                sub_slot_setting: self.sub_slot_setting,
             }
         }
     }
@@ -5406,6 +5461,9 @@ pub struct DescribeSlotTypeOutput {
     /// <p>Provides information about the external source of the slot type's definition.</p>
     #[doc(hidden)]
     pub external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
+    /// <p>Specifications for a composite slot type.</p>
+    #[doc(hidden)]
+    pub composite_slot_type_setting: std::option::Option<crate::model::CompositeSlotTypeSetting>,
 }
 impl DescribeSlotTypeOutput {
     /// <p>The unique identifier for the slot type.</p>
@@ -5460,6 +5518,12 @@ impl DescribeSlotTypeOutput {
     ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
+    /// <p>Specifications for a composite slot type.</p>
+    pub fn composite_slot_type_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::CompositeSlotTypeSetting> {
+        self.composite_slot_type_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSlotTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5479,6 +5543,10 @@ impl std::fmt::Debug for DescribeSlotTypeOutput {
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
         formatter.field("external_source_setting", &self.external_source_setting);
+        formatter.field(
+            "composite_slot_type_setting",
+            &self.composite_slot_type_setting,
+        );
         formatter.finish()
     }
 }
@@ -5503,6 +5571,8 @@ pub mod describe_slot_type_output {
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) external_source_setting:
             std::option::Option<crate::model::ExternalSourceSetting>,
+        pub(crate) composite_slot_type_setting:
+            std::option::Option<crate::model::CompositeSlotTypeSetting>,
     }
     impl Builder {
         /// <p>The unique identifier for the slot type.</p>
@@ -5658,6 +5728,22 @@ pub mod describe_slot_type_output {
             self.external_source_setting = input;
             self
         }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn composite_slot_type_setting(
+            mut self,
+            input: crate::model::CompositeSlotTypeSetting,
+        ) -> Self {
+            self.composite_slot_type_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn set_composite_slot_type_setting(
+            mut self,
+            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        ) -> Self {
+            self.composite_slot_type_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeSlotTypeOutput`](crate::output::DescribeSlotTypeOutput).
         pub fn build(self) -> crate::output::DescribeSlotTypeOutput {
             crate::output::DescribeSlotTypeOutput {
@@ -5673,6 +5759,7 @@ pub mod describe_slot_type_output {
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
                 external_source_setting: self.external_source_setting,
+                composite_slot_type_setting: self.composite_slot_type_setting,
             }
         }
     }
@@ -5728,6 +5815,9 @@ pub struct DescribeSlotOutput {
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    #[doc(hidden)]
+    pub sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
 }
 impl DescribeSlotOutput {
     /// <p>The unique identifier generated for the slot.</p>
@@ -5787,6 +5877,10 @@ impl DescribeSlotOutput {
     ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::model::SubSlotSetting> {
+        self.sub_slot_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSlotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5804,6 +5898,7 @@ impl std::fmt::Debug for DescribeSlotOutput {
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
         formatter.field("multiple_values_setting", &self.multiple_values_setting);
+        formatter.field("sub_slot_setting", &self.sub_slot_setting);
         formatter.finish()
     }
 }
@@ -5828,6 +5923,7 @@ pub mod describe_slot_output {
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) multiple_values_setting:
             std::option::Option<crate::model::MultipleValuesSetting>,
+        pub(crate) sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
     }
     impl Builder {
         /// <p>The unique identifier generated for the slot.</p>
@@ -5983,6 +6079,19 @@ pub mod describe_slot_output {
             self.multiple_values_setting = input;
             self
         }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
+            self.sub_slot_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn set_sub_slot_setting(
+            mut self,
+            input: std::option::Option<crate::model::SubSlotSetting>,
+        ) -> Self {
+            self.sub_slot_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeSlotOutput`](crate::output::DescribeSlotOutput).
         pub fn build(self) -> crate::output::DescribeSlotOutput {
             crate::output::DescribeSlotOutput {
@@ -5999,6 +6108,7 @@ pub mod describe_slot_output {
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
                 multiple_values_setting: self.multiple_values_setting,
+                sub_slot_setting: self.sub_slot_setting,
             }
         }
     }
@@ -9864,6 +9974,9 @@ pub struct CreateSlotTypeOutput {
     /// <p>The type of external information used to create the slot type.</p>
     #[doc(hidden)]
     pub external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
+    /// <p>Specifications for a composite slot type.</p>
+    #[doc(hidden)]
+    pub composite_slot_type_setting: std::option::Option<crate::model::CompositeSlotTypeSetting>,
 }
 impl CreateSlotTypeOutput {
     /// <p>The unique identifier assigned to the slot type. Use this to identify the slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.</p>
@@ -9914,6 +10027,12 @@ impl CreateSlotTypeOutput {
     ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
+    /// <p>Specifications for a composite slot type.</p>
+    pub fn composite_slot_type_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::CompositeSlotTypeSetting> {
+        self.composite_slot_type_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSlotTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9932,6 +10051,10 @@ impl std::fmt::Debug for CreateSlotTypeOutput {
         formatter.field("locale_id", &self.locale_id);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("external_source_setting", &self.external_source_setting);
+        formatter.field(
+            "composite_slot_type_setting",
+            &self.composite_slot_type_setting,
+        );
         formatter.finish()
     }
 }
@@ -9955,6 +10078,8 @@ pub mod create_slot_type_output {
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) external_source_setting:
             std::option::Option<crate::model::ExternalSourceSetting>,
+        pub(crate) composite_slot_type_setting:
+            std::option::Option<crate::model::CompositeSlotTypeSetting>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the slot type. Use this to identify the slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.</p>
@@ -10097,6 +10222,22 @@ pub mod create_slot_type_output {
             self.external_source_setting = input;
             self
         }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn composite_slot_type_setting(
+            mut self,
+            input: crate::model::CompositeSlotTypeSetting,
+        ) -> Self {
+            self.composite_slot_type_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn set_composite_slot_type_setting(
+            mut self,
+            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        ) -> Self {
+            self.composite_slot_type_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSlotTypeOutput`](crate::output::CreateSlotTypeOutput).
         pub fn build(self) -> crate::output::CreateSlotTypeOutput {
             crate::output::CreateSlotTypeOutput {
@@ -10111,6 +10252,7 @@ pub mod create_slot_type_output {
                 locale_id: self.locale_id,
                 creation_date_time: self.creation_date_time,
                 external_source_setting: self.external_source_setting,
+                composite_slot_type_setting: self.composite_slot_type_setting,
             }
         }
     }
@@ -10162,6 +10304,9 @@ pub struct CreateSlotOutput {
     /// <p>Indicates whether the slot returns multiple values in one response.</p>
     #[doc(hidden)]
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    #[doc(hidden)]
+    pub sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
 }
 impl CreateSlotOutput {
     /// <p>The unique identifier associated with the slot. Use this to identify the slot when you update or delete it.</p>
@@ -10216,6 +10361,10 @@ impl CreateSlotOutput {
     ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::model::SubSlotSetting> {
+        self.sub_slot_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSlotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10232,6 +10381,7 @@ impl std::fmt::Debug for CreateSlotOutput {
         formatter.field("intent_id", &self.intent_id);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("multiple_values_setting", &self.multiple_values_setting);
+        formatter.field("sub_slot_setting", &self.sub_slot_setting);
         formatter.finish()
     }
 }
@@ -10255,6 +10405,7 @@ pub mod create_slot_output {
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) multiple_values_setting:
             std::option::Option<crate::model::MultipleValuesSetting>,
+        pub(crate) sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
     }
     impl Builder {
         /// <p>The unique identifier associated with the slot. Use this to identify the slot when you update or delete it.</p>
@@ -10395,6 +10546,19 @@ pub mod create_slot_output {
             self.multiple_values_setting = input;
             self
         }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
+            self.sub_slot_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn set_sub_slot_setting(
+            mut self,
+            input: std::option::Option<crate::model::SubSlotSetting>,
+        ) -> Self {
+            self.sub_slot_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSlotOutput`](crate::output::CreateSlotOutput).
         pub fn build(self) -> crate::output::CreateSlotOutput {
             crate::output::CreateSlotOutput {
@@ -10410,6 +10574,7 @@ pub mod create_slot_output {
                 intent_id: self.intent_id,
                 creation_date_time: self.creation_date_time,
                 multiple_values_setting: self.multiple_values_setting,
+                sub_slot_setting: self.sub_slot_setting,
             }
         }
     }

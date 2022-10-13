@@ -978,7 +978,7 @@ impl AsRef<str> for EventSourceValues {
 }
 
 /// <p> <b>[Snapshot and AMI policies only]</b> Specifies optional parameters for snapshot and AMI policies. The set of valid parameters depends on the combination of policy type and target resource type.</p>
-/// <p>If you choose to exclude boot volumes and you specify tags that consequently exclude all of the additional data volumes attached to an instance, then Amazon DLM will not create any snapshots for the affected instance, and it will emit a <code>SnapshotsCreateFailed</code> Amazon CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html">Monitor your policies using Amazon CloudWatch</a>.</p>
+/// <p>If you choose to exclude boot volumes and you specify tags that consequently exclude all of the additional data volumes attached to an instance, then Amazon Data Lifecycle Manager will not create any snapshots for the affected instance, and it will emit a <code>SnapshotsCreateFailed</code> Amazon CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html">Monitor your policies using Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameters {
@@ -1198,6 +1198,10 @@ pub struct Schedule {
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
     #[doc(hidden)]
     pub deprecate_rule: std::option::Option<crate::model::DeprecateRule>,
+    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
+    /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
+    #[doc(hidden)]
+    pub archive_rule: std::option::Option<crate::model::ArchiveRule>,
 }
 impl Schedule {
     /// <p>The name of the schedule.</p>
@@ -1244,6 +1248,11 @@ impl Schedule {
     pub fn deprecate_rule(&self) -> std::option::Option<&crate::model::DeprecateRule> {
         self.deprecate_rule.as_ref()
     }
+    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
+    /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
+    pub fn archive_rule(&self) -> std::option::Option<&crate::model::ArchiveRule> {
+        self.archive_rule.as_ref()
+    }
 }
 impl std::fmt::Debug for Schedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1258,6 +1267,7 @@ impl std::fmt::Debug for Schedule {
         formatter.field("cross_region_copy_rules", &self.cross_region_copy_rules);
         formatter.field("share_rules", &self.share_rules);
         formatter.field("deprecate_rule", &self.deprecate_rule);
+        formatter.field("archive_rule", &self.archive_rule);
         formatter.finish()
     }
 }
@@ -1278,6 +1288,7 @@ pub mod schedule {
             std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyRule>>,
         pub(crate) share_rules: std::option::Option<std::vec::Vec<crate::model::ShareRule>>,
         pub(crate) deprecate_rule: std::option::Option<crate::model::DeprecateRule>,
+        pub(crate) archive_rule: std::option::Option<crate::model::ArchiveRule>,
     }
     impl Builder {
         /// <p>The name of the schedule.</p>
@@ -1432,6 +1443,21 @@ pub mod schedule {
             self.deprecate_rule = input;
             self
         }
+        /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
+        /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
+        pub fn archive_rule(mut self, input: crate::model::ArchiveRule) -> Self {
+            self.archive_rule = Some(input);
+            self
+        }
+        /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
+        /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
+        pub fn set_archive_rule(
+            mut self,
+            input: std::option::Option<crate::model::ArchiveRule>,
+        ) -> Self {
+            self.archive_rule = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Schedule`](crate::model::Schedule).
         pub fn build(self) -> crate::model::Schedule {
             crate::model::Schedule {
@@ -1445,6 +1471,7 @@ pub mod schedule {
                 cross_region_copy_rules: self.cross_region_copy_rules,
                 share_rules: self.share_rules,
                 deprecate_rule: self.deprecate_rule,
+                archive_rule: self.archive_rule,
             }
         }
     }
@@ -1453,6 +1480,226 @@ impl Schedule {
     /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
     pub fn builder() -> crate::model::schedule::Builder {
         crate::model::schedule::Builder::default()
+    }
+}
+
+/// <p> <b>[Snapshot policies only]</b> Specifies a snapshot archiving rule for a schedule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ArchiveRule {
+    /// <p>Information about the retention period for the snapshot archiving rule.</p>
+    #[doc(hidden)]
+    pub retain_rule: std::option::Option<crate::model::ArchiveRetainRule>,
+}
+impl ArchiveRule {
+    /// <p>Information about the retention period for the snapshot archiving rule.</p>
+    pub fn retain_rule(&self) -> std::option::Option<&crate::model::ArchiveRetainRule> {
+        self.retain_rule.as_ref()
+    }
+}
+impl std::fmt::Debug for ArchiveRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ArchiveRule");
+        formatter.field("retain_rule", &self.retain_rule);
+        formatter.finish()
+    }
+}
+/// See [`ArchiveRule`](crate::model::ArchiveRule).
+pub mod archive_rule {
+
+    /// A builder for [`ArchiveRule`](crate::model::ArchiveRule).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) retain_rule: std::option::Option<crate::model::ArchiveRetainRule>,
+    }
+    impl Builder {
+        /// <p>Information about the retention period for the snapshot archiving rule.</p>
+        pub fn retain_rule(mut self, input: crate::model::ArchiveRetainRule) -> Self {
+            self.retain_rule = Some(input);
+            self
+        }
+        /// <p>Information about the retention period for the snapshot archiving rule.</p>
+        pub fn set_retain_rule(
+            mut self,
+            input: std::option::Option<crate::model::ArchiveRetainRule>,
+        ) -> Self {
+            self.retain_rule = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ArchiveRule`](crate::model::ArchiveRule).
+        pub fn build(self) -> crate::model::ArchiveRule {
+            crate::model::ArchiveRule {
+                retain_rule: self.retain_rule,
+            }
+        }
+    }
+}
+impl ArchiveRule {
+    /// Creates a new builder-style object to manufacture [`ArchiveRule`](crate::model::ArchiveRule).
+    pub fn builder() -> crate::model::archive_rule::Builder {
+        crate::model::archive_rule::Builder::default()
+    }
+}
+
+/// <p> <b>[Snapshot policies only]</b> Specifies information about the archive storage tier retention period.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ArchiveRetainRule {
+    /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
+    #[doc(hidden)]
+    pub retention_archive_tier: std::option::Option<crate::model::RetentionArchiveTier>,
+}
+impl ArchiveRetainRule {
+    /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
+    pub fn retention_archive_tier(
+        &self,
+    ) -> std::option::Option<&crate::model::RetentionArchiveTier> {
+        self.retention_archive_tier.as_ref()
+    }
+}
+impl std::fmt::Debug for ArchiveRetainRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ArchiveRetainRule");
+        formatter.field("retention_archive_tier", &self.retention_archive_tier);
+        formatter.finish()
+    }
+}
+/// See [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
+pub mod archive_retain_rule {
+
+    /// A builder for [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) retention_archive_tier: std::option::Option<crate::model::RetentionArchiveTier>,
+    }
+    impl Builder {
+        /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
+        pub fn retention_archive_tier(mut self, input: crate::model::RetentionArchiveTier) -> Self {
+            self.retention_archive_tier = Some(input);
+            self
+        }
+        /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
+        pub fn set_retention_archive_tier(
+            mut self,
+            input: std::option::Option<crate::model::RetentionArchiveTier>,
+        ) -> Self {
+            self.retention_archive_tier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
+        pub fn build(self) -> crate::model::ArchiveRetainRule {
+            crate::model::ArchiveRetainRule {
+                retention_archive_tier: self.retention_archive_tier,
+            }
+        }
+    }
+}
+impl ArchiveRetainRule {
+    /// Creates a new builder-style object to manufacture [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
+    pub fn builder() -> crate::model::archive_retain_rule::Builder {
+        crate::model::archive_retain_rule::Builder::default()
+    }
+}
+
+/// <p> <b>[Snapshot policies only]</b> Describes the retention rule for archived snapshots. Once the archive retention threshold is met, the snapshots are permanently deleted from the archive tier.</p> <note>
+/// <p>The archive retention rule must retain snapshots in the archive tier for a minimum of 90 days.</p>
+/// </note>
+/// <p>For <b>count-based schedules</b>, you must specify <b>Count</b>. For <b>age-based schedules</b>, you must specify <b>Interval</b> and <b> IntervalUnit</b>.</p>
+/// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RetentionArchiveTier {
+    /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
+    #[doc(hidden)]
+    pub count: i32,
+    /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
+    #[doc(hidden)]
+    pub interval: i32,
+    /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
+    #[doc(hidden)]
+    pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+}
+impl RetentionArchiveTier {
+    /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
+    pub fn interval(&self) -> i32 {
+        self.interval
+    }
+    /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
+    pub fn interval_unit(&self) -> std::option::Option<&crate::model::RetentionIntervalUnitValues> {
+        self.interval_unit.as_ref()
+    }
+}
+impl std::fmt::Debug for RetentionArchiveTier {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RetentionArchiveTier");
+        formatter.field("count", &self.count);
+        formatter.field("interval", &self.interval);
+        formatter.field("interval_unit", &self.interval_unit);
+        formatter.finish()
+    }
+}
+/// See [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
+pub mod retention_archive_tier {
+
+    /// A builder for [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) count: std::option::Option<i32>,
+        pub(crate) interval: std::option::Option<i32>,
+        pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+    }
+    impl Builder {
+        /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
+            self
+        }
+        /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
+            self
+        }
+        /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
+        pub fn interval(mut self, input: i32) -> Self {
+            self.interval = Some(input);
+            self
+        }
+        /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
+        pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.interval = input;
+            self
+        }
+        /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
+        pub fn interval_unit(mut self, input: crate::model::RetentionIntervalUnitValues) -> Self {
+            self.interval_unit = Some(input);
+            self
+        }
+        /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
+        pub fn set_interval_unit(
+            mut self,
+            input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
+        ) -> Self {
+            self.interval_unit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
+        pub fn build(self) -> crate::model::RetentionArchiveTier {
+            crate::model::RetentionArchiveTier {
+                count: self.count.unwrap_or_default(),
+                interval: self.interval.unwrap_or_default(),
+                interval_unit: self.interval_unit,
+            }
+        }
+    }
+}
+impl RetentionArchiveTier {
+    /// Creates a new builder-style object to manufacture [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
+    pub fn builder() -> crate::model::retention_archive_tier::Builder {
+        crate::model::retention_archive_tier::Builder::default()
     }
 }
 
@@ -1950,7 +2197,7 @@ impl CrossRegionCopyDeprecateRule {
     }
 }
 
-/// <p> <b>[Snapshot policies only]</b> Specifies a rule for enabling fast snapshot restore for snapshots created by snaspshot policies. You can enable fast snapshot restore based on either a count or a time interval.</p>
+/// <p> <b>[Snapshot policies only]</b> Specifies a rule for enabling fast snapshot restore for snapshots created by snapshot policies. You can enable fast snapshot restore based on either a count or a time interval.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FastRestoreRule {
@@ -2077,23 +2324,30 @@ impl FastRestoreRule {
     }
 }
 
-/// <p> <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots created by snapshot policies or for AMIs created by AMI policies. You can retain snapshots based on either a count or a time interval.</p>
-/// <p>You must specify either <b>Count</b>, or <b>Interval</b> and <b>IntervalUnit</b>.</p>
+/// <p> <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots created by snapshot policies, or for AMIs created by AMI policies.</p> <note>
+/// <p>For snapshot policies that have an <code>ArchiveRule</code>, this retention rule applies to standard tier retention. When the retention threshold is met, snapshots are moved from the standard to the archive tier.</p>
+/// <p>For snapshot policies that do not have an <b>ArchiveRule</b>, snapshots are permanently deleted when this retention threshold is met.</p>
+/// </note>
+/// <p>You can retain snapshots based on either a count or a time interval.</p>
+/// <ul>
+/// <li> <p> <b>Count-based retention</b> </p> <p>You must specify <b>Count</b>. If you specify an <code>ArchiveRule</code> for the schedule, then you can specify a retention count of <code>0</code> to archive snapshots immediately after creation. If you specify a <code>FastRestoreRule</code>, <code>ShareRule</code>, or a <code>CrossRegionCopyRule</code>, then you must specify a retention count of <code>1</code> or more.</p> </li>
+/// <li> <p> <b>Age-based retention</b> </p> <p>You must specify <b>Interval</b> and <b>IntervalUnit</b>. If you specify an <code>ArchiveRule</code> for the schedule, then you can specify a retention interval of <code>0</code> days to archive snapshots immediately after creation. If you specify a <code>FastRestoreRule</code>, <code>ShareRule</code>, or a <code>CrossRegionCopyRule</code>, then you must specify a retention interval of <code>1</code> day or more.</p> </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetainRule {
-    /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>
+    /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
     #[doc(hidden)]
     pub count: i32,
     /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     #[doc(hidden)]
     pub interval: i32,
-    /// <p>The unit of time for time-based retention.</p>
+    /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
     #[doc(hidden)]
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl RetainRule {
-    /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>
+    /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
     pub fn count(&self) -> i32 {
         self.count
     }
@@ -2101,7 +2355,7 @@ impl RetainRule {
     pub fn interval(&self) -> i32 {
         self.interval
     }
-    /// <p>The unit of time for time-based retention.</p>
+    /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
     pub fn interval_unit(&self) -> std::option::Option<&crate::model::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
@@ -2126,12 +2380,12 @@ pub mod retain_rule {
         pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
     }
     impl Builder {
-        /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>
+        /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
         pub fn count(mut self, input: i32) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>
+        /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -2146,12 +2400,12 @@ pub mod retain_rule {
             self.interval = input;
             self
         }
-        /// <p>The unit of time for time-based retention.</p>
+        /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
         pub fn interval_unit(mut self, input: crate::model::RetentionIntervalUnitValues) -> Self {
             self.interval_unit = Some(input);
             self
         }
-        /// <p>The unit of time for time-based retention.</p>
+        /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
         pub fn set_interval_unit(
             mut self,
             input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -2176,9 +2430,12 @@ impl RetainRule {
     }
 }
 
-/// <p> <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots or AMIs.</p> <important>
-/// <p>You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.</p>
-/// </important>
+/// <p> <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots or AMIs.</p> <note>
+/// <ul>
+/// <li> <p>You must specify either <b>CronExpression</b>, or <b>Interval</b>, <b>IntervalUnit</b>, and <b>Times</b>.</p> </li>
+/// <li> <p>If you need to specify an <code>ArchiveRule</code> for the schedule, then you must specify a creation frequency of at least 28 days.</p> </li>
+/// </ul>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRule {
@@ -2193,7 +2450,7 @@ pub struct CreateRule {
     #[doc(hidden)]
     pub interval_unit: std::option::Option<crate::model::IntervalUnitValues>,
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
-    /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+    /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
     #[doc(hidden)]
     pub times: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
@@ -2215,7 +2472,7 @@ impl CreateRule {
         self.interval_unit.as_ref()
     }
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
-    /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+    /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
     pub fn times(&self) -> std::option::Option<&[std::string::String]> {
         self.times.as_deref()
     }
@@ -2291,7 +2548,7 @@ pub mod create_rule {
         /// To override the contents of this collection use [`set_times`](Self::set_times).
         ///
         /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
-        /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+        /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
         pub fn times(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.times.unwrap_or_default();
             v.push(input.into());
@@ -2299,7 +2556,7 @@ pub mod create_rule {
             self
         }
         /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
-        /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+        /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
         pub fn set_times(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

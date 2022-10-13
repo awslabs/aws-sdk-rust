@@ -380,7 +380,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_security_profile_name): <p>The name of the security profile.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_description): <p>The description of the security profile.</p>
-    ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::CreateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_permissions): <p>Permissions assigned to the security profile.</p>
+    ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::CreateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_permissions): <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSecurityProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput) with field(s):
@@ -1353,7 +1353,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityProfilePermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::set_max_results): <p>The maximum number of results to return per page.</p>
     /// - On success, responds with [`ListSecurityProfilePermissionsOutput`](crate::output::ListSecurityProfilePermissionsOutput) with field(s):
-    ///   - [`permissions(Option<Vec<String>>)`](crate::output::ListSecurityProfilePermissionsOutput::permissions): <p>The permissions granted to the security profile.</p>
+    ///   - [`permissions(Option<Vec<String>>)`](crate::output::ListSecurityProfilePermissionsOutput::permissions): <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSecurityProfilePermissionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSecurityProfilePermissionsError>`](crate::error::ListSecurityProfilePermissionsError)
     pub fn list_security_profile_permissions(
@@ -1496,6 +1496,40 @@ impl Client {
     pub fn search_available_phone_numbers(&self) -> fluent_builders::SearchAvailablePhoneNumbers {
         fluent_builders::SearchAvailablePhoneNumbers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`SearchQueues`](crate::client::fluent_builders::SearchQueues) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchQueues::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SearchQueues::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SearchQueues::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchQueues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchQueues::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchQueues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchQueues::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`search_filter(QueueSearchFilter)`](crate::client::fluent_builders::SearchQueues::search_filter) / [`set_search_filter(Option<QueueSearchFilter>)`](crate::client::fluent_builders::SearchQueues::set_search_filter): <p>Filters to be applied to search results.</p>
+    ///   - [`search_criteria(QueueSearchCriteria)`](crate::client::fluent_builders::SearchQueues::search_criteria) / [`set_search_criteria(Option<QueueSearchCriteria>)`](crate::client::fluent_builders::SearchQueues::set_search_criteria): <p>The search criteria to be used to return queues.</p>
+    /// - On success, responds with [`SearchQueuesOutput`](crate::output::SearchQueuesOutput) with field(s):
+    ///   - [`queues(Option<Vec<Queue>>)`](crate::output::SearchQueuesOutput::queues): <p>Information about the queues.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`approximate_total_count(Option<i64>)`](crate::output::SearchQueuesOutput::approximate_total_count): <p>The total number of queues which matched your search query.</p>
+    /// - On failure, responds with [`SdkError<SearchQueuesError>`](crate::error::SearchQueuesError)
+    pub fn search_queues(&self) -> fluent_builders::SearchQueues {
+        fluent_builders::SearchQueues::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`SearchRoutingProfiles`](crate::client::fluent_builders::SearchRoutingProfiles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchRoutingProfiles::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SearchRoutingProfiles::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchRoutingProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchRoutingProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`search_filter(RoutingProfileSearchFilter)`](crate::client::fluent_builders::SearchRoutingProfiles::search_filter) / [`set_search_filter(Option<RoutingProfileSearchFilter>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_search_filter): <p>Filters to be applied to search results.</p>
+    ///   - [`search_criteria(RoutingProfileSearchCriteria)`](crate::client::fluent_builders::SearchRoutingProfiles::search_criteria) / [`set_search_criteria(Option<RoutingProfileSearchCriteria>)`](crate::client::fluent_builders::SearchRoutingProfiles::set_search_criteria): <p>The search criteria to be used to return routing profiles.</p>
+    /// - On success, responds with [`SearchRoutingProfilesOutput`](crate::output::SearchRoutingProfilesOutput) with field(s):
+    ///   - [`routing_profiles(Option<Vec<RoutingProfile>>)`](crate::output::SearchRoutingProfilesOutput::routing_profiles): <p>Information about the routing profiles.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchRoutingProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`approximate_total_count(Option<i64>)`](crate::output::SearchRoutingProfilesOutput::approximate_total_count): <p>The total number of routing profiles which matched your search query.</p>
+    /// - On failure, responds with [`SdkError<SearchRoutingProfilesError>`](crate::error::SearchRoutingProfilesError)
+    pub fn search_routing_profiles(&self) -> fluent_builders::SearchRoutingProfiles {
+        fluent_builders::SearchRoutingProfiles::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`SearchSecurityProfiles`](crate::client::fluent_builders::SearchSecurityProfiles) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchSecurityProfiles::into_paginator).
     ///
@@ -1521,7 +1555,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchUsers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchUsers::set_max_results): <p>The maximum number of results to return per page.</p>
     ///   - [`search_filter(UserSearchFilter)`](crate::client::fluent_builders::SearchUsers::search_filter) / [`set_search_filter(Option<UserSearchFilter>)`](crate::client::fluent_builders::SearchUsers::set_search_filter): <p>Filters to be applied to search results.</p>
-    ///   - [`search_criteria(UserSearchCriteria)`](crate::client::fluent_builders::SearchUsers::search_criteria) / [`set_search_criteria(Option<UserSearchCriteria>)`](crate::client::fluent_builders::SearchUsers::set_search_criteria): <p>The search criteria to be used to return users.</p>
+    ///   - [`search_criteria(UserSearchCriteria)`](crate::client::fluent_builders::SearchUsers::search_criteria) / [`set_search_criteria(Option<UserSearchCriteria>)`](crate::client::fluent_builders::SearchUsers::set_search_criteria): <p>The search criteria to be used to return users.</p> <note>   <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>  </note>
     /// - On success, responds with [`SearchUsersOutput`](crate::output::SearchUsersOutput) with field(s):
     ///   - [`users(Option<Vec<UserSearchSummary>>)`](crate::output::SearchUsersOutput::users): <p>Information about the users.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchUsersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1775,7 +1809,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_id): <p>The identifier of the flow.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>TThe name of the flow.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>The name of the flow.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_description): <p>The description of the flow.</p>
     ///   - [`contact_flow_state(ContactFlowState)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_state) / [`set_contact_flow_state(Option<ContactFlowState>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_state): <p>The state of flow.</p>
     /// - On success, responds with [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
@@ -2037,7 +2071,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_description): <p>The description of the security profile.</p>
-    ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_permissions): <p>The permissions granted to a security profile.</p>
+    ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_permissions): <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     ///   - [`security_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_security_profile_id): <p>The identifier for the security profle.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     /// - On success, responds with [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
@@ -4725,12 +4759,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>Permissions assigned to the security profile.</p>
+        /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
         pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permissions(input.into());
             self
         }
-        /// <p>Permissions assigned to the security profile.</p>
+        /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6723,6 +6757,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the specified contact. </p> <important>
     /// <p>Contact information remains available in Amazon Connect for 24 months, and then it is deleted.</p>
+    /// <p>Only data from November 12, 2021, and later is returned by this API.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContact {
@@ -10525,7 +10560,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBots`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated with the instance. </p>
+    /// <p>For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated with the instance. Use this API to returns both Amazon Lex V1 and V2 bots.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBots {
         handle: std::sync::Arc<super::Handle>,
@@ -11763,7 +11798,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLexBots`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Returns a paginated list of all the Amazon Lex bots currently associated with the instance.</p>
+    /// <p>Returns a paginated list of all the Amazon Lex V1 bots currently associated with the instance. To return both Amazon Lex V1 and V2 bots, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a> API. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLexBots {
         handle: std::sync::Arc<super::Handle>,
@@ -14135,6 +14170,269 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `SearchQueues`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Searches queues in an Amazon Connect instance, with optional filtering.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchQueues {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_queues_input::Builder,
+    }
+    impl SearchQueues {
+        /// Creates a new `SearchQueues`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::SearchQueues,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::SearchQueuesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchQueuesOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchQueuesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchQueuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchQueuesPaginator {
+            crate::paginator::SearchQueuesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn search_filter(mut self, input: crate::model::QueueSearchFilter) -> Self {
+            self.inner = self.inner.search_filter(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn set_search_filter(
+            mut self,
+            input: std::option::Option<crate::model::QueueSearchFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_search_filter(input);
+            self
+        }
+        /// <p>The search criteria to be used to return queues.</p>
+        pub fn search_criteria(mut self, input: crate::model::QueueSearchCriteria) -> Self {
+            self.inner = self.inner.search_criteria(input);
+            self
+        }
+        /// <p>The search criteria to be used to return queues.</p>
+        pub fn set_search_criteria(
+            mut self,
+            input: std::option::Option<crate::model::QueueSearchCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_search_criteria(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SearchRoutingProfiles`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Searches routing profiles in an Amazon Connect instance, with optional filtering.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchRoutingProfiles {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_routing_profiles_input::Builder,
+    }
+    impl SearchRoutingProfiles {
+        /// Creates a new `SearchRoutingProfiles`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::SearchRoutingProfiles,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::SearchRoutingProfilesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchRoutingProfilesOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchRoutingProfilesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchRoutingProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchRoutingProfilesPaginator {
+            crate::paginator::SearchRoutingProfilesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn search_filter(mut self, input: crate::model::RoutingProfileSearchFilter) -> Self {
+            self.inner = self.inner.search_filter(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn set_search_filter(
+            mut self,
+            input: std::option::Option<crate::model::RoutingProfileSearchFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_search_filter(input);
+            self
+        }
+        /// <p>The search criteria to be used to return routing profiles.</p>
+        pub fn search_criteria(
+            mut self,
+            input: crate::model::RoutingProfileSearchCriteria,
+        ) -> Self {
+            self.inner = self.inner.search_criteria(input);
+            self
+        }
+        /// <p>The search criteria to be used to return routing profiles.</p>
+        pub fn set_search_criteria(
+            mut self,
+            input: std::option::Option<crate::model::RoutingProfileSearchCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_search_criteria(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `SearchSecurityProfiles`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
@@ -14383,12 +14681,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_filter(input);
             self
         }
-        /// <p>The search criteria to be used to return users.</p>
+        /// <p>The search criteria to be used to return users.</p> <note>
+        /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+        /// </note>
         pub fn search_criteria(mut self, input: crate::model::UserSearchCriteria) -> Self {
             self.inner = self.inner.search_criteria(input);
             self
         }
-        /// <p>The search criteria to be used to return users.</p>
+        /// <p>The search criteria to be used to return users.</p> <note>
+        /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+        /// </note>
         pub fn set_search_criteria(
             mut self,
             input: std::option::Option<crate::model::UserSearchCriteria>,
@@ -16707,12 +17009,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>TThe name of the flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>TThe name of the flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -18866,12 +19168,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The permissions granted to a security profile.</p>
+        /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
         pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permissions(input.into());
             self
         }
-        /// <p>The permissions granted to a security profile.</p>
+        /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

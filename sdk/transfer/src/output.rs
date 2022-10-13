@@ -188,6 +188,81 @@ impl UpdateProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateHostKeyOutput {
+    /// <p>Returns the server ID for the server that contains the updated host key.</p>
+    #[doc(hidden)]
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>Returns the host key ID for the updated host key.</p>
+    #[doc(hidden)]
+    pub host_key_id: std::option::Option<std::string::String>,
+}
+impl UpdateHostKeyOutput {
+    /// <p>Returns the server ID for the server that contains the updated host key.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Returns the host key ID for the updated host key.</p>
+    pub fn host_key_id(&self) -> std::option::Option<&str> {
+        self.host_key_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateHostKeyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateHostKeyOutput");
+        formatter.field("server_id", &self.server_id);
+        formatter.field("host_key_id", &self.host_key_id);
+        formatter.finish()
+    }
+}
+/// See [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
+pub mod update_host_key_output {
+
+    /// A builder for [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) host_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the server ID for the server that contains the updated host key.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the server ID for the server that contains the updated host key.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>Returns the host key ID for the updated host key.</p>
+        pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_key_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the host key ID for the updated host key.</p>
+        pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
+        pub fn build(self) -> crate::output::UpdateHostKeyOutput {
+            crate::output::UpdateHostKeyOutput {
+                server_id: self.server_id,
+                host_key_id: self.host_key_id,
+            }
+        }
+    }
+}
+impl UpdateHostKeyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
+    pub fn builder() -> crate::output::update_host_key_output::Builder {
+        crate::output::update_host_key_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorOutput {
     /// <p>Returns the identifier of the connector object that you are updating.</p>
     #[doc(hidden)]
@@ -1303,6 +1378,110 @@ impl ListProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListHostKeysOutput {
+    /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns the server ID that contains the listed host keys.</p>
+    #[doc(hidden)]
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>Returns an array, where each item contains the details of a host key.</p>
+    #[doc(hidden)]
+    pub host_keys: std::option::Option<std::vec::Vec<crate::model::ListedHostKey>>,
+}
+impl ListHostKeysOutput {
+    /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns the server ID that contains the listed host keys.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Returns an array, where each item contains the details of a host key.</p>
+    pub fn host_keys(&self) -> std::option::Option<&[crate::model::ListedHostKey]> {
+        self.host_keys.as_deref()
+    }
+}
+impl std::fmt::Debug for ListHostKeysOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListHostKeysOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("server_id", &self.server_id);
+        formatter.field("host_keys", &self.host_keys);
+        formatter.finish()
+    }
+}
+/// See [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
+pub mod list_host_keys_output {
+
+    /// A builder for [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) host_keys: std::option::Option<std::vec::Vec<crate::model::ListedHostKey>>,
+    }
+    impl Builder {
+        /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Returns the server ID that contains the listed host keys.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the server ID that contains the listed host keys.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// Appends an item to `host_keys`.
+        ///
+        /// To override the contents of this collection use [`set_host_keys`](Self::set_host_keys).
+        ///
+        /// <p>Returns an array, where each item contains the details of a host key.</p>
+        pub fn host_keys(mut self, input: crate::model::ListedHostKey) -> Self {
+            let mut v = self.host_keys.unwrap_or_default();
+            v.push(input);
+            self.host_keys = Some(v);
+            self
+        }
+        /// <p>Returns an array, where each item contains the details of a host key.</p>
+        pub fn set_host_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListedHostKey>>,
+        ) -> Self {
+            self.host_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
+        pub fn build(self) -> crate::output::ListHostKeysOutput {
+            crate::output::ListHostKeysOutput {
+                next_token: self.next_token,
+                server_id: self.server_id,
+                host_keys: self.host_keys,
+            }
+        }
+    }
+}
+impl ListHostKeysOutput {
+    /// Creates a new builder-style object to manufacture [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
+    pub fn builder() -> crate::output::list_host_keys_output::Builder {
+        crate::output::list_host_keys_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsOutput {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     #[doc(hidden)]
@@ -1886,6 +2065,81 @@ impl ImportSshPublicKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportHostKeyOutput {
+    /// <p>Returns the server ID that contains the imported key.</p>
+    #[doc(hidden)]
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>Returns the host key ID for the imported key.</p>
+    #[doc(hidden)]
+    pub host_key_id: std::option::Option<std::string::String>,
+}
+impl ImportHostKeyOutput {
+    /// <p>Returns the server ID that contains the imported key.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Returns the host key ID for the imported key.</p>
+    pub fn host_key_id(&self) -> std::option::Option<&str> {
+        self.host_key_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportHostKeyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportHostKeyOutput");
+        formatter.field("server_id", &self.server_id);
+        formatter.field("host_key_id", &self.host_key_id);
+        formatter.finish()
+    }
+}
+/// See [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
+pub mod import_host_key_output {
+
+    /// A builder for [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) host_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the server ID that contains the imported key.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the server ID that contains the imported key.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>Returns the host key ID for the imported key.</p>
+        pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_key_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the host key ID for the imported key.</p>
+        pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
+        pub fn build(self) -> crate::output::ImportHostKeyOutput {
+            crate::output::ImportHostKeyOutput {
+                server_id: self.server_id,
+                host_key_id: self.host_key_id,
+            }
+        }
+    }
+}
+impl ImportHostKeyOutput {
+    /// Creates a new builder-style object to manufacture [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
+    pub fn builder() -> crate::output::import_host_key_output::Builder {
+        crate::output::import_host_key_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateOutput {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     #[doc(hidden)]
@@ -2245,6 +2499,64 @@ impl DescribeProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
     pub fn builder() -> crate::output::describe_profile_output::Builder {
         crate::output::describe_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeHostKeyOutput {
+    /// <p>Returns the details for the specified host key.</p>
+    #[doc(hidden)]
+    pub host_key: std::option::Option<crate::model::DescribedHostKey>,
+}
+impl DescribeHostKeyOutput {
+    /// <p>Returns the details for the specified host key.</p>
+    pub fn host_key(&self) -> std::option::Option<&crate::model::DescribedHostKey> {
+        self.host_key.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeHostKeyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeHostKeyOutput");
+        formatter.field("host_key", &self.host_key);
+        formatter.finish()
+    }
+}
+/// See [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
+pub mod describe_host_key_output {
+
+    /// A builder for [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) host_key: std::option::Option<crate::model::DescribedHostKey>,
+    }
+    impl Builder {
+        /// <p>Returns the details for the specified host key.</p>
+        pub fn host_key(mut self, input: crate::model::DescribedHostKey) -> Self {
+            self.host_key = Some(input);
+            self
+        }
+        /// <p>Returns the details for the specified host key.</p>
+        pub fn set_host_key(
+            mut self,
+            input: std::option::Option<crate::model::DescribedHostKey>,
+        ) -> Self {
+            self.host_key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
+        pub fn build(self) -> crate::output::DescribeHostKeyOutput {
+            crate::output::DescribeHostKeyOutput {
+                host_key: self.host_key,
+            }
+        }
+    }
+}
+impl DescribeHostKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
+    pub fn builder() -> crate::output::describe_host_key_output::Builder {
+        crate::output::describe_host_key_output::Builder::default()
     }
 }
 
@@ -2725,6 +3037,36 @@ impl DeleteProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
     pub fn builder() -> crate::output::delete_profile_output::Builder {
         crate::output::delete_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteHostKeyOutput {}
+impl std::fmt::Debug for DeleteHostKeyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteHostKeyOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
+pub mod delete_host_key_output {
+
+    /// A builder for [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
+        pub fn build(self) -> crate::output::DeleteHostKeyOutput {
+            crate::output::DeleteHostKeyOutput {}
+        }
+    }
+}
+impl DeleteHostKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
+    pub fn builder() -> crate::output::delete_host_key_output::Builder {
+        crate::output::delete_host_key_output::Builder::default()
     }
 }
 

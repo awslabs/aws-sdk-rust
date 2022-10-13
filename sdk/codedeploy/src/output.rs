@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeploymentGroupOutput {
-    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
+    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
 impl UpdateDeploymentGroupOutput {
-    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
+    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
     pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
         self.hooks_not_cleaned_up.as_deref()
     }
@@ -35,14 +35,14 @@ pub mod update_deployment_group_output {
         ///
         /// To override the contents of this collection use [`set_hooks_not_cleaned_up`](Self::set_hooks_not_cleaned_up).
         ///
-        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
+        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
         pub fn hooks_not_cleaned_up(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
             v.push(input);
             self.hooks_not_cleaned_up = Some(v);
             self
         }
-        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
+        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
         pub fn set_hooks_not_cleaned_up(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -1927,12 +1927,12 @@ impl DeleteGitHubAccountTokenOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentGroupOutput {
-    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     #[doc(hidden)]
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
 impl DeleteDeploymentGroupOutput {
-    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
         self.hooks_not_cleaned_up.as_deref()
     }
@@ -1958,14 +1958,14 @@ pub mod delete_deployment_group_output {
         ///
         /// To override the contents of this collection use [`set_hooks_not_cleaned_up`](Self::set_hooks_not_cleaned_up).
         ///
-        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
         pub fn hooks_not_cleaned_up(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
             v.push(input);
             self.hooks_not_cleaned_up = Some(v);
             self
         }
-        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
         pub fn set_hooks_not_cleaned_up(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -2380,10 +2380,10 @@ impl BatchGetOnPremisesInstancesOutput {
 pub struct BatchGetDeploymentTargetsOutput {
     /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>
-    /// <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
     /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
-    /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub deployment_targets: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
@@ -2391,10 +2391,10 @@ pub struct BatchGetDeploymentTargetsOutput {
 impl BatchGetDeploymentTargetsOutput {
     /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>
-    /// <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
     /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
-    /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     pub fn deployment_targets(&self) -> std::option::Option<&[crate::model::DeploymentTarget]> {
         self.deployment_targets.as_deref()
@@ -2423,10 +2423,10 @@ pub mod batch_get_deployment_targets_output {
         ///
         /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
         /// <ul>
-        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>
-        /// <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>
+        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+        /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
         /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
-        /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
+        /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
         /// </ul>
         pub fn deployment_targets(mut self, input: crate::model::DeploymentTarget) -> Self {
             let mut v = self.deployment_targets.unwrap_or_default();
@@ -2436,10 +2436,10 @@ pub mod batch_get_deployment_targets_output {
         }
         /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
         /// <ul>
-        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>
-        /// <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>
+        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+        /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
         /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
-        /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
+        /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
         /// </ul>
         pub fn set_deployment_targets(
             mut self,

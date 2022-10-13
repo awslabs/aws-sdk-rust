@@ -253,7 +253,7 @@ pub mod create_managed_endpoint_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+        /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
         #[deprecated(
             note = "Customer provided certificate-arn is deprecated and would be removed in future."
         )]
@@ -261,7 +261,7 @@ pub mod create_managed_endpoint_input {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+        /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
         #[deprecated(
             note = "Customer provided certificate-arn is deprecated and would be removed in future."
         )]
@@ -3663,7 +3663,7 @@ pub struct CreateManagedEndpointInput {
     /// <p>The ARN of the execution role.</p>
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+    /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
     #[deprecated(
         note = "Customer provided certificate-arn is deprecated and would be removed in future."
     )]
@@ -3701,7 +3701,7 @@ impl CreateManagedEndpointInput {
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+    /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
     #[deprecated(
         note = "Customer provided certificate-arn is deprecated and would be removed in future."
     )]

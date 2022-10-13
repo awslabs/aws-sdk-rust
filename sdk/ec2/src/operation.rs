@@ -1804,6 +1804,70 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateClientVpnRoute {
     }
 }
 
+/// Operation shape for `CreateCoipCidr`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_coip_cidr`](crate::client::Client::create_coip_cidr).
+///
+/// See [`crate::client::fluent_builders::CreateCoipCidr`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateCoipCidr {
+    _private: (),
+}
+impl CreateCoipCidr {
+    /// Creates a new builder-style object to manufacture [`CreateCoipCidrInput`](crate::input::CreateCoipCidrInput).
+    pub fn builder() -> crate::input::create_coip_cidr_input::Builder {
+        crate::input::create_coip_cidr_input::Builder::default()
+    }
+    /// Creates a new `CreateCoipCidr` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateCoipCidr {
+    type Output =
+        std::result::Result<crate::output::CreateCoipCidrOutput, crate::error::CreateCoipCidrError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_coip_cidr_error(response)
+        } else {
+            crate::operation_deser::parse_create_coip_cidr_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateCoipPool`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_coip_pool`](crate::client::Client::create_coip_pool).
+///
+/// See [`crate::client::fluent_builders::CreateCoipPool`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateCoipPool {
+    _private: (),
+}
+impl CreateCoipPool {
+    /// Creates a new builder-style object to manufacture [`CreateCoipPoolInput`](crate::input::CreateCoipPoolInput).
+    pub fn builder() -> crate::input::create_coip_pool_input::Builder {
+        crate::input::create_coip_pool_input::Builder::default()
+    }
+    /// Creates a new `CreateCoipPool` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateCoipPool {
+    type Output =
+        std::result::Result<crate::output::CreateCoipPoolOutput, crate::error::CreateCoipPoolError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_coip_pool_error(response)
+        } else {
+            crate::operation_deser::parse_create_coip_pool_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateCustomerGateway`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2434,6 +2498,76 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocalGatewayRoute 
             crate::operation_deser::parse_create_local_gateway_route_error(response)
         } else {
             crate::operation_deser::parse_create_local_gateway_route_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateLocalGatewayRouteTable`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_local_gateway_route_table`](crate::client::Client::create_local_gateway_route_table).
+///
+/// See [`crate::client::fluent_builders::CreateLocalGatewayRouteTable`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLocalGatewayRouteTable {
+    _private: (),
+}
+impl CreateLocalGatewayRouteTable {
+    /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteTableInput`](crate::input::CreateLocalGatewayRouteTableInput).
+    pub fn builder() -> crate::input::create_local_gateway_route_table_input::Builder {
+        crate::input::create_local_gateway_route_table_input::Builder::default()
+    }
+    /// Creates a new `CreateLocalGatewayRouteTable` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLocalGatewayRouteTable {
+    type Output = std::result::Result<
+        crate::output::CreateLocalGatewayRouteTableOutput,
+        crate::error::CreateLocalGatewayRouteTableError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_local_gateway_route_table_error(response)
+        } else {
+            crate::operation_deser::parse_create_local_gateway_route_table_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_local_gateway_route_table_virtual_interface_group_association`](crate::client::Client::create_local_gateway_route_table_virtual_interface_group_association).
+///
+/// See [`crate::client::fluent_builders::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation {
+    _private: (),
+}
+impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation {
+    /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput`](crate::input::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput).
+    pub fn builder() -> crate::input::create_local_gateway_route_table_virtual_interface_group_association_input::Builder{
+        crate::input::create_local_gateway_route_table_virtual_interface_group_association_input::Builder::default()
+    }
+    /// Creates a new `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+{
+    type Output = std::result::Result<
+        crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+        crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_local_gateway_route_table_virtual_interface_group_association_error(response)
+        } else {
+            crate::operation_deser::parse_create_local_gateway_route_table_virtual_interface_group_association_response(response)
         }
     }
 }
@@ -4181,6 +4315,70 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteClientVpnRoute {
     }
 }
 
+/// Operation shape for `DeleteCoipCidr`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_coip_cidr`](crate::client::Client::delete_coip_cidr).
+///
+/// See [`crate::client::fluent_builders::DeleteCoipCidr`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteCoipCidr {
+    _private: (),
+}
+impl DeleteCoipCidr {
+    /// Creates a new builder-style object to manufacture [`DeleteCoipCidrInput`](crate::input::DeleteCoipCidrInput).
+    pub fn builder() -> crate::input::delete_coip_cidr_input::Builder {
+        crate::input::delete_coip_cidr_input::Builder::default()
+    }
+    /// Creates a new `DeleteCoipCidr` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteCoipCidr {
+    type Output =
+        std::result::Result<crate::output::DeleteCoipCidrOutput, crate::error::DeleteCoipCidrError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_coip_cidr_error(response)
+        } else {
+            crate::operation_deser::parse_delete_coip_cidr_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteCoipPool`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_coip_pool`](crate::client::Client::delete_coip_pool).
+///
+/// See [`crate::client::fluent_builders::DeleteCoipPool`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteCoipPool {
+    _private: (),
+}
+impl DeleteCoipPool {
+    /// Creates a new builder-style object to manufacture [`DeleteCoipPoolInput`](crate::input::DeleteCoipPoolInput).
+    pub fn builder() -> crate::input::delete_coip_pool_input::Builder {
+        crate::input::delete_coip_pool_input::Builder::default()
+    }
+    /// Creates a new `DeleteCoipPool` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteCoipPool {
+    type Output =
+        std::result::Result<crate::output::DeleteCoipPoolOutput, crate::error::DeleteCoipPoolError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_coip_pool_error(response)
+        } else {
+            crate::operation_deser::parse_delete_coip_pool_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteCustomerGateway`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -4677,6 +4875,76 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRoute 
             crate::operation_deser::parse_delete_local_gateway_route_error(response)
         } else {
             crate::operation_deser::parse_delete_local_gateway_route_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLocalGatewayRouteTable`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_local_gateway_route_table`](crate::client::Client::delete_local_gateway_route_table).
+///
+/// See [`crate::client::fluent_builders::DeleteLocalGatewayRouteTable`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteLocalGatewayRouteTable {
+    _private: (),
+}
+impl DeleteLocalGatewayRouteTable {
+    /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteTableInput`](crate::input::DeleteLocalGatewayRouteTableInput).
+    pub fn builder() -> crate::input::delete_local_gateway_route_table_input::Builder {
+        crate::input::delete_local_gateway_route_table_input::Builder::default()
+    }
+    /// Creates a new `DeleteLocalGatewayRouteTable` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRouteTable {
+    type Output = std::result::Result<
+        crate::output::DeleteLocalGatewayRouteTableOutput,
+        crate::error::DeleteLocalGatewayRouteTableError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_local_gateway_route_table_error(response)
+        } else {
+            crate::operation_deser::parse_delete_local_gateway_route_table_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_local_gateway_route_table_virtual_interface_group_association`](crate::client::Client::delete_local_gateway_route_table_virtual_interface_group_association).
+///
+/// See [`crate::client::fluent_builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation {
+    _private: (),
+}
+impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation {
+    /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput`](crate::input::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput).
+    pub fn builder() -> crate::input::delete_local_gateway_route_table_virtual_interface_group_association_input::Builder{
+        crate::input::delete_local_gateway_route_table_virtual_interface_group_association_input::Builder::default()
+    }
+    /// Creates a new `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+{
+    type Output = std::result::Result<
+        crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+        crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_local_gateway_route_table_virtual_interface_group_association_error(response)
+        } else {
+            crate::operation_deser::parse_delete_local_gateway_route_table_virtual_interface_group_association_response(response)
         }
     }
 }
@@ -15043,6 +15311,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLaunchTemplate {
             crate::operation_deser::parse_modify_launch_template_error(response)
         } else {
             crate::operation_deser::parse_modify_launch_template_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ModifyLocalGatewayRoute`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_local_gateway_route`](crate::client::Client::modify_local_gateway_route).
+///
+/// See [`crate::client::fluent_builders::ModifyLocalGatewayRoute`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyLocalGatewayRoute {
+    _private: (),
+}
+impl ModifyLocalGatewayRoute {
+    /// Creates a new builder-style object to manufacture [`ModifyLocalGatewayRouteInput`](crate::input::ModifyLocalGatewayRouteInput).
+    pub fn builder() -> crate::input::modify_local_gateway_route_input::Builder {
+        crate::input::modify_local_gateway_route_input::Builder::default()
+    }
+    /// Creates a new `ModifyLocalGatewayRoute` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyLocalGatewayRoute {
+    type Output = std::result::Result<
+        crate::output::ModifyLocalGatewayRouteOutput,
+        crate::error::ModifyLocalGatewayRouteError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_local_gateway_route_error(response)
+        } else {
+            crate::operation_deser::parse_modify_local_gateway_route_response(response)
         }
     }
 }

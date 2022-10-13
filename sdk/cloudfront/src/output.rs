@@ -3271,7 +3271,7 @@ impl GetOriginRequestPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginAccessControlConfigOutput {
-    /// <p>Contains an origin access control.</p>
+    /// <p>Contains an origin access control configuration.</p>
     #[doc(hidden)]
     pub origin_access_control_config: std::option::Option<crate::model::OriginAccessControlConfig>,
     /// <p>The version identifier for the current version of the origin access control.</p>
@@ -3279,7 +3279,7 @@ pub struct GetOriginAccessControlConfigOutput {
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetOriginAccessControlConfigOutput {
-    /// <p>Contains an origin access control.</p>
+    /// <p>Contains an origin access control configuration.</p>
     pub fn origin_access_control_config(
         &self,
     ) -> std::option::Option<&crate::model::OriginAccessControlConfig> {
@@ -3312,7 +3312,7 @@ pub mod get_origin_access_control_config_output {
         pub(crate) e_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Contains an origin access control.</p>
+        /// <p>Contains an origin access control configuration.</p>
         pub fn origin_access_control_config(
             mut self,
             input: crate::model::OriginAccessControlConfig,
@@ -3320,7 +3320,7 @@ pub mod get_origin_access_control_config_output {
             self.origin_access_control_config = Some(input);
             self
         }
-        /// <p>Contains an origin access control.</p>
+        /// <p>Contains an origin access control configuration.</p>
         pub fn set_origin_access_control_config(
             mut self,
             input: std::option::Option<crate::model::OriginAccessControlConfig>,
@@ -3358,7 +3358,7 @@ impl GetOriginAccessControlConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginAccessControlOutput {
-    /// <p>Contains an origin access control.</p>
+    /// <p>Contains an origin access control, including its unique identifier.</p>
     #[doc(hidden)]
     pub origin_access_control: std::option::Option<crate::model::OriginAccessControl>,
     /// <p>The version identifier for the current version of the origin access control.</p>
@@ -3366,7 +3366,7 @@ pub struct GetOriginAccessControlOutput {
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetOriginAccessControlOutput {
-    /// <p>Contains an origin access control.</p>
+    /// <p>Contains an origin access control, including its unique identifier.</p>
     pub fn origin_access_control(&self) -> std::option::Option<&crate::model::OriginAccessControl> {
         self.origin_access_control.as_ref()
     }
@@ -3393,12 +3393,12 @@ pub mod get_origin_access_control_output {
         pub(crate) e_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Contains an origin access control.</p>
+        /// <p>Contains an origin access control, including its unique identifier.</p>
         pub fn origin_access_control(mut self, input: crate::model::OriginAccessControl) -> Self {
             self.origin_access_control = Some(input);
             self
         }
-        /// <p>Contains an origin access control.</p>
+        /// <p>Contains an origin access control, including its unique identifier.</p>
         pub fn set_origin_access_control(
             mut self,
             input: std::option::Option<crate::model::OriginAccessControl>,

@@ -22,6 +22,14 @@ impl ListJobRunsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `job_runs`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListJobRunsPaginatorItems {
+        crate::paginator::ListJobRunsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -107,6 +115,14 @@ impl ListManagedEndpointsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `endpoints`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListManagedEndpointsPaginatorItems {
+        crate::paginator::ListManagedEndpointsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -196,6 +212,14 @@ impl ListVirtualClustersPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `virtual_clusters`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListVirtualClustersPaginatorItems {
+        crate::paginator::ListVirtualClustersPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -256,6 +280,89 @@ impl ListVirtualClustersPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListJobRunsPaginator`
+///
+/// This is created with [`.items()`](ListJobRunsPaginator::items)
+pub struct ListJobRunsPaginatorItems(ListJobRunsPaginator);
+
+impl ListJobRunsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::JobRun,
+            aws_smithy_http::result::SdkError<crate::error::ListJobRunsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_job_runs_output_job_runs(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListManagedEndpointsPaginator`
+///
+/// This is created with [`.items()`](ListManagedEndpointsPaginator::items)
+pub struct ListManagedEndpointsPaginatorItems(ListManagedEndpointsPaginator);
+
+impl ListManagedEndpointsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Endpoint,
+            aws_smithy_http::result::SdkError<crate::error::ListManagedEndpointsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_managed_endpoints_output_endpoints(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListVirtualClustersPaginator`
+///
+/// This is created with [`.items()`](ListVirtualClustersPaginator::items)
+pub struct ListVirtualClustersPaginatorItems(ListVirtualClustersPaginator);
+
+impl ListVirtualClustersPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::VirtualCluster,
+            aws_smithy_http::result::SdkError<crate::error::ListVirtualClustersError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_virtual_clusters_output_virtual_clusters(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
         })
     }
 }

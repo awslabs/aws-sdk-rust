@@ -827,6 +827,2752 @@ impl UpdateThemeData {
     }
 }
 
+/// <p>Contains the configuration settings for a <code>Form</code> user interface (UI) element for an Amplify app. A form is a component you can add to your project by specifying a data source as the default configuration for the form.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Form {
+    /// <p>The unique ID of the Amplify app associated with the form.</p>
+    #[doc(hidden)]
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    #[doc(hidden)]
+    pub environment_name: std::option::Option<std::string::String>,
+    /// <p>The unique ID of the form.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the form.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The operation to perform on the specified form.</p>
+    #[doc(hidden)]
+    pub form_action_type: std::option::Option<crate::model::FormActionType>,
+    /// <p>Stores the configuration for the form's style.</p>
+    #[doc(hidden)]
+    pub style: std::option::Option<crate::model::FormStyle>,
+    /// <p>The type of data source to use to create the form.</p>
+    #[doc(hidden)]
+    pub data_type: std::option::Option<crate::model::FormDataTypeConfig>,
+    /// <p>Stores the information about the form's fields.</p>
+    #[doc(hidden)]
+    pub fields: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+    >,
+    /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
+    #[doc(hidden)]
+    pub sectional_elements: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+    >,
+    /// <p>The schema version of the form when it was imported.</p>
+    #[doc(hidden)]
+    pub schema_version: std::option::Option<std::string::String>,
+    /// <p>One or more key-value pairs to use when tagging the form.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Stores the call to action configuration for the form.</p>
+    #[doc(hidden)]
+    pub cta: std::option::Option<crate::model::FormCta>,
+}
+impl Form {
+    /// <p>The unique ID of the Amplify app associated with the form.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The unique ID of the form.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the form.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The operation to perform on the specified form.</p>
+    pub fn form_action_type(&self) -> std::option::Option<&crate::model::FormActionType> {
+        self.form_action_type.as_ref()
+    }
+    /// <p>Stores the configuration for the form's style.</p>
+    pub fn style(&self) -> std::option::Option<&crate::model::FormStyle> {
+        self.style.as_ref()
+    }
+    /// <p>The type of data source to use to create the form.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::FormDataTypeConfig> {
+        self.data_type.as_ref()
+    }
+    /// <p>Stores the information about the form's fields.</p>
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+    > {
+        self.fields.as_ref()
+    }
+    /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
+    pub fn sectional_elements(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+    > {
+        self.sectional_elements.as_ref()
+    }
+    /// <p>The schema version of the form when it was imported.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>One or more key-value pairs to use when tagging the form.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Stores the call to action configuration for the form.</p>
+    pub fn cta(&self) -> std::option::Option<&crate::model::FormCta> {
+        self.cta.as_ref()
+    }
+}
+impl std::fmt::Debug for Form {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Form");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("environment_name", &self.environment_name);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("form_action_type", &self.form_action_type);
+        formatter.field("style", &self.style);
+        formatter.field("data_type", &self.data_type);
+        formatter.field("fields", &self.fields);
+        formatter.field("sectional_elements", &self.sectional_elements);
+        formatter.field("schema_version", &self.schema_version);
+        formatter.field("tags", &self.tags);
+        formatter.field("cta", &self.cta);
+        formatter.finish()
+    }
+}
+/// See [`Form`](crate::model::Form).
+pub mod form {
+
+    /// A builder for [`Form`](crate::model::Form).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) environment_name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) form_action_type: std::option::Option<crate::model::FormActionType>,
+        pub(crate) style: std::option::Option<crate::model::FormStyle>,
+        pub(crate) data_type: std::option::Option<crate::model::FormDataTypeConfig>,
+        pub(crate) fields: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+        >,
+        pub(crate) sectional_elements: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+        >,
+        pub(crate) schema_version: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) cta: std::option::Option<crate::model::FormCta>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the Amplify app associated with the form.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the Amplify app associated with the form.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_name = input;
+            self
+        }
+        /// <p>The unique ID of the form.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the form.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the form.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the form.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The operation to perform on the specified form.</p>
+        pub fn form_action_type(mut self, input: crate::model::FormActionType) -> Self {
+            self.form_action_type = Some(input);
+            self
+        }
+        /// <p>The operation to perform on the specified form.</p>
+        pub fn set_form_action_type(
+            mut self,
+            input: std::option::Option<crate::model::FormActionType>,
+        ) -> Self {
+            self.form_action_type = input;
+            self
+        }
+        /// <p>Stores the configuration for the form's style.</p>
+        pub fn style(mut self, input: crate::model::FormStyle) -> Self {
+            self.style = Some(input);
+            self
+        }
+        /// <p>Stores the configuration for the form's style.</p>
+        pub fn set_style(mut self, input: std::option::Option<crate::model::FormStyle>) -> Self {
+            self.style = input;
+            self
+        }
+        /// <p>The type of data source to use to create the form.</p>
+        pub fn data_type(mut self, input: crate::model::FormDataTypeConfig) -> Self {
+            self.data_type = Some(input);
+            self
+        }
+        /// <p>The type of data source to use to create the form.</p>
+        pub fn set_data_type(
+            mut self,
+            input: std::option::Option<crate::model::FormDataTypeConfig>,
+        ) -> Self {
+            self.data_type = input;
+            self
+        }
+        /// Adds a key-value pair to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>Stores the information about the form's fields.</p>
+        pub fn fields(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::FieldConfig,
+        ) -> Self {
+            let mut hash_map = self.fields.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.fields = Some(hash_map);
+            self
+        }
+        /// <p>Stores the information about the form's fields.</p>
+        pub fn set_fields(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+            >,
+        ) -> Self {
+            self.fields = input;
+            self
+        }
+        /// Adds a key-value pair to `sectional_elements`.
+        ///
+        /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
+        ///
+        /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
+        pub fn sectional_elements(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::SectionalElement,
+        ) -> Self {
+            let mut hash_map = self.sectional_elements.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.sectional_elements = Some(hash_map);
+            self
+        }
+        /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
+        pub fn set_sectional_elements(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+            >,
+        ) -> Self {
+            self.sectional_elements = input;
+            self
+        }
+        /// <p>The schema version of the form when it was imported.</p>
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_version = Some(input.into());
+            self
+        }
+        /// <p>The schema version of the form when it was imported.</p>
+        pub fn set_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_version = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more key-value pairs to use when tagging the form.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>One or more key-value pairs to use when tagging the form.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>Stores the call to action configuration for the form.</p>
+        pub fn cta(mut self, input: crate::model::FormCta) -> Self {
+            self.cta = Some(input);
+            self
+        }
+        /// <p>Stores the call to action configuration for the form.</p>
+        pub fn set_cta(mut self, input: std::option::Option<crate::model::FormCta>) -> Self {
+            self.cta = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Form`](crate::model::Form).
+        pub fn build(self) -> crate::model::Form {
+            crate::model::Form {
+                app_id: self.app_id,
+                environment_name: self.environment_name,
+                id: self.id,
+                name: self.name,
+                form_action_type: self.form_action_type,
+                style: self.style,
+                data_type: self.data_type,
+                fields: self.fields,
+                sectional_elements: self.sectional_elements,
+                schema_version: self.schema_version,
+                tags: self.tags,
+                cta: self.cta,
+            }
+        }
+    }
+}
+impl Form {
+    /// Creates a new builder-style object to manufacture [`Form`](crate::model::Form).
+    pub fn builder() -> crate::model::form::Builder {
+        crate::model::form::Builder::default()
+    }
+}
+
+/// <p>Describes the call to action button configuration for the form..</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FormCta {
+    /// <p>The position of the button.</p>
+    #[doc(hidden)]
+    pub position: std::option::Option<crate::model::FormButtonsPosition>,
+    /// <p>Displays a clear button.</p>
+    #[doc(hidden)]
+    pub clear: std::option::Option<crate::model::FormButton>,
+    /// <p>Displays a cancel button.</p>
+    #[doc(hidden)]
+    pub cancel: std::option::Option<crate::model::FormButton>,
+    /// <p>Displays a submit button.</p>
+    #[doc(hidden)]
+    pub submit: std::option::Option<crate::model::FormButton>,
+}
+impl FormCta {
+    /// <p>The position of the button.</p>
+    pub fn position(&self) -> std::option::Option<&crate::model::FormButtonsPosition> {
+        self.position.as_ref()
+    }
+    /// <p>Displays a clear button.</p>
+    pub fn clear(&self) -> std::option::Option<&crate::model::FormButton> {
+        self.clear.as_ref()
+    }
+    /// <p>Displays a cancel button.</p>
+    pub fn cancel(&self) -> std::option::Option<&crate::model::FormButton> {
+        self.cancel.as_ref()
+    }
+    /// <p>Displays a submit button.</p>
+    pub fn submit(&self) -> std::option::Option<&crate::model::FormButton> {
+        self.submit.as_ref()
+    }
+}
+impl std::fmt::Debug for FormCta {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FormCta");
+        formatter.field("position", &self.position);
+        formatter.field("clear", &self.clear);
+        formatter.field("cancel", &self.cancel);
+        formatter.field("submit", &self.submit);
+        formatter.finish()
+    }
+}
+/// See [`FormCta`](crate::model::FormCta).
+pub mod form_cta {
+
+    /// A builder for [`FormCta`](crate::model::FormCta).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) position: std::option::Option<crate::model::FormButtonsPosition>,
+        pub(crate) clear: std::option::Option<crate::model::FormButton>,
+        pub(crate) cancel: std::option::Option<crate::model::FormButton>,
+        pub(crate) submit: std::option::Option<crate::model::FormButton>,
+    }
+    impl Builder {
+        /// <p>The position of the button.</p>
+        pub fn position(mut self, input: crate::model::FormButtonsPosition) -> Self {
+            self.position = Some(input);
+            self
+        }
+        /// <p>The position of the button.</p>
+        pub fn set_position(
+            mut self,
+            input: std::option::Option<crate::model::FormButtonsPosition>,
+        ) -> Self {
+            self.position = input;
+            self
+        }
+        /// <p>Displays a clear button.</p>
+        pub fn clear(mut self, input: crate::model::FormButton) -> Self {
+            self.clear = Some(input);
+            self
+        }
+        /// <p>Displays a clear button.</p>
+        pub fn set_clear(mut self, input: std::option::Option<crate::model::FormButton>) -> Self {
+            self.clear = input;
+            self
+        }
+        /// <p>Displays a cancel button.</p>
+        pub fn cancel(mut self, input: crate::model::FormButton) -> Self {
+            self.cancel = Some(input);
+            self
+        }
+        /// <p>Displays a cancel button.</p>
+        pub fn set_cancel(mut self, input: std::option::Option<crate::model::FormButton>) -> Self {
+            self.cancel = input;
+            self
+        }
+        /// <p>Displays a submit button.</p>
+        pub fn submit(mut self, input: crate::model::FormButton) -> Self {
+            self.submit = Some(input);
+            self
+        }
+        /// <p>Displays a submit button.</p>
+        pub fn set_submit(mut self, input: std::option::Option<crate::model::FormButton>) -> Self {
+            self.submit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FormCta`](crate::model::FormCta).
+        pub fn build(self) -> crate::model::FormCta {
+            crate::model::FormCta {
+                position: self.position,
+                clear: self.clear,
+                cancel: self.cancel,
+                submit: self.submit,
+            }
+        }
+    }
+}
+impl FormCta {
+    /// Creates a new builder-style object to manufacture [`FormCta`](crate::model::FormCta).
+    pub fn builder() -> crate::model::form_cta::Builder {
+        crate::model::form_cta::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for a button UI element that is a part of a form.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FormButton {
+    /// <p>Specifies whether the button is visible on the form.</p>
+    #[doc(hidden)]
+    pub excluded: std::option::Option<bool>,
+    /// <p>Describes the button's properties.</p>
+    #[doc(hidden)]
+    pub children: std::option::Option<std::string::String>,
+    /// <p>The position of the button.</p>
+    #[doc(hidden)]
+    pub position: std::option::Option<crate::model::FieldPosition>,
+}
+impl FormButton {
+    /// <p>Specifies whether the button is visible on the form.</p>
+    pub fn excluded(&self) -> std::option::Option<bool> {
+        self.excluded
+    }
+    /// <p>Describes the button's properties.</p>
+    pub fn children(&self) -> std::option::Option<&str> {
+        self.children.as_deref()
+    }
+    /// <p>The position of the button.</p>
+    pub fn position(&self) -> std::option::Option<&crate::model::FieldPosition> {
+        self.position.as_ref()
+    }
+}
+impl std::fmt::Debug for FormButton {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FormButton");
+        formatter.field("excluded", &self.excluded);
+        formatter.field("children", &self.children);
+        formatter.field("position", &self.position);
+        formatter.finish()
+    }
+}
+/// See [`FormButton`](crate::model::FormButton).
+pub mod form_button {
+
+    /// A builder for [`FormButton`](crate::model::FormButton).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) excluded: std::option::Option<bool>,
+        pub(crate) children: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<crate::model::FieldPosition>,
+    }
+    impl Builder {
+        /// <p>Specifies whether the button is visible on the form.</p>
+        pub fn excluded(mut self, input: bool) -> Self {
+            self.excluded = Some(input);
+            self
+        }
+        /// <p>Specifies whether the button is visible on the form.</p>
+        pub fn set_excluded(mut self, input: std::option::Option<bool>) -> Self {
+            self.excluded = input;
+            self
+        }
+        /// <p>Describes the button's properties.</p>
+        pub fn children(mut self, input: impl Into<std::string::String>) -> Self {
+            self.children = Some(input.into());
+            self
+        }
+        /// <p>Describes the button's properties.</p>
+        pub fn set_children(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.children = input;
+            self
+        }
+        /// <p>The position of the button.</p>
+        pub fn position(mut self, input: crate::model::FieldPosition) -> Self {
+            self.position = Some(input);
+            self
+        }
+        /// <p>The position of the button.</p>
+        pub fn set_position(
+            mut self,
+            input: std::option::Option<crate::model::FieldPosition>,
+        ) -> Self {
+            self.position = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FormButton`](crate::model::FormButton).
+        pub fn build(self) -> crate::model::FormButton {
+            crate::model::FormButton {
+                excluded: self.excluded,
+                children: self.children,
+                position: self.position,
+            }
+        }
+    }
+}
+impl FormButton {
+    /// Creates a new builder-style object to manufacture [`FormButton`](crate::model::FormButton).
+    pub fn builder() -> crate::model::form_button::Builder {
+        crate::model::form_button::Builder::default()
+    }
+}
+
+/// <p>Describes the field position.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum FieldPosition {
+    /// <p>The field position is below the field specified by the string.</p>
+    Below(std::string::String),
+    /// <p>The field position is fixed and doesn't change in relation to other fields.</p>
+    Fixed(crate::model::FixedPosition),
+    /// <p>The field position is to the right of the field specified by the string.</p>
+    RightOf(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl FieldPosition {
+    /// Tries to convert the enum instance into [`Below`](crate::model::FieldPosition::Below), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_below(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let FieldPosition::Below(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Below`](crate::model::FieldPosition::Below).
+    pub fn is_below(&self) -> bool {
+        self.as_below().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Fixed`](crate::model::FieldPosition::Fixed), extracting the inner [`FixedPosition`](crate::model::FixedPosition).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_fixed(&self) -> std::result::Result<&crate::model::FixedPosition, &Self> {
+        if let FieldPosition::Fixed(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Fixed`](crate::model::FieldPosition::Fixed).
+    pub fn is_fixed(&self) -> bool {
+        self.as_fixed().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RightOf`](crate::model::FieldPosition::RightOf), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_right_of(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let FieldPosition::RightOf(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`RightOf`](crate::model::FieldPosition::RightOf).
+    pub fn is_right_of(&self) -> bool {
+        self.as_right_of().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FixedPosition {
+    #[allow(missing_docs)] // documentation missing in model
+    First,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FixedPosition {
+    fn from(s: &str) -> Self {
+        match s {
+            "first" => FixedPosition::First,
+            other => FixedPosition::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FixedPosition {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FixedPosition::from(s))
+    }
+}
+impl FixedPosition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FixedPosition::First => "first",
+            FixedPosition::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["first"]
+    }
+}
+impl AsRef<str> for FixedPosition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FormButtonsPosition {
+    #[allow(missing_docs)] // documentation missing in model
+    Bottom,
+    #[allow(missing_docs)] // documentation missing in model
+    Top,
+    #[allow(missing_docs)] // documentation missing in model
+    TopAndBottom,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FormButtonsPosition {
+    fn from(s: &str) -> Self {
+        match s {
+            "bottom" => FormButtonsPosition::Bottom,
+            "top" => FormButtonsPosition::Top,
+            "top_and_bottom" => FormButtonsPosition::TopAndBottom,
+            other => FormButtonsPosition::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FormButtonsPosition {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FormButtonsPosition::from(s))
+    }
+}
+impl FormButtonsPosition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FormButtonsPosition::Bottom => "bottom",
+            FormButtonsPosition::Top => "top",
+            FormButtonsPosition::TopAndBottom => "top_and_bottom",
+            FormButtonsPosition::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["bottom", "top", "top_and_bottom"]
+    }
+}
+impl AsRef<str> for FormButtonsPosition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Stores the configuration information for a visual helper element for a form. A sectional element can be a header, a text block, or a divider. These elements are static and not associated with any data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SectionalElement {
+    /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
+    #[doc(hidden)]
+    pub position: std::option::Option<crate::model::FieldPosition>,
+    /// <p>The text for a <code>Text</code> sectional element.</p>
+    #[doc(hidden)]
+    pub text: std::option::Option<std::string::String>,
+    /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+    #[doc(hidden)]
+    pub level: std::option::Option<i32>,
+    /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
+    #[doc(hidden)]
+    pub orientation: std::option::Option<std::string::String>,
+}
+impl SectionalElement {
+    /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
+    pub fn position(&self) -> std::option::Option<&crate::model::FieldPosition> {
+        self.position.as_ref()
+    }
+    /// <p>The text for a <code>Text</code> sectional element.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+    pub fn level(&self) -> std::option::Option<i32> {
+        self.level
+    }
+    /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
+    pub fn orientation(&self) -> std::option::Option<&str> {
+        self.orientation.as_deref()
+    }
+}
+impl std::fmt::Debug for SectionalElement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SectionalElement");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("position", &self.position);
+        formatter.field("text", &self.text);
+        formatter.field("level", &self.level);
+        formatter.field("orientation", &self.orientation);
+        formatter.finish()
+    }
+}
+/// See [`SectionalElement`](crate::model::SectionalElement).
+pub mod sectional_element {
+
+    /// A builder for [`SectionalElement`](crate::model::SectionalElement).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<crate::model::FieldPosition>,
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) level: std::option::Option<i32>,
+        pub(crate) orientation: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
+        pub fn position(mut self, input: crate::model::FieldPosition) -> Self {
+            self.position = Some(input);
+            self
+        }
+        /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
+        pub fn set_position(
+            mut self,
+            input: std::option::Option<crate::model::FieldPosition>,
+        ) -> Self {
+            self.position = input;
+            self
+        }
+        /// <p>The text for a <code>Text</code> sectional element.</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p>The text for a <code>Text</code> sectional element.</p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+        pub fn level(mut self, input: i32) -> Self {
+            self.level = Some(input);
+            self
+        }
+        /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+        pub fn set_level(mut self, input: std::option::Option<i32>) -> Self {
+            self.level = input;
+            self
+        }
+        /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
+        pub fn orientation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.orientation = Some(input.into());
+            self
+        }
+        /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
+        pub fn set_orientation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.orientation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SectionalElement`](crate::model::SectionalElement).
+        pub fn build(self) -> crate::model::SectionalElement {
+            crate::model::SectionalElement {
+                r#type: self.r#type,
+                position: self.position,
+                text: self.text,
+                level: self.level,
+                orientation: self.orientation,
+            }
+        }
+    }
+}
+impl SectionalElement {
+    /// Creates a new builder-style object to manufacture [`SectionalElement`](crate::model::SectionalElement).
+    pub fn builder() -> crate::model::sectional_element::Builder {
+        crate::model::sectional_element::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration information for a field in a table.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FieldConfig {
+    /// <p>The label for the field.</p>
+    #[doc(hidden)]
+    pub label: std::option::Option<std::string::String>,
+    /// <p>Specifies the field position.</p>
+    #[doc(hidden)]
+    pub position: std::option::Option<crate::model::FieldPosition>,
+    /// <p>Specifies whether to hide a field.</p>
+    #[doc(hidden)]
+    pub excluded: std::option::Option<bool>,
+    /// <p>Describes the configuration for the default input value to display for a field.</p>
+    #[doc(hidden)]
+    pub input_type: std::option::Option<crate::model::FieldInputConfig>,
+    /// <p>The validations to perform on the value in the field.</p>
+    #[doc(hidden)]
+    pub validations: std::option::Option<std::vec::Vec<crate::model::FieldValidationConfiguration>>,
+}
+impl FieldConfig {
+    /// <p>The label for the field.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>Specifies the field position.</p>
+    pub fn position(&self) -> std::option::Option<&crate::model::FieldPosition> {
+        self.position.as_ref()
+    }
+    /// <p>Specifies whether to hide a field.</p>
+    pub fn excluded(&self) -> std::option::Option<bool> {
+        self.excluded
+    }
+    /// <p>Describes the configuration for the default input value to display for a field.</p>
+    pub fn input_type(&self) -> std::option::Option<&crate::model::FieldInputConfig> {
+        self.input_type.as_ref()
+    }
+    /// <p>The validations to perform on the value in the field.</p>
+    pub fn validations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FieldValidationConfiguration]> {
+        self.validations.as_deref()
+    }
+}
+impl std::fmt::Debug for FieldConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FieldConfig");
+        formatter.field("label", &self.label);
+        formatter.field("position", &self.position);
+        formatter.field("excluded", &self.excluded);
+        formatter.field("input_type", &self.input_type);
+        formatter.field("validations", &self.validations);
+        formatter.finish()
+    }
+}
+/// See [`FieldConfig`](crate::model::FieldConfig).
+pub mod field_config {
+
+    /// A builder for [`FieldConfig`](crate::model::FieldConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<crate::model::FieldPosition>,
+        pub(crate) excluded: std::option::Option<bool>,
+        pub(crate) input_type: std::option::Option<crate::model::FieldInputConfig>,
+        pub(crate) validations:
+            std::option::Option<std::vec::Vec<crate::model::FieldValidationConfiguration>>,
+    }
+    impl Builder {
+        /// <p>The label for the field.</p>
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label = Some(input.into());
+            self
+        }
+        /// <p>The label for the field.</p>
+        pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label = input;
+            self
+        }
+        /// <p>Specifies the field position.</p>
+        pub fn position(mut self, input: crate::model::FieldPosition) -> Self {
+            self.position = Some(input);
+            self
+        }
+        /// <p>Specifies the field position.</p>
+        pub fn set_position(
+            mut self,
+            input: std::option::Option<crate::model::FieldPosition>,
+        ) -> Self {
+            self.position = input;
+            self
+        }
+        /// <p>Specifies whether to hide a field.</p>
+        pub fn excluded(mut self, input: bool) -> Self {
+            self.excluded = Some(input);
+            self
+        }
+        /// <p>Specifies whether to hide a field.</p>
+        pub fn set_excluded(mut self, input: std::option::Option<bool>) -> Self {
+            self.excluded = input;
+            self
+        }
+        /// <p>Describes the configuration for the default input value to display for a field.</p>
+        pub fn input_type(mut self, input: crate::model::FieldInputConfig) -> Self {
+            self.input_type = Some(input);
+            self
+        }
+        /// <p>Describes the configuration for the default input value to display for a field.</p>
+        pub fn set_input_type(
+            mut self,
+            input: std::option::Option<crate::model::FieldInputConfig>,
+        ) -> Self {
+            self.input_type = input;
+            self
+        }
+        /// Appends an item to `validations`.
+        ///
+        /// To override the contents of this collection use [`set_validations`](Self::set_validations).
+        ///
+        /// <p>The validations to perform on the value in the field.</p>
+        pub fn validations(mut self, input: crate::model::FieldValidationConfiguration) -> Self {
+            let mut v = self.validations.unwrap_or_default();
+            v.push(input);
+            self.validations = Some(v);
+            self
+        }
+        /// <p>The validations to perform on the value in the field.</p>
+        pub fn set_validations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FieldValidationConfiguration>>,
+        ) -> Self {
+            self.validations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FieldConfig`](crate::model::FieldConfig).
+        pub fn build(self) -> crate::model::FieldConfig {
+            crate::model::FieldConfig {
+                label: self.label,
+                position: self.position,
+                excluded: self.excluded,
+                input_type: self.input_type,
+                validations: self.validations,
+            }
+        }
+    }
+}
+impl FieldConfig {
+    /// Creates a new builder-style object to manufacture [`FieldConfig`](crate::model::FieldConfig).
+    pub fn builder() -> crate::model::field_config::Builder {
+        crate::model::field_config::Builder::default()
+    }
+}
+
+/// <p>Describes the validation configuration for a field.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FieldValidationConfiguration {
+    /// <p>The validation to perform on an object type.<code></code> </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The validation to perform on a string value.</p>
+    #[doc(hidden)]
+    pub str_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The validation to perform on a number value.</p>
+    #[doc(hidden)]
+    pub num_values: std::option::Option<std::vec::Vec<i32>>,
+    /// <p>The validation message to display.</p>
+    #[doc(hidden)]
+    pub validation_message: std::option::Option<std::string::String>,
+}
+impl FieldValidationConfiguration {
+    /// <p>The validation to perform on an object type.<code></code> </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The validation to perform on a string value.</p>
+    pub fn str_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.str_values.as_deref()
+    }
+    /// <p>The validation to perform on a number value.</p>
+    pub fn num_values(&self) -> std::option::Option<&[i32]> {
+        self.num_values.as_deref()
+    }
+    /// <p>The validation message to display.</p>
+    pub fn validation_message(&self) -> std::option::Option<&str> {
+        self.validation_message.as_deref()
+    }
+}
+impl std::fmt::Debug for FieldValidationConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FieldValidationConfiguration");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("str_values", &self.str_values);
+        formatter.field("num_values", &self.num_values);
+        formatter.field("validation_message", &self.validation_message);
+        formatter.finish()
+    }
+}
+/// See [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
+pub mod field_validation_configuration {
+
+    /// A builder for [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) str_values: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) num_values: std::option::Option<std::vec::Vec<i32>>,
+        pub(crate) validation_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The validation to perform on an object type.<code></code> </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The validation to perform on an object type.<code></code> </p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Appends an item to `str_values`.
+        ///
+        /// To override the contents of this collection use [`set_str_values`](Self::set_str_values).
+        ///
+        /// <p>The validation to perform on a string value.</p>
+        pub fn str_values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.str_values.unwrap_or_default();
+            v.push(input.into());
+            self.str_values = Some(v);
+            self
+        }
+        /// <p>The validation to perform on a string value.</p>
+        pub fn set_str_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.str_values = input;
+            self
+        }
+        /// Appends an item to `num_values`.
+        ///
+        /// To override the contents of this collection use [`set_num_values`](Self::set_num_values).
+        ///
+        /// <p>The validation to perform on a number value.</p>
+        pub fn num_values(mut self, input: i32) -> Self {
+            let mut v = self.num_values.unwrap_or_default();
+            v.push(input);
+            self.num_values = Some(v);
+            self
+        }
+        /// <p>The validation to perform on a number value.</p>
+        pub fn set_num_values(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.num_values = input;
+            self
+        }
+        /// <p>The validation message to display.</p>
+        pub fn validation_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.validation_message = Some(input.into());
+            self
+        }
+        /// <p>The validation message to display.</p>
+        pub fn set_validation_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.validation_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
+        pub fn build(self) -> crate::model::FieldValidationConfiguration {
+            crate::model::FieldValidationConfiguration {
+                r#type: self.r#type,
+                str_values: self.str_values,
+                num_values: self.num_values,
+                validation_message: self.validation_message,
+            }
+        }
+    }
+}
+impl FieldValidationConfiguration {
+    /// Creates a new builder-style object to manufacture [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
+    pub fn builder() -> crate::model::field_validation_configuration::Builder {
+        crate::model::field_validation_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for the default input values to display for a field.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FieldInputConfig {
+    /// <p>The input type for the field. </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>Specifies a field that requires input.</p>
+    #[doc(hidden)]
+    pub required: std::option::Option<bool>,
+    /// <p>Specifies a read only field.</p>
+    #[doc(hidden)]
+    pub read_only: std::option::Option<bool>,
+    /// <p>The text to display as a placeholder for the field.</p>
+    #[doc(hidden)]
+    pub placeholder: std::option::Option<std::string::String>,
+    /// <p>The default value for the field.</p>
+    #[doc(hidden)]
+    pub default_value: std::option::Option<std::string::String>,
+    /// <p>The text to display to describe the field.</p>
+    #[doc(hidden)]
+    pub descriptive_text: std::option::Option<std::string::String>,
+    /// <p>Specifies whether a field has a default value.</p>
+    #[doc(hidden)]
+    pub default_checked: std::option::Option<bool>,
+    /// <p>The default country code for a phone number.</p>
+    #[doc(hidden)]
+    pub default_country_code: std::option::Option<std::string::String>,
+    /// <p>The information to use to customize the input fields with data at runtime.</p>
+    #[doc(hidden)]
+    pub value_mappings: std::option::Option<crate::model::ValueMappings>,
+    /// <p>The name of the field.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The minimum value to display for the field.</p>
+    #[doc(hidden)]
+    pub min_value: std::option::Option<f32>,
+    /// <p>The maximum value to display for the field.</p>
+    #[doc(hidden)]
+    pub max_value: std::option::Option<f32>,
+    /// <p>The stepping increment for a numeric value in a field.</p>
+    #[doc(hidden)]
+    pub step: std::option::Option<f32>,
+    /// <p>The value for the field.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+}
+impl FieldInputConfig {
+    /// <p>The input type for the field. </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Specifies a field that requires input.</p>
+    pub fn required(&self) -> std::option::Option<bool> {
+        self.required
+    }
+    /// <p>Specifies a read only field.</p>
+    pub fn read_only(&self) -> std::option::Option<bool> {
+        self.read_only
+    }
+    /// <p>The text to display as a placeholder for the field.</p>
+    pub fn placeholder(&self) -> std::option::Option<&str> {
+        self.placeholder.as_deref()
+    }
+    /// <p>The default value for the field.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>The text to display to describe the field.</p>
+    pub fn descriptive_text(&self) -> std::option::Option<&str> {
+        self.descriptive_text.as_deref()
+    }
+    /// <p>Specifies whether a field has a default value.</p>
+    pub fn default_checked(&self) -> std::option::Option<bool> {
+        self.default_checked
+    }
+    /// <p>The default country code for a phone number.</p>
+    pub fn default_country_code(&self) -> std::option::Option<&str> {
+        self.default_country_code.as_deref()
+    }
+    /// <p>The information to use to customize the input fields with data at runtime.</p>
+    pub fn value_mappings(&self) -> std::option::Option<&crate::model::ValueMappings> {
+        self.value_mappings.as_ref()
+    }
+    /// <p>The name of the field.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The minimum value to display for the field.</p>
+    pub fn min_value(&self) -> std::option::Option<f32> {
+        self.min_value
+    }
+    /// <p>The maximum value to display for the field.</p>
+    pub fn max_value(&self) -> std::option::Option<f32> {
+        self.max_value
+    }
+    /// <p>The stepping increment for a numeric value in a field.</p>
+    pub fn step(&self) -> std::option::Option<f32> {
+        self.step
+    }
+    /// <p>The value for the field.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for FieldInputConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FieldInputConfig");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("required", &self.required);
+        formatter.field("read_only", &self.read_only);
+        formatter.field("placeholder", &self.placeholder);
+        formatter.field("default_value", &self.default_value);
+        formatter.field("descriptive_text", &self.descriptive_text);
+        formatter.field("default_checked", &self.default_checked);
+        formatter.field("default_country_code", &self.default_country_code);
+        formatter.field("value_mappings", &self.value_mappings);
+        formatter.field("name", &self.name);
+        formatter.field("min_value", &self.min_value);
+        formatter.field("max_value", &self.max_value);
+        formatter.field("step", &self.step);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`FieldInputConfig`](crate::model::FieldInputConfig).
+pub mod field_input_config {
+
+    /// A builder for [`FieldInputConfig`](crate::model::FieldInputConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) required: std::option::Option<bool>,
+        pub(crate) read_only: std::option::Option<bool>,
+        pub(crate) placeholder: std::option::Option<std::string::String>,
+        pub(crate) default_value: std::option::Option<std::string::String>,
+        pub(crate) descriptive_text: std::option::Option<std::string::String>,
+        pub(crate) default_checked: std::option::Option<bool>,
+        pub(crate) default_country_code: std::option::Option<std::string::String>,
+        pub(crate) value_mappings: std::option::Option<crate::model::ValueMappings>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) min_value: std::option::Option<f32>,
+        pub(crate) max_value: std::option::Option<f32>,
+        pub(crate) step: std::option::Option<f32>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The input type for the field. </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The input type for the field. </p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Specifies a field that requires input.</p>
+        pub fn required(mut self, input: bool) -> Self {
+            self.required = Some(input);
+            self
+        }
+        /// <p>Specifies a field that requires input.</p>
+        pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.required = input;
+            self
+        }
+        /// <p>Specifies a read only field.</p>
+        pub fn read_only(mut self, input: bool) -> Self {
+            self.read_only = Some(input);
+            self
+        }
+        /// <p>Specifies a read only field.</p>
+        pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.read_only = input;
+            self
+        }
+        /// <p>The text to display as a placeholder for the field.</p>
+        pub fn placeholder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.placeholder = Some(input.into());
+            self
+        }
+        /// <p>The text to display as a placeholder for the field.</p>
+        pub fn set_placeholder(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.placeholder = input;
+            self
+        }
+        /// <p>The default value for the field.</p>
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_value = Some(input.into());
+            self
+        }
+        /// <p>The default value for the field.</p>
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_value = input;
+            self
+        }
+        /// <p>The text to display to describe the field.</p>
+        pub fn descriptive_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.descriptive_text = Some(input.into());
+            self
+        }
+        /// <p>The text to display to describe the field.</p>
+        pub fn set_descriptive_text(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.descriptive_text = input;
+            self
+        }
+        /// <p>Specifies whether a field has a default value.</p>
+        pub fn default_checked(mut self, input: bool) -> Self {
+            self.default_checked = Some(input);
+            self
+        }
+        /// <p>Specifies whether a field has a default value.</p>
+        pub fn set_default_checked(mut self, input: std::option::Option<bool>) -> Self {
+            self.default_checked = input;
+            self
+        }
+        /// <p>The default country code for a phone number.</p>
+        pub fn default_country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_country_code = Some(input.into());
+            self
+        }
+        /// <p>The default country code for a phone number.</p>
+        pub fn set_default_country_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_country_code = input;
+            self
+        }
+        /// <p>The information to use to customize the input fields with data at runtime.</p>
+        pub fn value_mappings(mut self, input: crate::model::ValueMappings) -> Self {
+            self.value_mappings = Some(input);
+            self
+        }
+        /// <p>The information to use to customize the input fields with data at runtime.</p>
+        pub fn set_value_mappings(
+            mut self,
+            input: std::option::Option<crate::model::ValueMappings>,
+        ) -> Self {
+            self.value_mappings = input;
+            self
+        }
+        /// <p>The name of the field.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the field.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The minimum value to display for the field.</p>
+        pub fn min_value(mut self, input: f32) -> Self {
+            self.min_value = Some(input);
+            self
+        }
+        /// <p>The minimum value to display for the field.</p>
+        pub fn set_min_value(mut self, input: std::option::Option<f32>) -> Self {
+            self.min_value = input;
+            self
+        }
+        /// <p>The maximum value to display for the field.</p>
+        pub fn max_value(mut self, input: f32) -> Self {
+            self.max_value = Some(input);
+            self
+        }
+        /// <p>The maximum value to display for the field.</p>
+        pub fn set_max_value(mut self, input: std::option::Option<f32>) -> Self {
+            self.max_value = input;
+            self
+        }
+        /// <p>The stepping increment for a numeric value in a field.</p>
+        pub fn step(mut self, input: f32) -> Self {
+            self.step = Some(input);
+            self
+        }
+        /// <p>The stepping increment for a numeric value in a field.</p>
+        pub fn set_step(mut self, input: std::option::Option<f32>) -> Self {
+            self.step = input;
+            self
+        }
+        /// <p>The value for the field.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value for the field.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FieldInputConfig`](crate::model::FieldInputConfig).
+        pub fn build(self) -> crate::model::FieldInputConfig {
+            crate::model::FieldInputConfig {
+                r#type: self.r#type,
+                required: self.required,
+                read_only: self.read_only,
+                placeholder: self.placeholder,
+                default_value: self.default_value,
+                descriptive_text: self.descriptive_text,
+                default_checked: self.default_checked,
+                default_country_code: self.default_country_code,
+                value_mappings: self.value_mappings,
+                name: self.name,
+                min_value: self.min_value,
+                max_value: self.max_value,
+                step: self.step,
+                value: self.value,
+            }
+        }
+    }
+}
+impl FieldInputConfig {
+    /// Creates a new builder-style object to manufacture [`FieldInputConfig`](crate::model::FieldInputConfig).
+    pub fn builder() -> crate::model::field_input_config::Builder {
+        crate::model::field_input_config::Builder::default()
+    }
+}
+
+/// <p>Represents the data binding configuration for a value map.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValueMappings {
+    /// <p>The value and display value pairs.</p>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::vec::Vec<crate::model::ValueMapping>>,
+}
+impl ValueMappings {
+    /// <p>The value and display value pairs.</p>
+    pub fn values(&self) -> std::option::Option<&[crate::model::ValueMapping]> {
+        self.values.as_deref()
+    }
+}
+impl std::fmt::Debug for ValueMappings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValueMappings");
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`ValueMappings`](crate::model::ValueMappings).
+pub mod value_mappings {
+
+    /// A builder for [`ValueMappings`](crate::model::ValueMappings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ValueMapping>>,
+    }
+    impl Builder {
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The value and display value pairs.</p>
+        pub fn values(mut self, input: crate::model::ValueMapping) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input);
+            self.values = Some(v);
+            self
+        }
+        /// <p>The value and display value pairs.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValueMapping>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValueMappings`](crate::model::ValueMappings).
+        pub fn build(self) -> crate::model::ValueMappings {
+            crate::model::ValueMappings {
+                values: self.values,
+            }
+        }
+    }
+}
+impl ValueMappings {
+    /// Creates a new builder-style object to manufacture [`ValueMappings`](crate::model::ValueMappings).
+    pub fn builder() -> crate::model::value_mappings::Builder {
+        crate::model::value_mappings::Builder::default()
+    }
+}
+
+/// <p>Associates a complex object with a display value. Use <code>ValueMapping</code> to store how to represent complex objects when they are displayed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValueMapping {
+    /// <p>The value to display for the complex object.</p>
+    #[doc(hidden)]
+    pub display_value: std::option::Option<crate::model::FormInputValueProperty>,
+    /// <p>The complex object.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<crate::model::FormInputValueProperty>,
+}
+impl ValueMapping {
+    /// <p>The value to display for the complex object.</p>
+    pub fn display_value(&self) -> std::option::Option<&crate::model::FormInputValueProperty> {
+        self.display_value.as_ref()
+    }
+    /// <p>The complex object.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::FormInputValueProperty> {
+        self.value.as_ref()
+    }
+}
+impl std::fmt::Debug for ValueMapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValueMapping");
+        formatter.field("display_value", &self.display_value);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`ValueMapping`](crate::model::ValueMapping).
+pub mod value_mapping {
+
+    /// A builder for [`ValueMapping`](crate::model::ValueMapping).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) display_value: std::option::Option<crate::model::FormInputValueProperty>,
+        pub(crate) value: std::option::Option<crate::model::FormInputValueProperty>,
+    }
+    impl Builder {
+        /// <p>The value to display for the complex object.</p>
+        pub fn display_value(mut self, input: crate::model::FormInputValueProperty) -> Self {
+            self.display_value = Some(input);
+            self
+        }
+        /// <p>The value to display for the complex object.</p>
+        pub fn set_display_value(
+            mut self,
+            input: std::option::Option<crate::model::FormInputValueProperty>,
+        ) -> Self {
+            self.display_value = input;
+            self
+        }
+        /// <p>The complex object.</p>
+        pub fn value(mut self, input: crate::model::FormInputValueProperty) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p>The complex object.</p>
+        pub fn set_value(
+            mut self,
+            input: std::option::Option<crate::model::FormInputValueProperty>,
+        ) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValueMapping`](crate::model::ValueMapping).
+        pub fn build(self) -> crate::model::ValueMapping {
+            crate::model::ValueMapping {
+                display_value: self.display_value,
+                value: self.value,
+            }
+        }
+    }
+}
+impl ValueMapping {
+    /// Creates a new builder-style object to manufacture [`ValueMapping`](crate::model::ValueMapping).
+    pub fn builder() -> crate::model::value_mapping::Builder {
+        crate::model::value_mapping::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for an input field on a form. Use <code>FormInputValueProperty</code> to specify the values to render or bind by default.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FormInputValueProperty {
+    /// <p>The value to assign to the input field.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+}
+impl FormInputValueProperty {
+    /// <p>The value to assign to the input field.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for FormInputValueProperty {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FormInputValueProperty");
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`FormInputValueProperty`](crate::model::FormInputValueProperty).
+pub mod form_input_value_property {
+
+    /// A builder for [`FormInputValueProperty`](crate::model::FormInputValueProperty).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The value to assign to the input field.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value to assign to the input field.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FormInputValueProperty`](crate::model::FormInputValueProperty).
+        pub fn build(self) -> crate::model::FormInputValueProperty {
+            crate::model::FormInputValueProperty { value: self.value }
+        }
+    }
+}
+impl FormInputValueProperty {
+    /// Creates a new builder-style object to manufacture [`FormInputValueProperty`](crate::model::FormInputValueProperty).
+    pub fn builder() -> crate::model::form_input_value_property::Builder {
+        crate::model::form_input_value_property::Builder::default()
+    }
+}
+
+/// <p>Describes the data type configuration for the data source associated with a form.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FormDataTypeConfig {
+    /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
+    #[doc(hidden)]
+    pub data_source_type: std::option::Option<crate::model::FormDataSourceType>,
+    /// <p>The unique name of the data type you are using as the data source for the form.</p>
+    #[doc(hidden)]
+    pub data_type_name: std::option::Option<std::string::String>,
+}
+impl FormDataTypeConfig {
+    /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
+    pub fn data_source_type(&self) -> std::option::Option<&crate::model::FormDataSourceType> {
+        self.data_source_type.as_ref()
+    }
+    /// <p>The unique name of the data type you are using as the data source for the form.</p>
+    pub fn data_type_name(&self) -> std::option::Option<&str> {
+        self.data_type_name.as_deref()
+    }
+}
+impl std::fmt::Debug for FormDataTypeConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FormDataTypeConfig");
+        formatter.field("data_source_type", &self.data_source_type);
+        formatter.field("data_type_name", &self.data_type_name);
+        formatter.finish()
+    }
+}
+/// See [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
+pub mod form_data_type_config {
+
+    /// A builder for [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_type: std::option::Option<crate::model::FormDataSourceType>,
+        pub(crate) data_type_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
+        pub fn data_source_type(mut self, input: crate::model::FormDataSourceType) -> Self {
+            self.data_source_type = Some(input);
+            self
+        }
+        /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
+        pub fn set_data_source_type(
+            mut self,
+            input: std::option::Option<crate::model::FormDataSourceType>,
+        ) -> Self {
+            self.data_source_type = input;
+            self
+        }
+        /// <p>The unique name of the data type you are using as the data source for the form.</p>
+        pub fn data_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the data type you are using as the data source for the form.</p>
+        pub fn set_data_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_type_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
+        pub fn build(self) -> crate::model::FormDataTypeConfig {
+            crate::model::FormDataTypeConfig {
+                data_source_type: self.data_source_type,
+                data_type_name: self.data_type_name,
+            }
+        }
+    }
+}
+impl FormDataTypeConfig {
+    /// Creates a new builder-style object to manufacture [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
+    pub fn builder() -> crate::model::form_data_type_config::Builder {
+        crate::model::form_data_type_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FormDataSourceType {
+    /// Will use passed in hooks to use when creating a form from scratch
+    Custom,
+    /// Will use a provided Amplify DataStore enabled API
+    Datastore,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FormDataSourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Custom" => FormDataSourceType::Custom,
+            "DataStore" => FormDataSourceType::Datastore,
+            other => FormDataSourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FormDataSourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FormDataSourceType::from(s))
+    }
+}
+impl FormDataSourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FormDataSourceType::Custom => "Custom",
+            FormDataSourceType::Datastore => "DataStore",
+            FormDataSourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Custom", "DataStore"]
+    }
+}
+impl AsRef<str> for FormDataSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the configuration for the form's style.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FormStyle {
+    /// <p>The spacing for the horizontal gap.</p>
+    #[doc(hidden)]
+    pub horizontal_gap: std::option::Option<crate::model::FormStyleConfig>,
+    /// <p>The spacing for the vertical gap.</p>
+    #[doc(hidden)]
+    pub vertical_gap: std::option::Option<crate::model::FormStyleConfig>,
+    /// <p>The size of the outer padding for the form.</p>
+    #[doc(hidden)]
+    pub outer_padding: std::option::Option<crate::model::FormStyleConfig>,
+}
+impl FormStyle {
+    /// <p>The spacing for the horizontal gap.</p>
+    pub fn horizontal_gap(&self) -> std::option::Option<&crate::model::FormStyleConfig> {
+        self.horizontal_gap.as_ref()
+    }
+    /// <p>The spacing for the vertical gap.</p>
+    pub fn vertical_gap(&self) -> std::option::Option<&crate::model::FormStyleConfig> {
+        self.vertical_gap.as_ref()
+    }
+    /// <p>The size of the outer padding for the form.</p>
+    pub fn outer_padding(&self) -> std::option::Option<&crate::model::FormStyleConfig> {
+        self.outer_padding.as_ref()
+    }
+}
+impl std::fmt::Debug for FormStyle {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FormStyle");
+        formatter.field("horizontal_gap", &self.horizontal_gap);
+        formatter.field("vertical_gap", &self.vertical_gap);
+        formatter.field("outer_padding", &self.outer_padding);
+        formatter.finish()
+    }
+}
+/// See [`FormStyle`](crate::model::FormStyle).
+pub mod form_style {
+
+    /// A builder for [`FormStyle`](crate::model::FormStyle).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) horizontal_gap: std::option::Option<crate::model::FormStyleConfig>,
+        pub(crate) vertical_gap: std::option::Option<crate::model::FormStyleConfig>,
+        pub(crate) outer_padding: std::option::Option<crate::model::FormStyleConfig>,
+    }
+    impl Builder {
+        /// <p>The spacing for the horizontal gap.</p>
+        pub fn horizontal_gap(mut self, input: crate::model::FormStyleConfig) -> Self {
+            self.horizontal_gap = Some(input);
+            self
+        }
+        /// <p>The spacing for the horizontal gap.</p>
+        pub fn set_horizontal_gap(
+            mut self,
+            input: std::option::Option<crate::model::FormStyleConfig>,
+        ) -> Self {
+            self.horizontal_gap = input;
+            self
+        }
+        /// <p>The spacing for the vertical gap.</p>
+        pub fn vertical_gap(mut self, input: crate::model::FormStyleConfig) -> Self {
+            self.vertical_gap = Some(input);
+            self
+        }
+        /// <p>The spacing for the vertical gap.</p>
+        pub fn set_vertical_gap(
+            mut self,
+            input: std::option::Option<crate::model::FormStyleConfig>,
+        ) -> Self {
+            self.vertical_gap = input;
+            self
+        }
+        /// <p>The size of the outer padding for the form.</p>
+        pub fn outer_padding(mut self, input: crate::model::FormStyleConfig) -> Self {
+            self.outer_padding = Some(input);
+            self
+        }
+        /// <p>The size of the outer padding for the form.</p>
+        pub fn set_outer_padding(
+            mut self,
+            input: std::option::Option<crate::model::FormStyleConfig>,
+        ) -> Self {
+            self.outer_padding = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FormStyle`](crate::model::FormStyle).
+        pub fn build(self) -> crate::model::FormStyle {
+            crate::model::FormStyle {
+                horizontal_gap: self.horizontal_gap,
+                vertical_gap: self.vertical_gap,
+                outer_padding: self.outer_padding,
+            }
+        }
+    }
+}
+impl FormStyle {
+    /// Creates a new builder-style object to manufacture [`FormStyle`](crate::model::FormStyle).
+    pub fn builder() -> crate::model::form_style::Builder {
+        crate::model::form_style::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration settings for the form's style properties.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum FormStyleConfig {
+    /// <p>A reference to a design token to use to bind the form's style properties to an existing theme.</p>
+    TokenReference(std::string::String),
+    /// <p>The value of the style setting.</p>
+    Value(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl FormStyleConfig {
+    /// Tries to convert the enum instance into [`TokenReference`](crate::model::FormStyleConfig::TokenReference), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_token_reference(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let FormStyleConfig::TokenReference(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`TokenReference`](crate::model::FormStyleConfig::TokenReference).
+    pub fn is_token_reference(&self) -> bool {
+        self.as_token_reference().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Value`](crate::model::FormStyleConfig::Value), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_value(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let FormStyleConfig::Value(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Value`](crate::model::FormStyleConfig::Value).
+    pub fn is_value(&self) -> bool {
+        self.as_value().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FormActionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Create,
+    #[allow(missing_docs)] // documentation missing in model
+    Update,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FormActionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "create" => FormActionType::Create,
+            "update" => FormActionType::Update,
+            other => FormActionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FormActionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FormActionType::from(s))
+    }
+}
+impl FormActionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FormActionType::Create => "create",
+            FormActionType::Update => "update",
+            FormActionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["create", "update"]
+    }
+}
+impl AsRef<str> for FormActionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the basic information about a form.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FormSummary {
+    /// <p>The unique ID for the app associated with the form summary.</p>
+    #[doc(hidden)]
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The form's data source type.</p>
+    #[doc(hidden)]
+    pub data_type: std::option::Option<crate::model::FormDataTypeConfig>,
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    #[doc(hidden)]
+    pub environment_name: std::option::Option<std::string::String>,
+    /// <p>The type of operation to perform on the form.</p>
+    #[doc(hidden)]
+    pub form_action_type: std::option::Option<crate::model::FormActionType>,
+    /// <p>The ID of the form.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the form.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl FormSummary {
+    /// <p>The unique ID for the app associated with the form summary.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The form's data source type.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::FormDataTypeConfig> {
+        self.data_type.as_ref()
+    }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The type of operation to perform on the form.</p>
+    pub fn form_action_type(&self) -> std::option::Option<&crate::model::FormActionType> {
+        self.form_action_type.as_ref()
+    }
+    /// <p>The ID of the form.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the form.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for FormSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FormSummary");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("data_type", &self.data_type);
+        formatter.field("environment_name", &self.environment_name);
+        formatter.field("form_action_type", &self.form_action_type);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`FormSummary`](crate::model::FormSummary).
+pub mod form_summary {
+
+    /// A builder for [`FormSummary`](crate::model::FormSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) data_type: std::option::Option<crate::model::FormDataTypeConfig>,
+        pub(crate) environment_name: std::option::Option<std::string::String>,
+        pub(crate) form_action_type: std::option::Option<crate::model::FormActionType>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique ID for the app associated with the form summary.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID for the app associated with the form summary.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The form's data source type.</p>
+        pub fn data_type(mut self, input: crate::model::FormDataTypeConfig) -> Self {
+            self.data_type = Some(input);
+            self
+        }
+        /// <p>The form's data source type.</p>
+        pub fn set_data_type(
+            mut self,
+            input: std::option::Option<crate::model::FormDataTypeConfig>,
+        ) -> Self {
+            self.data_type = input;
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment that is part of the Amplify app.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_name = input;
+            self
+        }
+        /// <p>The type of operation to perform on the form.</p>
+        pub fn form_action_type(mut self, input: crate::model::FormActionType) -> Self {
+            self.form_action_type = Some(input);
+            self
+        }
+        /// <p>The type of operation to perform on the form.</p>
+        pub fn set_form_action_type(
+            mut self,
+            input: std::option::Option<crate::model::FormActionType>,
+        ) -> Self {
+            self.form_action_type = input;
+            self
+        }
+        /// <p>The ID of the form.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the form.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the form.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the form.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FormSummary`](crate::model::FormSummary).
+        pub fn build(self) -> crate::model::FormSummary {
+            crate::model::FormSummary {
+                app_id: self.app_id,
+                data_type: self.data_type,
+                environment_name: self.environment_name,
+                form_action_type: self.form_action_type,
+                id: self.id,
+                name: self.name,
+            }
+        }
+    }
+}
+impl FormSummary {
+    /// Creates a new builder-style object to manufacture [`FormSummary`](crate::model::FormSummary).
+    pub fn builder() -> crate::model::form_summary::Builder {
+        crate::model::form_summary::Builder::default()
+    }
+}
+
+/// <p>Represents all of the information that is required to create a form.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFormData {
+    /// <p>The name of the form.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The type of data source to use to create the form.</p>
+    #[doc(hidden)]
+    pub data_type: std::option::Option<crate::model::FormDataTypeConfig>,
+    /// <p>Specifies whether to perform a create or update action on the form.</p>
+    #[doc(hidden)]
+    pub form_action_type: std::option::Option<crate::model::FormActionType>,
+    /// <p>The configuration information for the form's fields.</p>
+    #[doc(hidden)]
+    pub fields: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+    >,
+    /// <p>The configuration for the form's style.</p>
+    #[doc(hidden)]
+    pub style: std::option::Option<crate::model::FormStyle>,
+    /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+    #[doc(hidden)]
+    pub sectional_elements: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+    >,
+    /// <p>The schema version of the form.</p>
+    #[doc(hidden)]
+    pub schema_version: std::option::Option<std::string::String>,
+    /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+    #[doc(hidden)]
+    pub cta: std::option::Option<crate::model::FormCta>,
+    /// <p>One or more key-value pairs to use when tagging the form data.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateFormData {
+    /// <p>The name of the form.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of data source to use to create the form.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::FormDataTypeConfig> {
+        self.data_type.as_ref()
+    }
+    /// <p>Specifies whether to perform a create or update action on the form.</p>
+    pub fn form_action_type(&self) -> std::option::Option<&crate::model::FormActionType> {
+        self.form_action_type.as_ref()
+    }
+    /// <p>The configuration information for the form's fields.</p>
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+    > {
+        self.fields.as_ref()
+    }
+    /// <p>The configuration for the form's style.</p>
+    pub fn style(&self) -> std::option::Option<&crate::model::FormStyle> {
+        self.style.as_ref()
+    }
+    /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+    pub fn sectional_elements(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+    > {
+        self.sectional_elements.as_ref()
+    }
+    /// <p>The schema version of the form.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+    pub fn cta(&self) -> std::option::Option<&crate::model::FormCta> {
+        self.cta.as_ref()
+    }
+    /// <p>One or more key-value pairs to use when tagging the form data.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateFormData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFormData");
+        formatter.field("name", &self.name);
+        formatter.field("data_type", &self.data_type);
+        formatter.field("form_action_type", &self.form_action_type);
+        formatter.field("fields", &self.fields);
+        formatter.field("style", &self.style);
+        formatter.field("sectional_elements", &self.sectional_elements);
+        formatter.field("schema_version", &self.schema_version);
+        formatter.field("cta", &self.cta);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`CreateFormData`](crate::model::CreateFormData).
+pub mod create_form_data {
+
+    /// A builder for [`CreateFormData`](crate::model::CreateFormData).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) data_type: std::option::Option<crate::model::FormDataTypeConfig>,
+        pub(crate) form_action_type: std::option::Option<crate::model::FormActionType>,
+        pub(crate) fields: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+        >,
+        pub(crate) style: std::option::Option<crate::model::FormStyle>,
+        pub(crate) sectional_elements: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+        >,
+        pub(crate) schema_version: std::option::Option<std::string::String>,
+        pub(crate) cta: std::option::Option<crate::model::FormCta>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the form.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the form.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The type of data source to use to create the form.</p>
+        pub fn data_type(mut self, input: crate::model::FormDataTypeConfig) -> Self {
+            self.data_type = Some(input);
+            self
+        }
+        /// <p>The type of data source to use to create the form.</p>
+        pub fn set_data_type(
+            mut self,
+            input: std::option::Option<crate::model::FormDataTypeConfig>,
+        ) -> Self {
+            self.data_type = input;
+            self
+        }
+        /// <p>Specifies whether to perform a create or update action on the form.</p>
+        pub fn form_action_type(mut self, input: crate::model::FormActionType) -> Self {
+            self.form_action_type = Some(input);
+            self
+        }
+        /// <p>Specifies whether to perform a create or update action on the form.</p>
+        pub fn set_form_action_type(
+            mut self,
+            input: std::option::Option<crate::model::FormActionType>,
+        ) -> Self {
+            self.form_action_type = input;
+            self
+        }
+        /// Adds a key-value pair to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>The configuration information for the form's fields.</p>
+        pub fn fields(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::FieldConfig,
+        ) -> Self {
+            let mut hash_map = self.fields.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.fields = Some(hash_map);
+            self
+        }
+        /// <p>The configuration information for the form's fields.</p>
+        pub fn set_fields(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+            >,
+        ) -> Self {
+            self.fields = input;
+            self
+        }
+        /// <p>The configuration for the form's style.</p>
+        pub fn style(mut self, input: crate::model::FormStyle) -> Self {
+            self.style = Some(input);
+            self
+        }
+        /// <p>The configuration for the form's style.</p>
+        pub fn set_style(mut self, input: std::option::Option<crate::model::FormStyle>) -> Self {
+            self.style = input;
+            self
+        }
+        /// Adds a key-value pair to `sectional_elements`.
+        ///
+        /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
+        ///
+        /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+        pub fn sectional_elements(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::SectionalElement,
+        ) -> Self {
+            let mut hash_map = self.sectional_elements.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.sectional_elements = Some(hash_map);
+            self
+        }
+        /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+        pub fn set_sectional_elements(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+            >,
+        ) -> Self {
+            self.sectional_elements = input;
+            self
+        }
+        /// <p>The schema version of the form.</p>
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_version = Some(input.into());
+            self
+        }
+        /// <p>The schema version of the form.</p>
+        pub fn set_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_version = input;
+            self
+        }
+        /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+        pub fn cta(mut self, input: crate::model::FormCta) -> Self {
+            self.cta = Some(input);
+            self
+        }
+        /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+        pub fn set_cta(mut self, input: std::option::Option<crate::model::FormCta>) -> Self {
+            self.cta = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more key-value pairs to use when tagging the form data.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>One or more key-value pairs to use when tagging the form data.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFormData`](crate::model::CreateFormData).
+        pub fn build(self) -> crate::model::CreateFormData {
+            crate::model::CreateFormData {
+                name: self.name,
+                data_type: self.data_type,
+                form_action_type: self.form_action_type,
+                fields: self.fields,
+                style: self.style,
+                sectional_elements: self.sectional_elements,
+                schema_version: self.schema_version,
+                cta: self.cta,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl CreateFormData {
+    /// Creates a new builder-style object to manufacture [`CreateFormData`](crate::model::CreateFormData).
+    pub fn builder() -> crate::model::create_form_data::Builder {
+        crate::model::create_form_data::Builder::default()
+    }
+}
+
+/// <p>Updates and saves all of the information about a form, based on form ID.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFormData {
+    /// <p>The name of the form.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The type of data source to use to create the form.</p>
+    #[doc(hidden)]
+    pub data_type: std::option::Option<crate::model::FormDataTypeConfig>,
+    /// <p>Specifies whether to perform a create or update action on the form.</p>
+    #[doc(hidden)]
+    pub form_action_type: std::option::Option<crate::model::FormActionType>,
+    /// <p>The configuration information for the form's fields.</p>
+    #[doc(hidden)]
+    pub fields: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+    >,
+    /// <p>The configuration for the form's style.</p>
+    #[doc(hidden)]
+    pub style: std::option::Option<crate::model::FormStyle>,
+    /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+    #[doc(hidden)]
+    pub sectional_elements: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+    >,
+    /// <p>The schema version of the form.</p>
+    #[doc(hidden)]
+    pub schema_version: std::option::Option<std::string::String>,
+    /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+    #[doc(hidden)]
+    pub cta: std::option::Option<crate::model::FormCta>,
+}
+impl UpdateFormData {
+    /// <p>The name of the form.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of data source to use to create the form.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::FormDataTypeConfig> {
+        self.data_type.as_ref()
+    }
+    /// <p>Specifies whether to perform a create or update action on the form.</p>
+    pub fn form_action_type(&self) -> std::option::Option<&crate::model::FormActionType> {
+        self.form_action_type.as_ref()
+    }
+    /// <p>The configuration information for the form's fields.</p>
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+    > {
+        self.fields.as_ref()
+    }
+    /// <p>The configuration for the form's style.</p>
+    pub fn style(&self) -> std::option::Option<&crate::model::FormStyle> {
+        self.style.as_ref()
+    }
+    /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+    pub fn sectional_elements(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+    > {
+        self.sectional_elements.as_ref()
+    }
+    /// <p>The schema version of the form.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+    pub fn cta(&self) -> std::option::Option<&crate::model::FormCta> {
+        self.cta.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateFormData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFormData");
+        formatter.field("name", &self.name);
+        formatter.field("data_type", &self.data_type);
+        formatter.field("form_action_type", &self.form_action_type);
+        formatter.field("fields", &self.fields);
+        formatter.field("style", &self.style);
+        formatter.field("sectional_elements", &self.sectional_elements);
+        formatter.field("schema_version", &self.schema_version);
+        formatter.field("cta", &self.cta);
+        formatter.finish()
+    }
+}
+/// See [`UpdateFormData`](crate::model::UpdateFormData).
+pub mod update_form_data {
+
+    /// A builder for [`UpdateFormData`](crate::model::UpdateFormData).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) data_type: std::option::Option<crate::model::FormDataTypeConfig>,
+        pub(crate) form_action_type: std::option::Option<crate::model::FormActionType>,
+        pub(crate) fields: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+        >,
+        pub(crate) style: std::option::Option<crate::model::FormStyle>,
+        pub(crate) sectional_elements: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+        >,
+        pub(crate) schema_version: std::option::Option<std::string::String>,
+        pub(crate) cta: std::option::Option<crate::model::FormCta>,
+    }
+    impl Builder {
+        /// <p>The name of the form.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the form.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The type of data source to use to create the form.</p>
+        pub fn data_type(mut self, input: crate::model::FormDataTypeConfig) -> Self {
+            self.data_type = Some(input);
+            self
+        }
+        /// <p>The type of data source to use to create the form.</p>
+        pub fn set_data_type(
+            mut self,
+            input: std::option::Option<crate::model::FormDataTypeConfig>,
+        ) -> Self {
+            self.data_type = input;
+            self
+        }
+        /// <p>Specifies whether to perform a create or update action on the form.</p>
+        pub fn form_action_type(mut self, input: crate::model::FormActionType) -> Self {
+            self.form_action_type = Some(input);
+            self
+        }
+        /// <p>Specifies whether to perform a create or update action on the form.</p>
+        pub fn set_form_action_type(
+            mut self,
+            input: std::option::Option<crate::model::FormActionType>,
+        ) -> Self {
+            self.form_action_type = input;
+            self
+        }
+        /// Adds a key-value pair to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>The configuration information for the form's fields.</p>
+        pub fn fields(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::FieldConfig,
+        ) -> Self {
+            let mut hash_map = self.fields.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.fields = Some(hash_map);
+            self
+        }
+        /// <p>The configuration information for the form's fields.</p>
+        pub fn set_fields(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
+            >,
+        ) -> Self {
+            self.fields = input;
+            self
+        }
+        /// <p>The configuration for the form's style.</p>
+        pub fn style(mut self, input: crate::model::FormStyle) -> Self {
+            self.style = Some(input);
+            self
+        }
+        /// <p>The configuration for the form's style.</p>
+        pub fn set_style(mut self, input: std::option::Option<crate::model::FormStyle>) -> Self {
+            self.style = input;
+            self
+        }
+        /// Adds a key-value pair to `sectional_elements`.
+        ///
+        /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
+        ///
+        /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+        pub fn sectional_elements(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::SectionalElement,
+        ) -> Self {
+            let mut hash_map = self.sectional_elements.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.sectional_elements = Some(hash_map);
+            self
+        }
+        /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+        pub fn set_sectional_elements(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
+            >,
+        ) -> Self {
+            self.sectional_elements = input;
+            self
+        }
+        /// <p>The schema version of the form.</p>
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_version = Some(input.into());
+            self
+        }
+        /// <p>The schema version of the form.</p>
+        pub fn set_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_version = input;
+            self
+        }
+        /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+        pub fn cta(mut self, input: crate::model::FormCta) -> Self {
+            self.cta = Some(input);
+            self
+        }
+        /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+        pub fn set_cta(mut self, input: std::option::Option<crate::model::FormCta>) -> Self {
+            self.cta = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFormData`](crate::model::UpdateFormData).
+        pub fn build(self) -> crate::model::UpdateFormData {
+            crate::model::UpdateFormData {
+                name: self.name,
+                data_type: self.data_type,
+                form_action_type: self.form_action_type,
+                fields: self.fields,
+                style: self.style,
+                sectional_elements: self.sectional_elements,
+                schema_version: self.schema_version,
+                cta: self.cta,
+            }
+        }
+    }
+}
+impl UpdateFormData {
+    /// Creates a new builder-style object to manufacture [`UpdateFormData`](crate::model::UpdateFormData).
+    pub fn builder() -> crate::model::update_form_data::Builder {
+        crate::model::update_form_data::Builder::default()
+    }
+}
+
 /// <p>Contains the configuration settings for a user interface (UI) element for an Amplify app. A component is configured as a primary, stand-alone UI element. Use <code>ComponentChild</code> to configure an instance of a <code>Component</code>. A <code>ComponentChild</code> instance inherits the configuration of the main <code>Component</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3138,6 +5884,9 @@ pub struct ComponentBindingPropertiesValueProperties {
     /// <p>The default value to assign to the property.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
+    /// <p>The name of a component slot.</p>
+    #[doc(hidden)]
+    pub slot_name: std::option::Option<std::string::String>,
 }
 impl ComponentBindingPropertiesValueProperties {
     /// <p>An Amplify DataStore model.</p>
@@ -3168,6 +5917,10 @@ impl ComponentBindingPropertiesValueProperties {
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
+    /// <p>The name of a component slot.</p>
+    pub fn slot_name(&self) -> std::option::Option<&str> {
+        self.slot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentBindingPropertiesValueProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3179,6 +5932,7 @@ impl std::fmt::Debug for ComponentBindingPropertiesValueProperties {
         formatter.field("bucket", &self.bucket);
         formatter.field("key", &self.key);
         formatter.field("default_value", &self.default_value);
+        formatter.field("slot_name", &self.slot_name);
         formatter.finish()
     }
 }
@@ -3195,6 +5949,7 @@ pub mod component_binding_properties_value_properties {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) default_value: std::option::Option<std::string::String>,
+        pub(crate) slot_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amplify DataStore model.</p>
@@ -3282,6 +6037,16 @@ pub mod component_binding_properties_value_properties {
             self.default_value = input;
             self
         }
+        /// <p>The name of a component slot.</p>
+        pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.slot_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a component slot.</p>
+        pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slot_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
         pub fn build(self) -> crate::model::ComponentBindingPropertiesValueProperties {
             crate::model::ComponentBindingPropertiesValueProperties {
@@ -3292,6 +6057,7 @@ pub mod component_binding_properties_value_properties {
                 bucket: self.bucket,
                 key: self.key,
                 default_value: self.default_value,
+                slot_name: self.slot_name,
             }
         }
     }
@@ -4798,6 +7564,61 @@ impl TokenProviders {
 impl AsRef<str> for TokenProviders {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Stores the metadata information about a feature on a form or view.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutMetadataFlagBody {
+    /// <p>The new information to store.</p>
+    #[doc(hidden)]
+    pub new_value: std::option::Option<std::string::String>,
+}
+impl PutMetadataFlagBody {
+    /// <p>The new information to store.</p>
+    pub fn new_value(&self) -> std::option::Option<&str> {
+        self.new_value.as_deref()
+    }
+}
+impl std::fmt::Debug for PutMetadataFlagBody {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutMetadataFlagBody");
+        formatter.field("new_value", &self.new_value);
+        formatter.finish()
+    }
+}
+/// See [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
+pub mod put_metadata_flag_body {
+
+    /// A builder for [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) new_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The new information to store.</p>
+        pub fn new_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_value = Some(input.into());
+            self
+        }
+        /// <p>The new information to store.</p>
+        pub fn set_new_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.new_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
+        pub fn build(self) -> crate::model::PutMetadataFlagBody {
+            crate::model::PutMetadataFlagBody {
+                new_value: self.new_value,
+            }
+        }
+    }
+}
+impl PutMetadataFlagBody {
+    /// Creates a new builder-style object to manufacture [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
+    pub fn builder() -> crate::model::put_metadata_flag_body::Builder {
+        crate::model::put_metadata_flag_body::Builder::default()
     }
 }
 

@@ -389,6 +389,10 @@ pub struct Slot {
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::Slot>>,
+    /// <p>The constituent sub slots of a composite slot.</p>
+    #[doc(hidden)]
+    pub sub_slots:
+        std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
 }
 impl Slot {
     /// <p>The current value of the slot.</p>
@@ -403,6 +407,13 @@ impl Slot {
     pub fn values(&self) -> std::option::Option<&[crate::model::Slot]> {
         self.values.as_deref()
     }
+    /// <p>The constituent sub slots of a composite slot.</p>
+    pub fn sub_slots(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Slot>>
+    {
+        self.sub_slots.as_ref()
+    }
 }
 impl std::fmt::Debug for Slot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -410,6 +421,7 @@ impl std::fmt::Debug for Slot {
         formatter.field("value", &self.value);
         formatter.field("shape", &self.shape);
         formatter.field("values", &self.values);
+        formatter.field("sub_slots", &self.sub_slots);
         formatter.finish()
     }
 }
@@ -422,6 +434,8 @@ pub mod slot {
         pub(crate) value: std::option::Option<crate::model::Value>,
         pub(crate) shape: std::option::Option<crate::model::Shape>,
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::Slot>>,
+        pub(crate) sub_slots:
+            std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
     }
     impl Builder {
         /// <p>The current value of the slot.</p>
@@ -463,12 +477,38 @@ pub mod slot {
             self.values = input;
             self
         }
+        /// Adds a key-value pair to `sub_slots`.
+        ///
+        /// To override the contents of this collection use [`set_sub_slots`](Self::set_sub_slots).
+        ///
+        /// <p>The constituent sub slots of a composite slot.</p>
+        pub fn sub_slots(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::Slot,
+        ) -> Self {
+            let mut hash_map = self.sub_slots.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.sub_slots = Some(hash_map);
+            self
+        }
+        /// <p>The constituent sub slots of a composite slot.</p>
+        pub fn set_sub_slots(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Slot>,
+            >,
+        ) -> Self {
+            self.sub_slots = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Slot`](crate::model::Slot).
         pub fn build(self) -> crate::model::Slot {
             crate::model::Slot {
                 value: self.value,
                 shape: self.shape,
                 values: self.values,
+                sub_slots: self.sub_slots,
             }
         }
     }
@@ -493,6 +533,8 @@ impl Slot {
 )]
 pub enum Shape {
     #[allow(missing_docs)] // documentation missing in model
+    Composite,
+    #[allow(missing_docs)] // documentation missing in model
     List,
     #[allow(missing_docs)] // documentation missing in model
     Scalar,
@@ -502,6 +544,7 @@ pub enum Shape {
 impl std::convert::From<&str> for Shape {
     fn from(s: &str) -> Self {
         match s {
+            "Composite" => Shape::Composite,
             "List" => Shape::List,
             "Scalar" => Shape::Scalar,
             other => Shape::Unknown(other.to_owned()),
@@ -519,6 +562,7 @@ impl Shape {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Shape::Composite => "Composite",
             Shape::List => "List",
             Shape::Scalar => "Scalar",
             Shape::Unknown(s) => s.as_ref(),
@@ -526,7 +570,7 @@ impl Shape {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["List", "Scalar"]
+        &["Composite", "List", "Scalar"]
     }
 }
 impl AsRef<str> for Shape {
@@ -1156,12 +1200,12 @@ impl SessionState {
 
 /// <p>You can provide Amazon Lex V2 with hints to the phrases that a customer is likely to use for a slot. When a slot with hints is resolved, the phrases in the runtime hints are preferred in the resolution. You can provide hints for a maximum of 100 intents. You can provide a maximum of 100 slots.</p>
 /// <p>Before you can use runtime hints with an existing bot, you must first rebuild the bot.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using runtime hints to improve recognition of slot values</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuntimeHints {
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
-    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
     #[doc(hidden)]
     pub slot_hints: std::option::Option<
@@ -1173,7 +1217,7 @@ pub struct RuntimeHints {
 }
 impl RuntimeHints {
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
-    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
     pub fn slot_hints(
         &self,
@@ -1212,7 +1256,7 @@ pub mod runtime_hints {
         /// To override the contents of this collection use [`set_slot_hints`](Self::set_slot_hints).
         ///
         /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
-        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
         /// <p>The intent name and slot name must exist.</p>
         pub fn slot_hints(
             mut self,
@@ -1225,7 +1269,7 @@ pub mod runtime_hints {
             self
         }
         /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
-        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
         /// <p>The intent name and slot name must exist.</p>
         pub fn set_slot_hints(
             mut self,
@@ -1264,17 +1308,31 @@ pub struct RuntimeHintDetails {
     /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
     #[doc(hidden)]
     pub runtime_hint_values: std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
+    /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
+    #[doc(hidden)]
+    pub sub_slot_hints: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+    >,
 }
 impl RuntimeHintDetails {
     /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
     pub fn runtime_hint_values(&self) -> std::option::Option<&[crate::model::RuntimeHintValue]> {
         self.runtime_hint_values.as_deref()
     }
+    /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
+    pub fn sub_slot_hints(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+    > {
+        self.sub_slot_hints.as_ref()
+    }
 }
 impl std::fmt::Debug for RuntimeHintDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuntimeHintDetails");
         formatter.field("runtime_hint_values", &self.runtime_hint_values);
+        formatter.field("sub_slot_hints", &self.sub_slot_hints);
         formatter.finish()
     }
 }
@@ -1286,6 +1344,9 @@ pub mod runtime_hint_details {
     pub struct Builder {
         pub(crate) runtime_hint_values:
             std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
+        pub(crate) sub_slot_hints: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+        >,
     }
     impl Builder {
         /// Appends an item to `runtime_hint_values`.
@@ -1307,10 +1368,36 @@ pub mod runtime_hint_details {
             self.runtime_hint_values = input;
             self
         }
+        /// Adds a key-value pair to `sub_slot_hints`.
+        ///
+        /// To override the contents of this collection use [`set_sub_slot_hints`](Self::set_sub_slot_hints).
+        ///
+        /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
+        pub fn sub_slot_hints(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::RuntimeHintDetails,
+        ) -> Self {
+            let mut hash_map = self.sub_slot_hints.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.sub_slot_hints = Some(hash_map);
+            self
+        }
+        /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
+        pub fn set_sub_slot_hints(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+            >,
+        ) -> Self {
+            self.sub_slot_hints = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
         pub fn build(self) -> crate::model::RuntimeHintDetails {
             crate::model::RuntimeHintDetails {
                 runtime_hint_values: self.runtime_hint_values,
+                sub_slot_hints: self.sub_slot_hints,
             }
         }
     }
@@ -1585,6 +1672,7 @@ pub struct DialogAction {
     /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
     /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
     /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -1600,6 +1688,9 @@ pub struct DialogAction {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
     #[doc(hidden)]
     pub slot_elicitation_style: std::option::Option<crate::model::StyleType>,
+    /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
+    #[doc(hidden)]
+    pub sub_slot_to_elicit: std::option::Option<crate::model::ElicitSubSlot>,
 }
 impl DialogAction {
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
@@ -1607,6 +1698,7 @@ impl DialogAction {
     /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
     /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
     /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DialogActionType> {
@@ -1625,6 +1717,10 @@ impl DialogAction {
     pub fn slot_elicitation_style(&self) -> std::option::Option<&crate::model::StyleType> {
         self.slot_elicitation_style.as_ref()
     }
+    /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
+    pub fn sub_slot_to_elicit(&self) -> std::option::Option<&crate::model::ElicitSubSlot> {
+        self.sub_slot_to_elicit.as_ref()
+    }
 }
 impl std::fmt::Debug for DialogAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1632,6 +1728,7 @@ impl std::fmt::Debug for DialogAction {
         formatter.field("r#type", &self.r#type);
         formatter.field("slot_to_elicit", &self.slot_to_elicit);
         formatter.field("slot_elicitation_style", &self.slot_elicitation_style);
+        formatter.field("sub_slot_to_elicit", &self.sub_slot_to_elicit);
         formatter.finish()
     }
 }
@@ -1644,6 +1741,7 @@ pub mod dialog_action {
         pub(crate) r#type: std::option::Option<crate::model::DialogActionType>,
         pub(crate) slot_to_elicit: std::option::Option<std::string::String>,
         pub(crate) slot_elicitation_style: std::option::Option<crate::model::StyleType>,
+        pub(crate) sub_slot_to_elicit: std::option::Option<crate::model::ElicitSubSlot>,
     }
     impl Builder {
         /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
@@ -1651,6 +1749,7 @@ pub mod dialog_action {
         /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
         /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
         /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
+        /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
         /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DialogActionType) -> Self {
@@ -1662,6 +1761,7 @@ pub mod dialog_action {
         /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
         /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
         /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
+        /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
         /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
         /// </ul>
         pub fn set_type(
@@ -1707,12 +1807,26 @@ pub mod dialog_action {
             self.slot_elicitation_style = input;
             self
         }
+        /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
+        pub fn sub_slot_to_elicit(mut self, input: crate::model::ElicitSubSlot) -> Self {
+            self.sub_slot_to_elicit = Some(input);
+            self
+        }
+        /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
+        pub fn set_sub_slot_to_elicit(
+            mut self,
+            input: std::option::Option<crate::model::ElicitSubSlot>,
+        ) -> Self {
+            self.sub_slot_to_elicit = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DialogAction`](crate::model::DialogAction).
         pub fn build(self) -> crate::model::DialogAction {
             crate::model::DialogAction {
                 r#type: self.r#type,
                 slot_to_elicit: self.slot_to_elicit,
                 slot_elicitation_style: self.slot_elicitation_style,
+                sub_slot_to_elicit: self.sub_slot_to_elicit,
             }
         }
     }
@@ -1721,6 +1835,88 @@ impl DialogAction {
     /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
     pub fn builder() -> crate::model::dialog_action::Builder {
         crate::model::dialog_action::Builder::default()
+    }
+}
+
+/// <p>The specific constituent sub slot of the composite slot to elicit in dialog action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ElicitSubSlot {
+    /// <p>The name of the slot that should be elicited from the user.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The field is not supported.</p>
+    #[doc(hidden)]
+    pub sub_slot_to_elicit: std::option::Option<std::boxed::Box<crate::model::ElicitSubSlot>>,
+}
+impl ElicitSubSlot {
+    /// <p>The name of the slot that should be elicited from the user.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The field is not supported.</p>
+    pub fn sub_slot_to_elicit(&self) -> std::option::Option<&crate::model::ElicitSubSlot> {
+        self.sub_slot_to_elicit.as_deref()
+    }
+}
+impl std::fmt::Debug for ElicitSubSlot {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ElicitSubSlot");
+        formatter.field("name", &self.name);
+        formatter.field("sub_slot_to_elicit", &self.sub_slot_to_elicit);
+        formatter.finish()
+    }
+}
+/// See [`ElicitSubSlot`](crate::model::ElicitSubSlot).
+pub mod elicit_sub_slot {
+
+    /// A builder for [`ElicitSubSlot`](crate::model::ElicitSubSlot).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) sub_slot_to_elicit:
+            std::option::Option<std::boxed::Box<crate::model::ElicitSubSlot>>,
+    }
+    impl Builder {
+        /// <p>The name of the slot that should be elicited from the user.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the slot that should be elicited from the user.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The field is not supported.</p>
+        pub fn sub_slot_to_elicit(
+            mut self,
+            input: impl Into<std::boxed::Box<crate::model::ElicitSubSlot>>,
+        ) -> Self {
+            self.sub_slot_to_elicit = Some(input.into());
+            self
+        }
+        /// <p>The field is not supported.</p>
+        pub fn set_sub_slot_to_elicit(
+            mut self,
+            input: std::option::Option<std::boxed::Box<crate::model::ElicitSubSlot>>,
+        ) -> Self {
+            self.sub_slot_to_elicit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ElicitSubSlot`](crate::model::ElicitSubSlot).
+        pub fn build(self) -> crate::model::ElicitSubSlot {
+            crate::model::ElicitSubSlot {
+                name: self.name,
+                sub_slot_to_elicit: self.sub_slot_to_elicit,
+            }
+        }
+    }
+}
+impl ElicitSubSlot {
+    /// Creates a new builder-style object to manufacture [`ElicitSubSlot`](crate::model::ElicitSubSlot).
+    pub fn builder() -> crate::model::elicit_sub_slot::Builder {
+        crate::model::elicit_sub_slot::Builder::default()
     }
 }
 

@@ -1240,9 +1240,7 @@ impl RunScheduledInstancesOutput {
     }
 }
 
-/// <p>Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.</p> <note>
-/// <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
-/// </note>
+/// <p>Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunInstancesOutput {
@@ -4797,11 +4795,18 @@ impl ModifyVpcPeeringConnectionOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcEndpointServicePermissionsOutput {
+    /// <p>Information about the added principals.</p>
+    #[doc(hidden)]
+    pub added_principals: std::option::Option<std::vec::Vec<crate::model::AddedPrincipal>>,
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl ModifyVpcEndpointServicePermissionsOutput {
+    /// <p>Information about the added principals.</p>
+    pub fn added_principals(&self) -> std::option::Option<&[crate::model::AddedPrincipal]> {
+        self.added_principals.as_deref()
+    }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
@@ -4810,6 +4815,7 @@ impl ModifyVpcEndpointServicePermissionsOutput {
 impl std::fmt::Debug for ModifyVpcEndpointServicePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyVpcEndpointServicePermissionsOutput");
+        formatter.field("added_principals", &self.added_principals);
         formatter.field("return_value", &self.return_value);
         formatter.finish()
     }
@@ -4820,9 +4826,30 @@ pub mod modify_vpc_endpoint_service_permissions_output {
     /// A builder for [`ModifyVpcEndpointServicePermissionsOutput`](crate::output::ModifyVpcEndpointServicePermissionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) added_principals:
+            std::option::Option<std::vec::Vec<crate::model::AddedPrincipal>>,
         pub(crate) return_value: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `added_principals`.
+        ///
+        /// To override the contents of this collection use [`set_added_principals`](Self::set_added_principals).
+        ///
+        /// <p>Information about the added principals.</p>
+        pub fn added_principals(mut self, input: crate::model::AddedPrincipal) -> Self {
+            let mut v = self.added_principals.unwrap_or_default();
+            v.push(input);
+            self.added_principals = Some(v);
+            self
+        }
+        /// <p>Information about the added principals.</p>
+        pub fn set_added_principals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AddedPrincipal>>,
+        ) -> Self {
+            self.added_principals = input;
+            self
+        }
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
         pub fn return_value(mut self, input: bool) -> Self {
             self.return_value = Some(input);
@@ -4836,6 +4863,7 @@ pub mod modify_vpc_endpoint_service_permissions_output {
         /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePermissionsOutput`](crate::output::ModifyVpcEndpointServicePermissionsOutput).
         pub fn build(self) -> crate::output::ModifyVpcEndpointServicePermissionsOutput {
             crate::output::ModifyVpcEndpointServicePermissionsOutput {
+                added_principals: self.added_principals,
                 return_value: self.return_value,
             }
         }
@@ -6020,6 +6048,62 @@ impl ModifyManagedPrefixListOutput {
     /// Creates a new builder-style object to manufacture [`ModifyManagedPrefixListOutput`](crate::output::ModifyManagedPrefixListOutput).
     pub fn builder() -> crate::output::modify_managed_prefix_list_output::Builder {
         crate::output::modify_managed_prefix_list_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyLocalGatewayRouteOutput {
+    /// <p>Describes a route for a local gateway route table.</p>
+    #[doc(hidden)]
+    pub route: std::option::Option<crate::model::LocalGatewayRoute>,
+}
+impl ModifyLocalGatewayRouteOutput {
+    /// <p>Describes a route for a local gateway route table.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::LocalGatewayRoute> {
+        self.route.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifyLocalGatewayRouteOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyLocalGatewayRouteOutput");
+        formatter.field("route", &self.route);
+        formatter.finish()
+    }
+}
+/// See [`ModifyLocalGatewayRouteOutput`](crate::output::ModifyLocalGatewayRouteOutput).
+pub mod modify_local_gateway_route_output {
+
+    /// A builder for [`ModifyLocalGatewayRouteOutput`](crate::output::ModifyLocalGatewayRouteOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) route: std::option::Option<crate::model::LocalGatewayRoute>,
+    }
+    impl Builder {
+        /// <p>Describes a route for a local gateway route table.</p>
+        pub fn route(mut self, input: crate::model::LocalGatewayRoute) -> Self {
+            self.route = Some(input);
+            self
+        }
+        /// <p>Describes a route for a local gateway route table.</p>
+        pub fn set_route(
+            mut self,
+            input: std::option::Option<crate::model::LocalGatewayRoute>,
+        ) -> Self {
+            self.route = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyLocalGatewayRouteOutput`](crate::output::ModifyLocalGatewayRouteOutput).
+        pub fn build(self) -> crate::output::ModifyLocalGatewayRouteOutput {
+            crate::output::ModifyLocalGatewayRouteOutput { route: self.route }
+        }
+    }
+}
+impl ModifyLocalGatewayRouteOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyLocalGatewayRouteOutput`](crate::output::ModifyLocalGatewayRouteOutput).
+    pub fn builder() -> crate::output::modify_local_gateway_route_output::Builder {
+        crate::output::modify_local_gateway_route_output::Builder::default()
     }
 }
 
@@ -16336,6 +16420,10 @@ pub struct DescribeVpcAttributeOutput {
     /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
     #[doc(hidden)]
     pub enable_dns_support: std::option::Option<crate::model::AttributeBooleanValue>,
+    /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+    #[doc(hidden)]
+    pub enable_network_address_usage_metrics:
+        std::option::Option<crate::model::AttributeBooleanValue>,
 }
 impl DescribeVpcAttributeOutput {
     /// <p>The ID of the VPC.</p>
@@ -16352,6 +16440,12 @@ impl DescribeVpcAttributeOutput {
     pub fn enable_dns_support(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.enable_dns_support.as_ref()
     }
+    /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+    pub fn enable_network_address_usage_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.enable_network_address_usage_metrics.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16359,6 +16453,10 @@ impl std::fmt::Debug for DescribeVpcAttributeOutput {
         formatter.field("vpc_id", &self.vpc_id);
         formatter.field("enable_dns_hostnames", &self.enable_dns_hostnames);
         formatter.field("enable_dns_support", &self.enable_dns_support);
+        formatter.field(
+            "enable_network_address_usage_metrics",
+            &self.enable_network_address_usage_metrics,
+        );
         formatter.finish()
     }
 }
@@ -16371,6 +16469,8 @@ pub mod describe_vpc_attribute_output {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) enable_dns_hostnames: std::option::Option<crate::model::AttributeBooleanValue>,
         pub(crate) enable_dns_support: std::option::Option<crate::model::AttributeBooleanValue>,
+        pub(crate) enable_network_address_usage_metrics:
+            std::option::Option<crate::model::AttributeBooleanValue>,
     }
     impl Builder {
         /// <p>The ID of the VPC.</p>
@@ -16409,12 +16509,29 @@ pub mod describe_vpc_attribute_output {
             self.enable_dns_support = input;
             self
         }
+        /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+        pub fn enable_network_address_usage_metrics(
+            mut self,
+            input: crate::model::AttributeBooleanValue,
+        ) -> Self {
+            self.enable_network_address_usage_metrics = Some(input);
+            self
+        }
+        /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+        pub fn set_enable_network_address_usage_metrics(
+            mut self,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
+        ) -> Self {
+            self.enable_network_address_usage_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVpcAttributeOutput`](crate::output::DescribeVpcAttributeOutput).
         pub fn build(self) -> crate::output::DescribeVpcAttributeOutput {
             crate::output::DescribeVpcAttributeOutput {
                 vpc_id: self.vpc_id,
                 enable_dns_hostnames: self.enable_dns_hostnames,
                 enable_dns_support: self.enable_dns_support,
+                enable_network_address_usage_metrics: self.enable_network_address_usage_metrics,
             }
         }
     }
@@ -24251,6 +24368,9 @@ pub struct DescribeImageAttributeOutput {
     /// </note>
     #[doc(hidden)]
     pub last_launched_time: std::option::Option<crate::model::AttributeValue>,
+    /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[doc(hidden)]
+    pub imds_support: std::option::Option<crate::model::AttributeValue>,
 }
 impl DescribeImageAttributeOutput {
     /// <p>The block device mapping entries.</p>
@@ -24305,6 +24425,10 @@ impl DescribeImageAttributeOutput {
     pub fn last_launched_time(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.last_launched_time.as_ref()
     }
+    /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn imds_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.imds_support.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeImageAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24321,6 +24445,7 @@ impl std::fmt::Debug for DescribeImageAttributeOutput {
         formatter.field("tpm_support", &self.tpm_support);
         formatter.field("uefi_data", &self.uefi_data);
         formatter.field("last_launched_time", &self.last_launched_time);
+        formatter.field("imds_support", &self.imds_support);
         formatter.finish()
     }
 }
@@ -24344,6 +24469,7 @@ pub mod describe_image_attribute_output {
         pub(crate) tpm_support: std::option::Option<crate::model::AttributeValue>,
         pub(crate) uefi_data: std::option::Option<crate::model::AttributeValue>,
         pub(crate) last_launched_time: std::option::Option<crate::model::AttributeValue>,
+        pub(crate) imds_support: std::option::Option<crate::model::AttributeValue>,
     }
     impl Builder {
         /// Appends an item to `block_device_mappings`.
@@ -24521,6 +24647,19 @@ pub mod describe_image_attribute_output {
             self.last_launched_time = input;
             self
         }
+        /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn imds_support(mut self, input: crate::model::AttributeValue) -> Self {
+            self.imds_support = Some(input);
+            self
+        }
+        /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn set_imds_support(
+            mut self,
+            input: std::option::Option<crate::model::AttributeValue>,
+        ) -> Self {
+            self.imds_support = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeImageAttributeOutput`](crate::output::DescribeImageAttributeOutput).
         pub fn build(self) -> crate::output::DescribeImageAttributeOutput {
             crate::output::DescribeImageAttributeOutput {
@@ -24536,6 +24675,7 @@ pub mod describe_image_attribute_output {
                 tpm_support: self.tpm_support,
                 uefi_data: self.uefi_data,
                 last_launched_time: self.last_launched_time,
+                imds_support: self.imds_support,
             }
         }
     }
@@ -30575,6 +30715,149 @@ impl DeleteLocalGatewayRouteTableVpcAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+    /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+    #[doc(hidden)]
+    pub local_gateway_route_table_virtual_interface_group_association:
+        std::option::Option<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
+}
+impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+    /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+    pub fn local_gateway_route_table_virtual_interface_group_association(
+        &self,
+    ) -> std::option::Option<&crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
+    {
+        self.local_gateway_route_table_virtual_interface_group_association
+            .as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput");
+        formatter.field(
+            "local_gateway_route_table_virtual_interface_group_association",
+            &self.local_gateway_route_table_virtual_interface_group_association,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
+pub mod delete_local_gateway_route_table_virtual_interface_group_association_output {
+
+    /// A builder for [`DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) local_gateway_route_table_virtual_interface_group_association:
+            std::option::Option<
+                crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+            >,
+    }
+    impl Builder {
+        /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+        pub fn local_gateway_route_table_virtual_interface_group_association(
+            mut self,
+            input: crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+        ) -> Self {
+            self.local_gateway_route_table_virtual_interface_group_association = Some(input);
+            self
+        }
+        /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+        pub fn set_local_gateway_route_table_virtual_interface_group_association(
+            mut self,
+            input: std::option::Option<
+                crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+            >,
+        ) -> Self {
+            self.local_gateway_route_table_virtual_interface_group_association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput
+        {
+            crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+                local_gateway_route_table_virtual_interface_group_association: self
+                    .local_gateway_route_table_virtual_interface_group_association,
+            }
+        }
+    }
+}
+impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
+    pub fn builder() -> crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder{
+        crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLocalGatewayRouteTableOutput {
+    /// <p>Describes a local gateway route table.</p>
+    #[doc(hidden)]
+    pub local_gateway_route_table: std::option::Option<crate::model::LocalGatewayRouteTable>,
+}
+impl DeleteLocalGatewayRouteTableOutput {
+    /// <p>Describes a local gateway route table.</p>
+    pub fn local_gateway_route_table(
+        &self,
+    ) -> std::option::Option<&crate::model::LocalGatewayRouteTable> {
+        self.local_gateway_route_table.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteLocalGatewayRouteTableOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLocalGatewayRouteTableOutput");
+        formatter.field("local_gateway_route_table", &self.local_gateway_route_table);
+        formatter.finish()
+    }
+}
+/// See [`DeleteLocalGatewayRouteTableOutput`](crate::output::DeleteLocalGatewayRouteTableOutput).
+pub mod delete_local_gateway_route_table_output {
+
+    /// A builder for [`DeleteLocalGatewayRouteTableOutput`](crate::output::DeleteLocalGatewayRouteTableOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) local_gateway_route_table:
+            std::option::Option<crate::model::LocalGatewayRouteTable>,
+    }
+    impl Builder {
+        /// <p>Describes a local gateway route table.</p>
+        pub fn local_gateway_route_table(
+            mut self,
+            input: crate::model::LocalGatewayRouteTable,
+        ) -> Self {
+            self.local_gateway_route_table = Some(input);
+            self
+        }
+        /// <p>Describes a local gateway route table.</p>
+        pub fn set_local_gateway_route_table(
+            mut self,
+            input: std::option::Option<crate::model::LocalGatewayRouteTable>,
+        ) -> Self {
+            self.local_gateway_route_table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteTableOutput`](crate::output::DeleteLocalGatewayRouteTableOutput).
+        pub fn build(self) -> crate::output::DeleteLocalGatewayRouteTableOutput {
+            crate::output::DeleteLocalGatewayRouteTableOutput {
+                local_gateway_route_table: self.local_gateway_route_table,
+            }
+        }
+    }
+}
+impl DeleteLocalGatewayRouteTableOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteTableOutput`](crate::output::DeleteLocalGatewayRouteTableOutput).
+    pub fn builder() -> crate::output::delete_local_gateway_route_table_output::Builder {
+        crate::output::delete_local_gateway_route_table_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLocalGatewayRouteOutput {
     /// <p>Information about the route.</p>
     #[doc(hidden)]
@@ -31453,6 +31736,116 @@ impl DeleteCustomerGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomerGatewayOutput`](crate::output::DeleteCustomerGatewayOutput).
     pub fn builder() -> crate::output::delete_customer_gateway_output::Builder {
         crate::output::delete_customer_gateway_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCoipPoolOutput {
+    /// <p>Describes a customer-owned address pool.</p>
+    #[doc(hidden)]
+    pub coip_pool: std::option::Option<crate::model::CoipPool>,
+}
+impl DeleteCoipPoolOutput {
+    /// <p>Describes a customer-owned address pool.</p>
+    pub fn coip_pool(&self) -> std::option::Option<&crate::model::CoipPool> {
+        self.coip_pool.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteCoipPoolOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCoipPoolOutput");
+        formatter.field("coip_pool", &self.coip_pool);
+        formatter.finish()
+    }
+}
+/// See [`DeleteCoipPoolOutput`](crate::output::DeleteCoipPoolOutput).
+pub mod delete_coip_pool_output {
+
+    /// A builder for [`DeleteCoipPoolOutput`](crate::output::DeleteCoipPoolOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) coip_pool: std::option::Option<crate::model::CoipPool>,
+    }
+    impl Builder {
+        /// <p>Describes a customer-owned address pool.</p>
+        pub fn coip_pool(mut self, input: crate::model::CoipPool) -> Self {
+            self.coip_pool = Some(input);
+            self
+        }
+        /// <p>Describes a customer-owned address pool.</p>
+        pub fn set_coip_pool(mut self, input: std::option::Option<crate::model::CoipPool>) -> Self {
+            self.coip_pool = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCoipPoolOutput`](crate::output::DeleteCoipPoolOutput).
+        pub fn build(self) -> crate::output::DeleteCoipPoolOutput {
+            crate::output::DeleteCoipPoolOutput {
+                coip_pool: self.coip_pool,
+            }
+        }
+    }
+}
+impl DeleteCoipPoolOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCoipPoolOutput`](crate::output::DeleteCoipPoolOutput).
+    pub fn builder() -> crate::output::delete_coip_pool_output::Builder {
+        crate::output::delete_coip_pool_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCoipCidrOutput {
+    /// <p> Information about a range of customer-owned IP addresses. </p>
+    #[doc(hidden)]
+    pub coip_cidr: std::option::Option<crate::model::CoipCidr>,
+}
+impl DeleteCoipCidrOutput {
+    /// <p> Information about a range of customer-owned IP addresses. </p>
+    pub fn coip_cidr(&self) -> std::option::Option<&crate::model::CoipCidr> {
+        self.coip_cidr.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteCoipCidrOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCoipCidrOutput");
+        formatter.field("coip_cidr", &self.coip_cidr);
+        formatter.finish()
+    }
+}
+/// See [`DeleteCoipCidrOutput`](crate::output::DeleteCoipCidrOutput).
+pub mod delete_coip_cidr_output {
+
+    /// A builder for [`DeleteCoipCidrOutput`](crate::output::DeleteCoipCidrOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) coip_cidr: std::option::Option<crate::model::CoipCidr>,
+    }
+    impl Builder {
+        /// <p> Information about a range of customer-owned IP addresses. </p>
+        pub fn coip_cidr(mut self, input: crate::model::CoipCidr) -> Self {
+            self.coip_cidr = Some(input);
+            self
+        }
+        /// <p> Information about a range of customer-owned IP addresses. </p>
+        pub fn set_coip_cidr(mut self, input: std::option::Option<crate::model::CoipCidr>) -> Self {
+            self.coip_cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCoipCidrOutput`](crate::output::DeleteCoipCidrOutput).
+        pub fn build(self) -> crate::output::DeleteCoipCidrOutput {
+            crate::output::DeleteCoipCidrOutput {
+                coip_cidr: self.coip_cidr,
+            }
+        }
+    }
+}
+impl DeleteCoipCidrOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCoipCidrOutput`](crate::output::DeleteCoipCidrOutput).
+    pub fn builder() -> crate::output::delete_coip_cidr_output::Builder {
+        crate::output::delete_coip_cidr_output::Builder::default()
     }
 }
 
@@ -34862,7 +35255,7 @@ impl CreateNetworkInterfacePermissionOutput {
     }
 }
 
-/// <p>Contains the output of CreateNetworkInterface.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkInterfaceOutput {
@@ -35390,6 +35783,149 @@ impl CreateLocalGatewayRouteTableVpcAssociationOutput {
     pub fn builder(
     ) -> crate::output::create_local_gateway_route_table_vpc_association_output::Builder {
         crate::output::create_local_gateway_route_table_vpc_association_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+    /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+    #[doc(hidden)]
+    pub local_gateway_route_table_virtual_interface_group_association:
+        std::option::Option<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
+}
+impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+    /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+    pub fn local_gateway_route_table_virtual_interface_group_association(
+        &self,
+    ) -> std::option::Option<&crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
+    {
+        self.local_gateway_route_table_virtual_interface_group_association
+            .as_ref()
+    }
+}
+impl std::fmt::Debug for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput");
+        formatter.field(
+            "local_gateway_route_table_virtual_interface_group_association",
+            &self.local_gateway_route_table_virtual_interface_group_association,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
+pub mod create_local_gateway_route_table_virtual_interface_group_association_output {
+
+    /// A builder for [`CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) local_gateway_route_table_virtual_interface_group_association:
+            std::option::Option<
+                crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+            >,
+    }
+    impl Builder {
+        /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+        pub fn local_gateway_route_table_virtual_interface_group_association(
+            mut self,
+            input: crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+        ) -> Self {
+            self.local_gateway_route_table_virtual_interface_group_association = Some(input);
+            self
+        }
+        /// <p>Describes an association between a local gateway route table and a virtual interface group.</p>
+        pub fn set_local_gateway_route_table_virtual_interface_group_association(
+            mut self,
+            input: std::option::Option<
+                crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+            >,
+        ) -> Self {
+            self.local_gateway_route_table_virtual_interface_group_association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput
+        {
+            crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+                local_gateway_route_table_virtual_interface_group_association: self
+                    .local_gateway_route_table_virtual_interface_group_association,
+            }
+        }
+    }
+}
+impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
+    pub fn builder() -> crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder{
+        crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLocalGatewayRouteTableOutput {
+    /// <p>Describes a local gateway route table.</p>
+    #[doc(hidden)]
+    pub local_gateway_route_table: std::option::Option<crate::model::LocalGatewayRouteTable>,
+}
+impl CreateLocalGatewayRouteTableOutput {
+    /// <p>Describes a local gateway route table.</p>
+    pub fn local_gateway_route_table(
+        &self,
+    ) -> std::option::Option<&crate::model::LocalGatewayRouteTable> {
+        self.local_gateway_route_table.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateLocalGatewayRouteTableOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLocalGatewayRouteTableOutput");
+        formatter.field("local_gateway_route_table", &self.local_gateway_route_table);
+        formatter.finish()
+    }
+}
+/// See [`CreateLocalGatewayRouteTableOutput`](crate::output::CreateLocalGatewayRouteTableOutput).
+pub mod create_local_gateway_route_table_output {
+
+    /// A builder for [`CreateLocalGatewayRouteTableOutput`](crate::output::CreateLocalGatewayRouteTableOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) local_gateway_route_table:
+            std::option::Option<crate::model::LocalGatewayRouteTable>,
+    }
+    impl Builder {
+        /// <p>Describes a local gateway route table.</p>
+        pub fn local_gateway_route_table(
+            mut self,
+            input: crate::model::LocalGatewayRouteTable,
+        ) -> Self {
+            self.local_gateway_route_table = Some(input);
+            self
+        }
+        /// <p>Describes a local gateway route table.</p>
+        pub fn set_local_gateway_route_table(
+            mut self,
+            input: std::option::Option<crate::model::LocalGatewayRouteTable>,
+        ) -> Self {
+            self.local_gateway_route_table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableOutput`](crate::output::CreateLocalGatewayRouteTableOutput).
+        pub fn build(self) -> crate::output::CreateLocalGatewayRouteTableOutput {
+            crate::output::CreateLocalGatewayRouteTableOutput {
+                local_gateway_route_table: self.local_gateway_route_table,
+            }
+        }
+    }
+}
+impl CreateLocalGatewayRouteTableOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteTableOutput`](crate::output::CreateLocalGatewayRouteTableOutput).
+    pub fn builder() -> crate::output::create_local_gateway_route_table_output::Builder {
+        crate::output::create_local_gateway_route_table_output::Builder::default()
     }
 }
 
@@ -36786,6 +37322,116 @@ impl CreateCustomerGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomerGatewayOutput`](crate::output::CreateCustomerGatewayOutput).
     pub fn builder() -> crate::output::create_customer_gateway_output::Builder {
         crate::output::create_customer_gateway_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCoipPoolOutput {
+    /// <p>Describes a customer-owned address pool.</p>
+    #[doc(hidden)]
+    pub coip_pool: std::option::Option<crate::model::CoipPool>,
+}
+impl CreateCoipPoolOutput {
+    /// <p>Describes a customer-owned address pool.</p>
+    pub fn coip_pool(&self) -> std::option::Option<&crate::model::CoipPool> {
+        self.coip_pool.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateCoipPoolOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCoipPoolOutput");
+        formatter.field("coip_pool", &self.coip_pool);
+        formatter.finish()
+    }
+}
+/// See [`CreateCoipPoolOutput`](crate::output::CreateCoipPoolOutput).
+pub mod create_coip_pool_output {
+
+    /// A builder for [`CreateCoipPoolOutput`](crate::output::CreateCoipPoolOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) coip_pool: std::option::Option<crate::model::CoipPool>,
+    }
+    impl Builder {
+        /// <p>Describes a customer-owned address pool.</p>
+        pub fn coip_pool(mut self, input: crate::model::CoipPool) -> Self {
+            self.coip_pool = Some(input);
+            self
+        }
+        /// <p>Describes a customer-owned address pool.</p>
+        pub fn set_coip_pool(mut self, input: std::option::Option<crate::model::CoipPool>) -> Self {
+            self.coip_pool = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCoipPoolOutput`](crate::output::CreateCoipPoolOutput).
+        pub fn build(self) -> crate::output::CreateCoipPoolOutput {
+            crate::output::CreateCoipPoolOutput {
+                coip_pool: self.coip_pool,
+            }
+        }
+    }
+}
+impl CreateCoipPoolOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCoipPoolOutput`](crate::output::CreateCoipPoolOutput).
+    pub fn builder() -> crate::output::create_coip_pool_output::Builder {
+        crate::output::create_coip_pool_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCoipCidrOutput {
+    /// <p> Information about a range of customer-owned IP addresses. </p>
+    #[doc(hidden)]
+    pub coip_cidr: std::option::Option<crate::model::CoipCidr>,
+}
+impl CreateCoipCidrOutput {
+    /// <p> Information about a range of customer-owned IP addresses. </p>
+    pub fn coip_cidr(&self) -> std::option::Option<&crate::model::CoipCidr> {
+        self.coip_cidr.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateCoipCidrOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCoipCidrOutput");
+        formatter.field("coip_cidr", &self.coip_cidr);
+        formatter.finish()
+    }
+}
+/// See [`CreateCoipCidrOutput`](crate::output::CreateCoipCidrOutput).
+pub mod create_coip_cidr_output {
+
+    /// A builder for [`CreateCoipCidrOutput`](crate::output::CreateCoipCidrOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) coip_cidr: std::option::Option<crate::model::CoipCidr>,
+    }
+    impl Builder {
+        /// <p> Information about a range of customer-owned IP addresses. </p>
+        pub fn coip_cidr(mut self, input: crate::model::CoipCidr) -> Self {
+            self.coip_cidr = Some(input);
+            self
+        }
+        /// <p> Information about a range of customer-owned IP addresses. </p>
+        pub fn set_coip_cidr(mut self, input: std::option::Option<crate::model::CoipCidr>) -> Self {
+            self.coip_cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCoipCidrOutput`](crate::output::CreateCoipCidrOutput).
+        pub fn build(self) -> crate::output::CreateCoipCidrOutput {
+            crate::output::CreateCoipCidrOutput {
+                coip_cidr: self.coip_cidr,
+            }
+        }
+    }
+}
+impl CreateCoipCidrOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCoipCidrOutput`](crate::output::CreateCoipCidrOutput).
+    pub fn builder() -> crate::output::create_coip_cidr_output::Builder {
+        crate::output::create_coip_cidr_output::Builder::default()
     }
 }
 

@@ -1405,6 +1405,10 @@ pub struct DescribeMetricSetOutput {
     /// <p>Contains information about the dataset's source data.</p>
     #[doc(hidden)]
     pub metric_source: std::option::Option<crate::model::MetricSource>,
+    /// <p>The dimensions and their values that were used to filter the dataset.</p>
+    #[doc(hidden)]
+    pub dimension_filter_list:
+        std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
 }
 impl DescribeMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
@@ -1459,6 +1463,12 @@ impl DescribeMetricSetOutput {
     pub fn metric_source(&self) -> std::option::Option<&crate::model::MetricSource> {
         self.metric_source.as_ref()
     }
+    /// <p>The dimensions and their values that were used to filter the dataset.</p>
+    pub fn dimension_filter_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricSetDimensionFilter]> {
+        self.dimension_filter_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMetricSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1476,6 +1486,7 @@ impl std::fmt::Debug for DescribeMetricSetOutput {
         formatter.field("metric_set_frequency", &self.metric_set_frequency);
         formatter.field("timezone", &self.timezone);
         formatter.field("metric_source", &self.metric_source);
+        formatter.field("dimension_filter_list", &self.dimension_filter_list);
         formatter.finish()
     }
 }
@@ -1498,6 +1509,8 @@ pub mod describe_metric_set_output {
         pub(crate) metric_set_frequency: std::option::Option<crate::model::Frequency>,
         pub(crate) timezone: std::option::Option<std::string::String>,
         pub(crate) metric_source: std::option::Option<crate::model::MetricSource>,
+        pub(crate) dimension_filter_list:
+            std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
     }
     impl Builder {
         /// <p>The ARN of the dataset.</p>
@@ -1675,6 +1688,28 @@ pub mod describe_metric_set_output {
             self.metric_source = input;
             self
         }
+        /// Appends an item to `dimension_filter_list`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
+        ///
+        /// <p>The dimensions and their values that were used to filter the dataset.</p>
+        pub fn dimension_filter_list(
+            mut self,
+            input: crate::model::MetricSetDimensionFilter,
+        ) -> Self {
+            let mut v = self.dimension_filter_list.unwrap_or_default();
+            v.push(input);
+            self.dimension_filter_list = Some(v);
+            self
+        }
+        /// <p>The dimensions and their values that were used to filter the dataset.</p>
+        pub fn set_dimension_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
+        ) -> Self {
+            self.dimension_filter_list = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
         pub fn build(self) -> crate::output::DescribeMetricSetOutput {
             crate::output::DescribeMetricSetOutput {
@@ -1691,6 +1726,7 @@ pub mod describe_metric_set_output {
                 metric_set_frequency: self.metric_set_frequency,
                 timezone: self.timezone,
                 metric_source: self.metric_source,
+                dimension_filter_list: self.dimension_filter_list,
             }
         }
     }

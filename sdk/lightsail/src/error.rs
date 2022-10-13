@@ -24082,6 +24082,182 @@ impl std::error::Error for UpdateDomainEntryError {
     }
 }
 
+/// Error type for the `UpdateInstanceMetadataOptions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateInstanceMetadataOptionsError {
+    /// Kind of error that occurred.
+    pub kind: UpdateInstanceMetadataOptionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateInstanceMetadataOptions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateInstanceMetadataOptionsErrorKind {
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
+    AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// </note>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Lightsail throws this exception when it cannot find a resource.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Lightsail throws this exception when an operation fails to execute.</p>
+    OperationFailureException(crate::error::OperationFailureException),
+    /// <p>A general service exception.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
+    UnauthenticatedException(crate::error::UnauthenticatedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateInstanceMetadataOptionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateInstanceMetadataOptionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateInstanceMetadataOptionsErrorKind::AccountSetupInProgressException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateInstanceMetadataOptionsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateInstanceMetadataOptionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateInstanceMetadataOptionsErrorKind::OperationFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateInstanceMetadataOptionsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateInstanceMetadataOptionsErrorKind::UnauthenticatedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateInstanceMetadataOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateInstanceMetadataOptionsError {
+    fn code(&self) -> Option<&str> {
+        UpdateInstanceMetadataOptionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateInstanceMetadataOptionsError {
+    /// Creates a new `UpdateInstanceMetadataOptionsError`.
+    pub fn new(
+        kind: UpdateInstanceMetadataOptionsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateInstanceMetadataOptionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateInstanceMetadataOptionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateInstanceMetadataOptionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateInstanceMetadataOptionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateInstanceMetadataOptionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInstanceMetadataOptionsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateInstanceMetadataOptionsErrorKind::AccountSetupInProgressException`.
+    pub fn is_account_setup_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInstanceMetadataOptionsErrorKind::AccountSetupInProgressException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateInstanceMetadataOptionsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInstanceMetadataOptionsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateInstanceMetadataOptionsErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInstanceMetadataOptionsErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateInstanceMetadataOptionsErrorKind::OperationFailureException`.
+    pub fn is_operation_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInstanceMetadataOptionsErrorKind::OperationFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateInstanceMetadataOptionsErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInstanceMetadataOptionsErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateInstanceMetadataOptionsErrorKind::UnauthenticatedException`.
+    pub fn is_unauthenticated_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInstanceMetadataOptionsErrorKind::UnauthenticatedException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateInstanceMetadataOptionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateInstanceMetadataOptionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateInstanceMetadataOptionsErrorKind::AccountSetupInProgressException(_inner) => {
+                Some(_inner)
+            }
+            UpdateInstanceMetadataOptionsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateInstanceMetadataOptionsErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateInstanceMetadataOptionsErrorKind::OperationFailureException(_inner) => {
+                Some(_inner)
+            }
+            UpdateInstanceMetadataOptionsErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateInstanceMetadataOptionsErrorKind::UnauthenticatedException(_inner) => {
+                Some(_inner)
+            }
+            UpdateInstanceMetadataOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateLoadBalancerAttribute` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

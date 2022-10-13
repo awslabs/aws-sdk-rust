@@ -9,7 +9,7 @@
 #![allow(clippy::type_complexity)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>Amazon WorkMail is a secure, managed business email and calendaring service with support for
+//! <p>WorkMail is a secure, managed business email and calendaring service with support for
 //! existing desktop and mobile email clients. You can access your email, contacts, and
 //! calendars using Microsoft Outlook, your browser, or other native iOS and Android email
 //! applications. You can integrate WorkMail with your existing corporate directory and control

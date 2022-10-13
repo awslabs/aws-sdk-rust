@@ -89,6 +89,16 @@ pub(crate) fn lens_structure_crate_output_list_endpoints_by_platform_application
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_origination_numbers_output_phone_numbers(
+    input: crate::output::ListOriginationNumbersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>> {
+    let input = match input.phone_numbers {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_phone_numbers_opted_out_output_phone_numbers(
     input: crate::output::ListPhoneNumbersOptedOutOutput,
 ) -> std::option::Option<std::vec::Vec<std::string::String>> {

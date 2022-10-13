@@ -420,7 +420,7 @@ pub struct MessageDeliveryStatusEventConfiguration {
     /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-    /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub wireless_device_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -432,7 +432,7 @@ impl MessageDeliveryStatusEventConfiguration {
     ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
         self.sidewalk.as_ref()
     }
-    /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
     pub fn wireless_device_id_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -478,7 +478,7 @@ pub mod message_delivery_status_event_configuration {
             self.sidewalk = input;
             self
         }
-        /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
         pub fn wireless_device_id_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -486,7 +486,7 @@ pub mod message_delivery_status_event_configuration {
             self.wireless_device_id_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
         pub fn set_wireless_device_id_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -569,12 +569,12 @@ impl AsRef<str> for EventNotificationTopicStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkEventNotificationConfigurations {
-    /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub amazon_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl SidewalkEventNotificationConfigurations {
-    /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
     pub fn amazon_id_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -598,7 +598,7 @@ pub mod sidewalk_event_notification_configurations {
             std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
-        /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
         pub fn amazon_id_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -606,7 +606,7 @@ pub mod sidewalk_event_notification_configurations {
             self.amazon_id_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
         pub fn set_amazon_id_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -637,7 +637,7 @@ pub struct ConnectionStatusEventConfiguration {
     #[doc(hidden)]
     pub lo_ra_wan:
         std::option::Option<crate::model::LoRaWanConnectionStatusEventNotificationConfigurations>,
-    /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub wireless_gateway_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -650,7 +650,7 @@ impl ConnectionStatusEventConfiguration {
     {
         self.lo_ra_wan.as_ref()
     }
-    /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
     pub fn wireless_gateway_id_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -699,7 +699,7 @@ pub mod connection_status_event_configuration {
             self.lo_ra_wan = input;
             self
         }
-        /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
         pub fn wireless_gateway_id_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -707,7 +707,7 @@ pub mod connection_status_event_configuration {
             self.wireless_gateway_id_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
         pub fn set_wireless_gateway_id_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -735,12 +735,12 @@ impl ConnectionStatusEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanConnectionStatusEventNotificationConfigurations {
-    /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub gateway_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusEventNotificationConfigurations {
-    /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     pub fn gateway_eui_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -765,7 +765,7 @@ pub mod lo_ra_wan_connection_status_event_notification_configurations {
             std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
-        /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
         pub fn gateway_eui_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -773,7 +773,7 @@ pub mod lo_ra_wan_connection_status_event_notification_configurations {
             self.gateway_eui_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
         pub fn set_gateway_eui_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -804,7 +804,7 @@ pub struct JoinEventConfiguration {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanJoinEventNotificationConfigurations>,
-    /// <p>Enum to denote whether the wireless device id join event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub wireless_device_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -816,7 +816,7 @@ impl JoinEventConfiguration {
     ) -> std::option::Option<&crate::model::LoRaWanJoinEventNotificationConfigurations> {
         self.lo_ra_wan.as_ref()
     }
-    /// <p>Enum to denote whether the wireless device id join event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
     pub fn wireless_device_id_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -862,7 +862,7 @@ pub mod join_event_configuration {
             self.lo_ra_wan = input;
             self
         }
-        /// <p>Enum to denote whether the wireless device id join event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
         pub fn wireless_device_id_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -870,7 +870,7 @@ pub mod join_event_configuration {
             self.wireless_device_id_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless device id join event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
         pub fn set_wireless_device_id_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -898,12 +898,12 @@ impl JoinEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanJoinEventNotificationConfigurations {
-    /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub dev_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinEventNotificationConfigurations {
-    /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
     pub fn dev_eui_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -927,7 +927,7 @@ pub mod lo_ra_wan_join_event_notification_configurations {
             std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
-        /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
         pub fn dev_eui_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -935,7 +935,7 @@ pub mod lo_ra_wan_join_event_notification_configurations {
             self.dev_eui_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
         pub fn set_dev_eui_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -965,7 +965,7 @@ pub struct ProximityEventConfiguration {
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-    /// <p>Enum to denote whether the wireless device id proximity event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub wireless_device_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -977,7 +977,7 @@ impl ProximityEventConfiguration {
     ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
         self.sidewalk.as_ref()
     }
-    /// <p>Enum to denote whether the wireless device id proximity event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
     pub fn wireless_device_id_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -1023,7 +1023,7 @@ pub mod proximity_event_configuration {
             self.sidewalk = input;
             self
         }
-        /// <p>Enum to denote whether the wireless device id proximity event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
         pub fn wireless_device_id_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -1031,7 +1031,7 @@ pub mod proximity_event_configuration {
             self.wireless_device_id_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless device id proximity event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
         pub fn set_wireless_device_id_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -1062,7 +1062,7 @@ pub struct DeviceRegistrationStateEventConfiguration {
     /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-    /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub wireless_device_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -1074,7 +1074,7 @@ impl DeviceRegistrationStateEventConfiguration {
     ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
         self.sidewalk.as_ref()
     }
-    /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
     pub fn wireless_device_id_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -1120,7 +1120,7 @@ pub mod device_registration_state_event_configuration {
             self.sidewalk = input;
             self
         }
-        /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
         pub fn wireless_device_id_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -1128,7 +1128,7 @@ pub mod device_registration_state_event_configuration {
             self.wireless_device_id_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
         pub fn set_wireless_device_id_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -2575,13 +2575,13 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkResourceTypeEventConfiguration {
-    /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub wireless_device_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl SidewalkResourceTypeEventConfiguration {
-    /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     pub fn wireless_device_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -2608,7 +2608,7 @@ pub mod sidewalk_resource_type_event_configuration {
             std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
-        /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
         pub fn wireless_device_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -2616,7 +2616,7 @@ pub mod sidewalk_resource_type_event_configuration {
             self.wireless_device_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
         pub fn set_wireless_device_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -2712,13 +2712,13 @@ impl ConnectionStatusResourceTypeEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration {
-    /// <p>Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub wireless_gateway_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
-    /// <p>Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
     pub fn wireless_gateway_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -2745,7 +2745,7 @@ pub mod lo_ra_wan_connection_status_resource_type_event_configuration {
             std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
-        /// <p>Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
         pub fn wireless_gateway_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -2753,7 +2753,7 @@ pub mod lo_ra_wan_connection_status_resource_type_event_configuration {
             self.wireless_gateway_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
         pub fn set_wireless_gateway_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -2845,13 +2845,13 @@ impl JoinResourceTypeEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanJoinResourceTypeEventConfiguration {
-    /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub wireless_device_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinResourceTypeEventConfiguration {
-    /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+    /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     pub fn wireless_device_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -2878,7 +2878,7 @@ pub mod lo_ra_wan_join_resource_type_event_configuration {
             std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
-        /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
         pub fn wireless_device_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -2886,7 +2886,7 @@ pub mod lo_ra_wan_join_resource_type_event_configuration {
             self.wireless_device_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+        /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
         pub fn set_wireless_device_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -3602,17 +3602,27 @@ pub struct LoRaWanSendDataToDevice {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub f_port: std::option::Option<i32>,
+    /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
+    #[doc(hidden)]
+    pub participating_gateways: std::option::Option<crate::model::ParticipatingGateways>,
 }
 impl LoRaWanSendDataToDevice {
     /// <p>The Fport value.</p>
     pub fn f_port(&self) -> std::option::Option<i32> {
         self.f_port
     }
+    /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
+    pub fn participating_gateways(
+        &self,
+    ) -> std::option::Option<&crate::model::ParticipatingGateways> {
+        self.participating_gateways.as_ref()
+    }
 }
 impl std::fmt::Debug for LoRaWanSendDataToDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanSendDataToDevice");
         formatter.field("f_port", &self.f_port);
+        formatter.field("participating_gateways", &self.participating_gateways);
         formatter.finish()
     }
 }
@@ -3623,6 +3633,7 @@ pub mod lo_ra_wan_send_data_to_device {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) f_port: std::option::Option<i32>,
+        pub(crate) participating_gateways: std::option::Option<crate::model::ParticipatingGateways>,
     }
     impl Builder {
         /// <p>The Fport value.</p>
@@ -3635,10 +3646,27 @@ pub mod lo_ra_wan_send_data_to_device {
             self.f_port = input;
             self
         }
+        /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
+        pub fn participating_gateways(
+            mut self,
+            input: crate::model::ParticipatingGateways,
+        ) -> Self {
+            self.participating_gateways = Some(input);
+            self
+        }
+        /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
+        pub fn set_participating_gateways(
+            mut self,
+            input: std::option::Option<crate::model::ParticipatingGateways>,
+        ) -> Self {
+            self.participating_gateways = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
         pub fn build(self) -> crate::model::LoRaWanSendDataToDevice {
             crate::model::LoRaWanSendDataToDevice {
                 f_port: self.f_port,
+                participating_gateways: self.participating_gateways,
             }
         }
     }
@@ -3647,6 +3675,247 @@ impl LoRaWanSendDataToDevice {
     /// Creates a new builder-style object to manufacture [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
     pub fn builder() -> crate::model::lo_ra_wan_send_data_to_device::Builder {
         crate::model::lo_ra_wan_send_data_to_device::Builder::default()
+    }
+}
+
+/// <p>Specify the list of gateways to which you want to send downlink data traffic when the wireless device is running in class B or class C mode.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ParticipatingGateways {
+    /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
+    #[doc(hidden)]
+    pub downlink_mode: std::option::Option<crate::model::DownlinkMode>,
+    /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
+    #[doc(hidden)]
+    pub gateway_list: std::option::Option<std::vec::Vec<crate::model::GatewayListItem>>,
+    /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
+    #[doc(hidden)]
+    pub transmission_interval: std::option::Option<i32>,
+}
+impl ParticipatingGateways {
+    /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
+    pub fn downlink_mode(&self) -> std::option::Option<&crate::model::DownlinkMode> {
+        self.downlink_mode.as_ref()
+    }
+    /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
+    pub fn gateway_list(&self) -> std::option::Option<&[crate::model::GatewayListItem]> {
+        self.gateway_list.as_deref()
+    }
+    /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
+    pub fn transmission_interval(&self) -> std::option::Option<i32> {
+        self.transmission_interval
+    }
+}
+impl std::fmt::Debug for ParticipatingGateways {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ParticipatingGateways");
+        formatter.field("downlink_mode", &self.downlink_mode);
+        formatter.field("gateway_list", &self.gateway_list);
+        formatter.field("transmission_interval", &self.transmission_interval);
+        formatter.finish()
+    }
+}
+/// See [`ParticipatingGateways`](crate::model::ParticipatingGateways).
+pub mod participating_gateways {
+
+    /// A builder for [`ParticipatingGateways`](crate::model::ParticipatingGateways).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) downlink_mode: std::option::Option<crate::model::DownlinkMode>,
+        pub(crate) gateway_list: std::option::Option<std::vec::Vec<crate::model::GatewayListItem>>,
+        pub(crate) transmission_interval: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
+        pub fn downlink_mode(mut self, input: crate::model::DownlinkMode) -> Self {
+            self.downlink_mode = Some(input);
+            self
+        }
+        /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
+        pub fn set_downlink_mode(
+            mut self,
+            input: std::option::Option<crate::model::DownlinkMode>,
+        ) -> Self {
+            self.downlink_mode = input;
+            self
+        }
+        /// Appends an item to `gateway_list`.
+        ///
+        /// To override the contents of this collection use [`set_gateway_list`](Self::set_gateway_list).
+        ///
+        /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
+        pub fn gateway_list(mut self, input: crate::model::GatewayListItem) -> Self {
+            let mut v = self.gateway_list.unwrap_or_default();
+            v.push(input);
+            self.gateway_list = Some(v);
+            self
+        }
+        /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
+        pub fn set_gateway_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GatewayListItem>>,
+        ) -> Self {
+            self.gateway_list = input;
+            self
+        }
+        /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
+        pub fn transmission_interval(mut self, input: i32) -> Self {
+            self.transmission_interval = Some(input);
+            self
+        }
+        /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
+        pub fn set_transmission_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.transmission_interval = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ParticipatingGateways`](crate::model::ParticipatingGateways).
+        pub fn build(self) -> crate::model::ParticipatingGateways {
+            crate::model::ParticipatingGateways {
+                downlink_mode: self.downlink_mode,
+                gateway_list: self.gateway_list,
+                transmission_interval: self.transmission_interval,
+            }
+        }
+    }
+}
+impl ParticipatingGateways {
+    /// Creates a new builder-style object to manufacture [`ParticipatingGateways`](crate::model::ParticipatingGateways).
+    pub fn builder() -> crate::model::participating_gateways::Builder {
+        crate::model::participating_gateways::Builder::default()
+    }
+}
+
+/// <p>Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GatewayListItem {
+    /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
+    #[doc(hidden)]
+    pub gateway_id: std::option::Option<std::string::String>,
+    /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
+    #[doc(hidden)]
+    pub downlink_frequency: std::option::Option<i32>,
+}
+impl GatewayListItem {
+    /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
+    pub fn downlink_frequency(&self) -> std::option::Option<i32> {
+        self.downlink_frequency
+    }
+}
+impl std::fmt::Debug for GatewayListItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GatewayListItem");
+        formatter.field("gateway_id", &self.gateway_id);
+        formatter.field("downlink_frequency", &self.downlink_frequency);
+        formatter.finish()
+    }
+}
+/// See [`GatewayListItem`](crate::model::GatewayListItem).
+pub mod gateway_list_item {
+
+    /// A builder for [`GatewayListItem`](crate::model::GatewayListItem).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) gateway_id: std::option::Option<std::string::String>,
+        pub(crate) downlink_frequency: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gateway_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
+        pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_id = input;
+            self
+        }
+        /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
+        pub fn downlink_frequency(mut self, input: i32) -> Self {
+            self.downlink_frequency = Some(input);
+            self
+        }
+        /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
+        pub fn set_downlink_frequency(mut self, input: std::option::Option<i32>) -> Self {
+            self.downlink_frequency = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GatewayListItem`](crate::model::GatewayListItem).
+        pub fn build(self) -> crate::model::GatewayListItem {
+            crate::model::GatewayListItem {
+                gateway_id: self.gateway_id,
+                downlink_frequency: self.downlink_frequency,
+            }
+        }
+    }
+}
+impl GatewayListItem {
+    /// Creates a new builder-style object to manufacture [`GatewayListItem`](crate::model::GatewayListItem).
+    pub fn builder() -> crate::model::gateway_list_item::Builder {
+        crate::model::gateway_list_item::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DownlinkMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Concurrent,
+    #[allow(missing_docs)] // documentation missing in model
+    Sequential,
+    #[allow(missing_docs)] // documentation missing in model
+    UsingUplinkGateway,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DownlinkMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONCURRENT" => DownlinkMode::Concurrent,
+            "SEQUENTIAL" => DownlinkMode::Sequential,
+            "USING_UPLINK_GATEWAY" => DownlinkMode::UsingUplinkGateway,
+            other => DownlinkMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DownlinkMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DownlinkMode::from(s))
+    }
+}
+impl DownlinkMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DownlinkMode::Concurrent => "CONCURRENT",
+            DownlinkMode::Sequential => "SEQUENTIAL",
+            DownlinkMode::UsingUplinkGateway => "USING_UPLINK_GATEWAY",
+            DownlinkMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CONCURRENT", "SEQUENTIAL", "USING_UPLINK_GATEWAY"]
+    }
+}
+impl AsRef<str> for DownlinkMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4520,6 +4789,9 @@ pub struct LoRaWanGateway {
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
     #[doc(hidden)]
     pub sub_bands: std::option::Option<std::vec::Vec<i32>>,
+    /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
+    #[doc(hidden)]
+    pub beaconing: std::option::Option<crate::model::Beaconing>,
 }
 impl LoRaWanGateway {
     /// <p>The gateway's EUI value.</p>
@@ -4542,6 +4814,10 @@ impl LoRaWanGateway {
     pub fn sub_bands(&self) -> std::option::Option<&[i32]> {
         self.sub_bands.as_deref()
     }
+    /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
+    pub fn beaconing(&self) -> std::option::Option<&crate::model::Beaconing> {
+        self.beaconing.as_ref()
+    }
 }
 impl std::fmt::Debug for LoRaWanGateway {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4551,6 +4827,7 @@ impl std::fmt::Debug for LoRaWanGateway {
         formatter.field("join_eui_filters", &self.join_eui_filters);
         formatter.field("net_id_filters", &self.net_id_filters);
         formatter.field("sub_bands", &self.sub_bands);
+        formatter.field("beaconing", &self.beaconing);
         formatter.finish()
     }
 }
@@ -4566,6 +4843,7 @@ pub mod lo_ra_wan_gateway {
             std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
         pub(crate) net_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) sub_bands: std::option::Option<std::vec::Vec<i32>>,
+        pub(crate) beaconing: std::option::Option<crate::model::Beaconing>,
     }
     impl Builder {
         /// <p>The gateway's EUI value.</p>
@@ -4642,6 +4920,19 @@ pub mod lo_ra_wan_gateway {
             self.sub_bands = input;
             self
         }
+        /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
+        pub fn beaconing(mut self, input: crate::model::Beaconing) -> Self {
+            self.beaconing = Some(input);
+            self
+        }
+        /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
+        pub fn set_beaconing(
+            mut self,
+            input: std::option::Option<crate::model::Beaconing>,
+        ) -> Self {
+            self.beaconing = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LoRaWanGateway`](crate::model::LoRaWanGateway).
         pub fn build(self) -> crate::model::LoRaWanGateway {
             crate::model::LoRaWanGateway {
@@ -4650,6 +4941,7 @@ pub mod lo_ra_wan_gateway {
                 join_eui_filters: self.join_eui_filters,
                 net_id_filters: self.net_id_filters,
                 sub_bands: self.sub_bands,
+                beaconing: self.beaconing,
             }
         }
     }
@@ -4658,6 +4950,87 @@ impl LoRaWanGateway {
     /// Creates a new builder-style object to manufacture [`LoRaWanGateway`](crate::model::LoRaWanGateway).
     pub fn builder() -> crate::model::lo_ra_wan_gateway::Builder {
         crate::model::lo_ra_wan_gateway::Builder::default()
+    }
+}
+
+/// <p>Beaconing parameters for configuring the wireless gateways.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Beaconing {
+    /// <p>The data rate for gateways that are sending the beacons.</p>
+    #[doc(hidden)]
+    pub data_rate: std::option::Option<i32>,
+    /// <p>The frequency list for the gateways to send the beacons.</p>
+    #[doc(hidden)]
+    pub frequencies: std::option::Option<std::vec::Vec<i32>>,
+}
+impl Beaconing {
+    /// <p>The data rate for gateways that are sending the beacons.</p>
+    pub fn data_rate(&self) -> std::option::Option<i32> {
+        self.data_rate
+    }
+    /// <p>The frequency list for the gateways to send the beacons.</p>
+    pub fn frequencies(&self) -> std::option::Option<&[i32]> {
+        self.frequencies.as_deref()
+    }
+}
+impl std::fmt::Debug for Beaconing {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Beaconing");
+        formatter.field("data_rate", &self.data_rate);
+        formatter.field("frequencies", &self.frequencies);
+        formatter.finish()
+    }
+}
+/// See [`Beaconing`](crate::model::Beaconing).
+pub mod beaconing {
+
+    /// A builder for [`Beaconing`](crate::model::Beaconing).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_rate: std::option::Option<i32>,
+        pub(crate) frequencies: std::option::Option<std::vec::Vec<i32>>,
+    }
+    impl Builder {
+        /// <p>The data rate for gateways that are sending the beacons.</p>
+        pub fn data_rate(mut self, input: i32) -> Self {
+            self.data_rate = Some(input);
+            self
+        }
+        /// <p>The data rate for gateways that are sending the beacons.</p>
+        pub fn set_data_rate(mut self, input: std::option::Option<i32>) -> Self {
+            self.data_rate = input;
+            self
+        }
+        /// Appends an item to `frequencies`.
+        ///
+        /// To override the contents of this collection use [`set_frequencies`](Self::set_frequencies).
+        ///
+        /// <p>The frequency list for the gateways to send the beacons.</p>
+        pub fn frequencies(mut self, input: i32) -> Self {
+            let mut v = self.frequencies.unwrap_or_default();
+            v.push(input);
+            self.frequencies = Some(v);
+            self
+        }
+        /// <p>The frequency list for the gateways to send the beacons.</p>
+        pub fn set_frequencies(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.frequencies = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Beaconing`](crate::model::Beaconing).
+        pub fn build(self) -> crate::model::Beaconing {
+            crate::model::Beaconing {
+                data_rate: self.data_rate,
+                frequencies: self.frequencies,
+            }
+        }
+    }
+}
+impl Beaconing {
+    /// Creates a new builder-style object to manufacture [`Beaconing`](crate::model::Beaconing).
+    pub fn builder() -> crate::model::beaconing::Builder {
+        crate::model::beaconing::Builder::default()
     }
 }
 

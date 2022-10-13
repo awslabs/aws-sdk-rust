@@ -111,7 +111,7 @@ impl Client {
     ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::set_type): <p>The type of the managed endpoint.</p>
     ///   - [`release_label(impl Into<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::release_label) / [`set_release_label(Option<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::set_release_label): <p>The Amazon EMR release version.</p>
     ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::set_execution_role_arn): <p>The ARN of the execution role.</p>
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::set_certificate_arn): <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::set_certificate_arn): <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
     ///   - [`configuration_overrides(ConfigurationOverrides)`](crate::client::fluent_builders::CreateManagedEndpoint::configuration_overrides) / [`set_configuration_overrides(Option<ConfigurationOverrides>)`](crate::client::fluent_builders::CreateManagedEndpoint::set_configuration_overrides): <p>The configuration settings that will be used to override existing configurations.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateManagedEndpoint::set_client_token): <p>The client idempotency token for this create call.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateManagedEndpoint::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateManagedEndpoint::set_tags): <p>The tags of the managed endpoint. </p>
@@ -522,7 +522,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+        /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
         #[deprecated(
             note = "Customer provided certificate-arn is deprecated and would be removed in future."
         )]
@@ -530,7 +530,7 @@ pub mod fluent_builders {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+        /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
         #[deprecated(
             note = "Customer provided certificate-arn is deprecated and would be removed in future."
         )]

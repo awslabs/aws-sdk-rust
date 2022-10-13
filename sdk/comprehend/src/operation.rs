@@ -169,6 +169,40 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectSyntax {
     }
 }
 
+/// Operation shape for `BatchDetectTargetedSentiment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_detect_targeted_sentiment`](crate::client::Client::batch_detect_targeted_sentiment).
+///
+/// See [`crate::client::fluent_builders::BatchDetectTargetedSentiment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchDetectTargetedSentiment {
+    _private: (),
+}
+impl BatchDetectTargetedSentiment {
+    /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentInput`](crate::input::BatchDetectTargetedSentimentInput).
+    pub fn builder() -> crate::input::batch_detect_targeted_sentiment_input::Builder {
+        crate::input::batch_detect_targeted_sentiment_input::Builder::default()
+    }
+    /// Creates a new `BatchDetectTargetedSentiment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchDetectTargetedSentiment {
+    type Output = std::result::Result<
+        crate::output::BatchDetectTargetedSentimentOutput,
+        crate::error::BatchDetectTargetedSentimentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_detect_targeted_sentiment_error(response)
+        } else {
+            crate::operation_deser::parse_batch_detect_targeted_sentiment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ClassifyDocument`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1113,6 +1147,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectSyntax {
             crate::operation_deser::parse_detect_syntax_error(response)
         } else {
             crate::operation_deser::parse_detect_syntax_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DetectTargetedSentiment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`detect_targeted_sentiment`](crate::client::Client::detect_targeted_sentiment).
+///
+/// See [`crate::client::fluent_builders::DetectTargetedSentiment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DetectTargetedSentiment {
+    _private: (),
+}
+impl DetectTargetedSentiment {
+    /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentInput`](crate::input::DetectTargetedSentimentInput).
+    pub fn builder() -> crate::input::detect_targeted_sentiment_input::Builder {
+        crate::input::detect_targeted_sentiment_input::Builder::default()
+    }
+    /// Creates a new `DetectTargetedSentiment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DetectTargetedSentiment {
+    type Output = std::result::Result<
+        crate::output::DetectTargetedSentimentOutput,
+        crate::error::DetectTargetedSentimentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_detect_targeted_sentiment_error(response)
+        } else {
+            crate::operation_deser::parse_detect_targeted_sentiment_response(response)
         }
     }
 }

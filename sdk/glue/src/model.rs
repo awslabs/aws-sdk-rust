@@ -19477,6 +19477,12 @@ pub struct CatalogTarget {
     /// <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code> Connection type.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
+    /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+    #[doc(hidden)]
+    pub event_queue_arn: std::option::Option<std::string::String>,
+    /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+    #[doc(hidden)]
+    pub dlq_event_queue_arn: std::option::Option<std::string::String>,
 }
 impl CatalogTarget {
     /// <p>The name of the database to be synchronized.</p>
@@ -19491,6 +19497,14 @@ impl CatalogTarget {
     pub fn connection_name(&self) -> std::option::Option<&str> {
         self.connection_name.as_deref()
     }
+    /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+    pub fn event_queue_arn(&self) -> std::option::Option<&str> {
+        self.event_queue_arn.as_deref()
+    }
+    /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+    pub fn dlq_event_queue_arn(&self) -> std::option::Option<&str> {
+        self.dlq_event_queue_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CatalogTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19498,6 +19512,8 @@ impl std::fmt::Debug for CatalogTarget {
         formatter.field("database_name", &self.database_name);
         formatter.field("tables", &self.tables);
         formatter.field("connection_name", &self.connection_name);
+        formatter.field("event_queue_arn", &self.event_queue_arn);
+        formatter.field("dlq_event_queue_arn", &self.dlq_event_queue_arn);
         formatter.finish()
     }
 }
@@ -19510,6 +19526,8 @@ pub mod catalog_target {
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) tables: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) connection_name: std::option::Option<std::string::String>,
+        pub(crate) event_queue_arn: std::option::Option<std::string::String>,
+        pub(crate) dlq_event_queue_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the database to be synchronized.</p>
@@ -19557,12 +19575,40 @@ pub mod catalog_target {
             self.connection_name = input;
             self
         }
+        /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+        pub fn event_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_queue_arn = Some(input.into());
+            self
+        }
+        /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+        pub fn set_event_queue_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_queue_arn = input;
+            self
+        }
+        /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+        pub fn dlq_event_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dlq_event_queue_arn = Some(input.into());
+            self
+        }
+        /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+        pub fn set_dlq_event_queue_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dlq_event_queue_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CatalogTarget`](crate::model::CatalogTarget).
         pub fn build(self) -> crate::model::CatalogTarget {
             crate::model::CatalogTarget {
                 database_name: self.database_name,
                 tables: self.tables,
                 connection_name: self.connection_name,
+                event_queue_arn: self.event_queue_arn,
+                dlq_event_queue_arn: self.dlq_event_queue_arn,
             }
         }
     }

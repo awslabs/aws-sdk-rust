@@ -3216,7 +3216,7 @@ pub struct CreateWorkspaceImageOutput {
     /// <p>The date when the image was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The identifier of the AWS account that owns the image.</p>
+    /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
 }
@@ -3251,7 +3251,7 @@ impl CreateWorkspaceImageOutput {
     pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
-    /// <p>The identifier of the AWS account that owns the image.</p>
+    /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     pub fn owner_account_id(&self) -> std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
@@ -3372,12 +3372,12 @@ pub mod create_workspace_image_output {
             self.created = input;
             self
         }
-        /// <p>The identifier of the AWS account that owns the image.</p>
+        /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the AWS account that owns the image.</p>
+        /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,

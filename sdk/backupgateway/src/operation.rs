@@ -197,6 +197,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGateway {
     }
 }
 
+/// Operation shape for `GetVirtualMachine`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_virtual_machine`](crate::client::Client::get_virtual_machine).
+///
+/// See [`crate::client::fluent_builders::GetVirtualMachine`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetVirtualMachine {
+    _private: (),
+}
+impl GetVirtualMachine {
+    /// Creates a new builder-style object to manufacture [`GetVirtualMachineInput`](crate::input::GetVirtualMachineInput).
+    pub fn builder() -> crate::input::get_virtual_machine_input::Builder {
+        crate::input::get_virtual_machine_input::Builder::default()
+    }
+    /// Creates a new `GetVirtualMachine` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetVirtualMachine {
+    type Output = std::result::Result<
+        crate::output::GetVirtualMachineOutput,
+        crate::error::GetVirtualMachineError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_virtual_machine_error(response)
+        } else {
+            crate::operation_deser::parse_get_virtual_machine_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ImportHypervisorConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

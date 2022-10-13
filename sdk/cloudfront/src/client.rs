@@ -668,7 +668,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginAccessControl::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginAccessControl::set_id): <p>The unique identifier of the origin access control.</p>
     /// - On success, responds with [`GetOriginAccessControlOutput`](crate::output::GetOriginAccessControlOutput) with field(s):
-    ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::GetOriginAccessControlOutput::origin_access_control): <p>Contains an origin access control.</p>
+    ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::GetOriginAccessControlOutput::origin_access_control): <p>Contains an origin access control, including its unique identifier.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetOriginAccessControlOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
     /// - On failure, responds with [`SdkError<GetOriginAccessControlError>`](crate::error::GetOriginAccessControlError)
     pub fn get_origin_access_control(&self) -> fluent_builders::GetOriginAccessControl {
@@ -679,7 +679,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginAccessControlConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginAccessControlConfig::set_id): <p>The unique identifier of the origin access control.</p>
     /// - On success, responds with [`GetOriginAccessControlConfigOutput`](crate::output::GetOriginAccessControlConfigOutput) with field(s):
-    ///   - [`origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::output::GetOriginAccessControlConfigOutput::origin_access_control_config): <p>Contains an origin access control.</p>
+    ///   - [`origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::output::GetOriginAccessControlConfigOutput::origin_access_control_config): <p>Contains an origin access control configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetOriginAccessControlConfigOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
     /// - On failure, responds with [`SdkError<GetOriginAccessControlConfigError>`](crate::error::GetOriginAccessControlConfigError)
     pub fn get_origin_access_control_config(
@@ -5448,7 +5448,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOriginAccessControl`.
     ///
-    /// <p>Gets a CloudFront origin access control.</p>
+    /// <p>Gets a CloudFront origin access control, including its unique identifier.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOriginAccessControl {
         handle: std::sync::Arc<super::Handle>,
@@ -5525,7 +5525,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOriginAccessControlConfig`.
     ///
-    /// <p>Gets a CloudFront origin access control.</p>
+    /// <p>Gets a CloudFront origin access control configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOriginAccessControlConfig {
         handle: std::sync::Arc<super::Handle>,

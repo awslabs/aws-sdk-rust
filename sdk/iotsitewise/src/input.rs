@@ -1712,12 +1712,12 @@ pub mod create_asset_input {
         pub(crate) asset_description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique, friendly name for the asset.</p>
+        /// <p>A friendly name for the asset.</p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_name = Some(input.into());
             self
         }
-        /// <p>A unique, friendly name for the asset.</p>
+        /// <p>A friendly name for the asset.</p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_name = input;
             self
@@ -11840,12 +11840,12 @@ pub mod update_asset_input {
             self.asset_id = input;
             self
         }
-        /// <p>A unique, friendly name for the asset.</p>
+        /// <p>A friendly name for the asset.</p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_name = Some(input.into());
             self
         }
-        /// <p>A unique, friendly name for the asset.</p>
+        /// <p>A friendly name for the asset.</p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_name = input;
             self
@@ -12307,6 +12307,7 @@ pub mod update_asset_property_input {
         pub(crate) property_notification_state:
             std::option::Option<crate::model::PropertyNotificationState>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) property_unit: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the asset to be updated.</p>
@@ -12372,6 +12373,19 @@ pub mod update_asset_property_input {
             self.client_token = input;
             self
         }
+        /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
+        pub fn property_unit(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_unit = Some(input.into());
+            self
+        }
+        /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
+        pub fn set_property_unit(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.property_unit = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAssetPropertyInput`](crate::input::UpdateAssetPropertyInput).
         pub fn build(
             self,
@@ -12383,6 +12397,7 @@ pub mod update_asset_property_input {
                 property_alias: self.property_alias,
                 property_notification_state: self.property_notification_state,
                 client_token: self.client_token,
+                property_unit: self.property_unit,
             })
         }
     }
@@ -13868,6 +13883,9 @@ pub struct UpdateAssetPropertyInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
+    #[doc(hidden)]
+    pub property_unit: std::option::Option<std::string::String>,
 }
 impl UpdateAssetPropertyInput {
     /// <p>The ID of the asset to be updated.</p>
@@ -13894,6 +13912,10 @@ impl UpdateAssetPropertyInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
+    pub fn property_unit(&self) -> std::option::Option<&str> {
+        self.property_unit.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAssetPropertyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13906,6 +13928,7 @@ impl std::fmt::Debug for UpdateAssetPropertyInput {
             &self.property_notification_state,
         );
         formatter.field("client_token", &self.client_token);
+        formatter.field("property_unit", &self.property_unit);
         formatter.finish()
     }
 }
@@ -14003,7 +14026,7 @@ pub struct UpdateAssetInput {
     /// <p>The ID of the asset to update.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
-    /// <p>A unique, friendly name for the asset.</p>
+    /// <p>A friendly name for the asset.</p>
     #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -14018,7 +14041,7 @@ impl UpdateAssetInput {
     pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
-    /// <p>A unique, friendly name for the asset.</p>
+    /// <p>A friendly name for the asset.</p>
     pub fn asset_name(&self) -> std::option::Option<&str> {
         self.asset_name.as_deref()
     }
@@ -16329,7 +16352,7 @@ impl std::fmt::Debug for CreateAssetModelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetInput {
-    /// <p>A unique, friendly name for the asset.</p>
+    /// <p>A friendly name for the asset.</p>
     #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The ID of the asset model from which to create the asset.</p>
@@ -16347,7 +16370,7 @@ pub struct CreateAssetInput {
     pub asset_description: std::option::Option<std::string::String>,
 }
 impl CreateAssetInput {
-    /// <p>A unique, friendly name for the asset.</p>
+    /// <p>A friendly name for the asset.</p>
     pub fn asset_name(&self) -> std::option::Option<&str> {
         self.asset_name.as_deref()
     }

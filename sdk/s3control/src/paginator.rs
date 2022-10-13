@@ -109,6 +109,14 @@ impl ListAccessPointsForObjectLambdaPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `object_lambda_access_point_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListAccessPointsForObjectLambdaPaginatorItems {
+        crate::paginator::ListAccessPointsForObjectLambdaPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -510,5 +518,28 @@ impl ListStorageLensConfigurationsPaginator {
                 }
             })
         })
+    }
+}
+
+/// Flattened paginator for `ListAccessPointsForObjectLambdaPaginator`
+///
+/// This is created with [`.items()`](ListAccessPointsForObjectLambdaPaginator::items)
+pub struct ListAccessPointsForObjectLambdaPaginatorItems(ListAccessPointsForObjectLambdaPaginator);
+
+impl ListAccessPointsForObjectLambdaPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ObjectLambdaAccessPoint,
+            aws_smithy_http::result::SdkError<crate::error::ListAccessPointsForObjectLambdaError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_access_points_for_object_lambda_output_object_lambda_access_point_list(page).unwrap_or_default().into_iter())
     }
 }

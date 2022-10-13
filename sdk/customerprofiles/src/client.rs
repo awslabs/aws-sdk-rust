@@ -323,6 +323,7 @@ impl Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     ///   - [`object_type_names(Option<HashMap<String, String>>)`](crate::output::GetIntegrationOutput::object_type_names): <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     ///   - [`workflow_id(Option<String>)`](crate::output::GetIntegrationOutput::workflow_id): <p>Unique identifier for the workflow.</p>
+    ///   - [`is_unstructured(Option<bool>)`](crate::output::GetIntegrationOutput::is_unstructured): <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
     /// - On failure, responds with [`SdkError<GetIntegrationError>`](crate::error::GetIntegrationError)
     pub fn get_integration(&self) -> fluent_builders::GetIntegration {
         fluent_builders::GetIntegration::new(self.handle.clone())
@@ -570,6 +571,7 @@ impl Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::PutIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     ///   - [`object_type_names(Option<HashMap<String, String>>)`](crate::output::PutIntegrationOutput::object_type_names): <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     ///   - [`workflow_id(Option<String>)`](crate::output::PutIntegrationOutput::workflow_id): <p>Unique identifier for the workflow.</p>
+    ///   - [`is_unstructured(Option<bool>)`](crate::output::PutIntegrationOutput::is_unstructured): <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
     /// - On failure, responds with [`SdkError<PutIntegrationError>`](crate::error::PutIntegrationError)
     pub fn put_integration(&self) -> fluent_builders::PutIntegration {
         fluent_builders::PutIntegration::new(self.handle.clone())
@@ -718,7 +720,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AddProfileKey`.
     ///
-    /// <p>Associates a new key value with a specific profile, such as a Contact Trace Record (CTR) ContactId.</p>
+    /// <p>Associates a new key value with a specific profile, such as a Contact Record ContactId.</p>
     /// <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddProfileKey {
@@ -4058,6 +4060,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.</p>
     /// <p>An integration can belong to only one domain.</p>
+    /// <p>To add or remove tags on an existing Integration, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html"> TagResource </a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html"> UntagResource</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutIntegration {
         handle: std::sync::Arc<super::Handle>,
@@ -4217,7 +4220,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutProfileObject`.
     ///
     /// <p>Adds additional objects to customer profiles of a given ObjectType.</p>
-    /// <p>When adding a specific profile object, like a Contact Trace Record (CTR), an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional CTRs with the same phone number will be mapped to the same inferred profile.</p>
+    /// <p>When adding a specific profile object, like a Contact Record, an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional Contact Records with the same phone number will be mapped to the same inferred profile.</p>
     /// <p>When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.</p>
     /// <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -4320,6 +4323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutProfileObjectType`.
     ///
     /// <p>Defines a ProfileObjectType.</p>
+    /// <p>To add or remove tags on an existing ObjectType, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html"> TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProfileObjectType {
         handle: std::sync::Arc<super::Handle>,
@@ -4877,6 +4881,7 @@ pub mod fluent_builders {
     /// <p>After a domain is created, the name can’t be changed.</p>
     /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true. </p>
     /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>
+    /// <p>To add or remove tags on an existing Domain, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomain {
         handle: std::sync::Arc<super::Handle>,

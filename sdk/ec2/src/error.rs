@@ -4405,6 +4405,170 @@ impl std::error::Error for CreateClientVpnRouteError {
     }
 }
 
+/// Error type for the `CreateCoipCidr` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateCoipCidrError {
+    /// Kind of error that occurred.
+    pub kind: CreateCoipCidrErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateCoipCidr` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateCoipCidrErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateCoipCidrError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateCoipCidrErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateCoipCidrError {
+    fn code(&self) -> Option<&str> {
+        CreateCoipCidrError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateCoipCidrError {
+    /// Creates a new `CreateCoipCidrError`.
+    pub fn new(kind: CreateCoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateCoipCidrError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateCoipCidrErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateCoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateCoipCidrErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for CreateCoipCidrError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateCoipCidrErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateCoipPool` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateCoipPoolError {
+    /// Kind of error that occurred.
+    pub kind: CreateCoipPoolErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateCoipPool` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateCoipPoolErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateCoipPoolError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateCoipPoolErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateCoipPoolError {
+    fn code(&self) -> Option<&str> {
+        CreateCoipPoolError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateCoipPoolError {
+    /// Creates a new `CreateCoipPoolError`.
+    pub fn new(kind: CreateCoipPoolErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateCoipPoolError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateCoipPoolErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateCoipPoolError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateCoipPoolErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for CreateCoipPoolError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateCoipPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateCustomerGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5962,6 +6126,183 @@ impl std::error::Error for CreateLocalGatewayRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateLocalGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateLocalGatewayRouteTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLocalGatewayRouteTableError {
+    /// Kind of error that occurred.
+    pub kind: CreateLocalGatewayRouteTableErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLocalGatewayRouteTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLocalGatewayRouteTableErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLocalGatewayRouteTableError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLocalGatewayRouteTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLocalGatewayRouteTableError {
+    fn code(&self) -> Option<&str> {
+        CreateLocalGatewayRouteTableError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLocalGatewayRouteTableError {
+    /// Creates a new `CreateLocalGatewayRouteTableError`.
+    pub fn new(kind: CreateLocalGatewayRouteTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLocalGatewayRouteTableError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLocalGatewayRouteTableErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLocalGatewayRouteTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLocalGatewayRouteTableErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for CreateLocalGatewayRouteTableError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLocalGatewayRouteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
+    /// Kind of error that occurred.
+    pub kind: CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind::Unhandled(
+                _inner,
+            ) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError
+{
+    fn code(&self) -> Option<&str> {
+        CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
+    /// Creates a new `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError`.
+    pub fn new(
+        kind: CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind::Unhandled(
+                err.into(),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind::Unhandled(
+                err.into(),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind::Unhandled(
+                _inner,
+            ) => Some(_inner.as_ref()),
         }
     }
 }
@@ -10210,6 +10551,170 @@ impl std::error::Error for DeleteClientVpnRouteError {
     }
 }
 
+/// Error type for the `DeleteCoipCidr` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteCoipCidrError {
+    /// Kind of error that occurred.
+    pub kind: DeleteCoipCidrErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteCoipCidr` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteCoipCidrErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteCoipCidrError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteCoipCidrErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteCoipCidrError {
+    fn code(&self) -> Option<&str> {
+        DeleteCoipCidrError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteCoipCidrError {
+    /// Creates a new `DeleteCoipCidrError`.
+    pub fn new(kind: DeleteCoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteCoipCidrError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteCoipCidrErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteCoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteCoipCidrErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DeleteCoipCidrError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteCoipCidrErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteCoipPool` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteCoipPoolError {
+    /// Kind of error that occurred.
+    pub kind: DeleteCoipPoolErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteCoipPool` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteCoipPoolErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteCoipPoolError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteCoipPoolErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteCoipPoolError {
+    fn code(&self) -> Option<&str> {
+        DeleteCoipPoolError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteCoipPoolError {
+    /// Creates a new `DeleteCoipPoolError`.
+    pub fn new(kind: DeleteCoipPoolErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteCoipPoolError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteCoipPoolErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteCoipPoolError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteCoipPoolErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DeleteCoipPoolError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteCoipPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteCustomerGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11439,6 +11944,183 @@ impl std::error::Error for DeleteLocalGatewayRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteLocalGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteLocalGatewayRouteTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLocalGatewayRouteTableError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLocalGatewayRouteTableErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteLocalGatewayRouteTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLocalGatewayRouteTableErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteLocalGatewayRouteTableError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLocalGatewayRouteTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteLocalGatewayRouteTableError {
+    fn code(&self) -> Option<&str> {
+        DeleteLocalGatewayRouteTableError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLocalGatewayRouteTableError {
+    /// Creates a new `DeleteLocalGatewayRouteTableError`.
+    pub fn new(kind: DeleteLocalGatewayRouteTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLocalGatewayRouteTableError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLocalGatewayRouteTableErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLocalGatewayRouteTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLocalGatewayRouteTableErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DeleteLocalGatewayRouteTableError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLocalGatewayRouteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind::Unhandled(
+                _inner,
+            ) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError
+{
+    fn code(&self) -> Option<&str> {
+        DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
+    /// Creates a new `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError`.
+    pub fn new(
+        kind: DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind::Unhandled(
+                err.into(),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind::Unhandled(
+                err.into(),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationErrorKind::Unhandled(
+                _inner,
+            ) => Some(_inner.as_ref()),
         }
     }
 }
@@ -36605,6 +37287,88 @@ impl std::error::Error for ModifyLaunchTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ModifyLaunchTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ModifyLocalGatewayRoute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ModifyLocalGatewayRouteError {
+    /// Kind of error that occurred.
+    pub kind: ModifyLocalGatewayRouteErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ModifyLocalGatewayRoute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ModifyLocalGatewayRouteErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ModifyLocalGatewayRouteError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ModifyLocalGatewayRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ModifyLocalGatewayRouteError {
+    fn code(&self) -> Option<&str> {
+        ModifyLocalGatewayRouteError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ModifyLocalGatewayRouteError {
+    /// Creates a new `ModifyLocalGatewayRouteError`.
+    pub fn new(kind: ModifyLocalGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ModifyLocalGatewayRouteError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ModifyLocalGatewayRouteErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ModifyLocalGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ModifyLocalGatewayRouteErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ModifyLocalGatewayRouteError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ModifyLocalGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

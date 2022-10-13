@@ -353,6 +353,36 @@ impl PutJobTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutBucketVersioningOutput {}
+impl std::fmt::Debug for PutBucketVersioningOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutBucketVersioningOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
+pub mod put_bucket_versioning_output {
+
+    /// A builder for [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
+        pub fn build(self) -> crate::output::PutBucketVersioningOutput {
+            crate::output::PutBucketVersioningOutput {}
+        }
+    }
+}
+impl PutBucketVersioningOutput {
+    /// Creates a new builder-style object to manufacture [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
+    pub fn builder() -> crate::output::put_bucket_versioning_output::Builder {
+        crate::output::put_bucket_versioning_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketTaggingOutput {}
 impl std::fmt::Debug for PutBucketTaggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1494,6 +1524,87 @@ impl GetJobTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
     pub fn builder() -> crate::output::get_job_tagging_output::Builder {
         crate::output::get_job_tagging_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBucketVersioningOutput {
+    /// <p>The versioning state of the S3 on Outposts bucket.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::BucketVersioningStatus>,
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
+    #[doc(hidden)]
+    pub mfa_delete: std::option::Option<crate::model::MfaDeleteStatus>,
+}
+impl GetBucketVersioningOutput {
+    /// <p>The versioning state of the S3 on Outposts bucket.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::BucketVersioningStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
+    pub fn mfa_delete(&self) -> std::option::Option<&crate::model::MfaDeleteStatus> {
+        self.mfa_delete.as_ref()
+    }
+}
+impl std::fmt::Debug for GetBucketVersioningOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBucketVersioningOutput");
+        formatter.field("status", &self.status);
+        formatter.field("mfa_delete", &self.mfa_delete);
+        formatter.finish()
+    }
+}
+/// See [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
+pub mod get_bucket_versioning_output {
+
+    /// A builder for [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::BucketVersioningStatus>,
+        pub(crate) mfa_delete: std::option::Option<crate::model::MfaDeleteStatus>,
+    }
+    impl Builder {
+        /// <p>The versioning state of the S3 on Outposts bucket.</p>
+        pub fn status(mut self, input: crate::model::BucketVersioningStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The versioning state of the S3 on Outposts bucket.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::BucketVersioningStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
+        pub fn mfa_delete(mut self, input: crate::model::MfaDeleteStatus) -> Self {
+            self.mfa_delete = Some(input);
+            self
+        }
+        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
+        pub fn set_mfa_delete(
+            mut self,
+            input: std::option::Option<crate::model::MfaDeleteStatus>,
+        ) -> Self {
+            self.mfa_delete = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
+        pub fn build(self) -> crate::output::GetBucketVersioningOutput {
+            crate::output::GetBucketVersioningOutput {
+                status: self.status,
+                mfa_delete: self.mfa_delete,
+            }
+        }
+    }
+}
+impl GetBucketVersioningOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
+    pub fn builder() -> crate::output::get_bucket_versioning_output::Builder {
+        crate::output::get_bucket_versioning_output::Builder::default()
     }
 }
 

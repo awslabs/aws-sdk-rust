@@ -157,7 +157,7 @@ impl Client {
     ///   - [`parameters(Vec<SqlParameter>)`](crate::client::fluent_builders::ExecuteStatement::parameters) / [`set_parameters(Option<Vec<SqlParameter>>)`](crate::client::fluent_builders::ExecuteStatement::set_parameters): <p>The parameters for the SQL statement.</p> <note>   <p>Array parameters are not supported.</p>  </note>
     ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_transaction_id): <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>  <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     ///   - [`include_result_metadata(bool)`](crate::client::fluent_builders::ExecuteStatement::include_result_metadata) / [`set_include_result_metadata(bool)`](crate::client::fluent_builders::ExecuteStatement::set_include_result_metadata): <p>A value that indicates whether to include metadata in the results.</p>
-    ///   - [`continue_after_timeout(bool)`](crate::client::fluent_builders::ExecuteStatement::continue_after_timeout) / [`set_continue_after_timeout(bool)`](crate::client::fluent_builders::ExecuteStatement::set_continue_after_timeout): <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>   <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>  </important>
+    ///   - [`continue_after_timeout(bool)`](crate::client::fluent_builders::ExecuteStatement::continue_after_timeout) / [`set_continue_after_timeout(bool)`](crate::client::fluent_builders::ExecuteStatement::set_continue_after_timeout): <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>   <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>  </note>
     ///   - [`result_set_options(ResultSetOptions)`](crate::client::fluent_builders::ExecuteStatement::result_set_options) / [`set_result_set_options(Option<ResultSetOptions>)`](crate::client::fluent_builders::ExecuteStatement::set_result_set_options): <p>Options that control how the result set is returned.</p>
     ///   - [`format_records_as(RecordsFormatType)`](crate::client::fluent_builders::ExecuteStatement::format_records_as) / [`set_format_records_as(Option<RecordsFormatType>)`](crate::client::fluent_builders::ExecuteStatement::set_format_records_as): <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>  <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On success, responds with [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput) with field(s):
@@ -193,11 +193,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchExecuteStatement`.
     ///
     /// <p>Runs a batch SQL statement over an array of data.</p>
-    /// <p>You can run bulk update and insert operations for multiple records using a DML statement with different parameter sets. Bulk operations can provide a significant performance improvement over individual insert and update operations.</p> <important>
+    /// <p>You can run bulk update and insert operations for multiple records using a DML statement with different parameter sets. Bulk operations can provide a significant performance improvement over individual insert and update operations.</p> <note>
     /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
     /// <p>There isn't a fixed upper limit on the number of parameter sets. However, the maximum size of the HTTP request submitted through the Data API is 4 MiB. If the request exceeds this limit, the Data API returns an error and doesn't process the request. This 4-MiB limit includes the size of the HTTP headers and the JSON notation in the request. Thus, the number of parameter sets that you can include depends on a combination of factors, such as the size of the SQL statement and the size of each parameter set.</p>
     /// <p>The response size limit is 1 MiB. If the call returns more than 1 MiB of response data, the call is terminated.</p>
-    /// </important>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchExecuteStatement {
         handle: std::sync::Arc<super::Handle>,
@@ -362,11 +362,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BeginTransaction`.
     ///
-    /// <p>Starts a SQL transaction.</p> <important>
+    /// <p>Starts a SQL transaction.</p> <note>
     /// <p>A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.</p>
     /// <p>A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.</p>
     /// <p>DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code> enabled.</p>
-    /// </important>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BeginTransaction {
         handle: std::sync::Arc<super::Handle>,
@@ -573,9 +573,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteSql`.
     ///
-    /// <p>Runs one or more SQL statements.</p> <important>
+    /// <p>Runs one or more SQL statements.</p> <note>
     /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.</p>
-    /// </important>
+    /// </note>
     #[deprecated(
         note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.",
         since = "2019-03-21"
@@ -709,10 +709,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteStatement`.
     ///
-    /// <p>Runs a SQL statement against a database.</p> <important>
+    /// <p>Runs a SQL statement against a database.</p> <note>
     /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
     /// <p>If the binary response data from the database is more than 1 MB, the call is terminated.</p>
-    /// </important>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteStatement {
         handle: std::sync::Arc<super::Handle>,
@@ -878,16 +878,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_result_metadata(input);
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
         /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
-        /// </important>
+        /// </note>
         pub fn continue_after_timeout(mut self, input: bool) -> Self {
             self.inner = self.inner.continue_after_timeout(input);
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
         /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
-        /// </important>
+        /// </note>
         pub fn set_continue_after_timeout(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_continue_after_timeout(input);
             self

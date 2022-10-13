@@ -461,7 +461,7 @@ impl AutoExportRevisionDestinationEntry {
     }
 }
 
-/// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption. type.</p>
+/// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportServerSideEncryption {
@@ -539,7 +539,7 @@ impl ExportServerSideEncryption {
     }
 }
 
-/// <p>The types of encryption supported in export jobs to Amazon S3.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -649,7 +649,7 @@ impl OriginDetails {
     }
 }
 
-/// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -704,7 +704,7 @@ impl AsRef<str> for Origin {
     }
 }
 
-/// <p>The type of asset that is added to a data set.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1167,16 +1167,16 @@ impl AsRef<str> for ProtocolType {
     }
 }
 
-/// The Amazon Redshift datashare asset.
+/// <p>The Amazon Redshift datashare asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDataShareAsset {
-    /// The Amazon Resource Name (ARN) of the datashare asset.
+    /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl RedshiftDataShareAsset {
-    /// The Amazon Resource Name (ARN) of the datashare asset.
+    /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1197,12 +1197,12 @@ pub mod redshift_data_share_asset {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) of the datashare asset.
+        /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) of the datashare asset.
+        /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1522,7 +1522,7 @@ impl AssetEntry {
     }
 }
 
-/// AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created.
+/// <p>AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobEntry {
@@ -1896,11 +1896,11 @@ impl AsRef<str> for State {
     }
 }
 
-/// An error that occurred with the job request.
+/// <p>An error that occurred with the job request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobError {
-    /// The code for the job error.
+    /// <p>The code for the job error.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::Code>,
     /// <p>The details about the job error.</p>
@@ -1909,21 +1909,21 @@ pub struct JobError {
     /// <p>The name of the limit that was reached.</p>
     #[doc(hidden)]
     pub limit_name: std::option::Option<crate::model::JobErrorLimitName>,
-    /// The value of the exceeded limit.
+    /// <p>The value of the exceeded limit.</p>
     #[doc(hidden)]
     pub limit_value: f64,
-    /// The message related to the job error.
+    /// <p>The message related to the job error.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// The unique identifier for the resource related to the error.
+    /// <p>The unique identifier for the resource related to the error.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
-    /// The type of resource related to the error.
+    /// <p>The type of resource related to the error.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::JobErrorResourceTypes>,
 }
 impl JobError {
-    /// The code for the job error.
+    /// <p>The code for the job error.</p>
     pub fn code(&self) -> std::option::Option<&crate::model::Code> {
         self.code.as_ref()
     }
@@ -1935,19 +1935,19 @@ impl JobError {
     pub fn limit_name(&self) -> std::option::Option<&crate::model::JobErrorLimitName> {
         self.limit_name.as_ref()
     }
-    /// The value of the exceeded limit.
+    /// <p>The value of the exceeded limit.</p>
     pub fn limit_value(&self) -> f64 {
         self.limit_value
     }
-    /// The message related to the job error.
+    /// <p>The message related to the job error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// The unique identifier for the resource related to the error.
+    /// <p>The unique identifier for the resource related to the error.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// The type of resource related to the error.
+    /// <p>The type of resource related to the error.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::JobErrorResourceTypes> {
         self.resource_type.as_ref()
     }
@@ -1980,12 +1980,12 @@ pub mod job_error {
         pub(crate) resource_type: std::option::Option<crate::model::JobErrorResourceTypes>,
     }
     impl Builder {
-        /// The code for the job error.
+        /// <p>The code for the job error.</p>
         pub fn code(mut self, input: crate::model::Code) -> Self {
             self.code = Some(input);
             self
         }
-        /// The code for the job error.
+        /// <p>The code for the job error.</p>
         pub fn set_code(mut self, input: std::option::Option<crate::model::Code>) -> Self {
             self.code = input;
             self
@@ -2013,42 +2013,42 @@ pub mod job_error {
             self.limit_name = input;
             self
         }
-        /// The value of the exceeded limit.
+        /// <p>The value of the exceeded limit.</p>
         pub fn limit_value(mut self, input: f64) -> Self {
             self.limit_value = Some(input);
             self
         }
-        /// The value of the exceeded limit.
+        /// <p>The value of the exceeded limit.</p>
         pub fn set_limit_value(mut self, input: std::option::Option<f64>) -> Self {
             self.limit_value = input;
             self
         }
-        /// The message related to the job error.
+        /// <p>The message related to the job error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// The message related to the job error.
+        /// <p>The message related to the job error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
-        /// The unique identifier for the resource related to the error.
+        /// <p>The unique identifier for the resource related to the error.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// The unique identifier for the resource related to the error.
+        /// <p>The unique identifier for the resource related to the error.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// The type of resource related to the error.
+        /// <p>The type of resource related to the error.</p>
         pub fn resource_type(mut self, input: crate::model::JobErrorResourceTypes) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// The type of resource related to the error.
+        /// <p>The type of resource related to the error.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::JobErrorResourceTypes>,
@@ -2077,7 +2077,7 @@ impl JobError {
     }
 }
 
-/// The types of resource which the job error can apply to.
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2136,7 +2136,7 @@ impl AsRef<str> for JobErrorResourceTypes {
     }
 }
 
-/// The name of the limit that was reached.
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3074,33 +3074,33 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
     }
 }
 
-/// Details from an import from Amazon Redshift datashare response.
+/// <p>Details from an import from Amazon Redshift datashare response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetsFromRedshiftDataSharesResponseDetails {
-    /// A list of Amazon Redshift datashare asset sources.
+    /// <p>A list of Amazon Redshift datashare asset sources.</p>
     #[doc(hidden)]
     pub asset_sources:
         std::option::Option<std::vec::Vec<crate::model::RedshiftDataShareAssetSourceEntry>>,
-    /// The unique identifier for the data set associated with this import job.
+    /// <p>The unique identifier for the data set associated with this import job.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
-    /// The unique identifier for the revision associated with this import job.
+    /// <p>The unique identifier for the revision associated with this import job.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetsFromRedshiftDataSharesResponseDetails {
-    /// A list of Amazon Redshift datashare asset sources.
+    /// <p>A list of Amazon Redshift datashare asset sources.</p>
     pub fn asset_sources(
         &self,
     ) -> std::option::Option<&[crate::model::RedshiftDataShareAssetSourceEntry]> {
         self.asset_sources.as_deref()
     }
-    /// The unique identifier for the data set associated with this import job.
+    /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// The unique identifier for the revision associated with this import job.
+    /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -3130,7 +3130,7 @@ pub mod import_assets_from_redshift_data_shares_response_details {
         ///
         /// To override the contents of this collection use [`set_asset_sources`](Self::set_asset_sources).
         ///
-        /// A list of Amazon Redshift datashare asset sources.
+        /// <p>A list of Amazon Redshift datashare asset sources.</p>
         pub fn asset_sources(
             mut self,
             input: crate::model::RedshiftDataShareAssetSourceEntry,
@@ -3140,7 +3140,7 @@ pub mod import_assets_from_redshift_data_shares_response_details {
             self.asset_sources = Some(v);
             self
         }
-        /// A list of Amazon Redshift datashare asset sources.
+        /// <p>A list of Amazon Redshift datashare asset sources.</p>
         pub fn set_asset_sources(
             mut self,
             input: std::option::Option<
@@ -3150,22 +3150,22 @@ pub mod import_assets_from_redshift_data_shares_response_details {
             self.asset_sources = input;
             self
         }
-        /// The unique identifier for the data set associated with this import job.
+        /// <p>The unique identifier for the data set associated with this import job.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// The unique identifier for the data set associated with this import job.
+        /// <p>The unique identifier for the data set associated with this import job.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
         }
-        /// The unique identifier for the revision associated with this import job.
+        /// <p>The unique identifier for the revision associated with this import job.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// The unique identifier for the revision associated with this import job.
+        /// <p>The unique identifier for the revision associated with this import job.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -3192,12 +3192,12 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDataShareAssetSourceEntry {
-    /// The Amazon Resource Name (ARN) of the datashare asset.
+    /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
 }
 impl RedshiftDataShareAssetSourceEntry {
-    /// The Amazon Resource Name (ARN) of the datashare asset.
+    /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn data_share_arn(&self) -> std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
@@ -3218,12 +3218,12 @@ pub mod redshift_data_share_asset_source_entry {
         pub(crate) data_share_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) of the datashare asset.
+        /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
         pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_share_arn = Some(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) of the datashare asset.
+        /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
         pub fn set_data_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4528,8 +4528,7 @@ pub struct RevisionEntry {
     /// <p>The unique identifier for the data set associated with this revision.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
-    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     #[doc(hidden)]
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
@@ -4568,8 +4567,7 @@ impl RevisionEntry {
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
-    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn finalized(&self) -> bool {
         self.finalized
     }
@@ -4677,14 +4675,12 @@ pub mod revision_entry {
             self.data_set_id = input;
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
-        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
             self.finalized = Some(input);
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
-        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
             self.finalized = input;
             self
@@ -4798,18 +4794,18 @@ pub struct RequestDetails {
     #[doc(hidden)]
     pub export_revisions_to_s3:
         std::option::Option<crate::model::ExportRevisionsToS3RequestDetails>,
-    /// <p>Details about the import from signed URL request.</p>
+    /// <p>Details about the import from Amazon S3 request.</p>
     #[doc(hidden)]
     pub import_asset_from_signed_url:
         std::option::Option<crate::model::ImportAssetFromSignedUrlRequestDetails>,
-    /// <p>Details about the import from Amazon S3 request.</p>
+    /// <p>Information about the import asset from API Gateway API request.</p>
     #[doc(hidden)]
     pub import_assets_from_s3: std::option::Option<crate::model::ImportAssetsFromS3RequestDetails>,
     /// <p>Details from an import from Amazon Redshift datashare request.</p>
     #[doc(hidden)]
     pub import_assets_from_redshift_data_shares:
         std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails>,
-    /// <p>Information about the import asset from API Gateway API request.</p>
+    /// <p>Details about the import from signed URL request.</p>
     #[doc(hidden)]
     pub import_asset_from_api_gateway_api:
         std::option::Option<crate::model::ImportAssetFromApiGatewayApiRequestDetails>,
@@ -4833,13 +4829,13 @@ impl RequestDetails {
     ) -> std::option::Option<&crate::model::ExportRevisionsToS3RequestDetails> {
         self.export_revisions_to_s3.as_ref()
     }
-    /// <p>Details about the import from signed URL request.</p>
+    /// <p>Details about the import from Amazon S3 request.</p>
     pub fn import_asset_from_signed_url(
         &self,
     ) -> std::option::Option<&crate::model::ImportAssetFromSignedUrlRequestDetails> {
         self.import_asset_from_signed_url.as_ref()
     }
-    /// <p>Details about the import from Amazon S3 request.</p>
+    /// <p>Information about the import asset from API Gateway API request.</p>
     pub fn import_assets_from_s3(
         &self,
     ) -> std::option::Option<&crate::model::ImportAssetsFromS3RequestDetails> {
@@ -4851,7 +4847,7 @@ impl RequestDetails {
     ) -> std::option::Option<&crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails> {
         self.import_assets_from_redshift_data_shares.as_ref()
     }
-    /// <p>Information about the import asset from API Gateway API request.</p>
+    /// <p>Details about the import from signed URL request.</p>
     pub fn import_asset_from_api_gateway_api(
         &self,
     ) -> std::option::Option<&crate::model::ImportAssetFromApiGatewayApiRequestDetails> {
@@ -4953,7 +4949,7 @@ pub mod request_details {
             self.export_revisions_to_s3 = input;
             self
         }
-        /// <p>Details about the import from signed URL request.</p>
+        /// <p>Details about the import from Amazon S3 request.</p>
         pub fn import_asset_from_signed_url(
             mut self,
             input: crate::model::ImportAssetFromSignedUrlRequestDetails,
@@ -4961,7 +4957,7 @@ pub mod request_details {
             self.import_asset_from_signed_url = Some(input);
             self
         }
-        /// <p>Details about the import from signed URL request.</p>
+        /// <p>Details about the import from Amazon S3 request.</p>
         pub fn set_import_asset_from_signed_url(
             mut self,
             input: std::option::Option<crate::model::ImportAssetFromSignedUrlRequestDetails>,
@@ -4969,7 +4965,7 @@ pub mod request_details {
             self.import_asset_from_signed_url = input;
             self
         }
-        /// <p>Details about the import from Amazon S3 request.</p>
+        /// <p>Information about the import asset from API Gateway API request.</p>
         pub fn import_assets_from_s3(
             mut self,
             input: crate::model::ImportAssetsFromS3RequestDetails,
@@ -4977,7 +4973,7 @@ pub mod request_details {
             self.import_assets_from_s3 = Some(input);
             self
         }
-        /// <p>Details about the import from Amazon S3 request.</p>
+        /// <p>Information about the import asset from API Gateway API request.</p>
         pub fn set_import_assets_from_s3(
             mut self,
             input: std::option::Option<crate::model::ImportAssetsFromS3RequestDetails>,
@@ -5003,7 +4999,7 @@ pub mod request_details {
             self.import_assets_from_redshift_data_shares = input;
             self
         }
-        /// <p>Information about the import asset from API Gateway API request.</p>
+        /// <p>Details about the import from signed URL request.</p>
         pub fn import_asset_from_api_gateway_api(
             mut self,
             input: crate::model::ImportAssetFromApiGatewayApiRequestDetails,
@@ -5011,7 +5007,7 @@ pub mod request_details {
             self.import_asset_from_api_gateway_api = Some(input);
             self
         }
-        /// <p>Information about the import asset from API Gateway API request.</p>
+        /// <p>Details about the import from signed URL request.</p>
         pub fn set_import_asset_from_api_gateway_api(
             mut self,
             input: std::option::Option<crate::model::ImportAssetFromApiGatewayApiRequestDetails>,
@@ -5268,33 +5264,33 @@ impl ImportAssetFromApiGatewayApiRequestDetails {
     }
 }
 
-/// Details from an import from Amazon Redshift datashare request.
+/// <p>Details from an import from Amazon Redshift datashare request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetsFromRedshiftDataSharesRequestDetails {
-    /// A list of Amazon Redshift datashare assets.
+    /// <p>A list of Amazon Redshift datashare assets.</p>
     #[doc(hidden)]
     pub asset_sources:
         std::option::Option<std::vec::Vec<crate::model::RedshiftDataShareAssetSourceEntry>>,
-    /// The unique identifier for the data set associated with this import job.
+    /// <p>The unique identifier for the data set associated with this import job.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
-    /// The unique identifier for the revision associated with this import job.
+    /// <p>The unique identifier for the revision associated with this import job.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetsFromRedshiftDataSharesRequestDetails {
-    /// A list of Amazon Redshift datashare assets.
+    /// <p>A list of Amazon Redshift datashare assets.</p>
     pub fn asset_sources(
         &self,
     ) -> std::option::Option<&[crate::model::RedshiftDataShareAssetSourceEntry]> {
         self.asset_sources.as_deref()
     }
-    /// The unique identifier for the data set associated with this import job.
+    /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// The unique identifier for the revision associated with this import job.
+    /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -5324,7 +5320,7 @@ pub mod import_assets_from_redshift_data_shares_request_details {
         ///
         /// To override the contents of this collection use [`set_asset_sources`](Self::set_asset_sources).
         ///
-        /// A list of Amazon Redshift datashare assets.
+        /// <p>A list of Amazon Redshift datashare assets.</p>
         pub fn asset_sources(
             mut self,
             input: crate::model::RedshiftDataShareAssetSourceEntry,
@@ -5334,7 +5330,7 @@ pub mod import_assets_from_redshift_data_shares_request_details {
             self.asset_sources = Some(v);
             self
         }
-        /// A list of Amazon Redshift datashare assets.
+        /// <p>A list of Amazon Redshift datashare assets.</p>
         pub fn set_asset_sources(
             mut self,
             input: std::option::Option<
@@ -5344,22 +5340,22 @@ pub mod import_assets_from_redshift_data_shares_request_details {
             self.asset_sources = input;
             self
         }
-        /// The unique identifier for the data set associated with this import job.
+        /// <p>The unique identifier for the data set associated with this import job.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// The unique identifier for the data set associated with this import job.
+        /// <p>The unique identifier for the data set associated with this import job.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
         }
-        /// The unique identifier for the revision associated with this import job.
+        /// <p>The unique identifier for the revision associated with this import job.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// The unique identifier for the revision associated with this import job.
+        /// <p>The unique identifier for the revision associated with this import job.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self

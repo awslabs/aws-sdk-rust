@@ -2883,6 +2883,12 @@ pub struct DescribeDeviceOutput {
     /// <p>The device's maker.</p>
     #[doc(hidden)]
     pub brand: std::option::Option<crate::model::DeviceBrand>,
+    /// <p>A device's latest job. Includes the target image version, and the job status.</p>
+    #[doc(hidden)]
+    pub latest_device_job: std::option::Option<crate::model::LatestDeviceJob>,
+    /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+    #[doc(hidden)]
+    pub device_aggregated_status: std::option::Option<crate::model::DeviceAggregatedStatus>,
 }
 impl DescribeDeviceOutput {
     /// <p>The device's ID.</p>
@@ -2964,6 +2970,16 @@ impl DescribeDeviceOutput {
     pub fn brand(&self) -> std::option::Option<&crate::model::DeviceBrand> {
         self.brand.as_ref()
     }
+    /// <p>A device's latest job. Includes the target image version, and the job status.</p>
+    pub fn latest_device_job(&self) -> std::option::Option<&crate::model::LatestDeviceJob> {
+        self.latest_device_job.as_ref()
+    }
+    /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+    pub fn device_aggregated_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceAggregatedStatus> {
+        self.device_aggregated_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2986,6 +3002,8 @@ impl std::fmt::Debug for DescribeDeviceOutput {
         formatter.field("alternate_softwares", &self.alternate_softwares);
         formatter.field("latest_alternate_software", &self.latest_alternate_software);
         formatter.field("brand", &self.brand);
+        formatter.field("latest_device_job", &self.latest_device_job);
+        formatter.field("device_aggregated_status", &self.device_aggregated_status);
         formatter.finish()
     }
 }
@@ -3017,6 +3035,9 @@ pub mod describe_device_output {
             std::option::Option<std::vec::Vec<crate::model::AlternateSoftwareMetadata>>,
         pub(crate) latest_alternate_software: std::option::Option<std::string::String>,
         pub(crate) brand: std::option::Option<crate::model::DeviceBrand>,
+        pub(crate) latest_device_job: std::option::Option<crate::model::LatestDeviceJob>,
+        pub(crate) device_aggregated_status:
+            std::option::Option<crate::model::DeviceAggregatedStatus>,
     }
     impl Builder {
         /// <p>The device's ID.</p>
@@ -3259,6 +3280,35 @@ pub mod describe_device_output {
             self.brand = input;
             self
         }
+        /// <p>A device's latest job. Includes the target image version, and the job status.</p>
+        pub fn latest_device_job(mut self, input: crate::model::LatestDeviceJob) -> Self {
+            self.latest_device_job = Some(input);
+            self
+        }
+        /// <p>A device's latest job. Includes the target image version, and the job status.</p>
+        pub fn set_latest_device_job(
+            mut self,
+            input: std::option::Option<crate::model::LatestDeviceJob>,
+        ) -> Self {
+            self.latest_device_job = input;
+            self
+        }
+        /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+        pub fn device_aggregated_status(
+            mut self,
+            input: crate::model::DeviceAggregatedStatus,
+        ) -> Self {
+            self.device_aggregated_status = Some(input);
+            self
+        }
+        /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+        pub fn set_device_aggregated_status(
+            mut self,
+            input: std::option::Option<crate::model::DeviceAggregatedStatus>,
+        ) -> Self {
+            self.device_aggregated_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
         pub fn build(self) -> crate::output::DescribeDeviceOutput {
             crate::output::DescribeDeviceOutput {
@@ -3280,6 +3330,8 @@ pub mod describe_device_output {
                 alternate_softwares: self.alternate_softwares,
                 latest_alternate_software: self.latest_alternate_software,
                 brand: self.brand,
+                latest_device_job: self.latest_device_job,
+                device_aggregated_status: self.device_aggregated_status,
             }
         }
     }

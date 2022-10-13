@@ -159,7 +159,7 @@ impl Client {
     ///   - [`template_file(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::template_file) / [`set_template_file(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_template_file): <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>   <p>Components support a single IaC file, even if you use Terraform as your template language.</p>  </note>
     ///   - [`manifest(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::manifest) / [`set_manifest(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_manifest): <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
     ///   - [`service_spec(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::service_spec) / [`set_service_spec(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_service_spec): <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateComponent::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateComponent::set_tags): <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateComponent::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateComponent::set_tags): <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateComponentOutput`](crate::output::CreateComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::output::CreateComponentOutput::component): <p>The detailed data of the created component.</p>
     /// - On failure, responds with [`SdkError<CreateComponentError>`](crate::error::CreateComponentError)
@@ -170,16 +170,16 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_name): <p>The name of the environment.</p>
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_template_name): <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_template_name): <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
     ///   - [`template_major_version(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::template_major_version) / [`set_template_major_version(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_template_major_version): <p>The major version of the environment template.</p>
     ///   - [`template_minor_version(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::template_minor_version) / [`set_template_minor_version(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_template_minor_version): <p>The minor version of the environment template.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_description): <p>A description of the environment that's being created and deployed.</p>
-    ///   - [`spec(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::spec) / [`set_spec(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_spec): <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`spec(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::spec) / [`set_spec(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_spec): <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
     ///   - [`proton_service_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::proton_service_role_arn) / [`set_proton_service_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_proton_service_role_arn): <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>  <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
-    ///   - [`environment_account_connection_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::environment_account_connection_id) / [`set_environment_account_connection_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_environment_account_connection_id): <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>  <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-    ///   - [`provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::CreateEnvironment::provisioning_repository) / [`set_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::CreateEnvironment::set_provisioning_repository): <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>  <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>  <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`environment_account_connection_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::environment_account_connection_id) / [`set_environment_account_connection_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_environment_account_connection_id): <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>  <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::CreateEnvironment::provisioning_repository) / [`set_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::CreateEnvironment::set_provisioning_repository): <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>  <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
+    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>  <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::output::CreateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
@@ -193,8 +193,8 @@ impl Client {
     ///   - [`management_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::management_account_id) / [`set_management_account_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_management_account_id): <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_environment_name): <p>The name of the Proton environment that's created in the associated management account.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
-    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>  <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>  <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateEnvironmentAccountConnectionOutput`](crate::output::CreateEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::CreateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentAccountConnectionError>`](crate::error::CreateEnvironmentAccountConnectionError)
@@ -211,7 +211,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::set_description): <p>A description of the environment template.</p>
     ///   - [`encryption_key(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::encryption_key) / [`set_encryption_key(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::set_encryption_key): <p>A customer provided encryption key that Proton uses to encrypt data.</p>
     ///   - [`provisioning(Provisioning)`](crate::client::fluent_builders::CreateEnvironmentTemplate::provisioning) / [`set_provisioning(Option<Provisioning>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::set_provisioning): <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentTemplate::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateEnvironmentTemplateOutput`](crate::output::CreateEnvironmentTemplateOutput) with field(s):
     ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::CreateEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentTemplateError>`](crate::error::CreateEnvironmentTemplateError)
@@ -226,7 +226,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::set_description): <p>A description of the new version of an environment template.</p>
     ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::set_major_version): <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>  <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
     ///   - [`source(TemplateVersionSourceInput)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::source) / [`set_source(Option<TemplateVersionSourceInput>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::set_source): <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateEnvironmentTemplateVersionOutput`](crate::output::CreateEnvironmentTemplateVersionOutput) with field(s):
     ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::CreateEnvironmentTemplateVersionOutput::environment_template_version): <p>The environment template detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentTemplateVersionError>`](crate::error::CreateEnvironmentTemplateVersionError)
@@ -240,11 +240,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`provider(RepositoryProvider)`](crate::client::fluent_builders::CreateRepository::provider) / [`set_provider(Option<RepositoryProvider>)`](crate::client::fluent_builders::CreateRepository::set_provider): <p>The repository provider.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_name): <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    ///   - [`connection_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::connection_arn) / [`set_connection_arn(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_connection_arn): <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`connection_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::connection_arn) / [`set_connection_arn(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_connection_arn): <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
     ///   - [`encryption_key(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::encryption_key) / [`set_encryption_key(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_encryption_key): <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRepository::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRepository::set_tags): <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRepository::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRepository::set_tags): <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput) with field(s):
-    ///   - [`repository(Option<Repository>)`](crate::output::CreateRepositoryOutput::repository): <p>The repository detail data that's returned by Proton.</p>
+    ///   - [`repository(Option<Repository>)`](crate::output::CreateRepositoryOutput::repository): <p>The repository link's detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateRepositoryError>`](crate::error::CreateRepositoryError)
     pub fn create_repository(&self) -> fluent_builders::CreateRepository {
         fluent_builders::CreateRepository::new(self.handle.clone())
@@ -257,11 +257,11 @@ impl Client {
     ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateService::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_template_name): <p>The name of the service template that's used to create the service.</p>
     ///   - [`template_major_version(impl Into<String>)`](crate::client::fluent_builders::CreateService::template_major_version) / [`set_template_major_version(Option<String>)`](crate::client::fluent_builders::CreateService::set_template_major_version): <p>The major version of the service template that was used to create the service.</p>
     ///   - [`template_minor_version(impl Into<String>)`](crate::client::fluent_builders::CreateService::template_minor_version) / [`set_template_minor_version(Option<String>)`](crate::client::fluent_builders::CreateService::set_template_minor_version): <p>The minor version of the service template that was used to create the service.</p>
-    ///   - [`spec(impl Into<String>)`](crate::client::fluent_builders::CreateService::spec) / [`set_spec(Option<String>)`](crate::client::fluent_builders::CreateService::set_spec): <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
-    ///   - [`repository_connection_arn(impl Into<String>)`](crate::client::fluent_builders::CreateService::repository_connection_arn) / [`set_repository_connection_arn(Option<String>)`](crate::client::fluent_builders::CreateService::set_repository_connection_arn): <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    ///   - [`spec(impl Into<String>)`](crate::client::fluent_builders::CreateService::spec) / [`set_spec(Option<String>)`](crate::client::fluent_builders::CreateService::set_spec): <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`repository_connection_arn(impl Into<String>)`](crate::client::fluent_builders::CreateService::repository_connection_arn) / [`set_repository_connection_arn(Option<String>)`](crate::client::fluent_builders::CreateService::set_repository_connection_arn): <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     ///   - [`repository_id(impl Into<String>)`](crate::client::fluent_builders::CreateService::repository_id) / [`set_repository_id(Option<String>)`](crate::client::fluent_builders::CreateService::set_repository_id): <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     ///   - [`branch_name(impl Into<String>)`](crate::client::fluent_builders::CreateService::branch_name) / [`set_branch_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_branch_name): <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateServiceOutput`](crate::output::CreateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::output::CreateServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::error::CreateServiceError)
@@ -275,8 +275,8 @@ impl Client {
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateServiceTemplate::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateServiceTemplate::set_display_name): <p>The name of the service template as displayed in the developer interface.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateServiceTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateServiceTemplate::set_description): <p>A description of the service template.</p>
     ///   - [`encryption_key(impl Into<String>)`](crate::client::fluent_builders::CreateServiceTemplate::encryption_key) / [`set_encryption_key(Option<String>)`](crate::client::fluent_builders::CreateServiceTemplate::set_encryption_key): <p>A customer provided encryption key that's used to encrypt data.</p>
-    ///   - [`pipeline_provisioning(Provisioning)`](crate::client::fluent_builders::CreateServiceTemplate::pipeline_provisioning) / [`set_pipeline_provisioning(Option<Provisioning>)`](crate::client::fluent_builders::CreateServiceTemplate::set_pipeline_provisioning): <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateServiceTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateServiceTemplate::set_tags): <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    ///   - [`pipeline_provisioning(Provisioning)`](crate::client::fluent_builders::CreateServiceTemplate::pipeline_provisioning) / [`set_pipeline_provisioning(Option<Provisioning>)`](crate::client::fluent_builders::CreateServiceTemplate::set_pipeline_provisioning): <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateServiceTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateServiceTemplate::set_tags): <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateServiceTemplateOutput`](crate::output::CreateServiceTemplateOutput) with field(s):
     ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::CreateServiceTemplateOutput::service_template): <p>The service template detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateServiceTemplateError>`](crate::error::CreateServiceTemplateError)
@@ -292,8 +292,8 @@ impl Client {
     ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_major_version): <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>  <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     ///   - [`source(TemplateVersionSourceInput)`](crate::client::fluent_builders::CreateServiceTemplateVersion::source) / [`set_source(Option<TemplateVersionSourceInput>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_source): <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
     ///   - [`compatible_environment_templates(Vec<CompatibleEnvironmentTemplateInput>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::compatible_environment_templates) / [`set_compatible_environment_templates(Option<Vec<CompatibleEnvironmentTemplateInput>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_compatible_environment_templates): <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_tags): <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-    ///   - [`supported_component_sources(Vec<ServiceTemplateSupportedComponentSourceType>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::supported_component_sources) / [`set_supported_component_sources(Option<Vec<ServiceTemplateSupportedComponentSourceType>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_supported_component_sources): <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_tags): <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`supported_component_sources(Vec<ServiceTemplateSupportedComponentSourceType>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::supported_component_sources) / [`set_supported_component_sources(Option<Vec<ServiceTemplateSupportedComponentSourceType>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_supported_component_sources): <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`CreateServiceTemplateVersionOutput`](crate::output::CreateServiceTemplateVersionOutput) with field(s):
     ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::CreateServiceTemplateVersionOutput::service_template_version): <p>The service template version summary of detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateServiceTemplateVersionError>`](crate::error::CreateServiceTemplateVersionError)
@@ -306,8 +306,8 @@ impl Client {
     ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::set_template_name): <p>The name of your registered template.</p>
     ///   - [`template_type(TemplateType)`](crate::client::fluent_builders::CreateTemplateSyncConfig::template_type) / [`set_template_type(Option<TemplateType>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::set_template_type): <p>The type of the registered template.</p>
     ///   - [`repository_provider(RepositoryProvider)`](crate::client::fluent_builders::CreateTemplateSyncConfig::repository_provider) / [`set_repository_provider(Option<RepositoryProvider>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::set_repository_provider): <p>The provider type for your repository.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::set_repository_name): <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
-    ///   - [`branch(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::branch) / [`set_branch(Option<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::set_branch): <p>The branch of the registered repository for your template.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::set_repository_name): <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    ///   - [`branch(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::branch) / [`set_branch(Option<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::set_branch): <p>The repository branch for your template.</p>
     ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateTemplateSyncConfig::set_subdirectory): <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
     /// - On success, responds with [`CreateTemplateSyncConfigOutput`](crate::output::CreateTemplateSyncConfigOutput) with field(s):
     ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::output::CreateTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
@@ -375,9 +375,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`provider(RepositoryProvider)`](crate::client::fluent_builders::DeleteRepository::provider) / [`set_provider(Option<RepositoryProvider>)`](crate::client::fluent_builders::DeleteRepository::set_provider): <p>The repository provider.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteRepository::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteRepository::set_name): <p>The name of the repository.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteRepository::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteRepository::set_name): <p>The repository name.</p>
     /// - On success, responds with [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput) with field(s):
-    ///   - [`repository(Option<Repository>)`](crate::output::DeleteRepositoryOutput::repository): <p>The repository detail data that's returned by Proton.</p>
+    ///   - [`repository(Option<Repository>)`](crate::output::DeleteRepositoryOutput::repository): <p>The deleted repository link's detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<DeleteRepositoryError>`](crate::error::DeleteRepositoryError)
     pub fn delete_repository(&self) -> fluent_builders::DeleteRepository {
         fluent_builders::DeleteRepository::new(self.handle.clone())
@@ -480,7 +480,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetEnvironmentTemplateVersion`](crate::client::fluent_builders::GetEnvironmentTemplateVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_template_name): <p>The name of the environment template a version of which you want to get detailed data for..</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_template_name): <p>The name of the environment template a version of which you want to get detailed data for.</p>
     ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_major_version): <p>To get environment template major version detail data, include <code>major Version</code>.</p>
     ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_minor_version): <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
     /// - On success, responds with [`GetEnvironmentTemplateVersionOutput`](crate::output::GetEnvironmentTemplateVersionOutput) with field(s):
@@ -497,7 +497,7 @@ impl Client {
     ///   - [`provider(RepositoryProvider)`](crate::client::fluent_builders::GetRepository::provider) / [`set_provider(Option<RepositoryProvider>)`](crate::client::fluent_builders::GetRepository::set_provider): <p>The repository provider.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetRepository::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetRepository::set_name): <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
     /// - On success, responds with [`GetRepositoryOutput`](crate::output::GetRepositoryOutput) with field(s):
-    ///   - [`repository(Option<Repository>)`](crate::output::GetRepositoryOutput::repository): <p>The repository detail data that's returned by Proton.</p>
+    ///   - [`repository(Option<Repository>)`](crate::output::GetRepositoryOutput::repository): <p>The repository link's detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryError>`](crate::error::GetRepositoryError)
     pub fn get_repository(&self) -> fluent_builders::GetRepository {
         fluent_builders::GetRepository::new(self.handle.clone())
@@ -725,7 +725,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRepositories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRepositories::set_max_results): <p>The maximum number of repositories to list.</p>
     /// - On success, responds with [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListRepositoriesOutput::next_token): <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
-    ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::output::ListRepositoriesOutput::repositories): <p>An array of repositories.</p>
+    ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::output::ListRepositoriesOutput::repositories): <p>An array of repository links.</p>
     /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::error::ListRepositoriesError)
     pub fn list_repositories(&self) -> fluent_builders::ListRepositories {
         fluent_builders::ListRepositories::new(self.handle.clone())
@@ -927,8 +927,9 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateAccountSettings`](crate::client::fluent_builders::UpdateAccountSettings) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::pipeline_service_role_arn) / [`set_pipeline_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_pipeline_service_role_arn): <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
-    ///   - [`pipeline_provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::UpdateAccountSettings::pipeline_provisioning_repository) / [`set_pipeline_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::UpdateAccountSettings::set_pipeline_provisioning_repository): <p>A repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+    ///   - [`pipeline_service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::pipeline_service_role_arn) / [`set_pipeline_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_pipeline_service_role_arn): <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>  <p>To remove a previously configured ARN, specify an empty string.</p>
+    ///   - [`pipeline_provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::UpdateAccountSettings::pipeline_provisioning_repository) / [`set_pipeline_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::UpdateAccountSettings::set_pipeline_provisioning_repository): <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>  <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
+    ///   - [`delete_pipeline_provisioning_repository(bool)`](crate::client::fluent_builders::UpdateAccountSettings::delete_pipeline_provisioning_repository) / [`set_delete_pipeline_provisioning_repository(Option<bool>)`](crate::client::fluent_builders::UpdateAccountSettings::set_delete_pipeline_provisioning_repository): <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput) with field(s):
     ///   - [`account_settings(Option<AccountSettings>)`](crate::output::UpdateAccountSettingsOutput::account_settings): <p>The Proton pipeline service role and repository data shared across the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::error::UpdateAccountSettingsError)
@@ -962,8 +963,8 @@ impl Client {
     ///   - [`proton_service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::proton_service_role_arn) / [`set_proton_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_proton_service_role_arn): <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
     ///   - [`deployment_type(DeploymentUpdateType)`](crate::client::fluent_builders::UpdateEnvironment::deployment_type) / [`set_deployment_type(Option<DeploymentUpdateType>)`](crate::client::fluent_builders::UpdateEnvironment::set_deployment_type): <p>There are four modes for updating an environment. The <code>deploymentType</code> field defines the mode.</p>  <dl>   <dt></dt>   <dd>    <p> <code>NONE</code> </p>    <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>   </dd>   <dt></dt>   <dd>    <p> <code>CURRENT_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MINOR_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MAJOR_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>   </dd>  </dl>
     ///   - [`environment_account_connection_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_account_connection_id) / [`set_environment_account_connection_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_account_connection_id): <p>The ID of the environment account connection.</p>  <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
-    ///   - [`provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::UpdateEnvironment::provisioning_repository) / [`set_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::UpdateEnvironment::set_provisioning_repository): <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
-    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>  <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::UpdateEnvironment::provisioning_repository) / [`set_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::UpdateEnvironment::set_provisioning_repository): <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>  <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::output::UpdateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
@@ -975,7 +976,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_id): <p>The ID of the environment account connection to update.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
-    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>  <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>  <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`UpdateEnvironmentAccountConnectionOutput`](crate::output::UpdateEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::UpdateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentAccountConnectionError>`](crate::error::UpdateEnvironmentAccountConnectionError)
@@ -1017,7 +1018,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateService::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateService::set_name): <p>The name of the service to edit.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateService::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateService::set_description): <p>The edited service description.</p>
-    ///   - [`spec(impl Into<String>)`](crate::client::fluent_builders::UpdateService::spec) / [`set_spec(Option<String>)`](crate::client::fluent_builders::UpdateService::set_spec): <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    ///   - [`spec(impl Into<String>)`](crate::client::fluent_builders::UpdateService::spec) / [`set_spec(Option<String>)`](crate::client::fluent_builders::UpdateService::set_spec): <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`UpdateServiceOutput`](crate::output::UpdateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::output::UpdateServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::error::UpdateServiceError)
@@ -1074,7 +1075,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_description): <p>A description of a service template version to update.</p>
     ///   - [`status(TemplateVersionStatus)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::status) / [`set_status(Option<TemplateVersionStatus>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_status): <p>The status of the service template minor version to update.</p>
     ///   - [`compatible_environment_templates(Vec<CompatibleEnvironmentTemplateInput>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::compatible_environment_templates) / [`set_compatible_environment_templates(Option<Vec<CompatibleEnvironmentTemplateInput>>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_compatible_environment_templates): <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    ///   - [`supported_component_sources(Vec<ServiceTemplateSupportedComponentSourceType>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::supported_component_sources) / [`set_supported_component_sources(Option<Vec<ServiceTemplateSupportedComponentSourceType>>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_supported_component_sources): <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>   <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>  </note>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`supported_component_sources(Vec<ServiceTemplateSupportedComponentSourceType>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::supported_component_sources) / [`set_supported_component_sources(Option<Vec<ServiceTemplateSupportedComponentSourceType>>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_supported_component_sources): <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>   <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>  </note>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// - On success, responds with [`UpdateServiceTemplateVersionOutput`](crate::output::UpdateServiceTemplateVersionOutput) with field(s):
     ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::UpdateServiceTemplateVersionOutput::service_template_version): <p>The service template version detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceTemplateVersionError>`](crate::error::UpdateServiceTemplateVersionError)
@@ -1087,8 +1088,8 @@ impl Client {
     ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::set_template_name): <p>The synced template name.</p>
     ///   - [`template_type(TemplateType)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::template_type) / [`set_template_type(Option<TemplateType>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::set_template_type): <p>The synced template type.</p>
     ///   - [`repository_provider(RepositoryProvider)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::repository_provider) / [`set_repository_provider(Option<RepositoryProvider>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::set_repository_provider): <p>The repository provider.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::set_repository_name): <p>The name of the repository (for example, <code>myrepos/myrepo</code>).</p>
-    ///   - [`branch(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::branch) / [`set_branch(Option<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::set_branch): <p>The repository branch.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::set_repository_name): <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    ///   - [`branch(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::branch) / [`set_branch(Option<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::set_branch): <p>The repository branch for your template.</p>
     ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::UpdateTemplateSyncConfig::set_subdirectory): <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
     /// - On success, responds with [`UpdateTemplateSyncConfigOutput`](crate::output::UpdateTemplateSyncConfigOutput) with field(s):
     ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::output::UpdateTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
@@ -1107,7 +1108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptEnvironmentAccountConnection`.
     ///
     /// <p>In a management account, an environment account connection request is accepted. When the environment account connection request is accepted, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptEnvironmentAccountConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -1189,7 +1190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelComponentDeployment`.
     ///
     /// <p>Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code> deployment status).</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelComponentDeployment {
         handle: std::sync::Arc<super::Handle>,
@@ -1269,7 +1270,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelEnvironmentDeployment`.
     ///
-    /// <p>Attempts to cancel an environment deployment on an <code>UpdateEnvironment</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update an environment</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>Attempts to cancel an environment deployment on an <code>UpdateEnvironment</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update an environment</a> in the <i>Proton User guide</i>.</p>
     /// <p>The following list includes potential cancellation scenarios.</p>
     /// <ul>
     /// <li> <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p> </li>
@@ -1355,7 +1356,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelServiceInstanceDeployment`.
     ///
-    /// <p>Attempts to cancel a service instance deployment on an <code>UpdateServiceInstance</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">Proton User guide</a>.</p>
+    /// <p>Attempts to cancel a service instance deployment on an <code>UpdateServiceInstance</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update a service instance</a> in the <i>Proton User guide</i>.</p>
     /// <p>The following list includes potential cancellation scenarios.</p>
     /// <ul>
     /// <li> <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p> </li>
@@ -1451,7 +1452,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelServicePipelineDeployment`.
     ///
-    /// <p>Attempts to cancel a service pipeline deployment on an <code>UpdateServicePipeline</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton User guide</a>.</p>
+    /// <p>Attempts to cancel a service pipeline deployment on an <code>UpdateServicePipeline</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update a service pipeline</a> in the <i>Proton User guide</i>.</p>
     /// <p>The following list includes potential cancellation scenarios.</p>
     /// <ul>
     /// <li> <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p> </li>
@@ -1535,7 +1536,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateComponent`.
     ///
     /// <p>Create an Proton component. A component is an infrastructure extension for a service instance.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponent {
         handle: std::sync::Arc<super::Handle>,
@@ -1697,13 +1698,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1720,7 +1721,7 @@ pub mod fluent_builders {
     /// <li> <p>Amazon Web Services-managed provisioning: Proton makes direct calls to provision your resources.</p> </li>
     /// <li> <p>Self-managed provisioning: Proton makes pull requests on your repository to provide compiled infrastructure as code (IaC) files that your IaC engine uses to provision resources.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning methods</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning methods</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment {
         handle: std::sync::Arc<super::Handle>,
@@ -1794,12 +1795,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1843,12 +1844,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.spec(input.into());
             self
         }
-        /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_spec(input);
             self
@@ -1868,7 +1869,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_proton_service_role_arn(input);
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
         /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
         pub fn environment_account_connection_id(
             mut self,
@@ -1877,7 +1878,7 @@ pub mod fluent_builders {
             self.inner = self.inner.environment_account_connection_id(input.into());
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
         /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
         pub fn set_environment_account_connection_id(
             mut self,
@@ -1891,13 +1892,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1905,7 +1906,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
         pub fn provisioning_repository(
             mut self,
@@ -1914,7 +1915,7 @@ pub mod fluent_builders {
             self.inner = self.inner.provisioning_repository(input);
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
         pub fn set_provisioning_repository(
             mut self,
@@ -1925,14 +1926,14 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.component_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1944,7 +1945,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEnvironmentAccountConnection`.
     ///
     /// <p>Create an environment account connection in an environment account so that environment infrastructure resources can be provisioned in the environment account from a management account.</p>
-    /// <p>An environment account connection is a secure bi-directional connection between a <i>management account</i> and an <i>environment account</i> that maintains authorization and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>An environment account connection is a secure bi-directional connection between a <i>management account</i> and an <i>environment account</i> that maintains authorization and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentAccountConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -2063,13 +2064,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2079,14 +2080,14 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.component_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2097,11 +2098,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironmentTemplate`.
     ///
-    /// <p>Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
     /// <p>You can create an environment template in one of the two following ways:</p>
     /// <ul>
     /// <li> <p>Register and publish a <i>standard</i> environment template that instructs Proton to deploy and manage environment infrastructure.</p> </li>
-    /// <li> <p>Register and publish a <i>customer managed</i> environment template that connects Proton to your existing provisioned infrastructure that you manage. Proton <i>doesn't</i> manage your existing provisioned infrastructure. To create an environment template for customer provisioned and managed infrastructure, include the <code>provisioning</code> parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register and publish an environment template</a> in the <i>Proton Administrator Guide</i>.</p> </li>
+    /// <li> <p>Register and publish a <i>customer managed</i> environment template that connects Proton to your existing provisioned infrastructure that you manage. Proton <i>doesn't</i> manage your existing provisioned infrastructure. To create an environment template for customer provisioned and managed infrastructure, include the <code>provisioning</code> parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register and publish an environment template</a> in the <i>Proton User Guide</i>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentTemplate {
@@ -2227,13 +2228,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2374,13 +2375,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2391,8 +2392,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRepository`.
     ///
-    /// <p>Create and register a link to a repository that can be used with self-managed provisioning (infrastructure or pipelines) or for template sync configurations. When you create a repository link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/adminguide/using-service-linked-roles.html">service-linked role</a> for you.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>Create and register a link to a repository. Proton uses the link to repeatedly access the repository, to either push to it (self-managed provisioning) or pull from it (template sync). You can share a linked repository across multiple resources (like environments using self-managed provisioning, or synced templates). When you create a repository link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/userguide/using-service-linked-roles.html">service-linked role</a> for you.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRepository {
         handle: std::sync::Arc<super::Handle>,
@@ -2479,12 +2480,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2510,13 +2511,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2527,7 +2528,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateService`.
     ///
-    /// <p>Create an Proton service. An Proton service is an instantiation of a service template and often includes several service instances and pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a> in the <i>Proton User Guide</i>.</p>
+    /// <p>Create an Proton service. An Proton service is an instantiation of a service template and often includes several service instances and pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-services.html">Services</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService {
         handle: std::sync::Arc<super::Handle>,
@@ -2650,22 +2651,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_minor_version(input);
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.spec(input.into());
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_connection_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_repository_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2701,13 +2702,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2718,7 +2719,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateServiceTemplate`.
     ///
-    /// <p>Create a service template. The administrator creates a service template to define standardized infrastructure and an optional CI/CD service pipeline. Developers, in turn, select the service template from Proton. If the selected service template includes a service pipeline definition, they provide a link to their source code repository. Proton then deploys and manages the infrastructure defined by the selected service template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>Create a service template. The administrator creates a service template to define standardized infrastructure and an optional CI/CD service pipeline. Developers, in turn, select the service template from Proton. If the selected service template includes a service pipeline definition, they provide a link to their source code repository. Proton then deploys and manages the infrastructure defined by the selected service template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton templates</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -2825,12 +2826,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key(input);
             self
         }
-        /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
             self.inner = self.inner.pipeline_provisioning(input);
             self
         }
-        /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_pipeline_provisioning(
             mut self,
             input: std::option::Option<crate::model::Provisioning>,
@@ -2843,13 +2844,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3012,13 +3013,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3031,7 +3032,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
         ///
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn supported_component_sources(
             mut self,
             input: crate::model::ServiceTemplateSupportedComponentSourceType,
@@ -3040,7 +3041,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_supported_component_sources(
             mut self,
             input: std::option::Option<
@@ -3053,7 +3054,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTemplateSyncConfig`.
     ///
-    /// <p>Set up a template to create new template versions automatically. When a commit is pushed to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>, Proton checks for changes to your repository template bundles. If it detects a template bundle change, a new major or minor version of its template is created, if the version doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>Set up a template to create new template versions automatically by tracking a linked repository. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>When a commit is pushed to your linked repository, Proton checks for changes to your repository template bundles. If it detects a template bundle change, a new major or minor version of its template is created, if the version doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTemplateSyncConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -3156,12 +3158,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_provider(input);
             self
         }
-        /// <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_name(input.into());
             self
         }
-        /// <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3169,12 +3171,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch of the registered repository for your template.</p>
+        /// <p>The repository branch for your template.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.branch(input.into());
             self
         }
-        /// <p>The branch of the registered repository for your template.</p>
+        /// <p>The repository branch for your template.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_branch(input);
             self
@@ -3193,7 +3195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteComponent`.
     ///
     /// <p>Delete an Proton component resource.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponent {
         handle: std::sync::Arc<super::Handle>,
@@ -3349,7 +3351,7 @@ pub mod fluent_builders {
     ///
     /// <p>In an environment account, delete an environment account connection.</p>
     /// <p>After you delete an environment account connection that’s in use by an Proton environment, Proton <i>can’t</i> manage the environment infrastructure resources until a new environment account connection is accepted for the environment account and associated environment. You're responsible for cleaning up provisioned resources that remain without an environment connection.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentAccountConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -3691,12 +3693,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider(input);
             self
         }
-        /// <p>The name of the repository.</p>
+        /// <p>The repository name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the repository.</p>
+        /// <p>The repository name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -3706,7 +3708,7 @@ pub mod fluent_builders {
     ///
     /// <p>Delete a service, with its instances and pipeline.</p> <note>
     /// <p>You can't delete a service if it has any service instances that have components attached to them.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService {
@@ -4061,7 +4063,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccountSettings`.
     ///
-    /// <p>Get detail data for the Proton pipeline service role.</p>
+    /// <p>Get detail data for Proton account-wide settings.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings {
         handle: std::sync::Arc<super::Handle>,
@@ -4129,7 +4131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetComponent`.
     ///
     /// <p>Get detailed data for a component.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponent {
         handle: std::sync::Arc<super::Handle>,
@@ -4284,7 +4286,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironmentAccountConnection`.
     ///
     /// <p>In an environment account, get the detailed data for an environment account connection.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentAccountConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -4502,12 +4504,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
+        /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
+        /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4544,7 +4546,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRepository`.
     ///
-    /// <p>Get detail data for a repository.</p>
+    /// <p>Get detail data for a linked repository.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepository {
         handle: std::sync::Arc<super::Handle>,
@@ -4636,7 +4638,7 @@ pub mod fluent_builders {
     ///
     /// <p>Get the sync status of a repository used for Proton template sync. For more information about template sync, see .</p> <note>
     /// <p>A repository sync status isn't tied to the Proton Repository resource (or any other Proton resource). Therefore, tags on an Proton Repository resource have no effect on this action. Specifically, you can't use these tags to control access to this action using Attribute-based access control (ABAC).</p>
-    /// <p>For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a> in the <i>Proton User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositorySyncStatus {
@@ -5297,7 +5299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListComponentOutputs`.
     ///
     /// <p>Get a list of component Infrastructure as Code (IaC) outputs.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponentOutputs {
         handle: std::sync::Arc<super::Handle>,
@@ -5394,7 +5396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListComponentProvisionedResources`.
     ///
     /// <p>List provisioned resources for a component with details.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponentProvisionedResources {
         handle: std::sync::Arc<super::Handle>,
@@ -5496,7 +5498,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListComponents`.
     ///
     /// <p>List components with summary data. You can filter the result list by environment, service, or a single service instance.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponents {
         handle: std::sync::Arc<super::Handle>,
@@ -5626,7 +5628,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentAccountConnections`.
     ///
     /// <p>View a list of environment account connections.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentAccountConnections {
         handle: std::sync::Arc<super::Handle>,
@@ -6302,7 +6304,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRepositories`.
     ///
-    /// <p>List repositories with detail data.</p>
+    /// <p>List linked repositories with detail data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositories {
         handle: std::sync::Arc<super::Handle>,
@@ -7340,7 +7342,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>List tags for a resource. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>List tags for a resource. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -7444,7 +7446,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `NotifyResourceDeploymentStatusChange`.
     ///
     /// <p>Notify Proton of status changes to a provisioned resource when you use self-managed provisioning.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyResourceDeploymentStatusChange {
         handle: std::sync::Arc<super::Handle>,
@@ -7584,7 +7586,7 @@ pub mod fluent_builders {
     /// <p>In a management account, reject an environment account connection from another environment account.</p>
     /// <p>After you reject an environment account connection request, you <i>can't</i> accept or use the rejected environment account connection.</p>
     /// <p>You <i>can’t</i> reject an environment account connection that's connected to an environment.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectEnvironmentAccountConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -7666,7 +7668,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tag a resource. A tag is a key-value pair of metadata that you associate with an Proton resource.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -7761,7 +7763,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove a customer tag from a resource. A tag is a key-value pair of metadata associated with an Proton resource.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -7855,7 +7857,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAccountSettings`.
     ///
-    /// <p>Update the Proton service pipeline role or repository settings.</p>
+    /// <p>Update Proton settings that are used for multiple services in the Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountSettings {
         handle: std::sync::Arc<super::Handle>,
@@ -7920,11 +7922,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+        /// <p>To remove a previously configured ARN, specify an empty string.</p>
         pub fn pipeline_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pipeline_service_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+        /// <p>To remove a previously configured ARN, specify an empty string.</p>
         pub fn set_pipeline_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7932,7 +7936,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_service_role_arn(input);
             self
         }
-        /// <p>A repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+        /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+        /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
         pub fn pipeline_provisioning_repository(
             mut self,
             input: crate::model::RepositoryBranchInput,
@@ -7940,12 +7945,28 @@ pub mod fluent_builders {
             self.inner = self.inner.pipeline_provisioning_repository(input);
             self
         }
-        /// <p>A repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+        /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+        /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
         pub fn set_pipeline_provisioning_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryBranchInput>,
         ) -> Self {
             self.inner = self.inner.set_pipeline_provisioning_repository(input);
+            self
+        }
+        /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
+        pub fn delete_pipeline_provisioning_repository(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_pipeline_provisioning_repository(input);
+            self
+        }
+        /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
+        pub fn set_delete_pipeline_provisioning_repository(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_delete_pipeline_provisioning_repository(input);
             self
         }
     }
@@ -7955,7 +7976,7 @@ pub mod fluent_builders {
     /// <p>There are a few modes for updating a component. The <code>deploymentType</code> field defines the mode.</p> <note>
     /// <p>You can't update a component while its deployment status, or the deployment status of a service instance attached to it, is <code>IN_PROGRESS</code>.</p>
     /// </note>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponent {
         handle: std::sync::Arc<super::Handle>,
@@ -8139,7 +8160,7 @@ pub mod fluent_builders {
     /// <p>You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. You can’t update both.</p>
     /// <p>If the environment was configured for Amazon Web Services-managed provisioning, omit the <code>provisioningRepository</code> parameter.</p>
     /// <p>If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code> parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code> parameters.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning methods</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning methods</a> in the <i>Proton User Guide</i>.</p>
     /// <p>There are four modes for updating an environment. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
     /// <dt></dt>
@@ -8370,7 +8391,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_account_connection_id(input);
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn provisioning_repository(
             mut self,
             input: crate::model::RepositoryBranchInput,
@@ -8378,7 +8399,7 @@ pub mod fluent_builders {
             self.inner = self.inner.provisioning_repository(input);
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn set_provisioning_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryBranchInput>,
@@ -8388,14 +8409,14 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.component_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8407,7 +8428,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironmentAccountConnection`.
     ///
     /// <p>In an environment account, update an environment account connection to use a new IAM role.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironmentAccountConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -8497,14 +8518,14 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.component_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8747,7 +8768,7 @@ pub mod fluent_builders {
     /// <p>Use the <code>description</code> parameter to modify the description.</p>
     /// <p>Edit the <code>spec</code> parameter to add or delete instances.</p> <note>
     /// <p>You can't delete a service instance (remove it from the spec) if it has an attached component.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService {
@@ -8832,12 +8853,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.spec(input.into());
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_spec(input);
             self
@@ -8848,7 +8869,7 @@ pub mod fluent_builders {
     /// <p>Update a service instance.</p>
     /// <p>There are a few modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p> <note>
     /// <p>You can't update a service instance while its deployment status, or the deployment status of a component attached to it, is <code>IN_PROGRESS</code>.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceInstance {
@@ -9476,7 +9497,7 @@ pub mod fluent_builders {
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
         /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
         /// </note>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn supported_component_sources(
             mut self,
             input: crate::model::ServiceTemplateSupportedComponentSourceType,
@@ -9487,7 +9508,7 @@ pub mod fluent_builders {
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
         /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
         /// </note>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_supported_component_sources(
             mut self,
             input: std::option::Option<
@@ -9500,7 +9521,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateTemplateSyncConfig`.
     ///
-    /// <p>Update template sync configuration parameters, except for the <code>templateName</code> and <code>templateType</code>.</p>
+    /// <p>Update template sync configuration parameters, except for the <code>templateName</code> and <code>templateType</code>. Repository details (branch, name, and provider) should be of a linked repository. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplateSyncConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -9603,12 +9624,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_provider(input);
             self
         }
-        /// <p>The name of the repository (for example, <code>myrepos/myrepo</code>).</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_name(input.into());
             self
         }
-        /// <p>The name of the repository (for example, <code>myrepos/myrepo</code>).</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9616,12 +9637,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The repository branch.</p>
+        /// <p>The repository branch for your template.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.branch(input.into());
             self
         }
-        /// <p>The repository branch.</p>
+        /// <p>The repository branch for your template.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_branch(input);
             self

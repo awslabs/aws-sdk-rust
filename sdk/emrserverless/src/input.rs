@@ -764,6 +764,179 @@ impl GetApplicationInput {
     }
 }
 
+/// See [`GetDashboardForJobRunInput`](crate::input::GetDashboardForJobRunInput).
+pub mod get_dashboard_for_job_run_input {
+
+    /// A builder for [`GetDashboardForJobRunInput`](crate::input::GetDashboardForJobRunInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_id: std::option::Option<std::string::String>,
+        pub(crate) job_run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the application.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the application.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_id = input;
+            self
+        }
+        /// <p>The ID of the job run.</p>
+        pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_run_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the job run.</p>
+        pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDashboardForJobRunInput`](crate::input::GetDashboardForJobRunInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetDashboardForJobRunInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetDashboardForJobRunInput {
+                application_id: self.application_id,
+                job_run_id: self.job_run_id,
+            })
+        }
+    }
+}
+impl GetDashboardForJobRunInput {
+    /// Consumes the builder and constructs an Operation<[`GetDashboardForJobRun`](crate::operation::GetDashboardForJobRun)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDashboardForJobRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetDashboardForJobRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_5 = &_input.application_id;
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "application_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let application_id = aws_smithy_http::label::fmt_string(input_5, false);
+                if application_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "application_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_6 = &_input.job_run_id;
+                let input_6 = input_6.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_run_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let job_run_id = aws_smithy_http::label::fmt_string(input_6, false);
+                if job_run_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_run_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/applications/{applicationId}/jobruns/{jobRunId}/dashboard",
+                    applicationId = application_id,
+                    jobRunId = job_run_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDashboardForJobRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDashboardForJobRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDashboardForJobRun",
+            "emrserverless",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetDashboardForJobRunInput`](crate::input::GetDashboardForJobRunInput).
+    pub fn builder() -> crate::input::get_dashboard_for_job_run_input::Builder {
+        crate::input::get_dashboard_for_job_run_input::Builder::default()
+    }
+}
+
 /// See [`GetJobRunInput`](crate::input::GetJobRunInput).
 pub mod get_job_run_input {
 
@@ -828,28 +1001,28 @@ impl GetJobRunInput {
                 _input: &crate::input::GetJobRunInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_5 = &_input.application_id;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_7 = &_input.application_id;
+                let input_7 = input_7.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let application_id = aws_smithy_http::label::fmt_string(input_7, false);
                 if application_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_6 = &_input.job_run_id;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_8 = &_input.job_run_id;
+                let input_8 = input_8.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_run_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_run_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let job_run_id = aws_smithy_http::label::fmt_string(input_8, false);
                 if job_run_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_run_id",
@@ -965,9 +1138,15 @@ pub mod list_applications_input {
             self.max_results = input;
             self
         }
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
         /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-        pub fn states(mut self, input: std::vec::Vec<crate::model::ApplicationState>) -> Self {
-            self.states = Some(input);
+        pub fn states(mut self, input: crate::model::ApplicationState) -> Self {
+            let mut v = self.states.unwrap_or_default();
+            v.push(input);
+            self.states = Some(v);
             self
         }
         /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
@@ -1019,18 +1198,18 @@ impl ListApplicationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                if let Some(inner_9) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
                 }
-                if let Some(inner_8) = &_input.max_results {
+                if let Some(inner_10) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_10).encode(),
                     );
                 }
-                if let Some(inner_9) = &_input.states {
-                    for inner_10 in inner_9 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_10));
+                if let Some(inner_11) = &_input.states {
+                    for inner_12 in inner_11 {
+                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_12));
                     }
                 }
                 Ok(())
@@ -1180,9 +1359,15 @@ pub mod list_job_runs_input {
             self.created_at_before = input;
             self
         }
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
         /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-        pub fn states(mut self, input: std::vec::Vec<crate::model::JobRunState>) -> Self {
-            self.states = Some(input);
+        pub fn states(mut self, input: crate::model::JobRunState) -> Self {
+            let mut v = self.states.unwrap_or_default();
+            v.push(input);
+            self.states = Some(v);
             self
         }
         /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
@@ -1229,14 +1414,14 @@ impl ListJobRunsInput {
                 _input: &crate::input::ListJobRunsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.application_id;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_13 = &_input.application_id;
+                let input_13 = input_13.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let application_id = aws_smithy_http::label::fmt_string(input_13, false);
                 if application_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
@@ -1256,36 +1441,36 @@ impl ListJobRunsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                if let Some(inner_14) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_14));
                 }
-                if let Some(inner_13) = &_input.max_results {
+                if let Some(inner_15) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
                     );
                 }
-                if let Some(inner_14) = &_input.created_at_after {
+                if let Some(inner_16) = &_input.created_at_after {
                     query.push_kv(
                         "createdAtAfter",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_14,
+                            inner_16,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_15) = &_input.created_at_before {
+                if let Some(inner_17) = &_input.created_at_before {
                     query.push_kv(
                         "createdAtBefore",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_15,
+                            inner_17,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_16) = &_input.states {
-                    for inner_17 in inner_16 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_17));
+                if let Some(inner_18) = &_input.states {
+                    for inner_19 in inner_18 {
+                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_19));
                     }
                 }
                 Ok(())
@@ -1412,14 +1597,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.resource_arn;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_20 = &_input.resource_arn;
+                let input_20 = input_20.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_20, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -1554,14 +1739,14 @@ impl StartApplicationInput {
                 _input: &crate::input::StartApplicationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.application_id;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_21 = &_input.application_id;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let application_id = aws_smithy_http::label::fmt_string(input_21, false);
                 if application_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
@@ -1817,14 +2002,14 @@ impl StartJobRunInput {
                 _input: &crate::input::StartJobRunInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_20 = &_input.application_id;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_22 = &_input.application_id;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let application_id = aws_smithy_http::label::fmt_string(input_22, false);
                 if application_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
@@ -1977,14 +2162,14 @@ impl StopApplicationInput {
                 _input: &crate::input::StopApplicationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.application_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_23 = &_input.application_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let application_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if application_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
@@ -2149,14 +2334,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.resource_arn;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_24 = &_input.resource_arn;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_22, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_24, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -2323,14 +2508,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.resource_arn;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_25 = &_input.resource_arn;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_23, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_25, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -2346,9 +2531,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_24) = &_input.tag_keys {
-                    for inner_25 in inner_24 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_25));
+                if let Some(inner_26) = &_input.tag_keys {
+                    for inner_27 in inner_26 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_27));
                     }
                 }
                 Ok(())
@@ -2582,14 +2767,14 @@ impl UpdateApplicationInput {
                 _input: &crate::input::UpdateApplicationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_26 = &_input.application_id;
-                let input_26 = input_26.as_ref().ok_or(
+                let input_28 = &_input.application_id;
+                let input_28 = input_28.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let application_id = aws_smithy_http::label::fmt_string(input_28, false);
                 if application_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
@@ -2692,6 +2877,36 @@ impl UpdateApplicationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDashboardForJobRunInput {
+    /// <p>The ID of the application.</p>
+    #[doc(hidden)]
+    pub application_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the job run.</p>
+    #[doc(hidden)]
+    pub job_run_id: std::option::Option<std::string::String>,
+}
+impl GetDashboardForJobRunInput {
+    /// <p>The ID of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the job run.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetDashboardForJobRunInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDashboardForJobRunInput");
+        formatter.field("application_id", &self.application_id);
+        formatter.field("job_run_id", &self.job_run_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the application for which to list the job run.</p>
     #[doc(hidden)]
@@ -2734,8 +2949,8 @@ impl ListJobRunsInput {
         self.created_at_before.as_ref()
     }
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn states(&self) -> std::option::Option<&std::vec::Vec<crate::model::JobRunState>> {
-        self.states.as_ref()
+    pub fn states(&self) -> std::option::Option<&[crate::model::JobRunState]> {
+        self.states.as_deref()
     }
 }
 impl std::fmt::Debug for ListJobRunsInput {
@@ -2963,8 +3178,8 @@ impl ListApplicationsInput {
         self.max_results
     }
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn states(&self) -> std::option::Option<&std::vec::Vec<crate::model::ApplicationState>> {
-        self.states.as_ref()
+    pub fn states(&self) -> std::option::Option<&[crate::model::ApplicationState]> {
+        self.states.as_deref()
     }
 }
 impl std::fmt::Debug for ListApplicationsInput {

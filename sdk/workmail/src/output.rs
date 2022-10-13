@@ -122,6 +122,36 @@ impl UpdateMailboxQuotaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateImpersonationRoleOutput {}
+impl std::fmt::Debug for UpdateImpersonationRoleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateImpersonationRoleOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateImpersonationRoleOutput`](crate::output::UpdateImpersonationRoleOutput).
+pub mod update_impersonation_role_output {
+
+    /// A builder for [`UpdateImpersonationRoleOutput`](crate::output::UpdateImpersonationRoleOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateImpersonationRoleOutput`](crate::output::UpdateImpersonationRoleOutput).
+        pub fn build(self) -> crate::output::UpdateImpersonationRoleOutput {
+            crate::output::UpdateImpersonationRoleOutput {}
+        }
+    }
+}
+impl UpdateImpersonationRoleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateImpersonationRoleOutput`](crate::output::UpdateImpersonationRoleOutput).
+    pub fn builder() -> crate::output::update_impersonation_role_output::Builder {
+        crate::output::update_impersonation_role_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDefaultMailDomainOutput {}
 impl std::fmt::Debug for UpdateDefaultMailDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -879,7 +909,7 @@ pub struct ListResourceDelegatesOutput {
     /// <p>One page of the resource's delegates.</p>
     #[doc(hidden)]
     pub delegates: std::option::Option<std::vec::Vec<crate::model::Delegate>>,
-    /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
+    /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -888,7 +918,7 @@ impl ListResourceDelegatesOutput {
     pub fn delegates(&self) -> std::option::Option<&[crate::model::Delegate]> {
         self.delegates.as_deref()
     }
-    /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
+    /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -930,12 +960,12 @@ pub mod list_resource_delegates_output {
             self.delegates = input;
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
+        /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
+        /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1048,12 +1078,12 @@ impl ListOrganizationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileDeviceAccessRulesOutput {
-    /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
+    /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessRule>>,
 }
 impl ListMobileDeviceAccessRulesOutput {
-    /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
+    /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::MobileDeviceAccessRule]> {
         self.rules.as_deref()
     }
@@ -1078,14 +1108,14 @@ pub mod list_mobile_device_access_rules_output {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
+        /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
         pub fn rules(mut self, input: crate::model::MobileDeviceAccessRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
+        /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessRule>>,
@@ -1110,7 +1140,7 @@ impl ListMobileDeviceAccessRulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileDeviceAccessOverridesOutput {
-    /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+    /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
     #[doc(hidden)]
     pub overrides: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
     /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
@@ -1118,7 +1148,7 @@ pub struct ListMobileDeviceAccessOverridesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMobileDeviceAccessOverridesOutput {
-    /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+    /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
     pub fn overrides(&self) -> std::option::Option<&[crate::model::MobileDeviceAccessOverride]> {
         self.overrides.as_deref()
     }
@@ -1150,14 +1180,14 @@ pub mod list_mobile_device_access_overrides_output {
         ///
         /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
         ///
-        /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+        /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
         pub fn overrides(mut self, input: crate::model::MobileDeviceAccessOverride) -> Self {
             let mut v = self.overrides.unwrap_or_default();
             v.push(input);
             self.overrides = Some(v);
             self
         }
-        /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+        /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
@@ -1195,7 +1225,7 @@ impl ListMobileDeviceAccessOverridesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailDomainsOutput {
-    /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
+    /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
     #[doc(hidden)]
     pub mail_domains: std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
@@ -1203,7 +1233,7 @@ pub struct ListMailDomainsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMailDomainsOutput {
-    /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
+    /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
     pub fn mail_domains(&self) -> std::option::Option<&[crate::model::MailDomainSummary]> {
         self.mail_domains.as_deref()
     }
@@ -1235,14 +1265,14 @@ pub mod list_mail_domains_output {
         ///
         /// To override the contents of this collection use [`set_mail_domains`](Self::set_mail_domains).
         ///
-        /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
+        /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
         pub fn mail_domains(mut self, input: crate::model::MailDomainSummary) -> Self {
             let mut v = self.mail_domains.unwrap_or_default();
             v.push(input);
             self.mail_domains = Some(v);
             self
         }
-        /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
+        /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
         pub fn set_mail_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
@@ -1447,6 +1477,90 @@ impl ListMailboxExportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImpersonationRolesOutput {
+    /// <p>The list of impersonation roles under the given WorkMail organization.</p>
+    #[doc(hidden)]
+    pub roles: std::option::Option<std::vec::Vec<crate::model::ImpersonationRole>>,
+    /// <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImpersonationRolesOutput {
+    /// <p>The list of impersonation roles under the given WorkMail organization.</p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::ImpersonationRole]> {
+        self.roles.as_deref()
+    }
+    /// <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListImpersonationRolesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImpersonationRolesOutput");
+        formatter.field("roles", &self.roles);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListImpersonationRolesOutput`](crate::output::ListImpersonationRolesOutput).
+pub mod list_impersonation_roles_output {
+
+    /// A builder for [`ListImpersonationRolesOutput`](crate::output::ListImpersonationRolesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) roles: std::option::Option<std::vec::Vec<crate::model::ImpersonationRole>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `roles`.
+        ///
+        /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+        ///
+        /// <p>The list of impersonation roles under the given WorkMail organization.</p>
+        pub fn roles(mut self, input: crate::model::ImpersonationRole) -> Self {
+            let mut v = self.roles.unwrap_or_default();
+            v.push(input);
+            self.roles = Some(v);
+            self
+        }
+        /// <p>The list of impersonation roles under the given WorkMail organization.</p>
+        pub fn set_roles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImpersonationRole>>,
+        ) -> Self {
+            self.roles = input;
+            self
+        }
+        /// <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImpersonationRolesOutput`](crate::output::ListImpersonationRolesOutput).
+        pub fn build(self) -> crate::output::ListImpersonationRolesOutput {
+            crate::output::ListImpersonationRolesOutput {
+                roles: self.roles,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListImpersonationRolesOutput {
+    /// Creates a new builder-style object to manufacture [`ListImpersonationRolesOutput`](crate::output::ListImpersonationRolesOutput).
+    pub fn builder() -> crate::output::list_impersonation_roles_output::Builder {
+        crate::output::list_impersonation_roles_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
     /// <p>The overview of groups for an organization.</p>
     #[doc(hidden)]
@@ -1616,7 +1730,7 @@ impl ListGroupMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailabilityConfigurationsOutput {
-    /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+    /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
     #[doc(hidden)]
     pub availability_configurations:
         std::option::Option<std::vec::Vec<crate::model::AvailabilityConfiguration>>,
@@ -1625,7 +1739,7 @@ pub struct ListAvailabilityConfigurationsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailabilityConfigurationsOutput {
-    /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+    /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
     pub fn availability_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::AvailabilityConfiguration]> {
@@ -1662,7 +1776,7 @@ pub mod list_availability_configurations_output {
         ///
         /// To override the contents of this collection use [`set_availability_configurations`](Self::set_availability_configurations).
         ///
-        /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+        /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
         pub fn availability_configurations(
             mut self,
             input: crate::model::AvailabilityConfiguration,
@@ -1672,7 +1786,7 @@ pub mod list_availability_configurations_output {
             self.availability_configurations = Some(v);
             self
         }
-        /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+        /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
         pub fn set_availability_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AvailabilityConfiguration>>,
@@ -2020,7 +2134,7 @@ impl GetMobileDeviceAccessOverrideOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileDeviceAccessEffectOutput {
-    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
+    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
     #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
@@ -2029,7 +2143,7 @@ pub struct GetMobileDeviceAccessEffectOutput {
         std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessMatchedRule>>,
 }
 impl GetMobileDeviceAccessEffectOutput {
-    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
+    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
     pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
         self.effect.as_ref()
     }
@@ -2059,12 +2173,12 @@ pub mod get_mobile_device_access_effect_output {
             std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessMatchedRule>>,
     }
     impl Builder {
-        /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
+        /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
         pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
             self.effect = Some(input);
             self
         }
-        /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
+        /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
         pub fn set_effect(
             mut self,
             input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
@@ -2111,7 +2225,7 @@ impl GetMobileDeviceAccessEffectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailDomainOutput {
-    /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+    /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
     #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
@@ -2129,7 +2243,7 @@ pub struct GetMailDomainOutput {
     pub dkim_verification_status: std::option::Option<crate::model::DnsRecordVerificationStatus>,
 }
 impl GetMailDomainOutput {
-    /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+    /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
     pub fn records(&self) -> std::option::Option<&[crate::model::DnsRecord]> {
         self.records.as_deref()
     }
@@ -2187,14 +2301,14 @@ pub mod get_mail_domain_output {
         ///
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
-        /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+        /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
         pub fn records(mut self, input: crate::model::DnsRecord) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input);
             self.records = Some(v);
             self
         }
-        /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+        /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -2345,6 +2459,313 @@ impl GetMailboxDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetMailboxDetailsOutput`](crate::output::GetMailboxDetailsOutput).
     pub fn builder() -> crate::output::get_mailbox_details_output::Builder {
         crate::output::get_mailbox_details_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetImpersonationRoleEffectOutput {
+    /// <p>The impersonation role type.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+    /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    #[doc(hidden)]
+    pub effect: std::option::Option<crate::model::AccessEffect>,
+    /// <p>A list of the rules that match the input and produce the configured effect.</p>
+    #[doc(hidden)]
+    pub matched_rules: std::option::Option<std::vec::Vec<crate::model::ImpersonationMatchedRule>>,
+}
+impl GetImpersonationRoleEffectOutput {
+    /// <p>The impersonation role type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImpersonationRoleType> {
+        self.r#type.as_ref()
+    }
+    /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::AccessEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>A list of the rules that match the input and produce the configured effect.</p>
+    pub fn matched_rules(&self) -> std::option::Option<&[crate::model::ImpersonationMatchedRule]> {
+        self.matched_rules.as_deref()
+    }
+}
+impl std::fmt::Debug for GetImpersonationRoleEffectOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetImpersonationRoleEffectOutput");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("effect", &self.effect);
+        formatter.field("matched_rules", &self.matched_rules);
+        formatter.finish()
+    }
+}
+/// See [`GetImpersonationRoleEffectOutput`](crate::output::GetImpersonationRoleEffectOutput).
+pub mod get_impersonation_role_effect_output {
+
+    /// A builder for [`GetImpersonationRoleEffectOutput`](crate::output::GetImpersonationRoleEffectOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+        pub(crate) effect: std::option::Option<crate::model::AccessEffect>,
+        pub(crate) matched_rules:
+            std::option::Option<std::vec::Vec<crate::model::ImpersonationMatchedRule>>,
+    }
+    impl Builder {
+        /// <p>The impersonation role type.</p>
+        pub fn r#type(mut self, input: crate::model::ImpersonationRoleType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The impersonation role type.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ImpersonationRoleType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+        pub fn effect(mut self, input: crate::model::AccessEffect) -> Self {
+            self.effect = Some(input);
+            self
+        }
+        /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+        pub fn set_effect(
+            mut self,
+            input: std::option::Option<crate::model::AccessEffect>,
+        ) -> Self {
+            self.effect = input;
+            self
+        }
+        /// Appends an item to `matched_rules`.
+        ///
+        /// To override the contents of this collection use [`set_matched_rules`](Self::set_matched_rules).
+        ///
+        /// <p>A list of the rules that match the input and produce the configured effect.</p>
+        pub fn matched_rules(mut self, input: crate::model::ImpersonationMatchedRule) -> Self {
+            let mut v = self.matched_rules.unwrap_or_default();
+            v.push(input);
+            self.matched_rules = Some(v);
+            self
+        }
+        /// <p>A list of the rules that match the input and produce the configured effect.</p>
+        pub fn set_matched_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImpersonationMatchedRule>>,
+        ) -> Self {
+            self.matched_rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetImpersonationRoleEffectOutput`](crate::output::GetImpersonationRoleEffectOutput).
+        pub fn build(self) -> crate::output::GetImpersonationRoleEffectOutput {
+            crate::output::GetImpersonationRoleEffectOutput {
+                r#type: self.r#type,
+                effect: self.effect,
+                matched_rules: self.matched_rules,
+            }
+        }
+    }
+}
+impl GetImpersonationRoleEffectOutput {
+    /// Creates a new builder-style object to manufacture [`GetImpersonationRoleEffectOutput`](crate::output::GetImpersonationRoleEffectOutput).
+    pub fn builder() -> crate::output::get_impersonation_role_effect_output::Builder {
+        crate::output::get_impersonation_role_effect_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetImpersonationRoleOutput {
+    /// <p>The impersonation role ID.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
+    /// <p>The impersonation role name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The impersonation role type.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+    /// <p>The impersonation role description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The list of rules for the given impersonation role.</p>
+    #[doc(hidden)]
+    pub rules: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+    /// <p>The date when the impersonation role was created.</p>
+    #[doc(hidden)]
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date when the impersonation role was last modified.</p>
+    #[doc(hidden)]
+    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetImpersonationRoleOutput {
+    /// <p>The impersonation role ID.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
+    /// <p>The impersonation role name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The impersonation role type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImpersonationRoleType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The impersonation role description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The list of rules for the given impersonation role.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ImpersonationRule]> {
+        self.rules.as_deref()
+    }
+    /// <p>The date when the impersonation role was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date when the impersonation role was last modified.</p>
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.date_modified.as_ref()
+    }
+}
+impl std::fmt::Debug for GetImpersonationRoleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetImpersonationRoleOutput");
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("description", &self.description);
+        formatter.field("rules", &self.rules);
+        formatter.field("date_created", &self.date_created);
+        formatter.field("date_modified", &self.date_modified);
+        formatter.finish()
+    }
+}
+/// See [`GetImpersonationRoleOutput`](crate::output::GetImpersonationRoleOutput).
+pub mod get_impersonation_role_output {
+
+    /// A builder for [`GetImpersonationRoleOutput`](crate::output::GetImpersonationRoleOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The impersonation role ID.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The impersonation role ID.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
+        /// <p>The impersonation role name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The impersonation role name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The impersonation role type.</p>
+        pub fn r#type(mut self, input: crate::model::ImpersonationRoleType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The impersonation role type.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ImpersonationRoleType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The impersonation role description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The impersonation role description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The list of rules for the given impersonation role.</p>
+        pub fn rules(mut self, input: crate::model::ImpersonationRule) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input);
+            self.rules = Some(v);
+            self
+        }
+        /// <p>The list of rules for the given impersonation role.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// <p>The date when the impersonation role was created.</p>
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.date_created = Some(input);
+            self
+        }
+        /// <p>The date when the impersonation role was created.</p>
+        pub fn set_date_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.date_created = input;
+            self
+        }
+        /// <p>The date when the impersonation role was last modified.</p>
+        pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.date_modified = Some(input);
+            self
+        }
+        /// <p>The date when the impersonation role was last modified.</p>
+        pub fn set_date_modified(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.date_modified = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetImpersonationRoleOutput`](crate::output::GetImpersonationRoleOutput).
+        pub fn build(self) -> crate::output::GetImpersonationRoleOutput {
+            crate::output::GetImpersonationRoleOutput {
+                impersonation_role_id: self.impersonation_role_id,
+                name: self.name,
+                r#type: self.r#type,
+                description: self.description,
+                rules: self.rules,
+                date_created: self.date_created,
+                date_modified: self.date_modified,
+            }
+        }
+    }
+}
+impl GetImpersonationRoleOutput {
+    /// Creates a new builder-style object to manufacture [`GetImpersonationRoleOutput`](crate::output::GetImpersonationRoleOutput).
+    pub fn builder() -> crate::output::get_impersonation_role_output::Builder {
+        crate::output::get_impersonation_role_output::Builder::default()
     }
 }
 
@@ -2639,16 +3060,16 @@ pub struct DescribeUserOutput {
     /// <p>The display name of the user.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
-    /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
     #[doc(hidden)]
     pub user_role: std::option::Option<crate::model::UserRole>,
-    /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
     #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
     #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -2669,19 +3090,19 @@ impl DescribeUserOutput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
-    /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
     pub fn user_role(&self) -> std::option::Option<&crate::model::UserRole> {
         self.user_role.as_ref()
     }
-    /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
     pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
-    /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
@@ -2756,32 +3177,32 @@ pub mod describe_user_output {
             self.display_name = input;
             self
         }
-        /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+        /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+        /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+        /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
         pub fn user_role(mut self, input: crate::model::UserRole) -> Self {
             self.user_role = Some(input);
             self
         }
-        /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+        /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
         pub fn set_user_role(mut self, input: std::option::Option<crate::model::UserRole>) -> Self {
             self.user_role = input;
             self
         }
-        /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+        /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
-        /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+        /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
         pub fn set_enabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2789,12 +3210,12 @@ pub mod describe_user_output {
             self.enabled_date = input;
             self
         }
-        /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+        /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
-        /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+        /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
         pub fn set_disabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2843,7 +3264,7 @@ pub struct DescribeResourceOutput {
     /// <p>The booking options for the described resource.</p>
     #[doc(hidden)]
     pub booking_options: std::option::Option<crate::model::BookingOptions>,
-    /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
+    /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
@@ -2874,7 +3295,7 @@ impl DescribeResourceOutput {
     pub fn booking_options(&self) -> std::option::Option<&crate::model::BookingOptions> {
         self.booking_options.as_ref()
     }
-    /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
+    /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
@@ -2970,12 +3391,12 @@ pub mod describe_resource_output {
             self.booking_options = input;
             self
         }
-        /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
+        /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
+        /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
@@ -3041,7 +3462,7 @@ pub struct DescribeOrganizationOutput {
     /// <p>The state of an organization.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
-    /// <p>The identifier for the directory associated with an Amazon WorkMail organization.</p>
+    /// <p>The identifier for the directory associated with an WorkMail organization.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of directory associated with the WorkMail organization.</p>
@@ -3073,7 +3494,7 @@ impl DescribeOrganizationOutput {
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>The identifier for the directory associated with an Amazon WorkMail organization.</p>
+    /// <p>The identifier for the directory associated with an WorkMail organization.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -3163,12 +3584,12 @@ pub mod describe_organization_output {
             self.state = input;
             self
         }
-        /// <p>The identifier for the directory associated with an Amazon WorkMail organization.</p>
+        /// <p>The identifier for the directory associated with an WorkMail organization.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the directory associated with an Amazon WorkMail organization.</p>
+        /// <p>The identifier for the directory associated with an WorkMail organization.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -3613,7 +4034,7 @@ pub struct DescribeGroupOutput {
     /// <p>The email of the described group.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
-    /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    /// <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
@@ -3636,7 +4057,7 @@ impl DescribeGroupOutput {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    /// <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
@@ -3705,12 +4126,12 @@ pub mod describe_group_output {
             self.email = input;
             self
         }
-        /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+        /// <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+        /// <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
@@ -4160,6 +4581,36 @@ impl DeleteMailboxPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteImpersonationRoleOutput {}
+impl std::fmt::Debug for DeleteImpersonationRoleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteImpersonationRoleOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteImpersonationRoleOutput`](crate::output::DeleteImpersonationRoleOutput).
+pub mod delete_impersonation_role_output {
+
+    /// A builder for [`DeleteImpersonationRoleOutput`](crate::output::DeleteImpersonationRoleOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteImpersonationRoleOutput`](crate::output::DeleteImpersonationRoleOutput).
+        pub fn build(self) -> crate::output::DeleteImpersonationRoleOutput {
+            crate::output::DeleteImpersonationRoleOutput {}
+        }
+    }
+}
+impl DeleteImpersonationRoleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteImpersonationRoleOutput`](crate::output::DeleteImpersonationRoleOutput).
+    pub fn builder() -> crate::output::delete_impersonation_role_output::Builder {
+        crate::output::delete_impersonation_role_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupOutput {}
 impl std::fmt::Debug for DeleteGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4542,6 +4993,64 @@ impl CreateMobileDeviceAccessRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateImpersonationRoleOutput {
+    /// <p>The new impersonation role ID.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
+}
+impl CreateImpersonationRoleOutput {
+    /// <p>The new impersonation role ID.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateImpersonationRoleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateImpersonationRoleOutput");
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateImpersonationRoleOutput`](crate::output::CreateImpersonationRoleOutput).
+pub mod create_impersonation_role_output {
+
+    /// A builder for [`CreateImpersonationRoleOutput`](crate::output::CreateImpersonationRoleOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The new impersonation role ID.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The new impersonation role ID.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateImpersonationRoleOutput`](crate::output::CreateImpersonationRoleOutput).
+        pub fn build(self) -> crate::output::CreateImpersonationRoleOutput {
+            crate::output::CreateImpersonationRoleOutput {
+                impersonation_role_id: self.impersonation_role_id,
+            }
+        }
+    }
+}
+impl CreateImpersonationRoleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateImpersonationRoleOutput`](crate::output::CreateImpersonationRoleOutput).
+    pub fn builder() -> crate::output::create_impersonation_role_output::Builder {
+        crate::output::create_impersonation_role_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
@@ -4681,6 +5190,81 @@ impl CancelMailboxExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelMailboxExportJobOutput`](crate::output::CancelMailboxExportJobOutput).
     pub fn builder() -> crate::output::cancel_mailbox_export_job_output::Builder {
         crate::output::cancel_mailbox_export_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssumeImpersonationRoleOutput {
+    /// <p>The authentication token for the impersonation role.</p>
+    #[doc(hidden)]
+    pub token: std::option::Option<std::string::String>,
+    /// <p>The authentication token's validity, in seconds.</p>
+    #[doc(hidden)]
+    pub expires_in: std::option::Option<i64>,
+}
+impl AssumeImpersonationRoleOutput {
+    /// <p>The authentication token for the impersonation role.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p>The authentication token's validity, in seconds.</p>
+    pub fn expires_in(&self) -> std::option::Option<i64> {
+        self.expires_in
+    }
+}
+impl std::fmt::Debug for AssumeImpersonationRoleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssumeImpersonationRoleOutput");
+        formatter.field("token", &self.token);
+        formatter.field("expires_in", &self.expires_in);
+        formatter.finish()
+    }
+}
+/// See [`AssumeImpersonationRoleOutput`](crate::output::AssumeImpersonationRoleOutput).
+pub mod assume_impersonation_role_output {
+
+    /// A builder for [`AssumeImpersonationRoleOutput`](crate::output::AssumeImpersonationRoleOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) token: std::option::Option<std::string::String>,
+        pub(crate) expires_in: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The authentication token for the impersonation role.</p>
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token = Some(input.into());
+            self
+        }
+        /// <p>The authentication token for the impersonation role.</p>
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token = input;
+            self
+        }
+        /// <p>The authentication token's validity, in seconds.</p>
+        pub fn expires_in(mut self, input: i64) -> Self {
+            self.expires_in = Some(input);
+            self
+        }
+        /// <p>The authentication token's validity, in seconds.</p>
+        pub fn set_expires_in(mut self, input: std::option::Option<i64>) -> Self {
+            self.expires_in = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssumeImpersonationRoleOutput`](crate::output::AssumeImpersonationRoleOutput).
+        pub fn build(self) -> crate::output::AssumeImpersonationRoleOutput {
+            crate::output::AssumeImpersonationRoleOutput {
+                token: self.token,
+                expires_in: self.expires_in,
+            }
+        }
+    }
+}
+impl AssumeImpersonationRoleOutput {
+    /// Creates a new builder-style object to manufacture [`AssumeImpersonationRoleOutput`](crate::output::AssumeImpersonationRoleOutput).
+    pub fn builder() -> crate::output::assume_impersonation_role_output::Builder {
+        crate::output::assume_impersonation_role_output::Builder::default()
     }
 }
 

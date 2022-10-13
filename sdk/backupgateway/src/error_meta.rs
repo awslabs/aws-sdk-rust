@@ -11,6 +11,8 @@ pub enum Error {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A resource that is required for the action wasn't found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>The operation did not succeed because a validation error occurred.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
@@ -23,6 +25,7 @@ impl std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -47,6 +50,9 @@ where
                 crate::error::AssociateGatewayToServerErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
+                crate::error::AssociateGatewayToServerErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::AssociateGatewayToServerErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -67,6 +73,9 @@ where
                 }
                 crate::error::CreateGatewayErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::CreateGatewayErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::CreateGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -89,6 +98,9 @@ where
                 }
                 crate::error::DeleteGatewayErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::DeleteGatewayErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -116,6 +128,9 @@ where
                 }
                 crate::error::DeleteHypervisorErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::DeleteHypervisorErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteHypervisorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -147,6 +162,9 @@ where
                 crate::error::DisassociateGatewayFromServerErrorKind::ValidationException(
                     inner,
                 ) => Error::ValidationException(inner),
+                crate::error::DisassociateGatewayFromServerErrorKind::ThrottlingException(
+                    inner,
+                ) => Error::ThrottlingException(inner),
                 crate::error::DisassociateGatewayFromServerErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -171,7 +189,39 @@ where
                 crate::error::GetGatewayErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
+                crate::error::GetGatewayErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::GetGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVirtualMachineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetVirtualMachineError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetVirtualMachineErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetVirtualMachineErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetVirtualMachineErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetVirtualMachineErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetVirtualMachineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -196,6 +246,9 @@ where
                 crate::error::ImportHypervisorConfigurationErrorKind::ValidationException(
                     inner,
                 ) => Error::ValidationException(inner),
+                crate::error::ImportHypervisorConfigurationErrorKind::ThrottlingException(
+                    inner,
+                ) => Error::ThrottlingException(inner),
                 crate::error::ImportHypervisorConfigurationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -217,6 +270,9 @@ where
                 crate::error::ListGatewaysErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
+                crate::error::ListGatewaysErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::ListGatewaysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -235,6 +291,9 @@ where
                 }
                 crate::error::ListHypervisorsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::ListHypervisorsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::ListHypervisorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -260,6 +319,9 @@ where
                 crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
+                crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -282,6 +344,9 @@ where
                 }
                 crate::error::ListVirtualMachinesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::ListVirtualMachinesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::ListVirtualMachinesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -313,6 +378,9 @@ where
                 crate::error::PutMaintenanceStartTimeErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
+                crate::error::PutMaintenanceStartTimeErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::PutMaintenanceStartTimeErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -336,6 +404,9 @@ where
                 }
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -365,6 +436,9 @@ where
                 crate::error::TestHypervisorConfigurationErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
+                crate::error::TestHypervisorConfigurationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::TestHypervisorConfigurationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -388,6 +462,9 @@ where
                 }
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -417,6 +494,9 @@ where
                 crate::error::UpdateGatewayInformationErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
+                crate::error::UpdateGatewayInformationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::UpdateGatewayInformationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -443,6 +523,9 @@ where
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateGatewaySoftwareNowErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::UpdateGatewaySoftwareNowErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateGatewaySoftwareNowErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -472,6 +555,9 @@ where
                 }
                 crate::error::UpdateHypervisorErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
+                }
+                crate::error::UpdateHypervisorErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateHypervisorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

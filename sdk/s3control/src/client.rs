@@ -132,7 +132,7 @@ impl Client {
     ///   - [`grant_write(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::grant_write) / [`set_grant_write(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_grant_write): <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
     ///   - [`grant_write_acp(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::grant_write_acp) / [`set_grant_write_acp(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_grant_write_acp): <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
     ///   - [`object_lock_enabled_for_bucket(bool)`](crate::client::fluent_builders::CreateBucket::object_lock_enabled_for_bucket) / [`set_object_lock_enabled_for_bucket(bool)`](crate::client::fluent_builders::CreateBucket::set_object_lock_enabled_for_bucket): <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_outpost_id): <p>The ID of the Outposts where the bucket is being created.</p> <note>   <p>This is required by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_outpost_id): <p>The ID of the Outposts where the bucket is being created.</p> <note>   <p>This ID is required by Amazon S3 on Outposts buckets.</p>  </note>
     /// - On success, responds with [`CreateBucketOutput`](crate::output::CreateBucketOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::output::CreateBucketOutput::location): <p>The location of the bucket.</p>
     ///   - [`bucket_arn(Option<String>)`](crate::output::CreateBucketOutput::bucket_arn): <p>The Amazon Resource Name (ARN) of the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
@@ -496,6 +496,18 @@ impl Client {
     pub fn get_bucket_tagging(&self) -> fluent_builders::GetBucketTagging {
         fluent_builders::GetBucketTagging::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetBucketVersioning`](crate::client::fluent_builders::GetBucketVersioning) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetBucketVersioning::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetBucketVersioning::set_account_id): <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::GetBucketVersioning::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::GetBucketVersioning::set_bucket): <p>The S3 on Outposts bucket to return the versioning state for.</p>
+    /// - On success, responds with [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput) with field(s):
+    ///   - [`status(Option<BucketVersioningStatus>)`](crate::output::GetBucketVersioningOutput::status): <p>The versioning state of the S3 on Outposts bucket.</p>
+    ///   - [`mfa_delete(Option<MfaDeleteStatus>)`](crate::output::GetBucketVersioningOutput::mfa_delete): <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
+    /// - On failure, responds with [`SdkError<GetBucketVersioningError>`](crate::error::GetBucketVersioningError)
+    pub fn get_bucket_versioning(&self) -> fluent_builders::GetBucketVersioning {
+        fluent_builders::GetBucketVersioning::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetJobTagging`](crate::client::fluent_builders::GetJobTagging) operation.
     ///
     /// - The fluent builder is configurable:
@@ -645,7 +657,7 @@ impl Client {
     ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListRegionalBuckets::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListRegionalBuckets::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRegionalBuckets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRegionalBuckets::set_next_token): <p></p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRegionalBuckets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRegionalBuckets::set_max_results): <p></p>
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::ListRegionalBuckets::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::ListRegionalBuckets::set_outpost_id): <p>The ID of the Outposts.</p> <note>   <p>This is required by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::ListRegionalBuckets::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::ListRegionalBuckets::set_outpost_id): <p>The ID of the Outposts resource.</p> <note>   <p>This ID is required by Amazon S3 on Outposts buckets.</p>  </note>
     /// - On success, responds with [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput) with field(s):
     ///   - [`regional_bucket_list(Option<Vec<RegionalBucket>>)`](crate::output::ListRegionalBucketsOutput::regional_bucket_list): <p></p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRegionalBucketsOutput::next_token): <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
@@ -746,6 +758,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<PutBucketTaggingError>`](crate::error::PutBucketTaggingError)
     pub fn put_bucket_tagging(&self) -> fluent_builders::PutBucketTagging {
         fluent_builders::PutBucketTagging::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutBucketVersioning`](crate::client::fluent_builders::PutBucketVersioning) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutBucketVersioning::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutBucketVersioning::set_account_id): <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::PutBucketVersioning::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::PutBucketVersioning::set_bucket): <p>The S3 on Outposts bucket to set the versioning state for.</p>
+    ///   - [`mfa(impl Into<String>)`](crate::client::fluent_builders::PutBucketVersioning::mfa) / [`set_mfa(Option<String>)`](crate::client::fluent_builders::PutBucketVersioning::set_mfa): <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
+    ///   - [`versioning_configuration(VersioningConfiguration)`](crate::client::fluent_builders::PutBucketVersioning::versioning_configuration) / [`set_versioning_configuration(Option<VersioningConfiguration>)`](crate::client::fluent_builders::PutBucketVersioning::set_versioning_configuration): <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+    /// - On success, responds with [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput)
+
+    /// - On failure, responds with [`SdkError<PutBucketVersioningError>`](crate::error::PutBucketVersioningError)
+    pub fn put_bucket_versioning(&self) -> fluent_builders::PutBucketVersioning {
+        fluent_builders::PutBucketVersioning::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PutJobTagging`](crate::client::fluent_builders::PutJobTagging) operation.
     ///
@@ -854,7 +879,7 @@ pub mod fluent_builders {
     /// <p>S3 on Outposts only supports VPC-style access points. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html"> Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </note>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples">Examples</a> section.</p>
     /// <p></p>
     /// <p>The following actions are related to <code>CreateAccessPoint</code>:</p>
     /// <ul>
@@ -1348,14 +1373,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
-        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
         /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
-        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
@@ -1680,7 +1705,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAccessPoint`.
     ///
     /// <p>Deletes the specified access point.</p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>DeleteAccessPoint</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a> </p> </li>
@@ -1892,7 +1917,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the access point policy for the specified access point.</p>
     /// <p></p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>DeleteAccessPointPolicy</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html">PutAccessPointPolicy</a> </p> </li>
@@ -2108,7 +2133,7 @@ pub mod fluent_builders {
     /// <p>This action deletes an Amazon S3 on Outposts bucket. To delete an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> in the <i>Amazon S3 API Reference</i>. </p>
     /// </note>
     /// <p>Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions and delete markers) in the bucket must be deleted before the bucket itself can be deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html#API_control_DeleteBucket_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html#API_control_DeleteBucket_Examples">Examples</a> section.</p>
     /// <p class="title"> <b>Related Resources</b> </p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">CreateBucket</a> </p> </li>
@@ -2230,7 +2255,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Deletes the lifecycle configuration from the specified Outposts bucket. Amazon S3 on Outposts removes all the lifecycle configuration rules in the lifecycle subresource associated with the bucket. Your objects never expire, and Amazon S3 on Outposts no longer automatically deletes any objects on the basis of rules contained in the deleted lifecycle configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p>
     /// <p>To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code> action. By default, the bucket owner has this permission and the Outposts bucket owner can grant this permission to others.</p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples">Examples</a> section.</p>
     /// <p>For more information about object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements to Describe Lifecycle Actions</a>.</p>
     /// <p>Related actions include:</p>
     /// <ul>
@@ -2359,7 +2384,7 @@ pub mod fluent_builders {
     /// <p>As a security precaution, the root user of the Amazon Web Services account that owns a bucket can always use this action, even if the policy explicitly denies the root user the ability to perform this action.</p>
     /// </important>
     /// <p>For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>. </p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>DeleteBucketPolicy</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html">GetBucketPolicy</a> </p> </li>
@@ -2480,7 +2505,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Deletes the tags from the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p>
     /// <p>To use this action, you must have permission to perform the <code>PutBucketTagging</code> action. By default, the bucket owner has this permission and can grant this permission to others. </p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>DeleteBucketTagging</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html">GetBucketTagging</a> </p> </li>
@@ -3261,7 +3286,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns configuration information about the specified access point.</p>
     /// <p></p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>GetAccessPoint</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a> </p> </li>
@@ -3960,7 +3985,7 @@ pub mod fluent_builders {
     /// <p>If you are using an identity other than the root user of the Amazon Web Services account that owns the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket and belong to the Outposts bucket owner's account in order to use this action. Only users from Outposts bucket owner account with the right permissions can perform actions on an Outposts bucket. </p>
     /// <p> If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access Denied</code> error.</p>
     /// <p>The following actions are related to <code>GetBucket</code> for Amazon S3 on Outposts:</p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html#API_control_GetBucket_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html#API_control_GetBucket_Examples">Examples</a> section.</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">CreateBucket</a> </p> </li>
@@ -4081,7 +4106,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Returns the lifecycle configuration information set on the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> and for information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle Management</a> in <i>Amazon S3 User Guide</i>.</p>
     /// <p>To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code> action. The Outposts bucket owner has this permission, by default. The bucket owner can grant this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">Examples</a> section.</p>
     /// <p> <code>GetBucketLifecycleConfiguration</code> has the following special error:</p>
     /// <ul>
     /// <li> <p>Error code: <code>NoSuchLifecycleConfiguration</code> </p>
@@ -4215,7 +4240,7 @@ pub mod fluent_builders {
     /// <p>As a security precaution, the root user of the Amazon Web Services account that owns a bucket can always use this action, even if the policy explicitly denies the root user the ability to perform this action.</p>
     /// </important>
     /// <p>For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>.</p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>GetBucketPolicy</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> </p> </li>
@@ -4344,7 +4369,7 @@ pub mod fluent_builders {
     /// <li> <p>Description: There is no tag set associated with the bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html#API_control_GetBucketTagging_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html#API_control_GetBucketTagging_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>GetBucketTagging</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html">PutBucketTagging</a> </p> </li>
@@ -4453,6 +4478,105 @@ pub mod fluent_builders {
         /// </outpost-id>
         /// </account-id>
         /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetBucketVersioning`.
+    ///
+    /// <note>
+    /// <p>This operation returns the versioning state only for S3 on Outposts buckets. To return the versioning state for an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a> in the <i>Amazon S3 API Reference</i>. </p>
+    /// </note>
+    /// <p>Returns the versioning state for an S3 on Outposts bucket. With versioning, you can save multiple distinct copies of your data and recover from unintended user actions and application failures.</p>
+    /// <p>If you've never set versioning on your bucket, it has no versioning state. In that case, the <code>GetBucketVersioning</code> request does not return a versioning state value.</p>
+    /// <p>For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketVersioning.html#API_control_GetBucketVersioning_Examples">Examples</a> section.</p>
+    /// <p>The following operations are related to <code>GetBucketVersioning</code> for S3 on Outposts.</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html">PutBucketVersioning</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a> </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetBucketVersioning {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_bucket_versioning_input::Builder,
+    }
+    impl GetBucketVersioning {
+        /// Creates a new `GetBucketVersioning`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetBucketVersioning,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetBucketVersioningError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBucketVersioningOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetBucketVersioningError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
+            self
+        }
+        /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bucket(input);
             self
@@ -5105,7 +5229,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000 access points per call. If the specified bucket has more than 1,000 access points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to list the additional access points.</p>
     /// <p></p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>ListAccessPoints</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a> </p> </li>
@@ -5697,15 +5821,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The ID of the Outposts.</p> <note>
-        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// <p>The ID of the Outposts resource.</p> <note>
+        /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p>The ID of the Outposts.</p> <note>
-        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// <p>The ID of the Outposts resource.</p> <note>
+        /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
@@ -5919,7 +6043,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates an access policy with the specified access point. Each access point can have only one policy, so a request made to this API replaces any existing policy associated with the specified access point.</p>
     /// <p></p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>PutAccessPointPolicy</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html">GetAccessPointPolicy</a> </p> </li>
@@ -6156,7 +6280,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Creates a new lifecycle configuration for the S3 on Outposts bucket or replaces an existing lifecycle configuration. Outposts buckets only support lifecycle configurations that delete/expire objects after a certain period of time and abort incomplete multipart uploads.</p>
     /// <p></p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>PutBucketLifecycleConfiguration</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a> </p> </li>
@@ -6273,7 +6397,7 @@ pub mod fluent_builders {
     /// <p> As a security precaution, the root user of the Amazon Web Services account that owns a bucket can always use this action, even if the policy explicitly denies the root user the ability to perform this action. </p>
     /// </important>
     /// <p>For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>.</p>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>PutBucketPolicy</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html">GetBucketPolicy</a> </p> </li>
@@ -6443,7 +6567,7 @@ pub mod fluent_builders {
     /// <li> <p>Description: The service was unable to apply the provided tag to the bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
-    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">Examples</a> section.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">Examples</a> section.</p>
     /// <p>The following actions are related to <code>PutBucketTagging</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html">GetBucketTagging</a> </p> </li>
@@ -6564,6 +6688,137 @@ pub mod fluent_builders {
         /// <p></p>
         pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
             self.inner = self.inner.set_tagging(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutBucketVersioning`.
+    ///
+    /// <note>
+    /// <p>This operation sets the versioning state only for S3 on Outposts buckets. To set the versioning state for an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a> in the <i>Amazon S3 API Reference</i>. </p>
+    /// </note>
+    /// <p>Sets the versioning state for an S3 on Outposts bucket. With versioning, you can save multiple distinct copies of your data and recover from unintended user actions and application failures.</p>
+    /// <p>You can set the versioning state to one of the following:</p>
+    /// <ul>
+    /// <li> <p> <b>Enabled</b> - Enables versioning for the objects in the bucket. All objects added to the bucket receive a unique version ID.</p> </li>
+    /// <li> <p> <b>Suspended</b> - Suspends versioning for the objects in the bucket. All objects added to the bucket receive the version ID <code>null</code>.</p> </li>
+    /// </ul>
+    /// <p>If you've never set versioning on your bucket, it has no versioning state. In that case, a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketVersioning.html"> GetBucketVersioning</a> request does not return a versioning state value.</p>
+    /// <p>When you enable S3 Versioning, for each object in your bucket, you have a current version and zero or more noncurrent versions. You can configure your bucket S3 Lifecycle rules to expire noncurrent versions after a specified time period. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsLifecycleManaging.html"> Creating and managing a lifecycle configuration for your S3 on Outposts bucket</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you have an object expiration lifecycle policy in your non-versioned bucket and you want to maintain the same permanent delete behavior when you enable versioning, you must add a noncurrent expiration policy. The noncurrent expiration lifecycle policy will manage the deletes of the noncurrent object versions in the version-enabled bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html#API_control_PutBucketVersioning_Examples">Examples</a> section.</p>
+    /// <p>The following operations are related to <code>PutBucketVersioning</code> for S3 on Outposts.</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketVersioning.html">GetBucketVersioning</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a> </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutBucketVersioning {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_bucket_versioning_input::Builder,
+    }
+    impl PutBucketVersioning {
+        /// Creates a new `PutBucketVersioning`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::PutBucketVersioning,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutBucketVersioningError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutBucketVersioningOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutBucketVersioningError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
+            self
+        }
+        /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket(input);
+            self
+        }
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
+        pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mfa(input.into());
+            self
+        }
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
+        pub fn set_mfa(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_mfa(input);
+            self
+        }
+        /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+        pub fn versioning_configuration(
+            mut self,
+            input: crate::model::VersioningConfiguration,
+        ) -> Self {
+            self.inner = self.inner.versioning_configuration(input);
+            self
+        }
+        /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+        pub fn set_versioning_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VersioningConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_versioning_configuration(input);
             self
         }
     }
@@ -6805,7 +7060,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPublicAccessBlock`.
     ///
-    /// <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For this operation, users must have the <code>s3:PutBucketPublicAccessBlock</code> permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block public access</a>.</p>
+    /// <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For this operation, users must have the <code>s3:PutAccountPublicAccessBlock</code> permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block public access</a>.</p>
     /// <p>Related actions include:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html">GetPublicAccessBlock</a> </p> </li>

@@ -229,7 +229,7 @@ impl Client {
     ///   - [`state(Option<WorkspaceImageState>)`](crate::output::CreateWorkspaceImageOutput::state): <p>The availability status of the image.</p>
     ///   - [`required_tenancy(Option<WorkspaceImageRequiredTenancy>)`](crate::output::CreateWorkspaceImageOutput::required_tenancy): <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a> </p>
     ///   - [`created(Option<DateTime>)`](crate::output::CreateWorkspaceImageOutput::created): <p>The date when the image was created.</p>
-    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateWorkspaceImageOutput::owner_account_id): <p>The identifier of the AWS account that owns the image.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateWorkspaceImageOutput::owner_account_id): <p>The identifier of the Amazon Web Services account that owns the image.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceImageError>`](crate::error::CreateWorkspaceImageError)
     pub fn create_workspace_image(&self) -> fluent_builders::CreateWorkspaceImage {
         fluent_builders::CreateWorkspaceImage::new(self.handle.clone())

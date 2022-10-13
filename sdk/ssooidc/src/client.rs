@@ -99,15 +99,15 @@ impl Client {
     ///   - [`grant_type(impl Into<String>)`](crate::client::fluent_builders::CreateToken::grant_type) / [`set_grant_type(Option<String>)`](crate::client::fluent_builders::CreateToken::set_grant_type): <p>Supports grant types for the authorization code, refresh token, and device code request. For device code requests, specify the following value:</p>  <p> <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p>  <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     ///   - [`device_code(impl Into<String>)`](crate::client::fluent_builders::CreateToken::device_code) / [`set_device_code(Option<String>)`](crate::client::fluent_builders::CreateToken::set_device_code): <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
     ///   - [`code(impl Into<String>)`](crate::client::fluent_builders::CreateToken::code) / [`set_code(Option<String>)`](crate::client::fluent_builders::CreateToken::set_code): <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
-    ///   - [`refresh_token(impl Into<String>)`](crate::client::fluent_builders::CreateToken::refresh_token) / [`set_refresh_token(Option<String>)`](crate::client::fluent_builders::CreateToken::set_refresh_token): <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>  <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
+    ///   - [`refresh_token(impl Into<String>)`](crate::client::fluent_builders::CreateToken::refresh_token) / [`set_refresh_token(Option<String>)`](crate::client::fluent_builders::CreateToken::set_refresh_token): <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>  <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
     ///   - [`scope(Vec<String>)`](crate::client::fluent_builders::CreateToken::scope) / [`set_scope(Option<Vec<String>>)`](crate::client::fluent_builders::CreateToken::set_scope): <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
     ///   - [`redirect_uri(impl Into<String>)`](crate::client::fluent_builders::CreateToken::redirect_uri) / [`set_redirect_uri(Option<String>)`](crate::client::fluent_builders::CreateToken::set_redirect_uri): <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
     /// - On success, responds with [`CreateTokenOutput`](crate::output::CreateTokenOutput) with field(s):
-    ///   - [`access_token(Option<String>)`](crate::output::CreateTokenOutput::access_token): <p>An opaque token to access Amazon Web Services SSO resources assigned to a user.</p>
+    ///   - [`access_token(Option<String>)`](crate::output::CreateTokenOutput::access_token): <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
     ///   - [`token_type(Option<String>)`](crate::output::CreateTokenOutput::token_type): <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
     ///   - [`expires_in(i32)`](crate::output::CreateTokenOutput::expires_in): <p>Indicates the time in seconds when an access token will expire.</p>
-    ///   - [`refresh_token(Option<String>)`](crate::output::CreateTokenOutput::refresh_token): <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>  <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
-    ///   - [`id_token(Option<String>)`](crate::output::CreateTokenOutput::id_token): <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>  <p>The identifier of the user that associated with the access token, if present.</p>
+    ///   - [`refresh_token(Option<String>)`](crate::output::CreateTokenOutput::refresh_token): <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>  <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
+    ///   - [`id_token(Option<String>)`](crate::output::CreateTokenOutput::id_token): <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>  <p>The identifier of the user that associated with the access token, if present.</p>
     /// - On failure, responds with [`SdkError<CreateTokenError>`](crate::error::CreateTokenError)
     pub fn create_token(&self) -> fluent_builders::CreateToken {
         fluent_builders::CreateToken::new(self.handle.clone())
@@ -132,9 +132,9 @@ impl Client {
     /// Constructs a fluent builder for the [`StartDeviceAuthorization`](crate::client::fluent_builders::StartDeviceAuthorization) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::set_client_id): <p>The unique identifier string for the client that is registered with Amazon Web Services SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::set_client_id): <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     ///   - [`client_secret(impl Into<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::client_secret) / [`set_client_secret(Option<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::set_client_secret): <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    ///   - [`start_url(impl Into<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::start_url) / [`set_start_url(Option<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::set_start_url): <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    ///   - [`start_url(impl Into<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::start_url) / [`set_start_url(Option<String>)`](crate::client::fluent_builders::StartDeviceAuthorization::set_start_url): <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
     /// - On success, responds with [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput) with field(s):
     ///   - [`device_code(Option<String>)`](crate::output::StartDeviceAuthorizationOutput::device_code): <p>The short-lived code that is used by the device when polling for a session token.</p>
     ///   - [`user_code(Option<String>)`](crate::output::StartDeviceAuthorizationOutput::user_code): <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
@@ -156,7 +156,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `CreateToken`.
     ///
-    /// <p>Creates and returns an access token for the authorized client. The access token issued will be used to fetch short-term credentials for the assigned roles in the Amazon Web Services account.</p>
+    /// <p>Creates and returns an access token for the authorized client. The access token issued will be used to fetch short-term credentials for the assigned roles in the AWS account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateToken {
         handle: std::sync::Arc<super::Handle>,
@@ -277,13 +277,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_code(input);
             self
         }
-        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
         /// <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
         pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.refresh_token(input.into());
             self
         }
-        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
         /// <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
         pub fn set_refresh_token(
             mut self,
@@ -322,7 +322,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterClient`.
     ///
-    /// <p>Registers a client with Amazon Web Services SSO. This allows clients to initiate device authorization. The output should be persisted for reuse through many authentication requests.</p>
+    /// <p>Registers a client with IAM Identity Center. This allows clients to initiate device authorization. The output should be persisted for reuse through many authentication requests.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterClient {
         handle: std::sync::Arc<super::Handle>,
@@ -490,12 +490,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier string for the client that is registered with Amazon Web Services SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+        /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_id(input.into());
             self
         }
-        /// <p>The unique identifier string for the client that is registered with Amazon Web Services SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+        /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_id(input);
             self
@@ -513,12 +513,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_secret(input);
             self
         }
-        /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+        /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
         pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.start_url(input.into());
             self
         }
-        /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+        /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_start_url(input);
             self

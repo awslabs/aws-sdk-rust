@@ -394,6 +394,12 @@ pub struct Transport {
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     #[doc(hidden)]
     pub smoothing_latency: i32,
+    /// Source IP or domain name for SRT-caller protocol.
+    #[doc(hidden)]
+    pub source_listener_address: std::option::Option<std::string::String>,
+    /// Source port for SRT-caller protocol.
+    #[doc(hidden)]
+    pub source_listener_port: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -439,6 +445,14 @@ impl Transport {
     pub fn smoothing_latency(&self) -> i32 {
         self.smoothing_latency
     }
+    /// Source IP or domain name for SRT-caller protocol.
+    pub fn source_listener_address(&self) -> std::option::Option<&str> {
+        self.source_listener_address.as_deref()
+    }
+    /// Source port for SRT-caller protocol.
+    pub fn source_listener_port(&self) -> i32 {
+        self.source_listener_port
+    }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
@@ -457,6 +471,8 @@ impl std::fmt::Debug for Transport {
         formatter.field("sender_control_port", &self.sender_control_port);
         formatter.field("sender_ip_address", &self.sender_ip_address);
         formatter.field("smoothing_latency", &self.smoothing_latency);
+        formatter.field("source_listener_address", &self.source_listener_address);
+        formatter.field("source_listener_port", &self.source_listener_port);
         formatter.field("stream_id", &self.stream_id);
         formatter.finish()
     }
@@ -477,6 +493,8 @@ pub mod transport {
         pub(crate) sender_control_port: std::option::Option<i32>,
         pub(crate) sender_ip_address: std::option::Option<std::string::String>,
         pub(crate) smoothing_latency: std::option::Option<i32>,
+        pub(crate) source_listener_address: std::option::Option<std::string::String>,
+        pub(crate) source_listener_port: std::option::Option<i32>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -592,6 +610,29 @@ pub mod transport {
             self.smoothing_latency = input;
             self
         }
+        /// Source IP or domain name for SRT-caller protocol.
+        pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_listener_address = Some(input.into());
+            self
+        }
+        /// Source IP or domain name for SRT-caller protocol.
+        pub fn set_source_listener_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_listener_address = input;
+            self
+        }
+        /// Source port for SRT-caller protocol.
+        pub fn source_listener_port(mut self, input: i32) -> Self {
+            self.source_listener_port = Some(input);
+            self
+        }
+        /// Source port for SRT-caller protocol.
+        pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.source_listener_port = input;
+            self
+        }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
@@ -615,6 +656,8 @@ pub mod transport {
                 sender_control_port: self.sender_control_port.unwrap_or_default(),
                 sender_ip_address: self.sender_ip_address,
                 smoothing_latency: self.smoothing_latency.unwrap_or_default(),
+                source_listener_address: self.source_listener_address,
+                source_listener_port: self.source_listener_port.unwrap_or_default(),
                 stream_id: self.stream_id,
             }
         }
@@ -650,6 +693,8 @@ pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     RtpFec,
     #[allow(missing_docs)] // documentation missing in model
+    SrtCaller,
+    #[allow(missing_docs)] // documentation missing in model
     SrtListener,
     #[allow(missing_docs)] // documentation missing in model
     St2110Jpegxs,
@@ -668,6 +713,7 @@ impl std::convert::From<&str> for Protocol {
             "rist" => Protocol::Rist,
             "rtp" => Protocol::Rtp,
             "rtp-fec" => Protocol::RtpFec,
+            "srt-caller" => Protocol::SrtCaller,
             "srt-listener" => Protocol::SrtListener,
             "st2110-jpegxs" => Protocol::St2110Jpegxs,
             "zixi-pull" => Protocol::ZixiPull,
@@ -692,6 +738,7 @@ impl Protocol {
             Protocol::Rist => "rist",
             Protocol::Rtp => "rtp",
             Protocol::RtpFec => "rtp-fec",
+            Protocol::SrtCaller => "srt-caller",
             Protocol::SrtListener => "srt-listener",
             Protocol::St2110Jpegxs => "st2110-jpegxs",
             Protocol::ZixiPull => "zixi-pull",
@@ -707,6 +754,7 @@ impl Protocol {
             "rist",
             "rtp",
             "rtp-fec",
+            "srt-caller",
             "srt-listener",
             "st2110-jpegxs",
             "zixi-pull",
@@ -7432,6 +7480,12 @@ pub struct SetSourceRequest {
     /// The IP address that the flow communicates with to initiate connection with the sender.
     #[doc(hidden)]
     pub sender_ip_address: std::option::Option<std::string::String>,
+    /// Source IP or domain name for SRT-caller protocol.
+    #[doc(hidden)]
+    pub source_listener_address: std::option::Option<std::string::String>,
+    /// Source port for SRT-caller protocol.
+    #[doc(hidden)]
+    pub source_listener_port: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -7497,6 +7551,14 @@ impl SetSourceRequest {
     pub fn sender_ip_address(&self) -> std::option::Option<&str> {
         self.sender_ip_address.as_deref()
     }
+    /// Source IP or domain name for SRT-caller protocol.
+    pub fn source_listener_address(&self) -> std::option::Option<&str> {
+        self.source_listener_address.as_deref()
+    }
+    /// Source port for SRT-caller protocol.
+    pub fn source_listener_port(&self) -> i32 {
+        self.source_listener_port
+    }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
@@ -7529,6 +7591,8 @@ impl std::fmt::Debug for SetSourceRequest {
         formatter.field("protocol", &self.protocol);
         formatter.field("sender_control_port", &self.sender_control_port);
         formatter.field("sender_ip_address", &self.sender_ip_address);
+        formatter.field("source_listener_address", &self.source_listener_address);
+        formatter.field("source_listener_port", &self.source_listener_port);
         formatter.field("stream_id", &self.stream_id);
         formatter.field("vpc_interface_name", &self.vpc_interface_name);
         formatter.field("whitelist_cidr", &self.whitelist_cidr);
@@ -7555,6 +7619,8 @@ pub mod set_source_request {
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
         pub(crate) sender_control_port: std::option::Option<i32>,
         pub(crate) sender_ip_address: std::option::Option<std::string::String>,
+        pub(crate) source_listener_address: std::option::Option<std::string::String>,
+        pub(crate) source_listener_port: std::option::Option<i32>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
         pub(crate) whitelist_cidr: std::option::Option<std::string::String>,
@@ -7713,6 +7779,29 @@ pub mod set_source_request {
             self.sender_ip_address = input;
             self
         }
+        /// Source IP or domain name for SRT-caller protocol.
+        pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_listener_address = Some(input.into());
+            self
+        }
+        /// Source IP or domain name for SRT-caller protocol.
+        pub fn set_source_listener_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_listener_address = input;
+            self
+        }
+        /// Source port for SRT-caller protocol.
+        pub fn source_listener_port(mut self, input: i32) -> Self {
+            self.source_listener_port = Some(input);
+            self
+        }
+        /// Source port for SRT-caller protocol.
+        pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.source_listener_port = input;
+            self
+        }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
@@ -7765,6 +7854,8 @@ pub mod set_source_request {
                 protocol: self.protocol,
                 sender_control_port: self.sender_control_port.unwrap_or_default(),
                 sender_ip_address: self.sender_ip_address,
+                source_listener_address: self.source_listener_address,
+                source_listener_port: self.source_listener_port.unwrap_or_default(),
                 stream_id: self.stream_id,
                 vpc_interface_name: self.vpc_interface_name,
                 whitelist_cidr: self.whitelist_cidr,

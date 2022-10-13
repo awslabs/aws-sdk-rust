@@ -1925,6 +1925,426 @@ impl AsRef<str> for ModelStatus {
     }
 }
 
+/// <p> Information about the label. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LabelSummary {
+    /// <p> The name of the label group. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> The ID of the label. </p>
+    #[doc(hidden)]
+    pub label_id: std::option::Option<std::string::String>,
+    /// <p> The ARN of the label group. </p>
+    #[doc(hidden)]
+    pub label_group_arn: std::option::Option<std::string::String>,
+    /// <p> The timestamp indicating the start of the label. </p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The timestamp indicating the end of the label. </p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    #[doc(hidden)]
+    pub rating: std::option::Option<crate::model::LabelRating>,
+    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    #[doc(hidden)]
+    pub fault_code: std::option::Option<std::string::String>,
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    #[doc(hidden)]
+    pub equipment: std::option::Option<std::string::String>,
+    /// <p> The time at which the label was created. </p>
+    #[doc(hidden)]
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl LabelSummary {
+    /// <p> The name of the label group. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+    /// <p> The ID of the label. </p>
+    pub fn label_id(&self) -> std::option::Option<&str> {
+        self.label_id.as_deref()
+    }
+    /// <p> The ARN of the label group. </p>
+    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+        self.label_group_arn.as_deref()
+    }
+    /// <p> The timestamp indicating the start of the label. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p> The timestamp indicating the end of the label. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    pub fn rating(&self) -> std::option::Option<&crate::model::LabelRating> {
+        self.rating.as_ref()
+    }
+    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn fault_code(&self) -> std::option::Option<&str> {
+        self.fault_code.as_deref()
+    }
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    pub fn equipment(&self) -> std::option::Option<&str> {
+        self.equipment.as_deref()
+    }
+    /// <p> The time at which the label was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+}
+impl std::fmt::Debug for LabelSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LabelSummary");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.field("label_id", &self.label_id);
+        formatter.field("label_group_arn", &self.label_group_arn);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("rating", &self.rating);
+        formatter.field("fault_code", &self.fault_code);
+        formatter.field("equipment", &self.equipment);
+        formatter.field("created_at", &self.created_at);
+        formatter.finish()
+    }
+}
+/// See [`LabelSummary`](crate::model::LabelSummary).
+pub mod label_summary {
+
+    /// A builder for [`LabelSummary`](crate::model::LabelSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+        pub(crate) label_id: std::option::Option<std::string::String>,
+        pub(crate) label_group_arn: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) rating: std::option::Option<crate::model::LabelRating>,
+        pub(crate) fault_code: std::option::Option<std::string::String>,
+        pub(crate) equipment: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The name of the label group. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the label group. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// <p> The ID of the label. </p>
+        pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the label. </p>
+        pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_id = input;
+            self
+        }
+        /// <p> The ARN of the label group. </p>
+        pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_arn = Some(input.into());
+            self
+        }
+        /// <p> The ARN of the label group. </p>
+        pub fn set_label_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_arn = input;
+            self
+        }
+        /// <p> The timestamp indicating the start of the label. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p> The timestamp indicating the start of the label. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p> The timestamp indicating the end of the label. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p> The timestamp indicating the end of the label. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p> Indicates whether a labeled event represents an anomaly. </p>
+        pub fn rating(mut self, input: crate::model::LabelRating) -> Self {
+            self.rating = Some(input);
+            self
+        }
+        /// <p> Indicates whether a labeled event represents an anomaly. </p>
+        pub fn set_rating(mut self, input: std::option::Option<crate::model::LabelRating>) -> Self {
+            self.rating = input;
+            self
+        }
+        /// <p> Indicates the type of anomaly associated with the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fault_code = Some(input.into());
+            self
+        }
+        /// <p> Indicates the type of anomaly associated with the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fault_code = input;
+            self
+        }
+        /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+        pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.equipment = Some(input.into());
+            self
+        }
+        /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+        pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.equipment = input;
+            self
+        }
+        /// <p> The time at which the label was created. </p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p> The time at which the label was created. </p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LabelSummary`](crate::model::LabelSummary).
+        pub fn build(self) -> crate::model::LabelSummary {
+            crate::model::LabelSummary {
+                label_group_name: self.label_group_name,
+                label_id: self.label_id,
+                label_group_arn: self.label_group_arn,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                rating: self.rating,
+                fault_code: self.fault_code,
+                equipment: self.equipment,
+                created_at: self.created_at,
+            }
+        }
+    }
+}
+impl LabelSummary {
+    /// Creates a new builder-style object to manufacture [`LabelSummary`](crate::model::LabelSummary).
+    pub fn builder() -> crate::model::label_summary::Builder {
+        crate::model::label_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LabelRating {
+    #[allow(missing_docs)] // documentation missing in model
+    Anomaly,
+    #[allow(missing_docs)] // documentation missing in model
+    Neutral,
+    #[allow(missing_docs)] // documentation missing in model
+    NoAnomaly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LabelRating {
+    fn from(s: &str) -> Self {
+        match s {
+            "ANOMALY" => LabelRating::Anomaly,
+            "NEUTRAL" => LabelRating::Neutral,
+            "NO_ANOMALY" => LabelRating::NoAnomaly,
+            other => LabelRating::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LabelRating {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LabelRating::from(s))
+    }
+}
+impl LabelRating {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LabelRating::Anomaly => "ANOMALY",
+            LabelRating::Neutral => "NEUTRAL",
+            LabelRating::NoAnomaly => "NO_ANOMALY",
+            LabelRating::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ANOMALY", "NEUTRAL", "NO_ANOMALY"]
+    }
+}
+impl AsRef<str> for LabelRating {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Contains information about the label group. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LabelGroupSummary {
+    /// <p> The name of the label group. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> The ARN of the label group. </p>
+    #[doc(hidden)]
+    pub label_group_arn: std::option::Option<std::string::String>,
+    /// <p> The time at which the label group was created. </p>
+    #[doc(hidden)]
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The time at which the label group was updated. </p>
+    #[doc(hidden)]
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl LabelGroupSummary {
+    /// <p> The name of the label group. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+    /// <p> The ARN of the label group. </p>
+    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+        self.label_group_arn.as_deref()
+    }
+    /// <p> The time at which the label group was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p> The time at which the label group was updated. </p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+}
+impl std::fmt::Debug for LabelGroupSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LabelGroupSummary");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.field("label_group_arn", &self.label_group_arn);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`LabelGroupSummary`](crate::model::LabelGroupSummary).
+pub mod label_group_summary {
+
+    /// A builder for [`LabelGroupSummary`](crate::model::LabelGroupSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+        pub(crate) label_group_arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The name of the label group. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the label group. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// <p> The ARN of the label group. </p>
+        pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_arn = Some(input.into());
+            self
+        }
+        /// <p> The ARN of the label group. </p>
+        pub fn set_label_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_arn = input;
+            self
+        }
+        /// <p> The time at which the label group was created. </p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p> The time at which the label group was created. </p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p> The time at which the label group was updated. </p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p> The time at which the label group was updated. </p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LabelGroupSummary`](crate::model::LabelGroupSummary).
+        pub fn build(self) -> crate::model::LabelGroupSummary {
+            crate::model::LabelGroupSummary {
+                label_group_name: self.label_group_name,
+                label_group_arn: self.label_group_arn,
+                created_at: self.created_at,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl LabelGroupSummary {
+    /// Creates a new builder-style object to manufacture [`LabelGroupSummary`](crate::model::LabelGroupSummary).
+    pub fn builder() -> crate::model::label_group_summary::Builder {
+        crate::model::label_group_summary::Builder::default()
+    }
+}
+
 /// <p>Contains information about the specific inference scheduler, including data delay offset, model name and ARN, status, and so on. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1950,6 +2370,9 @@ pub struct InferenceSchedulerSummary {
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
     #[doc(hidden)]
     pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
+    /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+    #[doc(hidden)]
+    pub latest_inference_result: std::option::Option<crate::model::LatestInferenceResult>,
 }
 impl InferenceSchedulerSummary {
     /// <p>The name of the ML model used for the inference scheduler. </p>
@@ -1980,6 +2403,12 @@ impl InferenceSchedulerSummary {
     pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
+    /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+    pub fn latest_inference_result(
+        &self,
+    ) -> std::option::Option<&crate::model::LatestInferenceResult> {
+        self.latest_inference_result.as_ref()
+    }
 }
 impl std::fmt::Debug for InferenceSchedulerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1994,6 +2423,7 @@ impl std::fmt::Debug for InferenceSchedulerSummary {
             &self.data_delay_offset_in_minutes,
         );
         formatter.field("data_upload_frequency", &self.data_upload_frequency);
+        formatter.field("latest_inference_result", &self.latest_inference_result);
         formatter.finish()
     }
 }
@@ -2010,6 +2440,8 @@ pub mod inference_scheduler_summary {
         pub(crate) status: std::option::Option<crate::model::InferenceSchedulerStatus>,
         pub(crate) data_delay_offset_in_minutes: std::option::Option<i64>,
         pub(crate) data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
+        pub(crate) latest_inference_result:
+            std::option::Option<crate::model::LatestInferenceResult>,
     }
     impl Builder {
         /// <p>The name of the ML model used for the inference scheduler. </p>
@@ -2094,6 +2526,22 @@ pub mod inference_scheduler_summary {
             self.data_upload_frequency = input;
             self
         }
+        /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+        pub fn latest_inference_result(
+            mut self,
+            input: crate::model::LatestInferenceResult,
+        ) -> Self {
+            self.latest_inference_result = Some(input);
+            self
+        }
+        /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+        pub fn set_latest_inference_result(
+            mut self,
+            input: std::option::Option<crate::model::LatestInferenceResult>,
+        ) -> Self {
+            self.latest_inference_result = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
         pub fn build(self) -> crate::model::InferenceSchedulerSummary {
             crate::model::InferenceSchedulerSummary {
@@ -2104,6 +2552,7 @@ pub mod inference_scheduler_summary {
                 status: self.status,
                 data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
                 data_upload_frequency: self.data_upload_frequency,
+                latest_inference_result: self.latest_inference_result,
             }
         }
     }
@@ -2112,6 +2561,61 @@ impl InferenceSchedulerSummary {
     /// Creates a new builder-style object to manufacture [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
     pub fn builder() -> crate::model::inference_scheduler_summary::Builder {
         crate::model::inference_scheduler_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LatestInferenceResult {
+    #[allow(missing_docs)] // documentation missing in model
+    Anomalous,
+    #[allow(missing_docs)] // documentation missing in model
+    Normal,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LatestInferenceResult {
+    fn from(s: &str) -> Self {
+        match s {
+            "ANOMALOUS" => LatestInferenceResult::Anomalous,
+            "NORMAL" => LatestInferenceResult::Normal,
+            other => LatestInferenceResult::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LatestInferenceResult {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LatestInferenceResult::from(s))
+    }
+}
+impl LatestInferenceResult {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LatestInferenceResult::Anomalous => "ANOMALOUS",
+            LatestInferenceResult::Normal => "NORMAL",
+            LatestInferenceResult::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ANOMALOUS", "NORMAL"]
+    }
+}
+impl AsRef<str> for LatestInferenceResult {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3228,6 +3732,9 @@ pub struct LabelsInputConfiguration {
     /// <p>Contains location information for the S3 location being used for label data. </p>
     #[doc(hidden)]
     pub s3_input_configuration: std::option::Option<crate::model::LabelsS3InputConfiguration>,
+    /// <p> The name of the label group to be used for label data. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
 }
 impl LabelsInputConfiguration {
     /// <p>Contains location information for the S3 location being used for label data. </p>
@@ -3236,11 +3743,16 @@ impl LabelsInputConfiguration {
     ) -> std::option::Option<&crate::model::LabelsS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
+    /// <p> The name of the label group to be used for label data. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for LabelsInputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LabelsInputConfiguration");
         formatter.field("s3_input_configuration", &self.s3_input_configuration);
+        formatter.field("label_group_name", &self.label_group_name);
         formatter.finish()
     }
 }
@@ -3252,6 +3764,7 @@ pub mod labels_input_configuration {
     pub struct Builder {
         pub(crate) s3_input_configuration:
             std::option::Option<crate::model::LabelsS3InputConfiguration>,
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Contains location information for the S3 location being used for label data. </p>
@@ -3270,10 +3783,24 @@ pub mod labels_input_configuration {
             self.s3_input_configuration = input;
             self
         }
+        /// <p> The name of the label group to be used for label data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the label group to be used for label data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
         pub fn build(self) -> crate::model::LabelsInputConfiguration {
             crate::model::LabelsInputConfiguration {
                 s3_input_configuration: self.s3_input_configuration,
+                label_group_name: self.label_group_name,
             }
         }
     }

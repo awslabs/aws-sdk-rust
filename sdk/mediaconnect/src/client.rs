@@ -480,6 +480,8 @@ impl Client {
     ///   - [`sender_control_port(i32)`](crate::client::fluent_builders::UpdateFlowSource::sender_control_port) / [`set_sender_control_port(i32)`](crate::client::fluent_builders::UpdateFlowSource::set_sender_control_port): The port that the flow uses to send outbound requests to initiate connection with the sender.
     ///   - [`sender_ip_address(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::sender_ip_address) / [`set_sender_ip_address(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_sender_ip_address): The IP address that the flow communicates with to initiate connection with the sender.
     ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_source_arn): The ARN of the source that you want to update.
+    ///   - [`source_listener_address(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::source_listener_address) / [`set_source_listener_address(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_source_listener_address): Source IP or domain name for SRT-caller protocol.
+    ///   - [`source_listener_port(i32)`](crate::client::fluent_builders::UpdateFlowSource::source_listener_port) / [`set_source_listener_port(i32)`](crate::client::fluent_builders::UpdateFlowSource::set_source_listener_port): Source port for SRT-caller protocol.
     ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_stream_id): The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     ///   - [`vpc_interface_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::vpc_interface_name) / [`set_vpc_interface_name(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_vpc_interface_name): The name of the VPC interface to use for this source.
     ///   - [`whitelist_cidr(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::whitelist_cidr) / [`set_whitelist_cidr(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_whitelist_cidr): The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -3719,6 +3721,29 @@ pub mod fluent_builders {
         /// The ARN of the source that you want to update.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_source_arn(input);
+            self
+        }
+        /// Source IP or domain name for SRT-caller protocol.
+        pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_listener_address(input.into());
+            self
+        }
+        /// Source IP or domain name for SRT-caller protocol.
+        pub fn set_source_listener_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_listener_address(input);
+            self
+        }
+        /// Source port for SRT-caller protocol.
+        pub fn source_listener_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.source_listener_port(input);
+            self
+        }
+        /// Source port for SRT-caller protocol.
+        pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_source_listener_port(input);
             self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.

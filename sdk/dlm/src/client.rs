@@ -335,6 +335,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLifecyclePolicy`.
     ///
     /// <p>Deletes the specified lifecycle policy and halts the automated operations that the policy specified.</p>
+    /// <p>For more information about deleting a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete lifecycle policies</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLifecyclePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -915,6 +916,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLifecyclePolicy`.
     ///
     /// <p>Updates the specified lifecycle policy.</p>
+    /// <p>For more information about updating a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify lifecycle policies</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLifecyclePolicy {
         handle: std::sync::Arc<super::Handle>,

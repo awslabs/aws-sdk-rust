@@ -1229,7 +1229,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::GetInstanceMetricData::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::GetInstanceMetricData::set_instance_name): <p>The name of the instance for which you want to get metrics data.</p>
-    ///   - [`metric_name(InstanceMetricName)`](crate::client::fluent_builders::GetInstanceMetricData::metric_name) / [`set_metric_name(Option<InstanceMetricName>)`](crate::client::fluent_builders::GetInstanceMetricData::set_metric_name): <p>The metric for which you want to return information.</p>  <p>Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>  <ul>   <li> <p> <b> <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance available for your instance to burst above its baseline. Your instance continuously accrues and consumes burst capacity. Burst capacity stops accruing when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>BurstCapacityTime</code> </b> - The available amount of time for your instance to burst at 100% CPU utilization. Your instance continuously accrues and consumes burst capacity. Burst capacity time stops accruing when your instance's <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity time is consumed at the full rate only when your instance operates at 100% CPU utilization. For example, if your instance operates at 50% CPU utilization in the burstable zone for a 5-minute period, then it consumes CPU burst capacity minutes at a 50% rate in that period. Your instance consumed 2 minutes and 30 seconds of CPU burst capacity minutes in the 5-minute period. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Seconds</code>.</p> </li>   <li> <p> <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the instance. This metric identifies the processing power to run the applications on the instance. Tools in your operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor core.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This metric identifies the volume of incoming network traffic to the instance. The number reported is the number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>   <li> <p> <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>  </ul>
+    ///   - [`metric_name(InstanceMetricName)`](crate::client::fluent_builders::GetInstanceMetricData::metric_name) / [`set_metric_name(Option<InstanceMetricName>)`](crate::client::fluent_builders::GetInstanceMetricData::set_metric_name): <p>The metric for which you want to return information.</p>  <p>Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>  <ul>   <li> <p> <b> <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance available for your instance to burst above its baseline. Your instance continuously accrues and consumes burst capacity. Burst capacity stops accruing when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>BurstCapacityTime</code> </b> - The available amount of time for your instance to burst at 100% CPU utilization. Your instance continuously accrues and consumes burst capacity. Burst capacity time stops accruing when your instance's <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity time is consumed at the full rate only when your instance operates at 100% CPU utilization. For example, if your instance operates at 50% CPU utilization in the burstable zone for a 5-minute period, then it consumes CPU burst capacity minutes at a 50% rate in that period. Your instance consumed 2 minutes and 30 seconds of CPU burst capacity minutes in the 5-minute period. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Seconds</code>.</p> </li>   <li> <p> <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the instance. This metric identifies the processing power to run the applications on the instance. Tools in your operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor core.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This metric identifies the volume of incoming network traffic to the instance. The number reported is the number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>   <li> <p> <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>  </ul>
     ///   - [`period(i32)`](crate::client::fluent_builders::GetInstanceMetricData::period) / [`set_period(i32)`](crate::client::fluent_builders::GetInstanceMetricData::set_period): <p>The granularity, in seconds, of the returned data points.</p>  <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
     ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetInstanceMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetInstanceMetricData::set_start_time): <p>The start time of the time period.</p>
     ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetInstanceMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetInstanceMetricData::set_end_time): <p>The end time of the time period.</p>
@@ -1932,6 +1932,22 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateDomainEntryError>`](crate::error::UpdateDomainEntryError)
     pub fn update_domain_entry(&self) -> fluent_builders::UpdateDomainEntry {
         fluent_builders::UpdateDomainEntry::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateInstanceMetadataOptions`](crate::client::fluent_builders::UpdateInstanceMetadataOptions) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::set_instance_name): <p>The name of the instance for which to update metadata parameters.</p>
+    ///   - [`http_tokens(HttpTokens)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::http_tokens) / [`set_http_tokens(Option<HttpTokens>)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::set_http_tokens): <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>  <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>  <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
+    ///   - [`http_endpoint(HttpEndpoint)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::http_endpoint) / [`set_http_endpoint(Option<HttpEndpoint>)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::set_http_endpoint): <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>  <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
+    ///   - [`http_put_response_hop_limit(i32)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::http_put_response_hop_limit) / [`set_http_put_response_hop_limit(Option<i32>)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::set_http_put_response_hop_limit): <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
+    ///   - [`http_protocol_ipv6(HttpProtocolIpv6)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::http_protocol_ipv6) / [`set_http_protocol_ipv6(Option<HttpProtocolIpv6>)`](crate::client::fluent_builders::UpdateInstanceMetadataOptions::set_http_protocol_ipv6): <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>   <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>  </note>
+    /// - On success, responds with [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::UpdateInstanceMetadataOptionsOutput::operation): <p>Describes the API operation.</p>
+    /// - On failure, responds with [`SdkError<UpdateInstanceMetadataOptionsError>`](crate::error::UpdateInstanceMetadataOptionsError)
+    pub fn update_instance_metadata_options(
+        &self,
+    ) -> fluent_builders::UpdateInstanceMetadataOptions {
+        fluent_builders::UpdateInstanceMetadataOptions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateLoadBalancerAttribute`](crate::client::fluent_builders::UpdateLoadBalancerAttribute) operation.
     ///
@@ -12241,6 +12257,7 @@ pub mod fluent_builders {
         /// <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::InstanceMetricName) -> Self {
             self.inner = self.inner.metric_name(input);
@@ -12257,6 +12274,7 @@ pub mod fluent_builders {
         /// <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -18127,6 +18145,145 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DomainEntry>,
         ) -> Self {
             self.inner = self.inner.set_domain_entry(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateInstanceMetadataOptions`.
+    ///
+    /// <p>Modifies the Amazon Lightsail instance metadata parameters on a running or stopped instance. When you modify the parameters on a running instance, the <code>GetInstance</code> or <code>GetInstances</code> API operation initially responds with a state of <code>pending</code>. After the parameter modifications are successfully applied, the state changes to <code>applied</code> in subsequent <code>GetInstance</code> or <code>GetInstances</code> API calls. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-instance-metadata-service">Use IMDSv2 with an Amazon Lightsail instance</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateInstanceMetadataOptions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_instance_metadata_options_input::Builder,
+    }
+    impl UpdateInstanceMetadataOptions {
+        /// Creates a new `UpdateInstanceMetadataOptions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateInstanceMetadataOptions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateInstanceMetadataOptionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateInstanceMetadataOptionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateInstanceMetadataOptionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the instance for which to update metadata parameters.</p>
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(input.into());
+            self
+        }
+        /// <p>The name of the instance for which to update metadata parameters.</p>
+        pub fn set_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_name(input);
+            self
+        }
+        /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
+        /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+        /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
+        pub fn http_tokens(mut self, input: crate::model::HttpTokens) -> Self {
+            self.inner = self.inner.http_tokens(input);
+            self
+        }
+        /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
+        /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+        /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
+        pub fn set_http_tokens(
+            mut self,
+            input: std::option::Option<crate::model::HttpTokens>,
+        ) -> Self {
+            self.inner = self.inner.set_http_tokens(input);
+            self
+        }
+        /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
+        /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
+        pub fn http_endpoint(mut self, input: crate::model::HttpEndpoint) -> Self {
+            self.inner = self.inner.http_endpoint(input);
+            self
+        }
+        /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
+        /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
+        pub fn set_http_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::HttpEndpoint>,
+        ) -> Self {
+            self.inner = self.inner.set_http_endpoint(input);
+            self
+        }
+        /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
+        pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.http_put_response_hop_limit(input);
+            self
+        }
+        /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
+        pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_http_put_response_hop_limit(input);
+            self
+        }
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
+        /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
+        /// </note>
+        pub fn http_protocol_ipv6(mut self, input: crate::model::HttpProtocolIpv6) -> Self {
+            self.inner = self.inner.http_protocol_ipv6(input);
+            self
+        }
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
+        /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
+        /// </note>
+        pub fn set_http_protocol_ipv6(
+            mut self,
+            input: std::option::Option<crate::model::HttpProtocolIpv6>,
+        ) -> Self {
+            self.inner = self.inner.set_http_protocol_ipv6(input);
             self
         }
     }

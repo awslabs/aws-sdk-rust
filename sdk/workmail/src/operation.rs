@@ -67,6 +67,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateMemberToGroup {
     }
 }
 
+/// Operation shape for `AssumeImpersonationRole`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`assume_impersonation_role`](crate::client::Client::assume_impersonation_role).
+///
+/// See [`crate::client::fluent_builders::AssumeImpersonationRole`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssumeImpersonationRole {
+    _private: (),
+}
+impl AssumeImpersonationRole {
+    /// Creates a new builder-style object to manufacture [`AssumeImpersonationRoleInput`](crate::input::AssumeImpersonationRoleInput).
+    pub fn builder() -> crate::input::assume_impersonation_role_input::Builder {
+        crate::input::assume_impersonation_role_input::Builder::default()
+    }
+    /// Creates a new `AssumeImpersonationRole` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssumeImpersonationRole {
+    type Output = std::result::Result<
+        crate::output::AssumeImpersonationRoleOutput,
+        crate::error::AssumeImpersonationRoleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_assume_impersonation_role_error(response)
+        } else {
+            crate::operation_deser::parse_assume_impersonation_role_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CancelMailboxExportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -195,6 +229,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
             crate::operation_deser::parse_create_group_error(response)
         } else {
             crate::operation_deser::parse_create_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateImpersonationRole`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_impersonation_role`](crate::client::Client::create_impersonation_role).
+///
+/// See [`crate::client::fluent_builders::CreateImpersonationRole`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateImpersonationRole {
+    _private: (),
+}
+impl CreateImpersonationRole {
+    /// Creates a new builder-style object to manufacture [`CreateImpersonationRoleInput`](crate::input::CreateImpersonationRoleInput).
+    pub fn builder() -> crate::input::create_impersonation_role_input::Builder {
+        crate::input::create_impersonation_role_input::Builder::default()
+    }
+    /// Creates a new `CreateImpersonationRole` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateImpersonationRole {
+    type Output = std::result::Result<
+        crate::output::CreateImpersonationRoleOutput,
+        crate::error::CreateImpersonationRoleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_impersonation_role_error(response)
+        } else {
+            crate::operation_deser::parse_create_impersonation_role_response(response)
         }
     }
 }
@@ -493,6 +561,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
             crate::operation_deser::parse_delete_group_error(response)
         } else {
             crate::operation_deser::parse_delete_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteImpersonationRole`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_impersonation_role`](crate::client::Client::delete_impersonation_role).
+///
+/// See [`crate::client::fluent_builders::DeleteImpersonationRole`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteImpersonationRole {
+    _private: (),
+}
+impl DeleteImpersonationRole {
+    /// Creates a new builder-style object to manufacture [`DeleteImpersonationRoleInput`](crate::input::DeleteImpersonationRoleInput).
+    pub fn builder() -> crate::input::delete_impersonation_role_input::Builder {
+        crate::input::delete_impersonation_role_input::Builder::default()
+    }
+    /// Creates a new `DeleteImpersonationRole` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteImpersonationRole {
+    type Output = std::result::Result<
+        crate::output::DeleteImpersonationRoleOutput,
+        crate::error::DeleteImpersonationRoleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_impersonation_role_error(response)
+        } else {
+            crate::operation_deser::parse_delete_impersonation_role_response(response)
         }
     }
 }
@@ -1169,6 +1271,74 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDefaultRetentionPolic
     }
 }
 
+/// Operation shape for `GetImpersonationRole`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_impersonation_role`](crate::client::Client::get_impersonation_role).
+///
+/// See [`crate::client::fluent_builders::GetImpersonationRole`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetImpersonationRole {
+    _private: (),
+}
+impl GetImpersonationRole {
+    /// Creates a new builder-style object to manufacture [`GetImpersonationRoleInput`](crate::input::GetImpersonationRoleInput).
+    pub fn builder() -> crate::input::get_impersonation_role_input::Builder {
+        crate::input::get_impersonation_role_input::Builder::default()
+    }
+    /// Creates a new `GetImpersonationRole` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetImpersonationRole {
+    type Output = std::result::Result<
+        crate::output::GetImpersonationRoleOutput,
+        crate::error::GetImpersonationRoleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_impersonation_role_error(response)
+        } else {
+            crate::operation_deser::parse_get_impersonation_role_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetImpersonationRoleEffect`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_impersonation_role_effect`](crate::client::Client::get_impersonation_role_effect).
+///
+/// See [`crate::client::fluent_builders::GetImpersonationRoleEffect`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetImpersonationRoleEffect {
+    _private: (),
+}
+impl GetImpersonationRoleEffect {
+    /// Creates a new builder-style object to manufacture [`GetImpersonationRoleEffectInput`](crate::input::GetImpersonationRoleEffectInput).
+    pub fn builder() -> crate::input::get_impersonation_role_effect_input::Builder {
+        crate::input::get_impersonation_role_effect_input::Builder::default()
+    }
+    /// Creates a new `GetImpersonationRoleEffect` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetImpersonationRoleEffect {
+    type Output = std::result::Result<
+        crate::output::GetImpersonationRoleEffectOutput,
+        crate::error::GetImpersonationRoleEffectError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_impersonation_role_effect_error(response)
+        } else {
+            crate::operation_deser::parse_get_impersonation_role_effect_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetMailboxDetails`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1465,6 +1635,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroups {
             crate::operation_deser::parse_list_groups_error(response)
         } else {
             crate::operation_deser::parse_list_groups_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListImpersonationRoles`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_impersonation_roles`](crate::client::Client::list_impersonation_roles).
+///
+/// See [`crate::client::fluent_builders::ListImpersonationRoles`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListImpersonationRoles {
+    _private: (),
+}
+impl ListImpersonationRoles {
+    /// Creates a new builder-style object to manufacture [`ListImpersonationRolesInput`](crate::input::ListImpersonationRolesInput).
+    pub fn builder() -> crate::input::list_impersonation_roles_input::Builder {
+        crate::input::list_impersonation_roles_input::Builder::default()
+    }
+    /// Creates a new `ListImpersonationRoles` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListImpersonationRoles {
+    type Output = std::result::Result<
+        crate::output::ListImpersonationRolesOutput,
+        crate::error::ListImpersonationRolesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_impersonation_roles_error(response)
+        } else {
+            crate::operation_deser::parse_list_impersonation_roles_response(response)
         }
     }
 }
@@ -2304,6 +2508,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDefaultMailDomain 
             crate::operation_deser::parse_update_default_mail_domain_error(response)
         } else {
             crate::operation_deser::parse_update_default_mail_domain_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateImpersonationRole`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_impersonation_role`](crate::client::Client::update_impersonation_role).
+///
+/// See [`crate::client::fluent_builders::UpdateImpersonationRole`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateImpersonationRole {
+    _private: (),
+}
+impl UpdateImpersonationRole {
+    /// Creates a new builder-style object to manufacture [`UpdateImpersonationRoleInput`](crate::input::UpdateImpersonationRoleInput).
+    pub fn builder() -> crate::input::update_impersonation_role_input::Builder {
+        crate::input::update_impersonation_role_input::Builder::default()
+    }
+    /// Creates a new `UpdateImpersonationRole` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateImpersonationRole {
+    type Output = std::result::Result<
+        crate::output::UpdateImpersonationRoleOutput,
+        crate::error::UpdateImpersonationRoleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_impersonation_role_error(response)
+        } else {
+            crate::operation_deser::parse_update_impersonation_role_response(response)
         }
     }
 }

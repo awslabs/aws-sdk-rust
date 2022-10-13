@@ -1177,6 +1177,9 @@ pub struct Project {
     /// <p>When the project was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    #[doc(hidden)]
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
 }
 impl Project {
     /// <p>The project's ARN.</p>
@@ -1195,6 +1198,10 @@ impl Project {
     pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for Project {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1206,6 +1213,7 @@ impl std::fmt::Debug for Project {
             &self.default_job_timeout_minutes,
         );
         formatter.field("created", &self.created);
+        formatter.field("vpc_config", &self.vpc_config);
         formatter.finish()
     }
 }
@@ -1219,6 +1227,7 @@ pub mod project {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) default_job_timeout_minutes: std::option::Option<i32>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
     }
     impl Builder {
         /// <p>The project's ARN.</p>
@@ -1264,6 +1273,19 @@ pub mod project {
             self.created = input;
             self
         }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Project`](crate::model::Project).
         pub fn build(self) -> crate::model::Project {
             crate::model::Project {
@@ -1271,6 +1293,7 @@ pub mod project {
                 name: self.name,
                 default_job_timeout_minutes: self.default_job_timeout_minutes,
                 created: self.created,
+                vpc_config: self.vpc_config,
             }
         }
     }
@@ -1279,6 +1302,119 @@ impl Project {
     /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
     pub fn builder() -> crate::model::project::Builder {
         crate::model::project::Builder::default()
+    }
+}
+
+/// <p>Contains the VPC configuration data necessary to interface with AWS Device Farm's services.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VpcConfig {
+    /// <p>An array of one or more security groups IDs in your Amazon VPC.</p>
+    #[doc(hidden)]
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An array of one or more subnet IDs in your Amazon VPC.</p>
+    #[doc(hidden)]
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the Amazon VPC.</p>
+    #[doc(hidden)]
+    pub vpc_id: std::option::Option<std::string::String>,
+}
+impl VpcConfig {
+    /// <p>An array of one or more security groups IDs in your Amazon VPC.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>An array of one or more subnet IDs in your Amazon VPC.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The ID of the Amazon VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+}
+impl std::fmt::Debug for VpcConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VpcConfig");
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.finish()
+    }
+}
+/// See [`VpcConfig`](crate::model::VpcConfig).
+pub mod vpc_config {
+
+    /// A builder for [`VpcConfig`](crate::model::VpcConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>An array of one or more security groups IDs in your Amazon VPC.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>An array of one or more security groups IDs in your Amazon VPC.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>An array of one or more subnet IDs in your Amazon VPC.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>An array of one or more subnet IDs in your Amazon VPC.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// <p>The ID of the Amazon VPC.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon VPC.</p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcConfig`](crate::model::VpcConfig).
+        pub fn build(self) -> crate::model::VpcConfig {
+            crate::model::VpcConfig {
+                security_group_ids: self.security_group_ids,
+                subnet_ids: self.subnet_ids,
+                vpc_id: self.vpc_id,
+            }
+        }
+    }
+}
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
     }
 }
 
@@ -3167,7 +3303,7 @@ pub struct Run {
     #[doc(hidden)]
     pub web_url: std::option::Option<std::string::String>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
     /// <p>The ARN of the YAML-formatted test specification for the run.</p>
@@ -3176,6 +3312,9 @@ pub struct Run {
     /// <p>The results of a device filter used to select the devices for a test run.</p>
     #[doc(hidden)]
     pub device_selection_result: std::option::Option<crate::model::DeviceSelectionResult>,
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    #[doc(hidden)]
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
 }
 impl Run {
     /// <p>The run's ARN.</p>
@@ -3345,7 +3484,7 @@ impl Run {
         self.web_url.as_deref()
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -3358,6 +3497,10 @@ impl Run {
         &self,
     ) -> std::option::Option<&crate::model::DeviceSelectionResult> {
         self.device_selection_result.as_ref()
+    }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
     }
 }
 impl std::fmt::Debug for Run {
@@ -3394,6 +3537,7 @@ impl std::fmt::Debug for Run {
         formatter.field("skip_app_resign", &self.skip_app_resign);
         formatter.field("test_spec_arn", &self.test_spec_arn);
         formatter.field("device_selection_result", &self.device_selection_result);
+        formatter.field("vpc_config", &self.vpc_config);
         formatter.finish()
     }
 }
@@ -3436,6 +3580,7 @@ pub mod run {
         pub(crate) test_spec_arn: std::option::Option<std::string::String>,
         pub(crate) device_selection_result:
             std::option::Option<crate::model::DeviceSelectionResult>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
     }
     impl Builder {
         /// <p>The run's ARN.</p>
@@ -3865,13 +4010,13 @@ pub mod run {
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -3903,6 +4048,19 @@ pub mod run {
             input: std::option::Option<crate::model::DeviceSelectionResult>,
         ) -> Self {
             self.device_selection_result = input;
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
             self
         }
         /// Consumes the builder and constructs a [`Run`](crate::model::Run).
@@ -3939,6 +4097,7 @@ pub mod run {
                 skip_app_resign: self.skip_app_resign,
                 test_spec_arn: self.test_spec_arn,
                 device_selection_result: self.device_selection_result,
+                vpc_config: self.vpc_config,
             }
         }
     }
@@ -5840,9 +5999,12 @@ pub struct RemoteAccessSession {
     #[doc(hidden)]
     pub interaction_mode: std::option::Option<crate::model::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    #[doc(hidden)]
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
 }
 impl RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -5955,9 +6117,13 @@ impl RemoteAccessSession {
         self.interaction_mode.as_ref()
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
+    }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
     }
 }
 impl std::fmt::Debug for RemoteAccessSession {
@@ -5984,6 +6150,7 @@ impl std::fmt::Debug for RemoteAccessSession {
         formatter.field("device_udid", &self.device_udid);
         formatter.field("interaction_mode", &self.interaction_mode);
         formatter.field("skip_app_resign", &self.skip_app_resign);
+        formatter.field("vpc_config", &self.vpc_config);
         formatter.finish()
     }
 }
@@ -6014,6 +6181,7 @@ pub mod remote_access_session {
         pub(crate) device_udid: std::option::Option<std::string::String>,
         pub(crate) interaction_mode: std::option::Option<crate::model::InteractionMode>,
         pub(crate) skip_app_resign: std::option::Option<bool>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -6302,15 +6470,28 @@ pub mod remote_access_session {
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoteAccessSession`](crate::model::RemoteAccessSession).
@@ -6337,6 +6518,7 @@ pub mod remote_access_session {
                 device_udid: self.device_udid,
                 interaction_mode: self.interaction_mode,
                 skip_app_resign: self.skip_app_resign,
+                vpc_config: self.vpc_config,
             }
         }
     }
@@ -7765,7 +7947,7 @@ pub struct ExecutionConfiguration {
     #[doc(hidden)]
     pub video_capture: std::option::Option<bool>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
 }
@@ -7787,7 +7969,7 @@ impl ExecutionConfiguration {
         self.video_capture
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -7857,13 +8039,13 @@ pub mod execution_configuration {
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -12640,7 +12822,7 @@ pub struct AccountSettings {
     #[doc(hidden)]
     pub default_job_timeout_minutes: std::option::Option<i32>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
 }
@@ -12680,7 +12862,7 @@ impl AccountSettings {
         self.default_job_timeout_minutes
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -12836,13 +13018,13 @@ pub mod account_settings {
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self

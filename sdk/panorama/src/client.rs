@@ -263,6 +263,8 @@ impl Client {
     ///   - [`alternate_softwares(Option<Vec<AlternateSoftwareMetadata>>)`](crate::output::DescribeDeviceOutput::alternate_softwares): <p>Beta software releases available for the device.</p>
     ///   - [`latest_alternate_software(Option<String>)`](crate::output::DescribeDeviceOutput::latest_alternate_software): <p>The most recent beta software release.</p>
     ///   - [`brand(Option<DeviceBrand>)`](crate::output::DescribeDeviceOutput::brand): <p>The device's maker.</p>
+    ///   - [`latest_device_job(Option<LatestDeviceJob>)`](crate::output::DescribeDeviceOutput::latest_device_job): <p>A device's latest job. Includes the target image version, and the job status.</p>
+    ///   - [`device_aggregated_status(Option<DeviceAggregatedStatus>)`](crate::output::DescribeDeviceOutput::device_aggregated_status): <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
     pub fn describe_device(&self) -> fluent_builders::DescribeDevice {
         fluent_builders::DescribeDevice::new(self.handle.clone())
@@ -441,6 +443,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevices::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDevices::set_max_results): <p>The maximum number of devices to return in one page of results.</p>
+    ///   - [`sort_by(ListDevicesSortBy)`](crate::client::fluent_builders::ListDevices::sort_by) / [`set_sort_by(Option<ListDevicesSortBy>)`](crate::client::fluent_builders::ListDevices::set_sort_by): <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListDevices::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListDevices::set_sort_order): <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+    ///   - [`name_filter(impl Into<String>)`](crate::client::fluent_builders::ListDevices::name_filter) / [`set_name_filter(Option<String>)`](crate::client::fluent_builders::ListDevices::set_name_filter): <p>Filter based on device's name. Prefixes supported.</p>
+    ///   - [`device_aggregated_status_filter(DeviceAggregatedStatus)`](crate::client::fluent_builders::ListDevices::device_aggregated_status_filter) / [`set_device_aggregated_status_filter(Option<DeviceAggregatedStatus>)`](crate::client::fluent_builders::ListDevices::set_device_aggregated_status_filter): <p>Filter based on a device's status.</p>
     /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
     ///   - [`devices(Option<Vec<Device>>)`](crate::output::ListDevicesOutput::devices): <p>A list of devices.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
@@ -2793,6 +2799,58 @@ pub mod fluent_builders {
         /// <p>The maximum number of devices to return in one page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+        pub fn sort_by(mut self, input: crate::model::ListDevicesSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ListDevicesSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+        /// <p>Filter based on device's name. Prefixes supported.</p>
+        pub fn name_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_filter(input.into());
+            self
+        }
+        /// <p>Filter based on device's name. Prefixes supported.</p>
+        pub fn set_name_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name_filter(input);
+            self
+        }
+        /// <p>Filter based on a device's status.</p>
+        pub fn device_aggregated_status_filter(
+            mut self,
+            input: crate::model::DeviceAggregatedStatus,
+        ) -> Self {
+            self.inner = self.inner.device_aggregated_status_filter(input);
+            self
+        }
+        /// <p>Filter based on a device's status.</p>
+        pub fn set_device_aggregated_status_filter(
+            mut self,
+            input: std::option::Option<crate::model::DeviceAggregatedStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_device_aggregated_status_filter(input);
             self
         }
     }

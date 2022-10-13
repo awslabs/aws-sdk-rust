@@ -1005,6 +1005,8 @@ pub mod create_association_input {
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         >,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
@@ -1316,6 +1318,38 @@ pub mod create_association_input {
             self.target_maps = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAssociationInput`](crate::input::CreateAssociationInput).
         pub fn build(
             self,
@@ -1340,6 +1374,8 @@ pub mod create_association_input {
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
                 target_maps: self.target_maps,
+                tags: self.tags,
+                alarm_configuration: self.alarm_configuration,
             })
         }
     }
@@ -1695,7 +1731,7 @@ pub mod create_document_input {
         /// <p>A name for the SSM document.</p> <important>
         /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
         /// <ul>
-        /// <li> <p> <code>aws-</code> </p> </li>
+        /// <li> <p> <code>aws</code> </p> </li>
         /// <li> <p> <code>amazon</code> </p> </li>
         /// <li> <p> <code>amzn</code> </p> </li>
         /// </ul>
@@ -1707,7 +1743,7 @@ pub mod create_document_input {
         /// <p>A name for the SSM document.</p> <important>
         /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
         /// <ul>
-        /// <li> <p> <code>aws-</code> </p> </li>
+        /// <li> <p> <code>aws</code> </p> </li>
         /// <li> <p> <code>amazon</code> </p> </li>
         /// <li> <p> <code>amzn</code> </p> </li>
         /// </ul>
@@ -7926,14 +7962,14 @@ pub mod describe_instance_information_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
         pub fn filters(mut self, input: crate::model::InstanceInformationStringFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -20827,6 +20863,7 @@ pub mod register_task_with_maintenance_window_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) cutoff_behavior:
             std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window the task should be added to.</p>
@@ -21104,6 +21141,19 @@ pub mod register_task_with_maintenance_window_input {
             self.cutoff_behavior = input;
             self
         }
+        /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterTaskWithMaintenanceWindowInput`](crate::input::RegisterTaskWithMaintenanceWindowInput).
         pub fn build(
             self,
@@ -21127,6 +21177,7 @@ pub mod register_task_with_maintenance_window_input {
                 description: self.description,
                 client_token: self.client_token,
                 cutoff_behavior: self.cutoff_behavior,
+                alarm_configuration: self.alarm_configuration,
             })
         }
     }
@@ -21981,6 +22032,7 @@ pub mod send_command_input {
         pub(crate) notification_config: std::option::Option<crate::model::NotificationConfig>,
         pub(crate) cloud_watch_output_config:
             std::option::Option<crate::model::CloudWatchOutputConfig>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// Appends an item to `instance_ids`.
@@ -22207,11 +22259,13 @@ pub mod send_command_input {
             self
         }
         /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+        /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+        /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22248,6 +22302,19 @@ pub mod send_command_input {
             self.cloud_watch_output_config = input;
             self
         }
+        /// <p>The CloudWatch alarm you want to apply to your command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SendCommandInput`](crate::input::SendCommandInput).
         pub fn build(
             self,
@@ -22271,6 +22338,7 @@ pub mod send_command_input {
                 service_role_arn: self.service_role_arn,
                 notification_config: self.notification_config,
                 cloud_watch_output_config: self.cloud_watch_output_config,
+                alarm_configuration: self.alarm_configuration,
             })
         }
     }
@@ -22567,6 +22635,7 @@ pub mod start_automation_execution_input {
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -22779,6 +22848,19 @@ pub mod start_automation_execution_input {
             self.tags = input;
             self
         }
+        /// <p>The CloudWatch alarm you want to apply to your automation.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your automation.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartAutomationExecutionInput`](crate::input::StartAutomationExecutionInput).
         pub fn build(
             self,
@@ -22799,6 +22881,7 @@ pub mod start_automation_execution_input {
                 max_errors: self.max_errors,
                 target_locations: self.target_locations,
                 tags: self.tags,
+                alarm_configuration: self.alarm_configuration,
             })
         }
     }
@@ -23975,6 +24058,7 @@ pub mod update_association_input {
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         >,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The ID of the association you want to update. </p>
@@ -24302,6 +24386,19 @@ pub mod update_association_input {
             self.target_maps = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAssociationInput`](crate::input::UpdateAssociationInput).
         pub fn build(
             self,
@@ -24327,6 +24424,7 @@ pub mod update_association_input {
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
                 target_maps: self.target_maps,
+                alarm_configuration: self.alarm_configuration,
             })
         }
     }
@@ -25757,6 +25855,7 @@ pub mod update_maintenance_window_task_input {
         pub(crate) replace: std::option::Option<bool>,
         pub(crate) cutoff_behavior:
             std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The maintenance window ID that contains the task to modify.</p>
@@ -26020,6 +26119,19 @@ pub mod update_maintenance_window_task_input {
             self.cutoff_behavior = input;
             self
         }
+        /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTaskInput`](crate::input::UpdateMaintenanceWindowTaskInput).
         pub fn build(
             self,
@@ -26043,6 +26155,7 @@ pub mod update_maintenance_window_task_input {
                 description: self.description,
                 replace: self.replace,
                 cutoff_behavior: self.cutoff_behavior,
+                alarm_configuration: self.alarm_configuration,
             })
         }
     }
@@ -28144,6 +28257,9 @@ pub struct UpdateMaintenanceWindowTaskInput {
     /// </ul>
     #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+    /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl UpdateMaintenanceWindowTaskInput {
     /// <p>The maintenance window ID that contains the task to modify.</p>
@@ -28247,6 +28363,10 @@ impl UpdateMaintenanceWindowTaskInput {
     ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
+    /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28269,6 +28389,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTaskInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("replace", &self.replace);
         formatter.field("cutoff_behavior", &self.cutoff_behavior);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -28741,6 +28862,9 @@ pub struct UpdateAssociationInput {
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl UpdateAssociationInput {
     /// <p>The ID of the association you want to update. </p>
@@ -28847,6 +28971,10 @@ impl UpdateAssociationInput {
     > {
         self.target_maps.as_deref()
     }
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28876,6 +29004,7 @@ impl std::fmt::Debug for UpdateAssociationInput {
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("target_maps", &self.target_maps);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -29205,6 +29334,9 @@ pub struct StartAutomationExecutionInput {
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The CloudWatch alarm you want to apply to your automation.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl StartAutomationExecutionInput {
     /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -29270,6 +29402,10 @@ impl StartAutomationExecutionInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The CloudWatch alarm you want to apply to your automation.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for StartAutomationExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29286,6 +29422,7 @@ impl std::fmt::Debug for StartAutomationExecutionInput {
         formatter.field("max_errors", &self.max_errors);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("tags", &self.tags);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -29374,6 +29511,7 @@ pub struct SendCommandInput {
     #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+    /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications.</p>
@@ -29382,6 +29520,9 @@ pub struct SendCommandInput {
     /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
     #[doc(hidden)]
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
+    /// <p>The CloudWatch alarm you want to apply to your command.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl SendCommandInput {
     /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
@@ -29458,6 +29599,7 @@ impl SendCommandInput {
         self.max_errors.as_deref()
     }
     /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+    /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
@@ -29470,6 +29612,10 @@ impl SendCommandInput {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
+    }
+    /// <p>The CloudWatch alarm you want to apply to your command.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for SendCommandInput {
@@ -29492,6 +29638,7 @@ impl std::fmt::Debug for SendCommandInput {
         formatter.field("service_role_arn", &self.service_role_arn);
         formatter.field("notification_config", &self.notification_config);
         formatter.field("cloud_watch_output_config", &self.cloud_watch_output_config);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -29764,6 +29911,9 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// </ul>
     #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+    /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl RegisterTaskWithMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the task should be added to.</p>
@@ -29874,6 +30024,10 @@ impl RegisterTaskWithMaintenanceWindowInput {
     ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
+    /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RegisterTaskWithMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29896,6 +30050,7 @@ impl std::fmt::Debug for RegisterTaskWithMaintenanceWindowInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("cutoff_behavior", &self.cutoff_behavior);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -33086,7 +33241,7 @@ pub struct DescribeInstanceInformationInput {
     #[doc(hidden)]
     pub instance_information_filter_list:
         std::option::Option<std::vec::Vec<crate::model::InstanceInformationFilter>>,
-    /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+    /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::InstanceInformationStringFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
@@ -33105,7 +33260,7 @@ impl DescribeInstanceInformationInput {
     ) -> std::option::Option<&[crate::model::InstanceInformationFilter]> {
         self.instance_information_filter_list.as_deref()
     }
-    /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+    /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::InstanceInformationStringFilter]> {
         self.filters.as_deref()
     }
@@ -34708,7 +34863,7 @@ pub struct CreateDocumentInput {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws-</code> </p> </li>
+    /// <li> <p> <code>aws</code> </p> </li>
     /// <li> <p> <code>amazon</code> </p> </li>
     /// <li> <p> <code>amzn</code> </p> </li>
     /// </ul>
@@ -34764,7 +34919,7 @@ impl CreateDocumentInput {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws-</code> </p> </li>
+    /// <li> <p> <code>aws</code> </p> </li>
     /// <li> <p> <code>amazon</code> </p> </li>
     /// <li> <p> <code>amzn</code> </p> </li>
     /// </ul>
@@ -34927,6 +35082,12 @@ pub struct CreateAssociationInput {
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl CreateAssociationInput {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
@@ -35029,6 +35190,14 @@ impl CreateAssociationInput {
     > {
         self.target_maps.as_deref()
     }
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35057,6 +35226,8 @@ impl std::fmt::Debug for CreateAssociationInput {
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("target_maps", &self.target_maps);
+        formatter.field("tags", &self.tags);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }

@@ -255,6 +255,81 @@ impl UpdateClassificationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAllowListOutput {
+    /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the allow list.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl UpdateAllowListOutput {
+    /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique identifier for the allow list.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateAllowListOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAllowListOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput).
+pub mod update_allow_list_output {
+
+    /// A builder for [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The unique identifier for the allow list.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the allow list.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput).
+        pub fn build(self) -> crate::output::UpdateAllowListOutput {
+            crate::output::UpdateAllowListOutput {
+                arn: self.arn,
+                id: self.id,
+            }
+        }
+    }
+}
+impl UpdateAllowListOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput).
+    pub fn builder() -> crate::output::update_allow_list_output::Builder {
+        crate::output::update_allow_list_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -550,13 +625,13 @@ impl PutClassificationExportConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -586,7 +661,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
+        /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -597,7 +672,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
+        /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1307,6 +1382,90 @@ impl ListClassificationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAllowListsOutput {
+    /// <p>An array of objects, one for each allow list.</p>
+    #[doc(hidden)]
+    pub allow_lists: std::option::Option<std::vec::Vec<crate::model::AllowListSummary>>,
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAllowListsOutput {
+    /// <p>An array of objects, one for each allow list.</p>
+    pub fn allow_lists(&self) -> std::option::Option<&[crate::model::AllowListSummary]> {
+        self.allow_lists.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAllowListsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAllowListsOutput");
+        formatter.field("allow_lists", &self.allow_lists);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAllowListsOutput`](crate::output::ListAllowListsOutput).
+pub mod list_allow_lists_output {
+
+    /// A builder for [`ListAllowListsOutput`](crate::output::ListAllowListsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) allow_lists: std::option::Option<std::vec::Vec<crate::model::AllowListSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `allow_lists`.
+        ///
+        /// To override the contents of this collection use [`set_allow_lists`](Self::set_allow_lists).
+        ///
+        /// <p>An array of objects, one for each allow list.</p>
+        pub fn allow_lists(mut self, input: crate::model::AllowListSummary) -> Self {
+            let mut v = self.allow_lists.unwrap_or_default();
+            v.push(input);
+            self.allow_lists = Some(v);
+            self
+        }
+        /// <p>An array of objects, one for each allow list.</p>
+        pub fn set_allow_lists(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AllowListSummary>>,
+        ) -> Self {
+            self.allow_lists = input;
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAllowListsOutput`](crate::output::ListAllowListsOutput).
+        pub fn build(self) -> crate::output::ListAllowListsOutput {
+            crate::output::ListAllowListsOutput {
+                allow_lists: self.allow_lists,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAllowListsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAllowListsOutput`](crate::output::ListAllowListsOutput).
+    pub fn builder() -> crate::output::list_allow_lists_output::Builder {
+        crate::output::list_allow_lists_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageTotalsOutput {
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     #[doc(hidden)]
@@ -1509,7 +1668,7 @@ pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <ul>
     /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
     /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
     /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
     /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
@@ -1526,7 +1685,7 @@ impl GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <ul>
     /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
     /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
     /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
     /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
@@ -1575,7 +1734,7 @@ pub mod get_sensitive_data_occurrences_availability_output {
         /// <ul>
         /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
         /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
         /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
         /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
         /// </ul>
@@ -1590,7 +1749,7 @@ pub mod get_sensitive_data_occurrences_availability_output {
         /// <ul>
         /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
         /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
         /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
         /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
         /// </ul>
@@ -1857,7 +2016,7 @@ pub struct GetMemberOutput {
     /// <p>The current status of the relationship between the account and the administrator account.</p>
     #[doc(hidden)]
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
-    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account in Amazon Macie.</p>
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1894,7 +2053,7 @@ impl GetMemberOutput {
     pub fn relationship_status(&self) -> std::option::Option<&crate::model::RelationshipStatus> {
         self.relationship_status.as_ref()
     }
-    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account in Amazon Macie.</p>
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2026,7 +2185,7 @@ pub mod get_member_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account in Amazon Macie.</p>
+        /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2037,7 +2196,7 @@ pub mod get_member_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account in Amazon Macie.</p>
+        /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2145,7 +2304,7 @@ pub struct GetMacieSessionOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
@@ -2163,7 +2322,7 @@ impl GetMacieSessionOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub fn finding_publishing_frequency(
         &self,
     ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
@@ -2223,7 +2382,7 @@ pub mod get_macie_session_output {
             self.created_at = input;
             self
         }
-        /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -2231,7 +2390,7 @@ pub mod get_macie_session_output {
             self.finding_publishing_frequency = Some(input);
             self
         }
-        /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -2502,7 +2661,7 @@ pub struct GetFindingsFilterOutput {
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     #[doc(hidden)]
     pub position: i32,
-    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2536,7 +2695,7 @@ impl GetFindingsFilterOutput {
     pub fn position(&self) -> i32 {
         self.position
     }
-    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2656,7 +2815,7 @@ pub mod get_findings_filter_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+        /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2667,7 +2826,7 @@ pub mod get_findings_filter_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+        /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3549,6 +3708,254 @@ impl GetBucketStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAllowListOutput {
+    /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
+    #[doc(hidden)]
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+    #[doc(hidden)]
+    pub criteria: std::option::Option<crate::model::AllowListCriteria>,
+    /// <p>The custom description of the allow list.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the allow list.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The custom name of the allow list.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::AllowListStatus>,
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
+    #[doc(hidden)]
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetAllowListOutput {
+    /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+    pub fn criteria(&self) -> std::option::Option<&crate::model::AllowListCriteria> {
+        self.criteria.as_ref()
+    }
+    /// <p>The custom description of the allow list.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the allow list.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The custom name of the allow list.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AllowListStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+}
+impl std::fmt::Debug for GetAllowListOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetAllowListOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("criteria", &self.criteria);
+        formatter.field("description", &self.description);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("status", &self.status);
+        formatter.field("tags", &self.tags);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`GetAllowListOutput`](crate::output::GetAllowListOutput).
+pub mod get_allow_list_output {
+
+    /// A builder for [`GetAllowListOutput`](crate::output::GetAllowListOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) criteria: std::option::Option<crate::model::AllowListCriteria>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::AllowListStatus>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+        pub fn criteria(mut self, input: crate::model::AllowListCriteria) -> Self {
+            self.criteria = Some(input);
+            self
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+        pub fn set_criteria(
+            mut self,
+            input: std::option::Option<crate::model::AllowListCriteria>,
+        ) -> Self {
+            self.criteria = input;
+            self
+        }
+        /// <p>The custom description of the allow list.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The custom description of the allow list.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The unique identifier for the allow list.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the allow list.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The custom name of the allow list.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The custom name of the allow list.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
+        pub fn status(mut self, input: crate::model::AllowListStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AllowListStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAllowListOutput`](crate::output::GetAllowListOutput).
+        pub fn build(self) -> crate::output::GetAllowListOutput {
+            crate::output::GetAllowListOutput {
+                arn: self.arn,
+                created_at: self.created_at,
+                criteria: self.criteria,
+                description: self.description,
+                id: self.id,
+                name: self.name,
+                status: self.status,
+                tags: self.tags,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl GetAllowListOutput {
+    /// Creates a new builder-style object to manufacture [`GetAllowListOutput`](crate::output::GetAllowListOutput).
+    pub fn builder() -> crate::output::get_allow_list_output::Builder {
+        crate::output::get_allow_list_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdministratorAccountOutput {
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     #[doc(hidden)]
@@ -3893,13 +4300,16 @@ impl DescribeOrganizationConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClassificationJobOutput {
+    /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
+    #[doc(hidden)]
+    pub allow_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
+    /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
     #[doc(hidden)]
     pub custom_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The custom description of the job.</p>
@@ -3976,6 +4386,10 @@ pub struct DescribeClassificationJobOutput {
     pub user_paused_details: std::option::Option<crate::model::UserPausedDetails>,
 }
 impl DescribeClassificationJobOutput {
+    /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
+    pub fn allow_list_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.allow_list_ids.as_deref()
+    }
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
@@ -3984,7 +4398,7 @@ impl DescribeClassificationJobOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
+    /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
     pub fn custom_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.custom_data_identifier_ids.as_deref()
     }
@@ -4084,6 +4498,7 @@ impl DescribeClassificationJobOutput {
 impl std::fmt::Debug for DescribeClassificationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClassificationJobOutput");
+        formatter.field("allow_list_ids", &self.allow_list_ids);
         formatter.field("client_token", &self.client_token);
         formatter.field("created_at", &self.created_at);
         formatter.field(
@@ -4122,6 +4537,7 @@ pub mod describe_classification_job_output {
     /// A builder for [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) allow_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) custom_data_identifier_ids:
@@ -4149,6 +4565,25 @@ pub mod describe_classification_job_output {
         pub(crate) user_paused_details: std::option::Option<crate::model::UserPausedDetails>,
     }
     impl Builder {
+        /// Appends an item to `allow_list_ids`.
+        ///
+        /// To override the contents of this collection use [`set_allow_list_ids`](Self::set_allow_list_ids).
+        ///
+        /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
+        pub fn allow_list_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.allow_list_ids.unwrap_or_default();
+            v.push(input.into());
+            self.allow_list_ids = Some(v);
+            self
+        }
+        /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
+        pub fn set_allow_list_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.allow_list_ids = input;
+            self
+        }
         /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
@@ -4176,14 +4611,14 @@ pub mod describe_classification_job_output {
         ///
         /// To override the contents of this collection use [`set_custom_data_identifier_ids`](Self::set_custom_data_identifier_ids).
         ///
-        /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
+        /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
         pub fn custom_data_identifier_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.custom_data_identifier_ids.unwrap_or_default();
             v.push(input.into());
             self.custom_data_identifier_ids = Some(v);
             self
         }
-        /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
+        /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
         pub fn set_custom_data_identifier_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4456,6 +4891,7 @@ pub mod describe_classification_job_output {
         /// Consumes the builder and constructs a [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput).
         pub fn build(self) -> crate::output::DescribeClassificationJobOutput {
             crate::output::DescribeClassificationJobOutput {
+                allow_list_ids: self.allow_list_ids,
                 client_token: self.client_token,
                 created_at: self.created_at,
                 custom_data_identifier_ids: self.custom_data_identifier_ids,
@@ -4723,6 +5159,36 @@ impl DeleteCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDataIdentifierOutput`](crate::output::DeleteCustomDataIdentifierOutput).
     pub fn builder() -> crate::output::delete_custom_data_identifier_output::Builder {
         crate::output::delete_custom_data_identifier_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAllowListOutput {}
+impl std::fmt::Debug for DeleteAllowListOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAllowListOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput).
+pub mod delete_allow_list_output {
+
+    /// A builder for [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput).
+        pub fn build(self) -> crate::output::DeleteAllowListOutput {
+            crate::output::DeleteAllowListOutput {}
+        }
+    }
+}
+impl DeleteAllowListOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput).
+    pub fn builder() -> crate::output::delete_allow_list_output::Builder {
+        crate::output::delete_allow_list_output::Builder::default()
     }
 }
 
@@ -5144,6 +5610,81 @@ impl CreateClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateClassificationJobOutput`](crate::output::CreateClassificationJobOutput).
     pub fn builder() -> crate::output::create_classification_job_output::Builder {
         crate::output::create_classification_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAllowListOutput {
+    /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the allow list.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl CreateAllowListOutput {
+    /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique identifier for the allow list.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateAllowListOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAllowListOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`CreateAllowListOutput`](crate::output::CreateAllowListOutput).
+pub mod create_allow_list_output {
+
+    /// A builder for [`CreateAllowListOutput`](crate::output::CreateAllowListOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The unique identifier for the allow list.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the allow list.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAllowListOutput`](crate::output::CreateAllowListOutput).
+        pub fn build(self) -> crate::output::CreateAllowListOutput {
+            crate::output::CreateAllowListOutput {
+                arn: self.arn,
+                id: self.id,
+            }
+        }
+    }
+}
+impl CreateAllowListOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAllowListOutput`](crate::output::CreateAllowListOutput).
+    pub fn builder() -> crate::output::create_allow_list_output::Builder {
+        crate::output::create_allow_list_output::Builder::default()
     }
 }
 

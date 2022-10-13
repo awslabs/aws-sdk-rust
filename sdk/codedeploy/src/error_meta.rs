@@ -5,9 +5,9 @@
 pub enum Error {
     /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
     AlarmsLimitExceededException(crate::error::AlarmsLimitExceededException),
-    /// <p>An application with the specified name with the IAM user or AWS account already exists.</p>
+    /// <p>An application with the specified name with the IAM user or Amazon Web Services account already exists.</p>
     ApplicationAlreadyExistsException(crate::error::ApplicationAlreadyExistsException),
-    /// <p>The application does not exist with the IAM user or AWS account.</p>
+    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
     /// <p>More applications were attempted to be created than are allowed.</p>
     ApplicationLimitExceededException(crate::error::ApplicationLimitExceededException),
@@ -21,9 +21,9 @@ pub enum Error {
     BucketNameFilterRequiredException(crate::error::BucketNameFilterRequiredException),
     /// <p>The deployment is already complete.</p>
     DeploymentAlreadyCompletedException(crate::error::DeploymentAlreadyCompletedException),
-    /// <p>A deployment configuration with the specified name with the IAM user or AWS account already exists.</p>
+    /// <p>A deployment configuration with the specified name with the IAM user or Amazon Web Services account already exists.</p>
     DeploymentConfigAlreadyExistsException(crate::error::DeploymentConfigAlreadyExistsException),
-    /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
+    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
     /// <p>The deployment configuration is still in use.</p>
     DeploymentConfigInUseException(crate::error::DeploymentConfigInUseException),
@@ -31,11 +31,11 @@ pub enum Error {
     DeploymentConfigLimitExceededException(crate::error::DeploymentConfigLimitExceededException),
     /// <p>The deployment configuration name was not specified.</p>
     DeploymentConfigNameRequiredException(crate::error::DeploymentConfigNameRequiredException),
-    /// <p>The deployment with the IAM user or AWS account does not exist.</p>
+    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or AWS account already exists.</p>
+    /// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::error::DeploymentGroupAlreadyExistsException),
-    /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
+    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p> The deployment groups limit was exceeded.</p>
     DeploymentGroupLimitExceededException(crate::error::DeploymentGroupLimitExceededException),
@@ -53,7 +53,7 @@ pub enum Error {
     DeploymentTargetDoesNotExistException(crate::error::DeploymentTargetDoesNotExistException),
     /// <p> A deployment target ID was not provided. </p>
     DeploymentTargetIdRequiredException(crate::error::DeploymentTargetIdRequiredException),
-    /// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
+    /// <p> The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
     DeploymentTargetListSizeExceededException(
         crate::error::DeploymentTargetListSizeExceededException,
     ),
@@ -142,7 +142,7 @@ pub enum Error {
     InvalidEcsServiceException(crate::error::InvalidEcsServiceException),
     /// <p>The external ID was specified in an invalid format.</p>
     InvalidExternalIdException(crate::error::InvalidExternalIdException),
-    /// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
+    /// <p>An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
     InvalidFileExistsBehaviorException(crate::error::InvalidFileExistsBehaviorException),
     /// <p>The GitHub token is not valid.</p>
     InvalidGitHubAccountTokenException(crate::error::InvalidGitHubAccountTokenException),
@@ -152,7 +152,7 @@ pub enum Error {
     InvalidIamSessionArnException(crate::error::InvalidIamSessionArnException),
     /// <p>The IAM user ARN was specified in an invalid format.</p>
     InvalidIamUserArnException(crate::error::InvalidIamUserArnException),
-    /// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
+    /// <p>The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidIgnoreApplicationStopFailuresValueException(
         crate::error::InvalidIgnoreApplicationStopFailuresValueException,
     ),
@@ -222,7 +222,7 @@ pub enum Error {
     ),
     /// <p>The trigger was specified in an invalid format.</p>
     InvalidTriggerConfigException(crate::error::InvalidTriggerConfigException),
-    /// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
+    /// <p>The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidUpdateOutdatedInstancesOnlyValueException(
         crate::error::InvalidUpdateOutdatedInstancesOnlyValueException,
     ),
@@ -238,7 +238,7 @@ pub enum Error {
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// <p>The specified resource could not be validated.</p>
     ResourceValidationException(crate::error::ResourceValidationException),
-    /// <p>The named revision does not exist with the IAM user or AWS account.</p>
+    /// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
     RevisionDoesNotExistException(crate::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
@@ -635,6 +635,7 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateDeploymentErrorKind::AlarmsLimitExceededException(inner) => Error::AlarmsLimitExceededException(inner),
                 crate::error::CreateDeploymentErrorKind::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
                 crate::error::CreateDeploymentErrorKind::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
                 crate::error::CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(inner) => Error::DeploymentConfigDoesNotExistException(inner),
@@ -642,6 +643,7 @@ where
                 crate::error::CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
                 crate::error::CreateDeploymentErrorKind::DeploymentLimitExceededException(inner) => Error::DeploymentLimitExceededException(inner),
                 crate::error::CreateDeploymentErrorKind::DescriptionTooLongException(inner) => Error::DescriptionTooLongException(inner),
+                crate::error::CreateDeploymentErrorKind::InvalidAlarmConfigException(inner) => Error::InvalidAlarmConfigException(inner),
                 crate::error::CreateDeploymentErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
                 crate::error::CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(inner) => Error::InvalidAutoRollbackConfigException(inner),
                 crate::error::CreateDeploymentErrorKind::InvalidAutoScalingGroupException(inner) => Error::InvalidAutoScalingGroupException(inner),

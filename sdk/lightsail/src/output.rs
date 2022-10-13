@@ -194,6 +194,64 @@ impl UpdateLoadBalancerAttributeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateInstanceMetadataOptionsOutput {
+    /// <p>Describes the API operation.</p>
+    #[doc(hidden)]
+    pub operation: std::option::Option<crate::model::Operation>,
+}
+impl UpdateInstanceMetadataOptionsOutput {
+    /// <p>Describes the API operation.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateInstanceMetadataOptionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateInstanceMetadataOptionsOutput");
+        formatter.field("operation", &self.operation);
+        formatter.finish()
+    }
+}
+/// See [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
+pub mod update_instance_metadata_options_output {
+
+    /// A builder for [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operation: std::option::Option<crate::model::Operation>,
+    }
+    impl Builder {
+        /// <p>Describes the API operation.</p>
+        pub fn operation(mut self, input: crate::model::Operation) -> Self {
+            self.operation = Some(input);
+            self
+        }
+        /// <p>Describes the API operation.</p>
+        pub fn set_operation(
+            mut self,
+            input: std::option::Option<crate::model::Operation>,
+        ) -> Self {
+            self.operation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
+        pub fn build(self) -> crate::output::UpdateInstanceMetadataOptionsOutput {
+            crate::output::UpdateInstanceMetadataOptionsOutput {
+                operation: self.operation,
+            }
+        }
+    }
+}
+impl UpdateInstanceMetadataOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
+    pub fn builder() -> crate::output::update_instance_metadata_options_output::Builder {
+        crate::output::update_instance_metadata_options_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]

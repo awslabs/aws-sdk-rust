@@ -386,7 +386,7 @@ pub struct Segment {
     /// <p>The name of the segment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
     #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p>The date and time that this segment was created.</p>
@@ -418,7 +418,7 @@ impl Segment {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p></p>
+    /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
@@ -504,12 +504,12 @@ pub mod segment {
             self.name = input;
             self
         }
-        /// <p></p>
+        /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.pattern = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern = input;
             self
@@ -658,6 +658,9 @@ pub struct Project {
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
     #[doc(hidden)]
     pub data_delivery: std::option::Option<crate::model::ProjectDataDelivery>,
+    /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
+    #[doc(hidden)]
+    pub app_config_resource: std::option::Option<crate::model::ProjectAppConfigResource>,
     /// <p>The list of tag keys and values associated with this project.</p>
     #[doc(hidden)]
     pub tags:
@@ -712,6 +715,12 @@ impl Project {
     pub fn data_delivery(&self) -> std::option::Option<&crate::model::ProjectDataDelivery> {
         self.data_delivery.as_ref()
     }
+    /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
+    pub fn app_config_resource(
+        &self,
+    ) -> std::option::Option<&crate::model::ProjectAppConfigResource> {
+        self.app_config_resource.as_ref()
+    }
     /// <p>The list of tag keys and values associated with this project.</p>
     pub fn tags(
         &self,
@@ -735,6 +744,7 @@ impl std::fmt::Debug for Project {
         formatter.field("experiment_count", &self.experiment_count);
         formatter.field("active_experiment_count", &self.active_experiment_count);
         formatter.field("data_delivery", &self.data_delivery);
+        formatter.field("app_config_resource", &self.app_config_resource);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -757,6 +767,7 @@ pub mod project {
         pub(crate) experiment_count: std::option::Option<i64>,
         pub(crate) active_experiment_count: std::option::Option<i64>,
         pub(crate) data_delivery: std::option::Option<crate::model::ProjectDataDelivery>,
+        pub(crate) app_config_resource: std::option::Option<crate::model::ProjectAppConfigResource>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -894,6 +905,22 @@ pub mod project {
             self.data_delivery = input;
             self
         }
+        /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
+        pub fn app_config_resource(
+            mut self,
+            input: crate::model::ProjectAppConfigResource,
+        ) -> Self {
+            self.app_config_resource = Some(input);
+            self
+        }
+        /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
+        pub fn set_app_config_resource(
+            mut self,
+            input: std::option::Option<crate::model::ProjectAppConfigResource>,
+        ) -> Self {
+            self.app_config_resource = input;
+            self
+        }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -934,6 +961,7 @@ pub mod project {
                 experiment_count: self.experiment_count,
                 active_experiment_count: self.active_experiment_count,
                 data_delivery: self.data_delivery,
+                app_config_resource: self.app_config_resource,
                 tags: self.tags,
             }
         }
@@ -943,6 +971,110 @@ impl Project {
     /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
     pub fn builder() -> crate::model::project::Builder {
         crate::model::project::Builder::default()
+    }
+}
+
+/// <p>This is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProjectAppConfigResource {
+    /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+    #[doc(hidden)]
+    pub application_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+    #[doc(hidden)]
+    pub environment_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
+    #[doc(hidden)]
+    pub configuration_profile_id: std::option::Option<std::string::String>,
+}
+impl ProjectAppConfigResource {
+    /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ProjectAppConfigResource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProjectAppConfigResource");
+        formatter.field("application_id", &self.application_id);
+        formatter.field("environment_id", &self.environment_id);
+        formatter.field("configuration_profile_id", &self.configuration_profile_id);
+        formatter.finish()
+    }
+}
+/// See [`ProjectAppConfigResource`](crate::model::ProjectAppConfigResource).
+pub mod project_app_config_resource {
+
+    /// A builder for [`ProjectAppConfigResource`](crate::model::ProjectAppConfigResource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_id: std::option::Option<std::string::String>,
+        pub(crate) environment_id: std::option::Option<std::string::String>,
+        pub(crate) configuration_profile_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_id = input;
+            self
+        }
+        /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+        pub fn set_environment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_id = input;
+            self
+        }
+        /// <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
+        pub fn set_configuration_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_profile_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProjectAppConfigResource`](crate::model::ProjectAppConfigResource).
+        pub fn build(self) -> crate::model::ProjectAppConfigResource {
+            crate::model::ProjectAppConfigResource {
+                application_id: self.application_id,
+                environment_id: self.environment_id,
+                configuration_profile_id: self.configuration_profile_id,
+            }
+        }
+    }
+}
+impl ProjectAppConfigResource {
+    /// Creates a new builder-style object to manufacture [`ProjectAppConfigResource`](crate::model::ProjectAppConfigResource).
+    pub fn builder() -> crate::model::project_app_config_resource::Builder {
+        crate::model::project_app_config_resource::Builder::default()
     }
 }
 
@@ -1341,6 +1473,88 @@ impl S3DestinationConfig {
     /// Creates a new builder-style object to manufacture [`S3DestinationConfig`](crate::model::S3DestinationConfig).
     pub fn builder() -> crate::model::s3_destination_config::Builder {
         crate::model::s3_destination_config::Builder::default()
+    }
+}
+
+/// <p>Use this parameter to configure client-side evaluation for your project. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation to assign the variations. This mitigates the latency and availability risks that come with an API call.</p>
+/// <p> <code>ProjectAppConfigResource</code> is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProjectAppConfigResourceConfig {
+    /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+    #[doc(hidden)]
+    pub application_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+    #[doc(hidden)]
+    pub environment_id: std::option::Option<std::string::String>,
+}
+impl ProjectAppConfigResourceConfig {
+    /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ProjectAppConfigResourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProjectAppConfigResourceConfig");
+        formatter.field("application_id", &self.application_id);
+        formatter.field("environment_id", &self.environment_id);
+        formatter.finish()
+    }
+}
+/// See [`ProjectAppConfigResourceConfig`](crate::model::ProjectAppConfigResourceConfig).
+pub mod project_app_config_resource_config {
+
+    /// A builder for [`ProjectAppConfigResourceConfig`](crate::model::ProjectAppConfigResourceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_id: std::option::Option<std::string::String>,
+        pub(crate) environment_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_id = input;
+            self
+        }
+        /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+        pub fn set_environment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProjectAppConfigResourceConfig`](crate::model::ProjectAppConfigResourceConfig).
+        pub fn build(self) -> crate::model::ProjectAppConfigResourceConfig {
+            crate::model::ProjectAppConfigResourceConfig {
+                application_id: self.application_id,
+                environment_id: self.environment_id,
+            }
+        }
+    }
+}
+impl ProjectAppConfigResourceConfig {
+    /// Creates a new builder-style object to manufacture [`ProjectAppConfigResourceConfig`](crate::model::ProjectAppConfigResourceConfig).
+    pub fn builder() -> crate::model::project_app_config_resource_config::Builder {
+        crate::model::project_app_config_resource_config::Builder::default()
     }
 }
 

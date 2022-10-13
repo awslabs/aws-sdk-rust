@@ -612,6 +612,9 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl UpdateMaintenanceWindowTaskOutput {
     /// <p>The ID of the maintenance window that was updated.</p>
@@ -685,6 +688,10 @@ impl UpdateMaintenanceWindowTaskOutput {
     ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -706,6 +713,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("cutoff_behavior", &self.cutoff_behavior);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -736,6 +744,7 @@ pub mod update_maintenance_window_task_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) cutoff_behavior:
             std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window that was updated.</p>
@@ -937,6 +946,19 @@ pub mod update_maintenance_window_task_output {
             self.cutoff_behavior = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput).
         pub fn build(self) -> crate::output::UpdateMaintenanceWindowTaskOutput {
             crate::output::UpdateMaintenanceWindowTaskOutput {
@@ -954,6 +976,7 @@ pub mod update_maintenance_window_task_output {
                 name: self.name,
                 description: self.description,
                 cutoff_behavior: self.cutoff_behavior,
+                alarm_configuration: self.alarm_configuration,
             }
         }
     }
@@ -1881,7 +1904,7 @@ pub struct StartSessionOutput {
     /// <p>The ID of the session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+    /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
     #[doc(hidden)]
     pub token_value: std::option::Option<std::string::String>,
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
@@ -1895,7 +1918,7 @@ impl StartSessionOutput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+    /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
     pub fn token_value(&self) -> std::option::Option<&str> {
         self.token_value.as_deref()
     }
@@ -1936,12 +1959,12 @@ pub mod start_session_output {
             self.session_id = input;
             self
         }
-        /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+        /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
         pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_value = Some(input.into());
             self
         }
-        /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+        /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_value = input;
             self
@@ -5630,6 +5653,9 @@ pub struct GetMaintenanceWindowTaskOutput {
     /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
     #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl GetMaintenanceWindowTaskOutput {
     /// <p>The retrieved maintenance window ID.</p>
@@ -5711,6 +5737,10 @@ impl GetMaintenanceWindowTaskOutput {
     ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5733,6 +5763,7 @@ impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("cutoff_behavior", &self.cutoff_behavior);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -5764,6 +5795,7 @@ pub mod get_maintenance_window_task_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) cutoff_behavior:
             std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The retrieved maintenance window ID.</p>
@@ -5986,6 +6018,19 @@ pub mod get_maintenance_window_task_output {
             self.cutoff_behavior = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput).
         pub fn build(self) -> crate::output::GetMaintenanceWindowTaskOutput {
             crate::output::GetMaintenanceWindowTaskOutput {
@@ -6004,6 +6049,7 @@ pub mod get_maintenance_window_task_output {
                 name: self.name,
                 description: self.description,
                 cutoff_behavior: self.cutoff_behavior,
+                alarm_configuration: self.alarm_configuration,
             }
         }
     }
@@ -6378,6 +6424,12 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The time the task execution completed.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+    /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+    #[doc(hidden)]
+    pub triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
@@ -6446,6 +6498,14 @@ impl GetMaintenanceWindowExecutionTaskOutput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+        self.triggered_alarms.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6463,6 +6523,8 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {
         formatter.field("status_details", &self.status_details);
         formatter.field("start_time", &self.start_time);
         formatter.field("end_time", &self.end_time);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("triggered_alarms", &self.triggered_alarms);
         formatter.finish()
     }
 }
@@ -6492,6 +6554,9 @@ pub mod get_maintenance_window_execution_task_output {
         pub(crate) status_details: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+        pub(crate) triggered_alarms:
+            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window execution that includes the task.</p>
@@ -6684,6 +6749,38 @@ pub mod get_maintenance_window_execution_task_output {
             self.end_time = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
+        /// Appends an item to `triggered_alarms`.
+        ///
+        /// To override the contents of this collection use [`set_triggered_alarms`](Self::set_triggered_alarms).
+        ///
+        /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+        pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
+            let mut v = self.triggered_alarms.unwrap_or_default();
+            v.push(input);
+            self.triggered_alarms = Some(v);
+            self
+        }
+        /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+        pub fn set_triggered_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        ) -> Self {
+            self.triggered_alarms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput).
         pub fn build(self) -> crate::output::GetMaintenanceWindowExecutionTaskOutput {
             crate::output::GetMaintenanceWindowExecutionTaskOutput {
@@ -6700,6 +6797,8 @@ pub mod get_maintenance_window_execution_task_output {
                 status_details: self.status_details,
                 start_time: self.start_time,
                 end_time: self.end_time,
+                alarm_configuration: self.alarm_configuration,
+                triggered_alarms: self.triggered_alarms,
             }
         }
     }

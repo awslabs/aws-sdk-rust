@@ -16642,6 +16642,7 @@ pub mod get_instance_metric_data_input {
         /// <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::InstanceMetricName) -> Self {
             self.metric_name = Some(input);
@@ -16658,6 +16659,7 @@ pub mod get_instance_metric_data_input {
         /// <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -26610,6 +26612,220 @@ impl UpdateDomainEntryInput {
     }
 }
 
+/// See [`UpdateInstanceMetadataOptionsInput`](crate::input::UpdateInstanceMetadataOptionsInput).
+pub mod update_instance_metadata_options_input {
+
+    /// A builder for [`UpdateInstanceMetadataOptionsInput`](crate::input::UpdateInstanceMetadataOptionsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_name: std::option::Option<std::string::String>,
+        pub(crate) http_tokens: std::option::Option<crate::model::HttpTokens>,
+        pub(crate) http_endpoint: std::option::Option<crate::model::HttpEndpoint>,
+        pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
+        pub(crate) http_protocol_ipv6: std::option::Option<crate::model::HttpProtocolIpv6>,
+    }
+    impl Builder {
+        /// <p>The name of the instance for which to update metadata parameters.</p>
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the instance for which to update metadata parameters.</p>
+        pub fn set_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_name = input;
+            self
+        }
+        /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
+        /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+        /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
+        pub fn http_tokens(mut self, input: crate::model::HttpTokens) -> Self {
+            self.http_tokens = Some(input);
+            self
+        }
+        /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
+        /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+        /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
+        pub fn set_http_tokens(
+            mut self,
+            input: std::option::Option<crate::model::HttpTokens>,
+        ) -> Self {
+            self.http_tokens = input;
+            self
+        }
+        /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
+        /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
+        pub fn http_endpoint(mut self, input: crate::model::HttpEndpoint) -> Self {
+            self.http_endpoint = Some(input);
+            self
+        }
+        /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
+        /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
+        pub fn set_http_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::HttpEndpoint>,
+        ) -> Self {
+            self.http_endpoint = input;
+            self
+        }
+        /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
+        pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
+            self.http_put_response_hop_limit = Some(input);
+            self
+        }
+        /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
+        pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.http_put_response_hop_limit = input;
+            self
+        }
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
+        /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
+        /// </note>
+        pub fn http_protocol_ipv6(mut self, input: crate::model::HttpProtocolIpv6) -> Self {
+            self.http_protocol_ipv6 = Some(input);
+            self
+        }
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
+        /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
+        /// </note>
+        pub fn set_http_protocol_ipv6(
+            mut self,
+            input: std::option::Option<crate::model::HttpProtocolIpv6>,
+        ) -> Self {
+            self.http_protocol_ipv6 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateInstanceMetadataOptionsInput`](crate::input::UpdateInstanceMetadataOptionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateInstanceMetadataOptionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateInstanceMetadataOptionsInput {
+                instance_name: self.instance_name,
+                http_tokens: self.http_tokens,
+                http_endpoint: self.http_endpoint,
+                http_put_response_hop_limit: self.http_put_response_hop_limit,
+                http_protocol_ipv6: self.http_protocol_ipv6,
+            })
+        }
+    }
+}
+impl UpdateInstanceMetadataOptionsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateInstanceMetadataOptions`](crate::operation::UpdateInstanceMetadataOptions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateInstanceMetadataOptions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateInstanceMetadataOptionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateInstanceMetadataOptionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Lightsail_20161128.UpdateInstanceMetadataOptions",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_instance_metadata_options(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateInstanceMetadataOptions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateInstanceMetadataOptions",
+            "lightsail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceMetadataOptionsInput`](crate::input::UpdateInstanceMetadataOptionsInput).
+    pub fn builder() -> crate::input::update_instance_metadata_options_input::Builder {
+        crate::input::update_instance_metadata_options_input::Builder::default()
+    }
+}
+
 /// See [`UpdateLoadBalancerAttributeInput`](crate::input::UpdateLoadBalancerAttributeInput).
 pub mod update_load_balancer_attribute_input {
 
@@ -27525,6 +27741,73 @@ impl std::fmt::Debug for UpdateLoadBalancerAttributeInput {
         formatter.field("load_balancer_name", &self.load_balancer_name);
         formatter.field("attribute_name", &self.attribute_name);
         formatter.field("attribute_value", &self.attribute_value);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateInstanceMetadataOptionsInput {
+    /// <p>The name of the instance for which to update metadata parameters.</p>
+    #[doc(hidden)]
+    pub instance_name: std::option::Option<std::string::String>,
+    /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
+    /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
+    #[doc(hidden)]
+    pub http_tokens: std::option::Option<crate::model::HttpTokens>,
+    /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
+    /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
+    #[doc(hidden)]
+    pub http_endpoint: std::option::Option<crate::model::HttpEndpoint>,
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
+    #[doc(hidden)]
+    pub http_put_response_hop_limit: std::option::Option<i32>,
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
+    /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
+    /// </note>
+    #[doc(hidden)]
+    pub http_protocol_ipv6: std::option::Option<crate::model::HttpProtocolIpv6>,
+}
+impl UpdateInstanceMetadataOptionsInput {
+    /// <p>The name of the instance for which to update metadata parameters.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
+    /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
+    pub fn http_tokens(&self) -> std::option::Option<&crate::model::HttpTokens> {
+        self.http_tokens.as_ref()
+    }
+    /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
+    /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
+    pub fn http_endpoint(&self) -> std::option::Option<&crate::model::HttpEndpoint> {
+        self.http_endpoint.as_ref()
+    }
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
+    pub fn http_put_response_hop_limit(&self) -> std::option::Option<i32> {
+        self.http_put_response_hop_limit
+    }
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
+    /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
+    /// </note>
+    pub fn http_protocol_ipv6(&self) -> std::option::Option<&crate::model::HttpProtocolIpv6> {
+        self.http_protocol_ipv6.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateInstanceMetadataOptionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateInstanceMetadataOptionsInput");
+        formatter.field("instance_name", &self.instance_name);
+        formatter.field("http_tokens", &self.http_tokens);
+        formatter.field("http_endpoint", &self.http_endpoint);
+        formatter.field(
+            "http_put_response_hop_limit",
+            &self.http_put_response_hop_limit,
+        );
+        formatter.field("http_protocol_ipv6", &self.http_protocol_ipv6);
         formatter.finish()
     }
 }
@@ -29698,6 +29981,7 @@ pub struct GetInstanceMetricDataInput {
     /// <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+    /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::InstanceMetricName>,
@@ -29742,6 +30026,7 @@ impl GetInstanceMetricDataInput {
     /// <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+    /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
     pub fn metric_name(&self) -> std::option::Option<&crate::model::InstanceMetricName> {
         self.metric_name.as_ref()

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAccessControlAttributeConfiguration {
-    /// <p>Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.</p>
+    /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
     #[doc(hidden)]
     pub access_control_attributes:
         std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
 }
 impl InstanceAccessControlAttributeConfiguration {
-    /// <p>Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.</p>
+    /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
     pub fn access_control_attributes(
         &self,
     ) -> std::option::Option<&[crate::model::AccessControlAttribute]> {
@@ -38,7 +38,7 @@ pub mod instance_access_control_attribute_configuration {
         ///
         /// To override the contents of this collection use [`set_access_control_attributes`](Self::set_access_control_attributes).
         ///
-        /// <p>Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.</p>
+        /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
         pub fn access_control_attributes(
             mut self,
             input: crate::model::AccessControlAttribute,
@@ -48,7 +48,7 @@ pub mod instance_access_control_attribute_configuration {
             self.access_control_attributes = Some(v);
             self
         }
-        /// <p>Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO instance.</p>
+        /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
         pub fn set_access_control_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
@@ -71,11 +71,11 @@ impl InstanceAccessControlAttributeConfiguration {
     }
 }
 
-/// <p>These are Amazon Web Services SSO identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your Amazon Web Services resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, Amazon Web Services SSO passes the attribute values of the authenticated user into IAM for use in policy evaluation.</p>
+/// <p>These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlAttribute {
-    /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in Amazon Web Services SSO.</p>
+    /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
@@ -83,7 +83,7 @@ pub struct AccessControlAttribute {
     pub value: std::option::Option<crate::model::AccessControlAttributeValue>,
 }
 impl AccessControlAttribute {
-    /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in Amazon Web Services SSO.</p>
+    /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -110,12 +110,12 @@ pub mod access_control_attribute {
         pub(crate) value: std::option::Option<crate::model::AccessControlAttributeValue>,
     }
     impl Builder {
-        /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in Amazon Web Services SSO.</p>
+        /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in Amazon Web Services SSO.</p>
+        /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -149,16 +149,16 @@ impl AccessControlAttribute {
     }
 }
 
-/// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+/// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlAttributeValue {
-    /// <p>The identity source to use when mapping a specified attribute to Amazon Web Services SSO.</p>
+    /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AccessControlAttributeValue {
-    /// <p>The identity source to use when mapping a specified attribute to Amazon Web Services SSO.</p>
+    /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
     pub fn source(&self) -> std::option::Option<&[std::string::String]> {
         self.source.as_deref()
     }
@@ -183,14 +183,14 @@ pub mod access_control_attribute_value {
         ///
         /// To override the contents of this collection use [`set_source`](Self::set_source).
         ///
-        /// <p>The identity source to use when mapping a specified attribute to Amazon Web Services SSO.</p>
+        /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source.unwrap_or_default();
             v.push(input.into());
             self.source = Some(v);
             self
         }
-        /// <p>The identity source to use when mapping a specified attribute to Amazon Web Services SSO.</p>
+        /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -213,7 +213,7 @@ impl AccessControlAttributeValue {
     }
 }
 
-/// <p>A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that Amazon Web Services SSO creates in Amazon Web Services accounts.</p>
+/// <p>A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -288,28 +288,28 @@ impl Tag {
     }
 }
 
-/// <p>Specifies the configuration of the Amazon Web Services managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an Amazon Web Services managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>Identity and Access Management User Guide</i>.</p> <important>
-/// <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>Identity and Access Management User Guide</i>.</p>
+/// <p>Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an AWS managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <important>
+/// <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionsBoundary {
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     #[doc(hidden)]
     pub customer_managed_policy_reference:
         std::option::Option<crate::model::CustomerManagedPolicyReference>,
-    /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
+    /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
     #[doc(hidden)]
     pub managed_policy_arn: std::option::Option<std::string::String>,
 }
 impl PermissionsBoundary {
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     pub fn customer_managed_policy_reference(
         &self,
     ) -> std::option::Option<&crate::model::CustomerManagedPolicyReference> {
         self.customer_managed_policy_reference.as_ref()
     }
-    /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
+    /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
     pub fn managed_policy_arn(&self) -> std::option::Option<&str> {
         self.managed_policy_arn.as_deref()
     }
@@ -336,7 +336,7 @@ pub mod permissions_boundary {
         pub(crate) managed_policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
         pub fn customer_managed_policy_reference(
             mut self,
             input: crate::model::CustomerManagedPolicyReference,
@@ -344,7 +344,7 @@ pub mod permissions_boundary {
             self.customer_managed_policy_reference = Some(input);
             self
         }
-        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
         pub fn set_customer_managed_policy_reference(
             mut self,
             input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
@@ -352,12 +352,12 @@ pub mod permissions_boundary {
             self.customer_managed_policy_reference = input;
             self
         }
-        /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
+        /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
         pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.managed_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
+        /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
         pub fn set_managed_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -381,14 +381,14 @@ impl PermissionsBoundary {
     }
 }
 
-/// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+/// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedPolicyReference {
     /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+    /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
@@ -397,7 +397,7 @@ impl CustomerManagedPolicyReference {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+    /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
@@ -430,12 +430,12 @@ pub mod customer_managed_policy_reference {
             self.name = input;
             self
         }
-        /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+        /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+        /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -466,10 +466,10 @@ pub struct PermissionSetProvisioningStatus {
     /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    /// <p>The identifier of the AWS account from which to list the assignments.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The message that contains an error or exception in case of an operation failure.</p>
@@ -488,11 +488,11 @@ impl PermissionSetProvisioningStatus {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    /// <p>The identifier of the AWS account from which to list the assignments.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn permission_set_arn(&self) -> std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
@@ -554,22 +554,22 @@ pub mod permission_set_provisioning_status {
             self.request_id = input;
             self
         }
-        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+        /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+        /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_set_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -962,23 +962,23 @@ impl OperationStatusFilter {
     }
 }
 
-/// <p>A structure that stores the details of the Amazon Web Services managed policy.</p>
+/// <p>A structure that stores the details of the AWS managed policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachedManagedPolicy {
-    /// <p>The name of the Amazon Web Services managed policy.</p>
+    /// <p>The name of the AWS managed policy.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl AttachedManagedPolicy {
-    /// <p>The name of the Amazon Web Services managed policy.</p>
+    /// <p>The name of the AWS managed policy.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1001,22 +1001,22 @@ pub mod attached_managed_policy {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Amazon Web Services managed policy.</p>
+        /// <p>The name of the AWS managed policy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Web Services managed policy.</p>
+        /// <p>The name of the AWS managed policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1037,23 +1037,23 @@ impl AttachedManagedPolicy {
     }
 }
 
-/// <p>Provides information about the Amazon Web Services SSO instance.</p>
+/// <p>Provides information about the IAM Identity Center instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceMetadata {
-    /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the identity store that is connected to the Amazon Web Services SSO instance.</p>
+    /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
 }
 impl InstanceMetadata {
-    /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(&self) -> std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>The identifier of the identity store that is connected to the Amazon Web Services SSO instance.</p>
+    /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
@@ -1076,22 +1076,22 @@ pub mod instance_metadata {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_arn = input;
             self
         }
-        /// <p>The identifier of the identity store that is connected to the Amazon Web Services SSO instance.</p>
+        /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_store_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the identity store that is connected to the Amazon Web Services SSO instance.</p>
+        /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1115,31 +1115,31 @@ impl InstanceMetadata {
     }
 }
 
-/// <p>The assignment that indicates a principal's limited access to a specified Amazon Web Services account with a specified permission set.</p> <note>
-/// <p>The term <i>principal</i> here refers to a user or group that is defined in Amazon Web Services SSO.</p>
+/// <p>The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.</p> <note>
+/// <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountAssignment {
-    /// <p>The identifier of the Amazon Web Services account.</p>
+    /// <p>The identifier of the AWS account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
     #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
-    /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
 }
 impl AccountAssignment {
-    /// <p>The identifier of the Amazon Web Services account.</p>
+    /// <p>The identifier of the AWS account.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn permission_set_arn(&self) -> std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
@@ -1147,7 +1147,7 @@ impl AccountAssignment {
     pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
         self.principal_type.as_ref()
     }
-    /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -1174,22 +1174,22 @@ pub mod account_assignment {
         pub(crate) principal_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the Amazon Web Services account.</p>
+        /// <p>The identifier of the AWS account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the Amazon Web Services account.</p>
+        /// <p>The identifier of the AWS account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_set_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1210,12 +1210,12 @@ pub mod account_assignment {
             self.principal_type = input;
             self
         }
-        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -1401,7 +1401,7 @@ pub struct PermissionSet {
     /// <p>The name of the permission set.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The description of the <code>PermissionSet</code>.</p>
@@ -1422,7 +1422,7 @@ impl PermissionSet {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn permission_set_arn(&self) -> std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
@@ -1479,12 +1479,12 @@ pub mod permission_set {
             self.name = input;
             self
         }
-        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_set_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1634,19 +1634,19 @@ pub struct AccountAssignmentOperationStatus {
     /// <p>The message that contains an error or exception in case of an operation failure.</p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
     #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
     #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::TargetType>,
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
     #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
-    /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
@@ -1666,7 +1666,7 @@ impl AccountAssignmentOperationStatus {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -1674,7 +1674,7 @@ impl AccountAssignmentOperationStatus {
     pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
         self.target_type.as_ref()
     }
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn permission_set_arn(&self) -> std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
@@ -1682,7 +1682,7 @@ impl AccountAssignmentOperationStatus {
     pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
         self.principal_type.as_ref()
     }
-    /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -1759,12 +1759,12 @@ pub mod account_assignment_operation_status {
             self.failure_reason = input;
             self
         }
-        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_id = Some(input.into());
             self
         }
-        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -1782,12 +1782,12 @@ pub mod account_assignment_operation_status {
             self.target_type = input;
             self
         }
-        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_set_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1808,12 +1808,12 @@ pub mod account_assignment_operation_status {
             self.principal_type = input;
             self
         }
-        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self

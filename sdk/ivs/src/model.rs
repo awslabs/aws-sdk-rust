@@ -2048,6 +2048,9 @@ pub struct RecordingConfiguration {
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
     #[doc(hidden)]
     pub thumbnail_configuration: std::option::Option<crate::model::ThumbnailConfiguration>,
+    /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
+    #[doc(hidden)]
+    pub recording_reconnect_window_seconds: i32,
 }
 impl RecordingConfiguration {
     /// <p>Recording-configuration ARN.</p>
@@ -2081,6 +2084,10 @@ impl RecordingConfiguration {
     ) -> std::option::Option<&crate::model::ThumbnailConfiguration> {
         self.thumbnail_configuration.as_ref()
     }
+    /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
+    pub fn recording_reconnect_window_seconds(&self) -> i32 {
+        self.recording_reconnect_window_seconds
+    }
 }
 impl std::fmt::Debug for RecordingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2091,6 +2098,10 @@ impl std::fmt::Debug for RecordingConfiguration {
         formatter.field("state", &self.state);
         formatter.field("tags", &self.tags);
         formatter.field("thumbnail_configuration", &self.thumbnail_configuration);
+        formatter.field(
+            "recording_reconnect_window_seconds",
+            &self.recording_reconnect_window_seconds,
+        );
         formatter.finish()
     }
 }
@@ -2110,6 +2121,7 @@ pub mod recording_configuration {
         >,
         pub(crate) thumbnail_configuration:
             std::option::Option<crate::model::ThumbnailConfiguration>,
+        pub(crate) recording_reconnect_window_seconds: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Recording-configuration ARN.</p>
@@ -2202,6 +2214,19 @@ pub mod recording_configuration {
             self.thumbnail_configuration = input;
             self
         }
+        /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
+        pub fn recording_reconnect_window_seconds(mut self, input: i32) -> Self {
+            self.recording_reconnect_window_seconds = Some(input);
+            self
+        }
+        /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
+        pub fn set_recording_reconnect_window_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.recording_reconnect_window_seconds = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecordingConfiguration`](crate::model::RecordingConfiguration).
         pub fn build(self) -> crate::model::RecordingConfiguration {
             crate::model::RecordingConfiguration {
@@ -2211,6 +2236,9 @@ pub mod recording_configuration {
                 state: self.state,
                 tags: self.tags,
                 thumbnail_configuration: self.thumbnail_configuration,
+                recording_reconnect_window_seconds: self
+                    .recording_reconnect_window_seconds
+                    .unwrap_or_default(),
             }
         }
     }

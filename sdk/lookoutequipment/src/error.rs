@@ -754,6 +754,295 @@ impl std::error::Error for CreateInferenceSchedulerError {
     }
 }
 
+/// Error type for the `CreateLabel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLabelError {
+    /// Kind of error that occurred.
+    pub kind: CreateLabelErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLabel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLabelErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> Resource limitations have been exceeded. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLabelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLabelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateLabelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateLabelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateLabelErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateLabelErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateLabelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateLabelErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateLabelErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLabelError {
+    fn code(&self) -> Option<&str> {
+        CreateLabelError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLabelError {
+    /// Creates a new `CreateLabelError`.
+    pub fn new(kind: CreateLabelErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLabelError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLabelErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLabelError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLabelErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLabelErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateLabelErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLabelErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateLabelErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLabelErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, CreateLabelErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLabelErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLabelErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLabelErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLabelErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLabelErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateLabelErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLabelErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateLabelErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateLabelError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLabelErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateLabelErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateLabelErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateLabelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateLabelErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateLabelErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateLabelErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateLabelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateLabelGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLabelGroupError {
+    /// Kind of error that occurred.
+    pub kind: CreateLabelGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLabelGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLabelGroupErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> Resource limitations have been exceeded. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLabelGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLabelGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateLabelGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateLabelGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateLabelGroupErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateLabelGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateLabelGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateLabelGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLabelGroupError {
+    fn code(&self) -> Option<&str> {
+        CreateLabelGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLabelGroupError {
+    /// Creates a new `CreateLabelGroupError`.
+    pub fn new(kind: CreateLabelGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLabelGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLabelGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLabelGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLabelGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLabelGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLabelGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLabelGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateLabelGroupErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLabelGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLabelGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLabelGroupErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLabelGroupErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLabelGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLabelGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLabelGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLabelGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLabelGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLabelGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateLabelGroupErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateLabelGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateLabelGroupErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateLabelGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateLabelGroupErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateLabelGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateModel` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1170,6 +1459,265 @@ impl std::error::Error for DeleteInferenceSchedulerError {
             DeleteInferenceSchedulerErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteInferenceSchedulerErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteInferenceSchedulerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteLabel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLabelError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLabelErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteLabel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLabelErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteLabelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLabelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteLabelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteLabelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteLabelErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteLabelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteLabelErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteLabelError {
+    fn code(&self) -> Option<&str> {
+        DeleteLabelError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLabelError {
+    /// Creates a new `DeleteLabelError`.
+    pub fn new(kind: DeleteLabelErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLabelError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLabelErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLabelError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLabelErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteLabelErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLabelErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLabelErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLabelErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLabelErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLabelErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLabelErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLabelErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLabelErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLabelErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for DeleteLabelError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLabelErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteLabelErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteLabelErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteLabelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteLabelErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteLabelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteLabelGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLabelGroupError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLabelGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteLabelGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLabelGroupErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteLabelGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLabelGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteLabelGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteLabelGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteLabelGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteLabelGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteLabelGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteLabelGroupError {
+    fn code(&self) -> Option<&str> {
+        DeleteLabelGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLabelGroupError {
+    /// Creates a new `DeleteLabelGroupError`.
+    pub fn new(kind: DeleteLabelGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLabelGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLabelGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLabelGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLabelGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteLabelGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLabelGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLabelGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLabelGroupErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLabelGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLabelGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLabelGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLabelGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLabelGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLabelGroupErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteLabelGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLabelGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteLabelGroupErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteLabelGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteLabelGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteLabelGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteLabelGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1700,6 +2248,271 @@ impl std::error::Error for DescribeInferenceSchedulerError {
             DescribeInferenceSchedulerErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeInferenceSchedulerErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeInferenceSchedulerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeLabel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeLabelError {
+    /// Kind of error that occurred.
+    pub kind: DescribeLabelErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeLabel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeLabelErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeLabelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeLabelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeLabelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeLabelErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeLabelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeLabelErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeLabelErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeLabelError {
+    fn code(&self) -> Option<&str> {
+        DescribeLabelError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeLabelError {
+    /// Creates a new `DescribeLabelError`.
+    pub fn new(kind: DescribeLabelErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeLabelError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeLabelErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeLabelError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeLabelErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeLabelErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DescribeLabelErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeLabelErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLabelErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLabelErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLabelErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLabelErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DescribeLabelErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeLabelErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DescribeLabelErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DescribeLabelError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeLabelErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeLabelErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeLabelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeLabelErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeLabelErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeLabelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeLabelGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeLabelGroupError {
+    /// Kind of error that occurred.
+    pub kind: DescribeLabelGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeLabelGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeLabelGroupErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeLabelGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeLabelGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeLabelGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeLabelGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeLabelGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeLabelGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeLabelGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeLabelGroupError {
+    fn code(&self) -> Option<&str> {
+        DescribeLabelGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeLabelGroupError {
+    /// Creates a new `DescribeLabelGroupError`.
+    pub fn new(kind: DescribeLabelGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeLabelGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeLabelGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeLabelGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeLabelGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeLabelGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLabelGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLabelGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLabelGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLabelGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLabelGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLabelGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLabelGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLabelGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLabelGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeLabelGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeLabelGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeLabelGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeLabelGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeLabelGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeLabelGroupErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeLabelGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2471,6 +3284,240 @@ impl std::error::Error for ListInferenceSchedulersError {
             ListInferenceSchedulersErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListInferenceSchedulersErrorKind::ValidationException(_inner) => Some(_inner),
             ListInferenceSchedulersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListLabelGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLabelGroupsError {
+    /// Kind of error that occurred.
+    pub kind: ListLabelGroupsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListLabelGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLabelGroupsErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListLabelGroupsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLabelGroupsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListLabelGroupsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListLabelGroupsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListLabelGroupsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListLabelGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListLabelGroupsError {
+    fn code(&self) -> Option<&str> {
+        ListLabelGroupsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLabelGroupsError {
+    /// Creates a new `ListLabelGroupsError`.
+    pub fn new(kind: ListLabelGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListLabelGroupsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLabelGroupsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListLabelGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLabelGroupsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListLabelGroupsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLabelGroupsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLabelGroupsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLabelGroupsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLabelGroupsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListLabelGroupsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListLabelGroupsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListLabelGroupsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListLabelGroupsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLabelGroupsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListLabelGroupsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListLabelGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListLabelGroupsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListLabelGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListLabels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLabelsError {
+    /// Kind of error that occurred.
+    pub kind: ListLabelsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListLabels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLabelsErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListLabelsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLabelsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListLabelsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListLabelsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListLabelsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListLabelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListLabelsError {
+    fn code(&self) -> Option<&str> {
+        ListLabelsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLabelsError {
+    /// Creates a new `ListLabelsError`.
+    pub fn new(kind: ListLabelsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListLabelsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLabelsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListLabelsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLabelsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListLabelsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListLabelsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListLabelsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, ListLabelsErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ListLabelsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListLabelsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListLabelsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListLabelsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListLabelsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLabelsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListLabelsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListLabelsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListLabelsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3726,6 +4773,151 @@ impl std::error::Error for UpdateInferenceSchedulerError {
             UpdateInferenceSchedulerErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateInferenceSchedulerErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateInferenceSchedulerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateLabelGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateLabelGroupError {
+    /// Kind of error that occurred.
+    pub kind: UpdateLabelGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateLabelGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateLabelGroupErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateLabelGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateLabelGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateLabelGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateLabelGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateLabelGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateLabelGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateLabelGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateLabelGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateLabelGroupError {
+    fn code(&self) -> Option<&str> {
+        UpdateLabelGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateLabelGroupError {
+    /// Creates a new `UpdateLabelGroupError`.
+    pub fn new(kind: UpdateLabelGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateLabelGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateLabelGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateLabelGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateLabelGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateLabelGroupErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLabelGroupErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLabelGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateLabelGroupErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateLabelGroupErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLabelGroupErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLabelGroupErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLabelGroupErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLabelGroupErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLabelGroupErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLabelGroupErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLabelGroupErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateLabelGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateLabelGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateLabelGroupErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateLabelGroupErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateLabelGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateLabelGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateLabelGroupErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateLabelGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

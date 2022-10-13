@@ -905,6 +905,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "subSlotToElicit" => {
+                                builder = builder.set_sub_slot_to_elicit(
+                                    crate::json_deser::deser_structure_crate_model_elicit_sub_slot(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -1250,6 +1257,60 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_elicit_sub_slot<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::ElicitSubSlot>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::ElicitSubSlot::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "name" => {
+                                builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "subSlotToElicit" => {
+                                builder = builder.set_sub_slot_to_elicit(
+                                    crate::json_deser::deser_structure_crate_model_elicit_sub_slot(
+                                        tokens,
+                                    )?
+                                    .map(Box::new),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 #[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_map_com_amazonaws_lexruntimev2_slots<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
@@ -1539,6 +1600,13 @@ where
                             "values" => {
                                 builder = builder.set_values(
                                     crate::json_deser::deser_list_com_amazonaws_lexruntimev2_values(tokens)?
+                                );
+                            }
+                            "subSlots" => {
+                                builder = builder.set_sub_slots(
+                                    crate::json_deser::deser_map_com_amazonaws_lexruntimev2_slots(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1877,6 +1945,11 @@ where
                             "runtimeHintValues" => {
                                 builder = builder.set_runtime_hint_values(
                                     crate::json_deser::deser_list_com_amazonaws_lexruntimev2_runtime_hint_values_list(tokens)?
+                                );
+                            }
+                            "subSlotHints" => {
+                                builder = builder.set_sub_slot_hints(
+                                    crate::json_deser::deser_map_com_amazonaws_lexruntimev2_slot_hints_slot_map(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

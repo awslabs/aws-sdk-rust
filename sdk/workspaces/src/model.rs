@@ -1951,17 +1951,25 @@ pub struct ClientProperties {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
     #[doc(hidden)]
     pub reconnect_enabled: std::option::Option<crate::model::ReconnectEnum>,
+    /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
+    #[doc(hidden)]
+    pub log_upload_enabled: std::option::Option<crate::model::LogUploadEnum>,
 }
 impl ClientProperties {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
     pub fn reconnect_enabled(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
         self.reconnect_enabled.as_ref()
     }
+    /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
+    pub fn log_upload_enabled(&self) -> std::option::Option<&crate::model::LogUploadEnum> {
+        self.log_upload_enabled.as_ref()
+    }
 }
 impl std::fmt::Debug for ClientProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClientProperties");
         formatter.field("reconnect_enabled", &self.reconnect_enabled);
+        formatter.field("log_upload_enabled", &self.log_upload_enabled);
         formatter.finish()
     }
 }
@@ -1972,6 +1980,7 @@ pub mod client_properties {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reconnect_enabled: std::option::Option<crate::model::ReconnectEnum>,
+        pub(crate) log_upload_enabled: std::option::Option<crate::model::LogUploadEnum>,
     }
     impl Builder {
         /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
@@ -1987,10 +1996,24 @@ pub mod client_properties {
             self.reconnect_enabled = input;
             self
         }
+        /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
+        pub fn log_upload_enabled(mut self, input: crate::model::LogUploadEnum) -> Self {
+            self.log_upload_enabled = Some(input);
+            self
+        }
+        /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
+        pub fn set_log_upload_enabled(
+            mut self,
+            input: std::option::Option<crate::model::LogUploadEnum>,
+        ) -> Self {
+            self.log_upload_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ClientProperties`](crate::model::ClientProperties).
         pub fn build(self) -> crate::model::ClientProperties {
             crate::model::ClientProperties {
                 reconnect_enabled: self.reconnect_enabled,
+                log_upload_enabled: self.log_upload_enabled,
             }
         }
     }
@@ -1999,6 +2022,61 @@ impl ClientProperties {
     /// Creates a new builder-style object to manufacture [`ClientProperties`](crate::model::ClientProperties).
     pub fn builder() -> crate::model::client_properties::Builder {
         crate::model::client_properties::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LogUploadEnum {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LogUploadEnum {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => LogUploadEnum::Disabled,
+            "ENABLED" => LogUploadEnum::Enabled,
+            other => LogUploadEnum::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LogUploadEnum {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LogUploadEnum::from(s))
+    }
+}
+impl LogUploadEnum {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LogUploadEnum::Disabled => "DISABLED",
+            LogUploadEnum::Enabled => "ENABLED",
+            LogUploadEnum::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for LogUploadEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

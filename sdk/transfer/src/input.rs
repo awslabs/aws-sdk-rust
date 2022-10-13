@@ -2555,6 +2555,161 @@ impl DeleteConnectorInput {
     }
 }
 
+/// See [`DeleteHostKeyInput`](crate::input::DeleteHostKeyInput).
+pub mod delete_host_key_input {
+
+    /// A builder for [`DeleteHostKeyInput`](crate::input::DeleteHostKeyInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) host_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>The ID of the host key that you are deleting.</p>
+        pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_key_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the host key that you are deleting.</p>
+        pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteHostKeyInput`](crate::input::DeleteHostKeyInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteHostKeyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteHostKeyInput {
+                server_id: self.server_id,
+                host_key_id: self.host_key_id,
+            })
+        }
+    }
+}
+impl DeleteHostKeyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteHostKey`](crate::operation::DeleteHostKey)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteHostKey,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteHostKeyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteHostKeyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DeleteHostKey",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_host_key(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteHostKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteHostKey",
+            "transfer",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteHostKeyInput`](crate::input::DeleteHostKeyInput).
+    pub fn builder() -> crate::input::delete_host_key_input::Builder {
+        crate::input::delete_host_key_input::Builder::default()
+    }
+}
+
 /// See [`DeleteProfileInput`](crate::input::DeleteProfileInput).
 pub mod delete_profile_input {
 
@@ -4068,6 +4223,161 @@ impl DescribeExecutionInput {
     }
 }
 
+/// See [`DescribeHostKeyInput`](crate::input::DescribeHostKeyInput).
+pub mod describe_host_key_input {
+
+    /// A builder for [`DescribeHostKeyInput`](crate::input::DescribeHostKeyInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) host_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>Provide the ID of the host key that you want described.</p>
+        pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_key_id = Some(input.into());
+            self
+        }
+        /// <p>Provide the ID of the host key that you want described.</p>
+        pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeHostKeyInput`](crate::input::DescribeHostKeyInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeHostKeyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeHostKeyInput {
+                server_id: self.server_id,
+                host_key_id: self.host_key_id,
+            })
+        }
+    }
+}
+impl DescribeHostKeyInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeHostKey`](crate::operation::DescribeHostKey)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeHostKey,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeHostKeyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeHostKeyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DescribeHostKey",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_host_key(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeHostKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeHostKey",
+            "transfer",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeHostKeyInput`](crate::input::DescribeHostKeyInput).
+    pub fn builder() -> crate::input::describe_host_key_input::Builder {
+        crate::input::describe_host_key_input::Builder::default()
+    }
+}
+
 /// See [`DescribeProfileInput`](crate::input::DescribeProfileInput).
 pub mod describe_profile_input {
 
@@ -5045,6 +5355,199 @@ impl ImportCertificateInput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::input::ImportCertificateInput).
     pub fn builder() -> crate::input::import_certificate_input::Builder {
         crate::input::import_certificate_input::Builder::default()
+    }
+}
+
+/// See [`ImportHostKeyInput`](crate::input::ImportHostKeyInput).
+pub mod import_host_key_input {
+
+    /// A builder for [`ImportHostKeyInput`](crate::input::ImportHostKeyInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) host_key_body: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>The public key portion of an SSH key pair.</p>
+        /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+        pub fn host_key_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_key_body = Some(input.into());
+            self
+        }
+        /// <p>The public key portion of an SSH key pair.</p>
+        /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+        pub fn set_host_key_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.host_key_body = input;
+            self
+        }
+        /// <p>Enter a text description to identify this host key.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Enter a text description to identify this host key.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for host keys.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for host keys.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportHostKeyInput`](crate::input::ImportHostKeyInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ImportHostKeyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ImportHostKeyInput {
+                server_id: self.server_id,
+                host_key_body: self.host_key_body,
+                description: self.description,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl ImportHostKeyInput {
+    /// Consumes the builder and constructs an Operation<[`ImportHostKey`](crate::operation::ImportHostKey)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportHostKey,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ImportHostKeyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ImportHostKeyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.ImportHostKey",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_host_key(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportHostKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportHostKey",
+            "transfer",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ImportHostKeyInput`](crate::input::ImportHostKeyInput).
+    pub fn builder() -> crate::input::import_host_key_input::Builder {
+        crate::input::import_host_key_input::Builder::default()
     }
 }
 
@@ -6038,6 +6541,173 @@ impl ListExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsInput`](crate::input::ListExecutionsInput).
     pub fn builder() -> crate::input::list_executions_input::Builder {
         crate::input::list_executions_input::Builder::default()
+    }
+}
+
+/// See [`ListHostKeysInput`](crate::input::ListHostKeysInput).
+pub mod list_host_keys_input {
+
+    /// A builder for [`ListHostKeysInput`](crate::input::ListHostKeysInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of host keys to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of host keys to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListHostKeysInput`](crate::input::ListHostKeysInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListHostKeysInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListHostKeysInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+                server_id: self.server_id,
+            })
+        }
+    }
+}
+impl ListHostKeysInput {
+    /// Consumes the builder and constructs an Operation<[`ListHostKeys`](crate::operation::ListHostKeys)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListHostKeys,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListHostKeysInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListHostKeysInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.ListHostKeys",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_host_keys(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListHostKeys::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListHostKeys",
+            "transfer",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListHostKeysInput`](crate::input::ListHostKeysInput).
+    pub fn builder() -> crate::input::list_host_keys_input::Builder {
+        crate::input::list_host_keys_input::Builder::default()
     }
 }
 
@@ -9083,6 +9753,173 @@ impl UpdateConnectorInput {
     }
 }
 
+/// See [`UpdateHostKeyInput`](crate::input::UpdateHostKeyInput).
+pub mod update_host_key_input {
+
+    /// A builder for [`UpdateHostKeyInput`](crate::input::UpdateHostKeyInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) host_key_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>Provide the ID of the host key that you are updating.</p>
+        pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_key_id = Some(input.into());
+            self
+        }
+        /// <p>Provide the ID of the host key that you are updating.</p>
+        pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_key_id = input;
+            self
+        }
+        /// <p>Provide an updated description for the host key.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Provide an updated description for the host key.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateHostKeyInput`](crate::input::UpdateHostKeyInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateHostKeyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateHostKeyInput {
+                server_id: self.server_id,
+                host_key_id: self.host_key_id,
+                description: self.description,
+            })
+        }
+    }
+}
+impl UpdateHostKeyInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateHostKey`](crate::operation::UpdateHostKey)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateHostKey,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateHostKeyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateHostKeyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.UpdateHostKey",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_host_key(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateHostKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateHostKey",
+            "transfer",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateHostKeyInput`](crate::input::UpdateHostKeyInput).
+    pub fn builder() -> crate::input::update_host_key_input::Builder {
+        crate::input::update_host_key_input::Builder::default()
+    }
+}
+
 /// See [`UpdateProfileInput`](crate::input::UpdateProfileInput).
 pub mod update_profile_input {
 
@@ -10325,6 +11162,44 @@ impl std::fmt::Debug for UpdateProfileInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateHostKeyInput {
+    /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+    #[doc(hidden)]
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>Provide the ID of the host key that you are updating.</p>
+    #[doc(hidden)]
+    pub host_key_id: std::option::Option<std::string::String>,
+    /// <p>Provide an updated description for the host key.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+}
+impl UpdateHostKeyInput {
+    /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Provide the ID of the host key that you are updating.</p>
+    pub fn host_key_id(&self) -> std::option::Option<&str> {
+        self.host_key_id.as_deref()
+    }
+    /// <p>Provide an updated description for the host key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateHostKeyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateHostKeyInput");
+        formatter.field("server_id", &self.server_id);
+        formatter.field("host_key_id", &self.host_key_id);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorInput {
     /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
@@ -11064,6 +11939,44 @@ impl std::fmt::Debug for ListProfilesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListHostKeysInput {
+    /// <p>The maximum number of host keys to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+    #[doc(hidden)]
+    pub server_id: std::option::Option<std::string::String>,
+}
+impl ListHostKeysInput {
+    /// <p>The maximum number of host keys to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Provide the ID of the server that contains the host keys that you want to view.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ListHostKeysInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListHostKeysInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("server_id", &self.server_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsInput {
     /// <p>Specifies the maximum number of executions to return.</p>
     #[doc(hidden)]
@@ -11288,6 +12201,54 @@ impl std::fmt::Debug for ImportSshPublicKeyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportHostKeyInput {
+    /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+    #[doc(hidden)]
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    #[doc(hidden)]
+    pub host_key_body: std::option::Option<std::string::String>,
+    /// <p>Enter a text description to identify this host key.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Key-value pairs that can be used to group and search for host keys.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ImportHostKeyInput {
+    /// <p>Provide the ID of the server that contains the host key that you are importing.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    pub fn host_key_body(&self) -> std::option::Option<&str> {
+        self.host_key_body.as_deref()
+    }
+    /// <p>Enter a text description to identify this host key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for host keys.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportHostKeyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportHostKeyInput");
+        formatter.field("server_id", &self.server_id);
+        formatter.field("host_key_body", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &self.description);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     #[doc(hidden)]
@@ -11477,6 +12438,36 @@ impl std::fmt::Debug for DescribeProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProfileInput");
         formatter.field("profile_id", &self.profile_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeHostKeyInput {
+    /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+    #[doc(hidden)]
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>Provide the ID of the host key that you want described.</p>
+    #[doc(hidden)]
+    pub host_key_id: std::option::Option<std::string::String>,
+}
+impl DescribeHostKeyInput {
+    /// <p>Provide the ID of the server that contains the host key that you want described.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Provide the ID of the host key that you want described.</p>
+    pub fn host_key_id(&self) -> std::option::Option<&str> {
+        self.host_key_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeHostKeyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeHostKeyInput");
+        formatter.field("server_id", &self.server_id);
+        formatter.field("host_key_id", &self.host_key_id);
         formatter.finish()
     }
 }
@@ -11751,6 +12742,36 @@ impl std::fmt::Debug for DeleteProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProfileInput");
         formatter.field("profile_id", &self.profile_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteHostKeyInput {
+    /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+    #[doc(hidden)]
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the host key that you are deleting.</p>
+    #[doc(hidden)]
+    pub host_key_id: std::option::Option<std::string::String>,
+}
+impl DeleteHostKeyInput {
+    /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The ID of the host key that you are deleting.</p>
+    pub fn host_key_id(&self) -> std::option::Option<&str> {
+        self.host_key_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteHostKeyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteHostKeyInput");
+        formatter.field("server_id", &self.server_id);
+        formatter.field("host_key_id", &self.host_key_id);
         formatter.finish()
     }
 }

@@ -342,7 +342,7 @@ pub struct ListPermissionSetsProvisionedToAccountOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Defines the level of access that an Amazon Web Services account has.</p>
+    /// <p>Defines the level of access that an AWS account has.</p>
     #[doc(hidden)]
     pub permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -351,7 +351,7 @@ impl ListPermissionSetsProvisionedToAccountOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Defines the level of access that an Amazon Web Services account has.</p>
+    /// <p>Defines the level of access that an AWS account has.</p>
     pub fn permission_sets(&self) -> std::option::Option<&[std::string::String]> {
         self.permission_sets.as_deref()
     }
@@ -388,14 +388,14 @@ pub mod list_permission_sets_provisioned_to_account_output {
         ///
         /// To override the contents of this collection use [`set_permission_sets`](Self::set_permission_sets).
         ///
-        /// <p>Defines the level of access that an Amazon Web Services account has.</p>
+        /// <p>Defines the level of access that an AWS account has.</p>
         pub fn permission_sets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permission_sets.unwrap_or_default();
             v.push(input.into());
             self.permission_sets = Some(v);
             self
         }
-        /// <p>Defines the level of access that an Amazon Web Services account has.</p>
+        /// <p>Defines the level of access that an AWS account has.</p>
         pub fn set_permission_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -423,7 +423,7 @@ impl ListPermissionSetsProvisionedToAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionSetsOutput {
-    /// <p>Defines the level of access on an Amazon Web Services account.</p>
+    /// <p>Defines the level of access on an AWS account.</p>
     #[doc(hidden)]
     pub permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -431,7 +431,7 @@ pub struct ListPermissionSetsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionSetsOutput {
-    /// <p>Defines the level of access on an Amazon Web Services account.</p>
+    /// <p>Defines the level of access on an AWS account.</p>
     pub fn permission_sets(&self) -> std::option::Option<&[std::string::String]> {
         self.permission_sets.as_deref()
     }
@@ -462,14 +462,14 @@ pub mod list_permission_sets_output {
         ///
         /// To override the contents of this collection use [`set_permission_sets`](Self::set_permission_sets).
         ///
-        /// <p>Defines the level of access on an Amazon Web Services account.</p>
+        /// <p>Defines the level of access on an AWS account.</p>
         pub fn permission_sets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permission_sets.unwrap_or_default();
             v.push(input.into());
             self.permission_sets = Some(v);
             self
         }
-        /// <p>Defines the level of access on an Amazon Web Services account.</p>
+        /// <p>Defines the level of access on an AWS account.</p>
         pub fn set_permission_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -695,7 +695,7 @@ impl ListManagedPoliciesInPermissionSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesOutput {
-    /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
+    /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -703,7 +703,7 @@ pub struct ListInstancesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstancesOutput {
-    /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
+    /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
     pub fn instances(&self) -> std::option::Option<&[crate::model::InstanceMetadata]> {
         self.instances.as_deref()
     }
@@ -734,14 +734,14 @@ pub mod list_instances_output {
         ///
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
-        /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
+        /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
         pub fn instances(mut self, input: crate::model::InstanceMetadata) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input);
             self.instances = Some(v);
             self
         }
-        /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
+        /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceMetadata>>,
@@ -878,7 +878,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsForProvisionedPermissionSetOutput {
-    /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
+    /// <p>The list of AWS <code>AccountIds</code>.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -886,7 +886,7 @@ pub struct ListAccountsForProvisionedPermissionSetOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsForProvisionedPermissionSetOutput {
-    /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
+    /// <p>The list of AWS <code>AccountIds</code>.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -917,14 +917,14 @@ pub mod list_accounts_for_provisioned_permission_set_output {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
+        /// <p>The list of AWS <code>AccountIds</code>.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
+        /// <p>The list of AWS <code>AccountIds</code>.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -963,7 +963,7 @@ impl ListAccountsForProvisionedPermissionSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAssignmentsOutput {
-    /// <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
+    /// <p>The list of assignments that match the input AWS account and permission set.</p>
     #[doc(hidden)]
     pub account_assignments: std::option::Option<std::vec::Vec<crate::model::AccountAssignment>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -971,7 +971,7 @@ pub struct ListAccountAssignmentsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountAssignmentsOutput {
-    /// <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
+    /// <p>The list of assignments that match the input AWS account and permission set.</p>
     pub fn account_assignments(&self) -> std::option::Option<&[crate::model::AccountAssignment]> {
         self.account_assignments.as_deref()
     }
@@ -1003,14 +1003,14 @@ pub mod list_account_assignments_output {
         ///
         /// To override the contents of this collection use [`set_account_assignments`](Self::set_account_assignments).
         ///
-        /// <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
+        /// <p>The list of assignments that match the input AWS account and permission set.</p>
         pub fn account_assignments(mut self, input: crate::model::AccountAssignment) -> Self {
             let mut v = self.account_assignments.unwrap_or_default();
             v.push(input);
             self.account_assignments = Some(v);
             self
         }
-        /// <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
+        /// <p>The list of assignments that match the input AWS account and permission set.</p>
         pub fn set_account_assignments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountAssignment>>,
@@ -1491,12 +1491,12 @@ impl DescribePermissionSetProvisioningStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePermissionSetOutput {
-    /// <p>Describes the level of access on an Amazon Web Services account.</p>
+    /// <p>Describes the level of access on an AWS account.</p>
     #[doc(hidden)]
     pub permission_set: std::option::Option<crate::model::PermissionSet>,
 }
 impl DescribePermissionSetOutput {
-    /// <p>Describes the level of access on an Amazon Web Services account.</p>
+    /// <p>Describes the level of access on an AWS account.</p>
     pub fn permission_set(&self) -> std::option::Option<&crate::model::PermissionSet> {
         self.permission_set.as_ref()
     }
@@ -1517,12 +1517,12 @@ pub mod describe_permission_set_output {
         pub(crate) permission_set: std::option::Option<crate::model::PermissionSet>,
     }
     impl Builder {
-        /// <p>Describes the level of access on an Amazon Web Services account.</p>
+        /// <p>Describes the level of access on an AWS account.</p>
         pub fn permission_set(mut self, input: crate::model::PermissionSet) -> Self {
             self.permission_set = Some(input);
             self
         }
-        /// <p>Describes the level of access on an Amazon Web Services account.</p>
+        /// <p>Describes the level of access on an AWS account.</p>
         pub fn set_permission_set(
             mut self,
             input: std::option::Option<crate::model::PermissionSet>,
@@ -1556,7 +1556,7 @@ pub struct DescribeInstanceAccessControlAttributeConfigurationOutput {
     /// <p>Provides more details about the current status of the specified attribute.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
+    /// <p>Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.</p>
     #[doc(hidden)]
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
@@ -1572,7 +1572,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutput {
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
+    /// <p>Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.</p>
     pub fn instance_access_control_attribute_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InstanceAccessControlAttributeConfiguration> {
@@ -1637,7 +1637,7 @@ pub mod describe_instance_access_control_attribute_configuration_output {
             self.status_reason = input;
             self
         }
-        /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
+        /// <p>Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.</p>
         pub fn instance_access_control_attribute_configuration(
             mut self,
             input: crate::model::InstanceAccessControlAttributeConfiguration,
@@ -1645,7 +1645,7 @@ pub mod describe_instance_access_control_attribute_configuration_output {
             self.instance_access_control_attribute_configuration = Some(input);
             self
         }
-        /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
+        /// <p>Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.</p>
         pub fn set_instance_access_control_attribute_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
@@ -2008,12 +2008,12 @@ impl DeleteAccountAssignmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePermissionSetOutput {
-    /// <p>Defines the level of access on an Amazon Web Services account.</p>
+    /// <p>Defines the level of access on an AWS account.</p>
     #[doc(hidden)]
     pub permission_set: std::option::Option<crate::model::PermissionSet>,
 }
 impl CreatePermissionSetOutput {
-    /// <p>Defines the level of access on an Amazon Web Services account.</p>
+    /// <p>Defines the level of access on an AWS account.</p>
     pub fn permission_set(&self) -> std::option::Option<&crate::model::PermissionSet> {
         self.permission_set.as_ref()
     }
@@ -2034,12 +2034,12 @@ pub mod create_permission_set_output {
         pub(crate) permission_set: std::option::Option<crate::model::PermissionSet>,
     }
     impl Builder {
-        /// <p>Defines the level of access on an Amazon Web Services account.</p>
+        /// <p>Defines the level of access on an AWS account.</p>
         pub fn permission_set(mut self, input: crate::model::PermissionSet) -> Self {
             self.permission_set = Some(input);
             self
         }
-        /// <p>Defines the level of access on an Amazon Web Services account.</p>
+        /// <p>Defines the level of access on an AWS account.</p>
         pub fn set_permission_set(
             mut self,
             input: std::option::Option<crate::model::PermissionSet>,

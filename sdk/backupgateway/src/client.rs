@@ -157,6 +157,16 @@ impl Client {
     pub fn get_gateway(&self) -> fluent_builders::GetGateway {
         fluent_builders::GetGateway::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetVirtualMachine`](crate::client::fluent_builders::GetVirtualMachine) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetVirtualMachine::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetVirtualMachine::set_resource_arn): <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+    /// - On success, responds with [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput) with field(s):
+    ///   - [`virtual_machine(Option<VirtualMachineDetails>)`](crate::output::GetVirtualMachineOutput::virtual_machine): <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
+    /// - On failure, responds with [`SdkError<GetVirtualMachineError>`](crate::error::GetVirtualMachineError)
+    pub fn get_virtual_machine(&self) -> fluent_builders::GetVirtualMachine {
+        fluent_builders::GetVirtualMachine::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ImportHypervisorConfiguration`](crate::client::fluent_builders::ImportHypervisorConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -215,6 +225,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVirtualMachines::into_paginator).
     ///
     /// - The fluent builder is configurable:
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::client::fluent_builders::ListVirtualMachines::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::client::fluent_builders::ListVirtualMachines::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVirtualMachines::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVirtualMachines::set_max_results): <p>The maximum number of virtual machines to list.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualMachines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualMachines::set_next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     /// - On success, responds with [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput) with field(s):
@@ -837,6 +848,83 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetVirtualMachine`.
+    ///
+    /// <p>By providing the ARN (Amazon Resource Name), this API returns the virtual machine.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetVirtualMachine {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_virtual_machine_input::Builder,
+    }
+    impl GetVirtualMachine {
+        /// Creates a new `GetVirtualMachine`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetVirtualMachine,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetVirtualMachineError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetVirtualMachineOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetVirtualMachineError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ImportHypervisorConfiguration`.
     ///
     /// <p>Connect to a hypervisor by importing its configuration.</p>
@@ -1305,6 +1393,19 @@ pub mod fluent_builders {
         /// Paginators are used by calling [`send().await`](crate::paginator::ListVirtualMachinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
         pub fn into_paginator(self) -> crate::paginator::ListVirtualMachinesPaginator {
             crate::paginator::ListVirtualMachinesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
+        pub fn set_hypervisor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hypervisor_arn(input);
+            self
         }
         /// <p>The maximum number of virtual machines to list.</p>
         pub fn max_results(mut self, input: i32) -> Self {

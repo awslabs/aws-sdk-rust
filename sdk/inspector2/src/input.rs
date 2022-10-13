@@ -148,9 +148,15 @@ pub mod batch_get_account_status_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
         /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
-        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.account_ids = Some(input);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
             self
         }
         /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
@@ -1225,9 +1231,15 @@ pub mod disable_input {
             std::option::Option<std::vec::Vec<crate::model::ResourceScanType>>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
         /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.account_ids = Some(input);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
             self
         }
         /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
@@ -1667,9 +1679,15 @@ pub mod enable_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
         /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.account_ids = Some(input);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
             self
         }
         /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
@@ -5693,8 +5711,8 @@ pub struct EnableInput {
 }
 impl EnableInput {
     /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-    pub fn account_ids(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
-        self.account_ids.as_ref()
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
     }
     /// <p>The resource scan types you want to enable.</p>
     pub fn resource_types(&self) -> std::option::Option<&[crate::model::ResourceScanType]> {
@@ -5775,8 +5793,8 @@ pub struct DisableInput {
 }
 impl DisableInput {
     /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-    pub fn account_ids(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
-        self.account_ids.as_ref()
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
     }
     /// <p>The resource scan types you want to disable.</p>
     pub fn resource_types(&self) -> std::option::Option<&[crate::model::ResourceScanType]> {
@@ -5983,8 +6001,8 @@ pub struct BatchGetAccountStatusInput {
 }
 impl BatchGetAccountStatusInput {
     /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
-    pub fn account_ids(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
-        self.account_ids.as_ref()
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
     }
 }
 impl std::fmt::Debug for BatchGetAccountStatusInput {

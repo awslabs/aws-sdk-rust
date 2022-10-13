@@ -1115,6 +1115,20 @@ pub fn parse_delete_event_data_store_error(
                                                     }
             tmp
         })},
+        "EventDataStoreHasOngoingImportException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreHasOngoingImportException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_has_ongoing_import_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_has_ongoing_import_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "EventDataStoreNotFoundException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1619,6 +1633,111 @@ pub fn parse_describe_trails_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_channel_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetChannelOutput, crate::error::GetChannelError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetChannelError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetChannelError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ChannelARNInvalidException" => crate::error::GetChannelError {
+            meta: generic,
+            kind: crate::error::GetChannelErrorKind::ChannelArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::channel_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_channel_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ChannelNotFoundException" => crate::error::GetChannelError {
+            meta: generic,
+            kind: crate::error::GetChannelErrorKind::ChannelNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::channel_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_channel_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::GetChannelError {
+            meta: generic,
+            kind: crate::error::GetChannelErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::GetChannelError {
+            meta: generic,
+            kind: crate::error::GetChannelErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetChannelError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_channel_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetChannelOutput, crate::error::GetChannelError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_channel_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_channel(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetChannelError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_event_data_store_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetEventDataStoreOutput, crate::error::GetEventDataStoreError>
@@ -1845,6 +1964,110 @@ pub fn parse_get_event_selectors_response(
             output,
         )
         .map_err(crate::error::GetEventSelectorsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_import_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetImportOutput, crate::error::GetImportError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetImportError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetImportError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ImportNotFoundException" => crate::error::GetImportError {
+            meta: generic,
+            kind: crate::error::GetImportErrorKind::ImportNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::import_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_import_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::GetImportError {
+            meta: generic,
+            kind: crate::error::GetImportErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::GetImportError {
+            meta: generic,
+            kind: crate::error::GetImportErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::GetImportError {
+            meta: generic,
+            kind: crate::error::GetImportErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetImportError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_import_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetImportOutput, crate::error::GetImportError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_import_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_import(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetImportError::unhandled)?;
         output.build()
     })
 }
@@ -2379,6 +2602,93 @@ pub fn parse_get_trail_status_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_channels_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListChannelsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListChannelsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNextTokenException" => crate::error::ListChannelsError {
+            meta: generic,
+            kind: crate::error::ListChannelsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::ListChannelsError {
+            meta: generic,
+            kind: crate::error::ListChannelsErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::ListChannelsError {
+            meta: generic,
+            kind: crate::error::ListChannelsErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListChannelsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_channels_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_channels_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_channels(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListChannelsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_event_data_stores_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2485,6 +2795,221 @@ pub fn parse_list_event_data_stores_response(
             output,
         )
         .map_err(crate::error::ListEventDataStoresError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_import_failures_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListImportFailuresOutput,
+    crate::error::ListImportFailuresError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListImportFailuresError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListImportFailuresError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNextTokenException" => crate::error::ListImportFailuresError {
+            meta: generic,
+            kind: crate::error::ListImportFailuresErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportFailuresError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::ListImportFailuresError {
+            meta: generic,
+            kind: crate::error::ListImportFailuresErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportFailuresError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::ListImportFailuresError {
+            meta: generic,
+            kind: crate::error::ListImportFailuresErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportFailuresError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListImportFailuresError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_import_failures_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListImportFailuresOutput,
+    crate::error::ListImportFailuresError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_import_failures_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_import_failures(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListImportFailuresError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_imports_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListImportsOutput, crate::error::ListImportsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListImportsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListImportsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EventDataStoreARNInvalidException" => crate::error::ListImportsError {
+            meta: generic,
+            kind: crate::error::ListImportsErrorKind::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::ListImportsError {
+            meta: generic,
+            kind: crate::error::ListImportsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::ListImportsError {
+            meta: generic,
+            kind: crate::error::ListImportsErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::ListImportsError {
+            meta: generic,
+            kind: crate::error::ListImportsErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::ListImportsError {
+            meta: generic,
+            kind: crate::error::ListImportsErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListImportsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_imports_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListImportsOutput, crate::error::ListImportsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_imports_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_imports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListImportsError::unhandled)?;
         output.build()
     })
 }
@@ -4031,6 +4556,236 @@ pub fn parse_restore_event_data_store_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_import_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StartImportOutput, crate::error::StartImportError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartImportError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StartImportError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccountHasOngoingImportException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::AccountHasOngoingImportException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::account_has_ongoing_import_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_account_has_ongoing_import_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreARNInvalidException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreNotFoundException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ImportNotFoundException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::ImportNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::import_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_import_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidEventDataStoreCategoryException" => {
+            crate::error::StartImportError {
+                meta: generic,
+                kind: crate::error::StartImportErrorKind::InvalidEventDataStoreCategoryException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::invalid_event_data_store_category_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_event_data_store_category_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidEventDataStoreStatusException" => {
+            crate::error::StartImportError {
+                meta: generic,
+                kind: crate::error::StartImportErrorKind::InvalidEventDataStoreStatusException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::invalid_event_data_store_status_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_event_data_store_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidImportSourceException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::InvalidImportSourceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_import_source_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_import_source_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StartImportError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_import_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StartImportOutput, crate::error::StartImportError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_import_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_import(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartImportError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartLoggingOutput, crate::error::StartLoggingError> {
@@ -4335,6 +5090,110 @@ pub fn parse_start_query_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_import_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StopImportOutput, crate::error::StopImportError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StopImportError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StopImportError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ImportNotFoundException" => crate::error::StopImportError {
+            meta: generic,
+            kind: crate::error::StopImportErrorKind::ImportNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::import_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_import_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::StopImportError {
+            meta: generic,
+            kind: crate::error::StopImportErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::StopImportError {
+            meta: generic,
+            kind: crate::error::StopImportErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::StopImportError {
+            meta: generic,
+            kind: crate::error::StopImportErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StopImportError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_import_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StopImportOutput, crate::error::StopImportError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::stop_import_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_stop_import(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StopImportError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopLoggingOutput, crate::error::StopLoggingError> {
@@ -4497,6 +5356,20 @@ pub fn parse_update_event_data_store_error(
                     #[allow(unused_mut)]let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreHasOngoingImportException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::EventDataStoreHasOngoingImportException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_has_ongoing_import_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_has_ongoing_import_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
                 }
             ;

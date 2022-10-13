@@ -33,6 +33,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponent {
     }
 }
 
+/// Operation shape for `CreateForm`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_form`](crate::client::Client::create_form).
+///
+/// See [`crate::client::fluent_builders::CreateForm`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateForm {
+    _private: (),
+}
+impl CreateForm {
+    /// Creates a new builder-style object to manufacture [`CreateFormInput`](crate::input::CreateFormInput).
+    pub fn builder() -> crate::input::create_form_input::Builder {
+        crate::input::create_form_input::Builder::default()
+    }
+    /// Creates a new `CreateForm` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateForm {
+    type Output =
+        std::result::Result<crate::output::CreateFormOutput, crate::error::CreateFormError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_form_error(response)
+        } else {
+            crate::operation_deser::parse_create_form_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateTheme`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -95,6 +127,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
             crate::operation_deser::parse_delete_component_error(response)
         } else {
             crate::operation_deser::parse_delete_component_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteForm`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_form`](crate::client::Client::delete_form).
+///
+/// See [`crate::client::fluent_builders::DeleteForm`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteForm {
+    _private: (),
+}
+impl DeleteForm {
+    /// Creates a new builder-style object to manufacture [`DeleteFormInput`](crate::input::DeleteFormInput).
+    pub fn builder() -> crate::input::delete_form_input::Builder {
+        crate::input::delete_form_input::Builder::default()
+    }
+    /// Creates a new `DeleteForm` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteForm {
+    type Output =
+        std::result::Result<crate::output::DeleteFormOutput, crate::error::DeleteFormError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_form_error(response)
+        } else {
+            crate::operation_deser::parse_delete_form_response(response)
         }
     }
 }
@@ -199,6 +263,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportComponents {
     }
 }
 
+/// Operation shape for `ExportForms`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`export_forms`](crate::client::Client::export_forms).
+///
+/// See [`crate::client::fluent_builders::ExportForms`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ExportForms {
+    _private: (),
+}
+impl ExportForms {
+    /// Creates a new builder-style object to manufacture [`ExportFormsInput`](crate::input::ExportFormsInput).
+    pub fn builder() -> crate::input::export_forms_input::Builder {
+        crate::input::export_forms_input::Builder::default()
+    }
+    /// Creates a new `ExportForms` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ExportForms {
+    type Output =
+        std::result::Result<crate::output::ExportFormsOutput, crate::error::ExportFormsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_export_forms_error(response)
+        } else {
+            crate::operation_deser::parse_export_forms_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ExportThemes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -259,6 +355,69 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
             crate::operation_deser::parse_get_component_error(response)
         } else {
             crate::operation_deser::parse_get_component_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetForm`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_form`](crate::client::Client::get_form).
+///
+/// See [`crate::client::fluent_builders::GetForm`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetForm {
+    _private: (),
+}
+impl GetForm {
+    /// Creates a new builder-style object to manufacture [`GetFormInput`](crate::input::GetFormInput).
+    pub fn builder() -> crate::input::get_form_input::Builder {
+        crate::input::get_form_input::Builder::default()
+    }
+    /// Creates a new `GetForm` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetForm {
+    type Output = std::result::Result<crate::output::GetFormOutput, crate::error::GetFormError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_form_error(response)
+        } else {
+            crate::operation_deser::parse_get_form_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_metadata`](crate::client::Client::get_metadata).
+///
+/// See [`crate::client::fluent_builders::GetMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMetadata {
+    _private: (),
+}
+impl GetMetadata {
+    /// Creates a new builder-style object to manufacture [`GetMetadataInput`](crate::input::GetMetadataInput).
+    pub fn builder() -> crate::input::get_metadata_input::Builder {
+        crate::input::get_metadata_input::Builder::default()
+    }
+    /// Creates a new `GetMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetMetadata {
+    type Output =
+        std::result::Result<crate::output::GetMetadataOutput, crate::error::GetMetadataError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_get_metadata_response(response)
         }
     }
 }
@@ -326,6 +485,37 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
     }
 }
 
+/// Operation shape for `ListForms`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_forms`](crate::client::Client::list_forms).
+///
+/// See [`crate::client::fluent_builders::ListForms`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListForms {
+    _private: (),
+}
+impl ListForms {
+    /// Creates a new builder-style object to manufacture [`ListFormsInput`](crate::input::ListFormsInput).
+    pub fn builder() -> crate::input::list_forms_input::Builder {
+        crate::input::list_forms_input::Builder::default()
+    }
+    /// Creates a new `ListForms` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListForms {
+    type Output = std::result::Result<crate::output::ListFormsOutput, crate::error::ListFormsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_forms_error(response)
+        } else {
+            crate::operation_deser::parse_list_forms_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListThemes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -354,6 +544,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThemes {
             crate::operation_deser::parse_list_themes_error(response)
         } else {
             crate::operation_deser::parse_list_themes_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutMetadataFlag`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_metadata_flag`](crate::client::Client::put_metadata_flag).
+///
+/// See [`crate::client::fluent_builders::PutMetadataFlag`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutMetadataFlag {
+    _private: (),
+}
+impl PutMetadataFlag {
+    /// Creates a new builder-style object to manufacture [`PutMetadataFlagInput`](crate::input::PutMetadataFlagInput).
+    pub fn builder() -> crate::input::put_metadata_flag_input::Builder {
+        crate::input::put_metadata_flag_input::Builder::default()
+    }
+    /// Creates a new `PutMetadataFlag` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutMetadataFlag {
+    type Output = std::result::Result<
+        crate::output::PutMetadataFlagOutput,
+        crate::error::PutMetadataFlagError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_metadata_flag_error(response)
+        } else {
+            crate::operation_deser::parse_put_metadata_flag_response(response)
         }
     }
 }
@@ -420,6 +644,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComponent {
             crate::operation_deser::parse_update_component_error(response)
         } else {
             crate::operation_deser::parse_update_component_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateForm`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_form`](crate::client::Client::update_form).
+///
+/// See [`crate::client::fluent_builders::UpdateForm`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateForm {
+    _private: (),
+}
+impl UpdateForm {
+    /// Creates a new builder-style object to manufacture [`UpdateFormInput`](crate::input::UpdateFormInput).
+    pub fn builder() -> crate::input::update_form_input::Builder {
+        crate::input::update_form_input::Builder::default()
+    }
+    /// Creates a new `UpdateForm` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateForm {
+    type Output =
+        std::result::Result<crate::output::UpdateFormOutput, crate::error::UpdateFormError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_form_error(response)
+        } else {
+            crate::operation_deser::parse_update_form_response(response)
         }
     }
 }

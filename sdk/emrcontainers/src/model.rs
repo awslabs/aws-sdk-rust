@@ -543,6 +543,9 @@ pub struct JobDriver {
     /// <p>The job driver parameters specified for spark submit.</p>
     #[doc(hidden)]
     pub spark_submit_job_driver: std::option::Option<crate::model::SparkSubmitJobDriver>,
+    /// <p>The job driver for job type.</p>
+    #[doc(hidden)]
+    pub spark_sql_job_driver: std::option::Option<crate::model::SparkSqlJobDriver>,
 }
 impl JobDriver {
     /// <p>The job driver parameters specified for spark submit.</p>
@@ -551,11 +554,16 @@ impl JobDriver {
     ) -> std::option::Option<&crate::model::SparkSubmitJobDriver> {
         self.spark_submit_job_driver.as_ref()
     }
+    /// <p>The job driver for job type.</p>
+    pub fn spark_sql_job_driver(&self) -> std::option::Option<&crate::model::SparkSqlJobDriver> {
+        self.spark_sql_job_driver.as_ref()
+    }
 }
 impl std::fmt::Debug for JobDriver {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobDriver");
         formatter.field("spark_submit_job_driver", &self.spark_submit_job_driver);
+        formatter.field("spark_sql_job_driver", &self.spark_sql_job_driver);
         formatter.finish()
     }
 }
@@ -566,6 +574,7 @@ pub mod job_driver {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) spark_submit_job_driver: std::option::Option<crate::model::SparkSubmitJobDriver>,
+        pub(crate) spark_sql_job_driver: std::option::Option<crate::model::SparkSqlJobDriver>,
     }
     impl Builder {
         /// <p>The job driver parameters specified for spark submit.</p>
@@ -584,10 +593,24 @@ pub mod job_driver {
             self.spark_submit_job_driver = input;
             self
         }
+        /// <p>The job driver for job type.</p>
+        pub fn spark_sql_job_driver(mut self, input: crate::model::SparkSqlJobDriver) -> Self {
+            self.spark_sql_job_driver = Some(input);
+            self
+        }
+        /// <p>The job driver for job type.</p>
+        pub fn set_spark_sql_job_driver(
+            mut self,
+            input: std::option::Option<crate::model::SparkSqlJobDriver>,
+        ) -> Self {
+            self.spark_sql_job_driver = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobDriver`](crate::model::JobDriver).
         pub fn build(self) -> crate::model::JobDriver {
             crate::model::JobDriver {
                 spark_submit_job_driver: self.spark_submit_job_driver,
+                spark_sql_job_driver: self.spark_sql_job_driver,
             }
         }
     }
@@ -596,6 +619,84 @@ impl JobDriver {
     /// Creates a new builder-style object to manufacture [`JobDriver`](crate::model::JobDriver).
     pub fn builder() -> crate::model::job_driver::Builder {
         crate::model::job_driver::Builder::default()
+    }
+}
+
+/// <p>The job driver for job type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SparkSqlJobDriver {
+    /// <p>The SQL file to be executed.</p>
+    #[doc(hidden)]
+    pub entry_point: std::option::Option<std::string::String>,
+    /// <p>The Spark parameters to be included in the Spark SQL command.</p>
+    #[doc(hidden)]
+    pub spark_sql_parameters: std::option::Option<std::string::String>,
+}
+impl SparkSqlJobDriver {
+    /// <p>The SQL file to be executed.</p>
+    pub fn entry_point(&self) -> std::option::Option<&str> {
+        self.entry_point.as_deref()
+    }
+    /// <p>The Spark parameters to be included in the Spark SQL command.</p>
+    pub fn spark_sql_parameters(&self) -> std::option::Option<&str> {
+        self.spark_sql_parameters.as_deref()
+    }
+}
+impl std::fmt::Debug for SparkSqlJobDriver {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SparkSqlJobDriver");
+        formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
+        formatter.field("spark_sql_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`SparkSqlJobDriver`](crate::model::SparkSqlJobDriver).
+pub mod spark_sql_job_driver {
+
+    /// A builder for [`SparkSqlJobDriver`](crate::model::SparkSqlJobDriver).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_point: std::option::Option<std::string::String>,
+        pub(crate) spark_sql_parameters: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The SQL file to be executed.</p>
+        pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_point = Some(input.into());
+            self
+        }
+        /// <p>The SQL file to be executed.</p>
+        pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_point = input;
+            self
+        }
+        /// <p>The Spark parameters to be included in the Spark SQL command.</p>
+        pub fn spark_sql_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.spark_sql_parameters = Some(input.into());
+            self
+        }
+        /// <p>The Spark parameters to be included in the Spark SQL command.</p>
+        pub fn set_spark_sql_parameters(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.spark_sql_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SparkSqlJobDriver`](crate::model::SparkSqlJobDriver).
+        pub fn build(self) -> crate::model::SparkSqlJobDriver {
+            crate::model::SparkSqlJobDriver {
+                entry_point: self.entry_point,
+                spark_sql_parameters: self.spark_sql_parameters,
+            }
+        }
+    }
+}
+impl SparkSqlJobDriver {
+    /// Creates a new builder-style object to manufacture [`SparkSqlJobDriver`](crate::model::SparkSqlJobDriver).
+    pub fn builder() -> crate::model::spark_sql_job_driver::Builder {
+        crate::model::spark_sql_job_driver::Builder::default()
     }
 }
 

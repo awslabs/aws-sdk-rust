@@ -325,6 +325,71 @@ impl ResourceNotFoundException {
     }
 }
 
+/// <p>You don't have permission to perform this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnauthorizedException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UnauthorizedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnauthorizedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl UnauthorizedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnauthorizedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnauthorizedException")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnauthorizedException {}
+/// See [`UnauthorizedException`](crate::error::UnauthorizedException).
+pub mod unauthorized_exception {
+
+    /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnauthorizedException`](crate::error::UnauthorizedException).
+        pub fn build(self) -> crate::error::UnauthorizedException {
+            crate::error::UnauthorizedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl UnauthorizedException {
+    /// Creates a new builder-style object to manufacture [`UnauthorizedException`](crate::error::UnauthorizedException).
+    pub fn builder() -> crate::error::unauthorized_exception::Builder {
+        crate::error::unauthorized_exception::Builder::default()
+    }
+}
+
 /// Error type for the `CreateComponent` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -447,6 +512,129 @@ impl std::error::Error for CreateComponentError {
             CreateComponentErrorKind::ResourceConflictException(_inner) => Some(_inner),
             CreateComponentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateForm` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateFormError {
+    /// Kind of error that occurred.
+    pub kind: CreateFormErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateForm` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateFormErrorKind {
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The resource specified in the request conflicts with an existing resource.</p>
+    ResourceConflictException(crate::error::ResourceConflictException),
+    /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateFormError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateFormErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateFormErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateFormErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            CreateFormErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateFormErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateFormError {
+    fn code(&self) -> Option<&str> {
+        CreateFormError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateFormError {
+    /// Creates a new `CreateFormError`.
+    pub fn new(kind: CreateFormErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateFormError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateFormErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateFormError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateFormErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateFormErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, CreateFormErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `CreateFormErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFormErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFormErrorKind::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFormErrorKind::ResourceConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFormErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFormErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateFormError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateFormErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateFormErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateFormErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            CreateFormErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateFormErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -685,6 +873,118 @@ impl std::error::Error for DeleteComponentError {
             DeleteComponentErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteComponentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteForm` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteFormError {
+    /// Kind of error that occurred.
+    pub kind: DeleteFormErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteForm` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteFormErrorKind {
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteFormError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteFormErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteFormErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteFormErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteFormErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteFormError {
+    fn code(&self) -> Option<&str> {
+        DeleteFormError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteFormError {
+    /// Creates a new `DeleteFormError`.
+    pub fn new(kind: DeleteFormErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteFormError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteFormErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteFormError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteFormErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteFormErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, DeleteFormErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteFormErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFormErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFormErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFormErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteFormError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteFormErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteFormErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteFormErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteFormErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -998,6 +1298,107 @@ impl std::error::Error for ExportComponentsError {
     }
 }
 
+/// Error type for the `ExportForms` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ExportFormsError {
+    /// Kind of error that occurred.
+    pub kind: ExportFormsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ExportForms` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ExportFormsErrorKind {
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ExportFormsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ExportFormsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ExportFormsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ExportFormsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ExportFormsError {
+    fn code(&self) -> Option<&str> {
+        ExportFormsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ExportFormsError {
+    /// Creates a new `ExportFormsError`.
+    pub fn new(kind: ExportFormsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ExportFormsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ExportFormsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ExportFormsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ExportFormsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ExportFormsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, ExportFormsErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ExportFormsErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportFormsErrorKind::InvalidParameterException(_)
+        )
+    }
+}
+impl std::error::Error for ExportFormsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ExportFormsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ExportFormsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ExportFormsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ExportThemes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1217,6 +1618,213 @@ impl std::error::Error for GetComponentError {
     }
 }
 
+/// Error type for the `GetForm` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetFormError {
+    /// Kind of error that occurred.
+    pub kind: GetFormErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetForm` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetFormErrorKind {
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetFormError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetFormErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetFormErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetFormErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetFormErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetFormError {
+    fn code(&self) -> Option<&str> {
+        GetFormError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetFormError {
+    /// Creates a new `GetFormError`.
+    pub fn new(kind: GetFormErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetFormError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetFormErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetFormError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetFormErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetFormErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetFormErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetFormErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, GetFormErrorKind::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `GetFormErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetFormErrorKind::ResourceNotFoundException(_))
+    }
+}
+impl std::error::Error for GetFormError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetFormErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetFormErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetFormErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetFormErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetMetadataError {
+    /// Kind of error that occurred.
+    pub kind: GetMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMetadataErrorKind {
+    /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>You don't have permission to perform this operation.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMetadataErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetMetadataErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            GetMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetMetadataError {
+    fn code(&self) -> Option<&str> {
+        GetMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMetadataError {
+    /// Creates a new `GetMetadataError`.
+    pub fn new(kind: GetMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetMetadataErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMetadataErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMetadataErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetMetadataErrorKind::UnauthorizedException(_))
+    }
+}
+impl std::error::Error for GetMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMetadataErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetMetadataErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            GetMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetTheme` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1427,6 +2035,104 @@ impl std::error::Error for ListComponentsError {
     }
 }
 
+/// Error type for the `ListForms` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListFormsError {
+    /// Kind of error that occurred.
+    pub kind: ListFormsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListForms` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListFormsErrorKind {
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListFormsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListFormsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListFormsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListFormsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListFormsError {
+    fn code(&self) -> Option<&str> {
+        ListFormsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListFormsError {
+    /// Creates a new `ListFormsError`.
+    pub fn new(kind: ListFormsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListFormsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListFormsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListFormsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListFormsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListFormsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, ListFormsErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ListFormsErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, ListFormsErrorKind::InvalidParameterException(_))
+    }
+}
+impl std::error::Error for ListFormsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListFormsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListFormsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListFormsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListThemes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1524,6 +2230,110 @@ impl std::error::Error for ListThemesError {
             ListThemesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListThemesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListThemesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `PutMetadataFlag` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutMetadataFlagError {
+    /// Kind of error that occurred.
+    pub kind: PutMetadataFlagErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutMetadataFlag` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutMetadataFlagErrorKind {
+    /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>You don't have permission to perform this operation.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutMetadataFlagError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutMetadataFlagErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PutMetadataFlagErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            PutMetadataFlagErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutMetadataFlagError {
+    fn code(&self) -> Option<&str> {
+        PutMetadataFlagError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutMetadataFlagError {
+    /// Creates a new `PutMetadataFlagError`.
+    pub fn new(kind: PutMetadataFlagErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutMetadataFlagError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutMetadataFlagErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutMetadataFlagError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutMetadataFlagErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutMetadataFlagErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMetadataFlagErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutMetadataFlagErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMetadataFlagErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for PutMetadataFlagError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutMetadataFlagErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PutMetadataFlagErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            PutMetadataFlagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1732,6 +2542,118 @@ impl std::error::Error for UpdateComponentError {
             UpdateComponentErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateComponentErrorKind::ResourceConflictException(_inner) => Some(_inner),
             UpdateComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateForm` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateFormError {
+    /// Kind of error that occurred.
+    pub kind: UpdateFormErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateForm` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFormErrorKind {
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The resource specified in the request conflicts with an existing resource.</p>
+    ResourceConflictException(crate::error::ResourceConflictException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFormError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFormErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateFormErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateFormErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            UpdateFormErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateFormError {
+    fn code(&self) -> Option<&str> {
+        UpdateFormError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFormError {
+    /// Creates a new `UpdateFormError`.
+    pub fn new(kind: UpdateFormErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateFormError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFormErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateFormError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFormErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateFormErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, UpdateFormErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateFormErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFormErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFormErrorKind::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFormErrorKind::ResourceConflictException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateFormError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFormErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateFormErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateFormErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            UpdateFormErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

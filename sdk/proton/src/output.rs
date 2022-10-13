@@ -1811,7 +1811,7 @@ pub struct ListRepositoriesOutput {
     /// <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of repositories.</p>
+    /// <p>An array of repository links.</p>
     #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
 }
@@ -1820,7 +1820,7 @@ impl ListRepositoriesOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of repositories.</p>
+    /// <p>An array of repository links.</p>
     pub fn repositories(&self) -> std::option::Option<&[crate::model::RepositorySummary]> {
         self.repositories.as_deref()
     }
@@ -1858,14 +1858,14 @@ pub mod list_repositories_output {
         ///
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
-        /// <p>An array of repositories.</p>
+        /// <p>An array of repository links.</p>
         pub fn repositories(mut self, input: crate::model::RepositorySummary) -> Self {
             let mut v = self.repositories.unwrap_or_default();
             v.push(input);
             self.repositories = Some(v);
             self
         }
-        /// <p>An array of repositories.</p>
+        /// <p>An array of repository links.</p>
         pub fn set_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
@@ -1893,12 +1893,12 @@ impl ListRepositoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryOutput {
-    /// <p>The repository detail data that's returned by Proton.</p>
+    /// <p>The repository link's detail data that's returned by Proton.</p>
     #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl CreateRepositoryOutput {
-    /// <p>The repository detail data that's returned by Proton.</p>
+    /// <p>The repository link's detail data that's returned by Proton.</p>
     pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
         self.repository.as_ref()
     }
@@ -1919,12 +1919,12 @@ pub mod create_repository_output {
         pub(crate) repository: std::option::Option<crate::model::Repository>,
     }
     impl Builder {
-        /// <p>The repository detail data that's returned by Proton.</p>
+        /// <p>The repository link's detail data that's returned by Proton.</p>
         pub fn repository(mut self, input: crate::model::Repository) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>The repository detail data that's returned by Proton.</p>
+        /// <p>The repository link's detail data that's returned by Proton.</p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::Repository>,
@@ -1951,12 +1951,12 @@ impl CreateRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryOutput {
-    /// <p>The repository detail data that's returned by Proton.</p>
+    /// <p>The deleted repository link's detail data that's returned by Proton.</p>
     #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl DeleteRepositoryOutput {
-    /// <p>The repository detail data that's returned by Proton.</p>
+    /// <p>The deleted repository link's detail data that's returned by Proton.</p>
     pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
         self.repository.as_ref()
     }
@@ -1977,12 +1977,12 @@ pub mod delete_repository_output {
         pub(crate) repository: std::option::Option<crate::model::Repository>,
     }
     impl Builder {
-        /// <p>The repository detail data that's returned by Proton.</p>
+        /// <p>The deleted repository link's detail data that's returned by Proton.</p>
         pub fn repository(mut self, input: crate::model::Repository) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>The repository detail data that's returned by Proton.</p>
+        /// <p>The deleted repository link's detail data that's returned by Proton.</p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::Repository>,
@@ -2009,12 +2009,12 @@ impl DeleteRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryOutput {
-    /// <p>The repository detail data that's returned by Proton.</p>
+    /// <p>The repository link's detail data that's returned by Proton.</p>
     #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl GetRepositoryOutput {
-    /// <p>The repository detail data that's returned by Proton.</p>
+    /// <p>The repository link's detail data that's returned by Proton.</p>
     pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
         self.repository.as_ref()
     }
@@ -2035,12 +2035,12 @@ pub mod get_repository_output {
         pub(crate) repository: std::option::Option<crate::model::Repository>,
     }
     impl Builder {
-        /// <p>The repository detail data that's returned by Proton.</p>
+        /// <p>The repository link's detail data that's returned by Proton.</p>
         pub fn repository(mut self, input: crate::model::Repository) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>The repository detail data that's returned by Proton.</p>
+        /// <p>The repository link's detail data that's returned by Proton.</p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::Repository>,

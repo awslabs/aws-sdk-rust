@@ -111,6 +111,14 @@ impl ListOriginationNumbersPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `phone_numbers`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListOriginationNumbersPaginatorItems {
+        crate::paginator::ListOriginationNumbersPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -729,6 +737,35 @@ impl ListEndpointsByPlatformApplicationPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_endpoints_by_platform_application_output_endpoints(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListOriginationNumbersPaginator`
+///
+/// This is created with [`.items()`](ListOriginationNumbersPaginator::items)
+pub struct ListOriginationNumbersPaginatorItems(ListOriginationNumbersPaginator);
+
+impl ListOriginationNumbersPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::PhoneNumberInformation,
+            aws_smithy_http::result::SdkError<crate::error::ListOriginationNumbersError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_origination_numbers_output_phone_numbers(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 

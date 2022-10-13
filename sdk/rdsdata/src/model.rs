@@ -600,9 +600,9 @@ impl AsRef<str> for RecordsFormatType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultSetOptions {
-    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
+    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
     /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
-    /// </important>
+    /// </note>
     #[doc(hidden)]
     pub decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
     /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
@@ -610,9 +610,9 @@ pub struct ResultSetOptions {
     pub long_return_type: std::option::Option<crate::model::LongReturnType>,
 }
 impl ResultSetOptions {
-    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
+    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
     /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
-    /// </important>
+    /// </note>
     pub fn decimal_return_type(&self) -> std::option::Option<&crate::model::DecimalReturnType> {
         self.decimal_return_type.as_ref()
     }
@@ -639,16 +639,16 @@ pub mod result_set_options {
         pub(crate) long_return_type: std::option::Option<crate::model::LongReturnType>,
     }
     impl Builder {
-        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
+        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
         /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
-        /// </important>
+        /// </note>
         pub fn decimal_return_type(mut self, input: crate::model::DecimalReturnType) -> Self {
             self.decimal_return_type = Some(input);
             self
         }
-        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
+        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
         /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
-        /// </important>
+        /// </note>
         pub fn set_decimal_return_type(
             mut self,
             input: std::option::Option<crate::model::DecimalReturnType>,
@@ -993,9 +993,9 @@ impl AsRef<str> for TypeHint {
     }
 }
 
-/// <p>The result of a SQL statement.</p> <important>
+/// <p>The result of a SQL statement.</p> <note>
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
-/// </important>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlStatementResult {
@@ -1073,9 +1073,9 @@ impl SqlStatementResult {
     }
 }
 
-/// <p>The result set returned by a SQL statement.</p> <important>
+/// <p>The result set returned by a SQL statement.</p> <note>
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
-/// </important>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultFrame {
@@ -1162,9 +1162,9 @@ impl ResultFrame {
     }
 }
 
-/// <p>A record returned by a call.</p> <important>
+/// <p>A record returned by a call.</p> <note>
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
-/// </important>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Record {
@@ -1228,9 +1228,9 @@ impl Record {
     }
 }
 
-/// <p>Contains the value of a column.</p> <important>
+/// <p>Contains the value of a column.</p> <note>
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
-/// </important>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Value {
@@ -1403,9 +1403,9 @@ impl Value {
     }
 }
 
-/// <p>A structure value returned by a call.</p> <important>
+/// <p>A structure value returned by a call.</p> <note>
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
-/// </important>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StructValue {

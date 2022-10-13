@@ -404,7 +404,7 @@ pub struct ListNotificationRulesOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
+    /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     #[doc(hidden)]
     pub notification_rules:
         std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
@@ -414,7 +414,7 @@ impl ListNotificationRulesOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
+    /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     pub fn notification_rules(
         &self,
     ) -> std::option::Option<&[crate::model::NotificationRuleSummary]> {
@@ -454,14 +454,14 @@ pub mod list_notification_rules_output {
         ///
         /// To override the contents of this collection use [`set_notification_rules`](Self::set_notification_rules).
         ///
-        /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
+        /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
         pub fn notification_rules(mut self, input: crate::model::NotificationRuleSummary) -> Self {
             let mut v = self.notification_rules.unwrap_or_default();
             v.push(input);
             self.notification_rules = Some(v);
             self
         }
-        /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
+        /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
         pub fn set_notification_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
@@ -585,10 +585,10 @@ pub struct DescribeNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
-    /// <p>A list of the SNS topics associated with the notification rule.</p>
+    /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     #[doc(hidden)]
     pub detail_type: std::option::Option<crate::model::DetailType>,
     /// <p>The name or email alias of the person who created the notification rule.</p>
@@ -625,11 +625,11 @@ impl DescribeNotificationRuleOutput {
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>A list of the SNS topics associated with the notification rule.</p>
+    /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::TargetSummary]> {
         self.targets.as_deref()
     }
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(&self) -> std::option::Option<&crate::model::DetailType> {
         self.detail_type.as_ref()
     }
@@ -748,14 +748,14 @@ pub mod describe_notification_rule_output {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>A list of the SNS topics associated with the notification rule.</p>
+        /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
         pub fn targets(mut self, input: crate::model::TargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input);
             self.targets = Some(v);
             self
         }
-        /// <p>A list of the SNS topics associated with the notification rule.</p>
+        /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
@@ -763,12 +763,12 @@ pub mod describe_notification_rule_output {
             self.targets = input;
             self
         }
-        /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
             self.detail_type = Some(input);
             self
         }
-        /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn set_detail_type(
             mut self,
             input: std::option::Option<crate::model::DetailType>,

@@ -328,7 +328,7 @@ impl RegisterClientOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenOutput {
-    /// <p>An opaque token to access Amazon Web Services SSO resources assigned to a user.</p>
+    /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
@@ -337,17 +337,17 @@ pub struct CreateTokenOutput {
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     #[doc(hidden)]
     pub expires_in: i32,
-    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
-    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     #[doc(hidden)]
     pub id_token: std::option::Option<std::string::String>,
 }
 impl CreateTokenOutput {
-    /// <p>An opaque token to access Amazon Web Services SSO resources assigned to a user.</p>
+    /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -359,12 +359,12 @@ impl CreateTokenOutput {
     pub fn expires_in(&self) -> i32 {
         self.expires_in
     }
-    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     pub fn id_token(&self) -> std::option::Option<&str> {
         self.id_token.as_deref()
@@ -394,12 +394,12 @@ pub mod create_token_output {
         pub(crate) id_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An opaque token to access Amazon Web Services SSO resources assigned to a user.</p>
+        /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>An opaque token to access Amazon Web Services SSO resources assigned to a user.</p>
+        /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -424,13 +424,13 @@ pub mod create_token_output {
             self.expires_in = input;
             self
         }
-        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
         /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
         pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.refresh_token = Some(input.into());
             self
         }
-        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
         /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
         pub fn set_refresh_token(
             mut self,
@@ -439,13 +439,13 @@ pub mod create_token_output {
             self.refresh_token = input;
             self
         }
-        /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
         /// <p>The identifier of the user that associated with the access token, if present.</p>
         pub fn id_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.id_token = Some(input.into());
             self
         }
-        /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
         /// <p>The identifier of the user that associated with the access token, if present.</p>
         pub fn set_id_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id_token = input;

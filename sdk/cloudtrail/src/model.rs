@@ -100,7 +100,7 @@ impl AdvancedEventSelector {
 pub struct AdvancedFieldSelector {
     /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
     /// <ul>
-    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
+    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
     /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
@@ -296,7 +296,7 @@ pub struct AdvancedFieldSelector {
 impl AdvancedFieldSelector {
     /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
     /// <ul>
-    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
+    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
     /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
@@ -526,7 +526,7 @@ pub mod advanced_field_selector {
     impl Builder {
         /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
         /// <ul>
-        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
+        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
         /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
         /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
         /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
@@ -704,7 +704,7 @@ pub mod advanced_field_selector {
         }
         /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
         /// <ul>
-        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
+        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
         /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
         /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
         /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
@@ -1074,6 +1074,371 @@ impl AsRef<str> for EventDataStoreStatus {
     }
 }
 
+/// <p> Provides statistics for the specified <code>ImportID</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportStatistics {
+    /// <p> The number of S3 prefixes found for the import. </p>
+    #[doc(hidden)]
+    pub prefixes_found: std::option::Option<i64>,
+    /// <p> The number of S3 prefixes that completed import. </p>
+    #[doc(hidden)]
+    pub prefixes_completed: std::option::Option<i64>,
+    /// <p>The number of files that completed import.</p>
+    #[doc(hidden)]
+    pub files_completed: std::option::Option<i64>,
+    /// <p> The number of trail events imported. </p>
+    #[doc(hidden)]
+    pub events_completed: std::option::Option<i64>,
+    /// <p> The number of failed entries. </p>
+    #[doc(hidden)]
+    pub failed_entries: std::option::Option<i64>,
+}
+impl ImportStatistics {
+    /// <p> The number of S3 prefixes found for the import. </p>
+    pub fn prefixes_found(&self) -> std::option::Option<i64> {
+        self.prefixes_found
+    }
+    /// <p> The number of S3 prefixes that completed import. </p>
+    pub fn prefixes_completed(&self) -> std::option::Option<i64> {
+        self.prefixes_completed
+    }
+    /// <p>The number of files that completed import.</p>
+    pub fn files_completed(&self) -> std::option::Option<i64> {
+        self.files_completed
+    }
+    /// <p> The number of trail events imported. </p>
+    pub fn events_completed(&self) -> std::option::Option<i64> {
+        self.events_completed
+    }
+    /// <p> The number of failed entries. </p>
+    pub fn failed_entries(&self) -> std::option::Option<i64> {
+        self.failed_entries
+    }
+}
+impl std::fmt::Debug for ImportStatistics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportStatistics");
+        formatter.field("prefixes_found", &self.prefixes_found);
+        formatter.field("prefixes_completed", &self.prefixes_completed);
+        formatter.field("files_completed", &self.files_completed);
+        formatter.field("events_completed", &self.events_completed);
+        formatter.field("failed_entries", &self.failed_entries);
+        formatter.finish()
+    }
+}
+/// See [`ImportStatistics`](crate::model::ImportStatistics).
+pub mod import_statistics {
+
+    /// A builder for [`ImportStatistics`](crate::model::ImportStatistics).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) prefixes_found: std::option::Option<i64>,
+        pub(crate) prefixes_completed: std::option::Option<i64>,
+        pub(crate) files_completed: std::option::Option<i64>,
+        pub(crate) events_completed: std::option::Option<i64>,
+        pub(crate) failed_entries: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p> The number of S3 prefixes found for the import. </p>
+        pub fn prefixes_found(mut self, input: i64) -> Self {
+            self.prefixes_found = Some(input);
+            self
+        }
+        /// <p> The number of S3 prefixes found for the import. </p>
+        pub fn set_prefixes_found(mut self, input: std::option::Option<i64>) -> Self {
+            self.prefixes_found = input;
+            self
+        }
+        /// <p> The number of S3 prefixes that completed import. </p>
+        pub fn prefixes_completed(mut self, input: i64) -> Self {
+            self.prefixes_completed = Some(input);
+            self
+        }
+        /// <p> The number of S3 prefixes that completed import. </p>
+        pub fn set_prefixes_completed(mut self, input: std::option::Option<i64>) -> Self {
+            self.prefixes_completed = input;
+            self
+        }
+        /// <p>The number of files that completed import.</p>
+        pub fn files_completed(mut self, input: i64) -> Self {
+            self.files_completed = Some(input);
+            self
+        }
+        /// <p>The number of files that completed import.</p>
+        pub fn set_files_completed(mut self, input: std::option::Option<i64>) -> Self {
+            self.files_completed = input;
+            self
+        }
+        /// <p> The number of trail events imported. </p>
+        pub fn events_completed(mut self, input: i64) -> Self {
+            self.events_completed = Some(input);
+            self
+        }
+        /// <p> The number of trail events imported. </p>
+        pub fn set_events_completed(mut self, input: std::option::Option<i64>) -> Self {
+            self.events_completed = input;
+            self
+        }
+        /// <p> The number of failed entries. </p>
+        pub fn failed_entries(mut self, input: i64) -> Self {
+            self.failed_entries = Some(input);
+            self
+        }
+        /// <p> The number of failed entries. </p>
+        pub fn set_failed_entries(mut self, input: std::option::Option<i64>) -> Self {
+            self.failed_entries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportStatistics`](crate::model::ImportStatistics).
+        pub fn build(self) -> crate::model::ImportStatistics {
+            crate::model::ImportStatistics {
+                prefixes_found: self.prefixes_found,
+                prefixes_completed: self.prefixes_completed,
+                files_completed: self.files_completed,
+                events_completed: self.events_completed,
+                failed_entries: self.failed_entries,
+            }
+        }
+    }
+}
+impl ImportStatistics {
+    /// Creates a new builder-style object to manufacture [`ImportStatistics`](crate::model::ImportStatistics).
+    pub fn builder() -> crate::model::import_statistics::Builder {
+        crate::model::import_statistics::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImportStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Initializing,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImportStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => ImportStatus::Completed,
+            "FAILED" => ImportStatus::Failed,
+            "INITIALIZING" => ImportStatus::Initializing,
+            "IN_PROGRESS" => ImportStatus::InProgress,
+            "STOPPED" => ImportStatus::Stopped,
+            other => ImportStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImportStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImportStatus::from(s))
+    }
+}
+impl ImportStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImportStatus::Completed => "COMPLETED",
+            ImportStatus::Failed => "FAILED",
+            ImportStatus::Initializing => "INITIALIZING",
+            ImportStatus::InProgress => "IN_PROGRESS",
+            ImportStatus::Stopped => "STOPPED",
+            ImportStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "FAILED",
+            "INITIALIZING",
+            "IN_PROGRESS",
+            "STOPPED",
+        ]
+    }
+}
+impl AsRef<str> for ImportStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> The import source. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportSource {
+    /// <p> The source S3 bucket. </p>
+    #[doc(hidden)]
+    pub s3: std::option::Option<crate::model::S3ImportSource>,
+}
+impl ImportSource {
+    /// <p> The source S3 bucket. </p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3ImportSource> {
+        self.s3.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportSource");
+        formatter.field("s3", &self.s3);
+        formatter.finish()
+    }
+}
+/// See [`ImportSource`](crate::model::ImportSource).
+pub mod import_source {
+
+    /// A builder for [`ImportSource`](crate::model::ImportSource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3: std::option::Option<crate::model::S3ImportSource>,
+    }
+    impl Builder {
+        /// <p> The source S3 bucket. </p>
+        pub fn s3(mut self, input: crate::model::S3ImportSource) -> Self {
+            self.s3 = Some(input);
+            self
+        }
+        /// <p> The source S3 bucket. </p>
+        pub fn set_s3(mut self, input: std::option::Option<crate::model::S3ImportSource>) -> Self {
+            self.s3 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportSource`](crate::model::ImportSource).
+        pub fn build(self) -> crate::model::ImportSource {
+            crate::model::ImportSource { s3: self.s3 }
+        }
+    }
+}
+impl ImportSource {
+    /// Creates a new builder-style object to manufacture [`ImportSource`](crate::model::ImportSource).
+    pub fn builder() -> crate::model::import_source::Builder {
+        crate::model::import_source::Builder::default()
+    }
+}
+
+/// <p> The settings for the source S3 bucket. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3ImportSource {
+    /// <p> The URI for the source S3 bucket. </p>
+    #[doc(hidden)]
+    pub s3_location_uri: std::option::Option<std::string::String>,
+    /// <p> The region associated with the source S3 bucket. </p>
+    #[doc(hidden)]
+    pub s3_bucket_region: std::option::Option<std::string::String>,
+    /// <p> The IAM ARN role used to access the source S3 bucket. </p>
+    #[doc(hidden)]
+    pub s3_bucket_access_role_arn: std::option::Option<std::string::String>,
+}
+impl S3ImportSource {
+    /// <p> The URI for the source S3 bucket. </p>
+    pub fn s3_location_uri(&self) -> std::option::Option<&str> {
+        self.s3_location_uri.as_deref()
+    }
+    /// <p> The region associated with the source S3 bucket. </p>
+    pub fn s3_bucket_region(&self) -> std::option::Option<&str> {
+        self.s3_bucket_region.as_deref()
+    }
+    /// <p> The IAM ARN role used to access the source S3 bucket. </p>
+    pub fn s3_bucket_access_role_arn(&self) -> std::option::Option<&str> {
+        self.s3_bucket_access_role_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for S3ImportSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3ImportSource");
+        formatter.field("s3_location_uri", &self.s3_location_uri);
+        formatter.field("s3_bucket_region", &self.s3_bucket_region);
+        formatter.field("s3_bucket_access_role_arn", &self.s3_bucket_access_role_arn);
+        formatter.finish()
+    }
+}
+/// See [`S3ImportSource`](crate::model::S3ImportSource).
+pub mod s3_import_source {
+
+    /// A builder for [`S3ImportSource`](crate::model::S3ImportSource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_location_uri: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_region: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_access_role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The URI for the source S3 bucket. </p>
+        pub fn s3_location_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_location_uri = Some(input.into());
+            self
+        }
+        /// <p> The URI for the source S3 bucket. </p>
+        pub fn set_s3_location_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_location_uri = input;
+            self
+        }
+        /// <p> The region associated with the source S3 bucket. </p>
+        pub fn s3_bucket_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_region = Some(input.into());
+            self
+        }
+        /// <p> The region associated with the source S3 bucket. </p>
+        pub fn set_s3_bucket_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_region = input;
+            self
+        }
+        /// <p> The IAM ARN role used to access the source S3 bucket. </p>
+        pub fn s3_bucket_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p> The IAM ARN role used to access the source S3 bucket. </p>
+        pub fn set_s3_bucket_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_access_role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3ImportSource`](crate::model::S3ImportSource).
+        pub fn build(self) -> crate::model::S3ImportSource {
+            crate::model::S3ImportSource {
+                s3_location_uri: self.s3_location_uri,
+                s3_bucket_region: self.s3_bucket_region,
+                s3_bucket_access_role_arn: self.s3_bucket_access_role_arn,
+            }
+        }
+    }
+}
+impl S3ImportSource {
+    /// Creates a new builder-style object to manufacture [`S3ImportSource`](crate::model::S3ImportSource).
+    pub fn builder() -> crate::model::s3_import_source::Builder {
+        crate::model::s3_import_source::Builder::default()
+    }
+}
+
 /// <p>A custom key-value pair associated with a resource such as a CloudTrail trail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1273,13 +1638,13 @@ pub struct EventSelector {
     #[doc(hidden)]
     pub read_write_type: std::option::Option<crate::model::ReadWriteType>,
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     #[doc(hidden)]
     pub include_management_events: std::option::Option<bool>,
     /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
     #[doc(hidden)]
     pub data_resources: std::option::Option<std::vec::Vec<crate::model::DataResource>>,
     /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in regions that support the event source.</p>
@@ -1293,14 +1658,14 @@ impl EventSelector {
         self.read_write_type.as_ref()
     }
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub fn include_management_events(&self) -> std::option::Option<bool> {
         self.include_management_events
     }
     /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
     pub fn data_resources(&self) -> std::option::Option<&[crate::model::DataResource]> {
         self.data_resources.as_deref()
     }
@@ -1351,7 +1716,7 @@ pub mod event_selector {
             self
         }
         /// <p>Specify if you want your event selector to include management events for your trail.</p>
-        /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
         /// <p>By default, the value is <code>true</code>.</p>
         /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
         pub fn include_management_events(mut self, input: bool) -> Self {
@@ -1359,7 +1724,7 @@ pub mod event_selector {
             self
         }
         /// <p>Specify if you want your event selector to include management events for your trail.</p>
-        /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
         /// <p>By default, the value is <code>true</code>.</p>
         /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
         pub fn set_include_management_events(mut self, input: std::option::Option<bool>) -> Self {
@@ -1371,7 +1736,7 @@ pub mod event_selector {
         /// To override the contents of this collection use [`set_data_resources`](Self::set_data_resources).
         ///
         /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
         pub fn data_resources(mut self, input: crate::model::DataResource) -> Self {
             let mut v = self.data_resources.unwrap_or_default();
             v.push(input);
@@ -1379,7 +1744,7 @@ pub mod event_selector {
             self
         }
         /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
         pub fn set_data_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataResource>>,
@@ -1467,7 +1832,7 @@ pub struct DataResource {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
     /// <ul>
-    /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3:::</code>.</p> <note>
+    /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3</code>.</p> <note>
     /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
     /// </note> </li>
     /// <li> <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.</p> </li>
@@ -1505,7 +1870,7 @@ impl DataResource {
     }
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
     /// <ul>
-    /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3:::</code>.</p> <note>
+    /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3</code>.</p> <note>
     /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
     /// </note> </li>
     /// <li> <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.</p> </li>
@@ -1586,7 +1951,7 @@ pub mod data_resource {
         ///
         /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
         /// <ul>
-        /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3:::</code>.</p> <note>
+        /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3</code>.</p> <note>
         /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
         /// </note> </li>
         /// <li> <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.</p> </li>
@@ -1607,7 +1972,7 @@ pub mod data_resource {
         }
         /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
         /// <ul>
-        /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3:::</code>.</p> <note>
+        /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3</code>.</p> <note>
         /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
         /// </note> </li>
         /// <li> <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.</p> </li>
@@ -2715,7 +3080,363 @@ impl PublicKey {
     }
 }
 
-/// <p>A storage lake of event data against which you can run complex SQL-based queries. An event data store can include events that you have logged on your account from the last 90 to 2555 days (about three months to up to seven years). To select events for an event data store, use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">advanced event selectors</a>.</p>
+/// <p> Contains information about an import that was returned by a lookup request. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportsListItem {
+    /// <p> The ID of the import. </p>
+    #[doc(hidden)]
+    pub import_id: std::option::Option<std::string::String>,
+    /// <p> The status of the import. </p>
+    #[doc(hidden)]
+    pub import_status: std::option::Option<crate::model::ImportStatus>,
+    /// <p> The destination event data store. </p>
+    #[doc(hidden)]
+    pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The timestamp of the import's creation. </p>
+    #[doc(hidden)]
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The timestamp of the import's last update. </p>
+    #[doc(hidden)]
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ImportsListItem {
+    /// <p> The ID of the import. </p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p> The status of the import. </p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p> The destination event data store. </p>
+    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
+        self.destinations.as_deref()
+    }
+    /// <p> The timestamp of the import's creation. </p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p> The timestamp of the import's last update. </p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportsListItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportsListItem");
+        formatter.field("import_id", &self.import_id);
+        formatter.field("import_status", &self.import_status);
+        formatter.field("destinations", &self.destinations);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`ImportsListItem`](crate::model::ImportsListItem).
+pub mod imports_list_item {
+
+    /// A builder for [`ImportsListItem`](crate::model::ImportsListItem).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_id: std::option::Option<std::string::String>,
+        pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The ID of the import. </p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the import. </p>
+        pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_id = input;
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
+            self.import_status = Some(input);
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn set_import_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatus>,
+        ) -> Self {
+            self.import_status = input;
+            self
+        }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p> The destination event data store. </p>
+        pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input.into());
+            self.destinations = Some(v);
+            self
+        }
+        /// <p> The destination event data store. </p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// <p> The timestamp of the import's creation. </p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of the import's creation. </p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p> The timestamp of the import's last update. </p>
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of the import's last update. </p>
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportsListItem`](crate::model::ImportsListItem).
+        pub fn build(self) -> crate::model::ImportsListItem {
+            crate::model::ImportsListItem {
+                import_id: self.import_id,
+                import_status: self.import_status,
+                destinations: self.destinations,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+            }
+        }
+    }
+}
+impl ImportsListItem {
+    /// Creates a new builder-style object to manufacture [`ImportsListItem`](crate::model::ImportsListItem).
+    pub fn builder() -> crate::model::imports_list_item::Builder {
+        crate::model::imports_list_item::Builder::default()
+    }
+}
+
+/// <p> Provides information about an import failure. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportFailureListItem {
+    /// <p> The location of the failure in the S3 bucket. </p>
+    #[doc(hidden)]
+    pub location: std::option::Option<std::string::String>,
+    /// <p> The status of the import. </p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::ImportFailureStatus>,
+    /// <p> The type of import error. </p>
+    #[doc(hidden)]
+    pub error_type: std::option::Option<std::string::String>,
+    /// <p> Provides the reason the import failed. </p>
+    #[doc(hidden)]
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p> When the import was last updated. </p>
+    #[doc(hidden)]
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ImportFailureListItem {
+    /// <p> The location of the failure in the S3 bucket. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p> The status of the import. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ImportFailureStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The type of import error. </p>
+    pub fn error_type(&self) -> std::option::Option<&str> {
+        self.error_type.as_deref()
+    }
+    /// <p> Provides the reason the import failed. </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p> When the import was last updated. </p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportFailureListItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportFailureListItem");
+        formatter.field("location", &self.location);
+        formatter.field("status", &self.status);
+        formatter.field("error_type", &self.error_type);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("last_updated_time", &self.last_updated_time);
+        formatter.finish()
+    }
+}
+/// See [`ImportFailureListItem`](crate::model::ImportFailureListItem).
+pub mod import_failure_list_item {
+
+    /// A builder for [`ImportFailureListItem`](crate::model::ImportFailureListItem).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ImportFailureStatus>,
+        pub(crate) error_type: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The location of the failure in the S3 bucket. </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p> The location of the failure in the S3 bucket. </p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn status(mut self, input: crate::model::ImportFailureStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportFailureStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p> The type of import error. </p>
+        pub fn error_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_type = Some(input.into());
+            self
+        }
+        /// <p> The type of import error. </p>
+        pub fn set_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_type = input;
+            self
+        }
+        /// <p> Provides the reason the import failed. </p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p> Provides the reason the import failed. </p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p> When the import was last updated. </p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p> When the import was last updated. </p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportFailureListItem`](crate::model::ImportFailureListItem).
+        pub fn build(self) -> crate::model::ImportFailureListItem {
+            crate::model::ImportFailureListItem {
+                location: self.location,
+                status: self.status,
+                error_type: self.error_type,
+                error_message: self.error_message,
+                last_updated_time: self.last_updated_time,
+            }
+        }
+    }
+}
+impl ImportFailureListItem {
+    /// Creates a new builder-style object to manufacture [`ImportFailureListItem`](crate::model::ImportFailureListItem).
+    pub fn builder() -> crate::model::import_failure_list_item::Builder {
+        crate::model::import_failure_list_item::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImportFailureStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Retry,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImportFailureStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => ImportFailureStatus::Failed,
+            "RETRY" => ImportFailureStatus::Retry,
+            "SUCCEEDED" => ImportFailureStatus::Succeeded,
+            other => ImportFailureStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImportFailureStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImportFailureStatus::from(s))
+    }
+}
+impl ImportFailureStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImportFailureStatus::Failed => "FAILED",
+            ImportFailureStatus::Retry => "RETRY",
+            ImportFailureStatus::Succeeded => "SUCCEEDED",
+            ImportFailureStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "RETRY", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for ImportFailureStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A storage lake of event data against which you can run complex SQL-based queries. An event data store can include events that you have logged on your account from the last 90 to 2557 days (about three months to up to seven years). To select events for an event data store, use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">advanced event selectors</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDataStore {
@@ -3021,6 +3742,81 @@ impl EventDataStore {
     /// Creates a new builder-style object to manufacture [`EventDataStore`](crate::model::EventDataStore).
     pub fn builder() -> crate::model::event_data_store::Builder {
         crate::model::event_data_store::Builder::default()
+    }
+}
+
+/// <p> Contains information about a returned CloudTrail channel. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Channel {
+    /// <p> The Amazon Resource Name (ARN) of the channel. </p>
+    #[doc(hidden)]
+    pub channel_arn: std::option::Option<std::string::String>,
+    /// <p> The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix created by the Amazon Web Services service. </p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl Channel {
+    /// <p> The Amazon Resource Name (ARN) of the channel. </p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p> The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix created by the Amazon Web Services service. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for Channel {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Channel");
+        formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`Channel`](crate::model::Channel).
+pub mod channel {
+
+    /// A builder for [`Channel`](crate::model::Channel).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) of the channel. </p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the channel. </p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_arn = input;
+            self
+        }
+        /// <p> The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix created by the Amazon Web Services service. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p> The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix created by the Amazon Web Services service. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
+        pub fn build(self) -> crate::model::Channel {
+            crate::model::Channel {
+                channel_arn: self.channel_arn,
+                name: self.name,
+            }
+        }
+    }
+}
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
     }
 }
 
@@ -3523,6 +4319,230 @@ impl QueryStatistics {
     /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::model::QueryStatistics).
     pub fn builder() -> crate::model::query_statistics::Builder {
         crate::model::query_statistics::Builder::default()
+    }
+}
+
+/// <p> Contains information about the service where CloudTrail delivers events. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Destination {
+    /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::DestinationType>,
+    /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
+    #[doc(hidden)]
+    pub location: std::option::Option<std::string::String>,
+}
+impl Destination {
+    /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DestinationType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
+impl std::fmt::Debug for Destination {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Destination");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("location", &self.location);
+        formatter.finish()
+    }
+}
+/// See [`Destination`](crate::model::Destination).
+pub mod destination {
+
+    /// A builder for [`Destination`](crate::model::Destination).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::DestinationType>,
+        pub(crate) location: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+        pub fn r#type(mut self, input: crate::model::DestinationType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::DestinationType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Destination`](crate::model::Destination).
+        pub fn build(self) -> crate::model::Destination {
+            crate::model::Destination {
+                r#type: self.r#type,
+                location: self.location,
+            }
+        }
+    }
+}
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DestinationType {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsService,
+    #[allow(missing_docs)] // documentation missing in model
+    EventDataStore,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DestinationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_SERVICE" => DestinationType::AwsService,
+            "EVENT_DATA_STORE" => DestinationType::EventDataStore,
+            other => DestinationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DestinationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DestinationType::from(s))
+    }
+}
+impl DestinationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DestinationType::AwsService => "AWS_SERVICE",
+            DestinationType::EventDataStore => "EVENT_DATA_STORE",
+            DestinationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_SERVICE", "EVENT_DATA_STORE"]
+    }
+}
+impl AsRef<str> for DestinationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Contains configuration information about the service-linked channel. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SourceConfig {
+    /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
+    #[doc(hidden)]
+    pub apply_to_all_regions: std::option::Option<bool>,
+    /// <p> The advanced event selectors configured for the service-linked channel. </p>
+    #[doc(hidden)]
+    pub advanced_event_selectors:
+        std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+}
+impl SourceConfig {
+    /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
+    pub fn apply_to_all_regions(&self) -> std::option::Option<bool> {
+        self.apply_to_all_regions
+    }
+    /// <p> The advanced event selectors configured for the service-linked channel. </p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
+}
+impl std::fmt::Debug for SourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SourceConfig");
+        formatter.field("apply_to_all_regions", &self.apply_to_all_regions);
+        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
+        formatter.finish()
+    }
+}
+/// See [`SourceConfig`](crate::model::SourceConfig).
+pub mod source_config {
+
+    /// A builder for [`SourceConfig`](crate::model::SourceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) apply_to_all_regions: std::option::Option<bool>,
+        pub(crate) advanced_event_selectors:
+            std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+    }
+    impl Builder {
+        /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
+        pub fn apply_to_all_regions(mut self, input: bool) -> Self {
+            self.apply_to_all_regions = Some(input);
+            self
+        }
+        /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
+        pub fn set_apply_to_all_regions(mut self, input: std::option::Option<bool>) -> Self {
+            self.apply_to_all_regions = input;
+            self
+        }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p> The advanced event selectors configured for the service-linked channel. </p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            let mut v = self.advanced_event_selectors.unwrap_or_default();
+            v.push(input);
+            self.advanced_event_selectors = Some(v);
+            self
+        }
+        /// <p> The advanced event selectors configured for the service-linked channel. </p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.advanced_event_selectors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceConfig`](crate::model::SourceConfig).
+        pub fn build(self) -> crate::model::SourceConfig {
+            crate::model::SourceConfig {
+                apply_to_all_regions: self.apply_to_all_regions,
+                advanced_event_selectors: self.advanced_event_selectors,
+            }
+        }
+    }
+}
+impl SourceConfig {
+    /// Creates a new builder-style object to manufacture [`SourceConfig`](crate::model::SourceConfig).
+    pub fn builder() -> crate::model::source_config::Builder {
+        crate::model::source_config::Builder::default()
     }
 }
 

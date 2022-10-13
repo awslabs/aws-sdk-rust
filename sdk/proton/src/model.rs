@@ -13,7 +13,7 @@ pub struct TemplateSyncConfig {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
-    /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The repository branch.</p>
@@ -36,7 +36,7 @@ impl TemplateSyncConfig {
     pub fn repository_provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
-    /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
@@ -114,12 +114,12 @@ pub mod template_sync_config {
             self.repository_provider = input;
             self
         }
-        /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -650,7 +650,7 @@ pub struct ServiceTemplateVersion {
     #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub supported_component_sources: std::option::Option<
         std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
@@ -708,7 +708,7 @@ impl ServiceTemplateVersion {
         self.schema.as_deref()
     }
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn supported_component_sources(
         &self,
     ) -> std::option::Option<&[crate::model::ServiceTemplateSupportedComponentSourceType]> {
@@ -925,7 +925,7 @@ pub mod service_template_version {
         /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
         ///
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn supported_component_sources(
             mut self,
             input: crate::model::ServiceTemplateSupportedComponentSourceType,
@@ -936,7 +936,7 @@ pub mod service_template_version {
             self
         }
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_supported_component_sources(
             mut self,
             input: std::option::Option<
@@ -2223,7 +2223,7 @@ pub struct Service {
     /// <p>The service pipeline detail data.</p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::ServicePipeline>,
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub repository_connection_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the source code repository.</p>
@@ -2274,7 +2274,7 @@ impl Service {
     pub fn pipeline(&self) -> std::option::Option<&crate::model::ServicePipeline> {
         self.pipeline.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
     pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
         self.repository_connection_arn.as_deref()
     }
@@ -2445,12 +2445,12 @@ pub mod service {
             self.pipeline = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_repository_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2938,7 +2938,7 @@ pub struct ProvisionedResource {
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub provisioning_engine: std::option::Option<crate::model::ProvisionedResourceEngine>,
 }
@@ -2952,7 +2952,7 @@ impl ProvisionedResource {
         self.identifier.as_deref()
     }
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
     pub fn provisioning_engine(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedResourceEngine> {
@@ -3001,7 +3001,7 @@ pub mod provisioned_resource {
             self
         }
         /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
         pub fn provisioning_engine(
             mut self,
             input: crate::model::ProvisionedResourceEngine,
@@ -3010,7 +3010,7 @@ pub mod provisioned_resource {
             self
         }
         /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_provisioning_engine(
             mut self,
             input: std::option::Option<crate::model::ProvisionedResourceEngine>,
@@ -3807,11 +3807,11 @@ impl ServiceInstance {
     }
 }
 
-/// <p>Summary data of a repository that has been registered with Proton.</p>
+/// <p>Summary data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositorySummary {
-    /// <p>The Amazon Resource Name (ARN) for a repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
@@ -3822,7 +3822,7 @@ pub struct RepositorySummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl RepositorySummary {
-    /// <p>The Amazon Resource Name (ARN) for a repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -3855,12 +3855,12 @@ pub mod repository_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for a repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for a repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3905,11 +3905,11 @@ impl RepositorySummary {
     }
 }
 
-/// <p>Detailed data of a repository that has been registered with Proton.</p>
+/// <p>Detailed data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Repository {
-    /// <p>The repository Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
@@ -3918,7 +3918,7 @@ pub struct Repository {
     /// <p>The repository name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The repository Amazon Web Services CodeStar connection that connects Proton to your repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
@@ -3926,7 +3926,7 @@ pub struct Repository {
     pub encryption_key: std::option::Option<std::string::String>,
 }
 impl Repository {
-    /// <p>The repository Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -3938,7 +3938,7 @@ impl Repository {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The repository Amazon Web Services CodeStar connection that connects Proton to your repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
@@ -3971,12 +3971,12 @@ pub mod repository {
         pub(crate) encryption_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The repository Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The repository Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4004,12 +4004,12 @@ pub mod repository {
             self.name = input;
             self
         }
-        /// <p>The repository Amazon Web Services CodeStar connection that connects Proton to your repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>The repository Amazon Web Services CodeStar connection that connects Proton to your repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5075,7 +5075,7 @@ pub struct EnvironmentSummary {
     pub provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
@@ -5142,7 +5142,7 @@ impl EnvironmentSummary {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
@@ -5396,14 +5396,14 @@ pub mod environment_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5574,12 +5574,12 @@ pub struct Environment {
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     #[doc(hidden)]
     pub provisioning: std::option::Option<crate::model::Provisioning>,
-    /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     #[doc(hidden)]
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
@@ -5648,13 +5648,13 @@ impl Environment {
     pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.provisioning.as_ref()
     }
-    /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     pub fn provisioning_repository(&self) -> std::option::Option<&crate::model::RepositoryBranch> {
         self.provisioning_repository.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
@@ -5920,12 +5920,12 @@ pub mod environment {
             self.provisioning = input;
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn provisioning_repository(mut self, input: crate::model::RepositoryBranch) -> Self {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn set_provisioning_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryBranch>,
@@ -5935,14 +5935,14 @@ pub mod environment {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5982,11 +5982,11 @@ impl Environment {
     }
 }
 
-/// <p>Detail data for a repository branch.</p>
+/// <p>Detail data for a linked repository branch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryBranch {
-    /// <p>The Amazon Resource Name (ARN) of the repository branch.</p>
+    /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
@@ -6000,7 +6000,7 @@ pub struct RepositoryBranch {
     pub branch: std::option::Option<std::string::String>,
 }
 impl RepositoryBranch {
-    /// <p>The Amazon Resource Name (ARN) of the repository branch.</p>
+    /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -6039,12 +6039,12 @@ pub mod repository_branch {
         pub(crate) branch: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the repository branch.</p>
+        /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository branch.</p>
+        /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6100,7 +6100,7 @@ impl RepositoryBranch {
     }
 }
 
-/// <p>Detail input data for a repository branch.</p>
+/// <p>Detail input data for a linked repository branch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryBranchInput {
@@ -6231,7 +6231,7 @@ pub struct EnvironmentAccountConnection {
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
@@ -6274,7 +6274,7 @@ impl EnvironmentAccountConnection {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
@@ -6423,14 +6423,14 @@ pub mod environment_account_connection {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6554,7 +6554,7 @@ pub struct EnvironmentAccountConnectionSummary {
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
@@ -6597,7 +6597,7 @@ impl EnvironmentAccountConnectionSummary {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
@@ -6746,14 +6746,14 @@ pub mod environment_account_connection_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6849,7 +6849,7 @@ impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
 }
 
 /// <p>Summary data of an Proton component resource.</p>
-/// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+/// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentSummary {
@@ -7138,7 +7138,7 @@ impl ComponentSummary {
 }
 
 /// <p>Detailed data of an Proton component resource.</p>
-/// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+/// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Component {
@@ -7521,14 +7521,14 @@ impl AsRef<str> for ComponentDeploymentUpdateType {
     }
 }
 
-/// <p>The Proton pipeline service role and repository data shared across the Amazon Web Services account.</p>
+/// <p>Proton settings that are used for multiple services in the Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     #[doc(hidden)]
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+    /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     #[doc(hidden)]
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
 }
@@ -7537,7 +7537,7 @@ impl AccountSettings {
     pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
         self.pipeline_service_role_arn.as_deref()
     }
-    /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+    /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     pub fn pipeline_provisioning_repository(
         &self,
     ) -> std::option::Option<&crate::model::RepositoryBranch> {
@@ -7579,7 +7579,7 @@ pub mod account_settings {
             self.pipeline_service_role_arn = input;
             self
         }
-        /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+        /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn pipeline_provisioning_repository(
             mut self,
             input: crate::model::RepositoryBranch,
@@ -7587,7 +7587,7 @@ pub mod account_settings {
             self.pipeline_provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+        /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn set_pipeline_provisioning_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryBranch>,
@@ -7670,7 +7670,7 @@ impl AsRef<str> for ResourceDeploymentStatus {
     }
 }
 
-/// <p>The repository sync definition.</p>
+/// <p>A repository sync definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositorySyncDefinition {

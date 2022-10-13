@@ -1395,6 +1395,138 @@ pub fn parse_delete_topic_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_data_protection_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetDataProtectionPolicyOutput,
+    crate::error::GetDataProtectionPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetDataProtectionPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetDataProtectionPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AuthorizationError" => crate::error::GetDataProtectionPolicyError {
+            meta: generic,
+            kind: crate::error::GetDataProtectionPolicyErrorKind::AuthorizationErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::authorization_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDataProtectionPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalError" => crate::error::GetDataProtectionPolicyError {
+            meta: generic,
+            kind: crate::error::GetDataProtectionPolicyErrorKind::InternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDataProtectionPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameter" => crate::error::GetDataProtectionPolicyError {
+            meta: generic,
+            kind: crate::error::GetDataProtectionPolicyErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDataProtectionPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidSecurity" => crate::error::GetDataProtectionPolicyError {
+            meta: generic,
+            kind: crate::error::GetDataProtectionPolicyErrorKind::InvalidSecurityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_security_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDataProtectionPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFound" => {
+            crate::error::GetDataProtectionPolicyError {
+                meta: generic,
+                kind: crate::error::GetDataProtectionPolicyErrorKind::NotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDataProtectionPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::GetDataProtectionPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_data_protection_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetDataProtectionPolicyOutput,
+    crate::error::GetDataProtectionPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_data_protection_policy_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_data_protection_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetDataProtectionPolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_endpoint_attributes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3426,6 +3558,25 @@ pub fn parse_publish_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::PublishError {
+                meta: generic,
+                kind: crate::error::PublishErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::PublishError::generic(generic),
     })
 }
@@ -3795,6 +3946,25 @@ pub fn parse_publish_batch_error(
                 }),
             }
         }
+        "ValidationException" => {
+            crate::error::PublishBatchError {
+                meta: generic,
+                kind: crate::error::PublishBatchErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::PublishBatchError::generic(generic),
     })
 }
@@ -3812,6 +3982,133 @@ pub fn parse_publish_batch_response(
             output,
         )
         .map_err(crate::error::PublishBatchError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_data_protection_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutDataProtectionPolicyOutput,
+    crate::error::PutDataProtectionPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutDataProtectionPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::PutDataProtectionPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AuthorizationError" => crate::error::PutDataProtectionPolicyError {
+            meta: generic,
+            kind: crate::error::PutDataProtectionPolicyErrorKind::AuthorizationErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::authorization_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDataProtectionPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalError" => crate::error::PutDataProtectionPolicyError {
+            meta: generic,
+            kind: crate::error::PutDataProtectionPolicyErrorKind::InternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDataProtectionPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameter" => crate::error::PutDataProtectionPolicyError {
+            meta: generic,
+            kind: crate::error::PutDataProtectionPolicyErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDataProtectionPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidSecurity" => crate::error::PutDataProtectionPolicyError {
+            meta: generic,
+            kind: crate::error::PutDataProtectionPolicyErrorKind::InvalidSecurityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_security_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDataProtectionPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFound" => {
+            crate::error::PutDataProtectionPolicyError {
+                meta: generic,
+                kind: crate::error::PutDataProtectionPolicyErrorKind::NotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDataProtectionPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::PutDataProtectionPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_data_protection_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutDataProtectionPolicyOutput,
+    crate::error::PutDataProtectionPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::put_data_protection_policy_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }

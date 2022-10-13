@@ -16170,6 +16170,277 @@ impl std::error::Error for SearchAvailablePhoneNumbersError {
     }
 }
 
+/// Error type for the `SearchQueues` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchQueuesError {
+    /// Kind of error that occurred.
+    pub kind: SearchQueuesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchQueues` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchQueuesErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchQueuesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchQueuesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            SearchQueuesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SearchQueuesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            SearchQueuesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SearchQueuesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchQueuesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchQueuesError {
+    fn code(&self) -> Option<&str> {
+        SearchQueuesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchQueuesError {
+    /// Creates a new `SearchQueuesError`.
+    pub fn new(kind: SearchQueuesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchQueuesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchQueuesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchQueuesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchQueuesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchQueuesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchQueuesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchQueuesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchQueuesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchQueuesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchQueuesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchQueuesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchQueuesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchQueuesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, SearchQueuesErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for SearchQueuesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchQueuesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            SearchQueuesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SearchQueuesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            SearchQueuesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SearchQueuesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchQueuesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `SearchRoutingProfiles` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchRoutingProfilesError {
+    /// Kind of error that occurred.
+    pub kind: SearchRoutingProfilesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchRoutingProfiles` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchRoutingProfilesErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchRoutingProfilesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchRoutingProfilesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            SearchRoutingProfilesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SearchRoutingProfilesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            SearchRoutingProfilesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SearchRoutingProfilesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchRoutingProfilesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchRoutingProfilesError {
+    fn code(&self) -> Option<&str> {
+        SearchRoutingProfilesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchRoutingProfilesError {
+    /// Creates a new `SearchRoutingProfilesError`.
+    pub fn new(kind: SearchRoutingProfilesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchRoutingProfilesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchRoutingProfilesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchRoutingProfilesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchRoutingProfilesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchRoutingProfilesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchRoutingProfilesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchRoutingProfilesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchRoutingProfilesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchRoutingProfilesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchRoutingProfilesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchRoutingProfilesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchRoutingProfilesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchRoutingProfilesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchRoutingProfilesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for SearchRoutingProfilesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchRoutingProfilesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            SearchRoutingProfilesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SearchRoutingProfilesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            SearchRoutingProfilesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SearchRoutingProfilesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchRoutingProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `SearchSecurityProfiles` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

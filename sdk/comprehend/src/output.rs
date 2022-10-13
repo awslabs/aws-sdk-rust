@@ -3779,13 +3779,78 @@ impl ImportModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectTargetedSentimentOutput {
+    /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
+    #[doc(hidden)]
+    pub entities: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+}
+impl DetectTargetedSentimentOutput {
+    /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::TargetedSentimentEntity]> {
+        self.entities.as_deref()
+    }
+}
+impl std::fmt::Debug for DetectTargetedSentimentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectTargetedSentimentOutput");
+        formatter.field("entities", &self.entities);
+        formatter.finish()
+    }
+}
+/// See [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
+pub mod detect_targeted_sentiment_output {
+
+    /// A builder for [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entities:
+            std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+    }
+    impl Builder {
+        /// Appends an item to `entities`.
+        ///
+        /// To override the contents of this collection use [`set_entities`](Self::set_entities).
+        ///
+        /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
+        pub fn entities(mut self, input: crate::model::TargetedSentimentEntity) -> Self {
+            let mut v = self.entities.unwrap_or_default();
+            v.push(input);
+            self.entities = Some(v);
+            self
+        }
+        /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+        ) -> Self {
+            self.entities = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
+        pub fn build(self) -> crate::output::DetectTargetedSentimentOutput {
+            crate::output::DetectTargetedSentimentOutput {
+                entities: self.entities,
+            }
+        }
+    }
+}
+impl DetectTargetedSentimentOutput {
+    /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
+    pub fn builder() -> crate::output::detect_targeted_sentiment_output::Builder {
+        crate::output::detect_targeted_sentiment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSyntaxOutput {
-    /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <code>how-syntax</code>.</p>
+    /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     #[doc(hidden)]
     pub syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
 }
 impl DetectSyntaxOutput {
-    /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <code>how-syntax</code>.</p>
+    /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     pub fn syntax_tokens(&self) -> std::option::Option<&[crate::model::SyntaxToken]> {
         self.syntax_tokens.as_deref()
     }
@@ -3810,14 +3875,14 @@ pub mod detect_syntax_output {
         ///
         /// To override the contents of this collection use [`set_syntax_tokens`](Self::set_syntax_tokens).
         ///
-        /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <code>how-syntax</code>.</p>
+        /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
         pub fn syntax_tokens(mut self, input: crate::model::SyntaxToken) -> Self {
             let mut v = self.syntax_tokens.unwrap_or_default();
             v.push(input);
             self.syntax_tokens = Some(v);
             self
         }
-        /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <code>how-syntax</code>.</p>
+        /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
         pub fn set_syntax_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
@@ -4054,13 +4119,13 @@ impl DetectKeyPhrasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesOutput {
     /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
-    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <code>how-entities</code>.</p>
+    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
 impl DetectEntitiesOutput {
     /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
-    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <code>how-entities</code>.</p>
+    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
         self.entities.as_deref()
     }
@@ -4086,7 +4151,7 @@ pub mod detect_entities_output {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
-        /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <code>how-entities</code>.</p>
+        /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
         pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
             v.push(input);
@@ -4094,7 +4159,7 @@ pub mod detect_entities_output {
             self
         }
         /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
-        /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <code>how-entities</code>.</p>
+        /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
         pub fn set_entities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -5560,6 +5625,109 @@ impl ClassifyDocumentOutput {
     /// Creates a new builder-style object to manufacture [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
     pub fn builder() -> crate::output::classify_document_output::Builder {
         crate::output::classify_document_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDetectTargetedSentimentOutput {
+    /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    #[doc(hidden)]
+    pub result_list:
+        std::option::Option<std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>>,
+    /// <p>List of errors that the operation can return.</p>
+    #[doc(hidden)]
+    pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+}
+impl BatchDetectTargetedSentimentOutput {
+    /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    pub fn result_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDetectTargetedSentimentItemResult]> {
+        self.result_list.as_deref()
+    }
+    /// <p>List of errors that the operation can return.</p>
+    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+        self.error_list.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchDetectTargetedSentimentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDetectTargetedSentimentOutput");
+        formatter.field("result_list", &self.result_list);
+        formatter.field("error_list", &self.error_list);
+        formatter.finish()
+    }
+}
+/// See [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
+pub mod batch_detect_targeted_sentiment_output {
+
+    /// A builder for [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_list: std::option::Option<
+            std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>,
+        >,
+        pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+    }
+    impl Builder {
+        /// Appends an item to `result_list`.
+        ///
+        /// To override the contents of this collection use [`set_result_list`](Self::set_result_list).
+        ///
+        /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+        pub fn result_list(
+            mut self,
+            input: crate::model::BatchDetectTargetedSentimentItemResult,
+        ) -> Self {
+            let mut v = self.result_list.unwrap_or_default();
+            v.push(input);
+            self.result_list = Some(v);
+            self
+        }
+        /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+        pub fn set_result_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>,
+            >,
+        ) -> Self {
+            self.result_list = input;
+            self
+        }
+        /// Appends an item to `error_list`.
+        ///
+        /// To override the contents of this collection use [`set_error_list`](Self::set_error_list).
+        ///
+        /// <p>List of errors that the operation can return.</p>
+        pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
+            let mut v = self.error_list.unwrap_or_default();
+            v.push(input);
+            self.error_list = Some(v);
+            self
+        }
+        /// <p>List of errors that the operation can return.</p>
+        pub fn set_error_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+        ) -> Self {
+            self.error_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
+        pub fn build(self) -> crate::output::BatchDetectTargetedSentimentOutput {
+            crate::output::BatchDetectTargetedSentimentOutput {
+                result_list: self.result_list,
+                error_list: self.error_list,
+            }
+        }
+    }
+}
+impl BatchDetectTargetedSentimentOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
+    pub fn builder() -> crate::output::batch_detect_targeted_sentiment_output::Builder {
+        crate::output::batch_detect_targeted_sentiment_output::Builder::default()
     }
 }
 

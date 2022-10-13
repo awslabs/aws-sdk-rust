@@ -537,6 +537,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a device with a concrete thing that is in the user's registry.</p>
     /// <p>A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateEntityToThing {
         handle: std::sync::Arc<super::Handle>,
@@ -638,6 +639,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFlowTemplate`.
     ///
     /// <p>Creates a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only entities.) The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlowTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -734,6 +736,7 @@ pub mod fluent_builders {
     /// <p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller's behalf, the calling identity must have write permissions to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error.</p>
     /// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p>
     /// <p>If the definition document doesn't specify a version of the user's namespace, the latest version will be used by default.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSystemInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -896,6 +899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSystemTemplate`.
     ///
     /// <p>Creates a system. The system is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSystemTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -988,6 +992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFlowTemplate`.
     ///
     /// <p>Deletes a workflow. Any new system or deployment that contains this workflow will fail to update or deploy. Existing deployments that contain the workflow will continue to run (since they use a snapshot of the workflow taken at the time of deployment).</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlowTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -1068,7 +1073,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNamespace`.
     ///
-    /// <p>Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and flows that use entities in the namespace before performing this action.</p>
+    /// <p>Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and flows that use entities in the namespace before performing this action. This action takes no request parameters.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamespace {
         handle: std::sync::Arc<super::Handle>,
@@ -1137,6 +1143,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a system instance. Only system instances that have never been deployed, or that have been undeployed can be deleted.</p>
     /// <p>Users can create a new system instance that has the same ID as a deleted system instance.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSystemInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -1214,6 +1221,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSystemTemplate`.
     ///
     /// <p>Deletes a system. New deployments can't contain the system after its deletion. Existing deployments that contain the system will continue to work because they use a snapshot of the system that is taken when it is deployed.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSystemTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -1300,6 +1308,7 @@ pub mod fluent_builders {
     /// <p>If the system or any workflows and entities have been updated before this action is called, then the deployment will create a new Amazon Simple Storage Service resource file and then deploy it.</p>
     /// <p>Since this action creates a Greengrass deployment on the caller's behalf, the calling identity must have write permissions to the specified Greengrass group. Otherwise, the call will fail with an authorization error.</p>
     /// <p>For information about the artifacts that get added to your Greengrass core device when you use this API, see <a href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-greengrass.html">AWS IoT Things Graph and AWS IoT Greengrass</a>.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeploySystemInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -1381,6 +1390,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeprecateFlowTemplate`.
     ///
     /// <p>Deprecates the specified workflow. This action marks the workflow for deletion. Deprecated flows can't be deployed, but existing deployments will continue to run.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateFlowTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -1462,6 +1472,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeprecateSystemTemplate`.
     ///
     /// <p>Deprecates the specified system.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateSystemTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -1543,6 +1554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNamespace`.
     ///
     /// <p>Gets the latest version of the user's namespace and the public version that it is tracking.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNamespace {
         handle: std::sync::Arc<super::Handle>,
@@ -1623,6 +1635,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DissociateEntityFromThing`.
     ///
     /// <p>Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only one entity of a particular type can be associated with a thing.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DissociateEntityFromThing {
         handle: std::sync::Arc<super::Handle>,
@@ -1725,6 +1738,7 @@ pub mod fluent_builders {
     /// <li> <p>Services</p> </li>
     /// </ul>
     /// <p>This action doesn't return definitions for systems, flows, and deployments.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEntities {
         handle: std::sync::Arc<super::Handle>,
@@ -1823,6 +1837,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFlowTemplate`.
     ///
     /// <p>Gets the latest version of the <code>DefinitionDocument</code> and <code>FlowTemplateSummary</code> for the specified workflow.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFlowTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -1914,6 +1929,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFlowTemplateRevisions`.
     ///
     /// <p>Gets revisions of the specified workflow. Only the last 100 revisions are stored. If the workflow has been deprecated, this action will return revisions that occurred before the deprecation. This action won't work for workflows that have been deleted.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFlowTemplateRevisions {
         handle: std::sync::Arc<super::Handle>,
@@ -2021,6 +2037,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNamespaceDeletionStatus`.
     ///
     /// <p>Gets the status of a namespace deletion task.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNamespaceDeletionStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -2088,6 +2105,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSystemInstance`.
     ///
     /// <p>Gets a system instance.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -2169,6 +2187,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSystemTemplate`.
     ///
     /// <p>Gets a system.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -2260,6 +2279,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSystemTemplateRevisions`.
     ///
     /// <p>Gets revisions made to the specified system template. Only the previous 100 revisions are stored. If the system has been deprecated, this action will return the revisions that occurred before its deprecation. This action won't work with systems that have been deleted.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemTemplateRevisions {
         handle: std::sync::Arc<super::Handle>,
@@ -2367,6 +2387,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUploadStatus`.
     ///
     /// <p>Gets the status of the specified upload.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUploadStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -2444,6 +2465,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFlowExecutionMessages`.
     ///
     /// <p>Returns a list of objects that contain information about events in a flow execution.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFlowExecutionMessages {
         handle: std::sync::Arc<super::Handle>,
@@ -2550,6 +2572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags on an AWS IoT Things Graph resource.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2653,6 +2676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchEntities`.
     ///
     /// <p>Searches for entities of the specified type. You can search for entities in your namespace and the public namespace that you're tracking.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchEntities {
         handle: std::sync::Arc<super::Handle>,
@@ -2792,6 +2816,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchFlowExecutions`.
     ///
     /// <p>Searches for AWS IoT Things Graph workflow execution instances.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFlowExecutions {
         handle: std::sync::Arc<super::Handle>,
@@ -2937,6 +2962,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchFlowTemplates`.
     ///
     /// <p>Searches for summary information about workflows.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFlowTemplates {
         handle: std::sync::Arc<super::Handle>,
@@ -3047,6 +3073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSystemInstances`.
     ///
     /// <p>Searches for system instances in the user's account.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSystemInstances {
         handle: std::sync::Arc<super::Handle>,
@@ -3159,6 +3186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSystemTemplates`.
     ///
     /// <p>Searches for summary information about systems in the user's account. You can filter by the ID of a workflow to return only systems that use the specified workflow.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSystemTemplates {
         handle: std::sync::Arc<super::Handle>,
@@ -3271,6 +3299,7 @@ pub mod fluent_builders {
     /// <p>Searches for things associated with the specified entity. You can search by both device and device model.</p>
     /// <p>For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2. <code>SearchThings(camera2)</code> will return only thing2, but <code>SearchThings(camera)</code> will return both thing1 and thing2.</p>
     /// <p>This action searches for exact matches and doesn't perform partial text matching.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchThings {
         handle: std::sync::Arc<super::Handle>,
@@ -3388,6 +3417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Creates a tag for the specified resource.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3482,6 +3512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UndeploySystemInstance`.
     ///
     /// <p>Removes a system instance from its target (Cloud or Greengrass).</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeploySystemInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -3559,6 +3590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from the specified resource.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3655,6 +3687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFlowTemplate`.
     ///
     /// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace. </p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlowTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -3761,6 +3794,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSystemTemplate`.
     ///
     /// <p>Updates the specified system. You don't need to run this action after updating a workflow. Any deployment that uses the system will see the changes in the system when it is redeployed.</p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSystemTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -3870,6 +3904,7 @@ pub mod fluent_builders {
     /// <p>When a user uploads entity definitions for the first time, the service creates a new namespace for the user. The new namespace tracks the public namespace. Currently users can have only one namespace. The namespace version increments whenever a user uploads entity definitions that are backwards-incompatible and whenever a user sets the <code>syncWithPublicNamespace</code> parameter or the <code>deprecateExistingEntities</code> parameter to <code>true</code>.</p>
     /// <p>The IDs for all of the entities should be in URN format. Each entity must be in the user's namespace. Users can't create entities in the public namespace, but entity definitions can refer to entities in the public namespace.</p>
     /// <p>Valid entities are <code>Device</code>, <code>DeviceModel</code>, <code>Service</code>, <code>Capability</code>, <code>State</code>, <code>Action</code>, <code>Event</code>, <code>Property</code>, <code>Mapping</code>, <code>Enum</code>. </p>
+    #[deprecated(note = "since: 2022-08-30")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UploadEntityDefinitions {
         handle: std::sync::Arc<super::Handle>,

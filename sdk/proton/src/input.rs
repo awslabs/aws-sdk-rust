@@ -858,7 +858,7 @@ pub mod create_component_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -866,7 +866,7 @@ pub mod create_component_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1036,12 +1036,12 @@ pub mod create_environment_input {
             self.name = input;
             self
         }
-        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1085,12 +1085,12 @@ pub mod create_environment_input {
             self.description = input;
             self
         }
-        /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
@@ -1110,7 +1110,7 @@ pub mod create_environment_input {
             self.proton_service_role_arn = input;
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
         /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
         pub fn environment_account_connection_id(
             mut self,
@@ -1119,7 +1119,7 @@ pub mod create_environment_input {
             self.environment_account_connection_id = Some(input.into());
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
         /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
         pub fn set_environment_account_connection_id(
             mut self,
@@ -1133,7 +1133,7 @@ pub mod create_environment_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -1141,7 +1141,7 @@ pub mod create_environment_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1149,7 +1149,7 @@ pub mod create_environment_input {
             self.tags = input;
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
         pub fn provisioning_repository(
             mut self,
@@ -1158,7 +1158,7 @@ pub mod create_environment_input {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
         pub fn set_provisioning_repository(
             mut self,
@@ -1169,14 +1169,14 @@ pub mod create_environment_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1383,7 +1383,7 @@ pub mod create_environment_account_connection_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -1391,7 +1391,7 @@ pub mod create_environment_account_connection_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1401,14 +1401,14 @@ pub mod create_environment_account_connection_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1624,7 +1624,7 @@ pub mod create_environment_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -1632,7 +1632,7 @@ pub mod create_environment_template_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1853,7 +1853,7 @@ pub mod create_environment_template_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -1861,7 +1861,7 @@ pub mod create_environment_template_version_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2038,12 +2038,12 @@ pub mod create_repository_input {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2069,7 +2069,7 @@ pub mod create_repository_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -2077,7 +2077,7 @@ pub mod create_repository_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2290,22 +2290,22 @@ pub mod create_service_input {
             self.template_minor_version = input;
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_repository_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2341,7 +2341,7 @@ pub mod create_service_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -2349,7 +2349,7 @@ pub mod create_service_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2547,12 +2547,12 @@ pub mod create_service_template_input {
             self.encryption_key = input;
             self
         }
-        /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
             self.pipeline_provisioning = Some(input);
             self
         }
-        /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_pipeline_provisioning(
             mut self,
             input: std::option::Option<crate::model::Provisioning>,
@@ -2565,7 +2565,7 @@ pub mod create_service_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -2573,7 +2573,7 @@ pub mod create_service_template_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2821,7 +2821,7 @@ pub mod create_service_template_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -2829,7 +2829,7 @@ pub mod create_service_template_version_input {
             self
         }
         /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
-        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2842,7 +2842,7 @@ pub mod create_service_template_version_input {
         /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
         ///
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn supported_component_sources(
             mut self,
             input: crate::model::ServiceTemplateSupportedComponentSourceType,
@@ -2853,7 +2853,7 @@ pub mod create_service_template_version_input {
             self
         }
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_supported_component_sources(
             mut self,
             input: std::option::Option<
@@ -3051,12 +3051,12 @@ pub mod create_template_sync_config_input {
             self.repository_provider = input;
             self
         }
-        /// <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3064,12 +3064,12 @@ pub mod create_template_sync_config_input {
             self.repository_name = input;
             self
         }
-        /// <p>The branch of the registered repository for your template.</p>
+        /// <p>The repository branch for your template.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
             self.branch = Some(input.into());
             self
         }
-        /// <p>The branch of the registered repository for your template.</p>
+        /// <p>The repository branch for your template.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch = input;
             self
@@ -3986,12 +3986,12 @@ pub mod delete_repository_input {
             self.provider = input;
             self
         }
-        /// <p>The name of the repository.</p>
+        /// <p>The repository name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the repository.</p>
+        /// <p>The repository name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5447,12 +5447,12 @@ pub mod get_environment_template_version_input {
         pub(crate) minor_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
+        /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
+        /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11017,14 +11017,17 @@ pub mod update_account_settings_input {
         pub(crate) pipeline_service_role_arn: std::option::Option<std::string::String>,
         pub(crate) pipeline_provisioning_repository:
             std::option::Option<crate::model::RepositoryBranchInput>,
+        pub(crate) delete_pipeline_provisioning_repository: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+        /// <p>To remove a previously configured ARN, specify an empty string.</p>
         pub fn pipeline_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_service_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+        /// <p>To remove a previously configured ARN, specify an empty string.</p>
         pub fn set_pipeline_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11032,7 +11035,8 @@ pub mod update_account_settings_input {
             self.pipeline_service_role_arn = input;
             self
         }
-        /// <p>A repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+        /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+        /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
         pub fn pipeline_provisioning_repository(
             mut self,
             input: crate::model::RepositoryBranchInput,
@@ -11040,12 +11044,26 @@ pub mod update_account_settings_input {
             self.pipeline_provisioning_repository = Some(input);
             self
         }
-        /// <p>A repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+        /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+        /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
         pub fn set_pipeline_provisioning_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryBranchInput>,
         ) -> Self {
             self.pipeline_provisioning_repository = input;
+            self
+        }
+        /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
+        pub fn delete_pipeline_provisioning_repository(mut self, input: bool) -> Self {
+            self.delete_pipeline_provisioning_repository = Some(input);
+            self
+        }
+        /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
+        pub fn set_delete_pipeline_provisioning_repository(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.delete_pipeline_provisioning_repository = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
@@ -11056,6 +11074,8 @@ pub mod update_account_settings_input {
             Ok(crate::input::UpdateAccountSettingsInput {
                 pipeline_service_role_arn: self.pipeline_service_role_arn,
                 pipeline_provisioning_repository: self.pipeline_provisioning_repository,
+                delete_pipeline_provisioning_repository: self
+                    .delete_pipeline_provisioning_repository,
             })
         }
     }
@@ -11594,7 +11614,7 @@ pub mod update_environment_input {
             self.environment_account_connection_id = input;
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn provisioning_repository(
             mut self,
             input: crate::model::RepositoryBranchInput,
@@ -11602,7 +11622,7 @@ pub mod update_environment_input {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+        /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn set_provisioning_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryBranchInput>,
@@ -11612,14 +11632,14 @@ pub mod update_environment_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
         /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11793,14 +11813,14 @@ pub mod update_environment_account_connection_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
         /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_component_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12341,12 +12361,12 @@ pub mod update_service_input {
             self.description = input;
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
@@ -13263,7 +13283,7 @@ pub mod update_service_template_version_input {
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
         /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
         /// </note>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn supported_component_sources(
             mut self,
             input: crate::model::ServiceTemplateSupportedComponentSourceType,
@@ -13276,7 +13296,7 @@ pub mod update_service_template_version_input {
         /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
         /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
         /// </note>
-        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_supported_component_sources(
             mut self,
             input: std::option::Option<
@@ -13470,12 +13490,12 @@ pub mod update_template_sync_config_input {
             self.repository_provider = input;
             self
         }
-        /// <p>The name of the repository (for example, <code>myrepos/myrepo</code>).</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name of the repository (for example, <code>myrepos/myrepo</code>).</p>
+        /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13483,12 +13503,12 @@ pub mod update_template_sync_config_input {
             self.repository_name = input;
             self
         }
-        /// <p>The repository branch.</p>
+        /// <p>The repository branch for your template.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
             self.branch = Some(input.into());
             self
         }
-        /// <p>The repository branch.</p>
+        /// <p>The repository branch for your template.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch = input;
             self
@@ -13649,10 +13669,10 @@ pub struct CreateTemplateSyncConfigInput {
     /// <p>The provider type for your repository.</p>
     #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
-    /// <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The branch of the registered repository for your template.</p>
+    /// <p>The repository branch for your template.</p>
     #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
@@ -13672,11 +13692,11 @@ impl CreateTemplateSyncConfigInput {
     pub fn repository_provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
-    /// <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The branch of the registered repository for your template.</p>
+    /// <p>The repository branch for your template.</p>
     pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
     }
@@ -13741,10 +13761,10 @@ pub struct UpdateTemplateSyncConfigInput {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
-    /// <p>The name of the repository (for example, <code>myrepos/myrepo</code>).</p>
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The repository branch.</p>
+    /// <p>The repository branch for your template.</p>
     #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
@@ -13764,11 +13784,11 @@ impl UpdateTemplateSyncConfigInput {
     pub fn repository_provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
-    /// <p>The name of the repository (for example, <code>myrepos/myrepo</code>).</p>
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The repository branch.</p>
+    /// <p>The repository branch for your template.</p>
     pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
     }
@@ -13893,11 +13913,11 @@ pub struct CreateServiceTemplateVersionInput {
     pub compatible_environment_templates:
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplateInput>>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub supported_component_sources: std::option::Option<
         std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
@@ -13932,12 +13952,12 @@ impl CreateServiceTemplateVersionInput {
         self.compatible_environment_templates.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn supported_component_sources(
         &self,
     ) -> std::option::Option<&[crate::model::ServiceTemplateSupportedComponentSourceType]> {
@@ -14029,7 +14049,7 @@ pub struct UpdateServiceTemplateVersionInput {
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub supported_component_sources: std::option::Option<
         std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
@@ -14065,7 +14085,7 @@ impl UpdateServiceTemplateVersionInput {
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn supported_component_sources(
         &self,
     ) -> std::option::Option<&[crate::model::ServiceTemplateSupportedComponentSourceType]> {
@@ -14176,11 +14196,11 @@ pub struct CreateServiceTemplateInput {
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
     #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -14201,12 +14221,12 @@ impl CreateServiceTemplateInput {
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
-    /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
     pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -14355,10 +14375,10 @@ pub struct CreateServiceInput {
     /// <p>The minor version of the service template that was used to create the service.</p>
     #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
-    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     #[doc(hidden)]
     pub repository_connection_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
@@ -14368,7 +14388,7 @@ pub struct CreateServiceInput {
     #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -14393,11 +14413,11 @@ impl CreateServiceInput {
     pub fn template_minor_version(&self) -> std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
-    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
         self.repository_connection_arn.as_deref()
     }
@@ -14410,7 +14430,7 @@ impl CreateServiceInput {
         self.branch_name.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -14464,7 +14484,7 @@ pub struct UpdateServiceInput {
     /// <p>The edited service description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
 }
@@ -14477,7 +14497,7 @@ impl UpdateServiceInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
@@ -14964,14 +14984,14 @@ pub struct CreateRepositoryInput {
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
     #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -14984,7 +15004,7 @@ impl CreateRepositoryInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
@@ -14993,7 +15013,7 @@ impl CreateRepositoryInput {
         self.encryption_key.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15017,7 +15037,7 @@ pub struct DeleteRepositoryInput {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
-    /// <p>The name of the repository.</p>
+    /// <p>The repository name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
@@ -15026,7 +15046,7 @@ impl DeleteRepositoryInput {
     pub fn provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
         self.provider.as_ref()
     }
-    /// <p>The name of the repository.</p>
+    /// <p>The repository name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -15139,7 +15159,7 @@ pub struct CreateEnvironmentTemplateVersionInput {
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::TemplateVersionSourceInput>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -15166,7 +15186,7 @@ impl CreateEnvironmentTemplateVersionInput {
         self.source.as_ref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15280,7 +15300,7 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentTemplateVersionInput {
-    /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
+    /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
@@ -15291,7 +15311,7 @@ pub struct GetEnvironmentTemplateVersionInput {
     pub minor_version: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentTemplateVersionInput {
-    /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
+    /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -15364,7 +15384,7 @@ pub struct CreateEnvironmentTemplateInput {
     #[doc(hidden)]
     pub provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -15390,7 +15410,7 @@ impl CreateEnvironmentTemplateInput {
         self.provisioning.as_ref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15538,7 +15558,7 @@ pub struct CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the environment template.</p>
@@ -15550,28 +15570,28 @@ pub struct CreateEnvironmentInput {
     /// <p>A description of the environment that's being created and deployed.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
     #[doc(hidden)]
     pub proton_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
     #[doc(hidden)]
     pub environment_account_connection_id: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
     #[doc(hidden)]
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
@@ -15580,7 +15600,7 @@ impl CreateEnvironmentInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -15596,7 +15616,7 @@ impl CreateEnvironmentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
@@ -15605,17 +15625,17 @@ impl CreateEnvironmentInput {
     pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
         self.proton_service_role_arn.as_deref()
     }
-    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
     pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
         self.environment_account_connection_id.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
     pub fn provisioning_repository(
         &self,
@@ -15624,7 +15644,7 @@ impl CreateEnvironmentInput {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
@@ -15723,12 +15743,12 @@ pub struct UpdateEnvironmentInput {
     /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     #[doc(hidden)]
     pub environment_account_connection_id: std::option::Option<std::string::String>,
-    /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     #[doc(hidden)]
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
@@ -15788,7 +15808,7 @@ impl UpdateEnvironmentInput {
     pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
         self.environment_account_connection_id.as_deref()
     }
-    /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     pub fn provisioning_repository(
         &self,
     ) -> std::option::Option<&crate::model::RepositoryBranchInput> {
@@ -15796,7 +15816,7 @@ impl UpdateEnvironmentInput {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
@@ -16024,12 +16044,12 @@ pub struct CreateEnvironmentAccountConnectionInput {
     #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
@@ -16051,13 +16071,13 @@ impl CreateEnvironmentAccountConnectionInput {
         self.environment_name.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
@@ -16109,7 +16129,7 @@ pub struct UpdateEnvironmentAccountConnectionInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
@@ -16124,7 +16144,7 @@ impl UpdateEnvironmentAccountConnectionInput {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
-    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
@@ -16246,7 +16266,7 @@ pub struct CreateComponentInput {
     #[doc(hidden)]
     pub service_spec: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -16286,7 +16306,7 @@ impl CreateComponentInput {
         self.service_spec.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
-    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -16516,22 +16536,33 @@ impl std::fmt::Debug for ListComponentOutputsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+    /// <p>To remove a previously configured ARN, specify an empty string.</p>
     #[doc(hidden)]
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>A repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+    /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
     #[doc(hidden)]
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
+    /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
+    #[doc(hidden)]
+    pub delete_pipeline_provisioning_repository: std::option::Option<bool>,
 }
 impl UpdateAccountSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+    /// <p>To remove a previously configured ARN, specify an empty string.</p>
     pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
         self.pipeline_service_role_arn.as_deref()
     }
-    /// <p>A repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+    /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
     pub fn pipeline_provisioning_repository(
         &self,
     ) -> std::option::Option<&crate::model::RepositoryBranchInput> {
         self.pipeline_provisioning_repository.as_ref()
+    }
+    /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
+    pub fn delete_pipeline_provisioning_repository(&self) -> std::option::Option<bool> {
+        self.delete_pipeline_provisioning_repository
     }
 }
 impl std::fmt::Debug for UpdateAccountSettingsInput {
@@ -16541,6 +16572,10 @@ impl std::fmt::Debug for UpdateAccountSettingsInput {
         formatter.field(
             "pipeline_provisioning_repository",
             &self.pipeline_provisioning_repository,
+        );
+        formatter.field(
+            "delete_pipeline_provisioning_repository",
+            &self.delete_pipeline_provisioning_repository,
         );
         formatter.finish()
     }

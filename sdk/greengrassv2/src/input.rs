@@ -3863,6 +3863,8 @@ pub mod list_installed_components_input {
         pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) topology_filter:
+            std::option::Option<crate::model::InstalledComponentTopologyFilter>,
     }
     impl Builder {
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -3898,6 +3900,32 @@ pub mod list_installed_components_input {
             self.next_token = input;
             self
         }
+        /// <p>The filter for the list of components. Choose from the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
+        /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
+        /// </ul>
+        /// <p>Default: <code>ROOT</code> </p>
+        pub fn topology_filter(
+            mut self,
+            input: crate::model::InstalledComponentTopologyFilter,
+        ) -> Self {
+            self.topology_filter = Some(input);
+            self
+        }
+        /// <p>The filter for the list of components. Choose from the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
+        /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
+        /// </ul>
+        /// <p>Default: <code>ROOT</code> </p>
+        pub fn set_topology_filter(
+            mut self,
+            input: std::option::Option<crate::model::InstalledComponentTopologyFilter>,
+        ) -> Self {
+            self.topology_filter = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListInstalledComponentsInput`](crate::input::ListInstalledComponentsInput).
         pub fn build(
             self,
@@ -3909,6 +3937,7 @@ pub mod list_installed_components_input {
                 core_device_thing_name: self.core_device_thing_name,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                topology_filter: self.topology_filter,
             })
         }
     }
@@ -3968,6 +3997,12 @@ impl ListInstalledComponentsInput {
                 }
                 if let Some(inner_37) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                }
+                if let Some(inner_38) = &_input.topology_filter {
+                    query.push_kv(
+                        "topologyFilter",
+                        &aws_smithy_http::query::fmt_string(&inner_38),
+                    );
                 }
                 Ok(())
             }
@@ -4093,14 +4128,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.resource_arn;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_39 = &_input.resource_arn;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_38, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_39, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4429,14 +4464,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_39 = &_input.resource_arn;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_40 = &_input.resource_arn;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_39, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4603,14 +4638,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.resource_arn;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_41 = &_input.resource_arn;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_41, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4626,9 +4661,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_41) = &_input.tag_keys {
-                    for inner_42 in inner_41 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_42));
+                if let Some(inner_42) = &_input.tag_keys {
+                    for inner_43 in inner_42 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_43));
                     }
                 }
                 Ok(())
@@ -4777,14 +4812,14 @@ impl UpdateConnectivityInfoInput {
                 _input: &crate::input::UpdateConnectivityInfoInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_43 = &_input.thing_name;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_44 = &_input.thing_name;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_43, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_44, false);
                 if thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
@@ -5045,6 +5080,14 @@ pub struct ListInstalledComponentsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The filter for the list of components. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
+    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>ROOT</code> </p>
+    #[doc(hidden)]
+    pub topology_filter: std::option::Option<crate::model::InstalledComponentTopologyFilter>,
 }
 impl ListInstalledComponentsInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -5059,6 +5102,17 @@ impl ListInstalledComponentsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The filter for the list of components. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
+    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>ROOT</code> </p>
+    pub fn topology_filter(
+        &self,
+    ) -> std::option::Option<&crate::model::InstalledComponentTopologyFilter> {
+        self.topology_filter.as_ref()
+    }
 }
 impl std::fmt::Debug for ListInstalledComponentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5066,6 +5120,7 @@ impl std::fmt::Debug for ListInstalledComponentsInput {
         formatter.field("core_device_thing_name", &self.core_device_thing_name);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.field("topology_filter", &self.topology_filter);
         formatter.finish()
     }
 }

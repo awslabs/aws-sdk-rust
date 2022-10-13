@@ -41,12 +41,12 @@ pub mod accept_eulas_input {
             self.eula_ids = input;
             self
         }
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The studio ID.</p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The studio ID.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -1071,7 +1071,7 @@ pub mod create_streaming_session_stream_input {
         > {
             Ok(crate::input::CreateStreamingSessionStreamInput {
                 client_token: self.client_token,
-                expiration_in_seconds: self.expiration_in_seconds.unwrap_or_default(),
+                expiration_in_seconds: self.expiration_in_seconds,
                 session_id: self.session_id,
                 studio_id: self.studio_id,
             })
@@ -2069,12 +2069,12 @@ pub mod delete_launch_profile_member_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -2993,12 +2993,12 @@ pub mod delete_studio_member_input {
             self.client_token = input;
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -3917,12 +3917,12 @@ pub mod get_launch_profile_member_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -4944,12 +4944,12 @@ pub mod get_studio_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -5518,7 +5518,7 @@ pub mod list_launch_profile_members_input {
         > {
             Ok(crate::input::ListLaunchProfileMembersInput {
                 launch_profile_id: self.launch_profile_id,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 studio_id: self.studio_id,
             })
@@ -5587,14 +5587,14 @@ impl ListLaunchProfileMembersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.max_results != 0 {
+                if let Some(inner_57) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
                     );
                 }
-                if let Some(inner_57) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_57));
+                if let Some(inner_58) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_58));
                 }
                 Ok(())
             }
@@ -5703,12 +5703,12 @@ pub mod list_launch_profiles_input {
             self.next_token = input;
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -5748,7 +5748,7 @@ pub mod list_launch_profiles_input {
         ) -> Result<crate::input::ListLaunchProfilesInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListLaunchProfilesInput {
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 principal_id: self.principal_id,
                 states: self.states,
@@ -5777,14 +5777,14 @@ impl ListLaunchProfilesInput {
                 _input: &crate::input::ListLaunchProfilesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_58 = &_input.studio_id;
-                let input_58 = input_58.as_ref().ok_or(
+                let input_59 = &_input.studio_id;
+                let input_59 = input_59.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_58, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_59, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
@@ -5804,24 +5804,24 @@ impl ListLaunchProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.max_results != 0 {
+                if let Some(inner_60) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
                     );
                 }
-                if let Some(inner_59) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
+                if let Some(inner_61) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_61));
                 }
-                if let Some(inner_60) = &_input.principal_id {
+                if let Some(inner_62) = &_input.principal_id {
                     query.push_kv(
                         "principalId",
-                        &aws_smithy_http::query::fmt_string(&inner_60),
+                        &aws_smithy_http::query::fmt_string(&inner_62),
                     );
                 }
-                if let Some(inner_61) = &_input.states {
-                    for inner_62 in inner_61 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_62));
+                if let Some(inner_63) = &_input.states {
+                    for inner_64 in inner_63 {
+                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_64));
                     }
                 }
                 Ok(())
@@ -5972,14 +5972,14 @@ impl ListStreamingImagesInput {
                 _input: &crate::input::ListStreamingImagesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_63 = &_input.studio_id;
-                let input_63 = input_63.as_ref().ok_or(
+                let input_65 = &_input.studio_id;
+                let input_65 = input_65.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_63, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_65, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
@@ -5999,11 +5999,11 @@ impl ListStreamingImagesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_64) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_64));
+                if let Some(inner_66) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
                 }
-                if let Some(inner_65) = &_input.owner {
-                    query.push_kv("owner", &aws_smithy_http::query::fmt_string(&inner_65));
+                if let Some(inner_67) = &_input.owner {
+                    query.push_kv("owner", &aws_smithy_http::query::fmt_string(&inner_67));
                 }
                 Ok(())
             }
@@ -6177,14 +6177,14 @@ impl ListStreamingSessionsInput {
                 _input: &crate::input::ListStreamingSessionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_66 = &_input.studio_id;
-                let input_66 = input_66.as_ref().ok_or(
+                let input_68 = &_input.studio_id;
+                let input_68 = input_68.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_66, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_68, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
@@ -6204,17 +6204,17 @@ impl ListStreamingSessionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_67) = &_input.created_by {
-                    query.push_kv("createdBy", &aws_smithy_http::query::fmt_string(&inner_67));
+                if let Some(inner_69) = &_input.created_by {
+                    query.push_kv("createdBy", &aws_smithy_http::query::fmt_string(&inner_69));
                 }
-                if let Some(inner_68) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_68));
+                if let Some(inner_70) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
                 }
-                if let Some(inner_69) = &_input.owned_by {
-                    query.push_kv("ownedBy", &aws_smithy_http::query::fmt_string(&inner_69));
+                if let Some(inner_71) = &_input.owned_by {
+                    query.push_kv("ownedBy", &aws_smithy_http::query::fmt_string(&inner_71));
                 }
-                if let Some(inner_70) = &_input.session_ids {
-                    query.push_kv("sessionIds", &aws_smithy_http::query::fmt_string(&inner_70));
+                if let Some(inner_72) = &_input.session_ids {
+                    query.push_kv("sessionIds", &aws_smithy_http::query::fmt_string(&inner_72));
                 }
                 Ok(())
             }
@@ -6377,7 +6377,7 @@ pub mod list_studio_components_input {
         ) -> Result<crate::input::ListStudioComponentsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListStudioComponentsInput {
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 states: self.states,
                 studio_id: self.studio_id,
@@ -6406,14 +6406,14 @@ impl ListStudioComponentsInput {
                 _input: &crate::input::ListStudioComponentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_71 = &_input.studio_id;
-                let input_71 = input_71.as_ref().ok_or(
+                let input_73 = &_input.studio_id;
+                let input_73 = input_73.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_71, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_73, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
@@ -6433,23 +6433,23 @@ impl ListStudioComponentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.max_results != 0 {
+                if let Some(inner_74) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
                     );
                 }
-                if let Some(inner_72) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_72));
+                if let Some(inner_75) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
                 }
-                if let Some(inner_73) = &_input.states {
-                    for inner_74 in inner_73 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_74));
+                if let Some(inner_76) = &_input.states {
+                    for inner_77 in inner_76 {
+                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_77));
                     }
                 }
-                if let Some(inner_75) = &_input.types {
-                    for inner_76 in inner_75 {
-                        query.push_kv("types", &aws_smithy_http::query::fmt_string(&inner_76));
+                if let Some(inner_78) = &_input.types {
+                    for inner_79 in inner_78 {
+                        query.push_kv("types", &aws_smithy_http::query::fmt_string(&inner_79));
                     }
                 }
                 Ok(())
@@ -6573,7 +6573,7 @@ pub mod list_studio_members_input {
         ) -> Result<crate::input::ListStudioMembersInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListStudioMembersInput {
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 studio_id: self.studio_id,
             })
@@ -6600,14 +6600,14 @@ impl ListStudioMembersInput {
                 _input: &crate::input::ListStudioMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_77 = &_input.studio_id;
-                let input_77 = input_77.as_ref().ok_or(
+                let input_80 = &_input.studio_id;
+                let input_80 = input_80.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_77, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_80, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
@@ -6627,14 +6627,14 @@ impl ListStudioMembersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.max_results != 0 {
+                if let Some(inner_81) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
                     );
                 }
-                if let Some(inner_78) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
+                if let Some(inner_82) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_82));
                 }
                 Ok(())
             }
@@ -6768,8 +6768,8 @@ impl ListStudiosInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_79) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
+                if let Some(inner_83) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_83));
                 }
                 Ok(())
             }
@@ -6895,14 +6895,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_80 = &_input.resource_arn;
-                let input_80 = input_80.as_ref().ok_or(
+                let input_84 = &_input.resource_arn;
+                let input_84 = input_84.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_80, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_84, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -7107,28 +7107,28 @@ impl PutLaunchProfileMembersInput {
                 _input: &crate::input::PutLaunchProfileMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_81 = &_input.studio_id;
-                let input_81 = input_81.as_ref().ok_or(
+                let input_85 = &_input.studio_id;
+                let input_85 = input_85.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_81, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_85, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_82 = &_input.launch_profile_id;
-                let input_82 = input_82.as_ref().ok_or(
+                let input_86 = &_input.launch_profile_id;
+                let input_86 = input_86.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let launch_profile_id = aws_smithy_http::label::fmt_string(input_82, false);
+                let launch_profile_id = aws_smithy_http::label::fmt_string(input_86, false);
                 if launch_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch_profile_id",
@@ -7334,14 +7334,14 @@ impl PutStudioMembersInput {
                 _input: &crate::input::PutStudioMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_83 = &_input.studio_id;
-                let input_83 = input_83.as_ref().ok_or(
+                let input_87 = &_input.studio_id;
+                let input_87 = input_87.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_83, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_87, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
@@ -7519,28 +7519,28 @@ impl StartStreamingSessionInput {
                 _input: &crate::input::StartStreamingSessionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_84 = &_input.studio_id;
-                let input_84 = input_84.as_ref().ok_or(
+                let input_88 = &_input.studio_id;
+                let input_88 = input_88.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_84, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_88, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_85 = &_input.session_id;
-                let input_85 = input_85.as_ref().ok_or(
+                let input_89 = &_input.session_id;
+                let input_89 = input_89.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "session_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let session_id = aws_smithy_http::label::fmt_string(input_85, false);
+                let session_id = aws_smithy_http::label::fmt_string(input_89, false);
                 if session_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "session_id",
@@ -7696,14 +7696,14 @@ impl StartStudioSsoConfigurationRepairInput {
                 _input: &crate::input::StartStudioSsoConfigurationRepairInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_86 = &_input.studio_id;
-                let input_86 = input_86.as_ref().ok_or(
+                let input_90 = &_input.studio_id;
+                let input_90 = input_90.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_86, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_90, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
@@ -7869,28 +7869,28 @@ impl StopStreamingSessionInput {
                 _input: &crate::input::StopStreamingSessionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_87 = &_input.studio_id;
-                let input_87 = input_87.as_ref().ok_or(
+                let input_91 = &_input.studio_id;
+                let input_91 = input_91.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_87, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_91, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_88 = &_input.session_id;
-                let input_88 = input_88.as_ref().ok_or(
+                let input_92 = &_input.session_id;
+                let input_92 = input_92.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "session_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let session_id = aws_smithy_http::label::fmt_string(input_88, false);
+                let session_id = aws_smithy_http::label::fmt_string(input_92, false);
                 if session_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "session_id",
@@ -8058,14 +8058,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_89 = &_input.resource_arn;
-                let input_89 = input_89.as_ref().ok_or(
+                let input_93 = &_input.resource_arn;
+                let input_93 = input_93.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_89, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_93, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -8236,14 +8236,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_90 = &_input.resource_arn;
-                let input_90 = input_90.as_ref().ok_or(
+                let input_94 = &_input.resource_arn;
+                let input_94 = input_94.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_90, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_94, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -8263,9 +8263,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_91) = &_input.tag_keys {
-                    for inner_92 in inner_91 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_92));
+                if let Some(inner_95) = &_input.tag_keys {
+                    for inner_96 in inner_95 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_96));
                     }
                 }
                 Ok(())
@@ -8511,28 +8511,28 @@ impl UpdateLaunchProfileInput {
                 _input: &crate::input::UpdateLaunchProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_93 = &_input.studio_id;
-                let input_93 = input_93.as_ref().ok_or(
+                let input_97 = &_input.studio_id;
+                let input_97 = input_97.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_93, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_97, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_94 = &_input.launch_profile_id;
-                let input_94 = input_94.as_ref().ok_or(
+                let input_98 = &_input.launch_profile_id;
+                let input_98 = input_98.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let launch_profile_id = aws_smithy_http::label::fmt_string(input_94, false);
+                let launch_profile_id = aws_smithy_http::label::fmt_string(input_98, false);
                 if launch_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch_profile_id",
@@ -8683,12 +8683,12 @@ pub mod update_launch_profile_member_input {
             self.persona = input;
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -8743,42 +8743,42 @@ impl UpdateLaunchProfileMemberInput {
                 _input: &crate::input::UpdateLaunchProfileMemberInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_95 = &_input.studio_id;
-                let input_95 = input_95.as_ref().ok_or(
+                let input_99 = &_input.studio_id;
+                let input_99 = input_99.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_95, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_99, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_96 = &_input.launch_profile_id;
-                let input_96 = input_96.as_ref().ok_or(
+                let input_100 = &_input.launch_profile_id;
+                let input_100 = input_100.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch_profile_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let launch_profile_id = aws_smithy_http::label::fmt_string(input_96, false);
+                let launch_profile_id = aws_smithy_http::label::fmt_string(input_100, false);
                 if launch_profile_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch_profile_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_97 = &_input.principal_id;
-                let input_97 = input_97.as_ref().ok_or(
+                let input_101 = &_input.principal_id;
+                let input_101 = input_101.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "principal_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let principal_id = aws_smithy_http::label::fmt_string(input_97, false);
+                let principal_id = aws_smithy_http::label::fmt_string(input_101, false);
                 if principal_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "principal_id",
@@ -8981,28 +8981,28 @@ impl UpdateStreamingImageInput {
                 _input: &crate::input::UpdateStreamingImageInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_98 = &_input.studio_id;
-                let input_98 = input_98.as_ref().ok_or(
+                let input_102 = &_input.studio_id;
+                let input_102 = input_102.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_98, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_102, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_99 = &_input.streaming_image_id;
-                let input_99 = input_99.as_ref().ok_or(
+                let input_103 = &_input.streaming_image_id;
+                let input_103 = input_103.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "streaming_image_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let streaming_image_id = aws_smithy_http::label::fmt_string(input_99, false);
+                let streaming_image_id = aws_smithy_http::label::fmt_string(input_103, false);
                 if streaming_image_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "streaming_image_id",
@@ -9214,14 +9214,14 @@ impl UpdateStudioInput {
                 _input: &crate::input::UpdateStudioInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_100 = &_input.studio_id;
-                let input_100 = input_100.as_ref().ok_or(
+                let input_104 = &_input.studio_id;
+                let input_104 = input_104.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_100, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_104, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
@@ -9574,28 +9574,28 @@ impl UpdateStudioComponentInput {
                 _input: &crate::input::UpdateStudioComponentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_101 = &_input.studio_id;
-                let input_101 = input_101.as_ref().ok_or(
+                let input_105 = &_input.studio_id;
+                let input_105 = input_105.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_id = aws_smithy_http::label::fmt_string(input_101, false);
+                let studio_id = aws_smithy_http::label::fmt_string(input_105, false);
                 if studio_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_102 = &_input.studio_component_id;
-                let input_102 = input_102.as_ref().ok_or(
+                let input_106 = &_input.studio_component_id;
+                let input_106 = input_106.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_component_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let studio_component_id = aws_smithy_http::label::fmt_string(input_102, false);
+                let studio_component_id = aws_smithy_http::label::fmt_string(input_106, false);
                 if studio_component_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_component_id",
@@ -9782,7 +9782,7 @@ impl std::fmt::Debug for PutStudioMembersInput {
 pub struct ListStudioMembersInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -9792,7 +9792,7 @@ pub struct ListStudioMembersInput {
 }
 impl ListStudioMembersInput {
     /// <p>The max number of results to return in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token to request the next page of results. </p>
@@ -9818,7 +9818,7 @@ impl std::fmt::Debug for ListStudioMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioMemberInput {
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -9826,7 +9826,7 @@ pub struct GetStudioMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetStudioMemberInput {
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -9851,7 +9851,7 @@ pub struct DeleteStudioMemberInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -9863,7 +9863,7 @@ impl DeleteStudioMemberInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -10096,7 +10096,7 @@ impl std::fmt::Debug for GetStudioInput {
 pub struct ListStudioComponentsInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -10112,7 +10112,7 @@ pub struct ListStudioComponentsInput {
 }
 impl ListStudioComponentsInput {
     /// <p>The max number of results to return in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token to request the next page of results. </p>
@@ -10597,7 +10597,7 @@ pub struct CreateStreamingSessionStreamInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The expiration time in seconds.</p>
     #[doc(hidden)]
-    pub expiration_in_seconds: i32,
+    pub expiration_in_seconds: std::option::Option<i32>,
     /// <p>The streaming session ID.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -10611,7 +10611,7 @@ impl CreateStreamingSessionStreamInput {
         self.client_token.as_deref()
     }
     /// <p>The expiration time in seconds.</p>
-    pub fn expiration_in_seconds(&self) -> i32 {
+    pub fn expiration_in_seconds(&self) -> std::option::Option<i32> {
         self.expiration_in_seconds
     }
     /// <p>The streaming session ID.</p>
@@ -11069,7 +11069,7 @@ pub struct UpdateLaunchProfileMemberInput {
     /// <p>The persona.</p>
     #[doc(hidden)]
     pub persona: std::option::Option<crate::model::LaunchProfilePersona>,
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -11089,7 +11089,7 @@ impl UpdateLaunchProfileMemberInput {
     pub fn persona(&self) -> std::option::Option<&crate::model::LaunchProfilePersona> {
         self.persona.as_ref()
     }
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -11173,7 +11173,7 @@ pub struct ListLaunchProfileMembersInput {
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -11187,7 +11187,7 @@ impl ListLaunchProfileMembersInput {
         self.launch_profile_id.as_deref()
     }
     /// <p>The max number of results to return in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token to request the next page of results. </p>
@@ -11217,7 +11217,7 @@ pub struct GetLaunchProfileMemberInput {
     /// <p>The Launch Profile ID.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -11229,7 +11229,7 @@ impl GetLaunchProfileMemberInput {
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -11345,7 +11345,7 @@ pub struct DeleteLaunchProfileMemberInput {
     /// <p>The Launch Profile ID.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
@@ -11361,7 +11361,7 @@ impl DeleteLaunchProfileMemberInput {
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -11387,11 +11387,11 @@ impl std::fmt::Debug for DeleteLaunchProfileMemberInput {
 pub struct ListLaunchProfilesInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>Filter this request to launch profiles in any of the given states.</p>
@@ -11403,14 +11403,14 @@ pub struct ListLaunchProfilesInput {
 }
 impl ListLaunchProfilesInput {
     /// <p>The max number of results to return in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token to request the next page of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -11781,7 +11781,7 @@ pub struct AcceptEulasInput {
     /// <p>The EULA ID.</p>
     #[doc(hidden)]
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A collection of EULA IDs.</p>
+    /// <p>The studio ID.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
@@ -11794,7 +11794,7 @@ impl AcceptEulasInput {
     pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.eula_ids.as_deref()
     }
-    /// <p>A collection of EULA IDs.</p>
+    /// <p>The studio ID.</p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }

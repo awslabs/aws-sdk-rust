@@ -759,6 +759,136 @@ impl FileSystemNotFound {
     }
 }
 
+/// <p>A cache configuration is required for this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MissingFileCacheConfiguration {
+    /// <p>A detailed error message.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MissingFileCacheConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MissingFileCacheConfiguration");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl MissingFileCacheConfiguration {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MissingFileCacheConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MissingFileCacheConfiguration")?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MissingFileCacheConfiguration {}
+/// See [`MissingFileCacheConfiguration`](crate::error::MissingFileCacheConfiguration).
+pub mod missing_file_cache_configuration {
+
+    /// A builder for [`MissingFileCacheConfiguration`](crate::error::MissingFileCacheConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A detailed error message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MissingFileCacheConfiguration`](crate::error::MissingFileCacheConfiguration).
+        pub fn build(self) -> crate::error::MissingFileCacheConfiguration {
+            crate::error::MissingFileCacheConfiguration {
+                message: self.message,
+            }
+        }
+    }
+}
+impl MissingFileCacheConfiguration {
+    /// Creates a new builder-style object to manufacture [`MissingFileCacheConfiguration`](crate::error::MissingFileCacheConfiguration).
+    pub fn builder() -> crate::error::missing_file_cache_configuration::Builder {
+        crate::error::missing_file_cache_configuration::Builder::default()
+    }
+}
+
+/// <p>No caches were found based upon supplied parameters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileCacheNotFound {
+    /// <p>A detailed error message.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for FileCacheNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileCacheNotFound");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl FileCacheNotFound {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FileCacheNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FileCacheNotFound")?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FileCacheNotFound {}
+/// See [`FileCacheNotFound`](crate::error::FileCacheNotFound).
+pub mod file_cache_not_found {
+
+    /// A builder for [`FileCacheNotFound`](crate::error::FileCacheNotFound).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A detailed error message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileCacheNotFound`](crate::error::FileCacheNotFound).
+        pub fn build(self) -> crate::error::FileCacheNotFound {
+            crate::error::FileCacheNotFound {
+                message: self.message,
+            }
+        }
+    }
+}
+impl FileCacheNotFound {
+    /// Creates a new builder-style object to manufacture [`FileCacheNotFound`](crate::error::FileCacheNotFound).
+    pub fn builder() -> crate::error::file_cache_not_found::Builder {
+        crate::error::file_cache_not_found::Builder::default()
+    }
+}
+
 /// <p>No data repository associations were found based upon the supplied parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -783,8 +913,8 @@ impl DataRepositoryAssociationNotFound {
 impl std::fmt::Display for DataRepositoryAssociationNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryAssociationNotFound")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -858,8 +988,8 @@ impl ResourceNotFound {
 impl std::fmt::Display for ResourceNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFound")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -945,8 +1075,8 @@ impl ResourceDoesNotSupportTagging {
 impl std::fmt::Display for ResourceDoesNotSupportTagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceDoesNotSupportTagging")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -1032,8 +1162,8 @@ impl NotServiceResourceError {
 impl std::fmt::Display for NotServiceResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotServiceResourceError")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -1109,8 +1239,8 @@ impl DataRepositoryTaskNotFound {
 impl std::fmt::Display for DataRepositoryTaskNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryTaskNotFound")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -1174,8 +1304,8 @@ impl InvalidDataRepositoryType {
 impl std::fmt::Display for InvalidDataRepositoryType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDataRepositoryType")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -1239,8 +1369,8 @@ impl BackupNotFound {
 impl std::fmt::Display for BackupNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupNotFound")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -1314,8 +1444,8 @@ impl BackupRestoring {
 impl std::fmt::Display for BackupRestoring {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupRestoring")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -1394,8 +1524,8 @@ impl BackupInProgress {
 impl std::fmt::Display for BackupInProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupInProgress")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -1469,8 +1599,8 @@ impl BackupBeingCopied {
 impl std::fmt::Display for BackupBeingCopied {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupBeingCopied")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -1564,8 +1694,8 @@ impl ActiveDirectoryError {
 impl std::fmt::Display for ActiveDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ActiveDirectoryError")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -1659,8 +1789,8 @@ impl InvalidPerUnitStorageThroughput {
 impl std::fmt::Display for InvalidPerUnitStorageThroughput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPerUnitStorageThroughput")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -1750,8 +1880,8 @@ impl InvalidNetworkSettings {
 impl std::fmt::Display for InvalidNetworkSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNetworkSettings")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -1860,8 +1990,8 @@ impl InvalidImportPath {
 impl std::fmt::Display for InvalidImportPath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidImportPath")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -1925,8 +2055,8 @@ impl InvalidExportPath {
 impl std::fmt::Display for InvalidExportPath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportPath")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -1990,8 +2120,8 @@ impl DataRepositoryTaskExecuting {
 impl std::fmt::Display for DataRepositoryTaskExecuting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryTaskExecuting")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -2065,8 +2195,8 @@ impl SourceBackupUnavailable {
 impl std::fmt::Display for SourceBackupUnavailable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceBackupUnavailable")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -2142,8 +2272,8 @@ impl InvalidSourceKmsKey {
 impl std::fmt::Display for InvalidSourceKmsKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSourceKmsKey")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -2207,8 +2337,8 @@ impl InvalidRegion {
 impl std::fmt::Display for InvalidRegion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRegion")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -2272,8 +2402,8 @@ impl InvalidDestinationKmsKey {
 impl std::fmt::Display for InvalidDestinationKmsKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDestinationKmsKey")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -2340,8 +2470,8 @@ impl std::fmt::Display for IncompatibleRegionForMultiAz {
             f,
             "IncompatibleRegionForMultiAz [IncompatibleRegionForMultiAZ]"
         )?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
@@ -2405,8 +2535,8 @@ impl DataRepositoryTaskEnded {
 impl std::fmt::Display for DataRepositoryTaskEnded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryTaskEnded")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -3327,6 +3457,159 @@ impl std::error::Error for CreateDataRepositoryTaskError {
             CreateDataRepositoryTaskErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
             CreateDataRepositoryTaskErrorKind::UnsupportedOperation(_inner) => Some(_inner),
             CreateDataRepositoryTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateFileCache` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateFileCacheError {
+    /// Kind of error that occurred.
+    pub kind: CreateFileCacheErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateFileCache` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateFileCacheErrorKind {
+    /// <p>A generic error indicating a failure with a client request.</p>
+    BadRequest(crate::error::BadRequest),
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    /// <p>A generic error indicating a server-side failure.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>One or more network settings specified in the request are invalid.</p>
+    InvalidNetworkSettings(crate::error::InvalidNetworkSettings),
+    /// <p>An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system again, using a valid value.</p>
+    InvalidPerUnitStorageThroughput(crate::error::InvalidPerUnitStorageThroughput),
+    /// <p>A cache configuration is required for this operation.</p>
+    MissingFileCacheConfiguration(crate::error::MissingFileCacheConfiguration),
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
+    ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateFileCacheError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateFileCacheErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            CreateFileCacheErrorKind::IncompatibleParameterError(_inner) => _inner.fmt(f),
+            CreateFileCacheErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateFileCacheErrorKind::InvalidNetworkSettings(_inner) => _inner.fmt(f),
+            CreateFileCacheErrorKind::InvalidPerUnitStorageThroughput(_inner) => _inner.fmt(f),
+            CreateFileCacheErrorKind::MissingFileCacheConfiguration(_inner) => _inner.fmt(f),
+            CreateFileCacheErrorKind::ServiceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateFileCacheErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateFileCacheError {
+    fn code(&self) -> Option<&str> {
+        CreateFileCacheError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateFileCacheError {
+    /// Creates a new `CreateFileCacheError`.
+    pub fn new(kind: CreateFileCacheErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateFileCacheError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateFileCacheErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateFileCacheError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateFileCacheErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateFileCacheErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, CreateFileCacheErrorKind::BadRequest(_))
+    }
+    /// Returns `true` if the error kind is `CreateFileCacheErrorKind::IncompatibleParameterError`.
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFileCacheErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFileCacheErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, CreateFileCacheErrorKind::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `CreateFileCacheErrorKind::InvalidNetworkSettings`.
+    pub fn is_invalid_network_settings(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFileCacheErrorKind::InvalidNetworkSettings(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFileCacheErrorKind::InvalidPerUnitStorageThroughput`.
+    pub fn is_invalid_per_unit_storage_throughput(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFileCacheErrorKind::InvalidPerUnitStorageThroughput(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFileCacheErrorKind::MissingFileCacheConfiguration`.
+    pub fn is_missing_file_cache_configuration(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFileCacheErrorKind::MissingFileCacheConfiguration(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFileCacheErrorKind::ServiceLimitExceeded`.
+    pub fn is_service_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFileCacheErrorKind::ServiceLimitExceeded(_)
+        )
+    }
+}
+impl std::error::Error for CreateFileCacheError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateFileCacheErrorKind::BadRequest(_inner) => Some(_inner),
+            CreateFileCacheErrorKind::IncompatibleParameterError(_inner) => Some(_inner),
+            CreateFileCacheErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateFileCacheErrorKind::InvalidNetworkSettings(_inner) => Some(_inner),
+            CreateFileCacheErrorKind::InvalidPerUnitStorageThroughput(_inner) => Some(_inner),
+            CreateFileCacheErrorKind::MissingFileCacheConfiguration(_inner) => Some(_inner),
+            CreateFileCacheErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
+            CreateFileCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4593,6 +4876,134 @@ impl std::error::Error for DeleteDataRepositoryAssociationError {
     }
 }
 
+/// Error type for the `DeleteFileCache` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteFileCacheError {
+    /// Kind of error that occurred.
+    pub kind: DeleteFileCacheErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteFileCache` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteFileCacheErrorKind {
+    /// <p>A generic error indicating a failure with a client request.</p>
+    BadRequest(crate::error::BadRequest),
+    /// <p>No caches were found based upon supplied parameters.</p>
+    FileCacheNotFound(crate::error::FileCacheNotFound),
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    /// <p>A generic error indicating a server-side failure.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
+    ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteFileCacheError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteFileCacheErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            DeleteFileCacheErrorKind::FileCacheNotFound(_inner) => _inner.fmt(f),
+            DeleteFileCacheErrorKind::IncompatibleParameterError(_inner) => _inner.fmt(f),
+            DeleteFileCacheErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DeleteFileCacheErrorKind::ServiceLimitExceeded(_inner) => _inner.fmt(f),
+            DeleteFileCacheErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteFileCacheError {
+    fn code(&self) -> Option<&str> {
+        DeleteFileCacheError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteFileCacheError {
+    /// Creates a new `DeleteFileCacheError`.
+    pub fn new(kind: DeleteFileCacheErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteFileCacheError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteFileCacheErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteFileCacheError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteFileCacheErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteFileCacheErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, DeleteFileCacheErrorKind::BadRequest(_))
+    }
+    /// Returns `true` if the error kind is `DeleteFileCacheErrorKind::FileCacheNotFound`.
+    pub fn is_file_cache_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteFileCacheErrorKind::FileCacheNotFound(_))
+    }
+    /// Returns `true` if the error kind is `DeleteFileCacheErrorKind::IncompatibleParameterError`.
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFileCacheErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFileCacheErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteFileCacheErrorKind::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `DeleteFileCacheErrorKind::ServiceLimitExceeded`.
+    pub fn is_service_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFileCacheErrorKind::ServiceLimitExceeded(_)
+        )
+    }
+}
+impl std::error::Error for DeleteFileCacheError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteFileCacheErrorKind::BadRequest(_inner) => Some(_inner),
+            DeleteFileCacheErrorKind::FileCacheNotFound(_inner) => Some(_inner),
+            DeleteFileCacheErrorKind::IncompatibleParameterError(_inner) => Some(_inner),
+            DeleteFileCacheErrorKind::InternalServerError(_inner) => Some(_inner),
+            DeleteFileCacheErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
+            DeleteFileCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteFileSystem` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5483,6 +5894,118 @@ impl std::error::Error for DescribeDataRepositoryTasksError {
             DescribeDataRepositoryTasksErrorKind::FileSystemNotFound(_inner) => Some(_inner),
             DescribeDataRepositoryTasksErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeDataRepositoryTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeFileCaches` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeFileCachesError {
+    /// Kind of error that occurred.
+    pub kind: DescribeFileCachesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeFileCaches` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeFileCachesErrorKind {
+    /// <p>A generic error indicating a failure with a client request.</p>
+    BadRequest(crate::error::BadRequest),
+    /// <p>No caches were found based upon supplied parameters.</p>
+    FileCacheNotFound(crate::error::FileCacheNotFound),
+    /// <p>A generic error indicating a server-side failure.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeFileCachesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeFileCachesErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            DescribeFileCachesErrorKind::FileCacheNotFound(_inner) => _inner.fmt(f),
+            DescribeFileCachesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DescribeFileCachesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeFileCachesError {
+    fn code(&self) -> Option<&str> {
+        DescribeFileCachesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeFileCachesError {
+    /// Creates a new `DescribeFileCachesError`.
+    pub fn new(kind: DescribeFileCachesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeFileCachesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeFileCachesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeFileCachesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeFileCachesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeFileCachesErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, DescribeFileCachesErrorKind::BadRequest(_))
+    }
+    /// Returns `true` if the error kind is `DescribeFileCachesErrorKind::FileCacheNotFound`.
+    pub fn is_file_cache_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFileCachesErrorKind::FileCacheNotFound(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeFileCachesErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFileCachesErrorKind::InternalServerError(_)
+        )
+    }
+}
+impl std::error::Error for DescribeFileCachesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeFileCachesErrorKind::BadRequest(_inner) => Some(_inner),
+            DescribeFileCachesErrorKind::FileCacheNotFound(_inner) => Some(_inner),
+            DescribeFileCachesErrorKind::InternalServerError(_inner) => Some(_inner),
+            DescribeFileCachesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6956,6 +7479,156 @@ impl std::error::Error for UpdateDataRepositoryAssociationError {
             UpdateDataRepositoryAssociationErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateDataRepositoryAssociationErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
             UpdateDataRepositoryAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateFileCache` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateFileCacheError {
+    /// Kind of error that occurred.
+    pub kind: UpdateFileCacheErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateFileCache` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFileCacheErrorKind {
+    /// <p>A generic error indicating a failure with a client request.</p>
+    BadRequest(crate::error::BadRequest),
+    /// <p>No caches were found based upon supplied parameters.</p>
+    FileCacheNotFound(crate::error::FileCacheNotFound),
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    /// <p>A generic error indicating a server-side failure.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>A cache configuration is required for this operation.</p>
+    MissingFileCacheConfiguration(crate::error::MissingFileCacheConfiguration),
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
+    ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
+    /// <p>The requested operation is not supported for this resource or API.</p>
+    UnsupportedOperation(crate::error::UnsupportedOperation),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFileCacheError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFileCacheErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            UpdateFileCacheErrorKind::FileCacheNotFound(_inner) => _inner.fmt(f),
+            UpdateFileCacheErrorKind::IncompatibleParameterError(_inner) => _inner.fmt(f),
+            UpdateFileCacheErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            UpdateFileCacheErrorKind::MissingFileCacheConfiguration(_inner) => _inner.fmt(f),
+            UpdateFileCacheErrorKind::ServiceLimitExceeded(_inner) => _inner.fmt(f),
+            UpdateFileCacheErrorKind::UnsupportedOperation(_inner) => _inner.fmt(f),
+            UpdateFileCacheErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateFileCacheError {
+    fn code(&self) -> Option<&str> {
+        UpdateFileCacheError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFileCacheError {
+    /// Creates a new `UpdateFileCacheError`.
+    pub fn new(kind: UpdateFileCacheErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateFileCacheError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFileCacheErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateFileCacheError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFileCacheErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateFileCacheErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, UpdateFileCacheErrorKind::BadRequest(_))
+    }
+    /// Returns `true` if the error kind is `UpdateFileCacheErrorKind::FileCacheNotFound`.
+    pub fn is_file_cache_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateFileCacheErrorKind::FileCacheNotFound(_))
+    }
+    /// Returns `true` if the error kind is `UpdateFileCacheErrorKind::IncompatibleParameterError`.
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFileCacheErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFileCacheErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateFileCacheErrorKind::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `UpdateFileCacheErrorKind::MissingFileCacheConfiguration`.
+    pub fn is_missing_file_cache_configuration(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFileCacheErrorKind::MissingFileCacheConfiguration(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFileCacheErrorKind::ServiceLimitExceeded`.
+    pub fn is_service_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFileCacheErrorKind::ServiceLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFileCacheErrorKind::UnsupportedOperation`.
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFileCacheErrorKind::UnsupportedOperation(_)
+        )
+    }
+}
+impl std::error::Error for UpdateFileCacheError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFileCacheErrorKind::BadRequest(_inner) => Some(_inner),
+            UpdateFileCacheErrorKind::FileCacheNotFound(_inner) => Some(_inner),
+            UpdateFileCacheErrorKind::IncompatibleParameterError(_inner) => Some(_inner),
+            UpdateFileCacheErrorKind::InternalServerError(_inner) => Some(_inner),
+            UpdateFileCacheErrorKind::MissingFileCacheConfiguration(_inner) => Some(_inner),
+            UpdateFileCacheErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
+            UpdateFileCacheErrorKind::UnsupportedOperation(_inner) => Some(_inner),
+            UpdateFileCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

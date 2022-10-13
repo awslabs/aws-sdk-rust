@@ -91,38 +91,233 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_display_name): <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_description): <p>A string containing the description of the group.</p>
+    /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::output::CreateGroupOutput::group_id): <p>The identifier of the newly created group in the identity store.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::output::CreateGroupOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
+    pub fn create_group(&self) -> fluent_builders::CreateGroup {
+        fluent_builders::CreateGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateGroupMembership`](crate::client::fluent_builders::CreateGroupMembership) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_group_id): <p>The identifier for a group in the identity store.</p>
+    ///   - [`member_id(MemberId)`](crate::client::fluent_builders::CreateGroupMembership::member_id) / [`set_member_id(Option<MemberId>)`](crate::client::fluent_builders::CreateGroupMembership::set_member_id): <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+    /// - On success, responds with [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput) with field(s):
+    ///   - [`membership_id(Option<String>)`](crate::output::CreateGroupMembershipOutput::membership_id): <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::output::CreateGroupMembershipOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    /// - On failure, responds with [`SdkError<CreateGroupMembershipError>`](crate::error::CreateGroupMembershipError)
+    pub fn create_group_membership(&self) -> fluent_builders::CreateGroupMembership {
+        fluent_builders::CreateGroupMembership::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_user_name): <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    ///   - [`name(Name)`](crate::client::fluent_builders::CreateUser::name) / [`set_name(Option<Name>)`](crate::client::fluent_builders::CreateUser::set_name): <p>An object containing the user's name.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_display_name): <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    ///   - [`nick_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::nick_name) / [`set_nick_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_nick_name): <p>A string containing an alternate name for the user.</p>
+    ///   - [`profile_url(impl Into<String>)`](crate::client::fluent_builders::CreateUser::profile_url) / [`set_profile_url(Option<String>)`](crate::client::fluent_builders::CreateUser::set_profile_url): <p>A string containing a URL that may be associated with the user.</p>
+    ///   - [`emails(Vec<Email>)`](crate::client::fluent_builders::CreateUser::emails) / [`set_emails(Option<Vec<Email>>)`](crate::client::fluent_builders::CreateUser::set_emails): <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
+    ///   - [`addresses(Vec<Address>)`](crate::client::fluent_builders::CreateUser::addresses) / [`set_addresses(Option<Vec<Address>>)`](crate::client::fluent_builders::CreateUser::set_addresses): <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
+    ///   - [`phone_numbers(Vec<PhoneNumber>)`](crate::client::fluent_builders::CreateUser::phone_numbers) / [`set_phone_numbers(Option<Vec<PhoneNumber>>)`](crate::client::fluent_builders::CreateUser::set_phone_numbers): <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
+    ///   - [`user_type(impl Into<String>)`](crate::client::fluent_builders::CreateUser::user_type) / [`set_user_type(Option<String>)`](crate::client::fluent_builders::CreateUser::set_user_type): <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
+    ///   - [`title(impl Into<String>)`](crate::client::fluent_builders::CreateUser::title) / [`set_title(Option<String>)`](crate::client::fluent_builders::CreateUser::set_title): <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
+    ///   - [`preferred_language(impl Into<String>)`](crate::client::fluent_builders::CreateUser::preferred_language) / [`set_preferred_language(Option<String>)`](crate::client::fluent_builders::CreateUser::set_preferred_language): <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
+    ///   - [`locale(impl Into<String>)`](crate::client::fluent_builders::CreateUser::locale) / [`set_locale(Option<String>)`](crate::client::fluent_builders::CreateUser::set_locale): <p>A string containing the user's geographical region or location.</p>
+    ///   - [`timezone(impl Into<String>)`](crate::client::fluent_builders::CreateUser::timezone) / [`set_timezone(Option<String>)`](crate::client::fluent_builders::CreateUser::set_timezone): <p>A string containing the user's time zone.</p>
+    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::CreateUserOutput::user_id): <p>The identifier of the newly created user in the identity store.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::output::CreateUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
+    pub fn create_user(&self) -> fluent_builders::CreateUser {
+        fluent_builders::CreateUser::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_id): <p>The identifier for a group in the identity store.</p>
+    /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
+    pub fn delete_group(&self) -> fluent_builders::DeleteGroup {
+        fluent_builders::DeleteGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteGroupMembership`](crate::client::fluent_builders::DeleteGroupMembership) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`membership_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::membership_id) / [`set_membership_id(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    /// - On success, responds with [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGroupMembershipError>`](crate::error::DeleteGroupMembershipError)
+    pub fn delete_group_membership(&self) -> fluent_builders::DeleteGroupMembership {
+        fluent_builders::DeleteGroupMembership::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_user_id): <p>The identifier for a user in the identity store.</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
+    pub fn delete_user(&self) -> fluent_builders::DeleteUser {
+        fluent_builders::DeleteUser::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeGroup`](crate::client::fluent_builders::DescribeGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_group_id): <p>The identifier for a group in the identity store.</p>
     /// - On success, responds with [`DescribeGroupOutput`](crate::output::DescribeGroupOutput) with field(s):
     ///   - [`group_id(Option<String>)`](crate::output::DescribeGroupOutput::group_id): <p>The identifier for a group in the identity store.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::DescribeGroupOutput::display_name): <p>Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::DescribeGroupOutput::display_name): <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
+    ///   - [`external_ids(Option<Vec<ExternalId>>)`](crate::output::DescribeGroupOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeGroupOutput::description): <p>A string containing a description of the group.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::output::DescribeGroupOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::error::DescribeGroupError)
     pub fn describe_group(&self) -> fluent_builders::DescribeGroup {
         fluent_builders::DescribeGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeGroupMembership`](crate::client::fluent_builders::DescribeGroupMembership) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroupMembership::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DescribeGroupMembership::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`membership_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroupMembership::membership_id) / [`set_membership_id(Option<String>)`](crate::client::fluent_builders::DescribeGroupMembership::set_membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    /// - On success, responds with [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput) with field(s):
+    ///   - [`identity_store_id(Option<String>)`](crate::output::DescribeGroupMembershipOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`membership_id(Option<String>)`](crate::output::DescribeGroupMembershipOutput::membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    ///   - [`group_id(Option<String>)`](crate::output::DescribeGroupMembershipOutput::group_id): <p>The identifier for a group in the identity store.</p>
+    ///   - [`member_id(Option<MemberId>)`](crate::output::DescribeGroupMembershipOutput::member_id): <p>An object containing the identifier of a group member.</p>
+    /// - On failure, responds with [`SdkError<DescribeGroupMembershipError>`](crate::error::DescribeGroupMembershipError)
+    pub fn describe_group_membership(&self) -> fluent_builders::DescribeGroupMembership {
+        fluent_builders::DescribeGroupMembership::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_user_id): <p>The identifier for a user in the identity store.</p>
     /// - On success, responds with [`DescribeUserOutput`](crate::output::DescribeUserOutput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::output::DescribeUserOutput::user_name): <p>Contains the user’s user name value. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    ///   - [`user_name(Option<String>)`](crate::output::DescribeUserOutput::user_name): <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     ///   - [`user_id(Option<String>)`](crate::output::DescribeUserOutput::user_id): <p>The identifier for a user in the identity store.</p>
+    ///   - [`external_ids(Option<Vec<ExternalId>>)`](crate::output::DescribeUserOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
+    ///   - [`name(Option<Name>)`](crate::output::DescribeUserOutput::name): <p>The name of the user.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::DescribeUserOutput::display_name): <p>The user's name value for display.</p>
+    ///   - [`nick_name(Option<String>)`](crate::output::DescribeUserOutput::nick_name): <p>An alternative descriptive name for the user.</p>
+    ///   - [`profile_url(Option<String>)`](crate::output::DescribeUserOutput::profile_url): <p>A URL link for the user's profile.</p>
+    ///   - [`emails(Option<Vec<Email>>)`](crate::output::DescribeUserOutput::emails): <p>The user's email value.</p>
+    ///   - [`addresses(Option<Vec<Address>>)`](crate::output::DescribeUserOutput::addresses): <p>The user's physical address.</p>
+    ///   - [`phone_numbers(Option<Vec<PhoneNumber>>)`](crate::output::DescribeUserOutput::phone_numbers): <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
+    ///   - [`user_type(Option<String>)`](crate::output::DescribeUserOutput::user_type): <p>A string indicating the user's type.</p>
+    ///   - [`title(Option<String>)`](crate::output::DescribeUserOutput::title): <p>A string containing the user's title.</p>
+    ///   - [`preferred_language(Option<String>)`](crate::output::DescribeUserOutput::preferred_language): <p>The preferred language of the user.</p>
+    ///   - [`locale(Option<String>)`](crate::output::DescribeUserOutput::locale): <p>A string containing the user's geographical region or location.</p>
+    ///   - [`timezone(Option<String>)`](crate::output::DescribeUserOutput::timezone): <p>The time zone for a user.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::output::DescribeUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::error::DescribeUserError)
     pub fn describe_user(&self) -> fluent_builders::DescribeUser {
         fluent_builders::DescribeUser::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetGroupId`](crate::client::fluent_builders::GetGroupId) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::GetGroupId::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::GetGroupId::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`alternate_identifier(AlternateIdentifier)`](crate::client::fluent_builders::GetGroupId::alternate_identifier) / [`set_alternate_identifier(Option<AlternateIdentifier>)`](crate::client::fluent_builders::GetGroupId::set_alternate_identifier): <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>GroupDisplayName</code>.</p>
+    /// - On success, responds with [`GetGroupIdOutput`](crate::output::GetGroupIdOutput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::output::GetGroupIdOutput::group_id): <p>The identifier for a group in the identity store.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::output::GetGroupIdOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    /// - On failure, responds with [`SdkError<GetGroupIdError>`](crate::error::GetGroupIdError)
+    pub fn get_group_id(&self) -> fluent_builders::GetGroupId {
+        fluent_builders::GetGroupId::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetGroupMembershipId`](crate::client::fluent_builders::GetGroupMembershipId) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::GetGroupMembershipId::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::GetGroupMembershipId::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::GetGroupMembershipId::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::GetGroupMembershipId::set_group_id): <p>The identifier for a group in the identity store.</p>
+    ///   - [`member_id(MemberId)`](crate::client::fluent_builders::GetGroupMembershipId::member_id) / [`set_member_id(Option<MemberId>)`](crate::client::fluent_builders::GetGroupMembershipId::set_member_id): <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+    /// - On success, responds with [`GetGroupMembershipIdOutput`](crate::output::GetGroupMembershipIdOutput) with field(s):
+    ///   - [`membership_id(Option<String>)`](crate::output::GetGroupMembershipIdOutput::membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::output::GetGroupMembershipIdOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    /// - On failure, responds with [`SdkError<GetGroupMembershipIdError>`](crate::error::GetGroupMembershipIdError)
+    pub fn get_group_membership_id(&self) -> fluent_builders::GetGroupMembershipId {
+        fluent_builders::GetGroupMembershipId::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetUserId`](crate::client::fluent_builders::GetUserId) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::GetUserId::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::GetUserId::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`alternate_identifier(AlternateIdentifier)`](crate::client::fluent_builders::GetUserId::alternate_identifier) / [`set_alternate_identifier(Option<AlternateIdentifier>)`](crate::client::fluent_builders::GetUserId::set_alternate_identifier): <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>UserDisplayName</code>.</p>
+    /// - On success, responds with [`GetUserIdOutput`](crate::output::GetUserIdOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::GetUserIdOutput::user_id): <p>The identifier for a user in the identity store.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::output::GetUserIdOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    /// - On failure, responds with [`SdkError<GetUserIdError>`](crate::error::GetUserIdError)
+    pub fn get_user_id(&self) -> fluent_builders::GetUserId {
+        fluent_builders::GetUserId::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`IsMemberInGroups`](crate::client::fluent_builders::IsMemberInGroups) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::IsMemberInGroups::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::IsMemberInGroups::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`member_id(MemberId)`](crate::client::fluent_builders::IsMemberInGroups::member_id) / [`set_member_id(Option<MemberId>)`](crate::client::fluent_builders::IsMemberInGroups::set_member_id): <p>An object containing the identifier of a group member.</p>
+    ///   - [`group_ids(Vec<String>)`](crate::client::fluent_builders::IsMemberInGroups::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::IsMemberInGroups::set_group_ids): <p>A list of identifiers for groups in the identity store.</p>
+    /// - On success, responds with [`IsMemberInGroupsOutput`](crate::output::IsMemberInGroupsOutput) with field(s):
+    ///   - [`results(Option<Vec<GroupMembershipExistenceResult>>)`](crate::output::IsMemberInGroupsOutput::results): <p>A list containing the results of membership existence checks.</p>
+    /// - On failure, responds with [`SdkError<IsMemberInGroupsError>`](crate::error::IsMemberInGroupsError)
+    pub fn is_member_in_groups(&self) -> fluent_builders::IsMemberInGroups {
+        fluent_builders::IsMemberInGroups::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListGroupMemberships`](crate::client::fluent_builders::ListGroupMemberships) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupMemberships::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_group_id): <p>The identifier for a group in the identity store.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupMemberships::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in all <code>List</code> requests to specify how many results to return in one page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_next_token): <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code> and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+    /// - On success, responds with [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput) with field(s):
+    ///   - [`group_memberships(Option<Vec<GroupMembership>>)`](crate::output::ListGroupMembershipsOutput::group_memberships): <p>A list of <code>GroupMembership</code> objects in the group.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupMembershipsOutput::next_token): <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+    /// - On failure, responds with [`SdkError<ListGroupMembershipsError>`](crate::error::ListGroupMembershipsError)
+    pub fn list_group_memberships(&self) -> fluent_builders::ListGroupMemberships {
+        fluent_builders::ListGroupMemberships::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListGroupMembershipsForMember`](crate::client::fluent_builders::ListGroupMembershipsForMember) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupMembershipsForMember::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`member_id(MemberId)`](crate::client::fluent_builders::ListGroupMembershipsForMember::member_id) / [`set_member_id(Option<MemberId>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::set_member_id): <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupMembershipsForMember::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::set_next_token): <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+    /// - On success, responds with [`ListGroupMembershipsForMemberOutput`](crate::output::ListGroupMembershipsForMemberOutput) with field(s):
+    ///   - [`group_memberships(Option<Vec<GroupMembership>>)`](crate::output::ListGroupMembershipsForMemberOutput::group_memberships): <p>A list of <code>GroupMembership</code> objects in the group for a specified member.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupMembershipsForMemberOutput::next_token): <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page. </p>
+    /// - On failure, responds with [`SdkError<ListGroupMembershipsForMemberError>`](crate::error::ListGroupMembershipsForMemberError)
+    pub fn list_group_memberships_for_member(
+        &self,
+    ) -> fluent_builders::ListGroupMembershipsForMember {
+        fluent_builders::ListGroupMembershipsForMember::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListGroups::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListGroups::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListGroups::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListGroups::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroups::set_next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListGroups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListGroups::set_filters): <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListGroups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListGroups::set_filters): <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.</p>
     /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec<Group>>)`](crate::output::ListGroupsOutput::groups): <p>A list of <code>Group</code> objects in the identity store.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it1 is used in the API request to search for the next page.</p>
@@ -134,16 +329,40 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsers::set_next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListUsers::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListUsers::set_filters): <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListUsers::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListUsers::set_filters): <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
     /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
     ///   - [`users(Option<Vec<User>>)`](crate::output::ListUsersOutput::users): <p>A list of <code>User</code> objects in the identity store.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
     /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
     pub fn list_users(&self) -> fluent_builders::ListUsers {
         fluent_builders::ListUsers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_id): <p>The identifier for a group in the identity store.</p>
+    ///   - [`operations(Vec<AttributeOperation>)`](crate::client::fluent_builders::UpdateGroup::operations) / [`set_operations(Option<Vec<AttributeOperation>>)`](crate::client::fluent_builders::UpdateGroup::set_operations): <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
+    /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::error::UpdateGroupError)
+    pub fn update_group(&self) -> fluent_builders::UpdateGroup {
+        fluent_builders::UpdateGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_user_id): <p>The identifier for a user in the identity store.</p>
+    ///   - [`operations(Vec<AttributeOperation>)`](crate::client::fluent_builders::UpdateUser::operations) / [`set_operations(Option<Vec<AttributeOperation>>)`](crate::client::fluent_builders::UpdateUser::set_operations): <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
+    /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::error::UpdateUserError)
+    pub fn update_user(&self) -> fluent_builders::UpdateUser {
+        fluent_builders::UpdateUser::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -153,6 +372,713 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `CreateGroup`.
+    ///
+    /// <p>Creates a group within the specified identity store.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_group_input::Builder,
+    }
+    impl CreateGroup {
+        /// Creates a new `CreateGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
+            self
+        }
+        /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
+            self
+        }
+        /// <p>A string containing the description of the group.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A string containing the description of the group.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateGroupMembership`.
+    ///
+    /// <p>Creates a relationship between a member and a group. The following identifiers must be specified: <code>GroupId</code>, <code>IdentityStoreId</code>, and <code>MemberId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateGroupMembership {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_group_membership_input::Builder,
+    }
+    impl CreateGroupMembership {
+        /// Creates a new `CreateGroupMembership`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateGroupMembership,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateGroupMembershipError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateGroupMembershipOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateGroupMembershipError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
+            self
+        }
+        /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+        pub fn member_id(mut self, input: crate::model::MemberId) -> Self {
+            self.inner = self.inner.member_id(input);
+            self
+        }
+        /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+        pub fn set_member_id(mut self, input: std::option::Option<crate::model::MemberId>) -> Self {
+            self.inner = self.inner.set_member_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateUser`.
+    ///
+    /// <p>Creates a new user within the specified identity store.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateUser {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_user_input::Builder,
+    }
+    impl CreateUser {
+        /// Creates a new `CreateUser`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateUser,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateUserError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateUserOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateUserError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
+            self
+        }
+        /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_name(input);
+            self
+        }
+        /// <p>An object containing the user's name.</p>
+        pub fn name(mut self, input: crate::model::Name) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        /// <p>An object containing the user's name.</p>
+        pub fn set_name(mut self, input: std::option::Option<crate::model::Name>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
+            self
+        }
+        /// <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
+            self
+        }
+        /// <p>A string containing an alternate name for the user.</p>
+        pub fn nick_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nick_name(input.into());
+            self
+        }
+        /// <p>A string containing an alternate name for the user.</p>
+        pub fn set_nick_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_nick_name(input);
+            self
+        }
+        /// <p>A string containing a URL that may be associated with the user.</p>
+        pub fn profile_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_url(input.into());
+            self
+        }
+        /// <p>A string containing a URL that may be associated with the user.</p>
+        pub fn set_profile_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_profile_url(input);
+            self
+        }
+        /// Appends an item to `Emails`.
+        ///
+        /// To override the contents of this collection use [`set_emails`](Self::set_emails).
+        ///
+        /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
+        pub fn emails(mut self, input: crate::model::Email) -> Self {
+            self.inner = self.inner.emails(input);
+            self
+        }
+        /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
+        pub fn set_emails(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Email>>,
+        ) -> Self {
+            self.inner = self.inner.set_emails(input);
+            self
+        }
+        /// Appends an item to `Addresses`.
+        ///
+        /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
+        ///
+        /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
+        pub fn addresses(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.addresses(input);
+            self
+        }
+        /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
+        pub fn set_addresses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Address>>,
+        ) -> Self {
+            self.inner = self.inner.set_addresses(input);
+            self
+        }
+        /// Appends an item to `PhoneNumbers`.
+        ///
+        /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
+        ///
+        /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
+            self.inner = self.inner.phone_numbers(input);
+            self
+        }
+        /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
+        pub fn set_phone_numbers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
+        ) -> Self {
+            self.inner = self.inner.set_phone_numbers(input);
+            self
+        }
+        /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
+        pub fn user_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_type(input.into());
+            self
+        }
+        /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
+        pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_type(input);
+            self
+        }
+        /// <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
+            self
+        }
+        /// <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_title(input);
+            self
+        }
+        /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
+        pub fn preferred_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_language(input.into());
+            self
+        }
+        /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
+        pub fn set_preferred_language(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_preferred_language(input);
+            self
+        }
+        /// <p>A string containing the user's geographical region or location.</p>
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
+            self
+        }
+        /// <p>A string containing the user's geographical region or location.</p>
+        pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale(input);
+            self
+        }
+        /// <p>A string containing the user's time zone.</p>
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(input.into());
+            self
+        }
+        /// <p>A string containing the user's time zone.</p>
+        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_timezone(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteGroup`.
+    ///
+    /// <p>Delete a group within an identity store given <code>GroupId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_group_input::Builder,
+    }
+    impl DeleteGroup {
+        /// Creates a new `DeleteGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteGroupMembership`.
+    ///
+    /// <p>Delete a membership within a group given <code>MembershipId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteGroupMembership {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_group_membership_input::Builder,
+    }
+    impl DeleteGroupMembership {
+        /// Creates a new `DeleteGroupMembership`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteGroupMembership,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteGroupMembershipError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteGroupMembershipOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteGroupMembershipError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+        pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.membership_id(input.into());
+            self
+        }
+        /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+        pub fn set_membership_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_membership_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteUser`.
+    ///
+    /// <p>Deletes a user within an identity store given <code>UserId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteUser {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_user_input::Builder,
+    }
+    impl DeleteUser {
+        /// Creates a new `DeleteUser`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteUser,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteUserError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteUserOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteUserError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a user in the identity store.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
+            self
+        }
+        /// <p>The identifier for a user in the identity store.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeGroup`.
     ///
     /// <p>Retrieves the group metadata and attributes from <code>GroupId</code> in an identity store.</p>
@@ -219,12 +1145,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -243,9 +1169,102 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeGroupMembership`.
+    ///
+    /// <p>Retrieves membership metadata and attributes from <code>MembershipId</code> in an identity store.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeGroupMembership {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_group_membership_input::Builder,
+    }
+    impl DescribeGroupMembership {
+        /// Creates a new `DescribeGroupMembership`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DescribeGroupMembership,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeGroupMembershipError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeGroupMembershipOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeGroupMembershipError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+        pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.membership_id(input.into());
+            self
+        }
+        /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+        pub fn set_membership_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_membership_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeUser`.
     ///
-    /// <p>Retrieves the user metadata and attributes from <code>UserId</code> in an identity store.</p>
+    /// <p>Retrieves the user metadata and attributes from the <code>UserId</code> in an identity store.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser {
         handle: std::sync::Arc<super::Handle>,
@@ -309,12 +1328,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -333,9 +1352,634 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetGroupId`.
+    ///
+    /// <p>Retrieves <code>GroupId</code> in an identity store.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetGroupId {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_group_id_input::Builder,
+    }
+    impl GetGroupId {
+        /// Creates a new `GetGroupId`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetGroupId,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetGroupIdError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetGroupIdOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetGroupIdError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>GroupDisplayName</code>.</p>
+        pub fn alternate_identifier(mut self, input: crate::model::AlternateIdentifier) -> Self {
+            self.inner = self.inner.alternate_identifier(input);
+            self
+        }
+        /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>GroupDisplayName</code>.</p>
+        pub fn set_alternate_identifier(
+            mut self,
+            input: std::option::Option<crate::model::AlternateIdentifier>,
+        ) -> Self {
+            self.inner = self.inner.set_alternate_identifier(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetGroupMembershipId`.
+    ///
+    /// <p>Retrieves the <code>MembershipId</code> in an identity store.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetGroupMembershipId {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_group_membership_id_input::Builder,
+    }
+    impl GetGroupMembershipId {
+        /// Creates a new `GetGroupMembershipId`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetGroupMembershipId,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetGroupMembershipIdError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetGroupMembershipIdOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetGroupMembershipIdError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
+            self
+        }
+        /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+        pub fn member_id(mut self, input: crate::model::MemberId) -> Self {
+            self.inner = self.inner.member_id(input);
+            self
+        }
+        /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+        pub fn set_member_id(mut self, input: std::option::Option<crate::model::MemberId>) -> Self {
+            self.inner = self.inner.set_member_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetUserId`.
+    ///
+    /// <p>Retrieves the <code>UserId</code> in an identity store.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetUserId {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_user_id_input::Builder,
+    }
+    impl GetUserId {
+        /// Creates a new `GetUserId`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetUserId,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetUserIdError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetUserIdOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetUserIdError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>UserDisplayName</code>.</p>
+        pub fn alternate_identifier(mut self, input: crate::model::AlternateIdentifier) -> Self {
+            self.inner = self.inner.alternate_identifier(input);
+            self
+        }
+        /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>UserDisplayName</code>.</p>
+        pub fn set_alternate_identifier(
+            mut self,
+            input: std::option::Option<crate::model::AlternateIdentifier>,
+        ) -> Self {
+            self.inner = self.inner.set_alternate_identifier(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `IsMemberInGroups`.
+    ///
+    /// <p>Checks the user's membership in all requested groups and returns if the member exists in all queried groups.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct IsMemberInGroups {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::is_member_in_groups_input::Builder,
+    }
+    impl IsMemberInGroups {
+        /// Creates a new `IsMemberInGroups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::IsMemberInGroups,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::IsMemberInGroupsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::IsMemberInGroupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::IsMemberInGroupsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>An object containing the identifier of a group member.</p>
+        pub fn member_id(mut self, input: crate::model::MemberId) -> Self {
+            self.inner = self.inner.member_id(input);
+            self
+        }
+        /// <p>An object containing the identifier of a group member.</p>
+        pub fn set_member_id(mut self, input: std::option::Option<crate::model::MemberId>) -> Self {
+            self.inner = self.inner.set_member_id(input);
+            self
+        }
+        /// Appends an item to `GroupIds`.
+        ///
+        /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
+        ///
+        /// <p>A list of identifiers for groups in the identity store.</p>
+        pub fn group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_ids(input.into());
+            self
+        }
+        /// <p>A list of identifiers for groups in the identity store.</p>
+        pub fn set_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_group_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListGroupMemberships`.
+    ///
+    /// <p>For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code> objects and returns results in paginated form.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListGroupMemberships {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_group_memberships_input::Builder,
+    }
+    impl ListGroupMemberships {
+        /// Creates a new `ListGroupMemberships`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListGroupMemberships,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListGroupMembershipsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListGroupMembershipsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListGroupMembershipsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroupMembershipsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroupMembershipsPaginator {
+            crate::paginator::ListGroupMembershipsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
+            self
+        }
+        /// <p>The maximum number of results to be returned per request. This parameter is used in all <code>List</code> requests to specify how many results to return in one page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to be returned per request. This parameter is used in all <code>List</code> requests to specify how many results to return in one page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code> and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code> and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListGroupMembershipsForMember`.
+    ///
+    /// <p>For the specified member in the specified identity store, returns the list of all <code>GroupMembership</code> objects and returns results in paginated form.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListGroupMembershipsForMember {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_group_memberships_for_member_input::Builder,
+    }
+    impl ListGroupMembershipsForMember {
+        /// Creates a new `ListGroupMembershipsForMember`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListGroupMembershipsForMember,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListGroupMembershipsForMemberError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListGroupMembershipsForMemberOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListGroupMembershipsForMemberError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroupMembershipsForMemberPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroupMembershipsForMemberPaginator {
+            crate::paginator::ListGroupMembershipsForMemberPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+        pub fn member_id(mut self, input: crate::model::MemberId) -> Self {
+            self.inner = self.inner.member_id(input);
+            self
+        }
+        /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+        pub fn set_member_id(mut self, input: std::option::Option<crate::model::MemberId>) -> Self {
+            self.inner = self.inner.set_member_id(input);
+            self
+        }
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListGroups`.
     ///
-    /// <p>Lists the attribute name and value of the group that you specified in the search. We only support <code>DisplayName</code> as a valid filter attribute path currently, and filter is required. This API returns minimum attributes, including <code>GroupId</code> and group <code>DisplayName</code> in the response.</p>
+    /// <p>Lists all groups in the identity store. Returns a paginated list of complete <code>Group</code> objects. Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute is deprecated. Instead, use the <code>GetGroupId</code> API action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups {
         handle: std::sync::Arc<super::Handle>,
@@ -405,12 +2049,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListGroupsPaginator {
             crate::paginator::ListGroupsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -418,12 +2062,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_store_id(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -442,12 +2086,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
+        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.</p>
+        #[deprecated(
+            note = "Using filters with ListGroups API is deprecated, please use GetGroupId API instead."
+        )]
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
+        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.</p>
+        #[deprecated(
+            note = "Using filters with ListGroups API is deprecated, please use GetGroupId API instead."
+        )]
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -458,7 +2108,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListUsers`.
     ///
-    /// <p>Lists the attribute name and value of the user that you specified in the search. We only support <code>UserName</code> as a valid filter attribute path currently, and filter is required. This API returns minimum attributes, including <code>UserId</code> and <code>UserName</code> in the response.</p>
+    /// <p>Lists all users in the identity store. Returns a paginated list of complete <code>User</code> objects. Filtering for a <code>User</code> by the <code>UserName</code> attribute is deprecated. Instead, use the <code>GetUserId</code> API action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers {
         handle: std::sync::Arc<super::Handle>,
@@ -528,12 +2178,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListUsersPaginator {
             crate::paginator::ListUsersPaginator::new(self.handle, self.inner)
         }
-        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -541,12 +2191,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_store_id(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -565,17 +2215,237 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
+        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
+        #[deprecated(
+            note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead."
+        )]
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
+        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
+        #[deprecated(
+            note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead."
+        )]
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
             self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateGroup`.
+    ///
+    /// <p>For the specified group in the specified identity store, updates the group metadata and attributes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_group_input::Builder,
+    }
+    impl UpdateGroup {
+        /// Creates a new `UpdateGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
+            self
+        }
+        /// <p>The identifier for a group in the identity store.</p>
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
+            self
+        }
+        /// Appends an item to `Operations`.
+        ///
+        /// To override the contents of this collection use [`set_operations`](Self::set_operations).
+        ///
+        /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
+        pub fn operations(mut self, input: crate::model::AttributeOperation) -> Self {
+            self.inner = self.inner.operations(input);
+            self
+        }
+        /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeOperation>>,
+        ) -> Self {
+            self.inner = self.inner.set_operations(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateUser`.
+    ///
+    /// <p>For the specified user in the specified identity store, updates the user metadata and attributes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateUser {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_user_input::Builder,
+    }
+    impl UpdateUser {
+        /// Creates a new `UpdateUser`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateUser,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateUserError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateUserOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateUserError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
+            self
+        }
+        /// <p>The globally unique identifier for the identity store.</p>
+        pub fn set_identity_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_store_id(input);
+            self
+        }
+        /// <p>The identifier for a user in the identity store.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
+            self
+        }
+        /// <p>The identifier for a user in the identity store.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// Appends an item to `Operations`.
+        ///
+        /// To override the contents of this collection use [`set_operations`](Self::set_operations).
+        ///
+        /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
+        pub fn operations(mut self, input: crate::model::AttributeOperation) -> Self {
+            self.inner = self.inner.operations(input);
+            self
+        }
+        /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeOperation>>,
+        ) -> Self {
+            self.inner = self.inner.set_operations(input);
             self
         }
     }

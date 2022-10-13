@@ -514,7 +514,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::GetMapSprites::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::GetMapSprites::set_map_name): <p>The map resource associated with the sprite ﬁle.</p>
-    ///   - [`file_name(impl Into<String>)`](crate::client::fluent_builders::GetMapSprites::file_name) / [`set_file_name(Option<String>)`](crate::client::fluent_builders::GetMapSprites::set_file_name): <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>  <ul>   <li> <p> <code>sprites.png</code> </p> </li>   <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>  </ul>  <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>  <ul>   <li> <p> <code>sprites.json</code> </p> </li>   <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>  </ul>
+    ///   - [`file_name(impl Into<String>)`](crate::client::fluent_builders::GetMapSprites::file_name) / [`set_file_name(Option<String>)`](crate::client::fluent_builders::GetMapSprites::set_file_name): <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>  <ul>   <li> <p> <code>sprites.png</code> </p> </li>   <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>  </ul>  <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>  <ul>   <li> <p> <code>sprites.json</code> </p> </li>   <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>  </ul>
     /// - On success, responds with [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput) with field(s):
     ///   - [`blob(Option<Blob>)`](crate::output::GetMapSpritesOutput::blob): <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
     ///   - [`content_type(Option<String>)`](crate::output::GetMapSpritesOutput::content_type): <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
@@ -546,6 +546,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetMapTileError>`](crate::error::GetMapTileError)
     pub fn get_map_tile(&self) -> fluent_builders::GetMapTile {
         fluent_builders::GetMapTile::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetPlace`](crate::client::fluent_builders::GetPlace) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::GetPlace::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::GetPlace::set_index_name): <p>The name of the place index resource that you want to use for the search.</p>
+    ///   - [`place_id(impl Into<String>)`](crate::client::fluent_builders::GetPlace::place_id) / [`set_place_id(Option<String>)`](crate::client::fluent_builders::GetPlace::set_place_id): <p>The identifier of the place to find.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::GetPlace::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::GetPlace::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>  <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>  <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    /// - On success, responds with [`GetPlaceOutput`](crate::output::GetPlaceOutput) with field(s):
+    ///   - [`place(Option<Place>)`](crate::output::GetPlaceOutput::place): <p>Details about the result, such as its address and position.</p>
+    /// - On failure, responds with [`SdkError<GetPlaceError>`](crate::error::GetPlaceError)
+    pub fn get_place(&self) -> fluent_builders::GetPlace {
+        fluent_builders::GetPlace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDevicePositions`](crate::client::fluent_builders::ListDevicePositions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevicePositions::into_paginator).
@@ -4529,7 +4541,7 @@ pub mod fluent_builders {
         /// <li> <p> <code>sprites.png</code> </p> </li>
         /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
         /// </ul>
-        /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
+        /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
         /// <ul>
         /// <li> <p> <code>sprites.json</code> </p> </li>
         /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
@@ -4543,7 +4555,7 @@ pub mod fluent_builders {
         /// <li> <p> <code>sprites.png</code> </p> </li>
         /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
         /// </ul>
-        /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
+        /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
         /// <ul>
         /// <li> <p> <code>sprites.json</code> </p> </li>
         /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
@@ -4736,6 +4748,118 @@ pub mod fluent_builders {
         /// <p>The Y axis value for the map tile. </p>
         pub fn set_y(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_y(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetPlace`.
+    ///
+    /// <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.</p> <note>
+    /// <p>A PlaceId is valid only if all of the following are the same in the original search request and the call to <code>GetPlace</code>.</p>
+    /// <ul>
+    /// <li> <p>Customer AWS account</p> </li>
+    /// <li> <p>AWS Region</p> </li>
+    /// <li> <p>Data provider specified in the place index resource</p> </li>
+    /// </ul>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetPlace {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_place_input::Builder,
+    }
+    impl GetPlace {
+        /// Creates a new `GetPlace`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetPlace,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetPlaceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPlaceOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetPlaceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the place index resource that you want to use for the search.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
+            self
+        }
+        /// <p>The name of the place index resource that you want to use for the search.</p>
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_name(input);
+            self
+        }
+        /// <p>The identifier of the place to find.</p>
+        pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.place_id(input.into());
+            self
+        }
+        /// <p>The identifier of the place to find.</p>
+        pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_place_id(input);
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
+            self
+        }
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+        /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+        /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_language(input);
             self
         }
     }

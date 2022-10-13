@@ -130,6 +130,201 @@ impl ThrottlingException {
     }
 }
 
+/// <p>The request failed due to an unknown error on the server side.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServerException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InternalServerException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InternalServerException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InternalServerException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalServerException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalServerException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalServerException {}
+/// See [`InternalServerException`](crate::error::InternalServerException).
+pub mod internal_server_exception {
+
+    /// A builder for [`InternalServerException`](crate::error::InternalServerException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
+        pub fn build(self) -> crate::error::InternalServerException {
+            crate::error::InternalServerException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InternalServerException {
+    /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
+    pub fn builder() -> crate::error::internal_server_exception::Builder {
+        crate::error::internal_server_exception::Builder::default()
+    }
+}
+
+/// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
+pub mod access_denied_exception {
+
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service Quotas</a> and try your request again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+pub mod service_quota_exceeded_exception {
+
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -164,8 +359,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -220,71 +415,6 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request failed due to an unknown error on the server side.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalServerException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InternalServerException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalServerException {}
-/// See [`InternalServerException`](crate::error::InternalServerException).
-pub mod internal_server_exception {
-
-    /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
-        pub fn build(self) -> crate::error::InternalServerException {
-            crate::error::InternalServerException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InternalServerException {
-    /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
-    pub fn builder() -> crate::error::internal_server_exception::Builder {
-        crate::error::internal_server_exception::Builder::default()
-    }
-}
-
 /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -335,8 +465,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -404,136 +534,6 @@ impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
     pub fn builder() -> crate::error::conflict_exception::Builder {
         crate::error::conflict_exception::Builder::default()
-    }
-}
-
-/// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccessDeniedException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl AccessDeniedException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
-pub mod access_denied_exception {
-
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
-    }
-}
-
-/// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service Quotas</a> and try your request again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceQuotaExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceQuotaExceededException {}
-/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-pub mod service_quota_exceeded_exception {
-
-    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
-            crate::error::ServiceQuotaExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
-        crate::error::service_quota_exceeded_exception::Builder::default()
     }
 }
 
@@ -2609,6 +2609,8 @@ pub enum OptOutSpeakerErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service Quotas</a> and try your request again.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
@@ -2623,6 +2625,7 @@ impl std::fmt::Display for OptOutSpeakerError {
             OptOutSpeakerErrorKind::ConflictException(_inner) => _inner.fmt(f),
             OptOutSpeakerErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             OptOutSpeakerErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            OptOutSpeakerErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             OptOutSpeakerErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             OptOutSpeakerErrorKind::ValidationException(_inner) => _inner.fmt(f),
             OptOutSpeakerErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2701,6 +2704,13 @@ impl OptOutSpeakerError {
             OptOutSpeakerErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `OptOutSpeakerErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            OptOutSpeakerErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `OptOutSpeakerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, OptOutSpeakerErrorKind::ThrottlingException(_))
@@ -2717,6 +2727,7 @@ impl std::error::Error for OptOutSpeakerError {
             OptOutSpeakerErrorKind::ConflictException(_inner) => Some(_inner),
             OptOutSpeakerErrorKind::InternalServerException(_inner) => Some(_inner),
             OptOutSpeakerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            OptOutSpeakerErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             OptOutSpeakerErrorKind::ThrottlingException(_inner) => Some(_inner),
             OptOutSpeakerErrorKind::ValidationException(_inner) => Some(_inner),
             OptOutSpeakerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),

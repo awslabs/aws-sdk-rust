@@ -6255,7 +6255,7 @@ pub struct EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+    /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
     pub test_s3_uri: std::option::Option<std::string::String>,
 }
@@ -6264,7 +6264,7 @@ impl EntityRecognizerAnnotations {
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
-    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+    /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
     pub fn test_s3_uri(&self) -> std::option::Option<&str> {
         self.test_s3_uri.as_deref()
     }
@@ -6297,12 +6297,12 @@ pub mod entity_recognizer_annotations {
             self.s3_uri = input;
             self
         }
-        /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+        /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
         pub fn test_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.test_s3_uri = Some(input.into());
             self
         }
-        /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+        /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
         pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test_s3_uri = input;
             self
@@ -9269,7 +9269,7 @@ impl DocumentClassifierOutputDataConfig {
 }
 
 /// <p>The input properties for training a document classifier. </p>
-/// <p>For more information on how the input file is formatted, see <code>prep-classifier-data</code>. </p>
+/// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentClassifierInputDataConfig {
@@ -9286,7 +9286,7 @@ pub struct DocumentClassifierInputDataConfig {
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the same AWS Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files. </p>
+    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same AWS Region as the API endpoint that you are calling. </p>
     #[doc(hidden)]
     pub test_s3_uri: std::option::Option<std::string::String>,
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
@@ -9314,7 +9314,7 @@ impl DocumentClassifierInputDataConfig {
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
-    /// <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the same AWS Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files. </p>
+    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same AWS Region as the API endpoint that you are calling. </p>
     pub fn test_s3_uri(&self) -> std::option::Option<&str> {
         self.test_s3_uri.as_deref()
     }
@@ -9392,12 +9392,12 @@ pub mod document_classifier_input_data_config {
             self.s3_uri = input;
             self
         }
-        /// <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the same AWS Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files. </p>
+        /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same AWS Region as the API endpoint that you are calling. </p>
         pub fn test_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.test_s3_uri = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the same AWS Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files. </p>
+        /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same AWS Region as the API endpoint that you are calling. </p>
         pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test_s3_uri = input;
             self
@@ -10151,6 +10151,676 @@ impl DocumentClassificationJobFilter {
     }
 }
 
+/// <p>Information about one of the entities found by targeted sentiment analysis.</p>
+/// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetedSentimentEntity {
+    /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
+    #[doc(hidden)]
+    pub descriptive_mention_index: std::option::Option<std::vec::Vec<i32>>,
+    /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
+    #[doc(hidden)]
+    pub mentions: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentMention>>,
+}
+impl TargetedSentimentEntity {
+    /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
+    pub fn descriptive_mention_index(&self) -> std::option::Option<&[i32]> {
+        self.descriptive_mention_index.as_deref()
+    }
+    /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
+    pub fn mentions(&self) -> std::option::Option<&[crate::model::TargetedSentimentMention]> {
+        self.mentions.as_deref()
+    }
+}
+impl std::fmt::Debug for TargetedSentimentEntity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TargetedSentimentEntity");
+        formatter.field("descriptive_mention_index", &self.descriptive_mention_index);
+        formatter.field("mentions", &self.mentions);
+        formatter.finish()
+    }
+}
+/// See [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
+pub mod targeted_sentiment_entity {
+
+    /// A builder for [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) descriptive_mention_index: std::option::Option<std::vec::Vec<i32>>,
+        pub(crate) mentions:
+            std::option::Option<std::vec::Vec<crate::model::TargetedSentimentMention>>,
+    }
+    impl Builder {
+        /// Appends an item to `descriptive_mention_index`.
+        ///
+        /// To override the contents of this collection use [`set_descriptive_mention_index`](Self::set_descriptive_mention_index).
+        ///
+        /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
+        pub fn descriptive_mention_index(mut self, input: i32) -> Self {
+            let mut v = self.descriptive_mention_index.unwrap_or_default();
+            v.push(input);
+            self.descriptive_mention_index = Some(v);
+            self
+        }
+        /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
+        pub fn set_descriptive_mention_index(
+            mut self,
+            input: std::option::Option<std::vec::Vec<i32>>,
+        ) -> Self {
+            self.descriptive_mention_index = input;
+            self
+        }
+        /// Appends an item to `mentions`.
+        ///
+        /// To override the contents of this collection use [`set_mentions`](Self::set_mentions).
+        ///
+        /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
+        pub fn mentions(mut self, input: crate::model::TargetedSentimentMention) -> Self {
+            let mut v = self.mentions.unwrap_or_default();
+            v.push(input);
+            self.mentions = Some(v);
+            self
+        }
+        /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
+        pub fn set_mentions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentMention>>,
+        ) -> Self {
+            self.mentions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
+        pub fn build(self) -> crate::model::TargetedSentimentEntity {
+            crate::model::TargetedSentimentEntity {
+                descriptive_mention_index: self.descriptive_mention_index,
+                mentions: self.mentions,
+            }
+        }
+    }
+}
+impl TargetedSentimentEntity {
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
+    pub fn builder() -> crate::model::targeted_sentiment_entity::Builder {
+        crate::model::targeted_sentiment_entity::Builder::default()
+    }
+}
+
+/// <p>Information about one mention of an entity. The mention information includes the location of the mention in the text and the sentiment of the mention.</p>
+/// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetedSentimentMention {
+    /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
+    #[doc(hidden)]
+    pub score: std::option::Option<f32>,
+    /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
+    #[doc(hidden)]
+    pub group_score: std::option::Option<f32>,
+    /// <p>The text in the document that identifies the entity.</p>
+    #[doc(hidden)]
+    pub text: std::option::Option<std::string::String>,
+    /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::TargetedSentimentEntityType>,
+    /// <p>Contains the sentiment and sentiment score for the mention.</p>
+    #[doc(hidden)]
+    pub mention_sentiment: std::option::Option<crate::model::MentionSentiment>,
+    /// <p>The offset into the document text where the mention begins.</p>
+    #[doc(hidden)]
+    pub begin_offset: std::option::Option<i32>,
+    /// <p>The offset into the document text where the mention ends.</p>
+    #[doc(hidden)]
+    pub end_offset: std::option::Option<i32>,
+}
+impl TargetedSentimentMention {
+    /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
+    pub fn group_score(&self) -> std::option::Option<f32> {
+        self.group_score
+    }
+    /// <p>The text in the document that identifies the entity.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TargetedSentimentEntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Contains the sentiment and sentiment score for the mention.</p>
+    pub fn mention_sentiment(&self) -> std::option::Option<&crate::model::MentionSentiment> {
+        self.mention_sentiment.as_ref()
+    }
+    /// <p>The offset into the document text where the mention begins.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>The offset into the document text where the mention ends.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+}
+impl std::fmt::Debug for TargetedSentimentMention {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TargetedSentimentMention");
+        formatter.field("score", &self.score);
+        formatter.field("group_score", &self.group_score);
+        formatter.field("text", &self.text);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("mention_sentiment", &self.mention_sentiment);
+        formatter.field("begin_offset", &self.begin_offset);
+        formatter.field("end_offset", &self.end_offset);
+        formatter.finish()
+    }
+}
+/// See [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
+pub mod targeted_sentiment_mention {
+
+    /// A builder for [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) score: std::option::Option<f32>,
+        pub(crate) group_score: std::option::Option<f32>,
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::TargetedSentimentEntityType>,
+        pub(crate) mention_sentiment: std::option::Option<crate::model::MentionSentiment>,
+        pub(crate) begin_offset: std::option::Option<i32>,
+        pub(crate) end_offset: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
+        pub fn score(mut self, input: f32) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
+        pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+            self.score = input;
+            self
+        }
+        /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
+        pub fn group_score(mut self, input: f32) -> Self {
+            self.group_score = Some(input);
+            self
+        }
+        /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
+        pub fn set_group_score(mut self, input: std::option::Option<f32>) -> Self {
+            self.group_score = input;
+            self
+        }
+        /// <p>The text in the document that identifies the entity.</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p>The text in the document that identifies the entity.</p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
+        pub fn r#type(mut self, input: crate::model::TargetedSentimentEntityType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::TargetedSentimentEntityType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Contains the sentiment and sentiment score for the mention.</p>
+        pub fn mention_sentiment(mut self, input: crate::model::MentionSentiment) -> Self {
+            self.mention_sentiment = Some(input);
+            self
+        }
+        /// <p>Contains the sentiment and sentiment score for the mention.</p>
+        pub fn set_mention_sentiment(
+            mut self,
+            input: std::option::Option<crate::model::MentionSentiment>,
+        ) -> Self {
+            self.mention_sentiment = input;
+            self
+        }
+        /// <p>The offset into the document text where the mention begins.</p>
+        pub fn begin_offset(mut self, input: i32) -> Self {
+            self.begin_offset = Some(input);
+            self
+        }
+        /// <p>The offset into the document text where the mention begins.</p>
+        pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.begin_offset = input;
+            self
+        }
+        /// <p>The offset into the document text where the mention ends.</p>
+        pub fn end_offset(mut self, input: i32) -> Self {
+            self.end_offset = Some(input);
+            self
+        }
+        /// <p>The offset into the document text where the mention ends.</p>
+        pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.end_offset = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
+        pub fn build(self) -> crate::model::TargetedSentimentMention {
+            crate::model::TargetedSentimentMention {
+                score: self.score,
+                group_score: self.group_score,
+                text: self.text,
+                r#type: self.r#type,
+                mention_sentiment: self.mention_sentiment,
+                begin_offset: self.begin_offset,
+                end_offset: self.end_offset,
+            }
+        }
+    }
+}
+impl TargetedSentimentMention {
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
+    pub fn builder() -> crate::model::targeted_sentiment_mention::Builder {
+        crate::model::targeted_sentiment_mention::Builder::default()
+    }
+}
+
+/// <p>Contains the sentiment and sentiment score for one mention of an entity.</p>
+/// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MentionSentiment {
+    /// <p>The sentiment of the mention. </p>
+    #[doc(hidden)]
+    pub sentiment: std::option::Option<crate::model::SentimentType>,
+    /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
+    #[doc(hidden)]
+    pub sentiment_score: std::option::Option<crate::model::SentimentScore>,
+}
+impl MentionSentiment {
+    /// <p>The sentiment of the mention. </p>
+    pub fn sentiment(&self) -> std::option::Option<&crate::model::SentimentType> {
+        self.sentiment.as_ref()
+    }
+    /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
+    pub fn sentiment_score(&self) -> std::option::Option<&crate::model::SentimentScore> {
+        self.sentiment_score.as_ref()
+    }
+}
+impl std::fmt::Debug for MentionSentiment {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MentionSentiment");
+        formatter.field("sentiment", &self.sentiment);
+        formatter.field("sentiment_score", &self.sentiment_score);
+        formatter.finish()
+    }
+}
+/// See [`MentionSentiment`](crate::model::MentionSentiment).
+pub mod mention_sentiment {
+
+    /// A builder for [`MentionSentiment`](crate::model::MentionSentiment).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sentiment: std::option::Option<crate::model::SentimentType>,
+        pub(crate) sentiment_score: std::option::Option<crate::model::SentimentScore>,
+    }
+    impl Builder {
+        /// <p>The sentiment of the mention. </p>
+        pub fn sentiment(mut self, input: crate::model::SentimentType) -> Self {
+            self.sentiment = Some(input);
+            self
+        }
+        /// <p>The sentiment of the mention. </p>
+        pub fn set_sentiment(
+            mut self,
+            input: std::option::Option<crate::model::SentimentType>,
+        ) -> Self {
+            self.sentiment = input;
+            self
+        }
+        /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
+        pub fn sentiment_score(mut self, input: crate::model::SentimentScore) -> Self {
+            self.sentiment_score = Some(input);
+            self
+        }
+        /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
+        pub fn set_sentiment_score(
+            mut self,
+            input: std::option::Option<crate::model::SentimentScore>,
+        ) -> Self {
+            self.sentiment_score = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MentionSentiment`](crate::model::MentionSentiment).
+        pub fn build(self) -> crate::model::MentionSentiment {
+            crate::model::MentionSentiment {
+                sentiment: self.sentiment,
+                sentiment_score: self.sentiment_score,
+            }
+        }
+    }
+}
+impl MentionSentiment {
+    /// Creates a new builder-style object to manufacture [`MentionSentiment`](crate::model::MentionSentiment).
+    pub fn builder() -> crate::model::mention_sentiment::Builder {
+        crate::model::mention_sentiment::Builder::default()
+    }
+}
+
+/// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SentimentScore {
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
+    #[doc(hidden)]
+    pub positive: std::option::Option<f32>,
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
+    #[doc(hidden)]
+    pub negative: std::option::Option<f32>,
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
+    #[doc(hidden)]
+    pub neutral: std::option::Option<f32>,
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
+    #[doc(hidden)]
+    pub mixed: std::option::Option<f32>,
+}
+impl SentimentScore {
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
+    pub fn positive(&self) -> std::option::Option<f32> {
+        self.positive
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
+    pub fn negative(&self) -> std::option::Option<f32> {
+        self.negative
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
+    pub fn neutral(&self) -> std::option::Option<f32> {
+        self.neutral
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
+    pub fn mixed(&self) -> std::option::Option<f32> {
+        self.mixed
+    }
+}
+impl std::fmt::Debug for SentimentScore {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SentimentScore");
+        formatter.field("positive", &self.positive);
+        formatter.field("negative", &self.negative);
+        formatter.field("neutral", &self.neutral);
+        formatter.field("mixed", &self.mixed);
+        formatter.finish()
+    }
+}
+/// See [`SentimentScore`](crate::model::SentimentScore).
+pub mod sentiment_score {
+
+    /// A builder for [`SentimentScore`](crate::model::SentimentScore).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) positive: std::option::Option<f32>,
+        pub(crate) negative: std::option::Option<f32>,
+        pub(crate) neutral: std::option::Option<f32>,
+        pub(crate) mixed: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
+        pub fn positive(mut self, input: f32) -> Self {
+            self.positive = Some(input);
+            self
+        }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
+        pub fn set_positive(mut self, input: std::option::Option<f32>) -> Self {
+            self.positive = input;
+            self
+        }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
+        pub fn negative(mut self, input: f32) -> Self {
+            self.negative = Some(input);
+            self
+        }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
+        pub fn set_negative(mut self, input: std::option::Option<f32>) -> Self {
+            self.negative = input;
+            self
+        }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
+        pub fn neutral(mut self, input: f32) -> Self {
+            self.neutral = Some(input);
+            self
+        }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
+        pub fn set_neutral(mut self, input: std::option::Option<f32>) -> Self {
+            self.neutral = input;
+            self
+        }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
+        pub fn mixed(mut self, input: f32) -> Self {
+            self.mixed = Some(input);
+            self
+        }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
+        pub fn set_mixed(mut self, input: std::option::Option<f32>) -> Self {
+            self.mixed = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SentimentScore`](crate::model::SentimentScore).
+        pub fn build(self) -> crate::model::SentimentScore {
+            crate::model::SentimentScore {
+                positive: self.positive,
+                negative: self.negative,
+                neutral: self.neutral,
+                mixed: self.mixed,
+            }
+        }
+    }
+}
+impl SentimentScore {
+    /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore).
+    pub fn builder() -> crate::model::sentiment_score::Builder {
+        crate::model::sentiment_score::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SentimentType {
+    #[allow(missing_docs)] // documentation missing in model
+    Mixed,
+    #[allow(missing_docs)] // documentation missing in model
+    Negative,
+    #[allow(missing_docs)] // documentation missing in model
+    Neutral,
+    #[allow(missing_docs)] // documentation missing in model
+    Positive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SentimentType {
+    fn from(s: &str) -> Self {
+        match s {
+            "MIXED" => SentimentType::Mixed,
+            "NEGATIVE" => SentimentType::Negative,
+            "NEUTRAL" => SentimentType::Neutral,
+            "POSITIVE" => SentimentType::Positive,
+            other => SentimentType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SentimentType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SentimentType::from(s))
+    }
+}
+impl SentimentType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SentimentType::Mixed => "MIXED",
+            SentimentType::Negative => "NEGATIVE",
+            SentimentType::Neutral => "NEUTRAL",
+            SentimentType::Positive => "POSITIVE",
+            SentimentType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
+    }
+}
+impl AsRef<str> for SentimentType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetedSentimentEntityType {
+    #[allow(missing_docs)] // documentation missing in model
+    Attribute,
+    #[allow(missing_docs)] // documentation missing in model
+    Book,
+    #[allow(missing_docs)] // documentation missing in model
+    Brand,
+    #[allow(missing_docs)] // documentation missing in model
+    CommercialItem,
+    #[allow(missing_docs)] // documentation missing in model
+    Date,
+    #[allow(missing_docs)] // documentation missing in model
+    Event,
+    #[allow(missing_docs)] // documentation missing in model
+    Facility,
+    #[allow(missing_docs)] // documentation missing in model
+    Game,
+    #[allow(missing_docs)] // documentation missing in model
+    Location,
+    #[allow(missing_docs)] // documentation missing in model
+    Movie,
+    #[allow(missing_docs)] // documentation missing in model
+    Music,
+    #[allow(missing_docs)] // documentation missing in model
+    Organization,
+    #[allow(missing_docs)] // documentation missing in model
+    Other,
+    #[allow(missing_docs)] // documentation missing in model
+    Person,
+    #[allow(missing_docs)] // documentation missing in model
+    PersonalTitle,
+    #[allow(missing_docs)] // documentation missing in model
+    Quantity,
+    #[allow(missing_docs)] // documentation missing in model
+    Software,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetedSentimentEntityType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ATTRIBUTE" => TargetedSentimentEntityType::Attribute,
+            "BOOK" => TargetedSentimentEntityType::Book,
+            "BRAND" => TargetedSentimentEntityType::Brand,
+            "COMMERCIAL_ITEM" => TargetedSentimentEntityType::CommercialItem,
+            "DATE" => TargetedSentimentEntityType::Date,
+            "EVENT" => TargetedSentimentEntityType::Event,
+            "FACILITY" => TargetedSentimentEntityType::Facility,
+            "GAME" => TargetedSentimentEntityType::Game,
+            "LOCATION" => TargetedSentimentEntityType::Location,
+            "MOVIE" => TargetedSentimentEntityType::Movie,
+            "MUSIC" => TargetedSentimentEntityType::Music,
+            "ORGANIZATION" => TargetedSentimentEntityType::Organization,
+            "OTHER" => TargetedSentimentEntityType::Other,
+            "PERSON" => TargetedSentimentEntityType::Person,
+            "PERSONAL_TITLE" => TargetedSentimentEntityType::PersonalTitle,
+            "QUANTITY" => TargetedSentimentEntityType::Quantity,
+            "SOFTWARE" => TargetedSentimentEntityType::Software,
+            other => TargetedSentimentEntityType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetedSentimentEntityType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetedSentimentEntityType::from(s))
+    }
+}
+impl TargetedSentimentEntityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetedSentimentEntityType::Attribute => "ATTRIBUTE",
+            TargetedSentimentEntityType::Book => "BOOK",
+            TargetedSentimentEntityType::Brand => "BRAND",
+            TargetedSentimentEntityType::CommercialItem => "COMMERCIAL_ITEM",
+            TargetedSentimentEntityType::Date => "DATE",
+            TargetedSentimentEntityType::Event => "EVENT",
+            TargetedSentimentEntityType::Facility => "FACILITY",
+            TargetedSentimentEntityType::Game => "GAME",
+            TargetedSentimentEntityType::Location => "LOCATION",
+            TargetedSentimentEntityType::Movie => "MOVIE",
+            TargetedSentimentEntityType::Music => "MUSIC",
+            TargetedSentimentEntityType::Organization => "ORGANIZATION",
+            TargetedSentimentEntityType::Other => "OTHER",
+            TargetedSentimentEntityType::Person => "PERSON",
+            TargetedSentimentEntityType::PersonalTitle => "PERSONAL_TITLE",
+            TargetedSentimentEntityType::Quantity => "QUANTITY",
+            TargetedSentimentEntityType::Software => "SOFTWARE",
+            TargetedSentimentEntityType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ATTRIBUTE",
+            "BOOK",
+            "BRAND",
+            "COMMERCIAL_ITEM",
+            "DATE",
+            "EVENT",
+            "FACILITY",
+            "GAME",
+            "LOCATION",
+            "MOVIE",
+            "MUSIC",
+            "ORGANIZATION",
+            "OTHER",
+            "PERSON",
+            "PERSONAL_TITLE",
+            "QUANTITY",
+            "SOFTWARE",
+        ]
+    }
+}
+impl AsRef<str> for TargetedSentimentEntityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10167,7 +10837,7 @@ pub struct SyntaxToken {
     /// <p>The zero-based offset from the beginning of the source text to the last character in the word.</p>
     #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
-    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <code>how-syntax</code>.</p>
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     #[doc(hidden)]
     pub part_of_speech: std::option::Option<crate::model::PartOfSpeechTag>,
 }
@@ -10188,7 +10858,7 @@ impl SyntaxToken {
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
-    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <code>how-syntax</code>.</p>
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     pub fn part_of_speech(&self) -> std::option::Option<&crate::model::PartOfSpeechTag> {
         self.part_of_speech.as_ref()
     }
@@ -10257,12 +10927,12 @@ pub mod syntax_token {
             self.end_offset = input;
             self
         }
-        /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <code>how-syntax</code>.</p>
+        /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
         pub fn part_of_speech(mut self, input: crate::model::PartOfSpeechTag) -> Self {
             self.part_of_speech = Some(input);
             self
         }
-        /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <code>how-syntax</code>.</p>
+        /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
         pub fn set_part_of_speech(
             mut self,
             input: std::option::Option<crate::model::PartOfSpeechTag>,
@@ -10289,7 +10959,7 @@ impl SyntaxToken {
     }
 }
 
-/// <p>Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <code>how-syntax</code>.</p>
+/// <p>Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartOfSpeechTag {
@@ -10560,184 +11230,6 @@ impl AsRef<str> for SyntaxLanguageCode {
     }
 }
 
-/// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SentimentScore {
-    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
-    #[doc(hidden)]
-    pub positive: std::option::Option<f32>,
-    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
-    #[doc(hidden)]
-    pub negative: std::option::Option<f32>,
-    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
-    #[doc(hidden)]
-    pub neutral: std::option::Option<f32>,
-    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
-    #[doc(hidden)]
-    pub mixed: std::option::Option<f32>,
-}
-impl SentimentScore {
-    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
-    pub fn positive(&self) -> std::option::Option<f32> {
-        self.positive
-    }
-    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
-    pub fn negative(&self) -> std::option::Option<f32> {
-        self.negative
-    }
-    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
-    pub fn neutral(&self) -> std::option::Option<f32> {
-        self.neutral
-    }
-    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
-    pub fn mixed(&self) -> std::option::Option<f32> {
-        self.mixed
-    }
-}
-impl std::fmt::Debug for SentimentScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentScore");
-        formatter.field("positive", &self.positive);
-        formatter.field("negative", &self.negative);
-        formatter.field("neutral", &self.neutral);
-        formatter.field("mixed", &self.mixed);
-        formatter.finish()
-    }
-}
-/// See [`SentimentScore`](crate::model::SentimentScore).
-pub mod sentiment_score {
-
-    /// A builder for [`SentimentScore`](crate::model::SentimentScore).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) positive: std::option::Option<f32>,
-        pub(crate) negative: std::option::Option<f32>,
-        pub(crate) neutral: std::option::Option<f32>,
-        pub(crate) mixed: std::option::Option<f32>,
-    }
-    impl Builder {
-        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
-        pub fn positive(mut self, input: f32) -> Self {
-            self.positive = Some(input);
-            self
-        }
-        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
-        pub fn set_positive(mut self, input: std::option::Option<f32>) -> Self {
-            self.positive = input;
-            self
-        }
-        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
-        pub fn negative(mut self, input: f32) -> Self {
-            self.negative = Some(input);
-            self
-        }
-        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
-        pub fn set_negative(mut self, input: std::option::Option<f32>) -> Self {
-            self.negative = input;
-            self
-        }
-        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
-        pub fn neutral(mut self, input: f32) -> Self {
-            self.neutral = Some(input);
-            self
-        }
-        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
-        pub fn set_neutral(mut self, input: std::option::Option<f32>) -> Self {
-            self.neutral = input;
-            self
-        }
-        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
-        pub fn mixed(mut self, input: f32) -> Self {
-            self.mixed = Some(input);
-            self
-        }
-        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
-        pub fn set_mixed(mut self, input: std::option::Option<f32>) -> Self {
-            self.mixed = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SentimentScore`](crate::model::SentimentScore).
-        pub fn build(self) -> crate::model::SentimentScore {
-            crate::model::SentimentScore {
-                positive: self.positive,
-                negative: self.negative,
-                neutral: self.neutral,
-                mixed: self.mixed,
-            }
-        }
-    }
-}
-impl SentimentScore {
-    /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore).
-    pub fn builder() -> crate::model::sentiment_score::Builder {
-        crate::model::sentiment_score::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum SentimentType {
-    #[allow(missing_docs)] // documentation missing in model
-    Mixed,
-    #[allow(missing_docs)] // documentation missing in model
-    Negative,
-    #[allow(missing_docs)] // documentation missing in model
-    Neutral,
-    #[allow(missing_docs)] // documentation missing in model
-    Positive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for SentimentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "MIXED" => SentimentType::Mixed,
-            "NEGATIVE" => SentimentType::Negative,
-            "NEUTRAL" => SentimentType::Neutral,
-            "POSITIVE" => SentimentType::Positive,
-            other => SentimentType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for SentimentType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SentimentType::from(s))
-    }
-}
-impl SentimentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SentimentType::Mixed => "MIXED",
-            SentimentType::Negative => "NEGATIVE",
-            SentimentType::Neutral => "NEUTRAL",
-            SentimentType::Positive => "POSITIVE",
-            SentimentType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
-    }
-}
-impl AsRef<str> for SentimentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Provides information about a PII entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10748,10 +11240,10 @@ pub struct PiiEntity {
     /// <p>The entity's type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PiiEntityType>,
-    /// <p>A character offset in the input text that shows where the PII entity begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
-    /// <p>A character offset in the input text that shows where the PII entity ends. The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
 }
@@ -10764,11 +11256,11 @@ impl PiiEntity {
     pub fn r#type(&self) -> std::option::Option<&crate::model::PiiEntityType> {
         self.r#type.as_ref()
     }
-    /// <p>A character offset in the input text that shows where the PII entity begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p>A character offset in the input text that shows where the PII entity ends. The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
@@ -10815,22 +11307,22 @@ pub mod pii_entity {
             self.r#type = input;
             self
         }
-        /// <p>A character offset in the input text that shows where the PII entity begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p>A character offset in the input text that shows where the PII entity begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p>A character offset in the input text that shows where the PII entity ends. The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p>A character offset in the input text that shows where the PII entity ends. The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -10863,10 +11355,10 @@ pub struct KeyPhrase {
     /// <p>The text of a key noun phrase.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
-    /// <p>A character offset in the input text that shows where the key phrase begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
     #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
-    /// <p>A character offset in the input text where the key phrase ends. The offset returns the position of each UTF-8 code point in the string. A <code>code point</code> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
     #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
 }
@@ -10879,11 +11371,11 @@ impl KeyPhrase {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>A character offset in the input text that shows where the key phrase begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p>A character offset in the input text where the key phrase ends. The offset returns the position of each UTF-8 code point in the string. A <code>code point</code> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
@@ -10930,22 +11422,22 @@ pub mod key_phrase {
             self.text = input;
             self
         }
-        /// <p>A character offset in the input text that shows where the key phrase begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p>A character offset in the input text that shows where the key phrase begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p>A character offset in the input text where the key phrase ends. The offset returns the position of each UTF-8 code point in the string. A <code>code point</code> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p>A character offset in the input text where the key phrase ends. The offset returns the position of each UTF-8 code point in the string. A <code>code point</code> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -10982,10 +11474,10 @@ pub struct Entity {
     /// <p>The text of the entity.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
-    /// <p>A character offset in the input text that shows where the entity begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
-    /// <p>A character offset in the input text that shows where the entity ends. The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point. </p>
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
 }
@@ -11002,11 +11494,11 @@ impl Entity {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>A character offset in the input text that shows where the entity begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p>A character offset in the input text that shows where the entity ends. The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point. </p>
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
@@ -11065,22 +11557,22 @@ pub mod entity {
             self.text = input;
             self
         }
-        /// <p>A character offset in the input text that shows where the entity begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p>A character offset in the input text that shows where the entity begins (the first character is at position 0). The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point.</p>
+        /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p>A character offset in the input text that shows where the entity ends. The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point. </p>
+        /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p>A character offset in the input text that shows where the entity ends. The offset returns the position of each UTF-8 code point in the string. A <i>code point</i> is the abstract character from a particular graphical representation. For example, a multi-byte UTF-8 character maps to a single code point. </p>
+        /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -11595,6 +12087,91 @@ impl BatchItemError {
     /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError).
     pub fn builder() -> crate::model::batch_item_error::Builder {
         crate::model::batch_item_error::Builder::default()
+    }
+}
+
+/// <p>Analysis results for one of the documents in the batch.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDetectTargetedSentimentItemResult {
+    /// <p>The zero-based index of this result in the input list.</p>
+    #[doc(hidden)]
+    pub index: std::option::Option<i32>,
+    /// <p>An array of targeted sentiment entities.</p>
+    #[doc(hidden)]
+    pub entities: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+}
+impl BatchDetectTargetedSentimentItemResult {
+    /// <p>The zero-based index of this result in the input list.</p>
+    pub fn index(&self) -> std::option::Option<i32> {
+        self.index
+    }
+    /// <p>An array of targeted sentiment entities.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::TargetedSentimentEntity]> {
+        self.entities.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchDetectTargetedSentimentItemResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDetectTargetedSentimentItemResult");
+        formatter.field("index", &self.index);
+        formatter.field("entities", &self.entities);
+        formatter.finish()
+    }
+}
+/// See [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
+pub mod batch_detect_targeted_sentiment_item_result {
+
+    /// A builder for [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index: std::option::Option<i32>,
+        pub(crate) entities:
+            std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+    }
+    impl Builder {
+        /// <p>The zero-based index of this result in the input list.</p>
+        pub fn index(mut self, input: i32) -> Self {
+            self.index = Some(input);
+            self
+        }
+        /// <p>The zero-based index of this result in the input list.</p>
+        pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.index = input;
+            self
+        }
+        /// Appends an item to `entities`.
+        ///
+        /// To override the contents of this collection use [`set_entities`](Self::set_entities).
+        ///
+        /// <p>An array of targeted sentiment entities.</p>
+        pub fn entities(mut self, input: crate::model::TargetedSentimentEntity) -> Self {
+            let mut v = self.entities.unwrap_or_default();
+            v.push(input);
+            self.entities = Some(v);
+            self
+        }
+        /// <p>An array of targeted sentiment entities.</p>
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+        ) -> Self {
+            self.entities = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
+        pub fn build(self) -> crate::model::BatchDetectTargetedSentimentItemResult {
+            crate::model::BatchDetectTargetedSentimentItemResult {
+                index: self.index,
+                entities: self.entities,
+            }
+        }
+    }
+}
+impl BatchDetectTargetedSentimentItemResult {
+    /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
+    pub fn builder() -> crate::model::batch_detect_targeted_sentiment_item_result::Builder {
+        crate::model::batch_detect_targeted_sentiment_item_result::Builder::default()
     }
 }
 

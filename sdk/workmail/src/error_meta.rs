@@ -21,7 +21,7 @@ pub enum Error {
     EntityStateException(crate::error::EntityStateException),
     /// <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do so on its behalf.</p>
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
-    /// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+    /// <p>You SES configuration has customizations that WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
     InvalidCustomSesConfigurationException(crate::error::InvalidCustomSesConfigurationException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -35,13 +35,13 @@ pub enum Error {
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
     /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+    /// <p>The user, group, or resource name isn't unique in WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
     /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
+    /// <p>This user, group, or resource name is not allowed in WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -122,6 +122,36 @@ where
                 crate::error::AssociateMemberToGroupErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
                 crate::error::AssociateMemberToGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssumeImpersonationRoleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::AssumeImpersonationRoleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssumeImpersonationRoleErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::AssumeImpersonationRoleErrorKind::OrganizationNotFoundException(
+                    inner,
+                ) => Error::OrganizationNotFoundException(inner),
+                crate::error::AssumeImpersonationRoleErrorKind::OrganizationStateException(
+                    inner,
+                ) => Error::OrganizationStateException(inner),
+                crate::error::AssumeImpersonationRoleErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::AssumeImpersonationRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -238,6 +268,42 @@ where
                 crate::error::CreateGroupErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
                 crate::error::CreateGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateImpersonationRoleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateImpersonationRoleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateImpersonationRoleErrorKind::EntityNotFoundException(inner) => {
+                    Error::EntityNotFoundException(inner)
+                }
+                crate::error::CreateImpersonationRoleErrorKind::EntityStateException(inner) => {
+                    Error::EntityStateException(inner)
+                }
+                crate::error::CreateImpersonationRoleErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::CreateImpersonationRoleErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateImpersonationRoleErrorKind::OrganizationNotFoundException(
+                    inner,
+                ) => Error::OrganizationNotFoundException(inner),
+                crate::error::CreateImpersonationRoleErrorKind::OrganizationStateException(
+                    inner,
+                ) => Error::OrganizationStateException(inner),
+                crate::error::CreateImpersonationRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -450,6 +516,33 @@ where
                 crate::error::DeleteGroupErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
                 crate::error::DeleteGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteImpersonationRoleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteImpersonationRoleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteImpersonationRoleErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::DeleteImpersonationRoleErrorKind::OrganizationNotFoundException(
+                    inner,
+                ) => Error::OrganizationNotFoundException(inner),
+                crate::error::DeleteImpersonationRoleErrorKind::OrganizationStateException(
+                    inner,
+                ) => Error::OrganizationStateException(inner),
+                crate::error::DeleteImpersonationRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -932,6 +1025,9 @@ where
                 crate::error::GetAccessControlEffectErrorKind::OrganizationStateException(
                     inner,
                 ) => Error::OrganizationStateException(inner),
+                crate::error::GetAccessControlEffectErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
                 crate::error::GetAccessControlEffectErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -966,6 +1062,58 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImpersonationRoleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetImpersonationRoleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetImpersonationRoleErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::GetImpersonationRoleErrorKind::OrganizationNotFoundException(
+                    inner,
+                ) => Error::OrganizationNotFoundException(inner),
+                crate::error::GetImpersonationRoleErrorKind::OrganizationStateException(inner) => {
+                    Error::OrganizationStateException(inner)
+                }
+                crate::error::GetImpersonationRoleErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetImpersonationRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImpersonationRoleEffectError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetImpersonationRoleEffectError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetImpersonationRoleEffectErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::GetImpersonationRoleEffectErrorKind::EntityStateException(inner) => Error::EntityStateException(inner),
+                crate::error::GetImpersonationRoleEffectErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::GetImpersonationRoleEffectErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::GetImpersonationRoleEffectErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::GetImpersonationRoleEffectErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetImpersonationRoleEffectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1187,6 +1335,33 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::ListGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListImpersonationRolesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListImpersonationRolesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListImpersonationRolesErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::ListImpersonationRolesErrorKind::OrganizationNotFoundException(
+                    inner,
+                ) => Error::OrganizationNotFoundException(inner),
+                crate::error::ListImpersonationRolesErrorKind::OrganizationStateException(
+                    inner,
+                ) => Error::OrganizationStateException(inner),
+                crate::error::ListImpersonationRolesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -1455,6 +1630,9 @@ where
                 ) => Error::OrganizationNotFoundException(inner),
                 crate::error::PutAccessControlRuleErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
+                }
+                crate::error::PutAccessControlRuleErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::PutAccessControlRuleErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1816,6 +1994,45 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::UpdateDefaultMailDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateImpersonationRoleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateImpersonationRoleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateImpersonationRoleErrorKind::EntityNotFoundException(inner) => {
+                    Error::EntityNotFoundException(inner)
+                }
+                crate::error::UpdateImpersonationRoleErrorKind::EntityStateException(inner) => {
+                    Error::EntityStateException(inner)
+                }
+                crate::error::UpdateImpersonationRoleErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::UpdateImpersonationRoleErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::UpdateImpersonationRoleErrorKind::OrganizationNotFoundException(
+                    inner,
+                ) => Error::OrganizationNotFoundException(inner),
+                crate::error::UpdateImpersonationRoleErrorKind::OrganizationStateException(
+                    inner,
+                ) => Error::OrganizationStateException(inner),
+                crate::error::UpdateImpersonationRoleErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateImpersonationRoleErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

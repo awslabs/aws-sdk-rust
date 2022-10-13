@@ -1634,6 +1634,143 @@ impl AsRef<str> for OpsItemDataType {
     }
 }
 
+/// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlarmConfiguration {
+    /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
+    pub ignore_poll_alarm_failure: bool,
+    /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
+    #[doc(hidden)]
+    pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
+}
+impl AlarmConfiguration {
+    /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
+    pub fn ignore_poll_alarm_failure(&self) -> bool {
+        self.ignore_poll_alarm_failure
+    }
+    /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
+    pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
+        self.alarms.as_deref()
+    }
+}
+impl std::fmt::Debug for AlarmConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlarmConfiguration");
+        formatter.field("ignore_poll_alarm_failure", &self.ignore_poll_alarm_failure);
+        formatter.field("alarms", &self.alarms);
+        formatter.finish()
+    }
+}
+/// See [`AlarmConfiguration`](crate::model::AlarmConfiguration).
+pub mod alarm_configuration {
+
+    /// A builder for [`AlarmConfiguration`](crate::model::AlarmConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ignore_poll_alarm_failure: std::option::Option<bool>,
+        pub(crate) alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
+    }
+    impl Builder {
+        /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
+        pub fn ignore_poll_alarm_failure(mut self, input: bool) -> Self {
+            self.ignore_poll_alarm_failure = Some(input);
+            self
+        }
+        /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
+        pub fn set_ignore_poll_alarm_failure(mut self, input: std::option::Option<bool>) -> Self {
+            self.ignore_poll_alarm_failure = input;
+            self
+        }
+        /// Appends an item to `alarms`.
+        ///
+        /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
+        ///
+        /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
+            let mut v = self.alarms.unwrap_or_default();
+            v.push(input);
+            self.alarms = Some(v);
+            self
+        }
+        /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
+        pub fn set_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
+        ) -> Self {
+            self.alarms = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::model::AlarmConfiguration).
+        pub fn build(self) -> crate::model::AlarmConfiguration {
+            crate::model::AlarmConfiguration {
+                ignore_poll_alarm_failure: self.ignore_poll_alarm_failure.unwrap_or_default(),
+                alarms: self.alarms,
+            }
+        }
+    }
+}
+impl AlarmConfiguration {
+    /// Creates a new builder-style object to manufacture [`AlarmConfiguration`](crate::model::AlarmConfiguration).
+    pub fn builder() -> crate::model::alarm_configuration::Builder {
+        crate::model::alarm_configuration::Builder::default()
+    }
+}
+
+/// <p>A CloudWatch alarm you apply to an automation or command.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Alarm {
+    /// <p>The name of your CloudWatch alarm.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl Alarm {
+    /// <p>The name of your CloudWatch alarm.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for Alarm {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Alarm");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`Alarm`](crate::model::Alarm).
+pub mod alarm {
+
+    /// A builder for [`Alarm`](crate::model::Alarm).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of your CloudWatch alarm.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of your CloudWatch alarm.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Alarm`](crate::model::Alarm).
+        pub fn build(self) -> crate::model::Alarm {
+            crate::model::Alarm { name: self.name }
+        }
+    }
+}
+impl Alarm {
+    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
+    pub fn builder() -> crate::model::alarm::Builder {
+        crate::model::alarm::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4767,7 +4904,11 @@ pub enum DocumentType {
     #[allow(missing_docs)] // documentation missing in model
     ChangeCalendar,
     #[allow(missing_docs)] // documentation missing in model
+    CloudFormation,
+    #[allow(missing_docs)] // documentation missing in model
     Command,
+    #[allow(missing_docs)] // documentation missing in model
+    ConformancePackTemplate,
     #[allow(missing_docs)] // documentation missing in model
     DeploymentStrategy,
     #[allow(missing_docs)] // documentation missing in model
@@ -4791,7 +4932,9 @@ impl std::convert::From<&str> for DocumentType {
             "Automation" => DocumentType::Automation,
             "Automation.ChangeTemplate" => DocumentType::ChangeTemplate,
             "ChangeCalendar" => DocumentType::ChangeCalendar,
+            "CloudFormation" => DocumentType::CloudFormation,
             "Command" => DocumentType::Command,
+            "ConformancePackTemplate" => DocumentType::ConformancePackTemplate,
             "DeploymentStrategy" => DocumentType::DeploymentStrategy,
             "Package" => DocumentType::Package,
             "Policy" => DocumentType::Policy,
@@ -4818,7 +4961,9 @@ impl DocumentType {
             DocumentType::Automation => "Automation",
             DocumentType::ChangeTemplate => "Automation.ChangeTemplate",
             DocumentType::ChangeCalendar => "ChangeCalendar",
+            DocumentType::CloudFormation => "CloudFormation",
             DocumentType::Command => "Command",
+            DocumentType::ConformancePackTemplate => "ConformancePackTemplate",
             DocumentType::DeploymentStrategy => "DeploymentStrategy",
             DocumentType::Package => "Package",
             DocumentType::Policy => "Policy",
@@ -4836,7 +4981,9 @@ impl DocumentType {
             "Automation",
             "Automation.ChangeTemplate",
             "ChangeCalendar",
+            "CloudFormation",
             "Command",
+            "ConformancePackTemplate",
             "DeploymentStrategy",
             "Package",
             "Policy",
@@ -5432,6 +5579,12 @@ pub struct AssociationDescription {
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+    /// <p>The CloudWatch alarm that was invoked during the association.</p>
+    #[doc(hidden)]
+    pub triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
 }
 impl AssociationDescription {
     /// <p>The name of the SSM document.</p>
@@ -5556,6 +5709,14 @@ impl AssociationDescription {
     > {
         self.target_maps.as_deref()
     }
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>The CloudWatch alarm that was invoked during the association.</p>
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+        self.triggered_alarms.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5598,6 +5759,8 @@ impl std::fmt::Debug for AssociationDescription {
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("target_maps", &self.target_maps);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("triggered_alarms", &self.triggered_alarms);
         formatter.finish()
     }
 }
@@ -5642,6 +5805,9 @@ pub mod association_description {
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         >,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+        pub(crate) triggered_alarms:
+            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     }
     impl Builder {
         /// <p>The name of the SSM document.</p>
@@ -6030,6 +6196,38 @@ pub mod association_description {
             self.target_maps = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
+        /// Appends an item to `triggered_alarms`.
+        ///
+        /// To override the contents of this collection use [`set_triggered_alarms`](Self::set_triggered_alarms).
+        ///
+        /// <p>The CloudWatch alarm that was invoked during the association.</p>
+        pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
+            let mut v = self.triggered_alarms.unwrap_or_default();
+            v.push(input);
+            self.triggered_alarms = Some(v);
+            self
+        }
+        /// <p>The CloudWatch alarm that was invoked during the association.</p>
+        pub fn set_triggered_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        ) -> Self {
+            self.triggered_alarms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociationDescription`](crate::model::AssociationDescription).
         pub fn build(self) -> crate::model::AssociationDescription {
             crate::model::AssociationDescription {
@@ -6059,6 +6257,8 @@ pub mod association_description {
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
                 target_maps: self.target_maps,
+                alarm_configuration: self.alarm_configuration,
+                triggered_alarms: self.triggered_alarms,
             }
         }
     }
@@ -6067,6 +6267,139 @@ impl AssociationDescription {
     /// Creates a new builder-style object to manufacture [`AssociationDescription`](crate::model::AssociationDescription).
     pub fn builder() -> crate::model::association_description::Builder {
         crate::model::association_description::Builder::default()
+    }
+}
+
+/// <p>The details about the state of your CloudWatch alarm.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlarmStateInformation {
+    /// <p>The name of your CloudWatch alarm.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The state of your CloudWatch alarm.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::ExternalAlarmState>,
+}
+impl AlarmStateInformation {
+    /// <p>The name of your CloudWatch alarm.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of your CloudWatch alarm.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ExternalAlarmState> {
+        self.state.as_ref()
+    }
+}
+impl std::fmt::Debug for AlarmStateInformation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlarmStateInformation");
+        formatter.field("name", &self.name);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`AlarmStateInformation`](crate::model::AlarmStateInformation).
+pub mod alarm_state_information {
+
+    /// A builder for [`AlarmStateInformation`](crate::model::AlarmStateInformation).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::ExternalAlarmState>,
+    }
+    impl Builder {
+        /// <p>The name of your CloudWatch alarm.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of your CloudWatch alarm.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The state of your CloudWatch alarm.</p>
+        pub fn state(mut self, input: crate::model::ExternalAlarmState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of your CloudWatch alarm.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ExternalAlarmState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlarmStateInformation`](crate::model::AlarmStateInformation).
+        pub fn build(self) -> crate::model::AlarmStateInformation {
+            crate::model::AlarmStateInformation {
+                name: self.name,
+                state: self.state,
+            }
+        }
+    }
+}
+impl AlarmStateInformation {
+    /// Creates a new builder-style object to manufacture [`AlarmStateInformation`](crate::model::AlarmStateInformation).
+    pub fn builder() -> crate::model::alarm_state_information::Builder {
+        crate::model::alarm_state_information::Builder::default()
+    }
+}
+
+/// _Note: `ExternalAlarmState::Unknown` has been renamed to `::UnknownValue`._
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExternalAlarmState {
+    #[allow(missing_docs)] // documentation missing in model
+    Alarm,
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExternalAlarmState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALARM" => ExternalAlarmState::Alarm,
+            "UNKNOWN" => ExternalAlarmState::UnknownValue,
+            other => ExternalAlarmState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExternalAlarmState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExternalAlarmState::from(s))
+    }
+}
+impl ExternalAlarmState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExternalAlarmState::Alarm => "ALARM",
+            ExternalAlarmState::UnknownValue => "UNKNOWN",
+            ExternalAlarmState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALARM", "UNKNOWN"]
+    }
+}
+impl AsRef<str> for ExternalAlarmState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7329,6 +7662,12 @@ pub struct Command {
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
     #[doc(hidden)]
     pub timeout_seconds: i32,
+    /// <p>The details for the CloudWatch alarm applied to your command.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+    /// <p>The CloudWatch alarm that was invoked by the command.</p>
+    #[doc(hidden)]
+    pub triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
 }
 impl Command {
     /// <p>A unique identifier for this command.</p>
@@ -7445,6 +7784,14 @@ impl Command {
     pub fn timeout_seconds(&self) -> i32 {
         self.timeout_seconds
     }
+    /// <p>The details for the CloudWatch alarm applied to your command.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>The CloudWatch alarm that was invoked by the command.</p>
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+        self.triggered_alarms.as_deref()
+    }
 }
 impl std::fmt::Debug for Command {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7473,6 +7820,8 @@ impl std::fmt::Debug for Command {
         formatter.field("notification_config", &self.notification_config);
         formatter.field("cloud_watch_output_config", &self.cloud_watch_output_config);
         formatter.field("timeout_seconds", &self.timeout_seconds);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("triggered_alarms", &self.triggered_alarms);
         formatter.finish()
     }
 }
@@ -7509,6 +7858,9 @@ pub mod command {
         pub(crate) cloud_watch_output_config:
             std::option::Option<crate::model::CloudWatchOutputConfig>,
         pub(crate) timeout_seconds: std::option::Option<i32>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+        pub(crate) triggered_alarms:
+            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     }
     impl Builder {
         /// <p>A unique identifier for this command.</p>
@@ -7847,6 +8199,38 @@ pub mod command {
             self.timeout_seconds = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm applied to your command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm applied to your command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
+        /// Appends an item to `triggered_alarms`.
+        ///
+        /// To override the contents of this collection use [`set_triggered_alarms`](Self::set_triggered_alarms).
+        ///
+        /// <p>The CloudWatch alarm that was invoked by the command.</p>
+        pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
+            let mut v = self.triggered_alarms.unwrap_or_default();
+            v.push(input);
+            self.triggered_alarms = Some(v);
+            self
+        }
+        /// <p>The CloudWatch alarm that was invoked by the command.</p>
+        pub fn set_triggered_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        ) -> Self {
+            self.triggered_alarms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Command`](crate::model::Command).
         pub fn build(self) -> crate::model::Command {
             crate::model::Command {
@@ -7874,6 +8258,8 @@ pub mod command {
                 notification_config: self.notification_config,
                 cloud_watch_output_config: self.cloud_watch_output_config,
                 timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+                alarm_configuration: self.alarm_configuration,
+                triggered_alarms: self.triggered_alarms,
             }
         }
     }
@@ -8234,6 +8620,8 @@ impl ServiceSetting {
 )]
 pub enum ResourceTypeForTagging {
     #[allow(missing_docs)] // documentation missing in model
+    Association,
+    #[allow(missing_docs)] // documentation missing in model
     Automation,
     #[allow(missing_docs)] // documentation missing in model
     Document,
@@ -8255,6 +8643,7 @@ pub enum ResourceTypeForTagging {
 impl std::convert::From<&str> for ResourceTypeForTagging {
     fn from(s: &str) -> Self {
         match s {
+            "Association" => ResourceTypeForTagging::Association,
             "Automation" => ResourceTypeForTagging::Automation,
             "Document" => ResourceTypeForTagging::Document,
             "MaintenanceWindow" => ResourceTypeForTagging::MaintenanceWindow,
@@ -8278,6 +8667,7 @@ impl ResourceTypeForTagging {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceTypeForTagging::Association => "Association",
             ResourceTypeForTagging::Automation => "Automation",
             ResourceTypeForTagging::Document => "Document",
             ResourceTypeForTagging::MaintenanceWindow => "MaintenanceWindow",
@@ -8292,6 +8682,7 @@ impl ResourceTypeForTagging {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "Association",
             "Automation",
             "Document",
             "MaintenanceWindow",
@@ -19546,6 +19937,12 @@ pub struct AutomationExecution {
     /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.</p>
     #[doc(hidden)]
     pub progress_counters: std::option::Option<crate::model::ProgressCounters>,
+    /// <p>The details for the CloudWatch alarm applied to your automation.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+    /// <p>The CloudWatch alarm that was invoked by the automation.</p>
+    #[doc(hidden)]
+    pub triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     #[doc(hidden)]
     pub automation_subtype: std::option::Option<crate::model::AutomationSubtype>,
@@ -19682,6 +20079,14 @@ impl AutomationExecution {
     pub fn progress_counters(&self) -> std::option::Option<&crate::model::ProgressCounters> {
         self.progress_counters.as_ref()
     }
+    /// <p>The details for the CloudWatch alarm applied to your automation.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>The CloudWatch alarm that was invoked by the automation.</p>
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+        self.triggered_alarms.as_deref()
+    }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub fn automation_subtype(&self) -> std::option::Option<&crate::model::AutomationSubtype> {
         self.automation_subtype.as_ref()
@@ -19743,6 +20148,8 @@ impl std::fmt::Debug for AutomationExecution {
         formatter.field("target", &self.target);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("progress_counters", &self.progress_counters);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("triggered_alarms", &self.triggered_alarms);
         formatter.field("automation_subtype", &self.automation_subtype);
         formatter.field("scheduled_time", &self.scheduled_time);
         formatter.field("runbooks", &self.runbooks);
@@ -19793,6 +20200,9 @@ pub mod automation_execution {
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
         pub(crate) progress_counters: std::option::Option<crate::model::ProgressCounters>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+        pub(crate) triggered_alarms:
+            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
         pub(crate) automation_subtype: std::option::Option<crate::model::AutomationSubtype>,
         pub(crate) scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) runbooks: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
@@ -20178,6 +20588,38 @@ pub mod automation_execution {
             self.progress_counters = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm applied to your automation.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm applied to your automation.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
+        /// Appends an item to `triggered_alarms`.
+        ///
+        /// To override the contents of this collection use [`set_triggered_alarms`](Self::set_triggered_alarms).
+        ///
+        /// <p>The CloudWatch alarm that was invoked by the automation.</p>
+        pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
+            let mut v = self.triggered_alarms.unwrap_or_default();
+            v.push(input);
+            self.triggered_alarms = Some(v);
+            self
+        }
+        /// <p>The CloudWatch alarm that was invoked by the automation.</p>
+        pub fn set_triggered_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        ) -> Self {
+            self.triggered_alarms = input;
+            self
+        }
         /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
         pub fn automation_subtype(mut self, input: crate::model::AutomationSubtype) -> Self {
             self.automation_subtype = Some(input);
@@ -20291,6 +20733,8 @@ pub mod automation_execution {
                 target: self.target,
                 target_locations: self.target_locations,
                 progress_counters: self.progress_counters,
+                alarm_configuration: self.alarm_configuration,
+                triggered_alarms: self.triggered_alarms,
                 automation_subtype: self.automation_subtype,
                 scheduled_time: self.scheduled_time,
                 runbooks: self.runbooks,
@@ -23863,6 +24307,9 @@ pub struct MaintenanceWindowTask {
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+    /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl MaintenanceWindowTask {
     /// <p>The ID of the maintenance window where the task is registered.</p>
@@ -23948,6 +24395,10 @@ impl MaintenanceWindowTask {
     ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
+    /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for MaintenanceWindowTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23966,6 +24417,7 @@ impl std::fmt::Debug for MaintenanceWindowTask {
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("cutoff_behavior", &self.cutoff_behavior);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -23995,6 +24447,7 @@ pub mod maintenance_window_task {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) cutoff_behavior:
             std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window where the task is registered.</p>
@@ -24221,6 +24674,19 @@ pub mod maintenance_window_task {
             self.cutoff_behavior = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MaintenanceWindowTask`](crate::model::MaintenanceWindowTask).
         pub fn build(self) -> crate::model::MaintenanceWindowTask {
             crate::model::MaintenanceWindowTask {
@@ -24238,6 +24704,7 @@ pub mod maintenance_window_task {
                 name: self.name,
                 description: self.description,
                 cutoff_behavior: self.cutoff_behavior,
+                alarm_configuration: self.alarm_configuration,
             }
         }
     }
@@ -25066,6 +25533,12 @@ pub struct MaintenanceWindowExecutionTaskIdentity {
     /// <p>The type of task that ran.</p>
     #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
+    /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+    /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+    #[doc(hidden)]
+    pub triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
 }
 impl MaintenanceWindowExecutionTaskIdentity {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
@@ -25100,6 +25573,14 @@ impl MaintenanceWindowExecutionTaskIdentity {
     pub fn task_type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
         self.task_type.as_ref()
     }
+    /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+        self.triggered_alarms.as_deref()
+    }
 }
 impl std::fmt::Debug for MaintenanceWindowExecutionTaskIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25112,6 +25593,8 @@ impl std::fmt::Debug for MaintenanceWindowExecutionTaskIdentity {
         formatter.field("end_time", &self.end_time);
         formatter.field("task_arn", &self.task_arn);
         formatter.field("task_type", &self.task_type);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("triggered_alarms", &self.triggered_alarms);
         formatter.finish()
     }
 }
@@ -25129,6 +25612,9 @@ pub mod maintenance_window_execution_task_identity {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+        pub(crate) triggered_alarms:
+            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window execution that ran the task.</p>
@@ -25232,6 +25718,38 @@ pub mod maintenance_window_execution_task_identity {
             self.task_type = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
+        /// Appends an item to `triggered_alarms`.
+        ///
+        /// To override the contents of this collection use [`set_triggered_alarms`](Self::set_triggered_alarms).
+        ///
+        /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+        pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
+            let mut v = self.triggered_alarms.unwrap_or_default();
+            v.push(input);
+            self.triggered_alarms = Some(v);
+            self
+        }
+        /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+        pub fn set_triggered_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        ) -> Self {
+            self.triggered_alarms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MaintenanceWindowExecutionTaskIdentity`](crate::model::MaintenanceWindowExecutionTaskIdentity).
         pub fn build(self) -> crate::model::MaintenanceWindowExecutionTaskIdentity {
             crate::model::MaintenanceWindowExecutionTaskIdentity {
@@ -25243,6 +25761,8 @@ pub mod maintenance_window_execution_task_identity {
                 end_time: self.end_time,
                 task_arn: self.task_arn,
                 task_type: self.task_type,
+                alarm_configuration: self.alarm_configuration,
+                triggered_alarms: self.triggered_alarms,
             }
         }
     }
@@ -28170,8 +28690,8 @@ impl AsRef<str> for PingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceInformationStringFilter {
     /// <p>The filter key name to describe your managed nodes. For example:</p>
-    /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag Key"</p> <important>
-    /// <p> <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
+    /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
+    /// <p> <code>Tag Key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:{keyname}</code> and a string. Here are some valid examples: <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>, <code>tag:Windows</code>. Here are some <i>invalid</i> examples: <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>, <code>tagKey</code>, <code>abc:keyname</code>.</p>
     /// </important>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -28181,8 +28701,8 @@ pub struct InstanceInformationStringFilter {
 }
 impl InstanceInformationStringFilter {
     /// <p>The filter key name to describe your managed nodes. For example:</p>
-    /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag Key"</p> <important>
-    /// <p> <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
+    /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
+    /// <p> <code>Tag Key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:{keyname}</code> and a string. Here are some valid examples: <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>, <code>tag:Windows</code>. Here are some <i>invalid</i> examples: <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>, <code>tagKey</code>, <code>abc:keyname</code>.</p>
     /// </important>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -28211,16 +28731,16 @@ pub mod instance_information_string_filter {
     }
     impl Builder {
         /// <p>The filter key name to describe your managed nodes. For example:</p>
-        /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag Key"</p> <important>
-        /// <p> <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
+        /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
+        /// <p> <code>Tag Key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:{keyname}</code> and a string. Here are some valid examples: <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>, <code>tag:Windows</code>. Here are some <i>invalid</i> examples: <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>, <code>tagKey</code>, <code>abc:keyname</code>.</p>
         /// </important>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>The filter key name to describe your managed nodes. For example:</p>
-        /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag Key"</p> <important>
-        /// <p> <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
+        /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
+        /// <p> <code>Tag Key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:{keyname}</code> and a string. Here are some valid examples: <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>, <code>tag:Windows</code>. Here are some <i>invalid</i> examples: <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>, <code>tagKey</code>, <code>abc:keyname</code>.</p>
         /// </important>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -30081,6 +30601,12 @@ pub struct AutomationExecutionMetadata {
     /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     #[doc(hidden)]
     pub automation_type: std::option::Option<crate::model::AutomationType>,
+    /// <p>The details for the CloudWatch alarm applied to your automation.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+    /// <p>The CloudWatch alarm that was invoked by the automation.</p>
+    #[doc(hidden)]
+    pub triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     #[doc(hidden)]
     pub automation_subtype: std::option::Option<crate::model::AutomationSubtype>,
@@ -30201,6 +30727,14 @@ impl AutomationExecutionMetadata {
     pub fn automation_type(&self) -> std::option::Option<&crate::model::AutomationType> {
         self.automation_type.as_ref()
     }
+    /// <p>The details for the CloudWatch alarm applied to your automation.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>The CloudWatch alarm that was invoked by the automation.</p>
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+        self.triggered_alarms.as_deref()
+    }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub fn automation_subtype(&self) -> std::option::Option<&crate::model::AutomationSubtype> {
         self.automation_subtype.as_ref()
@@ -30259,6 +30793,8 @@ impl std::fmt::Debug for AutomationExecutionMetadata {
         formatter.field("max_errors", &self.max_errors);
         formatter.field("target", &self.target);
         formatter.field("automation_type", &self.automation_type);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("triggered_alarms", &self.triggered_alarms);
         formatter.field("automation_subtype", &self.automation_subtype);
         formatter.field("scheduled_time", &self.scheduled_time);
         formatter.field("runbooks", &self.runbooks);
@@ -30303,6 +30839,9 @@ pub mod automation_execution_metadata {
         pub(crate) max_errors: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<std::string::String>,
         pub(crate) automation_type: std::option::Option<crate::model::AutomationType>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+        pub(crate) triggered_alarms:
+            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
         pub(crate) automation_subtype: std::option::Option<crate::model::AutomationSubtype>,
         pub(crate) scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) runbooks: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
@@ -30625,6 +31164,38 @@ pub mod automation_execution_metadata {
             self.automation_type = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm applied to your automation.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm applied to your automation.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
+        /// Appends an item to `triggered_alarms`.
+        ///
+        /// To override the contents of this collection use [`set_triggered_alarms`](Self::set_triggered_alarms).
+        ///
+        /// <p>The CloudWatch alarm that was invoked by the automation.</p>
+        pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
+            let mut v = self.triggered_alarms.unwrap_or_default();
+            v.push(input);
+            self.triggered_alarms = Some(v);
+            self
+        }
+        /// <p>The CloudWatch alarm that was invoked by the automation.</p>
+        pub fn set_triggered_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        ) -> Self {
+            self.triggered_alarms = input;
+            self
+        }
         /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
         pub fn automation_subtype(mut self, input: crate::model::AutomationSubtype) -> Self {
             self.automation_subtype = Some(input);
@@ -30735,6 +31306,8 @@ pub mod automation_execution_metadata {
                 max_errors: self.max_errors,
                 target: self.target,
                 automation_type: self.automation_type,
+                alarm_configuration: self.alarm_configuration,
+                triggered_alarms: self.triggered_alarms,
                 automation_subtype: self.automation_subtype,
                 scheduled_time: self.scheduled_time,
                 runbooks: self.runbooks,
@@ -31481,6 +32054,12 @@ pub struct AssociationExecution {
     /// <p>An aggregate status of the resources in the execution based on the status type.</p>
     #[doc(hidden)]
     pub resource_count_by_status: std::option::Option<std::string::String>,
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+    /// <p>The CloudWatch alarms that were invoked by the association.</p>
+    #[doc(hidden)]
+    pub triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
 }
 impl AssociationExecution {
     /// <p>The association ID.</p>
@@ -31515,6 +32094,14 @@ impl AssociationExecution {
     pub fn resource_count_by_status(&self) -> std::option::Option<&str> {
         self.resource_count_by_status.as_deref()
     }
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>The CloudWatch alarms that were invoked by the association.</p>
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+        self.triggered_alarms.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociationExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31527,6 +32114,8 @@ impl std::fmt::Debug for AssociationExecution {
         formatter.field("created_time", &self.created_time);
         formatter.field("last_execution_date", &self.last_execution_date);
         formatter.field("resource_count_by_status", &self.resource_count_by_status);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("triggered_alarms", &self.triggered_alarms);
         formatter.finish()
     }
 }
@@ -31544,6 +32133,9 @@ pub mod association_execution {
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_count_by_status: std::option::Option<std::string::String>,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
+        pub(crate) triggered_alarms:
+            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     }
     impl Builder {
         /// <p>The association ID.</p>
@@ -31644,6 +32236,38 @@ pub mod association_execution {
             self.resource_count_by_status = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
+        /// Appends an item to `triggered_alarms`.
+        ///
+        /// To override the contents of this collection use [`set_triggered_alarms`](Self::set_triggered_alarms).
+        ///
+        /// <p>The CloudWatch alarms that were invoked by the association.</p>
+        pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
+            let mut v = self.triggered_alarms.unwrap_or_default();
+            v.push(input);
+            self.triggered_alarms = Some(v);
+            self
+        }
+        /// <p>The CloudWatch alarms that were invoked by the association.</p>
+        pub fn set_triggered_alarms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        ) -> Self {
+            self.triggered_alarms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociationExecution`](crate::model::AssociationExecution).
         pub fn build(self) -> crate::model::AssociationExecution {
             crate::model::AssociationExecution {
@@ -31655,6 +32279,8 @@ pub mod association_execution {
                 created_time: self.created_time,
                 last_execution_date: self.last_execution_date,
                 resource_count_by_status: self.resource_count_by_status,
+                alarm_configuration: self.alarm_configuration,
+                triggered_alarms: self.triggered_alarms,
             }
         }
     }
@@ -32575,6 +33201,9 @@ pub struct CreateAssociationBatchRequestEntry {
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    #[doc(hidden)]
+    pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl CreateAssociationBatchRequestEntry {
     /// <p>The name of the SSM document that contains the configuration information for the managed node. You can specify Command or Automation runbooks.</p>
@@ -32673,6 +33302,10 @@ impl CreateAssociationBatchRequestEntry {
     > {
         self.target_maps.as_deref()
     }
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAssociationBatchRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32701,6 +33334,7 @@ impl std::fmt::Debug for CreateAssociationBatchRequestEntry {
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("target_maps", &self.target_maps);
+        formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
     }
 }
@@ -32737,6 +33371,7 @@ pub mod create_association_batch_request_entry {
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         >,
+        pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The name of the SSM document that contains the configuration information for the managed node. You can specify Command or Automation runbooks.</p>
@@ -33040,6 +33675,19 @@ pub mod create_association_batch_request_entry {
             self.target_maps = input;
             self
         }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.alarm_configuration = Some(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAssociationBatchRequestEntry`](crate::model::CreateAssociationBatchRequestEntry).
         pub fn build(self) -> crate::model::CreateAssociationBatchRequestEntry {
             crate::model::CreateAssociationBatchRequestEntry {
@@ -33061,6 +33709,7 @@ pub mod create_association_batch_request_entry {
                 target_locations: self.target_locations,
                 schedule_offset: self.schedule_offset,
                 target_maps: self.target_maps,
+                alarm_configuration: self.alarm_configuration,
             }
         }
     }

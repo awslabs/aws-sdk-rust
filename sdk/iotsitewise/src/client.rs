@@ -224,7 +224,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateAsset`](crate::client::fluent_builders::CreateAsset) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`asset_name(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::asset_name) / [`set_asset_name(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_asset_name): <p>A unique, friendly name for the asset.</p>
+    ///   - [`asset_name(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::asset_name) / [`set_asset_name(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_asset_name): <p>A friendly name for the asset.</p>
     ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_asset_model_id): <p>The ID of the asset model from which to create the asset.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAsset::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAsset::set_tags): <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -1039,7 +1039,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_id): <p>The ID of the asset to update.</p>
-    ///   - [`asset_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_name) / [`set_asset_name(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_name): <p>A unique, friendly name for the asset.</p>
+    ///   - [`asset_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_name) / [`set_asset_name(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_name): <p>A friendly name for the asset.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     ///   - [`asset_description(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_description) / [`set_asset_description(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_description): <p>A description for the asset.</p>
     /// - On success, responds with [`UpdateAssetOutput`](crate::output::UpdateAssetOutput) with field(s):
@@ -1072,6 +1072,7 @@ impl Client {
     ///   - [`property_alias(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetProperty::property_alias) / [`set_property_alias(Option<String>)`](crate::client::fluent_builders::UpdateAssetProperty::set_property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>If you omit this parameter, the alias is removed from the property.</p>
     ///   - [`property_notification_state(PropertyNotificationState)`](crate::client::fluent_builders::UpdateAssetProperty::property_notification_state) / [`set_property_notification_state(Option<PropertyNotificationState>)`](crate::client::fluent_builders::UpdateAssetProperty::set_property_notification_state): <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetProperty::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAssetProperty::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`property_unit(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetProperty::property_unit) / [`set_property_unit(Option<String>)`](crate::client::fluent_builders::UpdateAssetProperty::set_property_unit): <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
     /// - On success, responds with [`UpdateAssetPropertyOutput`](crate::output::UpdateAssetPropertyOutput)
 
     /// - On failure, responds with [`SdkError<UpdateAssetPropertyError>`](crate::error::UpdateAssetPropertyError)
@@ -2237,12 +2238,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, friendly name for the asset.</p>
+        /// <p>A friendly name for the asset.</p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.asset_name(input.into());
             self
         }
-        /// <p>A unique, friendly name for the asset.</p>
+        /// <p>A friendly name for the asset.</p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_asset_name(input);
             self
@@ -2501,9 +2502,6 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBulkImportJob`.
     ///
-    /// <note>
-    /// <p>This API operation is in preview release for IoT SiteWise and is subject to change. We recommend that you use this operation only with test data, and not in production environments.</p>
-    /// </note>
     /// <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <important>
     /// <p>You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
     /// </important>
@@ -4296,9 +4294,6 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBulkImportJob`.
     ///
-    /// <note>
-    /// <p>This API operation is in preview release for IoT SiteWise and is subject to change. We recommend that you use this operation only with test data, and not in production environments.</p>
-    /// </note>
     /// <p>Retrieves information about a bulk import job request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBulkImportJob {
@@ -6717,10 +6712,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBulkImportJobs`.
     ///
-    /// <note>
-    /// <p>This API operation is in preview release for IoT SiteWise and is subject to change. We recommend that you use this operation only with test data, and not in production environments.</p>
-    /// </note>
-    /// <p>Retrieves a paginated list of bulk import job requests. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    /// <p>Retrieves a paginated list of bulk import job requests. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBulkImportJobs {
         handle: std::sync::Arc<super::Handle>,
@@ -8253,12 +8245,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>A unique, friendly name for the asset.</p>
+        /// <p>A friendly name for the asset.</p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.asset_name(input.into());
             self
         }
-        /// <p>A unique, friendly name for the asset.</p>
+        /// <p>A friendly name for the asset.</p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_asset_name(input);
             self
@@ -8593,6 +8585,19 @@ pub mod fluent_builders {
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
+        pub fn property_unit(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_unit(input.into());
+            self
+        }
+        /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
+        pub fn set_property_unit(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_property_unit(input);
             self
         }
     }

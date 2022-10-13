@@ -4908,6 +4908,29 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateInstanceMetadataOptionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateInstanceMetadataOptionsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateInstanceMetadataOptionsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateInstanceMetadataOptionsErrorKind::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+                crate::error::UpdateInstanceMetadataOptionsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::UpdateInstanceMetadataOptionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::UpdateInstanceMetadataOptionsErrorKind::OperationFailureException(inner) => Error::OperationFailureException(inner),
+                crate::error::UpdateInstanceMetadataOptionsErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+                crate::error::UpdateInstanceMetadataOptionsErrorKind::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+                crate::error::UpdateInstanceMetadataOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLoadBalancerAttributeError, R>>
     for Error
 where

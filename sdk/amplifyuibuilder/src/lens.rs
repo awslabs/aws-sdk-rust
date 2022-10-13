@@ -9,6 +9,16 @@ pub(crate) fn reflens_structure_crate_output_export_components_output_next_token
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_export_forms_output_next_token(
+    input: &crate::output::ExportFormsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_export_themes_output_next_token(
     input: &crate::output::ExportThemesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -21,6 +31,16 @@ pub(crate) fn reflens_structure_crate_output_export_themes_output_next_token(
 
 pub(crate) fn reflens_structure_crate_output_list_components_output_next_token(
     input: &crate::output::ListComponentsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_forms_output_next_token(
+    input: &crate::output::ListFormsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -49,6 +69,16 @@ pub(crate) fn lens_structure_crate_output_export_components_output_entities(
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_export_forms_output_entities(
+    input: crate::output::ExportFormsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Form>> {
+    let input = match input.entities {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_export_themes_output_entities(
     input: crate::output::ExportThemesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Theme>> {
@@ -62,6 +92,16 @@ pub(crate) fn lens_structure_crate_output_export_themes_output_entities(
 pub(crate) fn lens_structure_crate_output_list_components_output_entities(
     input: crate::output::ListComponentsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ComponentSummary>> {
+    let input = match input.entities {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_forms_output_entities(
+    input: crate::output::ListFormsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::FormSummary>> {
     let input = match input.entities {
         None => return None,
         Some(t) => t,

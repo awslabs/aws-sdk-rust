@@ -22415,6 +22415,149 @@ pub fn parse_update_domain_entry_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_instance_metadata_options_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateInstanceMetadataOptionsOutput,
+    crate::error::UpdateInstanceMetadataOptionsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateInstanceMetadataOptionsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateInstanceMetadataOptionsError { meta: generic, kind: crate::error::UpdateInstanceMetadataOptionsErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "AccountSetupInProgressException" => crate::error::UpdateInstanceMetadataOptionsError { meta: generic, kind: crate::error::UpdateInstanceMetadataOptionsErrorKind::AccountSetupInProgressException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::account_setup_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_account_setup_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidInputException" => crate::error::UpdateInstanceMetadataOptionsError { meta: generic, kind: crate::error::UpdateInstanceMetadataOptionsErrorKind::InvalidInputException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotFoundException" => crate::error::UpdateInstanceMetadataOptionsError { meta: generic, kind: crate::error::UpdateInstanceMetadataOptionsErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationFailureException" => crate::error::UpdateInstanceMetadataOptionsError { meta: generic, kind: crate::error::UpdateInstanceMetadataOptionsErrorKind::OperationFailureException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceException" => crate::error::UpdateInstanceMetadataOptionsError { meta: generic, kind: crate::error::UpdateInstanceMetadataOptionsErrorKind::ServiceException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnauthenticatedException" => crate::error::UpdateInstanceMetadataOptionsError { meta: generic, kind: crate::error::UpdateInstanceMetadataOptionsErrorKind::UnauthenticatedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthenticated_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateInstanceMetadataOptionsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_instance_metadata_options_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateInstanceMetadataOptionsOutput,
+    crate::error::UpdateInstanceMetadataOptionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_instance_metadata_options_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_update_instance_metadata_options(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::UpdateInstanceMetadataOptionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_load_balancer_attribute_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

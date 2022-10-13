@@ -8085,6 +8085,71 @@ impl AssociationLimitExceeded {
     }
 }
 
+/// <p>The tag key or value isn't valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidTag {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidTag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidTag");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidTag {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidTag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidTag")?;
+        if let Some(inner_121) = &self.message {
+            write!(f, ": {}", inner_121)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidTag {}
+/// See [`InvalidTag`](crate::error::InvalidTag).
+pub mod invalid_tag {
+
+    /// A builder for [`InvalidTag`](crate::error::InvalidTag).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidTag`](crate::error::InvalidTag).
+        pub fn build(self) -> crate::error::InvalidTag {
+            crate::error::InvalidTag {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidTag {
+    /// Creates a new builder-style object to manufacture [`InvalidTag`](crate::error::InvalidTag).
+    pub fn builder() -> crate::error::invalid_tag::Builder {
+        crate::error::invalid_tag::Builder::default()
+    }
+}
+
 /// <p>The specified association already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8109,8 +8174,8 @@ impl AssociationAlreadyExists {
 impl std::fmt::Display for AssociationAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociationAlreadyExists")?;
-        if let Some(inner_121) = &self.message {
-            write!(f, ": {}", inner_121)?;
+        if let Some(inner_122) = &self.message {
+            write!(f, ": {}", inner_122)?;
         }
         Ok(())
     }
@@ -8192,8 +8257,8 @@ impl OpsItemRelatedItemAlreadyExistsException {
 impl std::fmt::Display for OpsItemRelatedItemAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OpsItemRelatedItemAlreadyExistsException")?;
-        if let Some(inner_122) = &self.message {
-            write!(f, ": {}", inner_122)?;
+        if let Some(inner_123) = &self.message {
+            write!(f, ": {}", inner_123)?;
         }
         Ok(())
     }
@@ -8281,8 +8346,8 @@ impl TooManyTagsError {
 impl std::fmt::Display for TooManyTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsError")?;
-        if let Some(inner_123) = &self.message {
-            write!(f, ": {}", inner_123)?;
+        if let Some(inner_124) = &self.message {
+            write!(f, ": {}", inner_124)?;
         }
         Ok(())
     }
@@ -8971,6 +9036,8 @@ pub enum CreateAssociationErrorKind {
     InvalidParameters(crate::error::InvalidParameters),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::error::InvalidSchedule),
+    /// <p>The tag key or value isn't valid.</p>
+    InvalidTag(crate::error::InvalidTag),
     /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
     /// <p>TargetMap parameter isn't valid.</p>
@@ -8992,6 +9059,7 @@ impl std::fmt::Display for CreateAssociationError {
             CreateAssociationErrorKind::InvalidOutputLocation(_inner) => _inner.fmt(f),
             CreateAssociationErrorKind::InvalidParameters(_inner) => _inner.fmt(f),
             CreateAssociationErrorKind::InvalidSchedule(_inner) => _inner.fmt(f),
+            CreateAssociationErrorKind::InvalidTag(_inner) => _inner.fmt(f),
             CreateAssociationErrorKind::InvalidTarget(_inner) => _inner.fmt(f),
             CreateAssociationErrorKind::InvalidTargetMaps(_inner) => _inner.fmt(f),
             CreateAssociationErrorKind::UnsupportedPlatformType(_inner) => _inner.fmt(f),
@@ -9100,6 +9168,10 @@ impl CreateAssociationError {
     pub fn is_invalid_schedule(&self) -> bool {
         matches!(&self.kind, CreateAssociationErrorKind::InvalidSchedule(_))
     }
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidTag`.
+    pub fn is_invalid_tag(&self) -> bool {
+        matches!(&self.kind, CreateAssociationErrorKind::InvalidTag(_))
+    }
     /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidTarget`.
     pub fn is_invalid_target(&self) -> bool {
         matches!(&self.kind, CreateAssociationErrorKind::InvalidTarget(_))
@@ -9128,6 +9200,7 @@ impl std::error::Error for CreateAssociationError {
             CreateAssociationErrorKind::InvalidOutputLocation(_inner) => Some(_inner),
             CreateAssociationErrorKind::InvalidParameters(_inner) => Some(_inner),
             CreateAssociationErrorKind::InvalidSchedule(_inner) => Some(_inner),
+            CreateAssociationErrorKind::InvalidTag(_inner) => Some(_inner),
             CreateAssociationErrorKind::InvalidTarget(_inner) => Some(_inner),
             CreateAssociationErrorKind::InvalidTargetMaps(_inner) => Some(_inner),
             CreateAssociationErrorKind::UnsupportedPlatformType(_inner) => Some(_inner),

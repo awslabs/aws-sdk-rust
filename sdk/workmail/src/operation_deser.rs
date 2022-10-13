@@ -278,6 +278,119 @@ pub fn parse_associate_member_to_group_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_assume_impersonation_role_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssumeImpersonationRoleOutput,
+    crate::error::AssumeImpersonationRoleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::AssumeImpersonationRoleError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::AssumeImpersonationRoleError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::AssumeImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::AssumeImpersonationRoleErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssumeImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::AssumeImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::AssumeImpersonationRoleErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssumeImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::AssumeImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::AssumeImpersonationRoleErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssumeImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::AssumeImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::AssumeImpersonationRoleErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssumeImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::AssumeImpersonationRoleError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_assume_impersonation_role_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssumeImpersonationRoleOutput,
+    crate::error::AssumeImpersonationRoleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::assume_impersonation_role_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_assume_impersonation_role(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AssumeImpersonationRoleError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_mailbox_export_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -846,6 +959,153 @@ pub fn parse_create_group_response(
             output,
         )
         .map_err(crate::error::CreateGroupError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_impersonation_role_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateImpersonationRoleOutput,
+    crate::error::CreateImpersonationRoleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateImpersonationRoleError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateImpersonationRoleError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::CreateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::CreateImpersonationRoleErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EntityStateException" => crate::error::CreateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::CreateImpersonationRoleErrorKind::EntityStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::CreateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::CreateImpersonationRoleErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::CreateImpersonationRoleErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::CreateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::CreateImpersonationRoleErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::CreateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::CreateImpersonationRoleErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateImpersonationRoleError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_impersonation_role_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateImpersonationRoleOutput,
+    crate::error::CreateImpersonationRoleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_impersonation_role_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_impersonation_role(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateImpersonationRoleError::unhandled)?;
         output.build()
     })
 }
@@ -1924,6 +2184,97 @@ pub fn parse_delete_group_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_group_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_impersonation_role_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteImpersonationRoleOutput,
+    crate::error::DeleteImpersonationRoleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteImpersonationRoleError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteImpersonationRoleError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::DeleteImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::DeleteImpersonationRoleErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::DeleteImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::DeleteImpersonationRoleErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::DeleteImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::DeleteImpersonationRoleErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteImpersonationRoleError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_impersonation_role_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteImpersonationRoleOutput,
+    crate::error::DeleteImpersonationRoleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_impersonation_role_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -3950,6 +4301,23 @@ pub fn parse_get_access_control_effect_error(
                 tmp
             }),
         },
+        "ResourceNotFoundException" => crate::error::GetAccessControlEffectError {
+            meta: generic,
+            kind: crate::error::GetAccessControlEffectErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessControlEffectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetAccessControlEffectError::generic(generic),
     })
 }
@@ -4085,6 +4453,264 @@ pub fn parse_get_default_retention_policy_response(
             output,
         )
         .map_err(crate::error::GetDefaultRetentionPolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_impersonation_role_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetImpersonationRoleOutput,
+    crate::error::GetImpersonationRoleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetImpersonationRoleError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetImpersonationRoleError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::GetImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::GetImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::GetImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::GetImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetImpersonationRoleError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_impersonation_role_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetImpersonationRoleOutput,
+    crate::error::GetImpersonationRoleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_impersonation_role_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_impersonation_role(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetImpersonationRoleError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_impersonation_role_effect_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetImpersonationRoleEffectOutput,
+    crate::error::GetImpersonationRoleEffectError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetImpersonationRoleEffectError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetImpersonationRoleEffectError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::GetImpersonationRoleEffectError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleEffectErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleEffectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EntityStateException" => crate::error::GetImpersonationRoleEffectError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleEffectErrorKind::EntityStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleEffectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::GetImpersonationRoleEffectError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleEffectErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleEffectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::GetImpersonationRoleEffectError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleEffectErrorKind::OrganizationNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::organization_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleEffectError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "OrganizationStateException" => crate::error::GetImpersonationRoleEffectError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleEffectErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleEffectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::GetImpersonationRoleEffectError {
+            meta: generic,
+            kind: crate::error::GetImpersonationRoleEffectErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImpersonationRoleEffectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetImpersonationRoleEffectError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_impersonation_role_effect_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetImpersonationRoleEffectOutput,
+    crate::error::GetImpersonationRoleEffectError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_impersonation_role_effect_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_impersonation_role_effect(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetImpersonationRoleEffectError::unhandled)?;
         output.build()
     })
 }
@@ -5026,6 +5652,102 @@ pub fn parse_list_groups_response(
             output,
         )
         .map_err(crate::error::ListGroupsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_impersonation_roles_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListImpersonationRolesOutput,
+    crate::error::ListImpersonationRolesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListImpersonationRolesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListImpersonationRolesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::ListImpersonationRolesError {
+            meta: generic,
+            kind: crate::error::ListImpersonationRolesErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImpersonationRolesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::ListImpersonationRolesError {
+            meta: generic,
+            kind: crate::error::ListImpersonationRolesErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImpersonationRolesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::ListImpersonationRolesError {
+            meta: generic,
+            kind: crate::error::ListImpersonationRolesErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImpersonationRolesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListImpersonationRolesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_impersonation_roles_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListImpersonationRolesOutput,
+    crate::error::ListImpersonationRolesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_impersonation_roles_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_impersonation_roles(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListImpersonationRolesError::unhandled)?;
         output.build()
     })
 }
@@ -6020,6 +6742,23 @@ pub fn parse_put_access_control_rule_error(
                     let mut output = crate::error::organization_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAccessControlRuleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::PutAccessControlRuleError {
+            meta: generic,
+            kind: crate::error::PutAccessControlRuleErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAccessControlRuleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7661,6 +8400,165 @@ pub fn parse_update_default_mail_domain_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_default_mail_domain_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_impersonation_role_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateImpersonationRoleOutput,
+    crate::error::UpdateImpersonationRoleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateImpersonationRoleError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateImpersonationRoleError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::UpdateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::UpdateImpersonationRoleErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EntityStateException" => crate::error::UpdateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::UpdateImpersonationRoleErrorKind::EntityStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::UpdateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::UpdateImpersonationRoleErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::UpdateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::UpdateImpersonationRoleErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::UpdateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::UpdateImpersonationRoleErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::UpdateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::UpdateImpersonationRoleErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateImpersonationRoleError {
+            meta: generic,
+            kind: crate::error::UpdateImpersonationRoleErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImpersonationRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateImpersonationRoleError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_impersonation_role_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateImpersonationRoleOutput,
+    crate::error::UpdateImpersonationRoleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_impersonation_role_output::Builder::default();
         let _ = response;
         output.build()
     })

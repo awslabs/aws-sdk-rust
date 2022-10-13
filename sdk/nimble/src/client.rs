@@ -96,7 +96,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AcceptEulas::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AcceptEulas::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`eula_ids(Vec<String>)`](crate::client::fluent_builders::AcceptEulas::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::client::fluent_builders::AcceptEulas::set_eula_ids): <p>The EULA ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::AcceptEulas::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::AcceptEulas::set_studio_id): <p>A collection of EULA IDs.</p>
+    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::AcceptEulas::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::AcceptEulas::set_studio_id): <p>The studio ID.</p>
     /// - On success, responds with [`AcceptEulasOutput`](crate::output::AcceptEulasOutput) with field(s):
     ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::output::AcceptEulasOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
     /// - On failure, responds with [`SdkError<AcceptEulasError>`](crate::error::AcceptEulasError)
@@ -156,7 +156,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`expiration_in_seconds(i32)`](crate::client::fluent_builders::CreateStreamingSessionStream::expiration_in_seconds) / [`set_expiration_in_seconds(i32)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_expiration_in_seconds): <p>The expiration time in seconds.</p>
+    ///   - [`expiration_in_seconds(i32)`](crate::client::fluent_builders::CreateStreamingSessionStream::expiration_in_seconds) / [`set_expiration_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_expiration_in_seconds): <p>The expiration time in seconds.</p>
     ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_session_id): <p>The streaming session ID.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput) with field(s):
@@ -220,7 +220,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_launch_profile_id): <p>The Launch Profile ID.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteLaunchProfileMemberOutput`](crate::output::DeleteLaunchProfileMemberOutput)
 
@@ -279,7 +279,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
 
@@ -341,7 +341,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_launch_profile_id): <p>The Launch Profile ID.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`GetLaunchProfileMemberOutput`](crate::output::GetLaunchProfileMemberOutput) with field(s):
     ///   - [`member(Option<LaunchProfileMembership>)`](crate::output::GetLaunchProfileMemberOutput::member): <p>The member.</p>
@@ -407,7 +407,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetStudioMember`](crate::client::fluent_builders::GetStudioMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::GetStudioMember::set_principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::GetStudioMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStudioMember::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput) with field(s):
     ///   - [`member(Option<StudioMembership>)`](crate::output::GetStudioMemberOutput::member): <p>The member.</p>
@@ -447,7 +447,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_launch_profile_id): <p>The Launch Profile ID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfileMembers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_max_results): <p>The max number of results to return in the response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfileMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_max_results): <p>The max number of results to return in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_next_token): <p>The token to request the next page of results. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`ListLaunchProfileMembersOutput`](crate::output::ListLaunchProfileMembersOutput) with field(s):
@@ -461,9 +461,9 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLaunchProfiles::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfiles::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLaunchProfiles::set_max_results): <p>The max number of results to return in the response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLaunchProfiles::set_max_results): <p>The max number of results to return in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_next_token): <p>The token to request the next page of results. </p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`states(Vec<LaunchProfileState>)`](crate::client::fluent_builders::ListLaunchProfiles::states) / [`set_states(Option<Vec<LaunchProfileState>>)`](crate::client::fluent_builders::ListLaunchProfiles::set_states): <p>Filter this request to launch profiles in any of the given states.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput) with field(s):
@@ -507,7 +507,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudioComponents::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioComponents::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStudioComponents::set_max_results): <p>The max number of results to return in the response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStudioComponents::set_max_results): <p>The max number of results to return in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_next_token): <p>The token to request the next page of results. </p>
     ///   - [`states(Vec<StudioComponentState>)`](crate::client::fluent_builders::ListStudioComponents::states) / [`set_states(Option<Vec<StudioComponentState>>)`](crate::client::fluent_builders::ListStudioComponents::set_states): <p>Filters the request to studio components that are in one of the given states. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_studio_id): <p>The studio ID. </p>
@@ -523,7 +523,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudioMembers::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioMembers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStudioMembers::set_max_results): <p>The max number of results to return in the response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStudioMembers::set_max_results): <p>The max number of results to return in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioMembers::set_next_token): <p>The token to request the next page of results. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStudioMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStudioMembers::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput) with field(s):
@@ -664,7 +664,7 @@ impl Client {
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_launch_profile_id): <p>The Launch Profile ID.</p>
     ///   - [`persona(LaunchProfilePersona)`](crate::client::fluent_builders::UpdateLaunchProfileMember::persona) / [`set_persona(Option<LaunchProfilePersona>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_persona): <p>The persona.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput) with field(s):
     ///   - [`member(Option<LaunchProfileMembership>)`](crate::output::UpdateLaunchProfileMemberOutput::member): <p>The updated member. </p>
@@ -823,12 +823,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_eula_ids(input);
             self
         }
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The studio ID.</p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(input.into());
             self
         }
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The studio ID.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2055,12 +2055,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
@@ -2538,12 +2538,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
@@ -3028,12 +3028,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
@@ -3559,12 +3559,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
@@ -3998,12 +3998,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
@@ -5012,10 +5012,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartStudioSSOConfigurationRepair`.
     ///
-    /// <p>Repairs the Amazon Web Services SSO configuration for a given studio.</p>
-    /// <p>If the studio has a valid Amazon Web Services SSO configuration currently associated with it, this operation will fail with a validation error.</p>
-    /// <p>If the studio does not have a valid Amazon Web Services SSO configuration currently associated with it, then a new Amazon Web Services SSO application is created for the studio and the studio is changed to the READY state.</p>
-    /// <p>After the Amazon Web Services SSO application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio.</p>
+    /// <p>Repairs the IAM Identity Center configuration for a given studio.</p>
+    /// <p>If the studio has a valid IAM Identity Center configuration currently associated with it, this operation will fail with a validation error.</p>
+    /// <p>If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new IAM Identity Center application is created for the studio and the studio is changed to the READY state.</p>
+    /// <p>After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStudioSSOConfigurationRepair {
         handle: std::sync::Arc<super::Handle>,
@@ -5666,12 +5666,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_persona(input);
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input.into());
             self
         }
-        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+        /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self

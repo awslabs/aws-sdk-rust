@@ -2008,6 +2008,24 @@ pub fn parse_opt_out_speaker_error(
                 tmp
             }),
         },
+        "ServiceQuotaExceededException" => crate::error::OptOutSpeakerError {
+            meta: generic,
+            kind: crate::error::OptOutSpeakerErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OptOutSpeakerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::OptOutSpeakerError {
             meta: generic,
             kind: crate::error::OptOutSpeakerErrorKind::ThrottlingException({

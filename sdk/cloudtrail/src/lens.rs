@@ -9,8 +9,38 @@ pub(crate) fn reflens_structure_crate_output_get_query_results_output_next_token
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_channels_output_next_token(
+    input: &crate::output::ListChannelsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_event_data_stores_output_next_token(
     input: &crate::output::ListEventDataStoresOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_import_failures_output_next_token(
+    input: &crate::output::ListImportFailuresOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_imports_output_next_token(
+    input: &crate::output::ListImportsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -63,6 +93,26 @@ pub(crate) fn reflens_structure_crate_output_lookup_events_output_next_token(
     input: &crate::output::LookupEventsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_import_failures_output_failures(
+    input: crate::output::ListImportFailuresOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ImportFailureListItem>> {
+    let input = match input.failures {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_imports_output_imports(
+    input: crate::output::ListImportsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ImportsListItem>> {
+    let input = match input.imports {
         None => return None,
         Some(t) => t,
     };

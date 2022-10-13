@@ -107,7 +107,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::set_cluster_name): <p>The name of the cluster to associate the configuration to.</p>
-    ///   - [`oidc(OidcIdentityProviderConfigRequest)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::oidc) / [`set_oidc(Option<OidcIdentityProviderConfigRequest>)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::set_oidc): <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    ///   - [`oidc(OidcIdentityProviderConfigRequest)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::oidc) / [`set_oidc(Option<OidcIdentityProviderConfigRequest>)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::set_oidc): <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::set_tags): <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::AssociateIdentityProviderConfig::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`AssociateIdentityProviderConfigOutput`](crate::output::AssociateIdentityProviderConfigOutput) with field(s):
@@ -126,7 +126,7 @@ impl Client {
     ///   - [`addon_name(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::addon_name) / [`set_addon_name(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     ///   - [`addon_version(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::addon_version) / [`set_addon_version(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_addon_version): <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     ///   - [`service_account_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::service_account_role_arn) / [`set_service_account_role_arn(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_service_account_role_arn): <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>   <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>  </note>
-    ///   - [`resolve_conflicts(ResolveConflicts)`](crate::client::fluent_builders::CreateAddon::resolve_conflicts) / [`set_resolve_conflicts(Option<ResolveConflicts>)`](crate::client::fluent_builders::CreateAddon::set_resolve_conflicts): <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
+    ///   - [`resolve_conflicts(ResolveConflicts)`](crate::client::fluent_builders::CreateAddon::resolve_conflicts) / [`set_resolve_conflicts(Option<ResolveConflicts>)`](crate::client::fluent_builders::CreateAddon::set_resolve_conflicts): <p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p>  <ul>   <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li>   <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li>   <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p> </li>  </ul>  <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAddon::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAddon::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAddon::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAddon::set_tags): <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     /// - On success, responds with [`CreateAddonOutput`](crate::output::CreateAddonOutput) with field(s):
@@ -139,7 +139,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_name): <p>The unique name to give to your cluster.</p>
-    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_version): <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_version): <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>   <p>The default version might not be the latest version available.</p>  </note>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     ///   - [`resources_vpc_config(VpcConfigRequest)`](crate::client::fluent_builders::CreateCluster::resources_vpc_config) / [`set_resources_vpc_config(Option<VpcConfigRequest>)`](crate::client::fluent_builders::CreateCluster::set_resources_vpc_config): <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
     ///   - [`kubernetes_network_config(KubernetesNetworkConfigRequest)`](crate::client::fluent_builders::CreateCluster::kubernetes_network_config) / [`set_kubernetes_network_config(Option<KubernetesNetworkConfigRequest>)`](crate::client::fluent_builders::CreateCluster::set_kubernetes_network_config): <p>The Kubernetes network configuration for the cluster.</p>
@@ -147,6 +147,7 @@ impl Client {
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCluster::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCluster::set_tags): <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     ///   - [`encryption_config(Vec<EncryptionConfig>)`](crate::client::fluent_builders::CreateCluster::encryption_config) / [`set_encryption_config(Option<Vec<EncryptionConfig>>)`](crate::client::fluent_builders::CreateCluster::set_encryption_config): <p>The encryption configuration for the cluster.</p>
+    ///   - [`outpost_config(OutpostConfigRequest)`](crate::client::fluent_builders::CreateCluster::outpost_config) / [`set_outpost_config(Option<OutpostConfigRequest>)`](crate::client::fluent_builders::CreateCluster::set_outpost_config): <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
     /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The full description of your new cluster.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
@@ -301,7 +302,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityProviderConfig::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::DescribeIdentityProviderConfig::set_cluster_name): <p>The cluster name that the identity provider configuration is associated to.</p>
-    ///   - [`identity_provider_config(IdentityProviderConfig)`](crate::client::fluent_builders::DescribeIdentityProviderConfig::identity_provider_config) / [`set_identity_provider_config(Option<IdentityProviderConfig>)`](crate::client::fluent_builders::DescribeIdentityProviderConfig::set_identity_provider_config): <p>An object that represents an identity provider configuration.</p>
+    ///   - [`identity_provider_config(IdentityProviderConfig)`](crate::client::fluent_builders::DescribeIdentityProviderConfig::identity_provider_config) / [`set_identity_provider_config(Option<IdentityProviderConfig>)`](crate::client::fluent_builders::DescribeIdentityProviderConfig::set_identity_provider_config): <p>An object representing an identity provider configuration.</p>
     /// - On success, responds with [`DescribeIdentityProviderConfigOutput`](crate::output::DescribeIdentityProviderConfigOutput) with field(s):
     ///   - [`identity_provider_config(Option<IdentityProviderConfigResponse>)`](crate::output::DescribeIdentityProviderConfigOutput::identity_provider_config): <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeIdentityProviderConfigError>`](crate::error::DescribeIdentityProviderConfigError)
@@ -338,7 +339,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateIdentityProviderConfig::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::DisassociateIdentityProviderConfig::set_cluster_name): <p>The name of the cluster to disassociate an identity provider from.</p>
-    ///   - [`identity_provider_config(IdentityProviderConfig)`](crate::client::fluent_builders::DisassociateIdentityProviderConfig::identity_provider_config) / [`set_identity_provider_config(Option<IdentityProviderConfig>)`](crate::client::fluent_builders::DisassociateIdentityProviderConfig::set_identity_provider_config): <p>An object that represents an identity provider configuration.</p>
+    ///   - [`identity_provider_config(IdentityProviderConfig)`](crate::client::fluent_builders::DisassociateIdentityProviderConfig::identity_provider_config) / [`set_identity_provider_config(Option<IdentityProviderConfig>)`](crate::client::fluent_builders::DisassociateIdentityProviderConfig::set_identity_provider_config): <p>An object representing an identity provider configuration.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DisassociateIdentityProviderConfig::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DisassociateIdentityProviderConfig::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`DisassociateIdentityProviderConfigOutput`](crate::output::DisassociateIdentityProviderConfigOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::output::DisassociateIdentityProviderConfigOutput::update): <p>An object representing an asynchronous update.</p>
@@ -486,7 +487,7 @@ impl Client {
     ///   - [`addon_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAddon::addon_name) / [`set_addon_name(Option<String>)`](crate::client::fluent_builders::UpdateAddon::set_addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     ///   - [`addon_version(impl Into<String>)`](crate::client::fluent_builders::UpdateAddon::addon_version) / [`set_addon_version(Option<String>)`](crate::client::fluent_builders::UpdateAddon::set_addon_version): <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     ///   - [`service_account_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAddon::service_account_role_arn) / [`set_service_account_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAddon::set_service_account_role_arn): <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>   <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>  </note>
-    ///   - [`resolve_conflicts(ResolveConflicts)`](crate::client::fluent_builders::UpdateAddon::resolve_conflicts) / [`set_resolve_conflicts(Option<ResolveConflicts>)`](crate::client::fluent_builders::UpdateAddon::set_resolve_conflicts): <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
+    ///   - [`resolve_conflicts(ResolveConflicts)`](crate::client::fluent_builders::UpdateAddon::resolve_conflicts) / [`set_resolve_conflicts(Option<ResolveConflicts>)`](crate::client::fluent_builders::UpdateAddon::set_resolve_conflicts): <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>  <ul>   <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>   <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>   <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>  </ul>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAddon::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateAddon::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`UpdateAddonOutput`](crate::output::UpdateAddonOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::output::UpdateAddonOutput::update): <p>An object representing an asynchronous update.</p>
@@ -744,12 +745,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_name(input);
             self
         }
-        /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+        /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn oidc(mut self, input: crate::model::OidcIdentityProviderConfigRequest) -> Self {
             self.inner = self.inner.oidc(input);
             self
         }
-        /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+        /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn set_oidc(
             mut self,
             input: std::option::Option<crate::model::OidcIdentityProviderConfigRequest>,
@@ -911,12 +912,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_account_role_arn(input);
             self
         }
-        /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
+        /// <p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p>
+        /// <ul>
+        /// <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li>
+        /// <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li>
+        /// <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p> </li>
+        /// </ul>
+        /// <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>
         pub fn resolve_conflicts(mut self, input: crate::model::ResolveConflicts) -> Self {
             self.inner = self.inner.resolve_conflicts(input);
             self
         }
-        /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
+        /// <p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p>
+        /// <ul>
+        /// <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li>
+        /// <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li>
+        /// <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p> </li>
+        /// </ul>
+        /// <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>
         pub fn set_resolve_conflicts(
             mut self,
             input: std::option::Option<crate::model::ResolveConflicts>,
@@ -1041,12 +1054,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
+        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
+        /// <p>The default version might not be the latest version available.</p>
+        /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
+        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
+        /// <p>The default version might not be the latest version available.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -1155,6 +1172,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
         ) -> Self {
             self.inner = self.inner.set_encryption_config(input);
+            self
+        }
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+        pub fn outpost_config(mut self, input: crate::model::OutpostConfigRequest) -> Self {
+            self.inner = self.inner.outpost_config(input);
+            self
+        }
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+        pub fn set_outpost_config(
+            mut self,
+            input: std::option::Option<crate::model::OutpostConfigRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_outpost_config(input);
             self
         }
     }
@@ -2544,7 +2574,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_name(input);
             self
         }
-        /// <p>An object that represents an identity provider configuration.</p>
+        /// <p>An object representing an identity provider configuration.</p>
         pub fn identity_provider_config(
             mut self,
             input: crate::model::IdentityProviderConfig,
@@ -2552,7 +2582,7 @@ pub mod fluent_builders {
             self.inner = self.inner.identity_provider_config(input);
             self
         }
-        /// <p>An object that represents an identity provider configuration.</p>
+        /// <p>An object representing an identity provider configuration.</p>
         pub fn set_identity_provider_config(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderConfig>,
@@ -2842,7 +2872,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_name(input);
             self
         }
-        /// <p>An object that represents an identity provider configuration.</p>
+        /// <p>An object representing an identity provider configuration.</p>
         pub fn identity_provider_config(
             mut self,
             input: crate::model::IdentityProviderConfig,
@@ -2850,7 +2880,7 @@ pub mod fluent_builders {
             self.inner = self.inner.identity_provider_config(input);
             self
         }
-        /// <p>An object that represents an identity provider configuration.</p>
+        /// <p>An object representing an identity provider configuration.</p>
         pub fn set_identity_provider_config(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderConfig>,
@@ -4045,12 +4075,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_account_role_arn(input);
             self
         }
-        /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
+        /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
+        /// <ul>
+        /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+        /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+        /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+        /// </ul>
         pub fn resolve_conflicts(mut self, input: crate::model::ResolveConflicts) -> Self {
             self.inner = self.inner.resolve_conflicts(input);
             self
         }
-        /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
+        /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
+        /// <ul>
+        /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+        /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+        /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+        /// </ul>
         pub fn set_resolve_conflicts(
             mut self,
             input: std::option::Option<crate::model::ResolveConflicts>,

@@ -286,7 +286,9 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstalledComponentsOutput {
-    /// <p>A list that summarizes each component on the core device.</p>
+    /// <p>A list that summarizes each component on the core device.</p> <note>
+    /// <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>
+    /// </note>
     #[doc(hidden)]
     pub installed_components: std::option::Option<std::vec::Vec<crate::model::InstalledComponent>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -294,7 +296,9 @@ pub struct ListInstalledComponentsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstalledComponentsOutput {
-    /// <p>A list that summarizes each component on the core device.</p>
+    /// <p>A list that summarizes each component on the core device.</p> <note>
+    /// <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>
+    /// </note>
     pub fn installed_components(&self) -> std::option::Option<&[crate::model::InstalledComponent]> {
         self.installed_components.as_deref()
     }
@@ -326,14 +330,18 @@ pub mod list_installed_components_output {
         ///
         /// To override the contents of this collection use [`set_installed_components`](Self::set_installed_components).
         ///
-        /// <p>A list that summarizes each component on the core device.</p>
+        /// <p>A list that summarizes each component on the core device.</p> <note>
+        /// <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>
+        /// </note>
         pub fn installed_components(mut self, input: crate::model::InstalledComponent) -> Self {
             let mut v = self.installed_components.unwrap_or_default();
             v.push(input);
             self.installed_components = Some(v);
             self
         }
-        /// <p>A list that summarizes each component on the core device.</p>
+        /// <p>A list that summarizes each component on the core device.</p> <note>
+        /// <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>
+        /// </note>
         pub fn set_installed_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstalledComponent>>,

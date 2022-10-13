@@ -130,7 +130,7 @@ impl OrganizationNotFoundException {
     }
 }
 
-/// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+/// <p>The user, group, or resource name isn't unique in WorkMail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NameAvailabilityException {
@@ -910,71 +910,6 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The resource can have up to 50 user-applied tags.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyTagsException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl TooManyTagsException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyTagsException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyTagsException {}
-/// See [`TooManyTagsException`](crate::error::TooManyTagsException).
-pub mod too_many_tags_exception {
-
-    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
-        pub fn build(self) -> crate::error::TooManyTagsException {
-            crate::error::TooManyTagsException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl TooManyTagsException {
-    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
-    pub fn builder() -> crate::error::too_many_tags_exception::Builder {
-        crate::error::too_many_tags_exception::Builder::default()
-    }
-}
-
 /// <p>The request exceeds the limit of the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -999,8 +934,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -1037,6 +972,71 @@ impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
     pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
         crate::error::limit_exceeded_exception::Builder::default()
+    }
+}
+
+/// <p>The resource can have up to 50 user-applied tags.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyTagsException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TooManyTagsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyTagsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TooManyTagsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyTagsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyTagsException")?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyTagsException {}
+/// See [`TooManyTagsException`](crate::error::TooManyTagsException).
+pub mod too_many_tags_exception {
+
+    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
+        pub fn build(self) -> crate::error::TooManyTagsException {
+            crate::error::TooManyTagsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyTagsException {
+    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
+    pub fn builder() -> crate::error::too_many_tags_exception::Builder {
+        crate::error::too_many_tags_exception::Builder::default()
     }
 }
 
@@ -1235,7 +1235,7 @@ impl MailDomainInUseException {
     }
 }
 
-/// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+/// <p>You SES configuration has customizations that WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCustomSesConfigurationException {
@@ -1300,7 +1300,7 @@ impl InvalidCustomSesConfigurationException {
     }
 }
 
-/// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
+/// <p>This user, group, or resource name is not allowed in WorkMail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedNameException {
@@ -1753,6 +1753,134 @@ impl std::error::Error for AssociateMemberToGroupError {
     }
 }
 
+/// Error type for the `AssumeImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssumeImpersonationRoleError {
+    /// Kind of error that occurred.
+    pub kind: AssumeImpersonationRoleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssumeImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssumeImpersonationRoleErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssumeImpersonationRoleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssumeImpersonationRoleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            AssumeImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssumeImpersonationRoleErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            AssumeImpersonationRoleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            AssumeImpersonationRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssumeImpersonationRoleError {
+    fn code(&self) -> Option<&str> {
+        AssumeImpersonationRoleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssumeImpersonationRoleError {
+    /// Creates a new `AssumeImpersonationRoleError`.
+    pub fn new(kind: AssumeImpersonationRoleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssumeImpersonationRoleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssumeImpersonationRoleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssumeImpersonationRoleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssumeImpersonationRoleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssumeImpersonationRoleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeImpersonationRoleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssumeImpersonationRoleErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeImpersonationRoleErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssumeImpersonationRoleErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeImpersonationRoleErrorKind::OrganizationStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssumeImpersonationRoleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeImpersonationRoleErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for AssumeImpersonationRoleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssumeImpersonationRoleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            AssumeImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            AssumeImpersonationRoleErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            AssumeImpersonationRoleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            AssumeImpersonationRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CancelMailboxExportJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2068,7 +2196,7 @@ pub enum CreateAvailabilityConfigurationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+    /// <p>The user, group, or resource name isn't unique in WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
     /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
@@ -2232,13 +2360,13 @@ pub enum CreateGroupErrorKind {
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+    /// <p>The user, group, or resource name isn't unique in WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
     /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
+    /// <p>This user, group, or resource name is not allowed in WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -2380,6 +2508,156 @@ impl std::error::Error for CreateGroupError {
             CreateGroupErrorKind::ReservedNameException(_inner) => Some(_inner),
             CreateGroupErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             CreateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateImpersonationRoleError {
+    /// Kind of error that occurred.
+    pub kind: CreateImpersonationRoleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateImpersonationRoleErrorKind {
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
+    EntityStateException(crate::error::EntityStateException),
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request exceeds the limit of the resource.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateImpersonationRoleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateImpersonationRoleErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            CreateImpersonationRoleErrorKind::EntityStateException(_inner) => _inner.fmt(f),
+            CreateImpersonationRoleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateImpersonationRoleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateImpersonationRoleErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            CreateImpersonationRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateImpersonationRoleError {
+    fn code(&self) -> Option<&str> {
+        CreateImpersonationRoleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateImpersonationRoleError {
+    /// Creates a new `CreateImpersonationRoleError`.
+    pub fn new(kind: CreateImpersonationRoleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateImpersonationRoleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateImpersonationRoleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateImpersonationRoleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateImpersonationRoleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateImpersonationRoleErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImpersonationRoleErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateImpersonationRoleErrorKind::EntityStateException`.
+    pub fn is_entity_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImpersonationRoleErrorKind::EntityStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateImpersonationRoleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImpersonationRoleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateImpersonationRoleErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImpersonationRoleErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateImpersonationRoleErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImpersonationRoleErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateImpersonationRoleErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImpersonationRoleErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for CreateImpersonationRoleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateImpersonationRoleErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            CreateImpersonationRoleErrorKind::EntityStateException(_inner) => Some(_inner),
+            CreateImpersonationRoleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateImpersonationRoleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            CreateImpersonationRoleErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            CreateImpersonationRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2543,7 +2821,7 @@ pub enum CreateOrganizationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+    /// <p>The user, group, or resource name isn't unique in WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2680,13 +2958,13 @@ pub enum CreateResourceErrorKind {
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+    /// <p>The user, group, or resource name isn't unique in WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
     /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
+    /// <p>This user, group, or resource name is not allowed in WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2847,13 +3125,13 @@ pub enum CreateUserErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+    /// <p>The user, group, or resource name isn't unique in WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
     /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
+    /// <p>This user, group, or resource name is not allowed in WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -3645,6 +3923,123 @@ impl std::error::Error for DeleteGroupError {
             DeleteGroupErrorKind::OrganizationStateException(_inner) => Some(_inner),
             DeleteGroupErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteImpersonationRoleError {
+    /// Kind of error that occurred.
+    pub kind: DeleteImpersonationRoleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteImpersonationRoleErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteImpersonationRoleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteImpersonationRoleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteImpersonationRoleErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            DeleteImpersonationRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteImpersonationRoleError {
+    fn code(&self) -> Option<&str> {
+        DeleteImpersonationRoleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteImpersonationRoleError {
+    /// Creates a new `DeleteImpersonationRoleError`.
+    pub fn new(kind: DeleteImpersonationRoleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteImpersonationRoleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteImpersonationRoleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteImpersonationRoleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteImpersonationRoleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteImpersonationRoleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImpersonationRoleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteImpersonationRoleErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImpersonationRoleErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteImpersonationRoleErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImpersonationRoleErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteImpersonationRoleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteImpersonationRoleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            DeleteImpersonationRoleErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            DeleteImpersonationRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4727,7 +5122,7 @@ pub struct DeregisterMailDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterMailDomainErrorKind {
-    /// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+    /// <p>You SES configuration has customizations that WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
     InvalidCustomSesConfigurationException(crate::error::InvalidCustomSesConfigurationException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -6099,6 +6494,8 @@ pub enum GetAccessControlEffectErrorKind {
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -6109,6 +6506,7 @@ impl std::fmt::Display for GetAccessControlEffectError {
             GetAccessControlEffectErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             GetAccessControlEffectErrorKind::OrganizationNotFoundException(_inner) => _inner.fmt(f),
             GetAccessControlEffectErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            GetAccessControlEffectErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetAccessControlEffectErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6191,6 +6589,13 @@ impl GetAccessControlEffectError {
             GetAccessControlEffectErrorKind::OrganizationStateException(_)
         )
     }
+    /// Returns `true` if the error kind is `GetAccessControlEffectErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccessControlEffectErrorKind::ResourceNotFoundException(_)
+        )
+    }
 }
 impl std::error::Error for GetAccessControlEffectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6199,6 +6604,7 @@ impl std::error::Error for GetAccessControlEffectError {
             GetAccessControlEffectErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetAccessControlEffectErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
             GetAccessControlEffectErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            GetAccessControlEffectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAccessControlEffectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6330,6 +6736,286 @@ impl std::error::Error for GetDefaultRetentionPolicyError {
             }
             GetDefaultRetentionPolicyErrorKind::OrganizationStateException(_inner) => Some(_inner),
             GetDefaultRetentionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetImpersonationRoleError {
+    /// Kind of error that occurred.
+    pub kind: GetImpersonationRoleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetImpersonationRoleErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetImpersonationRoleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetImpersonationRoleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => _inner.fmt(f),
+            GetImpersonationRoleErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            GetImpersonationRoleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetImpersonationRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetImpersonationRoleError {
+    fn code(&self) -> Option<&str> {
+        GetImpersonationRoleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetImpersonationRoleError {
+    /// Creates a new `GetImpersonationRoleError`.
+    pub fn new(kind: GetImpersonationRoleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetImpersonationRoleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetImpersonationRoleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetImpersonationRoleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetImpersonationRoleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleErrorKind::OrganizationStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetImpersonationRoleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetImpersonationRoleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            GetImpersonationRoleErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            GetImpersonationRoleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetImpersonationRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetImpersonationRoleEffect` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetImpersonationRoleEffectError {
+    /// Kind of error that occurred.
+    pub kind: GetImpersonationRoleEffectErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetImpersonationRoleEffect` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetImpersonationRoleEffectErrorKind {
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
+    EntityStateException(crate::error::EntityStateException),
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetImpersonationRoleEffectError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetImpersonationRoleEffectErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            GetImpersonationRoleEffectErrorKind::EntityStateException(_inner) => _inner.fmt(f),
+            GetImpersonationRoleEffectErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetImpersonationRoleEffectErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetImpersonationRoleEffectErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetImpersonationRoleEffectErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetImpersonationRoleEffectErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetImpersonationRoleEffectError {
+    fn code(&self) -> Option<&str> {
+        GetImpersonationRoleEffectError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetImpersonationRoleEffectError {
+    /// Creates a new `GetImpersonationRoleEffectError`.
+    pub fn new(kind: GetImpersonationRoleEffectErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetImpersonationRoleEffectError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetImpersonationRoleEffectErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetImpersonationRoleEffectError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetImpersonationRoleEffectErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleEffectErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleEffectErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleEffectErrorKind::EntityStateException`.
+    pub fn is_entity_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleEffectErrorKind::EntityStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleEffectErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleEffectErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleEffectErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleEffectErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleEffectErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleEffectErrorKind::OrganizationStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImpersonationRoleEffectErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImpersonationRoleEffectErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetImpersonationRoleEffectError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetImpersonationRoleEffectErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetImpersonationRoleEffectErrorKind::EntityStateException(_inner) => Some(_inner),
+            GetImpersonationRoleEffectErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetImpersonationRoleEffectErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetImpersonationRoleEffectErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            GetImpersonationRoleEffectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetImpersonationRoleEffectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -7464,6 +8150,121 @@ impl std::error::Error for ListGroupsError {
             ListGroupsErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
             ListGroupsErrorKind::OrganizationStateException(_inner) => Some(_inner),
             ListGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListImpersonationRoles` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListImpersonationRolesError {
+    /// Kind of error that occurred.
+    pub kind: ListImpersonationRolesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListImpersonationRoles` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListImpersonationRolesErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListImpersonationRolesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListImpersonationRolesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListImpersonationRolesErrorKind::OrganizationNotFoundException(_inner) => _inner.fmt(f),
+            ListImpersonationRolesErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            ListImpersonationRolesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListImpersonationRolesError {
+    fn code(&self) -> Option<&str> {
+        ListImpersonationRolesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListImpersonationRolesError {
+    /// Creates a new `ListImpersonationRolesError`.
+    pub fn new(kind: ListImpersonationRolesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListImpersonationRolesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListImpersonationRolesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListImpersonationRolesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListImpersonationRolesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListImpersonationRolesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImpersonationRolesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListImpersonationRolesErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImpersonationRolesErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListImpersonationRolesErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImpersonationRolesErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for ListImpersonationRolesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListImpersonationRolesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListImpersonationRolesErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            ListImpersonationRolesErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            ListImpersonationRolesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8667,6 +9468,8 @@ pub enum PutAccessControlRuleErrorKind {
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -8678,6 +9481,7 @@ impl std::fmt::Display for PutAccessControlRuleError {
             PutAccessControlRuleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             PutAccessControlRuleErrorKind::OrganizationNotFoundException(_inner) => _inner.fmt(f),
             PutAccessControlRuleErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            PutAccessControlRuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             PutAccessControlRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8767,6 +9571,13 @@ impl PutAccessControlRuleError {
             PutAccessControlRuleErrorKind::OrganizationStateException(_)
         )
     }
+    /// Returns `true` if the error kind is `PutAccessControlRuleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccessControlRuleErrorKind::ResourceNotFoundException(_)
+        )
+    }
 }
 impl std::error::Error for PutAccessControlRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8776,6 +9587,7 @@ impl std::error::Error for PutAccessControlRuleError {
             PutAccessControlRuleErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutAccessControlRuleErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
             PutAccessControlRuleErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            PutAccessControlRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutAccessControlRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10750,6 +11562,167 @@ impl std::error::Error for UpdateDefaultMailDomainError {
     }
 }
 
+/// Error type for the `UpdateImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateImpersonationRoleError {
+    /// Kind of error that occurred.
+    pub kind: UpdateImpersonationRoleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateImpersonationRole` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateImpersonationRoleErrorKind {
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
+    EntityStateException(crate::error::EntityStateException),
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request exceeds the limit of the resource.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateImpersonationRoleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateImpersonationRoleErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            UpdateImpersonationRoleErrorKind::EntityStateException(_inner) => _inner.fmt(f),
+            UpdateImpersonationRoleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateImpersonationRoleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateImpersonationRoleErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            UpdateImpersonationRoleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateImpersonationRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateImpersonationRoleError {
+    fn code(&self) -> Option<&str> {
+        UpdateImpersonationRoleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateImpersonationRoleError {
+    /// Creates a new `UpdateImpersonationRoleError`.
+    pub fn new(kind: UpdateImpersonationRoleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateImpersonationRoleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateImpersonationRoleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateImpersonationRoleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateImpersonationRoleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateImpersonationRoleErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImpersonationRoleErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImpersonationRoleErrorKind::EntityStateException`.
+    pub fn is_entity_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImpersonationRoleErrorKind::EntityStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImpersonationRoleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImpersonationRoleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImpersonationRoleErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImpersonationRoleErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImpersonationRoleErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImpersonationRoleErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImpersonationRoleErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImpersonationRoleErrorKind::OrganizationStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateImpersonationRoleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateImpersonationRoleErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateImpersonationRoleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateImpersonationRoleErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            UpdateImpersonationRoleErrorKind::EntityStateException(_inner) => Some(_inner),
+            UpdateImpersonationRoleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateImpersonationRoleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateImpersonationRoleErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            UpdateImpersonationRoleErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            UpdateImpersonationRoleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateImpersonationRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateMailboxQuota` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11275,7 +12248,7 @@ pub enum UpdateResourceErrorKind {
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
     /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+    /// <p>The user, group, or resource name isn't unique in WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
     /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),

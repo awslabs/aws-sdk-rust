@@ -2170,6 +2170,215 @@ impl SearchSecurityProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchRoutingProfilesOutput {
+    /// <p>Information about the routing profiles.</p>
+    #[doc(hidden)]
+    pub routing_profiles: std::option::Option<std::vec::Vec<crate::model::RoutingProfile>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The total number of routing profiles which matched your search query.</p>
+    #[doc(hidden)]
+    pub approximate_total_count: std::option::Option<i64>,
+}
+impl SearchRoutingProfilesOutput {
+    /// <p>Information about the routing profiles.</p>
+    pub fn routing_profiles(&self) -> std::option::Option<&[crate::model::RoutingProfile]> {
+        self.routing_profiles.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of routing profiles which matched your search query.</p>
+    pub fn approximate_total_count(&self) -> std::option::Option<i64> {
+        self.approximate_total_count
+    }
+}
+impl std::fmt::Debug for SearchRoutingProfilesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchRoutingProfilesOutput");
+        formatter.field("routing_profiles", &self.routing_profiles);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("approximate_total_count", &self.approximate_total_count);
+        formatter.finish()
+    }
+}
+/// See [`SearchRoutingProfilesOutput`](crate::output::SearchRoutingProfilesOutput).
+pub mod search_routing_profiles_output {
+
+    /// A builder for [`SearchRoutingProfilesOutput`](crate::output::SearchRoutingProfilesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) routing_profiles:
+            std::option::Option<std::vec::Vec<crate::model::RoutingProfile>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) approximate_total_count: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// Appends an item to `routing_profiles`.
+        ///
+        /// To override the contents of this collection use [`set_routing_profiles`](Self::set_routing_profiles).
+        ///
+        /// <p>Information about the routing profiles.</p>
+        pub fn routing_profiles(mut self, input: crate::model::RoutingProfile) -> Self {
+            let mut v = self.routing_profiles.unwrap_or_default();
+            v.push(input);
+            self.routing_profiles = Some(v);
+            self
+        }
+        /// <p>Information about the routing profiles.</p>
+        pub fn set_routing_profiles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RoutingProfile>>,
+        ) -> Self {
+            self.routing_profiles = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The total number of routing profiles which matched your search query.</p>
+        pub fn approximate_total_count(mut self, input: i64) -> Self {
+            self.approximate_total_count = Some(input);
+            self
+        }
+        /// <p>The total number of routing profiles which matched your search query.</p>
+        pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.approximate_total_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchRoutingProfilesOutput`](crate::output::SearchRoutingProfilesOutput).
+        pub fn build(self) -> crate::output::SearchRoutingProfilesOutput {
+            crate::output::SearchRoutingProfilesOutput {
+                routing_profiles: self.routing_profiles,
+                next_token: self.next_token,
+                approximate_total_count: self.approximate_total_count,
+            }
+        }
+    }
+}
+impl SearchRoutingProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`SearchRoutingProfilesOutput`](crate::output::SearchRoutingProfilesOutput).
+    pub fn builder() -> crate::output::search_routing_profiles_output::Builder {
+        crate::output::search_routing_profiles_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchQueuesOutput {
+    /// <p>Information about the queues.</p>
+    #[doc(hidden)]
+    pub queues: std::option::Option<std::vec::Vec<crate::model::Queue>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The total number of queues which matched your search query.</p>
+    #[doc(hidden)]
+    pub approximate_total_count: std::option::Option<i64>,
+}
+impl SearchQueuesOutput {
+    /// <p>Information about the queues.</p>
+    pub fn queues(&self) -> std::option::Option<&[crate::model::Queue]> {
+        self.queues.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of queues which matched your search query.</p>
+    pub fn approximate_total_count(&self) -> std::option::Option<i64> {
+        self.approximate_total_count
+    }
+}
+impl std::fmt::Debug for SearchQueuesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchQueuesOutput");
+        formatter.field("queues", &self.queues);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("approximate_total_count", &self.approximate_total_count);
+        formatter.finish()
+    }
+}
+/// See [`SearchQueuesOutput`](crate::output::SearchQueuesOutput).
+pub mod search_queues_output {
+
+    /// A builder for [`SearchQueuesOutput`](crate::output::SearchQueuesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) queues: std::option::Option<std::vec::Vec<crate::model::Queue>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) approximate_total_count: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// Appends an item to `queues`.
+        ///
+        /// To override the contents of this collection use [`set_queues`](Self::set_queues).
+        ///
+        /// <p>Information about the queues.</p>
+        pub fn queues(mut self, input: crate::model::Queue) -> Self {
+            let mut v = self.queues.unwrap_or_default();
+            v.push(input);
+            self.queues = Some(v);
+            self
+        }
+        /// <p>Information about the queues.</p>
+        pub fn set_queues(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Queue>>,
+        ) -> Self {
+            self.queues = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The total number of queues which matched your search query.</p>
+        pub fn approximate_total_count(mut self, input: i64) -> Self {
+            self.approximate_total_count = Some(input);
+            self
+        }
+        /// <p>The total number of queues which matched your search query.</p>
+        pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.approximate_total_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchQueuesOutput`](crate::output::SearchQueuesOutput).
+        pub fn build(self) -> crate::output::SearchQueuesOutput {
+            crate::output::SearchQueuesOutput {
+                queues: self.queues,
+                next_token: self.next_token,
+                approximate_total_count: self.approximate_total_count,
+            }
+        }
+    }
+}
+impl SearchQueuesOutput {
+    /// Creates a new builder-style object to manufacture [`SearchQueuesOutput`](crate::output::SearchQueuesOutput).
+    pub fn builder() -> crate::output::search_queues_output::Builder {
+        crate::output::search_queues_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAvailablePhoneNumbersOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
@@ -2875,7 +3084,7 @@ impl ListSecurityProfilesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityProfilePermissionsOutput {
-    /// <p>The permissions granted to the security profile.</p>
+    /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -2883,7 +3092,7 @@ pub struct ListSecurityProfilePermissionsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilePermissionsOutput {
-    /// <p>The permissions granted to the security profile.</p>
+    /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     pub fn permissions(&self) -> std::option::Option<&[std::string::String]> {
         self.permissions.as_deref()
     }
@@ -2914,14 +3123,14 @@ pub mod list_security_profile_permissions_output {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The permissions granted to the security profile.</p>
+        /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
         pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
-        /// <p>The permissions granted to the security profile.</p>
+        /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

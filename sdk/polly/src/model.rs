@@ -68,6 +68,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Hans,
     #[allow(missing_docs)] // documentation missing in model
+    Hiujin,
+    #[allow(missing_docs)] // documentation missing in model
     Ines,
     #[allow(missing_docs)] // documentation missing in model
     Ivy,
@@ -189,6 +191,7 @@ impl std::convert::From<&str> for VoiceId {
             "Gwyneth" => VoiceId::Gwyneth,
             "Hannah" => VoiceId::Hannah,
             "Hans" => VoiceId::Hans,
+            "Hiujin" => VoiceId::Hiujin,
             "Ines" => VoiceId::Ines,
             "Ivy" => VoiceId::Ivy,
             "Jacek" => VoiceId::Jacek,
@@ -276,6 +279,7 @@ impl VoiceId {
             VoiceId::Gwyneth => "Gwyneth",
             VoiceId::Hannah => "Hannah",
             VoiceId::Hans => "Hans",
+            VoiceId::Hiujin => "Hiujin",
             VoiceId::Ines => "Ines",
             VoiceId::Ivy => "Ivy",
             VoiceId::Jacek => "Jacek",
@@ -354,6 +358,7 @@ impl VoiceId {
             "Gwyneth",
             "Hannah",
             "Hans",
+            "Hiujin",
             "Ines",
             "Ivy",
             "Jacek",
@@ -666,6 +671,8 @@ pub enum LanguageCode {
     SvSe,
     #[allow(missing_docs)] // documentation missing in model
     TrTr,
+    #[allow(missing_docs)] // documentation missing in model
+    YueCn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -705,6 +712,7 @@ impl std::convert::From<&str> for LanguageCode {
             "ru-RU" => LanguageCode::RuRu,
             "sv-SE" => LanguageCode::SvSe,
             "tr-TR" => LanguageCode::TrTr,
+            "yue-CN" => LanguageCode::YueCn,
             other => LanguageCode::Unknown(other.to_owned()),
         }
     }
@@ -753,6 +761,7 @@ impl LanguageCode {
             LanguageCode::RuRu => "ru-RU",
             LanguageCode::SvSe => "sv-SE",
             LanguageCode::TrTr => "tr-TR",
+            LanguageCode::YueCn => "yue-CN",
             LanguageCode::Unknown(s) => s.as_ref(),
         }
     }
@@ -792,6 +801,7 @@ impl LanguageCode {
             "ru-RU",
             "sv-SE",
             "tr-TR",
+            "yue-CN",
         ]
     }
 }

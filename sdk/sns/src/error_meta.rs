@@ -441,6 +441,39 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDataProtectionPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetDataProtectionPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetDataProtectionPolicyErrorKind::AuthorizationErrorException(
+                    inner,
+                ) => Error::AuthorizationErrorException(inner),
+                crate::error::GetDataProtectionPolicyErrorKind::InternalErrorException(inner) => {
+                    Error::InternalErrorException(inner)
+                }
+                crate::error::GetDataProtectionPolicyErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::GetDataProtectionPolicyErrorKind::InvalidSecurityException(inner) => {
+                    Error::InvalidSecurityException(inner)
+                }
+                crate::error::GetDataProtectionPolicyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetDataProtectionPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEndpointAttributesError, R>>
     for Error
 where
@@ -949,6 +982,9 @@ where
                 crate::error::PublishErrorKind::PlatformApplicationDisabledException(inner) => {
                     Error::PlatformApplicationDisabledException(inner)
                 }
+                crate::error::PublishErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::PublishErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -1019,7 +1055,43 @@ where
                 crate::error::PublishBatchErrorKind::TooManyEntriesInBatchRequestException(
                     inner,
                 ) => Error::TooManyEntriesInBatchRequestException(inner),
+                crate::error::PublishBatchErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::PublishBatchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutDataProtectionPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutDataProtectionPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutDataProtectionPolicyErrorKind::AuthorizationErrorException(
+                    inner,
+                ) => Error::AuthorizationErrorException(inner),
+                crate::error::PutDataProtectionPolicyErrorKind::InternalErrorException(inner) => {
+                    Error::InternalErrorException(inner)
+                }
+                crate::error::PutDataProtectionPolicyErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::PutDataProtectionPolicyErrorKind::InvalidSecurityException(inner) => {
+                    Error::InvalidSecurityException(inner)
+                }
+                crate::error::PutDataProtectionPolicyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::PutDataProtectionPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

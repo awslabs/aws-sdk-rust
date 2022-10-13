@@ -635,7 +635,7 @@ pub struct ComponentPlatform {
     /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and <code>architecture</code> of the platform.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>architecture</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -646,7 +646,7 @@ impl ComponentPlatform {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>architecture</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -690,7 +690,7 @@ pub mod component_platform {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>architecture</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -701,7 +701,7 @@ pub mod component_platform {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>architecture</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -746,6 +746,10 @@ pub struct InstalledComponent {
     /// <p>Whether or not the component is a root component.</p>
     #[doc(hidden)]
     pub is_root: bool,
+    /// <p>The status of how current the data is.</p>
+    /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
+    #[doc(hidden)]
+    pub last_status_change_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstalledComponent {
     /// <p>The name of the component.</p>
@@ -770,6 +774,11 @@ impl InstalledComponent {
     pub fn is_root(&self) -> bool {
         self.is_root
     }
+    /// <p>The status of how current the data is.</p>
+    /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
+    pub fn last_status_change_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_status_change_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for InstalledComponent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -779,6 +788,10 @@ impl std::fmt::Debug for InstalledComponent {
         formatter.field("lifecycle_state", &self.lifecycle_state);
         formatter.field("lifecycle_state_details", &self.lifecycle_state_details);
         formatter.field("is_root", &self.is_root);
+        formatter.field(
+            "last_status_change_timestamp",
+            &self.last_status_change_timestamp,
+        );
         formatter.finish()
     }
 }
@@ -794,6 +807,7 @@ pub mod installed_component {
             std::option::Option<crate::model::InstalledComponentLifecycleState>,
         pub(crate) lifecycle_state_details: std::option::Option<std::string::String>,
         pub(crate) is_root: std::option::Option<bool>,
+        pub(crate) last_status_change_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the component.</p>
@@ -861,6 +875,21 @@ pub mod installed_component {
             self.is_root = input;
             self
         }
+        /// <p>The status of how current the data is.</p>
+        /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
+        pub fn last_status_change_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_status_change_timestamp = Some(input);
+            self
+        }
+        /// <p>The status of how current the data is.</p>
+        /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
+        pub fn set_last_status_change_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_status_change_timestamp = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstalledComponent`](crate::model::InstalledComponent).
         pub fn build(self) -> crate::model::InstalledComponent {
             crate::model::InstalledComponent {
@@ -869,6 +898,7 @@ pub mod installed_component {
                 lifecycle_state: self.lifecycle_state,
                 lifecycle_state_details: self.lifecycle_state_details,
                 is_root: self.is_root.unwrap_or_default(),
+                last_status_change_timestamp: self.last_status_change_timestamp,
             }
         }
     }
@@ -963,6 +993,61 @@ impl InstalledComponentLifecycleState {
     }
 }
 impl AsRef<str> for InstalledComponentLifecycleState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InstalledComponentTopologyFilter {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Root,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InstalledComponentTopologyFilter {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => InstalledComponentTopologyFilter::All,
+            "ROOT" => InstalledComponentTopologyFilter::Root,
+            other => InstalledComponentTopologyFilter::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InstalledComponentTopologyFilter {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstalledComponentTopologyFilter::from(s))
+    }
+}
+impl InstalledComponentTopologyFilter {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstalledComponentTopologyFilter::All => "ALL",
+            InstalledComponentTopologyFilter::Root => "ROOT",
+            InstalledComponentTopologyFilter::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "ROOT"]
+    }
+}
+impl AsRef<str> for InstalledComponentTopologyFilter {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

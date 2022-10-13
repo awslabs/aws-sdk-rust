@@ -155,6 +155,7 @@ impl Client {
     ///   - [`metric_source(MetricSource)`](crate::client::fluent_builders::CreateMetricSet::metric_source) / [`set_metric_source(Option<MetricSource>)`](crate::client::fluent_builders::CreateMetricSet::set_metric_source): <p>Contains information about how the source data should be interpreted.</p>
     ///   - [`timezone(impl Into<String>)`](crate::client::fluent_builders::CreateMetricSet::timezone) / [`set_timezone(Option<String>)`](crate::client::fluent_builders::CreateMetricSet::set_timezone): <p>The time zone in which your source data was recorded.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateMetricSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateMetricSet::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
+    ///   - [`dimension_filter_list(Vec<MetricSetDimensionFilter>)`](crate::client::fluent_builders::CreateMetricSet::dimension_filter_list) / [`set_dimension_filter_list(Option<Vec<MetricSetDimensionFilter>>)`](crate::client::fluent_builders::CreateMetricSet::set_dimension_filter_list): <p>A list of filters that specify which data is kept for anomaly detection.</p>
     /// - On success, responds with [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::output::CreateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<CreateMetricSetError>`](crate::error::CreateMetricSetError)
@@ -255,6 +256,7 @@ impl Client {
     ///   - [`metric_set_frequency(Option<Frequency>)`](crate::output::DescribeMetricSetOutput::metric_set_frequency): <p>The interval at which the data will be analyzed for anomalies.</p>
     ///   - [`timezone(Option<String>)`](crate::output::DescribeMetricSetOutput::timezone): <p>The time zone in which the dataset's data was recorded.</p>
     ///   - [`metric_source(Option<MetricSource>)`](crate::output::DescribeMetricSetOutput::metric_source): <p>Contains information about the dataset's source data.</p>
+    ///   - [`dimension_filter_list(Option<Vec<MetricSetDimensionFilter>>)`](crate::output::DescribeMetricSetOutput::dimension_filter_list): <p>The dimensions and their values that were used to filter the dataset.</p>
     /// - On failure, responds with [`SdkError<DescribeMetricSetError>`](crate::error::DescribeMetricSetError)
     pub fn describe_metric_set(&self) -> fluent_builders::DescribeMetricSet {
         fluent_builders::DescribeMetricSet::new(self.handle.clone())
@@ -493,6 +495,7 @@ impl Client {
     ///   - [`dimension_list(Vec<String>)`](crate::client::fluent_builders::UpdateMetricSet::dimension_list) / [`set_dimension_list(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateMetricSet::set_dimension_list): <p>The dimension list.</p>
     ///   - [`metric_set_frequency(Frequency)`](crate::client::fluent_builders::UpdateMetricSet::metric_set_frequency) / [`set_metric_set_frequency(Option<Frequency>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_set_frequency): <p>The dataset's interval.</p>
     ///   - [`metric_source(MetricSource)`](crate::client::fluent_builders::UpdateMetricSet::metric_source) / [`set_metric_source(Option<MetricSource>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_source): <p>Contains information about source data used to generate metrics.</p>
+    ///   - [`dimension_filter_list(Vec<MetricSetDimensionFilter>)`](crate::client::fluent_builders::UpdateMetricSet::dimension_filter_list) / [`set_dimension_filter_list(Option<Vec<MetricSetDimensionFilter>>)`](crate::client::fluent_builders::UpdateMetricSet::set_dimension_filter_list): <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
     /// - On success, responds with [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::output::UpdateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<UpdateMetricSetError>`](crate::error::UpdateMetricSetError)
@@ -1190,6 +1193,26 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// Appends an item to `DimensionFilterList`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
+        ///
+        /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+        pub fn dimension_filter_list(
+            mut self,
+            input: crate::model::MetricSetDimensionFilter,
+        ) -> Self {
+            self.inner = self.inner.dimension_filter_list(input);
+            self
+        }
+        /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+        pub fn set_dimension_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_dimension_filter_list(input);
             self
         }
     }
@@ -3749,6 +3772,26 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::MetricSource>,
         ) -> Self {
             self.inner = self.inner.set_metric_source(input);
+            self
+        }
+        /// Appends an item to `DimensionFilterList`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
+        ///
+        /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
+        pub fn dimension_filter_list(
+            mut self,
+            input: crate::model::MetricSetDimensionFilter,
+        ) -> Self {
+            self.inner = self.inner.dimension_filter_list(input);
+            self
+        }
+        /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
+        pub fn set_dimension_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_dimension_filter_list(input);
             self
         }
     }

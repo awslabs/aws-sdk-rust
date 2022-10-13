@@ -115,6 +115,18 @@ impl Client {
     pub fn associate_member_to_group(&self) -> fluent_builders::AssociateMemberToGroup {
         fluent_builders::AssociateMemberToGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AssumeImpersonationRole`](crate::client::fluent_builders::AssumeImpersonationRole) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::AssumeImpersonationRole::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::AssumeImpersonationRole::set_organization_id): <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+    ///   - [`impersonation_role_id(impl Into<String>)`](crate::client::fluent_builders::AssumeImpersonationRole::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::client::fluent_builders::AssumeImpersonationRole::set_impersonation_role_id): <p>The impersonation role ID to assume.</p>
+    /// - On success, responds with [`AssumeImpersonationRoleOutput`](crate::output::AssumeImpersonationRoleOutput) with field(s):
+    ///   - [`token(Option<String>)`](crate::output::AssumeImpersonationRoleOutput::token): <p>The authentication token for the impersonation role.</p>
+    ///   - [`expires_in(Option<i64>)`](crate::output::AssumeImpersonationRoleOutput::expires_in): <p>The authentication token's validity, in seconds.</p>
+    /// - On failure, responds with [`SdkError<AssumeImpersonationRoleError>`](crate::error::AssumeImpersonationRoleError)
+    pub fn assume_impersonation_role(&self) -> fluent_builders::AssumeImpersonationRole {
+        fluent_builders::AssumeImpersonationRole::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CancelMailboxExportJob`](crate::client::fluent_builders::CancelMailboxExportJob) operation.
     ///
     /// - The fluent builder is configurable:
@@ -143,7 +155,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_client_token): <p>An idempotent token that ensures that an API request is executed only once.</p>
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_organization_id): <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_organization_id): <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_domain_name): <p>The domain to which the provider applies.</p>
     ///   - [`ews_provider(EwsAvailabilityProvider)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::ews_provider) / [`set_ews_provider(Option<EwsAvailabilityProvider>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_ews_provider): <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     ///   - [`lambda_provider(LambdaAvailabilityProvider)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::lambda_provider) / [`set_lambda_provider(Option<LambdaAvailabilityProvider>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_lambda_provider): <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
@@ -166,10 +178,25 @@ impl Client {
     pub fn create_group(&self) -> fluent_builders::CreateGroup {
         fluent_builders::CreateGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateImpersonationRole`](crate::client::fluent_builders::CreateImpersonationRole) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateImpersonationRole::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateImpersonationRole::set_client_token): <p>The idempotency token for the client request.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateImpersonationRole::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateImpersonationRole::set_organization_id): <p>The WorkMail organization to create the new impersonation role within.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateImpersonationRole::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateImpersonationRole::set_name): <p>The name of the new impersonation role.</p>
+    ///   - [`r#type(ImpersonationRoleType)`](crate::client::fluent_builders::CreateImpersonationRole::type) / [`set_type(Option<ImpersonationRoleType>)`](crate::client::fluent_builders::CreateImpersonationRole::set_type): <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateImpersonationRole::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateImpersonationRole::set_description): <p>The description of the new impersonation role.</p>
+    ///   - [`rules(Vec<ImpersonationRule>)`](crate::client::fluent_builders::CreateImpersonationRole::rules) / [`set_rules(Option<Vec<ImpersonationRule>>)`](crate::client::fluent_builders::CreateImpersonationRole::set_rules): <p>The list of rules for the impersonation role.</p>
+    /// - On success, responds with [`CreateImpersonationRoleOutput`](crate::output::CreateImpersonationRoleOutput) with field(s):
+    ///   - [`impersonation_role_id(Option<String>)`](crate::output::CreateImpersonationRoleOutput::impersonation_role_id): <p>The new impersonation role ID.</p>
+    /// - On failure, responds with [`SdkError<CreateImpersonationRoleError>`](crate::error::CreateImpersonationRoleError)
+    pub fn create_impersonation_role(&self) -> fluent_builders::CreateImpersonationRole {
+        fluent_builders::CreateImpersonationRole::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateMobileDeviceAccessRule`](crate::client::fluent_builders::CreateMobileDeviceAccessRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::set_organization_id): <p>The Amazon WorkMail organization under which the rule will be created.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::set_organization_id): <p>The WorkMail organization under which the rule will be created.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::set_client_token): <p>The idempotency token for the client request.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::set_name): <p>The rule name.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateMobileDeviceAccessRule::set_description): <p>The rule description.</p>
@@ -197,8 +224,8 @@ impl Client {
     ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::CreateOrganization::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::CreateOrganization::set_alias): <p>The organization alias.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateOrganization::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateOrganization::set_client_token): <p>The idempotency token associated with the request.</p>
     ///   - [`domains(Vec<Domain>)`](crate::client::fluent_builders::CreateOrganization::domains) / [`set_domains(Option<Vec<Domain>>)`](crate::client::fluent_builders::CreateOrganization::set_domains): <p>The email domains to associate with the organization.</p>
-    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateOrganization::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateOrganization::set_kms_key_arn): <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
-    ///   - [`enable_interoperability(bool)`](crate::client::fluent_builders::CreateOrganization::enable_interoperability) / [`set_enable_interoperability(bool)`](crate::client::fluent_builders::CreateOrganization::set_enable_interoperability): <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateOrganization::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateOrganization::set_kms_key_arn): <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
+    ///   - [`enable_interoperability(bool)`](crate::client::fluent_builders::CreateOrganization::enable_interoperability) / [`set_enable_interoperability(bool)`](crate::client::fluent_builders::CreateOrganization::set_enable_interoperability): <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
     /// - On success, responds with [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput) with field(s):
     ///   - [`organization_id(Option<String>)`](crate::output::CreateOrganizationOutput::organization_id): <p>The organization ID.</p>
     /// - On failure, responds with [`SdkError<CreateOrganizationError>`](crate::error::CreateOrganizationError)
@@ -256,7 +283,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteAvailabilityConfiguration`](crate::client::fluent_builders::DeleteAvailabilityConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::set_organization_id): <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::set_organization_id): <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::set_domain_name): <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     /// - On success, responds with [`DeleteAvailabilityConfigurationOutput`](crate::output::DeleteAvailabilityConfigurationOutput)
 
@@ -289,6 +316,17 @@ impl Client {
     pub fn delete_group(&self) -> fluent_builders::DeleteGroup {
         fluent_builders::DeleteGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteImpersonationRole`](crate::client::fluent_builders::DeleteImpersonationRole) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteImpersonationRole::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteImpersonationRole::set_organization_id): <p>The WorkMail organization from which to delete the impersonation role.</p>
+    ///   - [`impersonation_role_id(impl Into<String>)`](crate::client::fluent_builders::DeleteImpersonationRole::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::client::fluent_builders::DeleteImpersonationRole::set_impersonation_role_id): <p>The ID of the impersonation role to delete.</p>
+    /// - On success, responds with [`DeleteImpersonationRoleOutput`](crate::output::DeleteImpersonationRoleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteImpersonationRoleError>`](crate::error::DeleteImpersonationRoleError)
+    pub fn delete_impersonation_role(&self) -> fluent_builders::DeleteImpersonationRole {
+        fluent_builders::DeleteImpersonationRole::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteMailboxPermissions`](crate::client::fluent_builders::DeleteMailboxPermissions) operation.
     ///
     /// - The fluent builder is configurable:
@@ -304,7 +342,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteMobileDeviceAccessOverride`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride::set_organization_id): <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride::set_organization_id): <p>The WorkMail organization for which the access override will be deleted.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride::set_user_id): <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
     ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride::set_device_id): <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
     /// - On success, responds with [`DeleteMobileDeviceAccessOverrideOutput`](crate::output::DeleteMobileDeviceAccessOverrideOutput)
@@ -318,7 +356,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteMobileDeviceAccessRule`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule::set_organization_id): <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule::set_organization_id): <p>The WorkMail organization under which the rule will be deleted.</p>
     ///   - [`mobile_device_access_rule_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule::mobile_device_access_rule_id) / [`set_mobile_device_access_rule_id(Option<String>)`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule::set_mobile_device_access_rule_id): <p>The identifier of the rule to be deleted.</p>
     /// - On success, responds with [`DeleteMobileDeviceAccessRuleOutput`](crate::output::DeleteMobileDeviceAccessRuleOutput)
 
@@ -377,7 +415,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeregisterFromWorkMail`](crate::client::fluent_builders::DeregisterFromWorkMail) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterFromWorkMail::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeregisterFromWorkMail::set_organization_id): <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterFromWorkMail::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeregisterFromWorkMail::set_organization_id): <p>The identifier for the organization under which the WorkMail entity exists.</p>
     ///   - [`entity_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterFromWorkMail::entity_id) / [`set_entity_id(Option<String>)`](crate::client::fluent_builders::DeregisterFromWorkMail::set_entity_id): <p>The identifier for the member (user or group) to be updated.</p>
     /// - On success, responds with [`DeregisterFromWorkMailOutput`](crate::output::DeregisterFromWorkMailOutput)
 
@@ -388,8 +426,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeregisterMailDomain`](crate::client::fluent_builders::DeregisterMailDomain) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterMailDomain::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeregisterMailDomain::set_organization_id): <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeregisterMailDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeregisterMailDomain::set_domain_name): <p>The domain to deregister in WorkMail and SES. </p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterMailDomain::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeregisterMailDomain::set_organization_id): <p>The WorkMail organization for which the domain will be deregistered.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeregisterMailDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeregisterMailDomain::set_domain_name): <p>The domain to deregister in WorkMail and SES.</p>
     /// - On success, responds with [`DeregisterMailDomainOutput`](crate::output::DeregisterMailDomainOutput)
 
     /// - On failure, responds with [`SdkError<DeregisterMailDomainError>`](crate::error::DeregisterMailDomainError)
@@ -418,7 +456,7 @@ impl Client {
     ///   - [`group_id(Option<String>)`](crate::output::DescribeGroupOutput::group_id): <p>The identifier of the described group.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeGroupOutput::name): <p>The name of the described group.</p>
     ///   - [`email(Option<String>)`](crate::output::DescribeGroupOutput::email): <p>The email of the described group.</p>
-    ///   - [`state(Option<EntityState>)`](crate::output::DescribeGroupOutput::state): <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    ///   - [`state(Option<EntityState>)`](crate::output::DescribeGroupOutput::state): <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     ///   - [`enabled_date(Option<DateTime>)`](crate::output::DescribeGroupOutput::enabled_date): <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
     ///   - [`disabled_date(Option<DateTime>)`](crate::output::DescribeGroupOutput::disabled_date): <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::error::DescribeGroupError)
@@ -465,7 +503,7 @@ impl Client {
     ///   - [`organization_id(Option<String>)`](crate::output::DescribeOrganizationOutput::organization_id): <p>The identifier of an organization.</p>
     ///   - [`alias(Option<String>)`](crate::output::DescribeOrganizationOutput::alias): <p>The alias for an organization.</p>
     ///   - [`state(Option<String>)`](crate::output::DescribeOrganizationOutput::state): <p>The state of an organization.</p>
-    ///   - [`directory_id(Option<String>)`](crate::output::DescribeOrganizationOutput::directory_id): <p>The identifier for the directory associated with an Amazon WorkMail organization.</p>
+    ///   - [`directory_id(Option<String>)`](crate::output::DescribeOrganizationOutput::directory_id): <p>The identifier for the directory associated with an WorkMail organization.</p>
     ///   - [`directory_type(Option<String>)`](crate::output::DescribeOrganizationOutput::directory_type): <p>The type of directory associated with the WorkMail organization.</p>
     ///   - [`default_mail_domain(Option<String>)`](crate::output::DescribeOrganizationOutput::default_mail_domain): <p>The default mail domain associated with the organization.</p>
     ///   - [`completed_date(Option<DateTime>)`](crate::output::DescribeOrganizationOutput::completed_date): <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
@@ -486,7 +524,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::DescribeResourceOutput::name): <p>The name of the described resource.</p>
     ///   - [`r#type(Option<ResourceType>)`](crate::output::DescribeResourceOutput::type): <p>The type of the described resource.</p>
     ///   - [`booking_options(Option<BookingOptions>)`](crate::output::DescribeResourceOutput::booking_options): <p>The booking options for the described resource.</p>
-    ///   - [`state(Option<EntityState>)`](crate::output::DescribeResourceOutput::state): <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
+    ///   - [`state(Option<EntityState>)`](crate::output::DescribeResourceOutput::state): <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     ///   - [`enabled_date(Option<DateTime>)`](crate::output::DescribeResourceOutput::enabled_date): <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
     ///   - [`disabled_date(Option<DateTime>)`](crate::output::DescribeResourceOutput::disabled_date): <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
     /// - On failure, responds with [`SdkError<DescribeResourceError>`](crate::error::DescribeResourceError)
@@ -503,10 +541,10 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::DescribeUserOutput::name): <p>The name for the user.</p>
     ///   - [`email(Option<String>)`](crate::output::DescribeUserOutput::email): <p>The email of the user.</p>
     ///   - [`display_name(Option<String>)`](crate::output::DescribeUserOutput::display_name): <p>The display name of the user.</p>
-    ///   - [`state(Option<EntityState>)`](crate::output::DescribeUserOutput::state): <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
-    ///   - [`user_role(Option<UserRole>)`](crate::output::DescribeUserOutput::user_role): <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
-    ///   - [`enabled_date(Option<DateTime>)`](crate::output::DescribeUserOutput::enabled_date): <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
-    ///   - [`disabled_date(Option<DateTime>)`](crate::output::DescribeUserOutput::disabled_date): <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    ///   - [`state(Option<EntityState>)`](crate::output::DescribeUserOutput::state): <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    ///   - [`user_role(Option<UserRole>)`](crate::output::DescribeUserOutput::user_role): <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    ///   - [`enabled_date(Option<DateTime>)`](crate::output::DescribeUserOutput::enabled_date): <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
+    ///   - [`disabled_date(Option<DateTime>)`](crate::output::DescribeUserOutput::disabled_date): <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::error::DescribeUserError)
     pub fn describe_user(&self) -> fluent_builders::DescribeUser {
         fluent_builders::DescribeUser::new(self.handle.clone())
@@ -544,6 +582,7 @@ impl Client {
     ///   - [`ip_address(impl Into<String>)`](crate::client::fluent_builders::GetAccessControlEffect::ip_address) / [`set_ip_address(Option<String>)`](crate::client::fluent_builders::GetAccessControlEffect::set_ip_address): <p>The IPv4 address.</p>
     ///   - [`action(impl Into<String>)`](crate::client::fluent_builders::GetAccessControlEffect::action) / [`set_action(Option<String>)`](crate::client::fluent_builders::GetAccessControlEffect::set_action): <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessControlEffect::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::GetAccessControlEffect::set_user_id): <p>The user ID.</p>
+    ///   - [`impersonation_role_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessControlEffect::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::client::fluent_builders::GetAccessControlEffect::set_impersonation_role_id): <p>The impersonation role ID.</p>
     /// - On success, responds with [`GetAccessControlEffectOutput`](crate::output::GetAccessControlEffectOutput) with field(s):
     ///   - [`effect(Option<AccessControlRuleEffect>)`](crate::output::GetAccessControlEffectOutput::effect): <p>The rule effect.</p>
     ///   - [`matched_rules(Option<Vec<String>>)`](crate::output::GetAccessControlEffectOutput::matched_rules): <p>The rules that match the given parameters, resulting in an effect.</p>
@@ -564,6 +603,37 @@ impl Client {
     pub fn get_default_retention_policy(&self) -> fluent_builders::GetDefaultRetentionPolicy {
         fluent_builders::GetDefaultRetentionPolicy::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetImpersonationRole`](crate::client::fluent_builders::GetImpersonationRole) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::GetImpersonationRole::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::GetImpersonationRole::set_organization_id): <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+    ///   - [`impersonation_role_id(impl Into<String>)`](crate::client::fluent_builders::GetImpersonationRole::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::client::fluent_builders::GetImpersonationRole::set_impersonation_role_id): <p>The impersonation role ID to retrieve.</p>
+    /// - On success, responds with [`GetImpersonationRoleOutput`](crate::output::GetImpersonationRoleOutput) with field(s):
+    ///   - [`impersonation_role_id(Option<String>)`](crate::output::GetImpersonationRoleOutput::impersonation_role_id): <p>The impersonation role ID.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetImpersonationRoleOutput::name): <p>The impersonation role name.</p>
+    ///   - [`r#type(Option<ImpersonationRoleType>)`](crate::output::GetImpersonationRoleOutput::type): <p>The impersonation role type.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetImpersonationRoleOutput::description): <p>The impersonation role description.</p>
+    ///   - [`rules(Option<Vec<ImpersonationRule>>)`](crate::output::GetImpersonationRoleOutput::rules): <p>The list of rules for the given impersonation role.</p>
+    ///   - [`date_created(Option<DateTime>)`](crate::output::GetImpersonationRoleOutput::date_created): <p>The date when the impersonation role was created.</p>
+    ///   - [`date_modified(Option<DateTime>)`](crate::output::GetImpersonationRoleOutput::date_modified): <p>The date when the impersonation role was last modified.</p>
+    /// - On failure, responds with [`SdkError<GetImpersonationRoleError>`](crate::error::GetImpersonationRoleError)
+    pub fn get_impersonation_role(&self) -> fluent_builders::GetImpersonationRole {
+        fluent_builders::GetImpersonationRole::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetImpersonationRoleEffect`](crate::client::fluent_builders::GetImpersonationRoleEffect) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::GetImpersonationRoleEffect::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::GetImpersonationRoleEffect::set_organization_id): <p>The WorkMail organization where the impersonation role is defined.</p>
+    ///   - [`impersonation_role_id(impl Into<String>)`](crate::client::fluent_builders::GetImpersonationRoleEffect::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::client::fluent_builders::GetImpersonationRoleEffect::set_impersonation_role_id): <p>The impersonation role ID to test.</p>
+    ///   - [`target_user(impl Into<String>)`](crate::client::fluent_builders::GetImpersonationRoleEffect::target_user) / [`set_target_user(Option<String>)`](crate::client::fluent_builders::GetImpersonationRoleEffect::set_target_user): <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
+    /// - On success, responds with [`GetImpersonationRoleEffectOutput`](crate::output::GetImpersonationRoleEffectOutput) with field(s):
+    ///   - [`r#type(Option<ImpersonationRoleType>)`](crate::output::GetImpersonationRoleEffectOutput::type): <p>The impersonation role type.</p>
+    ///   - [`effect(Option<AccessEffect>)`](crate::output::GetImpersonationRoleEffectOutput::effect): <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    ///   - [`matched_rules(Option<Vec<ImpersonationMatchedRule>>)`](crate::output::GetImpersonationRoleEffectOutput::matched_rules): <p>A list of the rules that match the input and produce the configured effect.</p>
+    /// - On failure, responds with [`SdkError<GetImpersonationRoleEffectError>`](crate::error::GetImpersonationRoleEffectError)
+    pub fn get_impersonation_role_effect(&self) -> fluent_builders::GetImpersonationRoleEffect {
+        fluent_builders::GetImpersonationRoleEffect::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetMailboxDetails`](crate::client::fluent_builders::GetMailboxDetails) operation.
     ///
     /// - The fluent builder is configurable:
@@ -579,10 +649,10 @@ impl Client {
     /// Constructs a fluent builder for the [`GetMailDomain`](crate::client::fluent_builders::GetMailDomain) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::GetMailDomain::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::GetMailDomain::set_organization_id): <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::GetMailDomain::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::GetMailDomain::set_organization_id): <p>The WorkMail organization for which the domain is retrieved.</p>
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetMailDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetMailDomain::set_domain_name): <p>The domain from which you want to retrieve details.</p>
     /// - On success, responds with [`GetMailDomainOutput`](crate::output::GetMailDomainOutput) with field(s):
-    ///   - [`records(Option<Vec<DnsRecord>>)`](crate::output::GetMailDomainOutput::records): <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+    ///   - [`records(Option<Vec<DnsRecord>>)`](crate::output::GetMailDomainOutput::records): <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
     ///   - [`is_test_domain(bool)`](crate::output::GetMailDomainOutput::is_test_domain): <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     ///   - [`is_default(bool)`](crate::output::GetMailDomainOutput::is_default): <p>Specifies whether the domain is the default domain for your organization.</p>
     ///   - [`ownership_verification_status(Option<DnsRecordVerificationStatus>)`](crate::output::GetMailDomainOutput::ownership_verification_status): <p> Indicates the status of the domain ownership verification.</p>
@@ -594,13 +664,13 @@ impl Client {
     /// Constructs a fluent builder for the [`GetMobileDeviceAccessEffect`](crate::client::fluent_builders::GetMobileDeviceAccessEffect) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::set_organization_id): <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::set_organization_id): <p>The WorkMail organization to simulate the access effect for.</p>
     ///   - [`device_type(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::device_type) / [`set_device_type(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::set_device_type): <p>Device type the simulated user will report.</p>
     ///   - [`device_model(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::device_model) / [`set_device_model(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::set_device_model): <p>Device model the simulated user will report.</p>
     ///   - [`device_operating_system(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::device_operating_system) / [`set_device_operating_system(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::set_device_operating_system): <p>Device operating system the simulated user will report.</p>
     ///   - [`device_user_agent(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::device_user_agent) / [`set_device_user_agent(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessEffect::set_device_user_agent): <p>Device user agent the simulated user will report.</p>
     /// - On success, responds with [`GetMobileDeviceAccessEffectOutput`](crate::output::GetMobileDeviceAccessEffectOutput) with field(s):
-    ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::output::GetMobileDeviceAccessEffectOutput::effect): <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
+    ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::output::GetMobileDeviceAccessEffectOutput::effect): <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
     ///   - [`matched_rules(Option<Vec<MobileDeviceAccessMatchedRule>>)`](crate::output::GetMobileDeviceAccessEffectOutput::matched_rules): <p>A list of the rules which matched the simulated user input and produced the effect.</p>
     /// - On failure, responds with [`SdkError<GetMobileDeviceAccessEffectError>`](crate::error::GetMobileDeviceAccessEffectError)
     pub fn get_mobile_device_access_effect(&self) -> fluent_builders::GetMobileDeviceAccessEffect {
@@ -609,7 +679,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetMobileDeviceAccessOverride`](crate::client::fluent_builders::GetMobileDeviceAccessOverride) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessOverride::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessOverride::set_organization_id): <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessOverride::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessOverride::set_organization_id): <p>The WorkMail organization to which you want to apply the override.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessOverride::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessOverride::set_user_id): <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
     ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessOverride::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::GetMobileDeviceAccessOverride::set_device_id): <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
     /// - On success, responds with [`GetMobileDeviceAccessOverrideOutput`](crate::output::GetMobileDeviceAccessOverrideOutput) with field(s):
@@ -654,11 +724,11 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAvailabilityConfigurations::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::set_organization_id): <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::set_organization_id): <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAvailabilityConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::set_max_results): <p>The maximum number of results to return in a single call.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::set_next_token): <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     /// - On success, responds with [`ListAvailabilityConfigurationsOutput`](crate::output::ListAvailabilityConfigurationsOutput) with field(s):
-    ///   - [`availability_configurations(Option<Vec<AvailabilityConfiguration>>)`](crate::output::ListAvailabilityConfigurationsOutput::availability_configurations): <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+    ///   - [`availability_configurations(Option<Vec<AvailabilityConfiguration>>)`](crate::output::ListAvailabilityConfigurationsOutput::availability_configurations): <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAvailabilityConfigurationsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
     /// - On failure, responds with [`SdkError<ListAvailabilityConfigurationsError>`](crate::error::ListAvailabilityConfigurationsError)
     pub fn list_availability_configurations(
@@ -695,6 +765,20 @@ impl Client {
     pub fn list_groups(&self) -> fluent_builders::ListGroups {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListImpersonationRoles`](crate::client::fluent_builders::ListImpersonationRoles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListImpersonationRoles::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListImpersonationRoles::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListImpersonationRoles::set_organization_id): <p>The WorkMail organization to which the listed impersonation roles belong.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImpersonationRoles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImpersonationRoles::set_next_token): <p>The token used to retrieve the next page of results. The first call doesn't require a token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListImpersonationRoles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListImpersonationRoles::set_max_results): <p>The maximum number of results returned in a single call.</p>
+    /// - On success, responds with [`ListImpersonationRolesOutput`](crate::output::ListImpersonationRolesOutput) with field(s):
+    ///   - [`roles(Option<Vec<ImpersonationRole>>)`](crate::output::ListImpersonationRolesOutput::roles): <p>The list of impersonation roles under the given WorkMail organization.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListImpersonationRolesOutput::next_token): <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
+    /// - On failure, responds with [`SdkError<ListImpersonationRolesError>`](crate::error::ListImpersonationRolesError)
+    pub fn list_impersonation_roles(&self) -> fluent_builders::ListImpersonationRoles {
+        fluent_builders::ListImpersonationRoles::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListMailboxExportJobs`](crate::client::fluent_builders::ListMailboxExportJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMailboxExportJobs::into_paginator).
     ///
@@ -728,11 +812,11 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMailDomains::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListMailDomains::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListMailDomains::set_organization_id): <p>The Amazon WorkMail organization for which to list domains.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListMailDomains::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListMailDomains::set_organization_id): <p>The WorkMail organization for which to list domains.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMailDomains::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMailDomains::set_max_results): <p>The maximum number of results to return in a single call.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMailDomains::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMailDomains::set_next_token): <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     /// - On success, responds with [`ListMailDomainsOutput`](crate::output::ListMailDomainsOutput) with field(s):
-    ///   - [`mail_domains(Option<Vec<MailDomainSummary>>)`](crate::output::ListMailDomainsOutput::mail_domains): <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
+    ///   - [`mail_domains(Option<Vec<MailDomainSummary>>)`](crate::output::ListMailDomainsOutput::mail_domains): <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMailDomainsOutput::next_token): <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListMailDomainsError>`](crate::error::ListMailDomainsError)
     pub fn list_mail_domains(&self) -> fluent_builders::ListMailDomains {
@@ -742,13 +826,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::set_organization_id): <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::set_organization_id): <p>The WorkMail organization under which to list mobile device access overrides.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::set_user_id): <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
     ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::set_device_id): <p>The mobile device to which the access override applies.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::set_next_token): <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::set_max_results): <p>The maximum number of results to return in a single call.</p>
     /// - On success, responds with [`ListMobileDeviceAccessOverridesOutput`](crate::output::ListMobileDeviceAccessOverridesOutput) with field(s):
-    ///   - [`overrides(Option<Vec<MobileDeviceAccessOverride>>)`](crate::output::ListMobileDeviceAccessOverridesOutput::overrides): <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+    ///   - [`overrides(Option<Vec<MobileDeviceAccessOverride>>)`](crate::output::ListMobileDeviceAccessOverridesOutput::overrides): <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMobileDeviceAccessOverridesOutput::next_token): <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListMobileDeviceAccessOverridesError>`](crate::error::ListMobileDeviceAccessOverridesError)
     pub fn list_mobile_device_access_overrides(
@@ -759,9 +843,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ListMobileDeviceAccessRules`](crate::client::fluent_builders::ListMobileDeviceAccessRules) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessRules::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessRules::set_organization_id): <p>The Amazon WorkMail organization for which to list the rules.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessRules::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListMobileDeviceAccessRules::set_organization_id): <p>The WorkMail organization for which to list the rules.</p>
     /// - On success, responds with [`ListMobileDeviceAccessRulesOutput`](crate::output::ListMobileDeviceAccessRulesOutput) with field(s):
-    ///   - [`rules(Option<Vec<MobileDeviceAccessRule>>)`](crate::output::ListMobileDeviceAccessRulesOutput::rules): <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
+    ///   - [`rules(Option<Vec<MobileDeviceAccessRule>>)`](crate::output::ListMobileDeviceAccessRulesOutput::rules): <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
     /// - On failure, responds with [`SdkError<ListMobileDeviceAccessRulesError>`](crate::error::ListMobileDeviceAccessRulesError)
     pub fn list_mobile_device_access_rules(&self) -> fluent_builders::ListMobileDeviceAccessRules {
         fluent_builders::ListMobileDeviceAccessRules::new(self.handle.clone())
@@ -789,7 +873,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceDelegates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResourceDelegates::set_max_results): <p>The number of maximum results in a page.</p>
     /// - On success, responds with [`ListResourceDelegatesOutput`](crate::output::ListResourceDelegatesOutput) with field(s):
     ///   - [`delegates(Option<Vec<Delegate>>)`](crate::output::ListResourceDelegatesOutput::delegates): <p>One page of the resource's delegates.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListResourceDelegatesOutput::next_token): <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceDelegatesOutput::next_token): <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     /// - On failure, responds with [`SdkError<ListResourceDelegatesError>`](crate::error::ListResourceDelegatesError)
     pub fn list_resource_delegates(&self) -> fluent_builders::ListResourceDelegates {
         fluent_builders::ListResourceDelegates::new(self.handle.clone())
@@ -845,6 +929,8 @@ impl Client {
     ///   - [`user_ids(Vec<String>)`](crate::client::fluent_builders::PutAccessControlRule::user_ids) / [`set_user_ids(Option<Vec<String>>)`](crate::client::fluent_builders::PutAccessControlRule::set_user_ids): <p>User IDs to include in the rule.</p>
     ///   - [`not_user_ids(Vec<String>)`](crate::client::fluent_builders::PutAccessControlRule::not_user_ids) / [`set_not_user_ids(Option<Vec<String>>)`](crate::client::fluent_builders::PutAccessControlRule::set_not_user_ids): <p>User IDs to exclude from the rule.</p>
     ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::PutAccessControlRule::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::PutAccessControlRule::set_organization_id): <p>The identifier of the organization.</p>
+    ///   - [`impersonation_role_ids(Vec<String>)`](crate::client::fluent_builders::PutAccessControlRule::impersonation_role_ids) / [`set_impersonation_role_ids(Option<Vec<String>>)`](crate::client::fluent_builders::PutAccessControlRule::set_impersonation_role_ids): <p>Impersonation role IDs to include in the rule.</p>
+    ///   - [`not_impersonation_role_ids(Vec<String>)`](crate::client::fluent_builders::PutAccessControlRule::not_impersonation_role_ids) / [`set_not_impersonation_role_ids(Option<Vec<String>>)`](crate::client::fluent_builders::PutAccessControlRule::set_not_impersonation_role_ids): <p>Impersonation role IDs to exclude from the rule.</p>
     /// - On success, responds with [`PutAccessControlRuleOutput`](crate::output::PutAccessControlRuleOutput)
 
     /// - On failure, responds with [`SdkError<PutAccessControlRuleError>`](crate::error::PutAccessControlRuleError)
@@ -868,7 +954,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutInboundDmarcSettings`](crate::client::fluent_builders::PutInboundDmarcSettings) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::PutInboundDmarcSettings::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::PutInboundDmarcSettings::set_organization_id): <p>The ID of the organization that you are applying the DMARC policy to. </p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::PutInboundDmarcSettings::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::PutInboundDmarcSettings::set_organization_id): <p>The ID of the organization that you are applying the DMARC policy to.</p>
     ///   - [`enforced(bool)`](crate::client::fluent_builders::PutInboundDmarcSettings::enforced) / [`set_enforced(Option<bool>)`](crate::client::fluent_builders::PutInboundDmarcSettings::set_enforced): <p>Enforces or suspends a policy after it's applied.</p>
     /// - On success, responds with [`PutInboundDmarcSettingsOutput`](crate::output::PutInboundDmarcSettingsOutput)
 
@@ -892,7 +978,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutMobileDeviceAccessOverride`](crate::client::fluent_builders::PutMobileDeviceAccessOverride) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::set_organization_id): <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::set_organization_id): <p>Identifies the WorkMail organization for which you create the override.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::set_user_id): <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
     ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::set_device_id): <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
     ///   - [`effect(MobileDeviceAccessRuleEffect)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::effect) / [`set_effect(Option<MobileDeviceAccessRuleEffect>)`](crate::client::fluent_builders::PutMobileDeviceAccessOverride::set_effect): <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
@@ -923,8 +1009,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::RegisterMailDomain::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::RegisterMailDomain::set_client_token): <p>Idempotency token used when retrying requests.</p>
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::RegisterMailDomain::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::RegisterMailDomain::set_organization_id): <p>The Amazon WorkMail organization under which you're creating the domain.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RegisterMailDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RegisterMailDomain::set_domain_name): <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::RegisterMailDomain::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::RegisterMailDomain::set_organization_id): <p>The WorkMail organization under which you're creating the domain.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RegisterMailDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RegisterMailDomain::set_domain_name): <p>The name of the mail domain to create in WorkMail and SES.</p>
     /// - On success, responds with [`RegisterMailDomainOutput`](crate::output::RegisterMailDomainOutput)
 
     /// - On failure, responds with [`SdkError<RegisterMailDomainError>`](crate::error::RegisterMailDomainError)
@@ -986,7 +1072,7 @@ impl Client {
     /// Constructs a fluent builder for the [`TestAvailabilityConfiguration`](crate::client::fluent_builders::TestAvailabilityConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_organization_id): <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_organization_id): <p>The WorkMail organization where the availability provider will be tested.</p>
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_domain_name): <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
     ///   - [`ews_provider(EwsAvailabilityProvider)`](crate::client::fluent_builders::TestAvailabilityConfiguration::ews_provider) / [`set_ews_provider(Option<EwsAvailabilityProvider>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_ews_provider): <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
     ///   - [`lambda_provider(LambdaAvailabilityProvider)`](crate::client::fluent_builders::TestAvailabilityConfiguration::lambda_provider) / [`set_lambda_provider(Option<LambdaAvailabilityProvider>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_lambda_provider): <p>Describes a Lambda based availability provider.</p>
@@ -1013,7 +1099,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateAvailabilityConfiguration`](crate::client::fluent_builders::UpdateAvailabilityConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_organization_id): <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_organization_id): <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_domain_name): <p>The domain to which the provider applies the availability configuration.</p>
     ///   - [`ews_provider(EwsAvailabilityProvider)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::ews_provider) / [`set_ews_provider(Option<EwsAvailabilityProvider>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_ews_provider): <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
     ///   - [`lambda_provider(LambdaAvailabilityProvider)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::lambda_provider) / [`set_lambda_provider(Option<LambdaAvailabilityProvider>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_lambda_provider): <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
@@ -1028,13 +1114,28 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateDefaultMailDomain`](crate::client::fluent_builders::UpdateDefaultMailDomain) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDefaultMailDomain::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UpdateDefaultMailDomain::set_organization_id): <p>The Amazon WorkMail organization for which to list domains.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDefaultMailDomain::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UpdateDefaultMailDomain::set_organization_id): <p>The WorkMail organization for which to list domains.</p>
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDefaultMailDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDefaultMailDomain::set_domain_name): <p>The domain name that will become the default domain.</p>
     /// - On success, responds with [`UpdateDefaultMailDomainOutput`](crate::output::UpdateDefaultMailDomainOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDefaultMailDomainError>`](crate::error::UpdateDefaultMailDomainError)
     pub fn update_default_mail_domain(&self) -> fluent_builders::UpdateDefaultMailDomain {
         fluent_builders::UpdateDefaultMailDomain::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateImpersonationRole`](crate::client::fluent_builders::UpdateImpersonationRole) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UpdateImpersonationRole::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UpdateImpersonationRole::set_organization_id): <p>The WorkMail organization that contains the impersonation role to update.</p>
+    ///   - [`impersonation_role_id(impl Into<String>)`](crate::client::fluent_builders::UpdateImpersonationRole::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::client::fluent_builders::UpdateImpersonationRole::set_impersonation_role_id): <p>The ID of the impersonation role to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateImpersonationRole::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateImpersonationRole::set_name): <p>The updated impersonation role name.</p>
+    ///   - [`r#type(ImpersonationRoleType)`](crate::client::fluent_builders::UpdateImpersonationRole::type) / [`set_type(Option<ImpersonationRoleType>)`](crate::client::fluent_builders::UpdateImpersonationRole::set_type): <p>The updated impersonation role type.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateImpersonationRole::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateImpersonationRole::set_description): <p>The updated impersonation role description.</p>
+    ///   - [`rules(Vec<ImpersonationRule>)`](crate::client::fluent_builders::UpdateImpersonationRole::rules) / [`set_rules(Option<Vec<ImpersonationRule>>)`](crate::client::fluent_builders::UpdateImpersonationRole::set_rules): <p>The updated list of rules.</p>
+    /// - On success, responds with [`UpdateImpersonationRoleOutput`](crate::output::UpdateImpersonationRoleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateImpersonationRoleError>`](crate::error::UpdateImpersonationRoleError)
+    pub fn update_impersonation_role(&self) -> fluent_builders::UpdateImpersonationRole {
+        fluent_builders::UpdateImpersonationRole::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateMailboxQuota`](crate::client::fluent_builders::UpdateMailboxQuota) operation.
     ///
@@ -1051,7 +1152,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateMobileDeviceAccessRule`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::set_organization_id): <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::set_organization_id): <p>The WorkMail organization under which the rule will be updated.</p>
     ///   - [`mobile_device_access_rule_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::mobile_device_access_rule_id) / [`set_mobile_device_access_rule_id(Option<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::set_mobile_device_access_rule_id): <p>The identifier of the rule to be updated.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::set_name): <p>The updated rule name.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule::set_description): <p>The updated rule description.</p>
@@ -1305,6 +1406,99 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `AssumeImpersonationRole`.
+    ///
+    /// <p>Assumes an impersonation role for the given WorkMail organization. This method returns an authentication token you can use to make impersonated calls.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssumeImpersonationRole {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::assume_impersonation_role_input::Builder,
+    }
+    impl AssumeImpersonationRole {
+        /// Creates a new `AssumeImpersonationRole`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::AssumeImpersonationRole,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::AssumeImpersonationRoleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssumeImpersonationRoleOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssumeImpersonationRoleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The impersonation role ID to assume.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.impersonation_role_id(input.into());
+            self
+        }
+        /// <p>The impersonation role ID to assume.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_impersonation_role_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CancelMailboxExportJob`.
     ///
     /// <p>Cancels a mailbox export job.</p> <note>
@@ -1409,7 +1603,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAlias`.
     ///
-    /// <p>Adds an alias to the set of a given member (user or group) of Amazon WorkMail.</p>
+    /// <p>Adds an alias to the set of a given member (user or group) of WorkMail.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlias {
         handle: std::sync::Arc<super::Handle>,
@@ -1583,12 +1777,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1635,7 +1829,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
-    /// <p>Creates a group that can be used in Amazon WorkMail by calling the <code>RegisterToWorkMail</code> operation.</p>
+    /// <p>Creates a group that can be used in WorkMail by calling the <code>RegisterToWorkMail</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -1723,9 +1917,150 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateImpersonationRole`.
+    ///
+    /// <p>Creates an impersonation role for the given WorkMail organization.</p>
+    /// <p> <i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries also complete successfully without performing any further actions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateImpersonationRole {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_impersonation_role_input::Builder,
+    }
+    impl CreateImpersonationRole {
+        /// Creates a new `CreateImpersonationRole`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateImpersonationRole,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateImpersonationRoleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateImpersonationRoleOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateImpersonationRoleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The idempotency token for the client request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The idempotency token for the client request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The WorkMail organization to create the new impersonation role within.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The WorkMail organization to create the new impersonation role within.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The name of the new impersonation role.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the new impersonation role.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ImpersonationRoleType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ImpersonationRoleType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The description of the new impersonation role.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the new impersonation role.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The list of rules for the impersonation role.</p>
+        pub fn rules(mut self, input: crate::model::ImpersonationRule) -> Self {
+            self.inner = self.inner.rules(input);
+            self
+        }
+        /// <p>The list of rules for the impersonation role.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+        ) -> Self {
+            self.inner = self.inner.set_rules(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateMobileDeviceAccessRule`.
     ///
-    /// <p>Creates a new mobile device access rule for the specified Amazon WorkMail organization.</p>
+    /// <p>Creates a new mobile device access rule for the specified WorkMail organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMobileDeviceAccessRule {
         handle: std::sync::Arc<super::Handle>,
@@ -1789,12 +2124,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
+        /// <p>The WorkMail organization under which the rule will be created.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
+        /// <p>The WorkMail organization under which the rule will be created.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1987,9 +2322,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateOrganization`.
     ///
-    /// <p>Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias must match the directory alias. If you choose not to associate an existing directory with your organization, then we create a new Amazon WorkMail directory for you. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
-    /// <p>You can associate multiple email domains with an organization, then set your default email domain from the Amazon WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
-    /// <p>Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed master key for you.</p>
+    /// <p>Creates a new WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias must match the directory alias. If you choose not to associate an existing directory with your organization, then we create a new WorkMail directory for you. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an organization</a> in the <i>WorkMail Administrator Guide</i>.</p>
+    /// <p>You can associate multiple email domains with an organization, then choose your default email domain from the WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the default domain</a> in the <i>WorkMail Administrator Guide</i>.</p>
+    /// <p>Optionally, you can use a customer managed key from AWS Key Management Service (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS key, WorkMail creates a default, AWS managed key for you.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrganization {
         handle: std::sync::Arc<super::Handle>,
@@ -2100,22 +2435,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domains(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
-        /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+        /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
         pub fn enable_interoperability(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_interoperability(input);
             self
         }
-        /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+        /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
         pub fn set_enable_interoperability(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_interoperability(input);
             self
@@ -2123,7 +2458,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResource`.
     ///
-    /// <p>Creates a new Amazon WorkMail resource. </p>
+    /// <p>Creates a new WorkMail resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2223,7 +2558,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUser`.
     ///
-    /// <p>Creates a user who can be used in Amazon WorkMail by calling the <code>RegisterToWorkMail</code> operation.</p>
+    /// <p>Creates a user who can be used in WorkMail by calling the <code>RegisterToWorkMail</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser {
         handle: std::sync::Arc<super::Handle>,
@@ -2589,12 +2924,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2699,7 +3034,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
-    /// <p>Deletes a group from Amazon WorkMail.</p>
+    /// <p>Deletes a group from WorkMail.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -2784,6 +3119,99 @@ pub mod fluent_builders {
         /// <p>The identifier of the group to be deleted.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteImpersonationRole`.
+    ///
+    /// <p>Deletes an impersonation role for the given WorkMail organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteImpersonationRole {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_impersonation_role_input::Builder,
+    }
+    impl DeleteImpersonationRole {
+        /// Creates a new `DeleteImpersonationRole`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteImpersonationRole,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteImpersonationRoleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteImpersonationRoleOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteImpersonationRoleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The ID of the impersonation role to delete.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.impersonation_role_id(input.into());
+            self
+        }
+        /// <p>The ID of the impersonation role to delete.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_impersonation_role_id(input);
             self
         }
     }
@@ -2955,12 +3383,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+        /// <p>The WorkMail organization for which the access override will be deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+        /// <p>The WorkMail organization for which the access override will be deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3001,7 +3429,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMobileDeviceAccessRule`.
     ///
-    /// <p>Deletes a mobile device access rule for the specified Amazon WorkMail organization.</p> <note>
+    /// <p>Deletes a mobile device access rule for the specified WorkMail organization.</p> <note>
     /// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3067,12 +3495,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+        /// <p>The WorkMail organization under which the rule will be deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+        /// <p>The WorkMail organization under which the rule will be deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3099,7 +3527,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteOrganization`.
     ///
-    /// <p>Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of the organization. You can choose whether to delete the associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+    /// <p>Deletes an WorkMail organization and all underlying AWS resources managed by WorkMail as part of the organization. You can choose whether to delete the associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an organization</a> in the <i>WorkMail Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganization {
         handle: std::sync::Arc<super::Handle>,
@@ -3199,7 +3627,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResource`.
     ///
-    /// <p>Deletes the specified resource. </p>
+    /// <p>Deletes the specified resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3379,7 +3807,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
-    /// <p>Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must be <code>DISABLED</code>. Use the <code>DescribeUser</code> action to confirm the user state.</p>
+    /// <p>Deletes a user from WorkMail and all subsequent systems. Before you can delete a user, the user state must be <code>DISABLED</code>. Use the <code>DescribeUser</code> action to confirm the user state.</p>
     /// <p>Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for 30 days before they are permanently removed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser {
@@ -3470,7 +3898,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterFromWorkMail`.
     ///
-    /// <p>Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.</p>
+    /// <p>Mark a user, group, or resource as no longer used in WorkMail. This action disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterFromWorkMail {
         handle: std::sync::Arc<super::Handle>,
@@ -3534,12 +3962,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+        /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+        /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3560,7 +3988,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterMailDomain`.
     ///
-    /// <p>Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address used by WorkMail entities before you remove the domain.</p>
+    /// <p>Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address used by WorkMail entities before you remove the domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterMailDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -3624,12 +4052,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+        /// <p>The WorkMail organization for which the domain will be deregistered.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+        /// <p>The WorkMail organization for which the domain will be deregistered.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3637,12 +4065,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The domain to deregister in WorkMail and SES. </p>
+        /// <p>The domain to deregister in WorkMail and SES.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain to deregister in WorkMail and SES. </p>
+        /// <p>The domain to deregister in WorkMail and SES.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -4454,7 +4882,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccessControlEffect`.
     ///
-    /// <p>Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access protocol action, or user ID. </p>
+    /// <p>Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access protocol action, and user ID or impersonation role ID. You must provide either the user ID or impersonation role ID. Impersonation role ID can only be used with Action EWS.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccessControlEffect {
         handle: std::sync::Arc<super::Handle>,
@@ -4561,6 +4989,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_id(input);
             self
         }
+        /// <p>The impersonation role ID.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.impersonation_role_id(input.into());
+            self
+        }
+        /// <p>The impersonation role ID.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_impersonation_role_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetDefaultRetentionPolicy`.
     ///
@@ -4639,6 +5080,212 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_organization_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetImpersonationRole`.
+    ///
+    /// <p>Gets the impersonation role details for the given WorkMail organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetImpersonationRole {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_impersonation_role_input::Builder,
+    }
+    impl GetImpersonationRole {
+        /// Creates a new `GetImpersonationRole`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetImpersonationRole,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetImpersonationRoleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetImpersonationRoleOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetImpersonationRoleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The impersonation role ID to retrieve.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.impersonation_role_id(input.into());
+            self
+        }
+        /// <p>The impersonation role ID to retrieve.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_impersonation_role_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetImpersonationRoleEffect`.
+    ///
+    /// <p>Tests whether the given impersonation role can impersonate a target user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetImpersonationRoleEffect {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_impersonation_role_effect_input::Builder,
+    }
+    impl GetImpersonationRoleEffect {
+        /// Creates a new `GetImpersonationRoleEffect`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetImpersonationRoleEffect,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetImpersonationRoleEffectError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetImpersonationRoleEffectOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetImpersonationRoleEffectError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The WorkMail organization where the impersonation role is defined.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The WorkMail organization where the impersonation role is defined.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The impersonation role ID to test.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.impersonation_role_id(input.into());
+            self
+        }
+        /// <p>The impersonation role ID to test.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_impersonation_role_id(input);
+            self
+        }
+        /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+        /// <ul>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
+        /// </ul>
+        pub fn target_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_user(input.into());
+            self
+        }
+        /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+        /// <ul>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
+        /// </ul>
+        pub fn set_target_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_user(input);
             self
         }
     }
@@ -4798,12 +5445,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+        /// <p>The WorkMail organization for which the domain is retrieved.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+        /// <p>The WorkMail organization for which the domain is retrieved.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4824,7 +5471,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMobileDeviceAccessEffect`.
     ///
-    /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail organization for a particular user's attributes.</p>
+    /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access rules for the WorkMail organization for a particular user's attributes.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMobileDeviceAccessEffect {
         handle: std::sync::Arc<super::Handle>,
@@ -4888,12 +5535,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+        /// <p>The WorkMail organization to simulate the access effect for.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+        /// <p>The WorkMail organization to simulate the access effect for.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5014,12 +5661,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+        /// <p>The WorkMail organization to which you want to apply the override.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+        /// <p>The WorkMail organization to which you want to apply the override.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5326,12 +5973,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAvailabilityConfigurationsPaginator {
             crate::paginator::ListAvailabilityConfigurationsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5582,6 +6229,112 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListImpersonationRoles`.
+    ///
+    /// <p>Lists all the impersonation roles for the given WorkMail organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListImpersonationRoles {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_impersonation_roles_input::Builder,
+    }
+    impl ListImpersonationRoles {
+        /// Creates a new `ListImpersonationRoles`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListImpersonationRoles,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListImpersonationRolesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListImpersonationRolesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListImpersonationRolesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImpersonationRolesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImpersonationRolesPaginator {
+            crate::paginator::ListImpersonationRolesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The WorkMail organization to which the listed impersonation roles belong.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The WorkMail organization to which the listed impersonation roles belong.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The token used to retrieve the next page of results. The first call doesn't require a token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token used to retrieve the next page of results. The first call doesn't require a token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results returned in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results returned in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListMailboxExportJobs`.
     ///
     /// <p>Lists the mailbox export jobs started for the specified organization within the last seven days.</p>
@@ -5806,7 +6559,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMailDomains`.
     ///
-    /// <p>Lists the mail domains in a given Amazon WorkMail organization.</p>
+    /// <p>Lists the mail domains in a given WorkMail organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailDomains {
         handle: std::sync::Arc<super::Handle>,
@@ -5876,12 +6629,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListMailDomainsPaginator {
             crate::paginator::ListMailDomainsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        /// <p>The WorkMail organization for which to list domains.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        /// <p>The WorkMail organization for which to list domains.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5982,12 +6735,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListMobileDeviceAccessOverridesPaginator {
             crate::paginator::ListMobileDeviceAccessOverridesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+        /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+        /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6048,7 +6801,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMobileDeviceAccessRules`.
     ///
-    /// <p>Lists the mobile device access rules for the specified Amazon WorkMail organization.</p>
+    /// <p>Lists the mobile device access rules for the specified WorkMail organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMobileDeviceAccessRules {
         handle: std::sync::Arc<super::Handle>,
@@ -6112,12 +6865,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization for which to list the rules.</p>
+        /// <p>The WorkMail organization for which to list the rules.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which to list the rules.</p>
+        /// <p>The WorkMail organization for which to list the rules.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6443,7 +7196,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags applied to an Amazon WorkMail organization resource.</p>
+    /// <p>Lists the tags applied to an WorkMail organization resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -6626,7 +7379,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAccessControlRule`.
     ///
-    /// <p>Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the same name as an existing rule replaces the older rule.</p>
+    /// <p>Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a new rule with the same name as an existing rule replaces the older rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccessControlRule {
         handle: std::sync::Arc<super::Handle>,
@@ -6838,6 +7591,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
+        /// Appends an item to `ImpersonationRoleIds`.
+        ///
+        /// To override the contents of this collection use [`set_impersonation_role_ids`](Self::set_impersonation_role_ids).
+        ///
+        /// <p>Impersonation role IDs to include in the rule.</p>
+        pub fn impersonation_role_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.impersonation_role_ids(input.into());
+            self
+        }
+        /// <p>Impersonation role IDs to include in the rule.</p>
+        pub fn set_impersonation_role_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_impersonation_role_ids(input);
+            self
+        }
+        /// Appends an item to `NotImpersonationRoleIds`.
+        ///
+        /// To override the contents of this collection use [`set_not_impersonation_role_ids`](Self::set_not_impersonation_role_ids).
+        ///
+        /// <p>Impersonation role IDs to exclude from the rule.</p>
+        pub fn not_impersonation_role_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_impersonation_role_ids(input.into());
+            self
+        }
+        /// <p>Impersonation role IDs to exclude from the rule.</p>
+        pub fn set_not_impersonation_role_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_not_impersonation_role_ids(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutEmailMonitoringConfiguration`.
     ///
@@ -7008,12 +7795,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+        /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+        /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7215,12 +8002,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+        /// <p>Identifies the WorkMail organization for which you create the override.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+        /// <p>Identifies the WorkMail organization for which you create the override.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7411,7 +8198,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterMailDomain`.
     ///
-    /// <p>Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the specified domain for sending your users' emails.</p>
+    /// <p>Registers a new domain in WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the specified domain for sending your users' emails.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterMailDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -7485,12 +8272,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+        /// <p>The WorkMail organization under which you're creating the domain.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+        /// <p>The WorkMail organization under which you're creating the domain.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7498,12 +8285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+        /// <p>The name of the mail domain to create in WorkMail and SES.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+        /// <p>The name of the mail domain to create in WorkMail and SES.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -7511,7 +8298,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterToWorkMail`.
     ///
-    /// <p>Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user, group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. </p>
+    /// <p>Registers an existing and disabled user, group, or resource for WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user, group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>.</p>
     /// <p>Users can either be created by calling the <code>CreateUser</code> API operation or they can be synchronized from your directory. For more information, see <code>DeregisterFromWorkMail</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterToWorkMail {
@@ -7712,7 +8499,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMailboxExportJob`.
     ///
-    /// <p>Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+    /// <p>Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in the <i>WorkMail Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMailboxExportJob {
         handle: std::sync::Arc<super::Handle>,
@@ -7865,7 +8652,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Applies the specified tags to the specified Amazon WorkMail organization resource.</p>
+    /// <p>Applies the specified tags to the specified WorkMailorganization resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -7960,7 +8747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestAvailabilityConfiguration`.
     ///
     /// <p>Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code> header.</p> <note>
-    /// <p>The request must contain either one provider definition (<code>EwsProvider</code> or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code> parameter is provided, the configuration stored under the <code>DomainName</code> will be tested. </p>
+    /// <p>The request must contain either one provider definition (<code>EwsProvider</code> or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code> parameter is provided, the configuration stored under the <code>DomainName</code> will be tested.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestAvailabilityConfiguration {
@@ -8025,12 +8812,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+        /// <p>The WorkMail organization where the availability provider will be tested.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+        /// <p>The WorkMail organization where the availability provider will be tested.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8077,7 +8864,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Untags the specified tags from the specified Amazon WorkMail organization resource.</p>
+    /// <p>Untags the specified tags from the specified WorkMail organization resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -8235,12 +9022,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8351,12 +9138,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        /// <p>The WorkMail organization for which to list domains.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        /// <p>The WorkMail organization for which to list domains.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8372,6 +9159,149 @@ pub mod fluent_builders {
         /// <p>The domain name that will become the default domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateImpersonationRole`.
+    ///
+    /// <p>Updates an impersonation role for the given WorkMail organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateImpersonationRole {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_impersonation_role_input::Builder,
+    }
+    impl UpdateImpersonationRole {
+        /// Creates a new `UpdateImpersonationRole`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateImpersonationRole,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateImpersonationRoleError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateImpersonationRoleOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateImpersonationRoleError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The WorkMail organization that contains the impersonation role to update.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The WorkMail organization that contains the impersonation role to update.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The ID of the impersonation role to update.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.impersonation_role_id(input.into());
+            self
+        }
+        /// <p>The ID of the impersonation role to update.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_impersonation_role_id(input);
+            self
+        }
+        /// <p>The updated impersonation role name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The updated impersonation role name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The updated impersonation role type.</p>
+        pub fn r#type(mut self, input: crate::model::ImpersonationRoleType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p>The updated impersonation role type.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ImpersonationRoleType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The updated impersonation role description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The updated impersonation role description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The updated list of rules.</p>
+        pub fn rules(mut self, input: crate::model::ImpersonationRule) -> Self {
+            self.inner = self.inner.rules(input);
+            self
+        }
+        /// <p>The updated list of rules.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+        ) -> Self {
+            self.inner = self.inner.set_rules(input);
             self
         }
     }
@@ -8477,7 +9407,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateMobileDeviceAccessRule`.
     ///
-    /// <p>Updates a mobile device access rule for the specified Amazon WorkMail organization.</p>
+    /// <p>Updates a mobile device access rule for the specified WorkMail organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMobileDeviceAccessRule {
         handle: std::sync::Arc<super::Handle>,
@@ -8541,12 +9471,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+        /// <p>The WorkMail organization under which the rule will be updated.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+        /// <p>The WorkMail organization under which the rule will be updated.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,

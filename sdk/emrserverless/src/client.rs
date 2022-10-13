@@ -144,6 +144,17 @@ impl Client {
     pub fn get_application(&self) -> fluent_builders::GetApplication {
         fluent_builders::GetApplication::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetDashboardForJobRun`](crate::client::fluent_builders::GetDashboardForJobRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetDashboardForJobRun::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetDashboardForJobRun::set_application_id): <p>The ID of the application.</p>
+    ///   - [`job_run_id(impl Into<String>)`](crate::client::fluent_builders::GetDashboardForJobRun::job_run_id) / [`set_job_run_id(Option<String>)`](crate::client::fluent_builders::GetDashboardForJobRun::set_job_run_id): <p>The ID of the job run.</p>
+    /// - On success, responds with [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput) with field(s):
+    ///   - [`url(Option<String>)`](crate::output::GetDashboardForJobRunOutput::url): <p>The URL to view job run's dashboard.</p>
+    /// - On failure, responds with [`SdkError<GetDashboardForJobRunError>`](crate::error::GetDashboardForJobRunError)
+    pub fn get_dashboard_for_job_run(&self) -> fluent_builders::GetDashboardForJobRun {
+        fluent_builders::GetDashboardForJobRun::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetJobRun`](crate::client::fluent_builders::GetJobRun) operation.
     ///
     /// - The fluent builder is configurable:
@@ -739,6 +750,96 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetDashboardForJobRun`.
+    ///
+    /// <p>Returns a URL to access the job run dashboard.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDashboardForJobRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_dashboard_for_job_run_input::Builder,
+    }
+    impl GetDashboardForJobRun {
+        /// Creates a new `GetDashboardForJobRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetDashboardForJobRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetDashboardForJobRunError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDashboardForJobRunOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDashboardForJobRunError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the application.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
+            self
+        }
+        /// <p>The ID of the application.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_id(input);
+            self
+        }
+        /// <p>The ID of the job run.</p>
+        pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_run_id(input.into());
+            self
+        }
+        /// <p>The ID of the job run.</p>
+        pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_run_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetJobRun`.
     ///
     /// <p>Displays detailed information about a job run.</p>
@@ -921,8 +1022,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
         /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-        pub fn states(mut self, input: std::vec::Vec<crate::model::ApplicationState>) -> Self {
+        pub fn states(mut self, input: crate::model::ApplicationState) -> Self {
             self.inner = self.inner.states(input);
             self
         }
@@ -1066,8 +1171,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_created_at_before(input);
             self
         }
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
         /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-        pub fn states(mut self, input: std::vec::Vec<crate::model::JobRunState>) -> Self {
+        pub fn states(mut self, input: crate::model::JobRunState) -> Self {
             self.inner = self.inner.states(input);
             self
         }

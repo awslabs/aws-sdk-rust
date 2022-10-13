@@ -37,14 +37,14 @@ pub mod associate_entities_to_experience_input {
         ///
         /// To override the contents of this collection use [`set_entity_list`](Self::set_entity_list).
         ///
-        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
         pub fn entity_list(mut self, input: crate::model::EntityConfiguration) -> Self {
             let mut v = self.entity_list.unwrap_or_default();
             v.push(input);
             self.entity_list = Some(v);
             self
         }
-        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
         pub fn set_entity_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
@@ -215,14 +215,14 @@ pub mod associate_personas_to_entities_input {
         ///
         /// To override the contents of this collection use [`set_personas`](Self::set_personas).
         ///
-        /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+        /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn personas(mut self, input: crate::model::EntityPersonaConfiguration) -> Self {
             let mut v = self.personas.unwrap_or_default();
             v.push(input);
             self.personas = Some(v);
             self
         }
-        /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+        /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn set_personas(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityPersonaConfiguration>>,
@@ -1649,12 +1649,12 @@ pub mod create_experience_input {
             self.index_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2258,7 +2258,7 @@ pub mod create_index_input {
             self.user_context_policy = input;
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -2266,7 +2266,7 @@ pub mod create_index_input {
             self.user_group_resolution_configuration = Some(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -5568,14 +5568,14 @@ pub mod disassociate_entities_from_experience_input {
         ///
         /// To override the contents of this collection use [`set_entity_list`](Self::set_entity_list).
         ///
-        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
         pub fn entity_list(mut self, input: crate::model::EntityConfiguration) -> Self {
             let mut v = self.entity_list.unwrap_or_default();
             v.push(input);
             self.entity_list = Some(v);
             self
         }
-        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
         pub fn set_entity_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
@@ -5745,14 +5745,14 @@ pub mod disassociate_personas_from_entities_input {
         ///
         /// To override the contents of this collection use [`set_entity_ids`](Self::set_entity_ids).
         ///
-        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
+        /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
         pub fn entity_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_ids.unwrap_or_default();
             v.push(input.into());
             self.entity_ids = Some(v);
             self
         }
-        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
+        /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
         pub fn set_entity_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10279,12 +10279,12 @@ pub mod update_experience_input {
             self.index_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10575,7 +10575,7 @@ pub mod update_index_input {
             self.user_context_policy = input;
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -10583,7 +10583,7 @@ pub mod update_index_input {
             self.user_group_resolution_configuration = Some(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -11629,7 +11629,7 @@ pub struct UpdateIndexInput {
     /// <p>The user context policy.</p>
     #[doc(hidden)]
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
-    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     #[doc(hidden)]
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -11672,7 +11672,7 @@ impl UpdateIndexInput {
     pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub fn user_group_resolution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
@@ -11714,7 +11714,7 @@ pub struct UpdateExperienceInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
@@ -11737,7 +11737,7 @@ impl UpdateExperienceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -12929,7 +12929,7 @@ pub struct DisassociatePersonasFromEntitiesInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
+    /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
     #[doc(hidden)]
     pub entity_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -12942,7 +12942,7 @@ impl DisassociatePersonasFromEntitiesInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
+    /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
     pub fn entity_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.entity_ids.as_deref()
     }
@@ -12967,7 +12967,7 @@ pub struct DisassociateEntitiesFromExperienceInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+    /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
     #[doc(hidden)]
     pub entity_list: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
 }
@@ -12980,7 +12980,7 @@ impl DisassociateEntitiesFromExperienceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+    /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
     pub fn entity_list(&self) -> std::option::Option<&[crate::model::EntityConfiguration]> {
         self.entity_list.as_deref()
     }
@@ -13710,7 +13710,7 @@ pub struct CreateIndexInput {
     /// </dl>
     #[doc(hidden)]
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
-    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     #[doc(hidden)]
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -13772,7 +13772,7 @@ impl CreateIndexInput {
     pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub fn user_group_resolution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
@@ -13902,7 +13902,7 @@ pub struct CreateExperienceInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
@@ -13924,7 +13924,7 @@ impl CreateExperienceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -14326,7 +14326,7 @@ pub struct AssociatePersonasToEntitiesInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     #[doc(hidden)]
     pub personas: std::option::Option<std::vec::Vec<crate::model::EntityPersonaConfiguration>>,
 }
@@ -14339,7 +14339,7 @@ impl AssociatePersonasToEntitiesInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn personas(&self) -> std::option::Option<&[crate::model::EntityPersonaConfiguration]> {
         self.personas.as_deref()
     }
@@ -14364,7 +14364,7 @@ pub struct AssociateEntitiesToExperienceInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+    /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
     #[doc(hidden)]
     pub entity_list: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
 }
@@ -14377,7 +14377,7 @@ impl AssociateEntitiesToExperienceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+    /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
     pub fn entity_list(&self) -> std::option::Option<&[crate::model::EntityConfiguration]> {
         self.entity_list.as_deref()
     }

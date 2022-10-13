@@ -253,22 +253,26 @@ pub mod create_inference_scheduler_input {
             self.inference_scheduler_name = input;
             self
         }
-        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+        /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
             self.data_delay_offset_in_minutes = Some(input);
             self
         }
-        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+        /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.data_delay_offset_in_minutes = input;
             self
         }
-        /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+        /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
             self.data_upload_frequency = Some(input);
             self
         }
-        /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+        /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn set_data_upload_frequency(
             mut self,
             input: std::option::Option<crate::model::DataUploadFrequency>,
@@ -497,6 +501,462 @@ impl CreateInferenceSchedulerInput {
     /// Creates a new builder-style object to manufacture [`CreateInferenceSchedulerInput`](crate::input::CreateInferenceSchedulerInput).
     pub fn builder() -> crate::input::create_inference_scheduler_input::Builder {
         crate::input::create_inference_scheduler_input::Builder::default()
+    }
+}
+
+/// See [`CreateLabelInput`](crate::input::CreateLabelInput).
+pub mod create_label_input {
+
+    /// A builder for [`CreateLabelInput`](crate::input::CreateLabelInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) rating: std::option::Option<crate::model::LabelRating>,
+        pub(crate) fault_code: std::option::Option<std::string::String>,
+        pub(crate) notes: std::option::Option<std::string::String>,
+        pub(crate) equipment: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The name of a group of labels. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> The name of a group of labels. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// <p> The start time of the labeled event. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p> The start time of the labeled event. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p> The end time of the labeled event. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p> The end time of the labeled event. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p> Indicates whether a labeled event represents an anomaly. </p>
+        pub fn rating(mut self, input: crate::model::LabelRating) -> Self {
+            self.rating = Some(input);
+            self
+        }
+        /// <p> Indicates whether a labeled event represents an anomaly. </p>
+        pub fn set_rating(mut self, input: std::option::Option<crate::model::LabelRating>) -> Self {
+            self.rating = input;
+            self
+        }
+        /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fault_code = Some(input.into());
+            self
+        }
+        /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fault_code = input;
+            self
+        }
+        /// <p> Metadata providing additional information about the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notes = Some(input.into());
+            self
+        }
+        /// <p> Metadata providing additional information about the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notes = input;
+            self
+        }
+        /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.equipment = Some(input.into());
+            self
+        }
+        /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.equipment = input;
+            self
+        }
+        /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLabelInput`](crate::input::CreateLabelInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateLabelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateLabelInput {
+                label_group_name: self.label_group_name,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                rating: self.rating,
+                fault_code: self.fault_code,
+                notes: self.notes,
+                equipment: self.equipment,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+impl CreateLabelInput {
+    /// Consumes the builder and constructs an Operation<[`CreateLabel`](crate::operation::CreateLabel)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLabel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateLabelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLabelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.CreateLabel",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_label(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLabel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLabel",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateLabelInput`](crate::input::CreateLabelInput).
+    pub fn builder() -> crate::input::create_label_input::Builder {
+        crate::input::create_label_input::Builder::default()
+    }
+}
+
+/// See [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
+pub mod create_label_group_input {
+
+    /// A builder for [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+        pub(crate) fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p> Names a group of labels.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> Names a group of labels.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// Appends an item to `fault_codes`.
+        ///
+        /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
+        ///
+        /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn fault_codes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.fault_codes.unwrap_or_default();
+            v.push(input.into());
+            self.fault_codes = Some(v);
+            self
+        }
+        /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_fault_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.fault_codes = input;
+            self
+        }
+        /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> Tags that provide metadata about the label group you are creating. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p> Tags that provide metadata about the label group you are creating. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateLabelGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateLabelGroupInput {
+                label_group_name: self.label_group_name,
+                fault_codes: self.fault_codes,
+                client_token: self.client_token,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl CreateLabelGroupInput {
+    /// Consumes the builder and constructs an Operation<[`CreateLabelGroup`](crate::operation::CreateLabelGroup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLabelGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateLabelGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLabelGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.CreateLabelGroup",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_label_group(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLabelGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLabelGroup",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
+    pub fn builder() -> crate::input::create_label_group_input::Builder {
+        crate::input::create_label_group_input::Builder::default()
     }
 }
 
@@ -1141,6 +1601,310 @@ impl DeleteInferenceSchedulerInput {
     }
 }
 
+/// See [`DeleteLabelInput`](crate::input::DeleteLabelInput).
+pub mod delete_label_input {
+
+    /// A builder for [`DeleteLabelInput`](crate::input::DeleteLabelInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+        pub(crate) label_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// <p> The ID of the label that you want to delete. </p>
+        pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the label that you want to delete. </p>
+        pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteLabelInput`](crate::input::DeleteLabelInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteLabelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteLabelInput {
+                label_group_name: self.label_group_name,
+                label_id: self.label_id,
+            })
+        }
+    }
+}
+impl DeleteLabelInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteLabel`](crate::operation::DeleteLabel)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLabel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteLabelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLabelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DeleteLabel",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_label(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLabel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLabel",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteLabelInput`](crate::input::DeleteLabelInput).
+    pub fn builder() -> crate::input::delete_label_input::Builder {
+        crate::input::delete_label_input::Builder::default()
+    }
+}
+
+/// See [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
+pub mod delete_label_group_input {
+
+    /// A builder for [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteLabelGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteLabelGroupInput {
+                label_group_name: self.label_group_name,
+            })
+        }
+    }
+}
+impl DeleteLabelGroupInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteLabelGroup`](crate::operation::DeleteLabelGroup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLabelGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteLabelGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLabelGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DeleteLabelGroup",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_label_group(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLabelGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLabelGroup",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
+    pub fn builder() -> crate::input::delete_label_group_input::Builder {
+        crate::input::delete_label_group_input::Builder::default()
+    }
+}
+
 /// See [`DeleteModelInput`](crate::input::DeleteModelInput).
 pub mod delete_model_input {
 
@@ -1724,6 +2488,310 @@ impl DescribeInferenceSchedulerInput {
     }
 }
 
+/// See [`DescribeLabelInput`](crate::input::DescribeLabelInput).
+pub mod describe_label_input {
+
+    /// A builder for [`DescribeLabelInput`](crate::input::DescribeLabelInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+        pub(crate) label_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> Returns the name of the group containing the label. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> Returns the name of the group containing the label. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// <p> Returns the ID of the label. </p>
+        pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_id = Some(input.into());
+            self
+        }
+        /// <p> Returns the ID of the label. </p>
+        pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLabelInput`](crate::input::DescribeLabelInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeLabelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeLabelInput {
+                label_group_name: self.label_group_name,
+                label_id: self.label_id,
+            })
+        }
+    }
+}
+impl DescribeLabelInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeLabel`](crate::operation::DescribeLabel)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLabel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeLabelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLabelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DescribeLabel",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_label(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLabel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLabel",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeLabelInput`](crate::input::DescribeLabelInput).
+    pub fn builder() -> crate::input::describe_label_input::Builder {
+        crate::input::describe_label_input::Builder::default()
+    }
+}
+
+/// See [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
+pub mod describe_label_group_input {
+
+    /// A builder for [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> Returns the name of the label group. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> Returns the name of the label group. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeLabelGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeLabelGroupInput {
+                label_group_name: self.label_group_name,
+            })
+        }
+    }
+}
+impl DescribeLabelGroupInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeLabelGroup`](crate::operation::DescribeLabelGroup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLabelGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeLabelGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLabelGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DescribeLabelGroup",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_label_group(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLabelGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLabelGroup",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
+    pub fn builder() -> crate::input::describe_label_group_input::Builder {
+        crate::input::describe_label_group_input::Builder::default()
+    }
+}
+
 /// See [`DescribeModelInput`](crate::input::DescribeModelInput).
 pub mod describe_model_input {
 
@@ -1889,12 +2957,12 @@ pub mod list_data_ingestion_jobs_input {
             self.dataset_name = input;
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+        /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+        /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2267,12 +3335,12 @@ pub mod list_inference_events_input {
             self.inference_scheduler_name = input;
             self
         }
-        /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+        /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
         pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.interval_start_time = Some(input);
             self
         }
-        /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+        /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
         pub fn set_interval_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2280,12 +3348,12 @@ pub mod list_inference_events_input {
             self.interval_start_time = input;
             self
         }
-        /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+        /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
         pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.interval_end_time = Some(input);
             self
         }
-        /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+        /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
         pub fn set_interval_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2829,6 +3897,402 @@ impl ListInferenceSchedulersInput {
     }
 }
 
+/// See [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
+pub mod list_label_groups_input {
+
+    /// A builder for [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name_begins_with: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> The beginning of the name of the label groups to be listed. </p>
+        pub fn label_group_name_begins_with(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.label_group_name_begins_with = Some(input.into());
+            self
+        }
+        /// <p> The beginning of the name of the label groups to be listed. </p>
+        pub fn set_label_group_name_begins_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name_begins_with = input;
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p> Specifies the maximum number of label groups to list. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> Specifies the maximum number of label groups to list. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListLabelGroupsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListLabelGroupsInput {
+                label_group_name_begins_with: self.label_group_name_begins_with,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListLabelGroupsInput {
+    /// Consumes the builder and constructs an Operation<[`ListLabelGroups`](crate::operation::ListLabelGroups)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListLabelGroups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListLabelGroupsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListLabelGroupsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListLabelGroups",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_label_groups(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLabelGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLabelGroups",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
+    pub fn builder() -> crate::input::list_label_groups_input::Builder {
+        crate::input::list_label_groups_input::Builder::default()
+    }
+}
+
+/// See [`ListLabelsInput`](crate::input::ListLabelsInput).
+pub mod list_labels_input {
+
+    /// A builder for [`ListLabelsInput`](crate::input::ListLabelsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+        pub(crate) interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) fault_code: std::option::Option<std::string::String>,
+        pub(crate) equipment: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Retruns the name of the label group. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> Retruns the name of the label group. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
+        pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.interval_start_time = Some(input);
+            self
+        }
+        /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
+        pub fn set_interval_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.interval_start_time = input;
+            self
+        }
+        /// <p> Returns all labels with a start time earlier than the end time given. </p>
+        pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.interval_end_time = Some(input);
+            self
+        }
+        /// <p> Returns all labels with a start time earlier than the end time given. </p>
+        pub fn set_interval_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.interval_end_time = input;
+            self
+        }
+        /// <p> Returns labels with a particular fault code. </p>
+        pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fault_code = Some(input.into());
+            self
+        }
+        /// <p> Returns labels with a particular fault code. </p>
+        pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fault_code = input;
+            self
+        }
+        /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
+        pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.equipment = Some(input.into());
+            self
+        }
+        /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
+        pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.equipment = input;
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p> Specifies the maximum number of labels to list. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> Specifies the maximum number of labels to list. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLabelsInput`](crate::input::ListLabelsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListLabelsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListLabelsInput {
+                label_group_name: self.label_group_name,
+                interval_start_time: self.interval_start_time,
+                interval_end_time: self.interval_end_time,
+                fault_code: self.fault_code,
+                equipment: self.equipment,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListLabelsInput {
+    /// Consumes the builder and constructs an Operation<[`ListLabels`](crate::operation::ListLabels)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListLabels,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListLabelsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListLabelsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListLabels",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_labels(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLabels::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLabels",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListLabelsInput`](crate::input::ListLabelsInput).
+    pub fn builder() -> crate::input::list_labels_input::Builder {
+        crate::input::list_labels_input::Builder::default()
+    }
+}
+
 /// See [`ListModelsInput`](crate::input::ListModelsInput).
 pub mod list_models_input {
 
@@ -3060,22 +4524,22 @@ pub mod list_sensor_statistics_input {
             self.ingestion_job_id = input;
             self
         }
-        /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+        /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+        /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+        /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+        /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4398,6 +5862,207 @@ impl UpdateInferenceSchedulerInput {
     }
 }
 
+/// See [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
+pub mod update_label_group_input {
+
+    /// A builder for [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) label_group_name: std::option::Option<std::string::String>,
+        pub(crate) fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p> The name of the label group to be updated. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_group_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the label group to be updated. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
+        }
+        /// Appends an item to `fault_codes`.
+        ///
+        /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
+        ///
+        /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn fault_codes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.fault_codes.unwrap_or_default();
+            v.push(input.into());
+            self.fault_codes = Some(v);
+            self
+        }
+        /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_fault_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.fault_codes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateLabelGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateLabelGroupInput {
+                label_group_name: self.label_group_name,
+                fault_codes: self.fault_codes,
+            })
+        }
+    }
+}
+impl UpdateLabelGroupInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateLabelGroup`](crate::operation::UpdateLabelGroup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateLabelGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateLabelGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateLabelGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.UpdateLabelGroup",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_label_group(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLabelGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateLabelGroup",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
+    pub fn builder() -> crate::input::update_label_group_input::Builder {
+        crate::input::update_label_group_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLabelGroupInput {
+    /// <p> The name of the label group to be updated. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    #[doc(hidden)]
+    pub fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateLabelGroupInput {
+    /// <p> The name of the label group to be updated. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn fault_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.fault_codes.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateLabelGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLabelGroupInput");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.field("fault_codes", &self.fault_codes);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4655,10 +6320,10 @@ pub struct ListSensorStatisticsInput {
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
     #[doc(hidden)]
     pub ingestion_job_id: std::option::Option<std::string::String>,
-    /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+    /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -4671,11 +6336,11 @@ impl ListSensorStatisticsInput {
     pub fn ingestion_job_id(&self) -> std::option::Option<&str> {
         self.ingestion_job_id.as_deref()
     }
-    /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+    /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4741,6 +6406,117 @@ impl std::fmt::Debug for ListModelsInput {
         formatter.field("status", &self.status);
         formatter.field("model_name_begins_with", &self.model_name_begins_with);
         formatter.field("dataset_name_begins_with", &self.dataset_name_begins_with);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLabelsInput {
+    /// <p> Retruns the name of the label group. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
+    #[doc(hidden)]
+    pub interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Returns all labels with a start time earlier than the end time given. </p>
+    #[doc(hidden)]
+    pub interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Returns labels with a particular fault code. </p>
+    #[doc(hidden)]
+    pub fault_code: std::option::Option<std::string::String>,
+    /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
+    #[doc(hidden)]
+    pub equipment: std::option::Option<std::string::String>,
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p> Specifies the maximum number of labels to list. </p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListLabelsInput {
+    /// <p> Retruns the name of the label group. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+    /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
+    pub fn interval_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.interval_start_time.as_ref()
+    }
+    /// <p> Returns all labels with a start time earlier than the end time given. </p>
+    pub fn interval_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.interval_end_time.as_ref()
+    }
+    /// <p> Returns labels with a particular fault code. </p>
+    pub fn fault_code(&self) -> std::option::Option<&str> {
+        self.fault_code.as_deref()
+    }
+    /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
+    pub fn equipment(&self) -> std::option::Option<&str> {
+        self.equipment.as_deref()
+    }
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Specifies the maximum number of labels to list. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListLabelsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLabelsInput");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.field("interval_start_time", &self.interval_start_time);
+        formatter.field("interval_end_time", &self.interval_end_time);
+        formatter.field("fault_code", &self.fault_code);
+        formatter.field("equipment", &self.equipment);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLabelGroupsInput {
+    /// <p> The beginning of the name of the label groups to be listed. </p>
+    #[doc(hidden)]
+    pub label_group_name_begins_with: std::option::Option<std::string::String>,
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p> Specifies the maximum number of label groups to list. </p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListLabelGroupsInput {
+    /// <p> The beginning of the name of the label groups to be listed. </p>
+    pub fn label_group_name_begins_with(&self) -> std::option::Option<&str> {
+        self.label_group_name_begins_with.as_deref()
+    }
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Specifies the maximum number of label groups to list. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListLabelGroupsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLabelGroupsInput");
+        formatter.field(
+            "label_group_name_begins_with",
+            &self.label_group_name_begins_with,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -4869,10 +6645,10 @@ pub struct ListInferenceEventsInput {
     /// <p>The name of the inference scheduler for the inference events listed. </p>
     #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
-    /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+    /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
     #[doc(hidden)]
     pub interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
     #[doc(hidden)]
     pub interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -4889,11 +6665,11 @@ impl ListInferenceEventsInput {
     pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
-    /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+    /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
     pub fn interval_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.interval_start_time.as_ref()
     }
-    /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
     pub fn interval_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.interval_end_time.as_ref()
     }
@@ -4955,7 +6731,7 @@ pub struct ListDataIngestionJobsInput {
     /// <p>The name of the dataset being used for the data ingestion job. </p>
     #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
@@ -4970,7 +6746,7 @@ impl ListDataIngestionJobsInput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5012,6 +6788,58 @@ impl std::fmt::Debug for DescribeModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelInput");
         formatter.field("model_name", &self.model_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLabelGroupInput {
+    /// <p> Returns the name of the label group. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+}
+impl DescribeLabelGroupInput {
+    /// <p> Returns the name of the label group. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLabelGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLabelGroupInput");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLabelInput {
+    /// <p> Returns the name of the group containing the label. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> Returns the ID of the label. </p>
+    #[doc(hidden)]
+    pub label_id: std::option::Option<std::string::String>,
+}
+impl DescribeLabelInput {
+    /// <p> Returns the name of the group containing the label. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+    /// <p> Returns the ID of the label. </p>
+    pub fn label_id(&self) -> std::option::Option<&str> {
+        self.label_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLabelInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLabelInput");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.field("label_id", &self.label_id);
         formatter.finish()
     }
 }
@@ -5100,6 +6928,58 @@ impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelInput");
         formatter.field("model_name", &self.model_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLabelGroupInput {
+    /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteLabelGroupInput {
+    /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteLabelGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLabelGroupInput");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLabelInput {
+    /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> The ID of the label that you want to delete. </p>
+    #[doc(hidden)]
+    pub label_id: std::option::Option<std::string::String>,
+}
+impl DeleteLabelInput {
+    /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+    /// <p> The ID of the label that you want to delete. </p>
+    pub fn label_id(&self) -> std::option::Option<&str> {
+        self.label_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteLabelInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLabelInput");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.field("label_id", &self.label_id);
         formatter.finish()
     }
 }
@@ -5293,6 +7173,144 @@ impl std::fmt::Debug for CreateModelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLabelGroupInput {
+    /// <p> Names a group of labels.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    #[doc(hidden)]
+    pub fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p> Tags that provide metadata about the label group you are creating. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateLabelGroupInput {
+    /// <p> Names a group of labels.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+    /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn fault_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.fault_codes.as_deref()
+    }
+    /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p> Tags that provide metadata about the label group you are creating. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLabelGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLabelGroupInput");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.field("fault_codes", &self.fault_codes);
+        formatter.field("client_token", &self.client_token);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLabelInput {
+    /// <p> The name of a group of labels. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> The start time of the labeled event. </p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The end time of the labeled event. </p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    #[doc(hidden)]
+    pub rating: std::option::Option<crate::model::LabelRating>,
+    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    #[doc(hidden)]
+    pub fault_code: std::option::Option<std::string::String>,
+    /// <p> Metadata providing additional information about the label. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    #[doc(hidden)]
+    pub notes: std::option::Option<std::string::String>,
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    #[doc(hidden)]
+    pub equipment: std::option::Option<std::string::String>,
+    /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateLabelInput {
+    /// <p> The name of a group of labels. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
+        self.label_group_name.as_deref()
+    }
+    /// <p> The start time of the labeled event. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p> The end time of the labeled event. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    pub fn rating(&self) -> std::option::Option<&crate::model::LabelRating> {
+        self.rating.as_ref()
+    }
+    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn fault_code(&self) -> std::option::Option<&str> {
+        self.fault_code.as_deref()
+    }
+    /// <p> Metadata providing additional information about the label. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn equipment(&self) -> std::option::Option<&str> {
+        self.equipment.as_deref()
+    }
+    /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLabelInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLabelInput");
+        formatter.field("label_group_name", &self.label_group_name);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("rating", &self.rating);
+        formatter.field("fault_code", &self.fault_code);
+        formatter.field("notes", &self.notes);
+        formatter.field("equipment", &self.equipment);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInferenceSchedulerInput {
     /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
     #[doc(hidden)]
@@ -5300,10 +7318,12 @@ pub struct CreateInferenceSchedulerInput {
     /// <p>The name of the inference scheduler being created. </p>
     #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
-    /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+    /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     #[doc(hidden)]
     pub data_delay_offset_in_minutes: std::option::Option<i64>,
-    /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     #[doc(hidden)]
     pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
@@ -5334,11 +7354,13 @@ impl CreateInferenceSchedulerInput {
     pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
-    /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+    /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     pub fn data_delay_offset_in_minutes(&self) -> std::option::Option<i64> {
         self.data_delay_offset_in_minutes
     }
-    /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }

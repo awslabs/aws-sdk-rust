@@ -2033,6 +2033,71 @@ impl EventDataStoreNotFoundException {
     }
 }
 
+/// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventDataStoreHasOngoingImportException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EventDataStoreHasOngoingImportException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventDataStoreHasOngoingImportException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EventDataStoreHasOngoingImportException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EventDataStoreHasOngoingImportException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "EventDataStoreHasOngoingImportException")?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EventDataStoreHasOngoingImportException {}
+/// See [`EventDataStoreHasOngoingImportException`](crate::error::EventDataStoreHasOngoingImportException).
+pub mod event_data_store_has_ongoing_import_exception {
+
+    /// A builder for [`EventDataStoreHasOngoingImportException`](crate::error::EventDataStoreHasOngoingImportException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventDataStoreHasOngoingImportException`](crate::error::EventDataStoreHasOngoingImportException).
+        pub fn build(self) -> crate::error::EventDataStoreHasOngoingImportException {
+            crate::error::EventDataStoreHasOngoingImportException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EventDataStoreHasOngoingImportException {
+    /// Creates a new builder-style object to manufacture [`EventDataStoreHasOngoingImportException`](crate::error::EventDataStoreHasOngoingImportException).
+    pub fn builder() -> crate::error::event_data_store_has_ongoing_import_exception::Builder {
+        crate::error::event_data_store_has_ongoing_import_exception::Builder::default()
+    }
+}
+
 /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2060,8 +2125,8 @@ impl std::fmt::Display for EventDataStoreArnInvalidException {
             f,
             "EventDataStoreArnInvalidException [EventDataStoreARNInvalidException]"
         )?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -2101,6 +2166,71 @@ impl EventDataStoreArnInvalidException {
     }
 }
 
+/// <p> The specified import was not found. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportNotFoundException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ImportNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ImportNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ImportNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ImportNotFoundException")?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ImportNotFoundException {}
+/// See [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+pub mod import_not_found_exception {
+
+    /// A builder for [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+        pub fn build(self) -> crate::error::ImportNotFoundException {
+            crate::error::ImportNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ImportNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+    pub fn builder() -> crate::error::import_not_found_exception::Builder {
+        crate::error::import_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2125,8 +2255,8 @@ impl MaxConcurrentQueriesException {
 impl std::fmt::Display for MaxConcurrentQueriesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaxConcurrentQueriesException")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -2190,8 +2320,8 @@ impl InvalidQueryStatementException {
 impl std::fmt::Display for InvalidQueryStatementException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidQueryStatementException")?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
@@ -2231,6 +2361,71 @@ impl InvalidQueryStatementException {
     }
 }
 
+/// <p> This exception is thrown when the provided source S3 bucket is not valid for import. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidImportSourceException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidImportSourceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidImportSourceException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidImportSourceException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidImportSourceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidImportSourceException")?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidImportSourceException {}
+/// See [`InvalidImportSourceException`](crate::error::InvalidImportSourceException).
+pub mod invalid_import_source_exception {
+
+    /// A builder for [`InvalidImportSourceException`](crate::error::InvalidImportSourceException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidImportSourceException`](crate::error::InvalidImportSourceException).
+        pub fn build(self) -> crate::error::InvalidImportSourceException {
+            crate::error::InvalidImportSourceException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidImportSourceException {
+    /// Creates a new builder-style object to manufacture [`InvalidImportSourceException`](crate::error::InvalidImportSourceException).
+    pub fn builder() -> crate::error::invalid_import_source_exception::Builder {
+        crate::error::invalid_import_source_exception::Builder::default()
+    }
+}
+
 /// <p>The event data store is not in a status that supports the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2255,8 +2450,8 @@ impl InvalidEventDataStoreStatusException {
 impl std::fmt::Display for InvalidEventDataStoreStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventDataStoreStatusException")?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -2296,6 +2491,136 @@ impl InvalidEventDataStoreStatusException {
     }
 }
 
+/// <p> This exception is thrown when the event data store category is not valid for the import. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidEventDataStoreCategoryException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidEventDataStoreCategoryException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidEventDataStoreCategoryException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidEventDataStoreCategoryException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidEventDataStoreCategoryException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidEventDataStoreCategoryException")?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidEventDataStoreCategoryException {}
+/// See [`InvalidEventDataStoreCategoryException`](crate::error::InvalidEventDataStoreCategoryException).
+pub mod invalid_event_data_store_category_exception {
+
+    /// A builder for [`InvalidEventDataStoreCategoryException`](crate::error::InvalidEventDataStoreCategoryException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidEventDataStoreCategoryException`](crate::error::InvalidEventDataStoreCategoryException).
+        pub fn build(self) -> crate::error::InvalidEventDataStoreCategoryException {
+            crate::error::InvalidEventDataStoreCategoryException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidEventDataStoreCategoryException {
+    /// Creates a new builder-style object to manufacture [`InvalidEventDataStoreCategoryException`](crate::error::InvalidEventDataStoreCategoryException).
+    pub fn builder() -> crate::error::invalid_event_data_store_category_exception::Builder {
+        crate::error::invalid_event_data_store_category_exception::Builder::default()
+    }
+}
+
+/// <p> This exception is thrown when you start a new import and a previous import is still in progress. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccountHasOngoingImportException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccountHasOngoingImportException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccountHasOngoingImportException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccountHasOngoingImportException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccountHasOngoingImportException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccountHasOngoingImportException")?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccountHasOngoingImportException {}
+/// See [`AccountHasOngoingImportException`](crate::error::AccountHasOngoingImportException).
+pub mod account_has_ongoing_import_exception {
+
+    /// A builder for [`AccountHasOngoingImportException`](crate::error::AccountHasOngoingImportException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccountHasOngoingImportException`](crate::error::AccountHasOngoingImportException).
+        pub fn build(self) -> crate::error::AccountHasOngoingImportException {
+            crate::error::AccountHasOngoingImportException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccountHasOngoingImportException {
+    /// Creates a new builder-style object to manufacture [`AccountHasOngoingImportException`](crate::error::AccountHasOngoingImportException).
+    pub fn builder() -> crate::error::account_has_ongoing_import_exception::Builder {
+        crate::error::account_has_ongoing_import_exception::Builder::default()
+    }
+}
+
 /// <p>Your account has used the maximum number of event data stores.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2320,8 +2645,8 @@ impl EventDataStoreMaxLimitExceededException {
 impl std::fmt::Display for EventDataStoreMaxLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventDataStoreMaxLimitExceededException")?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
@@ -2385,8 +2710,8 @@ impl ResourceTypeNotSupportedException {
 impl std::fmt::Display for ResourceTypeNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceTypeNotSupportedException")?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -2450,8 +2775,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -2515,8 +2840,8 @@ impl InvalidTagParameterException {
 impl std::fmt::Display for InvalidTagParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagParameterException")?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -2584,8 +2909,8 @@ impl std::fmt::Display for CloudTrailArnInvalidException {
             f,
             "CloudTrailArnInvalidException [CloudTrailARNInvalidException]"
         )?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -2649,8 +2974,8 @@ impl InvalidInsightSelectorsException {
 impl std::fmt::Display for InvalidInsightSelectorsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInsightSelectorsException")?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -2714,8 +3039,8 @@ impl InvalidTimeRangeException {
 impl std::fmt::Display for InvalidTimeRangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTimeRangeException")?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -2779,8 +3104,8 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
@@ -2844,8 +3169,8 @@ impl InvalidMaxResultsException {
 impl std::fmt::Display for InvalidMaxResultsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxResultsException")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
         }
         Ok(())
     }
@@ -2909,8 +3234,8 @@ impl InvalidLookupAttributesException {
 impl std::fmt::Display for InvalidLookupAttributesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLookupAttributesException")?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
         }
         Ok(())
     }
@@ -2974,8 +3299,8 @@ impl InvalidEventCategoryException {
 impl std::fmt::Display for InvalidEventCategoryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventCategoryException")?;
-        if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -3039,8 +3364,8 @@ impl InvalidTokenException {
 impl std::fmt::Display for InvalidTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTokenException")?;
-        if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
@@ -3104,8 +3429,8 @@ impl InvalidQueryStatusException {
 impl std::fmt::Display for InvalidQueryStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidQueryStatusException")?;
-        if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+        if let Some(inner_53) = &self.message {
+            write!(f, ": {}", inner_53)?;
         }
         Ok(())
     }
@@ -3169,8 +3494,8 @@ impl InvalidDateRangeException {
 impl std::fmt::Display for InvalidDateRangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDateRangeException")?;
-        if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+        if let Some(inner_54) = &self.message {
+            write!(f, ": {}", inner_54)?;
         }
         Ok(())
     }
@@ -3234,8 +3559,8 @@ impl QueryIdNotFoundException {
 impl std::fmt::Display for QueryIdNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueryIdNotFoundException")?;
-        if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+        if let Some(inner_55) = &self.message {
+            write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
@@ -3299,8 +3624,8 @@ impl InsightNotEnabledException {
 impl std::fmt::Display for InsightNotEnabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsightNotEnabledException")?;
-        if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+        if let Some(inner_56) = &self.message {
+            write!(f, ": {}", inner_56)?;
         }
         Ok(())
     }
@@ -3340,6 +3665,136 @@ impl InsightNotEnabledException {
     }
 }
 
+/// <p> The specified channel was not found. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChannelNotFoundException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ChannelNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChannelNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ChannelNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ChannelNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ChannelNotFoundException")?;
+        if let Some(inner_57) = &self.message {
+            write!(f, ": {}", inner_57)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ChannelNotFoundException {}
+/// See [`ChannelNotFoundException`](crate::error::ChannelNotFoundException).
+pub mod channel_not_found_exception {
+
+    /// A builder for [`ChannelNotFoundException`](crate::error::ChannelNotFoundException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChannelNotFoundException`](crate::error::ChannelNotFoundException).
+        pub fn build(self) -> crate::error::ChannelNotFoundException {
+            crate::error::ChannelNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ChannelNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ChannelNotFoundException`](crate::error::ChannelNotFoundException).
+    pub fn builder() -> crate::error::channel_not_found_exception::Builder {
+        crate::error::channel_not_found_exception::Builder::default()
+    }
+}
+
+/// <p> The specified channel ARN is not valid or does not map to a channel in your account. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChannelArnInvalidException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ChannelArnInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChannelArnInvalidException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ChannelArnInvalidException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ChannelArnInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ChannelArnInvalidException [ChannelARNInvalidException]")?;
+        if let Some(inner_58) = &self.message {
+            write!(f, ": {}", inner_58)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ChannelArnInvalidException {}
+/// See [`ChannelArnInvalidException`](crate::error::ChannelArnInvalidException).
+pub mod channel_arn_invalid_exception {
+
+    /// A builder for [`ChannelArnInvalidException`](crate::error::ChannelArnInvalidException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChannelArnInvalidException`](crate::error::ChannelArnInvalidException).
+        pub fn build(self) -> crate::error::ChannelArnInvalidException {
+            crate::error::ChannelArnInvalidException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ChannelArnInvalidException {
+    /// Creates a new builder-style object to manufacture [`ChannelArnInvalidException`](crate::error::ChannelArnInvalidException).
+    pub fn builder() -> crate::error::channel_arn_invalid_exception::Builder {
+        crate::error::channel_arn_invalid_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3364,8 +3819,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+        if let Some(inner_59) = &self.message {
+            write!(f, ": {}", inner_59)?;
         }
         Ok(())
     }
@@ -3429,8 +3884,8 @@ impl EventDataStoreTerminationProtectedException {
 impl std::fmt::Display for EventDataStoreTerminationProtectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventDataStoreTerminationProtectedException")?;
-        if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+        if let Some(inner_60) = &self.message {
+            write!(f, ": {}", inner_60)?;
         }
         Ok(())
     }
@@ -3494,8 +3949,8 @@ impl TrailAlreadyExistsException {
 impl std::fmt::Display for TrailAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrailAlreadyExistsException")?;
-        if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+        if let Some(inner_61) = &self.message {
+            write!(f, ": {}", inner_61)?;
         }
         Ok(())
     }
@@ -3559,8 +4014,8 @@ impl MaximumNumberOfTrailsExceededException {
 impl std::fmt::Display for MaximumNumberOfTrailsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumNumberOfTrailsExceededException")?;
-        if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+        if let Some(inner_62) = &self.message {
+            write!(f, ": {}", inner_62)?;
         }
         Ok(())
     }
@@ -3624,8 +4079,8 @@ impl EventDataStoreAlreadyExistsException {
 impl std::fmt::Display for EventDataStoreAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventDataStoreAlreadyExistsException")?;
-        if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+        if let Some(inner_63) = &self.message {
+            write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
@@ -3689,8 +4144,8 @@ impl InactiveQueryException {
 impl std::fmt::Display for InactiveQueryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InactiveQueryException")?;
-        if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+        if let Some(inner_64) = &self.message {
+            write!(f, ": {}", inner_64)?;
         }
         Ok(())
     }
@@ -3754,8 +4209,8 @@ impl TagsLimitExceededException {
 impl std::fmt::Display for TagsLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagsLimitExceededException")?;
-        if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+        if let Some(inner_65) = &self.message {
+            write!(f, ": {}", inner_65)?;
         }
         Ok(())
     }
@@ -4884,6 +5339,8 @@ pub struct DeleteEventDataStoreError {
 pub enum DeleteEventDataStoreErrorKind {
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
+    EventDataStoreHasOngoingImportException(crate::error::EventDataStoreHasOngoingImportException),
     /// <p>The specified event data store was not found.</p>
     EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
     /// <p>The event data store cannot be deleted because termination protection is enabled for it.</p>
@@ -4909,6 +5366,9 @@ impl std::fmt::Display for DeleteEventDataStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::EventDataStoreHasOngoingImportException(_inner) =>
             _inner.fmt(f)
             ,
             DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
@@ -4995,6 +5455,13 @@ impl DeleteEventDataStoreError {
             DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::EventDataStoreHasOngoingImportException`.
+    pub fn is_event_data_store_has_ongoing_import_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::EventDataStoreHasOngoingImportException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException`.
     pub fn is_event_data_store_not_found_exception(&self) -> bool {
         matches!(
@@ -5051,6 +5518,9 @@ impl std::error::Error for DeleteEventDataStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::EventDataStoreHasOngoingImportException(_inner) =>
             Some(_inner)
             ,
             DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
@@ -5539,6 +6009,129 @@ impl std::error::Error for DescribeTrailsError {
     }
 }
 
+/// Error type for the `GetChannel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetChannelError {
+    /// Kind of error that occurred.
+    pub kind: GetChannelErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetChannel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetChannelErrorKind {
+    /// <p> The specified channel ARN is not valid or does not map to a channel in your account. </p>
+    ChannelArnInvalidException(crate::error::ChannelArnInvalidException),
+    /// <p> The specified channel was not found. </p>
+    ChannelNotFoundException(crate::error::ChannelNotFoundException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetChannelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetChannelErrorKind::ChannelArnInvalidException(_inner) => _inner.fmt(f),
+            GetChannelErrorKind::ChannelNotFoundException(_inner) => _inner.fmt(f),
+            GetChannelErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            GetChannelErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            GetChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetChannelError {
+    fn code(&self) -> Option<&str> {
+        GetChannelError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetChannelError {
+    /// Creates a new `GetChannelError`.
+    pub fn new(kind: GetChannelErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetChannelError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetChannelErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetChannelError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetChannelErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetChannelErrorKind::ChannelArnInvalidException`.
+    pub fn is_channel_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetChannelErrorKind::ChannelArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetChannelErrorKind::ChannelNotFoundException`.
+    pub fn is_channel_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetChannelErrorKind::ChannelNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetChannelErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetChannelErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetChannelErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetChannelErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for GetChannelError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetChannelErrorKind::ChannelArnInvalidException(_inner) => Some(_inner),
+            GetChannelErrorKind::ChannelNotFoundException(_inner) => Some(_inner),
+            GetChannelErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            GetChannelErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            GetChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetEventDataStore` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5805,6 +6398,126 @@ impl std::error::Error for GetEventSelectorsError {
             GetEventSelectorsErrorKind::TrailNotFoundException(_inner) => Some(_inner),
             GetEventSelectorsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             GetEventSelectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetImport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetImportError {
+    /// Kind of error that occurred.
+    pub kind: GetImportErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetImport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetImportErrorKind {
+    /// <p> The specified import was not found. </p>
+    ImportNotFoundException(crate::error::ImportNotFoundException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetImportError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetImportErrorKind::ImportNotFoundException(_inner) => _inner.fmt(f),
+            GetImportErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetImportErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            GetImportErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            GetImportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetImportError {
+    fn code(&self) -> Option<&str> {
+        GetImportError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetImportError {
+    /// Creates a new `GetImportError`.
+    pub fn new(kind: GetImportErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetImportError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetImportErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetImportError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetImportErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetImportErrorKind::ImportNotFoundException`.
+    pub fn is_import_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetImportErrorKind::ImportNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetImportErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, GetImportErrorKind::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `GetImportErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImportErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetImportErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetImportErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for GetImportError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetImportErrorKind::ImportNotFoundException(_inner) => Some(_inner),
+            GetImportErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetImportErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            GetImportErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            GetImportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6394,6 +7107,121 @@ impl std::error::Error for GetTrailStatusError {
     }
 }
 
+/// Error type for the `ListChannels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListChannelsError {
+    /// Kind of error that occurred.
+    pub kind: ListChannelsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListChannels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListChannelsErrorKind {
+    /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListChannelsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListChannelsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListChannelsError {
+    fn code(&self) -> Option<&str> {
+        ListChannelsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListChannelsError {
+    /// Creates a new `ListChannelsError`.
+    pub fn new(kind: ListChannelsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListChannelsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListChannelsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListChannelsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListChannelsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for ListChannelsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListChannelsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListChannelsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            ListChannelsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            ListChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListEventDataStores` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6516,6 +7344,258 @@ impl std::error::Error for ListEventDataStoresError {
             ListEventDataStoresErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             ListEventDataStoresErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             ListEventDataStoresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListImportFailures` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListImportFailuresError {
+    /// Kind of error that occurred.
+    pub kind: ListImportFailuresErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListImportFailures` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListImportFailuresErrorKind {
+    /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListImportFailuresError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListImportFailuresErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListImportFailuresErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            ListImportFailuresErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            ListImportFailuresErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListImportFailuresError {
+    fn code(&self) -> Option<&str> {
+        ListImportFailuresError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListImportFailuresError {
+    /// Creates a new `ListImportFailuresError`.
+    pub fn new(kind: ListImportFailuresErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListImportFailuresError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListImportFailuresErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListImportFailuresError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListImportFailuresErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListImportFailuresErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportFailuresErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListImportFailuresErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportFailuresErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListImportFailuresErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportFailuresErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for ListImportFailuresError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListImportFailuresErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListImportFailuresErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            ListImportFailuresErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            ListImportFailuresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListImports` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListImportsError {
+    /// Kind of error that occurred.
+    pub kind: ListImportsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListImports` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListImportsErrorKind {
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListImportsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListImportsErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            ListImportsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListImportsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListImportsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            ListImportsErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            ListImportsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListImportsError {
+    fn code(&self) -> Option<&str> {
+        ListImportsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListImportsError {
+    /// Creates a new `ListImportsError`.
+    pub fn new(kind: ListImportsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListImportsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListImportsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListImportsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListImportsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListImportsErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportsErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListImportsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListImportsErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportsErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListImportsErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportsErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListImportsErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListImportsErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for ListImportsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListImportsErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
+            ListImportsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListImportsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListImportsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            ListImportsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            ListImportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8166,6 +9246,206 @@ impl std::error::Error for RestoreEventDataStoreError {
     }
 }
 
+/// Error type for the `StartImport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartImportError {
+    /// Kind of error that occurred.
+    pub kind: StartImportErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartImport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartImportErrorKind {
+    /// <p> This exception is thrown when you start a new import and a previous import is still in progress. </p>
+    AccountHasOngoingImportException(crate::error::AccountHasOngoingImportException),
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p> The specified import was not found. </p>
+    ImportNotFoundException(crate::error::ImportNotFoundException),
+    /// <p>The event data store is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p> This exception is thrown when the event data store category is not valid for the import. </p>
+    InvalidEventDataStoreCategoryException(crate::error::InvalidEventDataStoreCategoryException),
+    /// <p>The event data store is not in a status that supports the operation.</p>
+    InvalidEventDataStoreStatusException(crate::error::InvalidEventDataStoreStatusException),
+    /// <p> This exception is thrown when the provided source S3 bucket is not valid for import. </p>
+    InvalidImportSourceException(crate::error::InvalidImportSourceException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartImportError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartImportErrorKind::AccountHasOngoingImportException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::ImportNotFoundException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::InvalidEventDataStoreCategoryException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::InvalidEventDataStoreStatusException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::InvalidImportSourceException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            StartImportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartImportError {
+    fn code(&self) -> Option<&str> {
+        StartImportError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartImportError {
+    /// Creates a new `StartImportError`.
+    pub fn new(kind: StartImportErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartImportError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartImportErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartImportError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartImportErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::AccountHasOngoingImportException`.
+    pub fn is_account_has_ongoing_import_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::AccountHasOngoingImportException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::ImportNotFoundException`.
+    pub fn is_import_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StartImportErrorKind::ImportNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::InactiveEventDataStoreException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::InvalidEventDataStoreCategoryException`.
+    pub fn is_invalid_event_data_store_category_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::InvalidEventDataStoreCategoryException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::InvalidEventDataStoreStatusException`.
+    pub fn is_invalid_event_data_store_status_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::InvalidEventDataStoreStatusException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::InvalidImportSourceException`.
+    pub fn is_invalid_import_source_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::InvalidImportSourceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartImportErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartImportErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for StartImportError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartImportErrorKind::AccountHasOngoingImportException(_inner) => Some(_inner),
+            StartImportErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
+            StartImportErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            StartImportErrorKind::ImportNotFoundException(_inner) => Some(_inner),
+            StartImportErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
+            StartImportErrorKind::InvalidEventDataStoreCategoryException(_inner) => Some(_inner),
+            StartImportErrorKind::InvalidEventDataStoreStatusException(_inner) => Some(_inner),
+            StartImportErrorKind::InvalidImportSourceException(_inner) => Some(_inner),
+            StartImportErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            StartImportErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            StartImportErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            StartImportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartLogging` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8505,6 +9785,129 @@ impl std::error::Error for StartQueryError {
     }
 }
 
+/// Error type for the `StopImport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopImportError {
+    /// Kind of error that occurred.
+    pub kind: StopImportErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StopImport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopImportErrorKind {
+    /// <p> The specified import was not found. </p>
+    ImportNotFoundException(crate::error::ImportNotFoundException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopImportError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopImportErrorKind::ImportNotFoundException(_inner) => _inner.fmt(f),
+            StopImportErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            StopImportErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            StopImportErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            StopImportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopImportError {
+    fn code(&self) -> Option<&str> {
+        StopImportError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopImportError {
+    /// Creates a new `StopImportError`.
+    pub fn new(kind: StopImportErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopImportError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopImportErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopImportError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopImportErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopImportErrorKind::ImportNotFoundException`.
+    pub fn is_import_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StopImportErrorKind::ImportNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `StopImportErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopImportErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopImportErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopImportErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopImportErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopImportErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for StopImportError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopImportErrorKind::ImportNotFoundException(_inner) => Some(_inner),
+            StopImportErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            StopImportErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            StopImportErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            StopImportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StopLogging` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8691,6 +10094,8 @@ pub enum UpdateEventDataStoreErrorKind {
     CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
+    EventDataStoreHasOngoingImportException(crate::error::EventDataStoreHasOngoingImportException),
     /// <p>The specified event data store was not found.</p>
     EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
     /// <p>The event data store is inactive.</p>
@@ -8723,6 +10128,9 @@ impl std::fmt::Display for UpdateEventDataStoreError {
             _inner.fmt(f)
             ,
             UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::EventDataStoreHasOngoingImportException(_inner) =>
             _inner.fmt(f)
             ,
             UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
@@ -8822,6 +10230,13 @@ impl UpdateEventDataStoreError {
             UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::EventDataStoreHasOngoingImportException`.
+    pub fn is_event_data_store_has_ongoing_import_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::EventDataStoreHasOngoingImportException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException`.
     pub fn is_event_data_store_not_found_exception(&self) -> bool {
         matches!(
@@ -8895,6 +10310,9 @@ impl std::error::Error for UpdateEventDataStoreError {
             Some(_inner)
             ,
             UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::EventDataStoreHasOngoingImportException(_inner) =>
             Some(_inner)
             ,
             UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>

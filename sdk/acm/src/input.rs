@@ -499,13 +499,19 @@ pub mod export_certificate_input {
             self.certificate_arn = input;
             self
         }
-        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
+        /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+        /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
+        /// </note>
+        /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
         /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
         pub fn passphrase(mut self, input: aws_smithy_types::Blob) -> Self {
             self.passphrase = Some(input);
             self
         }
-        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
+        /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+        /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
+        /// </note>
+        /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
         /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
         pub fn set_passphrase(
             mut self,
@@ -1140,6 +1146,8 @@ pub mod list_certificates_input {
         pub(crate) includes: std::option::Option<crate::model::Filters>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
+        pub(crate) sort_by: std::option::Option<crate::model::SortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
     }
     impl Builder {
         /// Appends an item to `certificate_statuses`.
@@ -1191,6 +1199,29 @@ pub mod list_certificates_input {
             self.max_items = input;
             self
         }
+        /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::input::ListCertificatesInput).
         pub fn build(
             self,
@@ -1201,6 +1232,8 @@ pub mod list_certificates_input {
                 includes: self.includes,
                 next_token: self.next_token,
                 max_items: self.max_items,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
             })
         }
     }
@@ -1978,14 +2011,14 @@ pub mod request_certificate_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
-        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+        /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
+        /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
-        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+        /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
+        /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2082,13 +2115,13 @@ pub mod request_certificate_input {
             self.options = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
         /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
         /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
@@ -2695,8 +2728,8 @@ impl std::fmt::Debug for ResendValidationEmailInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCertificateInput {
-    /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
-    /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+    /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
+    /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation. </p>
@@ -2721,7 +2754,7 @@ pub struct RequestCertificateInput {
     /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::CertificateOptions>,
-    /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+    /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
     #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
@@ -2730,8 +2763,8 @@ pub struct RequestCertificateInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RequestCertificateInput {
-    /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
-    /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+    /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
+    /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -2763,7 +2796,7 @@ impl RequestCertificateInput {
     pub fn options(&self) -> std::option::Option<&crate::model::CertificateOptions> {
         self.options.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+    /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
@@ -2920,6 +2953,12 @@ pub struct ListCertificatesInput {
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
+    /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::SortBy>,
+    /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListCertificatesInput {
     /// <p>Filter the certificate list by status value.</p>
@@ -2938,6 +2977,14 @@ impl ListCertificatesInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
+    /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2946,6 +2993,8 @@ impl std::fmt::Debug for ListCertificatesInput {
         formatter.field("includes", &self.includes);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_items", &self.max_items);
+        formatter.field("sort_by", &self.sort_by);
+        formatter.field("sort_order", &self.sort_order);
         formatter.finish()
     }
 }
@@ -3051,7 +3100,10 @@ pub struct ExportCertificateInput {
     /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
+    /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+    /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
+    /// </note>
+    /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
     /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
     #[doc(hidden)]
     pub passphrase: std::option::Option<aws_smithy_types::Blob>,
@@ -3062,7 +3114,10 @@ impl ExportCertificateInput {
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
+    /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+    /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
+    /// </note>
+    /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
     /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
     pub fn passphrase(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.passphrase.as_ref()

@@ -9086,14 +9086,14 @@ pub mod transact_get_items_input {
         ///
         /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).
         ///
-        /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
+        /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
         pub fn transact_items(mut self, input: crate::model::TransactGetItem) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
             v.push(input);
             self.transact_items = Some(v);
             self
         }
-        /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
+        /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
         pub fn set_transact_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
@@ -9261,14 +9261,14 @@ pub mod transact_write_items_input {
         ///
         /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).
         ///
-        /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
+        /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
         pub fn transact_items(mut self, input: crate::model::TransactWriteItem) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
             v.push(input);
             self.transact_items = Some(v);
             self
         }
-        /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
+        /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
         pub fn set_transact_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
@@ -12390,7 +12390,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactWriteItemsInput {
-    /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
+    /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
     #[doc(hidden)]
     pub transact_items: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -12413,7 +12413,7 @@ pub struct TransactWriteItemsInput {
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl TransactWriteItemsInput {
-    /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
+    /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
     pub fn transact_items(&self) -> std::option::Option<&[crate::model::TransactWriteItem]> {
         self.transact_items.as_deref()
     }
@@ -12460,7 +12460,7 @@ impl std::fmt::Debug for TransactWriteItemsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactGetItemsInput {
-    /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
+    /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
     #[doc(hidden)]
     pub transact_items: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
     /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
@@ -12468,7 +12468,7 @@ pub struct TransactGetItemsInput {
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl TransactGetItemsInput {
-    /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
+    /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
     pub fn transact_items(&self) -> std::option::Option<&[crate::model::TransactGetItem]> {
         self.transact_items.as_deref()
     }

@@ -131,7 +131,7 @@ impl Client {
     ///   - [`address_id(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::address_id) / [`set_address_id(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_address_id): <p>The ID for the address that you want the cluster shipped to.</p>
     ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_kms_key_arn): <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_role_arn): <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    ///   - [`snowball_type(SnowballType)`](crate::client::fluent_builders::CreateCluster::snowball_type) / [`set_snowball_type(Option<SnowballType>)`](crate::client::fluent_builders::CreateCluster::set_snowball_type): <p>The type of Snow Family Devices to use for this cluster. </p> <note>   <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>  </note>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    ///   - [`snowball_type(SnowballType)`](crate::client::fluent_builders::CreateCluster::snowball_type) / [`set_snowball_type(Option<SnowballType>)`](crate::client::fluent_builders::CreateCluster::set_snowball_type): <p>The type of Snow Family devices to use for this cluster. </p> <note>   <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>  </note>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     ///   - [`shipping_option(ShippingOption)`](crate::client::fluent_builders::CreateCluster::shipping_option) / [`set_shipping_option(Option<ShippingOption>)`](crate::client::fluent_builders::CreateCluster::set_shipping_option): <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>  <ul>   <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>   <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>   <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>   <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>  </ul>  <ul>   <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>   <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>   <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>   <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>  </ul>
     ///   - [`notification(Notification)`](crate::client::fluent_builders::CreateCluster::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::CreateCluster::set_notification): <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     ///   - [`forwarding_address_id(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::forwarding_address_id) / [`set_forwarding_address_id(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_forwarding_address_id): <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
@@ -157,7 +157,7 @@ impl Client {
     ///   - [`shipping_option(ShippingOption)`](crate::client::fluent_builders::CreateJob::shipping_option) / [`set_shipping_option(Option<ShippingOption>)`](crate::client::fluent_builders::CreateJob::set_shipping_option): <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>  <ul>   <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>   <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>   <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>   <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>  </ul>
     ///   - [`notification(Notification)`](crate::client::fluent_builders::CreateJob::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::CreateJob::set_notification): <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
     ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::CreateJob::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::CreateJob::set_cluster_id): <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
-    ///   - [`snowball_type(SnowballType)`](crate::client::fluent_builders::CreateJob::snowball_type) / [`set_snowball_type(Option<SnowballType>)`](crate::client::fluent_builders::CreateJob::set_snowball_type): <p>The type of Snow Family Devices to use for this job. </p> <note>   <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>  </note>  <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    ///   - [`snowball_type(SnowballType)`](crate::client::fluent_builders::CreateJob::snowball_type) / [`set_snowball_type(Option<SnowballType>)`](crate::client::fluent_builders::CreateJob::set_snowball_type): <p>The type of Snow Family devices to use for this job. </p> <note>   <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>  </note>  <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     ///   - [`forwarding_address_id(impl Into<String>)`](crate::client::fluent_builders::CreateJob::forwarding_address_id) / [`set_forwarding_address_id(Option<String>)`](crate::client::fluent_builders::CreateJob::set_forwarding_address_id): <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
     ///   - [`tax_documents(TaxDocuments)`](crate::client::fluent_builders::CreateJob::tax_documents) / [`set_tax_documents(Option<TaxDocuments>)`](crate::client::fluent_builders::CreateJob::set_tax_documents): <p>The tax documents required in your Amazon Web Services Region.</p>
     ///   - [`device_configuration(DeviceConfiguration)`](crate::client::fluent_builders::CreateJob::device_configuration) / [`set_device_configuration(Option<DeviceConfiguration>)`](crate::client::fluent_builders::CreateJob::set_device_configuration): <p>Defines the device configuration for an Snowcone job.</p>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -173,8 +173,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`long_term_pricing_type(LongTermPricingType)`](crate::client::fluent_builders::CreateLongTermPricing::long_term_pricing_type) / [`set_long_term_pricing_type(Option<LongTermPricingType>)`](crate::client::fluent_builders::CreateLongTermPricing::set_long_term_pricing_type): <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-    ///   - [`is_long_term_pricing_auto_renew(bool)`](crate::client::fluent_builders::CreateLongTermPricing::is_long_term_pricing_auto_renew) / [`set_is_long_term_pricing_auto_renew(Option<bool>)`](crate::client::fluent_builders::CreateLongTermPricing::set_is_long_term_pricing_auto_renew): <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
-    ///   - [`snowball_type(SnowballType)`](crate::client::fluent_builders::CreateLongTermPricing::snowball_type) / [`set_snowball_type(Option<SnowballType>)`](crate::client::fluent_builders::CreateLongTermPricing::set_snowball_type): <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+    ///   - [`is_long_term_pricing_auto_renew(bool)`](crate::client::fluent_builders::CreateLongTermPricing::is_long_term_pricing_auto_renew) / [`set_is_long_term_pricing_auto_renew(Option<bool>)`](crate::client::fluent_builders::CreateLongTermPricing::set_is_long_term_pricing_auto_renew): <p>snowballty</p>  <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+    ///   - [`snowball_type(SnowballType)`](crate::client::fluent_builders::CreateLongTermPricing::snowball_type) / [`set_snowball_type(Option<SnowballType>)`](crate::client::fluent_builders::CreateLongTermPricing::set_snowball_type): <p>The type of Snow Family devices to use for the long-term pricing job.</p>
     /// - On success, responds with [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput) with field(s):
     ///   - [`long_term_pricing_id(Option<String>)`](crate::output::CreateLongTermPricingOutput::long_term_pricing_id): <p>The ID of the long-term pricing type for the device.</p>
     /// - On failure, responds with [`SdkError<CreateLongTermPricingError>`](crate::error::CreateLongTermPricingError)
@@ -290,6 +290,7 @@ impl Client {
         fluent_builders::GetSoftwareUpdates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListClusterJobs`](crate::client::fluent_builders::ListClusterJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClusterJobs::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ListClusterJobs::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ListClusterJobs::set_cluster_id): <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -303,6 +304,7 @@ impl Client {
         fluent_builders::ListClusterJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListClusters`](crate::client::fluent_builders::ListClusters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListClusters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListClusters::set_max_results): <p>The number of <code>ClusterListEntry</code> objects to return.</p>
@@ -315,6 +317,7 @@ impl Client {
         fluent_builders::ListClusters::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCompatibleImages`](crate::client::fluent_builders::ListCompatibleImages) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCompatibleImages::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCompatibleImages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCompatibleImages::set_max_results): <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
@@ -340,6 +343,7 @@ impl Client {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListLongTermPricing`](crate::client::fluent_builders::ListLongTermPricing) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLongTermPricing::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLongTermPricing::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLongTermPricing::set_max_results): <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
@@ -797,7 +801,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+        /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
         /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -805,7 +809,7 @@ pub mod fluent_builders {
             self.inner = self.inner.snowball_type(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+        /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
         /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -914,7 +918,7 @@ pub mod fluent_builders {
     /// <p>Availability of device types differ by Amazon Web Services Region. For more information about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon Web Services Regional Services</a>.</p>
     /// </note>
     /// <p></p>
-    /// <p class="title"> <b>Snow Family Devices and their capacities.</b> </p>
+    /// <p class="title"> <b>Snow Family devices and their capacities.</b> </p>
     /// <ul>
     /// <li> <p>Snow Family device type: <b>SNC1_SSD</b> </p>
     /// <ul>
@@ -945,6 +949,11 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>Capacity: T100</p> </li>
     /// <li> <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p> </li>
+    /// </ul> <p></p> </li>
+    /// <li> <p>Device type: <b>V3_5C</b> </p>
+    /// <ul>
+    /// <li> <p>Capacity: T32</p> </li>
+    /// <li> <p>Description: Snowball Edge Compute Optimized without GPU</p> </li>
     /// </ul> <p></p> </li>
     /// <li> <p>Device type: <b>STANDARD</b> </p>
     /// <ul>
@@ -1173,7 +1182,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+        /// <p>The type of Snow Family devices to use for this job. </p> <note>
         /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
         /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -1183,7 +1192,7 @@ pub mod fluent_builders {
             self.inner = self.inner.snowball_type(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+        /// <p>The type of Snow Family devices to use for this job. </p> <note>
         /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
         /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -1343,11 +1352,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_long_term_pricing_type(input);
             self
         }
+        /// <p>snowballty</p>
         /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
             self.inner = self.inner.is_long_term_pricing_auto_renew(input);
             self
         }
+        /// <p>snowballty</p>
         /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
@@ -1356,12 +1367,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_is_long_term_pricing_auto_renew(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+        /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.inner = self.inner.snowball_type(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+        /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1864,7 +1875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobManifest`.
     ///
     /// <p>Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value. You can access the manifest file for up to 60 minutes after this request has been made. To access the manifest file after 60 minutes have passed, you'll have to make another call to the <code>GetJobManifest</code> action.</p>
-    /// <p>The manifest is an encrypted file that you can download after your job enters the <code>WithCustomer</code> status. The manifest is decrypted by using the <code>UnlockCode</code> code value, when you pass both values to the Snow device through the Snowball client when the client is started for the first time.</p>
+    /// <p>The manifest is an encrypted file that you can download after your job enters the <code>WithCustomer</code> status. This is the only valid status for calling this API as the manifest and <code>UnlockCode</code> code value are used for securing your device and should only be used when you have the device. The manifest is decrypted by using the <code>UnlockCode</code> code value, when you pass both values to the Snow device through the Snowball client when the client is started for the first time. </p>
     /// <p>As a best practice, we recommend that you don't save a copy of an <code>UnlockCode</code> value in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snow device associated with that job.</p>
     /// <p>The credentials of a given job, including its manifest file and unlock code, expire 360 days after the job is created.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1944,7 +1955,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobUnlockCode`.
     ///
     /// <p>Returns the <code>UnlockCode</code> code value for the specified job. A particular <code>UnlockCode</code> value can be accessed for up to 360 days after the associated job has been created.</p>
-    /// <p>The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is used to decrypt the manifest file when it is passed along with the manifest to the Snow device through the Snowball client when the client is started for the first time.</p>
+    /// <p>The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is used to decrypt the manifest file when it is passed along with the manifest to the Snow device through the Snowball client when the client is started for the first time. The only valid status for calling this API is <code>WithCustomer</code> as the manifest and <code>Unlock</code> code values are used for securing your device and should only be used when you have the device.</p>
     /// <p>As a best practice, we recommend that you don't save a copy of the <code>UnlockCode</code> in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snow device associated with that job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobUnlockCode {
@@ -2231,6 +2242,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListClusterJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListClusterJobsPaginator {
+            crate::paginator::ListClusterJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_id(input.into());
@@ -2328,6 +2345,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListClustersPaginator {
+            crate::paginator::ListClustersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
@@ -2414,6 +2437,12 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCompatibleImagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCompatibleImagesPaginator {
+            crate::paginator::ListCompatibleImagesPaginator::new(self.handle, self.inner)
         }
         /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2594,6 +2623,12 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLongTermPricingPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLongTermPricingPaginator {
+            crate::paginator::ListLongTermPricingPaginator::new(self.handle, self.inner)
         }
         /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {

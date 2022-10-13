@@ -16,6 +16,7 @@ pub mod invoke_endpoint_input {
         pub(crate) target_variant: std::option::Option<std::string::String>,
         pub(crate) target_container_hostname: std::option::Option<std::string::String>,
         pub(crate) inference_id: std::option::Option<std::string::String>,
+        pub(crate) enable_explanations: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API. </p>
@@ -128,6 +129,19 @@ pub mod invoke_endpoint_input {
             self.inference_id = input;
             self
         }
+        /// <p>An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a> section in the developer guide for more information. </p>
+        pub fn enable_explanations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.enable_explanations = Some(input.into());
+            self
+        }
+        /// <p>An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a> section in the developer guide for more information. </p>
+        pub fn set_enable_explanations(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.enable_explanations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InvokeEndpointInput`](crate::input::InvokeEndpointInput).
         pub fn build(
             self,
@@ -143,6 +157,7 @@ pub mod invoke_endpoint_input {
                 target_variant: self.target_variant,
                 target_container_hostname: self.target_container_hostname,
                 inference_id: self.inference_id,
+                enable_explanations: self.enable_explanations,
             })
         }
     }
@@ -613,6 +628,9 @@ pub struct InvokeEndpointInput {
     /// <p>If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For information about data capture, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture Data</a>.</p>
     #[doc(hidden)]
     pub inference_id: std::option::Option<std::string::String>,
+    /// <p>An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a> section in the developer guide for more information. </p>
+    #[doc(hidden)]
+    pub enable_explanations: std::option::Option<std::string::String>,
 }
 impl InvokeEndpointInput {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API. </p>
@@ -655,6 +673,10 @@ impl InvokeEndpointInput {
     pub fn inference_id(&self) -> std::option::Option<&str> {
         self.inference_id.as_deref()
     }
+    /// <p>An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a> section in the developer guide for more information. </p>
+    pub fn enable_explanations(&self) -> std::option::Option<&str> {
+        self.enable_explanations.as_deref()
+    }
 }
 impl std::fmt::Debug for InvokeEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -668,6 +690,7 @@ impl std::fmt::Debug for InvokeEndpointInput {
         formatter.field("target_variant", &self.target_variant);
         formatter.field("target_container_hostname", &self.target_container_hostname);
         formatter.field("inference_id", &self.inference_id);
+        formatter.field("enable_explanations", &self.enable_explanations);
         formatter.finish()
     }
 }

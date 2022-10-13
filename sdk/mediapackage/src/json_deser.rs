@@ -2677,6 +2677,19 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "encryptionMethod" => {
+                                builder = builder.set_encryption_method(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmafEncryptionMethod::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "keyRotationIntervalSeconds" => {
                                 builder = builder.set_key_rotation_interval_seconds(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -3698,6 +3711,26 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "adTriggers" => {
+                                builder = builder.set_ad_triggers(
+                                    crate::json_deser::deser_list_com_amazonaws_mediapackage_ad_triggers(tokens)?
+                                );
+                            }
+                            "adsOnDeliveryRestrictions" => {
+                                builder = builder.set_ads_on_delivery_restrictions(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::AdsOnDeliveryRestrictions::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
                                     .transpose()?,
                                 );
                             }

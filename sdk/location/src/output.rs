@@ -2625,6 +2625,59 @@ impl SearchPlaceIndexForPositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPlaceOutput {
+    /// <p>Details about the result, such as its address and position.</p>
+    #[doc(hidden)]
+    pub place: std::option::Option<crate::model::Place>,
+}
+impl GetPlaceOutput {
+    /// <p>Details about the result, such as its address and position.</p>
+    pub fn place(&self) -> std::option::Option<&crate::model::Place> {
+        self.place.as_ref()
+    }
+}
+impl std::fmt::Debug for GetPlaceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetPlaceOutput");
+        formatter.field("place", &self.place);
+        formatter.finish()
+    }
+}
+/// See [`GetPlaceOutput`](crate::output::GetPlaceOutput).
+pub mod get_place_output {
+
+    /// A builder for [`GetPlaceOutput`](crate::output::GetPlaceOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) place: std::option::Option<crate::model::Place>,
+    }
+    impl Builder {
+        /// <p>Details about the result, such as its address and position.</p>
+        pub fn place(mut self, input: crate::model::Place) -> Self {
+            self.place = Some(input);
+            self
+        }
+        /// <p>Details about the result, such as its address and position.</p>
+        pub fn set_place(mut self, input: std::option::Option<crate::model::Place>) -> Self {
+            self.place = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPlaceOutput`](crate::output::GetPlaceOutput).
+        pub fn build(self) -> crate::output::GetPlaceOutput {
+            crate::output::GetPlaceOutput { place: self.place }
+        }
+    }
+}
+impl GetPlaceOutput {
+    /// Creates a new builder-style object to manufacture [`GetPlaceOutput`](crate::output::GetPlaceOutput).
+    pub fn builder() -> crate::output::get_place_output::Builder {
+        crate::output::get_place_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your AWS account</p>
     #[doc(hidden)]

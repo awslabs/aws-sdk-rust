@@ -11095,6 +11095,11 @@ where
                                     )?,
                                 );
                             }
+                            "eac3AtmosSettings" => {
+                                builder = builder.set_eac3_atmos_settings(
+                                    crate::json_deser::deser_structure_crate_model_eac3_atmos_settings(tokens)?
+                                );
+                            }
                             "eac3Settings" => {
                                 builder = builder.set_eac3_settings(
                                     crate::json_deser::deser_structure_crate_model_eac3_settings(
@@ -13007,6 +13012,114 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_eac3_atmos_settings<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::Eac3AtmosSettings>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::Eac3AtmosSettings::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "bitrate" => {
+                                builder = builder.set_bitrate(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64_lossy()),
+                                );
+                            }
+                            "codingMode" => {
+                                builder = builder.set_coding_mode(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::Eac3AtmosCodingMode::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "dialnorm" => {
+                                builder = builder.set_dialnorm(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
+                                );
+                            }
+                            "drcLine" => {
+                                builder = builder.set_drc_line(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::Eac3AtmosDrcLine::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "drcRf" => {
+                                builder = builder.set_drc_rf(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::Eac3AtmosDrcRf::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "heightTrim" => {
+                                builder = builder.set_height_trim(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64_lossy()),
+                                );
+                            }
+                            "surroundTrim" => {
+                                builder = builder.set_surround_trim(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64_lossy()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -17782,6 +17895,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_color_space_passthrough_settings(tokens)?
                                 );
                             }
+                            "dolbyVision81Settings" => {
+                                builder = builder.set_dolby_vision81_settings(
+                                    crate::json_deser::deser_structure_crate_model_dolby_vision81_settings(tokens)?
+                                );
+                            }
                             "hdr10Settings" => {
                                 builder = builder.set_hdr10_settings(
                                     crate::json_deser::deser_structure_crate_model_hdr10_settings(
@@ -19657,6 +19775,28 @@ where
                     }
                 }
             }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_dolby_vision81_settings<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::DolbyVision81Settings>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::DolbyVision81Settings::builder();
+            aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
             Ok(Some(builder.build()))
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(

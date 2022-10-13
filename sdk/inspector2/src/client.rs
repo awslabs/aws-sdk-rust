@@ -635,9 +635,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Appends an item to `accountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
         /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
-        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(input);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
@@ -1272,9 +1276,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Appends an item to `accountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
         /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(input);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
@@ -1526,9 +1534,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Appends an item to `accountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
         /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(input);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>

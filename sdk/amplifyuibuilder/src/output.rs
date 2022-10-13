@@ -363,6 +363,367 @@ impl GetThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExportFormsOutput {
+    /// <p>Represents the configuration of the exported forms.</p>
+    #[doc(hidden)]
+    pub entities: std::option::Option<std::vec::Vec<crate::model::Form>>,
+    /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ExportFormsOutput {
+    /// <p>Represents the configuration of the exported forms.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Form]> {
+        self.entities.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ExportFormsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExportFormsOutput");
+        formatter.field("entities", &self.entities);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ExportFormsOutput`](crate::output::ExportFormsOutput).
+pub mod export_forms_output {
+
+    /// A builder for [`ExportFormsOutput`](crate::output::ExportFormsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Form>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `entities`.
+        ///
+        /// To override the contents of this collection use [`set_entities`](Self::set_entities).
+        ///
+        /// <p>Represents the configuration of the exported forms.</p>
+        pub fn entities(mut self, input: crate::model::Form) -> Self {
+            let mut v = self.entities.unwrap_or_default();
+            v.push(input);
+            self.entities = Some(v);
+            self
+        }
+        /// <p>Represents the configuration of the exported forms.</p>
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Form>>,
+        ) -> Self {
+            self.entities = input;
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportFormsOutput`](crate::output::ExportFormsOutput).
+        pub fn build(self) -> crate::output::ExportFormsOutput {
+            crate::output::ExportFormsOutput {
+                entities: self.entities,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ExportFormsOutput {
+    /// Creates a new builder-style object to manufacture [`ExportFormsOutput`](crate::output::ExportFormsOutput).
+    pub fn builder() -> crate::output::export_forms_output::Builder {
+        crate::output::export_forms_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFormsOutput {
+    /// <p>The list of forms for the Amplify app.</p>
+    #[doc(hidden)]
+    pub entities: std::option::Option<std::vec::Vec<crate::model::FormSummary>>,
+    /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFormsOutput {
+    /// <p>The list of forms for the Amplify app.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::FormSummary]> {
+        self.entities.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListFormsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFormsOutput");
+        formatter.field("entities", &self.entities);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListFormsOutput`](crate::output::ListFormsOutput).
+pub mod list_forms_output {
+
+    /// A builder for [`ListFormsOutput`](crate::output::ListFormsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::FormSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `entities`.
+        ///
+        /// To override the contents of this collection use [`set_entities`](Self::set_entities).
+        ///
+        /// <p>The list of forms for the Amplify app.</p>
+        pub fn entities(mut self, input: crate::model::FormSummary) -> Self {
+            let mut v = self.entities.unwrap_or_default();
+            v.push(input);
+            self.entities = Some(v);
+            self
+        }
+        /// <p>The list of forms for the Amplify app.</p>
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FormSummary>>,
+        ) -> Self {
+            self.entities = input;
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFormsOutput`](crate::output::ListFormsOutput).
+        pub fn build(self) -> crate::output::ListFormsOutput {
+            crate::output::ListFormsOutput {
+                entities: self.entities,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListFormsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFormsOutput`](crate::output::ListFormsOutput).
+    pub fn builder() -> crate::output::list_forms_output::Builder {
+        crate::output::list_forms_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFormOutput {
+    /// <p>Describes the configuration of the new form.</p>
+    #[doc(hidden)]
+    pub entity: std::option::Option<crate::model::Form>,
+}
+impl CreateFormOutput {
+    /// <p>Describes the configuration of the new form.</p>
+    pub fn entity(&self) -> std::option::Option<&crate::model::Form> {
+        self.entity.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateFormOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFormOutput");
+        formatter.field("entity", &self.entity);
+        formatter.finish()
+    }
+}
+/// See [`CreateFormOutput`](crate::output::CreateFormOutput).
+pub mod create_form_output {
+
+    /// A builder for [`CreateFormOutput`](crate::output::CreateFormOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity: std::option::Option<crate::model::Form>,
+    }
+    impl Builder {
+        /// <p>Describes the configuration of the new form.</p>
+        pub fn entity(mut self, input: crate::model::Form) -> Self {
+            self.entity = Some(input);
+            self
+        }
+        /// <p>Describes the configuration of the new form.</p>
+        pub fn set_entity(mut self, input: std::option::Option<crate::model::Form>) -> Self {
+            self.entity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFormOutput`](crate::output::CreateFormOutput).
+        pub fn build(self) -> crate::output::CreateFormOutput {
+            crate::output::CreateFormOutput {
+                entity: self.entity,
+            }
+        }
+    }
+}
+impl CreateFormOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFormOutput`](crate::output::CreateFormOutput).
+    pub fn builder() -> crate::output::create_form_output::Builder {
+        crate::output::create_form_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFormOutput {}
+impl std::fmt::Debug for DeleteFormOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFormOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteFormOutput`](crate::output::DeleteFormOutput).
+pub mod delete_form_output {
+
+    /// A builder for [`DeleteFormOutput`](crate::output::DeleteFormOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteFormOutput`](crate::output::DeleteFormOutput).
+        pub fn build(self) -> crate::output::DeleteFormOutput {
+            crate::output::DeleteFormOutput {}
+        }
+    }
+}
+impl DeleteFormOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFormOutput`](crate::output::DeleteFormOutput).
+    pub fn builder() -> crate::output::delete_form_output::Builder {
+        crate::output::delete_form_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFormOutput {
+    /// <p>Describes the configuration of the updated form.</p>
+    #[doc(hidden)]
+    pub entity: std::option::Option<crate::model::Form>,
+}
+impl UpdateFormOutput {
+    /// <p>Describes the configuration of the updated form.</p>
+    pub fn entity(&self) -> std::option::Option<&crate::model::Form> {
+        self.entity.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateFormOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFormOutput");
+        formatter.field("entity", &self.entity);
+        formatter.finish()
+    }
+}
+/// See [`UpdateFormOutput`](crate::output::UpdateFormOutput).
+pub mod update_form_output {
+
+    /// A builder for [`UpdateFormOutput`](crate::output::UpdateFormOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity: std::option::Option<crate::model::Form>,
+    }
+    impl Builder {
+        /// <p>Describes the configuration of the updated form.</p>
+        pub fn entity(mut self, input: crate::model::Form) -> Self {
+            self.entity = Some(input);
+            self
+        }
+        /// <p>Describes the configuration of the updated form.</p>
+        pub fn set_entity(mut self, input: std::option::Option<crate::model::Form>) -> Self {
+            self.entity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFormOutput`](crate::output::UpdateFormOutput).
+        pub fn build(self) -> crate::output::UpdateFormOutput {
+            crate::output::UpdateFormOutput {
+                entity: self.entity,
+            }
+        }
+    }
+}
+impl UpdateFormOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFormOutput`](crate::output::UpdateFormOutput).
+    pub fn builder() -> crate::output::update_form_output::Builder {
+        crate::output::update_form_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetFormOutput {
+    /// <p>Represents the configuration settings for the form.</p>
+    #[doc(hidden)]
+    pub form: std::option::Option<crate::model::Form>,
+}
+impl GetFormOutput {
+    /// <p>Represents the configuration settings for the form.</p>
+    pub fn form(&self) -> std::option::Option<&crate::model::Form> {
+        self.form.as_ref()
+    }
+}
+impl std::fmt::Debug for GetFormOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetFormOutput");
+        formatter.field("form", &self.form);
+        formatter.finish()
+    }
+}
+/// See [`GetFormOutput`](crate::output::GetFormOutput).
+pub mod get_form_output {
+
+    /// A builder for [`GetFormOutput`](crate::output::GetFormOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) form: std::option::Option<crate::model::Form>,
+    }
+    impl Builder {
+        /// <p>Represents the configuration settings for the form.</p>
+        pub fn form(mut self, input: crate::model::Form) -> Self {
+            self.form = Some(input);
+            self
+        }
+        /// <p>Represents the configuration settings for the form.</p>
+        pub fn set_form(mut self, input: std::option::Option<crate::model::Form>) -> Self {
+            self.form = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetFormOutput`](crate::output::GetFormOutput).
+        pub fn build(self) -> crate::output::GetFormOutput {
+            crate::output::GetFormOutput { form: self.form }
+        }
+    }
+}
+impl GetFormOutput {
+    /// Creates a new builder-style object to manufacture [`GetFormOutput`](crate::output::GetFormOutput).
+    pub fn builder() -> crate::output::get_form_output::Builder {
+        crate::output::get_form_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportComponentsOutput {
     /// <p>Represents the configuration of the exported components.</p>
     #[doc(hidden)]
@@ -798,6 +1159,112 @@ impl RefreshTokenOutput {
     /// Creates a new builder-style object to manufacture [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
     pub fn builder() -> crate::output::refresh_token_output::Builder {
         crate::output::refresh_token_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutMetadataFlagOutput {}
+impl std::fmt::Debug for PutMetadataFlagOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutMetadataFlagOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
+pub mod put_metadata_flag_output {
+
+    /// A builder for [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
+        pub fn build(self) -> crate::output::PutMetadataFlagOutput {
+            crate::output::PutMetadataFlagOutput {}
+        }
+    }
+}
+impl PutMetadataFlagOutput {
+    /// Creates a new builder-style object to manufacture [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
+    pub fn builder() -> crate::output::put_metadata_flag_output::Builder {
+        crate::output::put_metadata_flag_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMetadataOutput {
+    /// <p>Represents the configuration settings for the features metadata.</p>
+    #[doc(hidden)]
+    pub features:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetMetadataOutput {
+    /// <p>Represents the configuration settings for the features metadata.</p>
+    pub fn features(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.features.as_ref()
+    }
+}
+impl std::fmt::Debug for GetMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMetadataOutput");
+        formatter.field("features", &self.features);
+        formatter.finish()
+    }
+}
+/// See [`GetMetadataOutput`](crate::output::GetMetadataOutput).
+pub mod get_metadata_output {
+
+    /// A builder for [`GetMetadataOutput`](crate::output::GetMetadataOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) features: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `features`.
+        ///
+        /// To override the contents of this collection use [`set_features`](Self::set_features).
+        ///
+        /// <p>Represents the configuration settings for the features metadata.</p>
+        pub fn features(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.features.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.features = Some(hash_map);
+            self
+        }
+        /// <p>Represents the configuration settings for the features metadata.</p>
+        pub fn set_features(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.features = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMetadataOutput`](crate::output::GetMetadataOutput).
+        pub fn build(self) -> crate::output::GetMetadataOutput {
+            crate::output::GetMetadataOutput {
+                features: self.features,
+            }
+        }
+    }
+}
+impl GetMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetMetadataOutput`](crate::output::GetMetadataOutput).
+    pub fn builder() -> crate::output::get_metadata_output::Builder {
+        crate::output::get_metadata_output::Builder::default()
     }
 }
 

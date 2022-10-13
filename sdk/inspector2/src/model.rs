@@ -306,6 +306,9 @@ pub struct FilterCriteria {
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
     #[doc(hidden)]
     pub related_vulnerabilities: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    #[doc(hidden)]
+    pub fix_available: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
 }
 impl FilterCriteria {
     /// <p>Details on the finding ARNs used to filter findings.</p>
@@ -432,6 +435,10 @@ impl FilterCriteria {
     pub fn related_vulnerabilities(&self) -> std::option::Option<&[crate::model::StringFilter]> {
         self.related_vulnerabilities.as_deref()
     }
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fn fix_available(&self) -> std::option::Option<&[crate::model::StringFilter]> {
+        self.fix_available.as_deref()
+    }
 }
 impl std::fmt::Debug for FilterCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -467,6 +474,7 @@ impl std::fmt::Debug for FilterCriteria {
         formatter.field("vendor_severity", &self.vendor_severity);
         formatter.field("vulnerable_packages", &self.vulnerable_packages);
         formatter.field("related_vulnerabilities", &self.related_vulnerabilities);
+        formatter.field("fix_available", &self.fix_available);
         formatter.finish()
     }
 }
@@ -517,6 +525,7 @@ pub mod filter_criteria {
             std::option::Option<std::vec::Vec<crate::model::PackageFilter>>,
         pub(crate) related_vulnerabilities:
             std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+        pub(crate) fix_available: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     }
     impl Builder {
         /// Appends an item to `finding_arn`.
@@ -1108,6 +1117,25 @@ pub mod filter_criteria {
             self.related_vulnerabilities = input;
             self
         }
+        /// Appends an item to `fix_available`.
+        ///
+        /// To override the contents of this collection use [`set_fix_available`](Self::set_fix_available).
+        ///
+        /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+        pub fn fix_available(mut self, input: crate::model::StringFilter) -> Self {
+            let mut v = self.fix_available.unwrap_or_default();
+            v.push(input);
+            self.fix_available = Some(v);
+            self
+        }
+        /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+        pub fn set_fix_available(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+        ) -> Self {
+            self.fix_available = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FilterCriteria`](crate::model::FilterCriteria).
         pub fn build(self) -> crate::model::FilterCriteria {
             crate::model::FilterCriteria {
@@ -1142,6 +1170,7 @@ pub mod filter_criteria {
                 vendor_severity: self.vendor_severity,
                 vulnerable_packages: self.vulnerable_packages,
                 related_vulnerabilities: self.related_vulnerabilities,
+                fix_available: self.fix_available,
             }
         }
     }
@@ -2610,6 +2639,9 @@ pub struct Finding {
     #[doc(hidden)]
     pub package_vulnerability_details:
         std::option::Option<crate::model::PackageVulnerabilityDetails>,
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    #[doc(hidden)]
+    pub fix_available: std::option::Option<crate::model::FixAvailable>,
 }
 impl Finding {
     /// <p>The Amazon Resource Number (ARN) of the finding.</p>
@@ -2682,6 +2714,10 @@ impl Finding {
     ) -> std::option::Option<&crate::model::PackageVulnerabilityDetails> {
         self.package_vulnerability_details.as_ref()
     }
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fn fix_available(&self) -> std::option::Option<&crate::model::FixAvailable> {
+        self.fix_available.as_ref()
+    }
 }
 impl std::fmt::Debug for Finding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2708,6 +2744,7 @@ impl std::fmt::Debug for Finding {
             "package_vulnerability_details",
             &self.package_vulnerability_details,
         );
+        formatter.field("fix_available", &self.fix_available);
         formatter.finish()
     }
 }
@@ -2736,6 +2773,7 @@ pub mod finding {
             std::option::Option<crate::model::NetworkReachabilityDetails>,
         pub(crate) package_vulnerability_details:
             std::option::Option<crate::model::PackageVulnerabilityDetails>,
+        pub(crate) fix_available: std::option::Option<crate::model::FixAvailable>,
     }
     impl Builder {
         /// <p>The Amazon Resource Number (ARN) of the finding.</p>
@@ -2943,6 +2981,19 @@ pub mod finding {
             self.package_vulnerability_details = input;
             self
         }
+        /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+        pub fn fix_available(mut self, input: crate::model::FixAvailable) -> Self {
+            self.fix_available = Some(input);
+            self
+        }
+        /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+        pub fn set_fix_available(
+            mut self,
+            input: std::option::Option<crate::model::FixAvailable>,
+        ) -> Self {
+            self.fix_available = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Finding`](crate::model::Finding).
         pub fn build(self) -> crate::model::Finding {
             crate::model::Finding {
@@ -2962,6 +3013,7 @@ pub mod finding {
                 inspector_score_details: self.inspector_score_details,
                 network_reachability_details: self.network_reachability_details,
                 package_vulnerability_details: self.package_vulnerability_details,
+                fix_available: self.fix_available,
             }
         }
     }
@@ -2970,6 +3022,65 @@ impl Finding {
     /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
     pub fn builder() -> crate::model::finding::Builder {
         crate::model::finding::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FixAvailable {
+    #[allow(missing_docs)] // documentation missing in model
+    No,
+    #[allow(missing_docs)] // documentation missing in model
+    Partial,
+    #[allow(missing_docs)] // documentation missing in model
+    Yes,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FixAvailable {
+    fn from(s: &str) -> Self {
+        match s {
+            "NO" => FixAvailable::No,
+            "PARTIAL" => FixAvailable::Partial,
+            "YES" => FixAvailable::Yes,
+            other => FixAvailable::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FixAvailable {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FixAvailable::from(s))
+    }
+}
+impl FixAvailable {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FixAvailable::No => "NO",
+            FixAvailable::Partial => "PARTIAL",
+            FixAvailable::Yes => "YES",
+            FixAvailable::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NO", "PARTIAL", "YES"]
+    }
+}
+impl AsRef<str> for FixAvailable {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3406,6 +3517,9 @@ pub struct VulnerablePackage {
     /// <p>The version of the package that contains the vulnerability fix.</p>
     #[doc(hidden)]
     pub fixed_in_version: std::option::Option<std::string::String>,
+    /// <p>The code to run in your environment to update packages with a fix available.</p>
+    #[doc(hidden)]
+    pub remediation: std::option::Option<std::string::String>,
 }
 impl VulnerablePackage {
     /// <p>The name of the vulnerable package.</p>
@@ -3444,6 +3558,10 @@ impl VulnerablePackage {
     pub fn fixed_in_version(&self) -> std::option::Option<&str> {
         self.fixed_in_version.as_deref()
     }
+    /// <p>The code to run in your environment to update packages with a fix available.</p>
+    pub fn remediation(&self) -> std::option::Option<&str> {
+        self.remediation.as_deref()
+    }
 }
 impl std::fmt::Debug for VulnerablePackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3457,6 +3575,7 @@ impl std::fmt::Debug for VulnerablePackage {
         formatter.field("package_manager", &self.package_manager);
         formatter.field("file_path", &self.file_path);
         formatter.field("fixed_in_version", &self.fixed_in_version);
+        formatter.field("remediation", &self.remediation);
         formatter.finish()
     }
 }
@@ -3475,6 +3594,7 @@ pub mod vulnerable_package {
         pub(crate) package_manager: std::option::Option<crate::model::PackageManager>,
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) fixed_in_version: std::option::Option<std::string::String>,
+        pub(crate) remediation: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the vulnerable package.</p>
@@ -3576,6 +3696,16 @@ pub mod vulnerable_package {
             self.fixed_in_version = input;
             self
         }
+        /// <p>The code to run in your environment to update packages with a fix available.</p>
+        pub fn remediation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.remediation = Some(input.into());
+            self
+        }
+        /// <p>The code to run in your environment to update packages with a fix available.</p>
+        pub fn set_remediation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.remediation = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VulnerablePackage`](crate::model::VulnerablePackage).
         pub fn build(self) -> crate::model::VulnerablePackage {
             crate::model::VulnerablePackage {
@@ -3588,6 +3718,7 @@ pub mod vulnerable_package {
                 package_manager: self.package_manager,
                 file_path: self.file_path,
                 fixed_in_version: self.fixed_in_version,
+                remediation: self.remediation,
             }
         }
     }
@@ -11349,6 +11480,8 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
+    NoInventory,
+    #[allow(missing_docs)] // documentation missing in model
     NoResourcesFound,
     #[allow(missing_docs)] // documentation missing in model
     PendingDisable,
@@ -11362,6 +11495,8 @@ pub enum ScanStatusReason {
     ScanFrequencyManual,
     #[allow(missing_docs)] // documentation missing in model
     ScanFrequencyScanOnPush,
+    #[allow(missing_docs)] // documentation missing in model
+    StaleInventory,
     #[allow(missing_docs)] // documentation missing in model
     Successful,
     #[allow(missing_docs)] // documentation missing in model
@@ -11378,6 +11513,7 @@ impl std::convert::From<&str> for ScanStatusReason {
             "EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
             "IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
             "INTERNAL_ERROR" => ScanStatusReason::InternalError,
+            "NO_INVENTORY" => ScanStatusReason::NoInventory,
             "NO_RESOURCES_FOUND" => ScanStatusReason::NoResourcesFound,
             "PENDING_DISABLE" => ScanStatusReason::PendingDisable,
             "PENDING_INITIAL_SCAN" => ScanStatusReason::PendingInitialScan,
@@ -11385,6 +11521,7 @@ impl std::convert::From<&str> for ScanStatusReason {
             "SCAN_ELIGIBILITY_EXPIRED" => ScanStatusReason::ScanEligibilityExpired,
             "SCAN_FREQUENCY_MANUAL" => ScanStatusReason::ScanFrequencyManual,
             "SCAN_FREQUENCY_SCAN_ON_PUSH" => ScanStatusReason::ScanFrequencyScanOnPush,
+            "STALE_INVENTORY" => ScanStatusReason::StaleInventory,
             "SUCCESSFUL" => ScanStatusReason::Successful,
             "UNMANAGED_EC2_INSTANCE" => ScanStatusReason::UnmanagedEc2Instance,
             "UNSUPPORTED_OS" => ScanStatusReason::UnsupportedOs,
@@ -11407,6 +11544,7 @@ impl ScanStatusReason {
             ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
             ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
             ScanStatusReason::InternalError => "INTERNAL_ERROR",
+            ScanStatusReason::NoInventory => "NO_INVENTORY",
             ScanStatusReason::NoResourcesFound => "NO_RESOURCES_FOUND",
             ScanStatusReason::PendingDisable => "PENDING_DISABLE",
             ScanStatusReason::PendingInitialScan => "PENDING_INITIAL_SCAN",
@@ -11414,6 +11552,7 @@ impl ScanStatusReason {
             ScanStatusReason::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
             ScanStatusReason::ScanFrequencyManual => "SCAN_FREQUENCY_MANUAL",
             ScanStatusReason::ScanFrequencyScanOnPush => "SCAN_FREQUENCY_SCAN_ON_PUSH",
+            ScanStatusReason::StaleInventory => "STALE_INVENTORY",
             ScanStatusReason::Successful => "SUCCESSFUL",
             ScanStatusReason::UnmanagedEc2Instance => "UNMANAGED_EC2_INSTANCE",
             ScanStatusReason::UnsupportedOs => "UNSUPPORTED_OS",
@@ -11427,6 +11566,7 @@ impl ScanStatusReason {
             "EC2_INSTANCE_STOPPED",
             "IMAGE_SIZE_EXCEEDED",
             "INTERNAL_ERROR",
+            "NO_INVENTORY",
             "NO_RESOURCES_FOUND",
             "PENDING_DISABLE",
             "PENDING_INITIAL_SCAN",
@@ -11434,6 +11574,7 @@ impl ScanStatusReason {
             "SCAN_ELIGIBILITY_EXPIRED",
             "SCAN_FREQUENCY_MANUAL",
             "SCAN_FREQUENCY_SCAN_ON_PUSH",
+            "STALE_INVENTORY",
             "SUCCESSFUL",
             "UNMANAGED_EC2_INSTANCE",
             "UNSUPPORTED_OS",

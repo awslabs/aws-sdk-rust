@@ -131,6 +131,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplication {
     }
 }
 
+/// Operation shape for `GetDashboardForJobRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_dashboard_for_job_run`](crate::client::Client::get_dashboard_for_job_run).
+///
+/// See [`crate::client::fluent_builders::GetDashboardForJobRun`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetDashboardForJobRun {
+    _private: (),
+}
+impl GetDashboardForJobRun {
+    /// Creates a new builder-style object to manufacture [`GetDashboardForJobRunInput`](crate::input::GetDashboardForJobRunInput).
+    pub fn builder() -> crate::input::get_dashboard_for_job_run_input::Builder {
+        crate::input::get_dashboard_for_job_run_input::Builder::default()
+    }
+    /// Creates a new `GetDashboardForJobRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDashboardForJobRun {
+    type Output = std::result::Result<
+        crate::output::GetDashboardForJobRunOutput,
+        crate::error::GetDashboardForJobRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_dashboard_for_job_run_error(response)
+        } else {
+            crate::operation_deser::parse_get_dashboard_for_job_run_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetJobRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

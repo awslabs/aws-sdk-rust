@@ -10,8 +10,7 @@
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <p>Amazon Connect Voice ID provides real-time caller authentication and fraud screening. This guide
-//! describes the APIs used for this service.
-//! </p>
+//! describes the APIs used for this service. </p>
 //!
 //! # Crate Organization
 //!

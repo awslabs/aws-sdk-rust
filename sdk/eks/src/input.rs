@@ -226,12 +226,12 @@ pub mod associate_identity_provider_config_input {
             self.cluster_name = input;
             self
         }
-        /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+        /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn oidc(mut self, input: crate::model::OidcIdentityProviderConfigRequest) -> Self {
             self.oidc = Some(input);
             self
         }
-        /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+        /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn set_oidc(
             mut self,
             input: std::option::Option<crate::model::OidcIdentityProviderConfigRequest>,
@@ -489,12 +489,24 @@ pub mod create_addon_input {
             self.service_account_role_arn = input;
             self
         }
-        /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
+        /// <p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p>
+        /// <ul>
+        /// <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li>
+        /// <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li>
+        /// <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p> </li>
+        /// </ul>
+        /// <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>
         pub fn resolve_conflicts(mut self, input: crate::model::ResolveConflicts) -> Self {
             self.resolve_conflicts = Some(input);
             self
         }
-        /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
+        /// <p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p>
+        /// <ul>
+        /// <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li>
+        /// <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li>
+        /// <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p> </li>
+        /// </ul>
+        /// <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>
         pub fn set_resolve_conflicts(
             mut self,
             input: std::option::Option<crate::model::ResolveConflicts>,
@@ -706,6 +718,7 @@ pub mod create_cluster_input {
         >,
         pub(crate) encryption_config:
             std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
+        pub(crate) outpost_config: std::option::Option<crate::model::OutpostConfigRequest>,
     }
     impl Builder {
         /// <p>The unique name to give to your cluster.</p>
@@ -718,12 +731,16 @@ pub mod create_cluster_input {
             self.name = input;
             self
         }
-        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
+        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
+        /// <p>The default version might not be the latest version available.</p>
+        /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
+        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
+        /// <p>The default version might not be the latest version available.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -838,6 +855,19 @@ pub mod create_cluster_input {
             self.encryption_config = input;
             self
         }
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+        pub fn outpost_config(mut self, input: crate::model::OutpostConfigRequest) -> Self {
+            self.outpost_config = Some(input);
+            self
+        }
+        /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+        pub fn set_outpost_config(
+            mut self,
+            input: std::option::Option<crate::model::OutpostConfigRequest>,
+        ) -> Self {
+            self.outpost_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput).
         pub fn build(
             self,
@@ -853,6 +883,7 @@ pub mod create_cluster_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
                 encryption_config: self.encryption_config,
+                outpost_config: self.outpost_config,
             })
         }
     }
@@ -3204,7 +3235,7 @@ pub mod describe_identity_provider_config_input {
             self.cluster_name = input;
             self
         }
-        /// <p>An object that represents an identity provider configuration.</p>
+        /// <p>An object representing an identity provider configuration.</p>
         pub fn identity_provider_config(
             mut self,
             input: crate::model::IdentityProviderConfig,
@@ -3212,7 +3243,7 @@ pub mod describe_identity_provider_config_input {
             self.identity_provider_config = Some(input);
             self
         }
-        /// <p>An object that represents an identity provider configuration.</p>
+        /// <p>An object representing an identity provider configuration.</p>
         pub fn set_identity_provider_config(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderConfig>,
@@ -3769,7 +3800,7 @@ pub mod disassociate_identity_provider_config_input {
             self.cluster_name = input;
             self
         }
-        /// <p>An object that represents an identity provider configuration.</p>
+        /// <p>An object representing an identity provider configuration.</p>
         pub fn identity_provider_config(
             mut self,
             input: crate::model::IdentityProviderConfig,
@@ -3777,7 +3808,7 @@ pub mod disassociate_identity_provider_config_input {
             self.identity_provider_config = Some(input);
             self
         }
-        /// <p>An object that represents an identity provider configuration.</p>
+        /// <p>An object representing an identity provider configuration.</p>
         pub fn set_identity_provider_config(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderConfig>,
@@ -5840,12 +5871,22 @@ pub mod update_addon_input {
             self.service_account_role_arn = input;
             self
         }
-        /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
+        /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
+        /// <ul>
+        /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+        /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+        /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+        /// </ul>
         pub fn resolve_conflicts(mut self, input: crate::model::ResolveConflicts) -> Self {
             self.resolve_conflicts = Some(input);
             self
         }
-        /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
+        /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
+        /// <ul>
+        /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+        /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+        /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+        /// </ul>
         pub fn set_resolve_conflicts(
             mut self,
             input: std::option::Option<crate::model::ResolveConflicts>,
@@ -7190,7 +7231,12 @@ pub struct UpdateAddonInput {
     /// </note>
     #[doc(hidden)]
     pub service_account_role_arn: std::option::Option<std::string::String>,
-    /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
+    /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
+    /// <ul>
+    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub resolve_conflicts: std::option::Option<crate::model::ResolveConflicts>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -7216,7 +7262,12 @@ impl UpdateAddonInput {
     pub fn service_account_role_arn(&self) -> std::option::Option<&str> {
         self.service_account_role_arn.as_deref()
     }
-    /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
+    /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
+    /// <ul>
+    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
+    /// </ul>
     pub fn resolve_conflicts(&self) -> std::option::Option<&crate::model::ResolveConflicts> {
         self.resolve_conflicts.as_ref()
     }
@@ -7633,7 +7684,7 @@ pub struct DisassociateIdentityProviderConfigInput {
     /// <p>The name of the cluster to disassociate an identity provider from.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>An object that represents an identity provider configuration.</p>
+    /// <p>An object representing an identity provider configuration.</p>
     #[doc(hidden)]
     pub identity_provider_config: std::option::Option<crate::model::IdentityProviderConfig>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -7645,7 +7696,7 @@ impl DisassociateIdentityProviderConfigInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>An object that represents an identity provider configuration.</p>
+    /// <p>An object representing an identity provider configuration.</p>
     pub fn identity_provider_config(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderConfig> {
@@ -7749,7 +7800,7 @@ pub struct DescribeIdentityProviderConfigInput {
     /// <p>The cluster name that the identity provider configuration is associated to.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>An object that represents an identity provider configuration.</p>
+    /// <p>An object representing an identity provider configuration.</p>
     #[doc(hidden)]
     pub identity_provider_config: std::option::Option<crate::model::IdentityProviderConfig>,
 }
@@ -7758,7 +7809,7 @@ impl DescribeIdentityProviderConfigInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>An object that represents an identity provider configuration.</p>
+    /// <p>An object representing an identity provider configuration.</p>
     pub fn identity_provider_config(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderConfig> {
@@ -8297,7 +8348,9 @@ pub struct CreateClusterInput {
     /// <p>The unique name to give to your cluster.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
+    /// <p>The default version might not be the latest version available.</p>
+    /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
@@ -8325,13 +8378,18 @@ pub struct CreateClusterInput {
     /// <p>The encryption configuration for the cluster.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
+    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+    #[doc(hidden)]
+    pub outpost_config: std::option::Option<crate::model::OutpostConfigRequest>,
 }
 impl CreateClusterInput {
     /// <p>The unique name to give to your cluster.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
+    /// <p>The default version might not be the latest version available.</p>
+    /// </note>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -8370,6 +8428,10 @@ impl CreateClusterInput {
     pub fn encryption_config(&self) -> std::option::Option<&[crate::model::EncryptionConfig]> {
         self.encryption_config.as_deref()
     }
+    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
+    pub fn outpost_config(&self) -> std::option::Option<&crate::model::OutpostConfigRequest> {
+        self.outpost_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8383,6 +8445,7 @@ impl std::fmt::Debug for CreateClusterInput {
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("tags", &self.tags);
         formatter.field("encryption_config", &self.encryption_config);
+        formatter.field("outpost_config", &self.outpost_config);
         formatter.finish()
     }
 }
@@ -8405,7 +8468,13 @@ pub struct CreateAddonInput {
     /// </note>
     #[doc(hidden)]
     pub service_account_role_arn: std::option::Option<std::string::String>,
-    /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
+    /// <p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p>
+    /// <ul>
+    /// <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p> </li>
+    /// </ul>
+    /// <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>
     #[doc(hidden)]
     pub resolve_conflicts: std::option::Option<crate::model::ResolveConflicts>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -8435,7 +8504,13 @@ impl CreateAddonInput {
     pub fn service_account_role_arn(&self) -> std::option::Option<&str> {
         self.service_account_role_arn.as_deref()
     }
-    /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
+    /// <p>How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled based on the value you choose:</p>
+    /// <ul>
+    /// <li> <p> <b>None</b> – If the self-managed version of the add-on is installed on your cluster, Amazon EKS doesn't change the value. Creation of the add-on might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – If the self-managed version of the add-on is installed on your cluster and the Amazon EKS default value is different than the existing value, Amazon EKS changes the value to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p> </li>
+    /// </ul>
+    /// <p>If you don't currently have the self-managed version of the add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default values, regardless of the option that you specify.</p>
     pub fn resolve_conflicts(&self) -> std::option::Option<&crate::model::ResolveConflicts> {
         self.resolve_conflicts.as_ref()
     }
@@ -8472,7 +8547,7 @@ pub struct AssociateIdentityProviderConfigInput {
     /// <p>The name of the cluster to associate the configuration to.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     #[doc(hidden)]
     pub oidc: std::option::Option<crate::model::OidcIdentityProviderConfigRequest>,
     /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
@@ -8488,7 +8563,7 @@ impl AssociateIdentityProviderConfigInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn oidc(&self) -> std::option::Option<&crate::model::OidcIdentityProviderConfigRequest> {
         self.oidc.as_ref()
     }

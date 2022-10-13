@@ -49,6 +49,26 @@ pub(crate) fn reflens_structure_crate_output_list_inference_schedulers_output_ne
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_label_groups_output_next_token(
+    input: &crate::output::ListLabelGroupsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_labels_output_next_token(
+    input: &crate::output::ListLabelsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_models_output_next_token(
     input: &crate::output::ListModelsOutput,
 ) -> std::option::Option<&std::string::String> {

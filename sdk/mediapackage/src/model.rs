@@ -2633,6 +2633,12 @@ pub struct HlsManifest {
     /// The URL of the packaged OriginEndpoint for consumption.
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
+    /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
+    #[doc(hidden)]
+    pub ad_triggers: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
+    /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
+    #[doc(hidden)]
+    pub ads_on_delivery_restrictions: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
 }
 impl HlsManifest {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
@@ -2667,6 +2673,16 @@ impl HlsManifest {
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
+    /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
+    pub fn ad_triggers(&self) -> std::option::Option<&[crate::model::AdTriggersElement]> {
+        self.ad_triggers.as_deref()
+    }
+    /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
+    pub fn ads_on_delivery_restrictions(
+        &self,
+    ) -> std::option::Option<&crate::model::AdsOnDeliveryRestrictions> {
+        self.ads_on_delivery_restrictions.as_ref()
+    }
 }
 impl std::fmt::Debug for HlsManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2685,6 +2701,11 @@ impl std::fmt::Debug for HlsManifest {
             &self.program_date_time_interval_seconds,
         );
         formatter.field("url", &self.url);
+        formatter.field("ad_triggers", &self.ad_triggers);
+        formatter.field(
+            "ads_on_delivery_restrictions",
+            &self.ads_on_delivery_restrictions,
+        );
         formatter.finish()
     }
 }
@@ -2702,6 +2723,9 @@ pub mod hls_manifest {
         pub(crate) playlist_window_seconds: std::option::Option<i32>,
         pub(crate) program_date_time_interval_seconds: std::option::Option<i32>,
         pub(crate) url: std::option::Option<std::string::String>,
+        pub(crate) ad_triggers: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
+        pub(crate) ads_on_delivery_restrictions:
+            std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
     }
     impl Builder {
         /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
@@ -2796,6 +2820,41 @@ pub mod hls_manifest {
             self.url = input;
             self
         }
+        /// Appends an item to `ad_triggers`.
+        ///
+        /// To override the contents of this collection use [`set_ad_triggers`](Self::set_ad_triggers).
+        ///
+        /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
+        pub fn ad_triggers(mut self, input: crate::model::AdTriggersElement) -> Self {
+            let mut v = self.ad_triggers.unwrap_or_default();
+            v.push(input);
+            self.ad_triggers = Some(v);
+            self
+        }
+        /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
+        pub fn set_ad_triggers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
+        ) -> Self {
+            self.ad_triggers = input;
+            self
+        }
+        /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
+        pub fn ads_on_delivery_restrictions(
+            mut self,
+            input: crate::model::AdsOnDeliveryRestrictions,
+        ) -> Self {
+            self.ads_on_delivery_restrictions = Some(input);
+            self
+        }
+        /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
+        pub fn set_ads_on_delivery_restrictions(
+            mut self,
+            input: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
+        ) -> Self {
+            self.ads_on_delivery_restrictions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`HlsManifest`](crate::model::HlsManifest).
         pub fn build(self) -> crate::model::HlsManifest {
             crate::model::HlsManifest {
@@ -2809,6 +2868,8 @@ pub mod hls_manifest {
                     .program_date_time_interval_seconds
                     .unwrap_or_default(),
                 url: self.url,
+                ad_triggers: self.ad_triggers,
+                ads_on_delivery_restrictions: self.ads_on_delivery_restrictions,
             }
         }
     }
@@ -2827,6 +2888,9 @@ pub struct CmafEncryption {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
     #[doc(hidden)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
+    /// The encryption method to use.
+    #[doc(hidden)]
+    pub encryption_method: std::option::Option<crate::model::CmafEncryptionMethod>,
     /// Time (in seconds) between each encryption key rotation.
     #[doc(hidden)]
     pub key_rotation_interval_seconds: i32,
@@ -2838,6 +2902,10 @@ impl CmafEncryption {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
     pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
         self.constant_initialization_vector.as_deref()
+    }
+    /// The encryption method to use.
+    pub fn encryption_method(&self) -> std::option::Option<&crate::model::CmafEncryptionMethod> {
+        self.encryption_method.as_ref()
     }
     /// Time (in seconds) between each encryption key rotation.
     pub fn key_rotation_interval_seconds(&self) -> i32 {
@@ -2855,6 +2923,7 @@ impl std::fmt::Debug for CmafEncryption {
             "constant_initialization_vector",
             &self.constant_initialization_vector,
         );
+        formatter.field("encryption_method", &self.encryption_method);
         formatter.field(
             "key_rotation_interval_seconds",
             &self.key_rotation_interval_seconds,
@@ -2870,6 +2939,7 @@ pub mod cmaf_encryption {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
+        pub(crate) encryption_method: std::option::Option<crate::model::CmafEncryptionMethod>,
         pub(crate) key_rotation_interval_seconds: std::option::Option<i32>,
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
     }
@@ -2888,6 +2958,19 @@ pub mod cmaf_encryption {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.constant_initialization_vector = input;
+            self
+        }
+        /// The encryption method to use.
+        pub fn encryption_method(mut self, input: crate::model::CmafEncryptionMethod) -> Self {
+            self.encryption_method = Some(input);
+            self
+        }
+        /// The encryption method to use.
+        pub fn set_encryption_method(
+            mut self,
+            input: std::option::Option<crate::model::CmafEncryptionMethod>,
+        ) -> Self {
+            self.encryption_method = input;
             self
         }
         /// Time (in seconds) between each encryption key rotation.
@@ -2920,6 +3003,7 @@ pub mod cmaf_encryption {
         pub fn build(self) -> crate::model::CmafEncryption {
             crate::model::CmafEncryption {
                 constant_initialization_vector: self.constant_initialization_vector,
+                encryption_method: self.encryption_method,
                 key_rotation_interval_seconds: self
                     .key_rotation_interval_seconds
                     .unwrap_or_default(),
@@ -2932,6 +3016,61 @@ impl CmafEncryption {
     /// Creates a new builder-style object to manufacture [`CmafEncryption`](crate::model::CmafEncryption).
     pub fn builder() -> crate::model::cmaf_encryption::Builder {
         crate::model::cmaf_encryption::Builder::default()
+    }
+}
+
+/// The encryption method to use.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CmafEncryptionMethod {
+    #[allow(missing_docs)] // documentation missing in model
+    AesCtr,
+    #[allow(missing_docs)] // documentation missing in model
+    SampleAes,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CmafEncryptionMethod {
+    fn from(s: &str) -> Self {
+        match s {
+            "AES_CTR" => CmafEncryptionMethod::AesCtr,
+            "SAMPLE_AES" => CmafEncryptionMethod::SampleAes,
+            other => CmafEncryptionMethod::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CmafEncryptionMethod {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CmafEncryptionMethod::from(s))
+    }
+}
+impl CmafEncryptionMethod {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CmafEncryptionMethod::AesCtr => "AES_CTR",
+            CmafEncryptionMethod::SampleAes => "SAMPLE_AES",
+            CmafEncryptionMethod::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AES_CTR", "SAMPLE_AES"]
+    }
+}
+impl AsRef<str> for CmafEncryptionMethod {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

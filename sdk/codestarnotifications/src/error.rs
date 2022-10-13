@@ -130,6 +130,136 @@ impl ResourceNotFoundException {
     }
 }
 
+/// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConfigurationException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConfigurationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConfigurationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ConfigurationException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConfigurationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConfigurationException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConfigurationException {}
+/// See [`ConfigurationException`](crate::error::ConfigurationException).
+pub mod configuration_exception {
+
+    /// A builder for [`ConfigurationException`](crate::error::ConfigurationException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConfigurationException`](crate::error::ConfigurationException).
+        pub fn build(self) -> crate::error::ConfigurationException {
+            crate::error::ConfigurationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ConfigurationException {
+    /// Creates a new builder-style object to manufacture [`ConfigurationException`](crate::error::ConfigurationException).
+    pub fn builder() -> crate::error::configuration_exception::Builder {
+        crate::error::configuration_exception::Builder::default()
+    }
+}
+
+/// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LimitExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl LimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException).
+pub mod limit_exceeded_exception {
+
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -154,8 +284,8 @@ impl ConcurrentModificationException {
 impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentModificationException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -219,8 +349,8 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -260,72 +390,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl LimitExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException).
-pub mod limit_exceeded_exception {
-
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
-        pub fn build(self) -> crate::error::LimitExceededException {
-            crate::error::LimitExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
-    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
-        crate::error::limit_exceeded_exception::Builder::default()
-    }
-}
-
-/// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your AWS account.</p>
+/// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
@@ -349,8 +414,8 @@ impl ResourceAlreadyExistsException {
 impl std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceAlreadyExistsException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -387,71 +452,6 @@ impl ResourceAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
     pub fn builder() -> crate::error::resource_already_exists_exception::Builder {
         crate::error::resource_already_exists_exception::Builder::default()
-    }
-}
-
-/// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConfigurationException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConfigurationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ConfigurationException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConfigurationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConfigurationException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConfigurationException {}
-/// See [`ConfigurationException`](crate::error::ConfigurationException).
-pub mod configuration_exception {
-
-    /// A builder for [`ConfigurationException`](crate::error::ConfigurationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConfigurationException`](crate::error::ConfigurationException).
-        pub fn build(self) -> crate::error::ConfigurationException {
-            crate::error::ConfigurationException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ConfigurationException {
-    /// Creates a new builder-style object to manufacture [`ConfigurationException`](crate::error::ConfigurationException).
-    pub fn builder() -> crate::error::configuration_exception::Builder {
-        crate::error::configuration_exception::Builder::default()
     }
 }
 
@@ -541,7 +541,7 @@ pub enum CreateNotificationRuleErrorKind {
     ConfigurationException(crate::error::ConfigurationException),
     /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your AWS account.</p>
+    /// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your Amazon Web Services account.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
@@ -1410,6 +1410,8 @@ pub struct SubscribeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubscribeErrorKind {
+    /// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
+    ConfigurationException(crate::error::ConfigurationException),
     /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
@@ -1420,6 +1422,7 @@ pub enum SubscribeErrorKind {
 impl std::fmt::Display for SubscribeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            SubscribeErrorKind::ConfigurationException(_inner) => _inner.fmt(f),
             SubscribeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             SubscribeErrorKind::ValidationException(_inner) => _inner.fmt(f),
             SubscribeErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1476,6 +1479,10 @@ impl SubscribeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `SubscribeErrorKind::ConfigurationException`.
+    pub fn is_configuration_exception(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::ConfigurationException(_))
+    }
     /// Returns `true` if the error kind is `SubscribeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, SubscribeErrorKind::ResourceNotFoundException(_))
@@ -1488,6 +1495,7 @@ impl SubscribeError {
 impl std::error::Error for SubscribeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            SubscribeErrorKind::ConfigurationException(_inner) => Some(_inner),
             SubscribeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SubscribeErrorKind::ValidationException(_inner) => Some(_inner),
             SubscribeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1510,6 +1518,8 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
@@ -1521,6 +1531,7 @@ impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             TagResourceErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1584,6 +1595,10 @@ impl TagResourceError {
             TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1600,6 +1615,7 @@ impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             TagResourceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1712,6 +1728,8 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
@@ -1723,6 +1741,7 @@ impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UntagResourceErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1786,6 +1805,13 @@ impl UntagResourceError {
             UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1802,6 +1828,7 @@ impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UntagResourceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1822,6 +1849,8 @@ pub struct UpdateNotificationRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateNotificationRuleErrorKind {
+    /// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
+    ConfigurationException(crate::error::ConfigurationException),
     /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
@@ -1832,6 +1861,7 @@ pub enum UpdateNotificationRuleErrorKind {
 impl std::fmt::Display for UpdateNotificationRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateNotificationRuleErrorKind::ConfigurationException(_inner) => _inner.fmt(f),
             UpdateNotificationRuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateNotificationRuleErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateNotificationRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1888,6 +1918,13 @@ impl UpdateNotificationRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateNotificationRuleErrorKind::ConfigurationException`.
+    pub fn is_configuration_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotificationRuleErrorKind::ConfigurationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateNotificationRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1906,6 +1943,7 @@ impl UpdateNotificationRuleError {
 impl std::error::Error for UpdateNotificationRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateNotificationRuleErrorKind::ConfigurationException(_inner) => Some(_inner),
             UpdateNotificationRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateNotificationRuleErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),

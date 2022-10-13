@@ -3888,6 +3888,24 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "sourceListenerAddress" => {
+                                builder = builder.set_source_listener_address(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "sourceListenerPort" => {
+                                builder = builder.set_source_listener_port(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
+                                );
+                            }
                             "streamId" => {
                                 builder = builder.set_stream_id(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(

@@ -5291,6 +5291,8 @@ pub mod update_flow_source_input {
         pub(crate) sender_control_port: std::option::Option<i32>,
         pub(crate) sender_ip_address: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
+        pub(crate) source_listener_address: std::option::Option<std::string::String>,
+        pub(crate) source_listener_port: std::option::Option<i32>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
         pub(crate) whitelist_cidr: std::option::Option<std::string::String>,
@@ -5459,6 +5461,29 @@ pub mod update_flow_source_input {
             self.source_arn = input;
             self
         }
+        /// Source IP or domain name for SRT-caller protocol.
+        pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_listener_address = Some(input.into());
+            self
+        }
+        /// Source IP or domain name for SRT-caller protocol.
+        pub fn set_source_listener_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_listener_address = input;
+            self
+        }
+        /// Source port for SRT-caller protocol.
+        pub fn source_listener_port(mut self, input: i32) -> Self {
+            self.source_listener_port = Some(input);
+            self
+        }
+        /// Source port for SRT-caller protocol.
+        pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.source_listener_port = input;
+            self
+        }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
@@ -5515,6 +5540,8 @@ pub mod update_flow_source_input {
                 sender_control_port: self.sender_control_port.unwrap_or_default(),
                 sender_ip_address: self.sender_ip_address,
                 source_arn: self.source_arn,
+                source_listener_address: self.source_listener_address,
+                source_listener_port: self.source_listener_port.unwrap_or_default(),
                 stream_id: self.stream_id,
                 vpc_interface_name: self.vpc_interface_name,
                 whitelist_cidr: self.whitelist_cidr,
@@ -5711,6 +5738,12 @@ pub struct UpdateFlowSourceInput {
     /// The ARN of the source that you want to update.
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
+    /// Source IP or domain name for SRT-caller protocol.
+    #[doc(hidden)]
+    pub source_listener_address: std::option::Option<std::string::String>,
+    /// Source port for SRT-caller protocol.
+    #[doc(hidden)]
+    pub source_listener_port: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -5780,6 +5813,14 @@ impl UpdateFlowSourceInput {
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
+    /// Source IP or domain name for SRT-caller protocol.
+    pub fn source_listener_address(&self) -> std::option::Option<&str> {
+        self.source_listener_address.as_deref()
+    }
+    /// Source port for SRT-caller protocol.
+    pub fn source_listener_port(&self) -> i32 {
+        self.source_listener_port
+    }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
@@ -5813,6 +5854,8 @@ impl std::fmt::Debug for UpdateFlowSourceInput {
         formatter.field("sender_control_port", &self.sender_control_port);
         formatter.field("sender_ip_address", &self.sender_ip_address);
         formatter.field("source_arn", &self.source_arn);
+        formatter.field("source_listener_address", &self.source_listener_address);
+        formatter.field("source_listener_port", &self.source_listener_port);
         formatter.field("stream_id", &self.stream_id);
         formatter.field("vpc_interface_name", &self.vpc_interface_name);
         formatter.field("whitelist_cidr", &self.whitelist_cidr);

@@ -2,6 +2,59 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDashboardForJobRunOutput {
+    /// <p>The URL to view job run's dashboard.</p>
+    #[doc(hidden)]
+    pub url: std::option::Option<std::string::String>,
+}
+impl GetDashboardForJobRunOutput {
+    /// <p>The URL to view job run's dashboard.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
+impl std::fmt::Debug for GetDashboardForJobRunOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDashboardForJobRunOutput");
+        formatter.field("url", &self.url);
+        formatter.finish()
+    }
+}
+/// See [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput).
+pub mod get_dashboard_for_job_run_output {
+
+    /// A builder for [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The URL to view job run's dashboard.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The URL to view job run's dashboard.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput).
+        pub fn build(self) -> crate::output::GetDashboardForJobRunOutput {
+            crate::output::GetDashboardForJobRunOutput { url: self.url }
+        }
+    }
+}
+impl GetDashboardForJobRunOutput {
+    /// Creates a new builder-style object to manufacture [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput).
+    pub fn builder() -> crate::output::get_dashboard_for_job_run_output::Builder {
+        crate::output::get_dashboard_for_job_run_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobRunsOutput {
     /// <p>The output lists information about the specified job runs.</p>
     #[doc(hidden)]

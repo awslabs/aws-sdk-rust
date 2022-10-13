@@ -5069,6 +5069,132 @@ impl std::error::Error for GetMapTileError {
     }
 }
 
+/// Error type for the `GetPlace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetPlaceError {
+    /// Kind of error that occurred.
+    pub kind: GetPlaceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetPlace` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetPlaceErrorKind {
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource that you've entered was not found in your AWS account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input failed to meet the constraints specified by the AWS service. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetPlaceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetPlaceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetPlaceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetPlaceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetPlaceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetPlaceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetPlaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetPlaceError {
+    fn code(&self) -> Option<&str> {
+        GetPlaceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            GetPlaceErrorKind::InternalServerException(inner) => Some(inner.retryable_error_kind()),
+            GetPlaceErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
+    }
+}
+impl GetPlaceError {
+    /// Creates a new `GetPlaceError`.
+    pub fn new(kind: GetPlaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetPlaceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetPlaceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetPlaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetPlaceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetPlaceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetPlaceErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetPlaceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetPlaceErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetPlaceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetPlaceErrorKind::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetPlaceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetPlaceErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetPlaceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetPlaceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetPlaceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetPlaceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetPlaceErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetPlaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetPlaceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetPlaceErrorKind::ValidationException(_inner) => Some(_inner),
+            GetPlaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListDevicePositions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

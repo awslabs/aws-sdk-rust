@@ -166,6 +166,295 @@ impl AsRef<str> for MobileDeviceAccessRuleEffect {
     }
 }
 
+/// <p>The rules for the given impersonation role.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImpersonationRule {
+    /// <p>The identifier of the rule.</p>
+    #[doc(hidden)]
+    pub impersonation_rule_id: std::option::Option<std::string::String>,
+    /// <p>The rule name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The rule description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    #[doc(hidden)]
+    pub effect: std::option::Option<crate::model::AccessEffect>,
+    /// <p>A list of user IDs that match the rule.</p>
+    #[doc(hidden)]
+    pub target_users: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of user IDs that don't match the rule.</p>
+    #[doc(hidden)]
+    pub not_target_users: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ImpersonationRule {
+    /// <p>The identifier of the rule.</p>
+    pub fn impersonation_rule_id(&self) -> std::option::Option<&str> {
+        self.impersonation_rule_id.as_deref()
+    }
+    /// <p>The rule name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The rule description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::AccessEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>A list of user IDs that match the rule.</p>
+    pub fn target_users(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_users.as_deref()
+    }
+    /// <p>A list of user IDs that don't match the rule.</p>
+    pub fn not_target_users(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_target_users.as_deref()
+    }
+}
+impl std::fmt::Debug for ImpersonationRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImpersonationRule");
+        formatter.field("impersonation_rule_id", &self.impersonation_rule_id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("effect", &self.effect);
+        formatter.field("target_users", &self.target_users);
+        formatter.field("not_target_users", &self.not_target_users);
+        formatter.finish()
+    }
+}
+/// See [`ImpersonationRule`](crate::model::ImpersonationRule).
+pub mod impersonation_rule {
+
+    /// A builder for [`ImpersonationRule`](crate::model::ImpersonationRule).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) impersonation_rule_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) effect: std::option::Option<crate::model::AccessEffect>,
+        pub(crate) target_users: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) not_target_users: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the rule.</p>
+        pub fn impersonation_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_rule_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the rule.</p>
+        pub fn set_impersonation_rule_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_rule_id = input;
+            self
+        }
+        /// <p>The rule name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The rule name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The rule description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The rule description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
+        pub fn effect(mut self, input: crate::model::AccessEffect) -> Self {
+            self.effect = Some(input);
+            self
+        }
+        /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
+        pub fn set_effect(
+            mut self,
+            input: std::option::Option<crate::model::AccessEffect>,
+        ) -> Self {
+            self.effect = input;
+            self
+        }
+        /// Appends an item to `target_users`.
+        ///
+        /// To override the contents of this collection use [`set_target_users`](Self::set_target_users).
+        ///
+        /// <p>A list of user IDs that match the rule.</p>
+        pub fn target_users(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.target_users.unwrap_or_default();
+            v.push(input.into());
+            self.target_users = Some(v);
+            self
+        }
+        /// <p>A list of user IDs that match the rule.</p>
+        pub fn set_target_users(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.target_users = input;
+            self
+        }
+        /// Appends an item to `not_target_users`.
+        ///
+        /// To override the contents of this collection use [`set_not_target_users`](Self::set_not_target_users).
+        ///
+        /// <p>A list of user IDs that don't match the rule.</p>
+        pub fn not_target_users(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.not_target_users.unwrap_or_default();
+            v.push(input.into());
+            self.not_target_users = Some(v);
+            self
+        }
+        /// <p>A list of user IDs that don't match the rule.</p>
+        pub fn set_not_target_users(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.not_target_users = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImpersonationRule`](crate::model::ImpersonationRule).
+        pub fn build(self) -> crate::model::ImpersonationRule {
+            crate::model::ImpersonationRule {
+                impersonation_rule_id: self.impersonation_rule_id,
+                name: self.name,
+                description: self.description,
+                effect: self.effect,
+                target_users: self.target_users,
+                not_target_users: self.not_target_users,
+            }
+        }
+    }
+}
+impl ImpersonationRule {
+    /// Creates a new builder-style object to manufacture [`ImpersonationRule`](crate::model::ImpersonationRule).
+    pub fn builder() -> crate::model::impersonation_rule::Builder {
+        crate::model::impersonation_rule::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AccessEffect {
+    #[allow(missing_docs)] // documentation missing in model
+    Allow,
+    #[allow(missing_docs)] // documentation missing in model
+    Deny,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AccessEffect {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALLOW" => AccessEffect::Allow,
+            "DENY" => AccessEffect::Deny,
+            other => AccessEffect::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AccessEffect {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccessEffect::from(s))
+    }
+}
+impl AccessEffect {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccessEffect::Allow => "ALLOW",
+            AccessEffect::Deny => "DENY",
+            AccessEffect::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALLOW", "DENY"]
+    }
+}
+impl AsRef<str> for AccessEffect {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImpersonationRoleType {
+    #[allow(missing_docs)] // documentation missing in model
+    FullAccess,
+    #[allow(missing_docs)] // documentation missing in model
+    ReadOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImpersonationRoleType {
+    fn from(s: &str) -> Self {
+        match s {
+            "FULL_ACCESS" => ImpersonationRoleType::FullAccess,
+            "READ_ONLY" => ImpersonationRoleType::ReadOnly,
+            other => ImpersonationRoleType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImpersonationRoleType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImpersonationRoleType::from(s))
+    }
+}
+impl ImpersonationRoleType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImpersonationRoleType::FullAccess => "FULL_ACCESS",
+            ImpersonationRoleType::ReadOnly => "READ_ONLY",
+            ImpersonationRoleType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FULL_ACCESS", "READ_ONLY"]
+    }
+}
+impl AsRef<str> for ImpersonationRoleType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes a Lambda based availability provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -735,7 +1024,7 @@ impl AsRef<str> for AccessControlRuleEffect {
     }
 }
 
-/// <p>The representation of an Amazon WorkMail user.</p>
+/// <p>The representation of an WorkMail user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
@@ -757,10 +1046,10 @@ pub struct User {
     /// <p>The role of the user.</p>
     #[doc(hidden)]
     pub user_role: std::option::Option<crate::model::UserRole>,
-    /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+    /// <p>The date indicating when the user was enabled for WorkMail use.</p>
     #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+    /// <p>The date indicating when the user was disabled from WorkMail use.</p>
     #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -789,11 +1078,11 @@ impl User {
     pub fn user_role(&self) -> std::option::Option<&crate::model::UserRole> {
         self.user_role.as_ref()
     }
-    /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+    /// <p>The date indicating when the user was enabled for WorkMail use.</p>
     pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
-    /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+    /// <p>The date indicating when the user was disabled from WorkMail use.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
@@ -888,12 +1177,12 @@ pub mod user {
             self.user_role = input;
             self
         }
-        /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+        /// <p>The date indicating when the user was enabled for WorkMail use.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
-        /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+        /// <p>The date indicating when the user was enabled for WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -901,12 +1190,12 @@ pub mod user {
             self.enabled_date = input;
             self
         }
-        /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+        /// <p>The date indicating when the user was disabled from WorkMail use.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
-        /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+        /// <p>The date indicating when the user was disabled from WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1073,10 +1362,10 @@ pub struct Resource {
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
-    /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
+    /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
     #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
+    /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
     #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -1101,11 +1390,11 @@ impl Resource {
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
-    /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
+    /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
     pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
-    /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
+    /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
@@ -1188,12 +1477,12 @@ pub mod resource {
             self.state = input;
             self
         }
-        /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
+        /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
-        /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
+        /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1201,12 +1490,12 @@ pub mod resource {
             self.enabled_date = input;
             self
         }
-        /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
+        /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
-        /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
+        /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1564,11 +1853,11 @@ impl OrganizationSummary {
     }
 }
 
-/// <p>A rule that controls access to mobile devices for an Amazon WorkMail group.</p>
+/// <p>A rule that controls access to mobile devices for an WorkMail group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MobileDeviceAccessRule {
-    /// <p>The ID assigned to a mobile access rule. </p>
+    /// <p>The ID assigned to a mobile access rule.</p>
     #[doc(hidden)]
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
     /// <p>The name of a mobile access rule.</p>
@@ -1580,7 +1869,7 @@ pub struct MobileDeviceAccessRule {
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
     #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
-    /// <p>Device types that a rule will match. </p>
+    /// <p>Device types that a rule will match.</p>
     #[doc(hidden)]
     pub device_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
@@ -1612,7 +1901,7 @@ pub struct MobileDeviceAccessRule {
     pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MobileDeviceAccessRule {
-    /// <p>The ID assigned to a mobile access rule. </p>
+    /// <p>The ID assigned to a mobile access rule.</p>
     pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
         self.mobile_device_access_rule_id.as_deref()
     }
@@ -1628,7 +1917,7 @@ impl MobileDeviceAccessRule {
     pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
         self.effect.as_ref()
     }
-    /// <p>Device types that a rule will match. </p>
+    /// <p>Device types that a rule will match.</p>
     pub fn device_types(&self) -> std::option::Option<&[std::string::String]> {
         self.device_types.as_deref()
     }
@@ -1719,7 +2008,7 @@ pub mod mobile_device_access_rule {
         pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The ID assigned to a mobile access rule. </p>
+        /// <p>The ID assigned to a mobile access rule.</p>
         pub fn mobile_device_access_rule_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -1727,7 +2016,7 @@ pub mod mobile_device_access_rule {
             self.mobile_device_access_rule_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to a mobile access rule. </p>
+        /// <p>The ID assigned to a mobile access rule.</p>
         pub fn set_mobile_device_access_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1772,14 +2061,14 @@ pub mod mobile_device_access_rule {
         ///
         /// To override the contents of this collection use [`set_device_types`](Self::set_device_types).
         ///
-        /// <p>Device types that a rule will match. </p>
+        /// <p>Device types that a rule will match.</p>
         pub fn device_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_types.unwrap_or_default();
             v.push(input.into());
             self.device_types = Some(v);
             self
         }
-        /// <p>Device types that a rule will match. </p>
+        /// <p>Device types that a rule will match.</p>
         pub fn set_device_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2614,7 +2903,154 @@ impl AsRef<str> for MailboxExportJobState {
     }
 }
 
-/// <p>The representation of an Amazon WorkMail group.</p>
+/// <p>An impersonation role for the given WorkMail organization.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImpersonationRole {
+    /// <p>The identifier of the impersonation role.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
+    /// <p>The impersonation role name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The impersonation role type.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+    /// <p>The date when the impersonation role was created.</p>
+    #[doc(hidden)]
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date when the impersonation role was last modified.</p>
+    #[doc(hidden)]
+    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ImpersonationRole {
+    /// <p>The identifier of the impersonation role.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
+    /// <p>The impersonation role name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The impersonation role type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImpersonationRoleType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The date when the impersonation role was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date when the impersonation role was last modified.</p>
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.date_modified.as_ref()
+    }
+}
+impl std::fmt::Debug for ImpersonationRole {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImpersonationRole");
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("date_created", &self.date_created);
+        formatter.field("date_modified", &self.date_modified);
+        formatter.finish()
+    }
+}
+/// See [`ImpersonationRole`](crate::model::ImpersonationRole).
+pub mod impersonation_role {
+
+    /// A builder for [`ImpersonationRole`](crate::model::ImpersonationRole).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The identifier of the impersonation role.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the impersonation role.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
+        /// <p>The impersonation role name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The impersonation role name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The impersonation role type.</p>
+        pub fn r#type(mut self, input: crate::model::ImpersonationRoleType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The impersonation role type.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ImpersonationRoleType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The date when the impersonation role was created.</p>
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.date_created = Some(input);
+            self
+        }
+        /// <p>The date when the impersonation role was created.</p>
+        pub fn set_date_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.date_created = input;
+            self
+        }
+        /// <p>The date when the impersonation role was last modified.</p>
+        pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.date_modified = Some(input);
+            self
+        }
+        /// <p>The date when the impersonation role was last modified.</p>
+        pub fn set_date_modified(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.date_modified = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImpersonationRole`](crate::model::ImpersonationRole).
+        pub fn build(self) -> crate::model::ImpersonationRole {
+            crate::model::ImpersonationRole {
+                impersonation_role_id: self.impersonation_role_id,
+                name: self.name,
+                r#type: self.r#type,
+                date_created: self.date_created,
+                date_modified: self.date_modified,
+            }
+        }
+    }
+}
+impl ImpersonationRole {
+    /// Creates a new builder-style object to manufacture [`ImpersonationRole`](crate::model::ImpersonationRole).
+    pub fn builder() -> crate::model::impersonation_role::Builder {
+        crate::model::impersonation_role::Builder::default()
+    }
+}
+
+/// <p>The representation of an WorkMail group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
@@ -2630,10 +3066,10 @@ pub struct Group {
     /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
-    /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
+    /// <p>The date indicating when the group was enabled for WorkMail use.</p>
     #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
+    /// <p>The date indicating when the group was disabled from WorkMail use.</p>
     #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -2654,11 +3090,11 @@ impl Group {
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
-    /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
+    /// <p>The date indicating when the group was enabled for WorkMail use.</p>
     pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
-    /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
+    /// <p>The date indicating when the group was disabled from WorkMail use.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
@@ -2729,12 +3165,12 @@ pub mod group {
             self.state = input;
             self
         }
-        /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
+        /// <p>The date indicating when the group was enabled for WorkMail use.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
-        /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
+        /// <p>The date indicating when the group was enabled for WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2742,12 +3178,12 @@ pub mod group {
             self.enabled_date = input;
             self
         }
-        /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
+        /// <p>The date indicating when the group was disabled from WorkMail use.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
-        /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
+        /// <p>The date indicating when the group was disabled from WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2791,10 +3227,10 @@ pub struct Member {
     /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
-    /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
+    /// <p>The date indicating when the member was enabled for WorkMail use.</p>
     #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
+    /// <p>The date indicating when the member was disabled from WorkMail use.</p>
     #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -2815,11 +3251,11 @@ impl Member {
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
-    /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
+    /// <p>The date indicating when the member was enabled for WorkMail use.</p>
     pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
-    /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
+    /// <p>The date indicating when the member was disabled from WorkMail use.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
@@ -2890,12 +3326,12 @@ pub mod member {
             self.state = input;
             self
         }
-        /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
+        /// <p>The date indicating when the member was enabled for WorkMail use.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
-        /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
+        /// <p>The date indicating when the member was enabled for WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2903,12 +3339,12 @@ pub mod member {
             self.enabled_date = input;
             self
         }
-        /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
+        /// <p>The date indicating when the member was disabled from WorkMail use.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
-        /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
+        /// <p>The date indicating when the member was disabled from WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2946,7 +3382,7 @@ pub struct AvailabilityConfiguration {
     /// <p>Displays the provider type that applies to this domain.</p>
     #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::AvailabilityProviderType>,
-    /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+    /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
     #[doc(hidden)]
     pub ews_provider: std::option::Option<crate::model::RedactedEwsAvailabilityProvider>,
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
@@ -2968,7 +3404,7 @@ impl AvailabilityConfiguration {
     pub fn provider_type(&self) -> std::option::Option<&crate::model::AvailabilityProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+    /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
     pub fn ews_provider(
         &self,
     ) -> std::option::Option<&crate::model::RedactedEwsAvailabilityProvider> {
@@ -3038,7 +3474,7 @@ pub mod availability_configuration {
             self.provider_type = input;
             self
         }
-        /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+        /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
         pub fn ews_provider(
             mut self,
             input: crate::model::RedactedEwsAvailabilityProvider,
@@ -3046,7 +3482,7 @@ pub mod availability_configuration {
             self.ews_provider = Some(input);
             self
         }
-        /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+        /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
         pub fn set_ews_provider(
             mut self,
             input: std::option::Option<crate::model::RedactedEwsAvailabilityProvider>,
@@ -3243,7 +3679,7 @@ impl AsRef<str> for AvailabilityProviderType {
     }
 }
 
-/// <p>A rule that controls access to an Amazon WorkMail organization.</p>
+/// <p>A rule that controls access to an WorkMail organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlRule {
@@ -3280,6 +3716,12 @@ pub struct AccessControlRule {
     /// <p>The date that the rule was modified.</p>
     #[doc(hidden)]
     pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Impersonation role IDs to include in the rule.</p>
+    #[doc(hidden)]
+    pub impersonation_role_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Impersonation role IDs to exclude from the rule.</p>
+    #[doc(hidden)]
+    pub not_impersonation_role_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AccessControlRule {
     /// <p>The rule name.</p>
@@ -3326,6 +3768,14 @@ impl AccessControlRule {
     pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
+    /// <p>Impersonation role IDs to include in the rule.</p>
+    pub fn impersonation_role_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.impersonation_role_ids.as_deref()
+    }
+    /// <p>Impersonation role IDs to exclude from the rule.</p>
+    pub fn not_impersonation_role_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_impersonation_role_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessControlRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3341,6 +3791,11 @@ impl std::fmt::Debug for AccessControlRule {
         formatter.field("not_user_ids", &self.not_user_ids);
         formatter.field("date_created", &self.date_created);
         formatter.field("date_modified", &self.date_modified);
+        formatter.field("impersonation_role_ids", &self.impersonation_role_ids);
+        formatter.field(
+            "not_impersonation_role_ids",
+            &self.not_impersonation_role_ids,
+        );
         formatter.finish()
     }
 }
@@ -3361,6 +3816,9 @@ pub mod access_control_rule {
         pub(crate) not_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) impersonation_role_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) not_impersonation_role_ids:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The rule name.</p>
@@ -3536,6 +3994,44 @@ pub mod access_control_rule {
             self.date_modified = input;
             self
         }
+        /// Appends an item to `impersonation_role_ids`.
+        ///
+        /// To override the contents of this collection use [`set_impersonation_role_ids`](Self::set_impersonation_role_ids).
+        ///
+        /// <p>Impersonation role IDs to include in the rule.</p>
+        pub fn impersonation_role_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.impersonation_role_ids.unwrap_or_default();
+            v.push(input.into());
+            self.impersonation_role_ids = Some(v);
+            self
+        }
+        /// <p>Impersonation role IDs to include in the rule.</p>
+        pub fn set_impersonation_role_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.impersonation_role_ids = input;
+            self
+        }
+        /// Appends an item to `not_impersonation_role_ids`.
+        ///
+        /// To override the contents of this collection use [`set_not_impersonation_role_ids`](Self::set_not_impersonation_role_ids).
+        ///
+        /// <p>Impersonation role IDs to exclude from the rule.</p>
+        pub fn not_impersonation_role_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.not_impersonation_role_ids.unwrap_or_default();
+            v.push(input.into());
+            self.not_impersonation_role_ids = Some(v);
+            self
+        }
+        /// <p>Impersonation role IDs to exclude from the rule.</p>
+        pub fn set_not_impersonation_role_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.not_impersonation_role_ids = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AccessControlRule`](crate::model::AccessControlRule).
         pub fn build(self) -> crate::model::AccessControlRule {
             crate::model::AccessControlRule {
@@ -3550,6 +4046,8 @@ pub mod access_control_rule {
                 not_user_ids: self.not_user_ids,
                 date_created: self.date_created,
                 date_modified: self.date_modified,
+                impersonation_role_ids: self.impersonation_role_ids,
+                not_impersonation_role_ids: self.not_impersonation_role_ids,
             }
         }
     }
@@ -3799,8 +4297,86 @@ impl DnsRecord {
     }
 }
 
-/// <p>The domain to associate with an Amazon WorkMail organization.</p>
-/// <p>When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+/// <p>The impersonation rule that matched the input.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImpersonationMatchedRule {
+    /// <p>The ID of the rule that matched the input</p>
+    #[doc(hidden)]
+    pub impersonation_rule_id: std::option::Option<std::string::String>,
+    /// <p>The name of the rule that matched the input.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl ImpersonationMatchedRule {
+    /// <p>The ID of the rule that matched the input</p>
+    pub fn impersonation_rule_id(&self) -> std::option::Option<&str> {
+        self.impersonation_rule_id.as_deref()
+    }
+    /// <p>The name of the rule that matched the input.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for ImpersonationMatchedRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImpersonationMatchedRule");
+        formatter.field("impersonation_rule_id", &self.impersonation_rule_id);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
+pub mod impersonation_matched_rule {
+
+    /// A builder for [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) impersonation_rule_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the rule that matched the input</p>
+        pub fn impersonation_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_rule_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the rule that matched the input</p>
+        pub fn set_impersonation_rule_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_rule_id = input;
+            self
+        }
+        /// <p>The name of the rule that matched the input.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the rule that matched the input.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
+        pub fn build(self) -> crate::model::ImpersonationMatchedRule {
+            crate::model::ImpersonationMatchedRule {
+                impersonation_rule_id: self.impersonation_rule_id,
+                name: self.name,
+            }
+        }
+    }
+}
+impl ImpersonationMatchedRule {
+    /// Creates a new builder-style object to manufacture [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
+    pub fn builder() -> crate::model::impersonation_matched_rule::Builder {
+        crate::model::impersonation_matched_rule::Builder::default()
+    }
+}
+
+/// <p>The domain to associate with an WorkMail organization.</p>
+/// <p>When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> in the <i>WorkMail Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Domain {

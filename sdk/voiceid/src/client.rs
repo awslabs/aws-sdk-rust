@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_name): <p>The name of the domain.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_description): <p>A brief description of this domain.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_description): <p>A brief description of the domain.</p>
     ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_client_token): <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tags): <p>A list of tags you want added to the domain.</p>
@@ -213,7 +213,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomains::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDomains::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomains::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDomains::set_max_results): <p>The maximum number of domains to list per API call.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomains::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomains::set_next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
     ///   - [`domain_summaries(Option<Vec<DomainSummary>>)`](crate::output::ListDomainsOutput::domain_summaries): <p>A list containing details about each domain in the Amazon Web Services account.</p>
@@ -296,7 +296,7 @@ impl Client {
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_job_name): <p>The name of the new fraudster registration job.</p>
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_domain_id): <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_data_access_role_arn): <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-    ///   - [`registration_config(RegistrationConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::registration_config) / [`set_registration_config(Option<RegistrationConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_registration_config): <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    ///   - [`registration_config(RegistrationConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::registration_config) / [`set_registration_config(Option<RegistrationConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_registration_config): <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_input_data_config): <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
     ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_output_data_config): <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     /// - On success, responds with [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput) with field(s):
@@ -313,7 +313,7 @@ impl Client {
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_client_token): <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_job_name): <p>A name for your speaker enrollment job.</p>
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_domain_id): <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
-    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_data_access_role_arn): <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_data_access_role_arn): <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
     ///   - [`enrollment_config(EnrollmentConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::enrollment_config) / [`set_enrollment_config(Option<EnrollmentConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_enrollment_config): <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
     ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_input_data_config): <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
     ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_output_data_config): <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
@@ -350,8 +350,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_domain_id): <p>The identifier of the domain to be updated.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_name): <p>The name of the domain.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_description): <p>A brief description about this domain.</p>
-    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::UpdateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::UpdateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_description): <p>A brief description of the domain.</p>
+    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::UpdateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::UpdateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
     /// - On success, responds with [`UpdateDomainOutput`](crate::output::UpdateDomainOutput) with field(s):
     ///   - [`domain(Option<Domain>)`](crate::output::UpdateDomainOutput::domain): <p>Details about the updated domain</p>
     /// - On failure, responds with [`SdkError<UpdateDomainError>`](crate::error::UpdateDomainError)
@@ -442,12 +442,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A brief description of this domain.</p>
+        /// <p>A brief description of the domain.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A brief description of this domain.</p>
+        /// <p>A brief description of the domain.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1334,12 +1334,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListDomainsPaginator {
             crate::paginator::ListDomainsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+        /// <p>The maximum number of domains to list per API call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+        /// <p>The maximum number of domains to list per API call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1963,12 +1963,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
         pub fn registration_config(mut self, input: crate::model::RegistrationConfig) -> Self {
             self.inner = self.inner.registration_config(input);
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
         pub fn set_registration_config(
             mut self,
             input: std::option::Option<crate::model::RegistrationConfig>,
@@ -2099,12 +2099,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2426,17 +2426,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A brief description about this domain.</p>
+        /// <p>A brief description of the domain.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A brief description about this domain.</p>
+        /// <p>A brief description of the domain.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -2444,7 +2444,7 @@ pub mod fluent_builders {
             self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
-        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,

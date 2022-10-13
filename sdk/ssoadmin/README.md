@@ -3,11 +3,11 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Amazon Web Services Single Sign On helps you securely create, or connect, your workforce identities and manage their access centrally across Amazon Web Services accounts and applications. Amazon Web Services SSO is the recommended approach for workforce authentication and authorization in Amazon Web Services, for organizations of any size and type.
+AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications. IAM Identity Center is the recommended approach for workforce authentication and authorization in AWS, for organizations of any size and type.
 
-This reference guide provides information on single sign-on operations which could be used for access management of Amazon Web Services accounts. For information about Amazon Web Services SSO features, see the [Amazon Web Services SSO User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
+This reference guide provides information on single sign-on operations which could be used for access management of AWS accounts. For information about IAM Identity Center features, see the [IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
 
-Many operations in the Amazon Web Services SSO APIs rely on identifiers for users and groups, known as principals. For more information about how to work with principals and principal IDs in Amazon Web Services SSO, see the [Identity Store API Reference](https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html).
+Many operations in the IAM Identity Center APIs rely on identifiers for users and groups, known as principals. For more information about how to work with principals and principal IDs in IAM Identity Center, see the [Identity Store API Reference](https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html).
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.49.0"
-aws-sdk-ssoadmin = "0.19.0"
+aws-sdk-ssoadmin = "0.20.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

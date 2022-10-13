@@ -1674,6 +1674,8 @@ impl AsRef<str> for ValidatePolicyFindingType {
 )]
 pub enum ValidatePolicyResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    RoleTrust,
+    #[allow(missing_docs)] // documentation missing in model
     S3AccessPoint,
     #[allow(missing_docs)] // documentation missing in model
     S3Bucket,
@@ -1687,6 +1689,7 @@ pub enum ValidatePolicyResourceType {
 impl std::convert::From<&str> for ValidatePolicyResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS::IAM::AssumeRolePolicyDocument" => ValidatePolicyResourceType::RoleTrust,
             "AWS::S3::AccessPoint" => ValidatePolicyResourceType::S3AccessPoint,
             "AWS::S3::Bucket" => ValidatePolicyResourceType::S3Bucket,
             "AWS::S3::MultiRegionAccessPoint" => {
@@ -1710,6 +1713,7 @@ impl ValidatePolicyResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ValidatePolicyResourceType::RoleTrust => "AWS::IAM::AssumeRolePolicyDocument",
             ValidatePolicyResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
             ValidatePolicyResourceType::S3Bucket => "AWS::S3::Bucket",
             ValidatePolicyResourceType::S3MultiRegionAccessPoint => {
@@ -1724,6 +1728,7 @@ impl ValidatePolicyResourceType {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "AWS::IAM::AssumeRolePolicyDocument",
             "AWS::S3::AccessPoint",
             "AWS::S3::Bucket",
             "AWS::S3::MultiRegionAccessPoint",
@@ -6218,7 +6223,7 @@ impl S3BucketConfiguration {
     }
 }
 
-/// <p>The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points restrictions and limitations</a>.</p>
+/// <p>The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points restrictions and limitations</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3AccessPointConfiguration {

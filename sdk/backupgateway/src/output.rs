@@ -2,6 +2,149 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListVirtualMachinesOutput {
+    /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
+    pub virtual_machines: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVirtualMachinesOutput {
+    /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+    pub fn virtual_machines(&self) -> std::option::Option<&[crate::model::VirtualMachine]> {
+        self.virtual_machines.as_deref()
+    }
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListVirtualMachinesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListVirtualMachinesOutput");
+        formatter.field("virtual_machines", &self.virtual_machines);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
+pub mod list_virtual_machines_output {
+
+    /// A builder for [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) virtual_machines:
+            std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `virtual_machines`.
+        ///
+        /// To override the contents of this collection use [`set_virtual_machines`](Self::set_virtual_machines).
+        ///
+        /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+        pub fn virtual_machines(mut self, input: crate::model::VirtualMachine) -> Self {
+            let mut v = self.virtual_machines.unwrap_or_default();
+            v.push(input);
+            self.virtual_machines = Some(v);
+            self
+        }
+        /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+        pub fn set_virtual_machines(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
+        ) -> Self {
+            self.virtual_machines = input;
+            self
+        }
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
+        pub fn build(self) -> crate::output::ListVirtualMachinesOutput {
+            crate::output::ListVirtualMachinesOutput {
+                virtual_machines: self.virtual_machines,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListVirtualMachinesOutput {
+    /// Creates a new builder-style object to manufacture [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
+    pub fn builder() -> crate::output::list_virtual_machines_output::Builder {
+        crate::output::list_virtual_machines_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetVirtualMachineOutput {
+    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
+    #[doc(hidden)]
+    pub virtual_machine: std::option::Option<crate::model::VirtualMachineDetails>,
+}
+impl GetVirtualMachineOutput {
+    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
+    pub fn virtual_machine(&self) -> std::option::Option<&crate::model::VirtualMachineDetails> {
+        self.virtual_machine.as_ref()
+    }
+}
+impl std::fmt::Debug for GetVirtualMachineOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetVirtualMachineOutput");
+        formatter.field("virtual_machine", &self.virtual_machine);
+        formatter.finish()
+    }
+}
+/// See [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
+pub mod get_virtual_machine_output {
+
+    /// A builder for [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) virtual_machine: std::option::Option<crate::model::VirtualMachineDetails>,
+    }
+    impl Builder {
+        /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
+        pub fn virtual_machine(mut self, input: crate::model::VirtualMachineDetails) -> Self {
+            self.virtual_machine = Some(input);
+            self
+        }
+        /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
+        pub fn set_virtual_machine(
+            mut self,
+            input: std::option::Option<crate::model::VirtualMachineDetails>,
+        ) -> Self {
+            self.virtual_machine = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
+        pub fn build(self) -> crate::output::GetVirtualMachineOutput {
+            crate::output::GetVirtualMachineOutput {
+                virtual_machine: self.virtual_machine,
+            }
+        }
+    }
+}
+impl GetVirtualMachineOutput {
+    /// Creates a new builder-style object to manufacture [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
+    pub fn builder() -> crate::output::get_virtual_machine_output::Builder {
+        crate::output::get_virtual_machine_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHypervisorsOutput {
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
@@ -921,91 +1064,6 @@ impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListVirtualMachinesOutput {
-    /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    #[doc(hidden)]
-    pub virtual_machines: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
-    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListVirtualMachinesOutput {
-    /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn virtual_machines(&self) -> std::option::Option<&[crate::model::VirtualMachine]> {
-        self.virtual_machines.as_deref()
-    }
-    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListVirtualMachinesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualMachinesOutput");
-        formatter.field("virtual_machines", &self.virtual_machines);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
-/// See [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
-pub mod list_virtual_machines_output {
-
-    /// A builder for [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) virtual_machines:
-            std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `virtual_machines`.
-        ///
-        /// To override the contents of this collection use [`set_virtual_machines`](Self::set_virtual_machines).
-        ///
-        /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-        pub fn virtual_machines(mut self, input: crate::model::VirtualMachine) -> Self {
-            let mut v = self.virtual_machines.unwrap_or_default();
-            v.push(input);
-            self.virtual_machines = Some(v);
-            self
-        }
-        /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-        pub fn set_virtual_machines(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
-        ) -> Self {
-            self.virtual_machines = input;
-            self
-        }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
-        pub fn build(self) -> crate::output::ListVirtualMachinesOutput {
-            crate::output::ListVirtualMachinesOutput {
-                virtual_machines: self.virtual_machines,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListVirtualMachinesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
-    pub fn builder() -> crate::output::list_virtual_machines_output::Builder {
-        crate::output::list_virtual_machines_output::Builder::default()
     }
 }
 

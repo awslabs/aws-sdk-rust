@@ -130,18 +130,18 @@ impl AsRef<str> for Mode {
     }
 }
 
-/// <p>Provides the configuration information to fetch access levels of groups and users from an Amazon Web Services Single Sign On identity source. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents. You can also use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping</a> API to map users to their groups so that you only need to provide the user ID when you issue the query.</p>
-/// <p>To set up an Amazon Web Services SSO identity source in the console to use with Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>. You must also grant the required permissions to use Amazon Web Services SSO with Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for Amazon Web Services SSO</a>.</p>
-/// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your Amazon Web Services SSO identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
+/// <p>Provides the configuration information to fetch access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents. You can also use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping</a> API to map users to their groups so that you only need to provide the user ID when you issue the query.</p>
+/// <p>To set up an IAM Identity Center identity source in the console to use with Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>. You must also grant the required permissions to use IAM Identity Center with Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for IAM Identity Center</a>.</p>
+/// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your IAM Identity Center identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupResolutionConfiguration {
-    /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups must exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
+    /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     #[doc(hidden)]
     pub user_group_resolution_mode: std::option::Option<crate::model::UserGroupResolutionMode>,
 }
 impl UserGroupResolutionConfiguration {
-    /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups must exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
+    /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     pub fn user_group_resolution_mode(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionMode> {
@@ -168,7 +168,7 @@ pub mod user_group_resolution_configuration {
             std::option::Option<crate::model::UserGroupResolutionMode>,
     }
     impl Builder {
-        /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups must exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
+        /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
         pub fn user_group_resolution_mode(
             mut self,
             input: crate::model::UserGroupResolutionMode,
@@ -176,7 +176,7 @@ pub mod user_group_resolution_configuration {
             self.user_group_resolution_mode = Some(input);
             self
         }
-        /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups must exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
+        /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
         pub fn set_user_group_resolution_mode(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionMode>,
@@ -1349,7 +1349,7 @@ pub struct ExperienceConfiguration {
     /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub content_source_configuration: std::option::Option<crate::model::ContentSourceConfiguration>,
-    /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+    /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
     #[doc(hidden)]
     pub user_identity_configuration: std::option::Option<crate::model::UserIdentityConfiguration>,
 }
@@ -1360,7 +1360,7 @@ impl ExperienceConfiguration {
     ) -> std::option::Option<&crate::model::ContentSourceConfiguration> {
         self.content_source_configuration.as_ref()
     }
-    /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+    /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
     pub fn user_identity_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UserIdentityConfiguration> {
@@ -1409,7 +1409,7 @@ pub mod experience_configuration {
             self.content_source_configuration = input;
             self
         }
-        /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+        /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
         pub fn user_identity_configuration(
             mut self,
             input: crate::model::UserIdentityConfiguration,
@@ -1417,7 +1417,7 @@ pub mod experience_configuration {
             self.user_identity_configuration = Some(input);
             self
         }
-        /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+        /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
         pub fn set_user_identity_configuration(
             mut self,
             input: std::option::Option<crate::model::UserIdentityConfiguration>,
@@ -1445,12 +1445,12 @@ impl ExperienceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentityConfiguration {
-    /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>.</p>
+    /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
     #[doc(hidden)]
     pub identity_attribute_name: std::option::Option<std::string::String>,
 }
 impl UserIdentityConfiguration {
-    /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>.</p>
+    /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
     pub fn identity_attribute_name(&self) -> std::option::Option<&str> {
         self.identity_attribute_name.as_deref()
     }
@@ -1471,12 +1471,12 @@ pub mod user_identity_configuration {
         pub(crate) identity_attribute_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>.</p>
+        /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
         pub fn identity_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_attribute_name = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>.</p>
+        /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
         pub fn set_identity_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3094,20 +3094,14 @@ impl DataSourceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateConfiguration {
-    /// <p>The template schema used for the data source.</p>
-    /// <p>The following links to the template schema for data sources where templates are supported:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk template schema</a> </p> </li>
-    /// </ul>
+    /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
     #[doc(hidden)]
     pub template: std::option::Option<aws_smithy_types::Document>,
 }
 impl TemplateConfiguration {
-    /// <p>The template schema used for the data source.</p>
-    /// <p>The following links to the template schema for data sources where templates are supported:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk template schema</a> </p> </li>
-    /// </ul>
+    /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
     pub fn template(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.template.as_ref()
     }
@@ -3128,20 +3122,14 @@ pub mod template_configuration {
         pub(crate) template: std::option::Option<aws_smithy_types::Document>,
     }
     impl Builder {
-        /// <p>The template schema used for the data source.</p>
-        /// <p>The following links to the template schema for data sources where templates are supported:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk template schema</a> </p> </li>
-        /// </ul>
+        /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+        /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
         pub fn template(mut self, input: aws_smithy_types::Document) -> Self {
             self.template = Some(input);
             self
         }
-        /// <p>The template schema used for the data source.</p>
-        /// <p>The following links to the template schema for data sources where templates are supported:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk template schema</a> </p> </li>
-        /// </ul>
+        /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+        /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
         pub fn set_template(
             mut self,
             input: std::option::Option<aws_smithy_types::Document>,
@@ -13939,6 +13927,8 @@ pub enum SharePointVersion {
     #[allow(missing_docs)] // documentation missing in model
     Sharepoint2016,
     #[allow(missing_docs)] // documentation missing in model
+    Sharepoint2019,
+    #[allow(missing_docs)] // documentation missing in model
     SharepointOnline,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13948,6 +13938,7 @@ impl std::convert::From<&str> for SharePointVersion {
         match s {
             "SHAREPOINT_2013" => SharePointVersion::Sharepoint2013,
             "SHAREPOINT_2016" => SharePointVersion::Sharepoint2016,
+            "SHAREPOINT_2019" => SharePointVersion::Sharepoint2019,
             "SHAREPOINT_ONLINE" => SharePointVersion::SharepointOnline,
             other => SharePointVersion::Unknown(other.to_owned()),
         }
@@ -13966,13 +13957,19 @@ impl SharePointVersion {
         match self {
             SharePointVersion::Sharepoint2013 => "SHAREPOINT_2013",
             SharePointVersion::Sharepoint2016 => "SHAREPOINT_2016",
+            SharePointVersion::Sharepoint2019 => "SHAREPOINT_2019",
             SharePointVersion::SharepointOnline => "SHAREPOINT_ONLINE",
             SharePointVersion::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["SHAREPOINT_2013", "SHAREPOINT_2016", "SHAREPOINT_ONLINE"]
+        &[
+            "SHAREPOINT_2013",
+            "SHAREPOINT_2016",
+            "SHAREPOINT_2019",
+            "SHAREPOINT_ONLINE",
+        ]
     }
 }
 impl AsRef<str> for SharePointVersion {
@@ -17193,7 +17190,7 @@ impl Facet {
     }
 }
 
-/// <p>Provides filtering the query results based on document attributes.</p>
+/// <p>Provides filtering the query results based on document attributes or metadata fields.</p>
 /// <p>When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:</p>
 /// <p> <code>
 /// <andallfilters></andallfilters></code> </p>
@@ -17217,25 +17214,25 @@ pub struct AttributeFilter {
     /// <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
     #[doc(hidden)]
     pub not_filter: std::option::Option<std::boxed::Box<crate::model::AttributeFilter>>,
-    /// <p>Performs an equals operation on two document attributes.</p>
+    /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
     #[doc(hidden)]
     pub equals_to: std::option::Option<crate::model::DocumentAttribute>,
-    /// <p>Returns true when a document contains all of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+    /// <p>Returns true when a document contains all of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
     #[doc(hidden)]
     pub contains_all: std::option::Option<crate::model::DocumentAttribute>,
-    /// <p>Returns true when a document contains any of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+    /// <p>Returns true when a document contains any of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
     #[doc(hidden)]
     pub contains_any: std::option::Option<crate::model::DocumentAttribute>,
-    /// <p>Performs a greater than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     #[doc(hidden)]
     pub greater_than: std::option::Option<crate::model::DocumentAttribute>,
-    /// <p>Performs a greater or equals than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     #[doc(hidden)]
     pub greater_than_or_equals: std::option::Option<crate::model::DocumentAttribute>,
-    /// <p>Performs a less than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     #[doc(hidden)]
     pub less_than: std::option::Option<crate::model::DocumentAttribute>,
-    /// <p>Performs a less than or equals operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     #[doc(hidden)]
     pub less_than_or_equals: std::option::Option<crate::model::DocumentAttribute>,
 }
@@ -17252,31 +17249,31 @@ impl AttributeFilter {
     pub fn not_filter(&self) -> std::option::Option<&crate::model::AttributeFilter> {
         self.not_filter.as_deref()
     }
-    /// <p>Performs an equals operation on two document attributes.</p>
+    /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
     pub fn equals_to(&self) -> std::option::Option<&crate::model::DocumentAttribute> {
         self.equals_to.as_ref()
     }
-    /// <p>Returns true when a document contains all of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+    /// <p>Returns true when a document contains all of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
     pub fn contains_all(&self) -> std::option::Option<&crate::model::DocumentAttribute> {
         self.contains_all.as_ref()
     }
-    /// <p>Returns true when a document contains any of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+    /// <p>Returns true when a document contains any of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
     pub fn contains_any(&self) -> std::option::Option<&crate::model::DocumentAttribute> {
         self.contains_any.as_ref()
     }
-    /// <p>Performs a greater than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     pub fn greater_than(&self) -> std::option::Option<&crate::model::DocumentAttribute> {
         self.greater_than.as_ref()
     }
-    /// <p>Performs a greater or equals than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     pub fn greater_than_or_equals(&self) -> std::option::Option<&crate::model::DocumentAttribute> {
         self.greater_than_or_equals.as_ref()
     }
-    /// <p>Performs a less than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     pub fn less_than(&self) -> std::option::Option<&crate::model::DocumentAttribute> {
         self.less_than.as_ref()
     }
-    /// <p>Performs a less than or equals operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     pub fn less_than_or_equals(&self) -> std::option::Option<&crate::model::DocumentAttribute> {
         self.less_than_or_equals.as_ref()
     }
@@ -17371,12 +17368,12 @@ pub mod attribute_filter {
             self.not_filter = input;
             self
         }
-        /// <p>Performs an equals operation on two document attributes.</p>
+        /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
         pub fn equals_to(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.equals_to = Some(input);
             self
         }
-        /// <p>Performs an equals operation on two document attributes.</p>
+        /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
         pub fn set_equals_to(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -17384,12 +17381,12 @@ pub mod attribute_filter {
             self.equals_to = input;
             self
         }
-        /// <p>Returns true when a document contains all of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+        /// <p>Returns true when a document contains all of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
         pub fn contains_all(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.contains_all = Some(input);
             self
         }
-        /// <p>Returns true when a document contains all of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+        /// <p>Returns true when a document contains all of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
         pub fn set_contains_all(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -17397,12 +17394,12 @@ pub mod attribute_filter {
             self.contains_all = input;
             self
         }
-        /// <p>Returns true when a document contains any of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+        /// <p>Returns true when a document contains any of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
         pub fn contains_any(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.contains_any = Some(input);
             self
         }
-        /// <p>Returns true when a document contains any of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+        /// <p>Returns true when a document contains any of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
         pub fn set_contains_any(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -17410,12 +17407,12 @@ pub mod attribute_filter {
             self.contains_any = input;
             self
         }
-        /// <p>Performs a greater than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+        /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
         pub fn greater_than(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.greater_than = Some(input);
             self
         }
-        /// <p>Performs a greater than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+        /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
         pub fn set_greater_than(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -17423,12 +17420,12 @@ pub mod attribute_filter {
             self.greater_than = input;
             self
         }
-        /// <p>Performs a greater or equals than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+        /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
         pub fn greater_than_or_equals(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.greater_than_or_equals = Some(input);
             self
         }
-        /// <p>Performs a greater or equals than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+        /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
         pub fn set_greater_than_or_equals(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -17436,12 +17433,12 @@ pub mod attribute_filter {
             self.greater_than_or_equals = input;
             self
         }
-        /// <p>Performs a less than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+        /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
         pub fn less_than(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.less_than = Some(input);
             self
         }
-        /// <p>Performs a less than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+        /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
         pub fn set_less_than(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -17449,12 +17446,12 @@ pub mod attribute_filter {
             self.less_than = input;
             self
         }
-        /// <p>Performs a less than or equals operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+        /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
         pub fn less_than_or_equals(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.less_than_or_equals = Some(input);
             self
         }
-        /// <p>Performs a less than or equals operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+        /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
         pub fn set_less_than_or_equals(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -19232,11 +19229,11 @@ impl AsRef<str> for ExperienceStatus {
     }
 }
 
-/// <p>Summary information for users or groups in your Amazon Web Services SSO identity source with granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
+/// <p>Summary information for users or groups in your IAM Identity Center identity source with granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperienceEntitiesSummary {
-    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
@@ -19247,7 +19244,7 @@ pub struct ExperienceEntitiesSummary {
     pub display_data: std::option::Option<crate::model::EntityDisplayData>,
 }
 impl ExperienceEntitiesSummary {
-    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -19280,12 +19277,12 @@ pub mod experience_entities_summary {
         pub(crate) display_data: std::option::Option<crate::model::EntityDisplayData>,
     }
     impl Builder {
-        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -19526,14 +19523,14 @@ impl AsRef<str> for EntityType {
     }
 }
 
-/// <p>Summary information for users or groups in your Amazon Web Services SSO identity source. This applies to users and groups with specific permissions that define their level of access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
+/// <p>Summary information for users or groups in your IAM Identity Center identity source. This applies to users and groups with specific permissions that define their level of access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PersonasSummary {
-    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     #[doc(hidden)]
     pub persona: std::option::Option<crate::model::Persona>,
     /// <p>The date-time the summary information was created.</p>
@@ -19544,11 +19541,11 @@ pub struct PersonasSummary {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PersonasSummary {
-    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn persona(&self) -> std::option::Option<&crate::model::Persona> {
         self.persona.as_ref()
     }
@@ -19583,22 +19580,22 @@ pub mod personas_summary {
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+        /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn persona(mut self, input: crate::model::Persona) -> Self {
             self.persona = Some(input);
             self
         }
-        /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+        /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn set_persona(mut self, input: std::option::Option<crate::model::Persona>) -> Self {
             self.persona = input;
             self
@@ -21194,23 +21191,23 @@ impl SuggestionHighlight {
     }
 }
 
-/// <p>Information on the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+/// <p>Information on the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedEntity {
-    /// <p>The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with your Amazon Kendra experience.</p>
+    /// <p>The reason the user or group in your IAM Identity Center identity source failed to properly configure with your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedEntity {
-    /// <p>The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with your Amazon Kendra experience.</p>
+    /// <p>The reason the user or group in your IAM Identity Center identity source failed to properly configure with your Amazon Kendra experience.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -21233,22 +21230,22 @@ pub mod failed_entity {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with your Amazon Kendra experience.</p>
+        /// <p>The reason the user or group in your IAM Identity Center identity source failed to properly configure with your Amazon Kendra experience.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with your Amazon Kendra experience.</p>
+        /// <p>The reason the user or group in your IAM Identity Center identity source failed to properly configure with your Amazon Kendra experience.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21272,11 +21269,11 @@ impl FailedEntity {
     }
 }
 
-/// <p>Provides the configuration information for users or groups in your Amazon Web Services SSO identity source to grant access your Amazon Kendra experience.</p>
+/// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source to grant access your Amazon Kendra experience.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityConfiguration {
-    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
@@ -21284,7 +21281,7 @@ pub struct EntityConfiguration {
     pub entity_type: std::option::Option<crate::model::EntityType>,
 }
 impl EntityConfiguration {
-    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -21311,12 +21308,12 @@ pub mod entity_configuration {
         pub(crate) entity_type: std::option::Option<crate::model::EntityType>,
     }
     impl Builder {
-        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -22972,23 +22969,23 @@ impl DataSourceSyncJobMetricTarget {
     }
 }
 
-/// <p>Provides the configuration information for users or groups in your Amazon Web Services SSO identity source for access to your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted access to your Amazon Kendra experience.</p>
+/// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source for access to your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted access to your Amazon Kendra experience.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityPersonaConfiguration {
-    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     #[doc(hidden)]
     pub persona: std::option::Option<crate::model::Persona>,
 }
 impl EntityPersonaConfiguration {
-    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn persona(&self) -> std::option::Option<&crate::model::Persona> {
         self.persona.as_ref()
     }
@@ -23011,22 +23008,22 @@ pub mod entity_persona_configuration {
         pub(crate) persona: std::option::Option<crate::model::Persona>,
     }
     impl Builder {
-        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+        /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+        /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn persona(mut self, input: crate::model::Persona) -> Self {
             self.persona = Some(input);
             self
         }
-        /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+        /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn set_persona(mut self, input: std::option::Option<crate::model::Persona>) -> Self {
             self.persona = input;
             self

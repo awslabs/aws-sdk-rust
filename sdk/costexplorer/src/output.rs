@@ -6,7 +6,7 @@ pub struct UpdateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p>The Cost Category's effective start date. </p>
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
 }
@@ -15,7 +15,7 @@ impl UpdateCostCategoryDefinitionOutput {
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>The Cost Category's effective start date. </p>
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn effective_start(&self) -> std::option::Option<&str> {
         self.effective_start.as_deref()
     }
@@ -51,12 +51,12 @@ pub mod update_cost_category_definition_output {
             self.cost_category_arn = input;
             self
         }
-        /// <p>The Cost Category's effective start date. </p>
+        /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_start = Some(input.into());
             self
         }
-        /// <p>The Cost Category's effective start date. </p>
+        /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1816,7 +1816,7 @@ pub struct GetDimensionValuesOutput {
     /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
     /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
     /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
-    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
+    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
@@ -1870,7 +1870,7 @@ impl GetDimensionValuesOutput {
     /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
     /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
     /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
-    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
+    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
@@ -1955,7 +1955,7 @@ pub mod get_dimension_values_output {
         /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
         /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
         /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
-        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
+        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li>
         /// </ul>
         /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
@@ -2004,7 +2004,7 @@ pub mod get_dimension_values_output {
         /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
         /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
         /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
-        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
+        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li>
         /// </ul>
         /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
@@ -3115,7 +3115,7 @@ pub struct CreateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your newly created Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p>The Cost Category's effective start date. </p>
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
 }
@@ -3124,7 +3124,7 @@ impl CreateCostCategoryDefinitionOutput {
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>The Cost Category's effective start date. </p>
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn effective_start(&self) -> std::option::Option<&str> {
         self.effective_start.as_deref()
     }
@@ -3160,12 +3160,12 @@ pub mod create_cost_category_definition_output {
             self.cost_category_arn = input;
             self
         }
-        /// <p>The Cost Category's effective start date. </p>
+        /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_start = Some(input.into());
             self
         }
-        /// <p>The Cost Category's effective start date. </p>
+        /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,

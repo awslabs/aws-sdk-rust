@@ -169,7 +169,7 @@ impl Client {
     ///   - [`comment(Option<String>)`](crate::output::CreateRevisionOutput::comment): <p>An optional comment about the revision.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::CreateRevisionOutput::created_at): <p>The date and time that the revision was created, in ISO 8601 format.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::CreateRevisionOutput::data_set_id): <p>The unique identifier for the data set associated with this revision.</p>
-    ///   - [`finalized(bool)`](crate::output::CreateRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>  <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    ///   - [`finalized(bool)`](crate::output::CreateRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateRevisionOutput::id): <p>The unique identifier for the revision.</p>
     ///   - [`source_id(Option<String>)`](crate::output::CreateRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRevisionOutput::tags): <p>The tags for the revision.</p>
@@ -307,7 +307,7 @@ impl Client {
     ///   - [`comment(Option<String>)`](crate::output::GetRevisionOutput::comment): <p>An optional comment about the revision.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::GetRevisionOutput::created_at): <p>The date and time that the revision was created, in ISO 8601 format.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::GetRevisionOutput::data_set_id): <p>The unique identifier for the data set associated with this revision.</p>
-    ///   - [`finalized(bool)`](crate::output::GetRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>  <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    ///   - [`finalized(bool)`](crate::output::GetRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     ///   - [`id(Option<String>)`](crate::output::GetRevisionOutput::id): <p>The unique identifier for the revision.</p>
     ///   - [`source_id(Option<String>)`](crate::output::GetRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRevisionOutput::tags): <p>The tags for the revision.</p>
@@ -396,7 +396,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): A label that consists of a customer-defined key and an optional value.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A label that consists of a customer-defined key and an optional value.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -412,7 +412,7 @@ impl Client {
     ///   - [`comment(Option<String>)`](crate::output::RevokeRevisionOutput::comment): <p>An optional comment about the revision.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::RevokeRevisionOutput::created_at): <p>The date and time that the revision was created, in ISO 8601 format.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::RevokeRevisionOutput::data_set_id): <p>The unique identifier for the data set associated with this revision.</p>
-    ///   - [`finalized(bool)`](crate::output::RevokeRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>  <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    ///   - [`finalized(bool)`](crate::output::RevokeRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     ///   - [`id(Option<String>)`](crate::output::RevokeRevisionOutput::id): <p>The unique identifier for the revision.</p>
     ///   - [`source_id(Option<String>)`](crate::output::RevokeRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::RevokeRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
@@ -432,7 +432,7 @@ impl Client {
     ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_data_set_id): <p>Data set ID value for the API request.</p>
     ///   - [`request_headers(HashMap<String, String>)`](crate::client::fluent_builders::SendApiAsset::request_headers) / [`set_request_headers(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SendApiAsset::set_request_headers): <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
     ///   - [`method(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::method) / [`set_method(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_method): <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
-    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_path): <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_path): <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
     ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_revision_id): <p>Revision ID value for the API request.</p>
     /// - On success, responds with [`SendApiAssetOutput`](crate::output::SendApiAssetOutput) with field(s):
     ///   - [`body(Option<String>)`](crate::output::SendApiAssetOutput::body): <p>The response body from the underlying API tracked by the API asset.</p>
@@ -455,7 +455,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): A label that consists of a customer-defined key and an optional value.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A label that consists of a customer-defined key and an optional value.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -466,7 +466,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): The key tags.
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key tags.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -544,7 +544,7 @@ impl Client {
     ///   - [`comment(Option<String>)`](crate::output::UpdateRevisionOutput::comment): <p>An optional comment about the revision.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::UpdateRevisionOutput::created_at): <p>The date and time that the revision was created, in ISO 8601 format.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::UpdateRevisionOutput::data_set_id): <p>The unique identifier for the data set associated with this revision.</p>
-    ///   - [`finalized(bool)`](crate::output::UpdateRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>  <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    ///   - [`finalized(bool)`](crate::output::UpdateRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     ///   - [`id(Option<String>)`](crate::output::UpdateRevisionOutput::id): <p>The unique identifier for the revision.</p>
     ///   - [`source_id(Option<String>)`](crate::output::UpdateRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
@@ -2676,12 +2676,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_method(input);
             self
         }
-        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path(input.into());
             self
         }
-        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path(input);
             self
@@ -2854,7 +2854,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A label that consists of a customer-defined key and an optional value.
+        /// <p>A label that consists of a customer-defined key and an optional value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2863,7 +2863,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// A label that consists of a customer-defined key and an optional value.
+        /// <p>A label that consists of a customer-defined key and an optional value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2954,12 +2954,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// The key tags.
+        /// <p>The key tags.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// The key tags.
+        /// <p>The key tags.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

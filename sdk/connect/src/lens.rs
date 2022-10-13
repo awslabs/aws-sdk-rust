@@ -329,6 +329,26 @@ pub(crate) fn reflens_structure_crate_output_search_available_phone_numbers_outp
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_search_queues_output_next_token(
+    input: &crate::output::SearchQueuesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_search_routing_profiles_output_next_token(
+    input: &crate::output::SearchRoutingProfilesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_search_security_profiles_output_next_token(
     input: &crate::output::SearchSecurityProfilesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -653,6 +673,26 @@ pub(crate) fn lens_structure_crate_output_search_available_phone_numbers_output_
     input: crate::output::SearchAvailablePhoneNumbersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>> {
     let input = match input.available_numbers_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_queues_output_queues(
+    input: crate::output::SearchQueuesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Queue>> {
+    let input = match input.queues {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_routing_profiles_output_routing_profiles(
+    input: crate::output::SearchRoutingProfilesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RoutingProfile>> {
+    let input = match input.routing_profiles {
         None => return None,
         Some(t) => t,
     };

@@ -299,6 +299,7 @@ impl Client {
     ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::CreateSlot::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::CreateSlot::set_locale_id): <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     ///   - [`intent_id(impl Into<String>)`](crate::client::fluent_builders::CreateSlot::intent_id) / [`set_intent_id(Option<String>)`](crate::client::fluent_builders::CreateSlot::set_intent_id): <p>The identifier of the intent that contains the slot.</p>
     ///   - [`multiple_values_setting(MultipleValuesSetting)`](crate::client::fluent_builders::CreateSlot::multiple_values_setting) / [`set_multiple_values_setting(Option<MultipleValuesSetting>)`](crate::client::fluent_builders::CreateSlot::set_multiple_values_setting): <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>  <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
+    ///   - [`sub_slot_setting(SubSlotSetting)`](crate::client::fluent_builders::CreateSlot::sub_slot_setting) / [`set_sub_slot_setting(Option<SubSlotSetting>)`](crate::client::fluent_builders::CreateSlot::set_sub_slot_setting): <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     /// - On success, responds with [`CreateSlotOutput`](crate::output::CreateSlotOutput) with field(s):
     ///   - [`slot_id(Option<String>)`](crate::output::CreateSlotOutput::slot_id): <p>The unique identifier associated with the slot. Use this to identify the slot when you update or delete it.</p>
     ///   - [`slot_name(Option<String>)`](crate::output::CreateSlotOutput::slot_name): <p>The name specified for the slot.</p>
@@ -312,6 +313,7 @@ impl Client {
     ///   - [`intent_id(Option<String>)`](crate::output::CreateSlotOutput::intent_id): <p>The unique identifier of the intent associated with the slot.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateSlotOutput::creation_date_time): <p>The timestamp of the date and time that the slot was created.</p>
     ///   - [`multiple_values_setting(Option<MultipleValuesSetting>)`](crate::output::CreateSlotOutput::multiple_values_setting): <p>Indicates whether the slot returns multiple values in one response.</p>
+    ///   - [`sub_slot_setting(Option<SubSlotSetting>)`](crate::output::CreateSlotOutput::sub_slot_setting): <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     /// - On failure, responds with [`SdkError<CreateSlotError>`](crate::error::CreateSlotError)
     pub fn create_slot(&self) -> fluent_builders::CreateSlot {
         fluent_builders::CreateSlot::new(self.handle.clone())
@@ -328,6 +330,7 @@ impl Client {
     ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::CreateSlotType::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::CreateSlotType::set_bot_version): <p>The identifier of the bot version associated with this slot type.</p>
     ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::CreateSlotType::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::CreateSlotType::set_locale_id): <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     ///   - [`external_source_setting(ExternalSourceSetting)`](crate::client::fluent_builders::CreateSlotType::external_source_setting) / [`set_external_source_setting(Option<ExternalSourceSetting>)`](crate::client::fluent_builders::CreateSlotType::set_external_source_setting): <p>Sets the type of external information used to create the slot type.</p>
+    ///   - [`composite_slot_type_setting(CompositeSlotTypeSetting)`](crate::client::fluent_builders::CreateSlotType::composite_slot_type_setting) / [`set_composite_slot_type_setting(Option<CompositeSlotTypeSetting>)`](crate::client::fluent_builders::CreateSlotType::set_composite_slot_type_setting): <p>Specifications for a composite slot type.</p>
     /// - On success, responds with [`CreateSlotTypeOutput`](crate::output::CreateSlotTypeOutput) with field(s):
     ///   - [`slot_type_id(Option<String>)`](crate::output::CreateSlotTypeOutput::slot_type_id): <p>The unique identifier assigned to the slot type. Use this to identify the slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.</p>
     ///   - [`slot_type_name(Option<String>)`](crate::output::CreateSlotTypeOutput::slot_type_name): <p>The name specified for the slot type.</p>
@@ -340,6 +343,7 @@ impl Client {
     ///   - [`locale_id(Option<String>)`](crate::output::CreateSlotTypeOutput::locale_id): <p>The specified language and local specified for the slot type.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateSlotTypeOutput::creation_date_time): <p>A timestamp of the date and time that the slot type was created.</p>
     ///   - [`external_source_setting(Option<ExternalSourceSetting>)`](crate::output::CreateSlotTypeOutput::external_source_setting): <p>The type of external information used to create the slot type.</p>
+    ///   - [`composite_slot_type_setting(Option<CompositeSlotTypeSetting>)`](crate::output::CreateSlotTypeOutput::composite_slot_type_setting): <p>Specifications for a composite slot type.</p>
     /// - On failure, responds with [`SdkError<CreateSlotTypeError>`](crate::error::CreateSlotTypeError)
     pub fn create_slot_type(&self) -> fluent_builders::CreateSlotType {
         fluent_builders::CreateSlotType::new(self.handle.clone())
@@ -756,6 +760,7 @@ impl Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::DescribeSlotOutput::creation_date_time): <p>A timestamp of the date and time that the slot was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::output::DescribeSlotOutput::last_updated_date_time): <p>A timestamp of the date and time that the slot was last updated.</p>
     ///   - [`multiple_values_setting(Option<MultipleValuesSetting>)`](crate::output::DescribeSlotOutput::multiple_values_setting): <p>Indicates whether the slot accepts multiple values in a single utterance.</p>  <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
+    ///   - [`sub_slot_setting(Option<SubSlotSetting>)`](crate::output::DescribeSlotOutput::sub_slot_setting): <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     /// - On failure, responds with [`SdkError<DescribeSlotError>`](crate::error::DescribeSlotError)
     pub fn describe_slot(&self) -> fluent_builders::DescribeSlot {
         fluent_builders::DescribeSlot::new(self.handle.clone())
@@ -780,6 +785,7 @@ impl Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::DescribeSlotTypeOutput::creation_date_time): <p>A timestamp of the date and time that the slot type was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::output::DescribeSlotTypeOutput::last_updated_date_time): <p>A timestamp of the date and time that the slot type was last updated.</p>
     ///   - [`external_source_setting(Option<ExternalSourceSetting>)`](crate::output::DescribeSlotTypeOutput::external_source_setting): <p>Provides information about the external source of the slot type's definition.</p>
+    ///   - [`composite_slot_type_setting(Option<CompositeSlotTypeSetting>)`](crate::output::DescribeSlotTypeOutput::composite_slot_type_setting): <p>Specifications for a composite slot type.</p>
     /// - On failure, responds with [`SdkError<DescribeSlotTypeError>`](crate::error::DescribeSlotTypeError)
     pub fn describe_slot_type(&self) -> fluent_builders::DescribeSlotType {
         fluent_builders::DescribeSlotType::new(self.handle.clone())
@@ -1351,6 +1357,7 @@ impl Client {
     ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSlot::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::UpdateSlot::set_locale_id): <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     ///   - [`intent_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSlot::intent_id) / [`set_intent_id(Option<String>)`](crate::client::fluent_builders::UpdateSlot::set_intent_id): <p>The identifier of the intent that contains the slot.</p>
     ///   - [`multiple_values_setting(MultipleValuesSetting)`](crate::client::fluent_builders::UpdateSlot::multiple_values_setting) / [`set_multiple_values_setting(Option<MultipleValuesSetting>)`](crate::client::fluent_builders::UpdateSlot::set_multiple_values_setting): <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>  <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
+    ///   - [`sub_slot_setting(SubSlotSetting)`](crate::client::fluent_builders::UpdateSlot::sub_slot_setting) / [`set_sub_slot_setting(Option<SubSlotSetting>)`](crate::client::fluent_builders::UpdateSlot::set_sub_slot_setting): <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     /// - On success, responds with [`UpdateSlotOutput`](crate::output::UpdateSlotOutput) with field(s):
     ///   - [`slot_id(Option<String>)`](crate::output::UpdateSlotOutput::slot_id): <p>The unique identifier of the slot that was updated.</p>
     ///   - [`slot_name(Option<String>)`](crate::output::UpdateSlotOutput::slot_name): <p>The updated name of the slot.</p>
@@ -1365,6 +1372,7 @@ impl Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::UpdateSlotOutput::creation_date_time): <p>The timestamp of the date and time that the slot was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::output::UpdateSlotOutput::last_updated_date_time): <p>The timestamp of the date and time that the slot was last updated.</p>
     ///   - [`multiple_values_setting(Option<MultipleValuesSetting>)`](crate::output::UpdateSlotOutput::multiple_values_setting): <p>Indicates whether the slot accepts multiple values in one response.</p>
+    ///   - [`sub_slot_setting(Option<SubSlotSetting>)`](crate::output::UpdateSlotOutput::sub_slot_setting): <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     /// - On failure, responds with [`SdkError<UpdateSlotError>`](crate::error::UpdateSlotError)
     pub fn update_slot(&self) -> fluent_builders::UpdateSlot {
         fluent_builders::UpdateSlot::new(self.handle.clone())
@@ -1382,6 +1390,7 @@ impl Client {
     ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::UpdateSlotType::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::UpdateSlotType::set_bot_version): <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
     ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSlotType::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::UpdateSlotType::set_locale_id): <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     ///   - [`external_source_setting(ExternalSourceSetting)`](crate::client::fluent_builders::UpdateSlotType::external_source_setting) / [`set_external_source_setting(Option<ExternalSourceSetting>)`](crate::client::fluent_builders::UpdateSlotType::set_external_source_setting): <p>Provides information about the external source of the slot type's definition.</p>
+    ///   - [`composite_slot_type_setting(CompositeSlotTypeSetting)`](crate::client::fluent_builders::UpdateSlotType::composite_slot_type_setting) / [`set_composite_slot_type_setting(Option<CompositeSlotTypeSetting>)`](crate::client::fluent_builders::UpdateSlotType::set_composite_slot_type_setting): <p>Specifications for a composite slot type.</p>
     /// - On success, responds with [`UpdateSlotTypeOutput`](crate::output::UpdateSlotTypeOutput) with field(s):
     ///   - [`slot_type_id(Option<String>)`](crate::output::UpdateSlotTypeOutput::slot_type_id): <p>The unique identifier of the updated slot type.</p>
     ///   - [`slot_type_name(Option<String>)`](crate::output::UpdateSlotTypeOutput::slot_type_name): <p>The updated name of the slot type.</p>
@@ -1395,6 +1404,7 @@ impl Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::UpdateSlotTypeOutput::creation_date_time): <p>The timestamp of the date and time that the slot type was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::output::UpdateSlotTypeOutput::last_updated_date_time): <p>A timestamp of the date and time that the slot type was last updated.</p>
     ///   - [`external_source_setting(Option<ExternalSourceSetting>)`](crate::output::UpdateSlotTypeOutput::external_source_setting): <p>Provides information about the external source of the slot type's definition.</p>
+    ///   - [`composite_slot_type_setting(Option<CompositeSlotTypeSetting>)`](crate::output::UpdateSlotTypeOutput::composite_slot_type_setting): <p>Specifications for a composite slot type.</p>
     /// - On failure, responds with [`SdkError<UpdateSlotTypeError>`](crate::error::UpdateSlotTypeError)
     pub fn update_slot_type(&self) -> fluent_builders::UpdateSlotType {
         fluent_builders::UpdateSlotType::new(self.handle.clone())
@@ -2983,6 +2993,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_multiple_values_setting(input);
             self
         }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
+            self.inner = self.inner.sub_slot_setting(input);
+            self
+        }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn set_sub_slot_setting(
+            mut self,
+            input: std::option::Option<crate::model::SubSlotSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_sub_slot_setting(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateSlotType`.
     ///
@@ -3176,6 +3199,22 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ExternalSourceSetting>,
         ) -> Self {
             self.inner = self.inner.set_external_source_setting(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn composite_slot_type_setting(
+            mut self,
+            input: crate::model::CompositeSlotTypeSetting,
+        ) -> Self {
+            self.inner = self.inner.composite_slot_type_setting(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn set_composite_slot_type_setting(
+            mut self,
+            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_composite_slot_type_setting(input);
             self
         }
     }
@@ -9612,6 +9651,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_multiple_values_setting(input);
             self
         }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
+            self.inner = self.inner.sub_slot_setting(input);
+            self
+        }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn set_sub_slot_setting(
+            mut self,
+            input: std::option::Option<crate::model::SubSlotSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_sub_slot_setting(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateSlotType`.
     ///
@@ -9802,6 +9854,22 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ExternalSourceSetting>,
         ) -> Self {
             self.inner = self.inner.set_external_source_setting(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn composite_slot_type_setting(
+            mut self,
+            input: crate::model::CompositeSlotTypeSetting,
+        ) -> Self {
+            self.inner = self.inner.composite_slot_type_setting(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn set_composite_slot_type_setting(
+            mut self,
+            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_composite_slot_type_setting(input);
             self
         }
     }

@@ -107,7 +107,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchGetApplicationRevisions`](crate::client::fluent_builders::BatchGetApplicationRevisions) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::set_application_name): <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::set_application_name): <p>The name of an CodeDeploy application about which to get revision information.</p>
     ///   - [`revisions(Vec<RevisionLocation>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::revisions) / [`set_revisions(Option<Vec<RevisionLocation>>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::set_revisions): <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
     /// - On success, responds with [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput) with field(s):
     ///   - [`application_name(Option<String>)`](crate::output::BatchGetApplicationRevisionsOutput::application_name): <p>The name of the application that corresponds to the revisions.</p>
@@ -130,7 +130,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchGetDeploymentGroups`](crate::client::fluent_builders::BatchGetDeploymentGroups) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::set_application_name): <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::set_application_name): <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
     ///   - [`deployment_group_names(Vec<String>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::deployment_group_names) / [`set_deployment_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::set_deployment_group_names): <p>The names of the deployment groups.</p>
     /// - On success, responds with [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput) with field(s):
     ///   - [`deployment_groups_info(Option<Vec<DeploymentGroupInfo>>)`](crate::output::BatchGetDeploymentGroupsOutput::deployment_groups_info): <p>Information about the deployment groups.</p>
@@ -165,9 +165,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::set_deployment_id): <p> The unique ID of a deployment. </p>
-    ///   - [`target_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::target_ids) / [`set_target_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::set_target_ids): <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>  <ul>   <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>   <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>   <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>     <clustername>      :      <servicename></servicename>     </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>   <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>  </ul>
+    ///   - [`target_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::target_ids) / [`set_target_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::set_target_ids): <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>  <ul>   <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>   <li> <p> For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>   <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>     <clustername>      :      <servicename></servicename>     </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>   <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>  </ul>
     /// - On success, responds with [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput) with field(s):
-    ///   - [`deployment_targets(Option<Vec<DeploymentTarget>>)`](crate::output::BatchGetDeploymentTargetsOutput::deployment_targets): <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>  <ul>   <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>   <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>   <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>   <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>  </ul>
+    ///   - [`deployment_targets(Option<Vec<DeploymentTarget>>)`](crate::output::BatchGetDeploymentTargetsOutput::deployment_targets): <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>  <ul>   <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>   <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>   <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>   <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<BatchGetDeploymentTargetsError>`](crate::error::BatchGetDeploymentTargetsError)
     pub fn batch_get_deployment_targets(&self) -> fluent_builders::BatchGetDeploymentTargets {
         fluent_builders::BatchGetDeploymentTargets::new(self.handle.clone())
@@ -196,7 +196,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_name): <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_name): <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
     ///   - [`compute_platform(ComputePlatform)`](crate::client::fluent_builders::CreateApplication::compute_platform) / [`set_compute_platform(Option<ComputePlatform>)`](crate::client::fluent_builders::CreateApplication::set_compute_platform): <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
@@ -208,16 +208,17 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_deployment_group_name): <p>The name of the deployment group.</p>
     ///   - [`revision(RevisionLocation)`](crate::client::fluent_builders::CreateDeployment::revision) / [`set_revision(Option<RevisionLocation>)`](crate::client::fluent_builders::CreateDeployment::set_revision): <p> The type and location of the revision to deploy. </p>
-    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>  <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>  <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_description): <p>A comment about the deployment.</p>
-    ///   - [`ignore_application_stop_failures(bool)`](crate::client::fluent_builders::CreateDeployment::ignore_application_stop_failures) / [`set_ignore_application_stop_failures(bool)`](crate::client::fluent_builders::CreateDeployment::set_ignore_application_stop_failures): <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>  <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>  <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>  <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+    ///   - [`ignore_application_stop_failures(bool)`](crate::client::fluent_builders::CreateDeployment::ignore_application_stop_failures) / [`set_ignore_application_stop_failures(bool)`](crate::client::fluent_builders::CreateDeployment::set_ignore_application_stop_failures): <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>  <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>  <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>  <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     ///   - [`target_instances(TargetInstances)`](crate::client::fluent_builders::CreateDeployment::target_instances) / [`set_target_instances(Option<TargetInstances>)`](crate::client::fluent_builders::CreateDeployment::set_target_instances): <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
     ///   - [`auto_rollback_configuration(AutoRollbackConfiguration)`](crate::client::fluent_builders::CreateDeployment::auto_rollback_configuration) / [`set_auto_rollback_configuration(Option<AutoRollbackConfiguration>)`](crate::client::fluent_builders::CreateDeployment::set_auto_rollback_configuration): <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
     ///   - [`update_outdated_instances_only(bool)`](crate::client::fluent_builders::CreateDeployment::update_outdated_instances_only) / [`set_update_outdated_instances_only(bool)`](crate::client::fluent_builders::CreateDeployment::set_update_outdated_instances_only): <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
-    ///   - [`file_exists_behavior(FileExistsBehavior)`](crate::client::fluent_builders::CreateDeployment::file_exists_behavior) / [`set_file_exists_behavior(Option<FileExistsBehavior>)`](crate::client::fluent_builders::CreateDeployment::set_file_exists_behavior): <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>  <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>  <ul>   <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>   <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>   <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>  </ul>
+    ///   - [`file_exists_behavior(FileExistsBehavior)`](crate::client::fluent_builders::CreateDeployment::file_exists_behavior) / [`set_file_exists_behavior(Option<FileExistsBehavior>)`](crate::client::fluent_builders::CreateDeployment::set_file_exists_behavior): <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>  <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>  <ul>   <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>   <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>   <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>  </ul>
+    ///   - [`override_alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::CreateDeployment::override_alarm_configuration) / [`set_override_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::CreateDeployment::set_override_alarm_configuration): <p>Allows you to specify information about alarms associated with a deployment. The alarm configuration that you specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm configuration if you have set up alarms at the deployment group level that are causing deployment failures. In this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated by the previous, failed, deployment.</p> <note>   <p>If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM permission when calling <code>CreateDeployment</code>.</p>  </note>
     /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
     ///   - [`deployment_id(Option<String>)`](crate::output::CreateDeploymentOutput::deployment_id): <p> The unique ID of a deployment. </p>
     /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::error::CreateDeploymentError)
@@ -228,7 +229,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentConfig::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_deployment_config_name): <p>The name of the deployment configuration to create.</p>
-    ///   - [`minimum_healthy_hosts(MinimumHealthyHosts)`](crate::client::fluent_builders::CreateDeploymentConfig::minimum_healthy_hosts) / [`set_minimum_healthy_hosts(Option<MinimumHealthyHosts>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_minimum_healthy_hosts): <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>  <p>The type parameter takes either of the following values:</p>  <ul>   <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>   <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>  </ul>  <p>The value parameter takes an integer.</p>  <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
+    ///   - [`minimum_healthy_hosts(MinimumHealthyHosts)`](crate::client::fluent_builders::CreateDeploymentConfig::minimum_healthy_hosts) / [`set_minimum_healthy_hosts(Option<MinimumHealthyHosts>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_minimum_healthy_hosts): <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>  <p>The type parameter takes either of the following values:</p>  <ul>   <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>   <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>  </ul>  <p>The value parameter takes an integer.</p>  <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
     ///   - [`traffic_routing_config(TrafficRoutingConfig)`](crate::client::fluent_builders::CreateDeploymentConfig::traffic_routing_config) / [`set_traffic_routing_config(Option<TrafficRoutingConfig>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_traffic_routing_config): <p>The configuration that specifies how the deployment traffic is routed.</p>
     ///   - [`compute_platform(ComputePlatform)`](crate::client::fluent_builders::CreateDeploymentConfig::compute_platform) / [`set_compute_platform(Option<ComputePlatform>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_compute_platform): <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     /// - On success, responds with [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput) with field(s):
@@ -240,21 +241,21 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDeploymentGroup`](crate::client::fluent_builders::CreateDeploymentGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_deployment_group_name): <p>The name of a new deployment group for the specified application.</p>
-    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_deployment_config_name): <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>  <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>  <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
-    ///   - [`ec2_tag_filters(Vec<Ec2TagFilter>)`](crate::client::fluent_builders::CreateDeploymentGroup::ec2_tag_filters) / [`set_ec2_tag_filters(Option<Vec<Ec2TagFilter>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_ec2_tag_filters): <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_deployment_config_name): <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>  <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>  <p>For more information about the predefined deployment configurations in CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
+    ///   - [`ec2_tag_filters(Vec<Ec2TagFilter>)`](crate::client::fluent_builders::CreateDeploymentGroup::ec2_tag_filters) / [`set_ec2_tag_filters(Option<Vec<Ec2TagFilter>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_ec2_tag_filters): <p>The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
     ///   - [`on_premises_instance_tag_filters(Vec<TagFilter>)`](crate::client::fluent_builders::CreateDeploymentGroup::on_premises_instance_tag_filters) / [`set_on_premises_instance_tag_filters(Option<Vec<TagFilter>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_on_premises_instance_tag_filters): <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
     ///   - [`auto_scaling_groups(Vec<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::auto_scaling_groups) / [`set_auto_scaling_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_auto_scaling_groups): <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
-    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_service_role_arn): <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
-    ///   - [`trigger_configurations(Vec<TriggerConfig>)`](crate::client::fluent_builders::CreateDeploymentGroup::trigger_configurations) / [`set_trigger_configurations(Option<Vec<TriggerConfig>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_trigger_configurations): <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_service_role_arn): <p>A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting with Amazon Web Services services.</p>
+    ///   - [`trigger_configurations(Vec<TriggerConfig>)`](crate::client::fluent_builders::CreateDeploymentGroup::trigger_configurations) / [`set_trigger_configurations(Option<Vec<TriggerConfig>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_trigger_configurations): <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.</p>
     ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::CreateDeploymentGroup::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_alarm_configuration): <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
     ///   - [`auto_rollback_configuration(AutoRollbackConfiguration)`](crate::client::fluent_builders::CreateDeploymentGroup::auto_rollback_configuration) / [`set_auto_rollback_configuration(Option<AutoRollbackConfiguration>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_auto_rollback_configuration): <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
-    ///   - [`outdated_instances_strategy(OutdatedInstancesStrategy)`](crate::client::fluent_builders::CreateDeploymentGroup::outdated_instances_strategy) / [`set_outdated_instances_strategy(Option<OutdatedInstancesStrategy>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_outdated_instances_strategy): <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>  <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>  <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    ///   - [`outdated_instances_strategy(OutdatedInstancesStrategy)`](crate::client::fluent_builders::CreateDeploymentGroup::outdated_instances_strategy) / [`set_outdated_instances_strategy(Option<OutdatedInstancesStrategy>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_outdated_instances_strategy): <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>  <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>  <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
     ///   - [`deployment_style(DeploymentStyle)`](crate::client::fluent_builders::CreateDeploymentGroup::deployment_style) / [`set_deployment_style(Option<DeploymentStyle>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_deployment_style): <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
     ///   - [`blue_green_deployment_configuration(BlueGreenDeploymentConfiguration)`](crate::client::fluent_builders::CreateDeploymentGroup::blue_green_deployment_configuration) / [`set_blue_green_deployment_configuration(Option<BlueGreenDeploymentConfiguration>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_blue_green_deployment_configuration): <p>Information about blue/green deployment options for a deployment group.</p>
     ///   - [`load_balancer_info(LoadBalancerInfo)`](crate::client::fluent_builders::CreateDeploymentGroup::load_balancer_info) / [`set_load_balancer_info(Option<LoadBalancerInfo>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_load_balancer_info): <p>Information about the load balancer used in a deployment.</p>
-    ///   - [`ec2_tag_set(Ec2TagSet)`](crate::client::fluent_builders::CreateDeploymentGroup::ec2_tag_set) / [`set_ec2_tag_set(Option<Ec2TagSet>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_ec2_tag_set): <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
+    ///   - [`ec2_tag_set(Ec2TagSet)`](crate::client::fluent_builders::CreateDeploymentGroup::ec2_tag_set) / [`set_ec2_tag_set(Option<Ec2TagSet>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_ec2_tag_set): <p>Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
     ///   - [`ecs_services(Vec<EcsService>)`](crate::client::fluent_builders::CreateDeploymentGroup::ecs_services) / [`set_ecs_services(Option<Vec<EcsService>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_ecs_services): <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>   <clustername>    :    <servicename></servicename>   </clustername></code>. </p>
     ///   - [`on_premises_tag_set(OnPremisesTagSet)`](crate::client::fluent_builders::CreateDeploymentGroup::on_premises_tag_set) / [`set_on_premises_tag_set(Option<OnPremisesTagSet>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_on_premises_tag_set): <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDeploymentGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_tags): <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
@@ -267,7 +268,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
@@ -277,7 +278,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteDeploymentConfig`](crate::client::fluent_builders::DeleteDeploymentConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentConfig::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentConfig::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentConfig::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentConfig::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
     /// - On success, responds with [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDeploymentConfigError>`](crate::error::DeleteDeploymentConfigError)
@@ -287,10 +288,10 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteDeploymentGroup`](crate::client::fluent_builders::DeleteDeploymentGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::set_deployment_group_name): <p>The name of a deployment group for the specified application.</p>
     /// - On success, responds with [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput) with field(s):
-    ///   - [`hooks_not_cleaned_up(Option<Vec<AutoScalingGroup>>)`](crate::output::DeleteDeploymentGroupOutput::hooks_not_cleaned_up): <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+    ///   - [`hooks_not_cleaned_up(Option<Vec<AutoScalingGroup>>)`](crate::output::DeleteDeploymentGroupOutput::hooks_not_cleaned_up): <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     /// - On failure, responds with [`SdkError<DeleteDeploymentGroupError>`](crate::error::DeleteDeploymentGroupError)
     pub fn delete_deployment_group(&self) -> fluent_builders::DeleteDeploymentGroup {
         fluent_builders::DeleteDeploymentGroup::new(self.handle.clone())
@@ -328,7 +329,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::client::fluent_builders::GetApplication) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
     ///   - [`application(Option<ApplicationInfo>)`](crate::output::GetApplicationOutput::application): <p>Information about the application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::error::GetApplicationError)
@@ -351,7 +352,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetDeployment`](crate::client::fluent_builders::GetDeployment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_deployment_id): <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_deployment_id): <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
     /// - On success, responds with [`GetDeploymentOutput`](crate::output::GetDeploymentOutput) with field(s):
     ///   - [`deployment_info(Option<DeploymentInfo>)`](crate::output::GetDeploymentOutput::deployment_info): <p>Information about the deployment.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::error::GetDeploymentError)
@@ -361,7 +362,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetDeploymentConfig`](crate::client::fluent_builders::GetDeploymentConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentConfig::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::GetDeploymentConfig::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentConfig::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::GetDeploymentConfig::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
     /// - On success, responds with [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput) with field(s):
     ///   - [`deployment_config_info(Option<DeploymentConfigInfo>)`](crate::output::GetDeploymentConfigOutput::deployment_config_info): <p>Information about the deployment configuration.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentConfigError>`](crate::error::GetDeploymentConfigError)
@@ -371,7 +372,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetDeploymentGroup`](crate::client::fluent_builders::GetDeploymentGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::GetDeploymentGroup::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::GetDeploymentGroup::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentGroup::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::GetDeploymentGroup::set_deployment_group_name): <p>The name of a deployment group for the specified application.</p>
     /// - On success, responds with [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput) with field(s):
     ///   - [`deployment_group_info(Option<DeploymentGroupInfo>)`](crate::output::GetDeploymentGroupOutput::deployment_group_info): <p>Information about the deployment group.</p>
@@ -415,8 +416,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplicationRevisions::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListApplicationRevisions::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListApplicationRevisions::set_application_name): <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
-    ///   - [`sort_by(ApplicationRevisionSortBy)`](crate::client::fluent_builders::ListApplicationRevisions::sort_by) / [`set_sort_by(Option<ApplicationRevisionSortBy>)`](crate::client::fluent_builders::ListApplicationRevisions::set_sort_by): <p>The column name to use to sort the list results:</p>  <ul>   <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>   <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>   <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>  </ul>  <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListApplicationRevisions::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListApplicationRevisions::set_application_name): <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
+    ///   - [`sort_by(ApplicationRevisionSortBy)`](crate::client::fluent_builders::ListApplicationRevisions::sort_by) / [`set_sort_by(Option<ApplicationRevisionSortBy>)`](crate::client::fluent_builders::ListApplicationRevisions::set_sort_by): <p>The column name to use to sort the list results:</p>  <ul>   <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>   <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>   <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>  </ul>  <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
     ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListApplicationRevisions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListApplicationRevisions::set_sort_order): <p> The order in which to sort the list results: </p>  <ul>   <li> <p> <code>ascending</code>: ascending order.</p> </li>   <li> <p> <code>descending</code>: descending order.</p> </li>  </ul>  <p>If not specified, the results are sorted in ascending order.</p>  <p>If set to null, the results are sorted in an arbitrary order.</p>
     ///   - [`s3_bucket(impl Into<String>)`](crate::client::fluent_builders::ListApplicationRevisions::s3_bucket) / [`set_s3_bucket(Option<String>)`](crate::client::fluent_builders::ListApplicationRevisions::set_s3_bucket): <p> An Amazon S3 bucket name to limit the search for revisions. </p>  <p> If set to null, all of the user's buckets are searched. </p>
     ///   - [`s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::ListApplicationRevisions::s3_key_prefix) / [`set_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::ListApplicationRevisions::set_s3_key_prefix): <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
@@ -457,7 +458,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentGroups::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentGroups::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListDeploymentGroups::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentGroups::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListDeploymentGroups::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeploymentGroups::set_next_token): <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
     /// - On success, responds with [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput) with field(s):
     ///   - [`application_name(Option<String>)`](crate::output::ListDeploymentGroupsOutput::application_name): <p>The application name.</p>
@@ -486,7 +487,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeployments::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>   <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>  </note>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>   <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>  </note>
     ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_deployment_group_name): <p>The name of a deployment group for the specified application.</p> <note>   <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>  </note>
     ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_external_id): <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
     ///   - [`include_only_statuses(Vec<DeploymentStatus>)`](crate::client::fluent_builders::ListDeployments::include_only_statuses) / [`set_include_only_statuses(Option<Vec<DeploymentStatus>>)`](crate::client::fluent_builders::ListDeployments::set_include_only_statuses): <p>A subset of deployments to list by status:</p>  <ul>   <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>   <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>   <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>   <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>   <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>   <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>  </ul>
@@ -553,7 +554,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::set_deployment_id): <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     ///   - [`lifecycle_event_hook_execution_id(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::lifecycle_event_hook_execution_id) / [`set_lifecycle_event_hook_execution_id(Option<String>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::set_lifecycle_event_hook_execution_id): <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
-    ///   - [`status(LifecycleEventStatus)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::status) / [`set_status(Option<LifecycleEventStatus>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::set_status): <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
+    ///   - [`status(LifecycleEventStatus)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::status) / [`set_status(Option<LifecycleEventStatus>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::set_status): <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
     /// - On success, responds with [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput) with field(s):
     ///   - [`lifecycle_event_hook_execution_id(Option<String>)`](crate::output::PutLifecycleEventHookExecutionStatusOutput::lifecycle_event_hook_execution_id): <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     /// - On failure, responds with [`SdkError<PutLifecycleEventHookExecutionStatusError>`](crate::error::PutLifecycleEventHookExecutionStatusError)
@@ -565,7 +566,7 @@ impl Client {
     /// Constructs a fluent builder for the [`RegisterApplicationRevision`](crate::client::fluent_builders::RegisterApplicationRevision) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::set_application_name): <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::set_description): <p>A comment about the revision.</p>
     ///   - [`revision(RevisionLocation)`](crate::client::fluent_builders::RegisterApplicationRevision::revision) / [`set_revision(Option<RevisionLocation>)`](crate::client::fluent_builders::RegisterApplicationRevision::set_revision): <p>Information about the application revision to register, including type and location.</p>
     /// - On success, responds with [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput)
@@ -665,20 +666,20 @@ impl Client {
     ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_deployment_config_name): <p>The replacement deployment configuration name to use, if you want to change it.</p>
     ///   - [`ec2_tag_filters(Vec<Ec2TagFilter>)`](crate::client::fluent_builders::UpdateDeploymentGroup::ec2_tag_filters) / [`set_ec2_tag_filters(Option<Vec<Ec2TagFilter>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_ec2_tag_filters): <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
     ///   - [`on_premises_instance_tag_filters(Vec<TagFilter>)`](crate::client::fluent_builders::UpdateDeploymentGroup::on_premises_instance_tag_filters) / [`set_on_premises_instance_tag_filters(Option<Vec<TagFilter>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_on_premises_instance_tag_filters): <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    ///   - [`auto_scaling_groups(Vec<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::auto_scaling_groups) / [`set_auto_scaling_groups(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_auto_scaling_groups): <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+    ///   - [`auto_scaling_groups(Vec<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::auto_scaling_groups) / [`set_auto_scaling_groups(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_auto_scaling_groups): <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.</p>  <ul>   <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>   <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>  </ul>
     ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_service_role_arn): <p>A replacement ARN for the service role, if you want to change it.</p>
-    ///   - [`trigger_configurations(Vec<TriggerConfig>)`](crate::client::fluent_builders::UpdateDeploymentGroup::trigger_configurations) / [`set_trigger_configurations(Option<Vec<TriggerConfig>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_trigger_configurations): <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    ///   - [`trigger_configurations(Vec<TriggerConfig>)`](crate::client::fluent_builders::UpdateDeploymentGroup::trigger_configurations) / [`set_trigger_configurations(Option<Vec<TriggerConfig>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_trigger_configurations): <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.</p>
     ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::UpdateDeploymentGroup::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_alarm_configuration): <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
     ///   - [`auto_rollback_configuration(AutoRollbackConfiguration)`](crate::client::fluent_builders::UpdateDeploymentGroup::auto_rollback_configuration) / [`set_auto_rollback_configuration(Option<AutoRollbackConfiguration>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_auto_rollback_configuration): <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
-    ///   - [`outdated_instances_strategy(OutdatedInstancesStrategy)`](crate::client::fluent_builders::UpdateDeploymentGroup::outdated_instances_strategy) / [`set_outdated_instances_strategy(Option<OutdatedInstancesStrategy>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_outdated_instances_strategy): <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>  <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>  <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    ///   - [`outdated_instances_strategy(OutdatedInstancesStrategy)`](crate::client::fluent_builders::UpdateDeploymentGroup::outdated_instances_strategy) / [`set_outdated_instances_strategy(Option<OutdatedInstancesStrategy>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_outdated_instances_strategy): <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>  <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>  <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
     ///   - [`deployment_style(DeploymentStyle)`](crate::client::fluent_builders::UpdateDeploymentGroup::deployment_style) / [`set_deployment_style(Option<DeploymentStyle>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_deployment_style): <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
     ///   - [`blue_green_deployment_configuration(BlueGreenDeploymentConfiguration)`](crate::client::fluent_builders::UpdateDeploymentGroup::blue_green_deployment_configuration) / [`set_blue_green_deployment_configuration(Option<BlueGreenDeploymentConfiguration>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_blue_green_deployment_configuration): <p>Information about blue/green deployment options for a deployment group.</p>
     ///   - [`load_balancer_info(LoadBalancerInfo)`](crate::client::fluent_builders::UpdateDeploymentGroup::load_balancer_info) / [`set_load_balancer_info(Option<LoadBalancerInfo>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_load_balancer_info): <p>Information about the load balancer used in a deployment.</p>
-    ///   - [`ec2_tag_set(Ec2TagSet)`](crate::client::fluent_builders::UpdateDeploymentGroup::ec2_tag_set) / [`set_ec2_tag_set(Option<Ec2TagSet>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_ec2_tag_set): <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
+    ///   - [`ec2_tag_set(Ec2TagSet)`](crate::client::fluent_builders::UpdateDeploymentGroup::ec2_tag_set) / [`set_ec2_tag_set(Option<Ec2TagSet>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_ec2_tag_set): <p>Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups.</p>
     ///   - [`ecs_services(Vec<EcsService>)`](crate::client::fluent_builders::UpdateDeploymentGroup::ecs_services) / [`set_ecs_services(Option<Vec<EcsService>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_ecs_services): <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>   <clustername>    :    <servicename></servicename>   </clustername></code>. </p>
     ///   - [`on_premises_tag_set(OnPremisesTagSet)`](crate::client::fluent_builders::UpdateDeploymentGroup::on_premises_tag_set) / [`set_on_premises_tag_set(Option<OnPremisesTagSet>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_on_premises_tag_set): <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
     /// - On success, responds with [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput) with field(s):
-    ///   - [`hooks_not_cleaned_up(Option<Vec<AutoScalingGroup>>)`](crate::output::UpdateDeploymentGroupOutput::hooks_not_cleaned_up): <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
+    ///   - [`hooks_not_cleaned_up(Option<Vec<AutoScalingGroup>>)`](crate::output::UpdateDeploymentGroupOutput::hooks_not_cleaned_up): <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<UpdateDeploymentGroupError>`](crate::error::UpdateDeploymentGroupError)
     pub fn update_deployment_group(&self) -> fluent_builders::UpdateDeploymentGroup {
         fluent_builders::UpdateDeploymentGroup::new(self.handle.clone())
@@ -860,12 +861,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
+        /// <p>The name of an CodeDeploy application about which to get revision information.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
+        /// <p>The name of an CodeDeploy application about which to get revision information.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1041,12 +1042,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1077,7 +1078,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p> This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code> instead. </p>
     /// </note>
-    /// <p> Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms. The maximum number of instances that can be returned is 25.</p>
+    /// <p> Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises and Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms. The maximum number of instances that can be returned is 25.</p>
     #[deprecated(note = "This operation is deprecated, use BatchGetDeploymentTargets instead.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeploymentInstances {
@@ -1262,8 +1263,8 @@ pub mod fluent_builders {
     /// <p> Returns an array of one or more targets associated with a deployment. This method works with all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can be returned is 25.</p>
     /// <p> The type of targets returned depends on the deployment's compute platform or deployment method: </p>
     /// <ul>
-    /// <li> <p> <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li>
-    /// <li> <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
+    /// <li> <p> <b>EC2/On-premises</b>: Information about Amazon EC2 instance targets. </p> </li>
+    /// <li> <p> <b>Lambda</b>: Information about Lambda functions targets. </p> </li>
     /// <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p> </li>
     /// <li> <p> <b>CloudFormation</b>: Information about targets of blue/green deployments initiated by a CloudFormation stack update.</p> </li>
     /// </ul>
@@ -1349,14 +1350,14 @@ pub mod fluent_builders {
         ///
         /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
         /// <ul>
-        /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
-        /// <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
         /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
         /// <clustername>
         /// :
         /// <servicename></servicename>
         /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
-        /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
+        /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
         /// </ul>
         pub fn target_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_ids(input.into());
@@ -1364,14 +1365,14 @@ pub mod fluent_builders {
         }
         /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
         /// <ul>
-        /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
-        /// <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
         /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
         /// <clustername>
         /// :
         /// <servicename></servicename>
         /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
-        /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
+        /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
         /// </ul>
         pub fn set_target_ids(
             mut self,
@@ -1624,12 +1625,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
+        /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
+        /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1734,12 +1735,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1773,13 +1774,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_revision(input);
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
         /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
         pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.deployment_config_name(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
         /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
         pub fn set_deployment_config_name(
             mut self,
@@ -1800,7 +1801,7 @@ pub mod fluent_builders {
         }
         /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
         /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
-        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+        /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
         /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
         pub fn ignore_application_stop_failures(mut self, input: bool) -> Self {
             self.inner = self.inner.ignore_application_stop_failures(input);
@@ -1808,7 +1809,7 @@ pub mod fluent_builders {
         }
         /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
         /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
-        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+        /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
         /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
         pub fn set_ignore_application_stop_failures(
             mut self,
@@ -1859,7 +1860,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_update_outdated_instances_only(input);
             self
         }
-        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+        /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
         /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
         /// <ul>
         /// <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
@@ -1870,7 +1871,7 @@ pub mod fluent_builders {
             self.inner = self.inner.file_exists_behavior(input);
             self
         }
-        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+        /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
         /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
         /// <ul>
         /// <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
@@ -1882,6 +1883,26 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::FileExistsBehavior>,
         ) -> Self {
             self.inner = self.inner.set_file_exists_behavior(input);
+            self
+        }
+        /// <p>Allows you to specify information about alarms associated with a deployment. The alarm configuration that you specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm configuration if you have set up alarms at the deployment group level that are causing deployment failures. In this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated by the previous, failed, deployment.</p> <note>
+        /// <p>If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM permission when calling <code>CreateDeployment</code>.</p>
+        /// </note>
+        pub fn override_alarm_configuration(
+            mut self,
+            input: crate::model::AlarmConfiguration,
+        ) -> Self {
+            self.inner = self.inner.override_alarm_configuration(input);
+            self
+        }
+        /// <p>Allows you to specify information about alarms associated with a deployment. The alarm configuration that you specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm configuration if you have set up alarms at the deployment group level that are causing deployment failures. In this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated by the previous, failed, deployment.</p> <note>
+        /// <p>If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM permission when calling <code>CreateDeployment</code>.</p>
+        /// </note>
+        pub fn set_override_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_override_alarm_configuration(input);
             self
         }
     }
@@ -1968,7 +1989,7 @@ pub mod fluent_builders {
         /// <p>The type parameter takes either of the following values:</p>
         /// <ul>
         /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
-        /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
+        /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
         /// </ul>
         /// <p>The value parameter takes an integer.</p>
         /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
@@ -1980,7 +2001,7 @@ pub mod fluent_builders {
         /// <p>The type parameter takes either of the following values:</p>
         /// <ul>
         /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
-        /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
+        /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
         /// </ul>
         /// <p>The value parameter takes an integer.</p>
         /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
@@ -2084,12 +2105,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2110,16 +2131,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_group_name(input);
             self
         }
-        /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
+        /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
         /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
-        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>For more information about the predefined deployment configurations in CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.deployment_config_name(input.into());
             self
         }
-        /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
+        /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
         /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
-        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>For more information about the predefined deployment configurations in CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2131,12 +2152,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ec2_tag_filters`](Self::set_ec2_tag_filters).
         ///
-        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
         pub fn ec2_tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
             self.inner = self.inner.ec2_tag_filters(input);
             self
         }
-        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
         pub fn set_ec2_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
@@ -2178,12 +2199,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_groups(input);
             self
         }
-        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
+        /// <p>A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting with Amazon Web Services services.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role_arn(input.into());
             self
         }
-        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
+        /// <p>A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting with Amazon Web Services services.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2195,12 +2216,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
         ///
-        /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
             self.inner = self.inner.trigger_configurations(input);
             self
         }
-        /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn set_trigger_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
@@ -2237,9 +2258,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_rollback_configuration(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+        /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
             input: crate::model::OutdatedInstancesStrategy,
@@ -2247,9 +2268,9 @@ pub mod fluent_builders {
             self.inner = self.inner.outdated_instances_strategy(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+        /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
         pub fn set_outdated_instances_strategy(
             mut self,
             input: std::option::Option<crate::model::OutdatedInstancesStrategy>,
@@ -2299,12 +2320,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_load_balancer_info(input);
             self
         }
-        /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
+        /// <p>Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
         pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
             self.inner = self.inner.ec2_tag_set(input);
             self
         }
-        /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
+        /// <p>Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -2434,12 +2455,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2516,12 +2537,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
         pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.deployment_config_name(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2596,12 +2617,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2923,12 +2944,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3098,12 +3119,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
+        /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.deployment_id(input.into());
             self
         }
-        /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
+        /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3178,12 +3199,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
         pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.deployment_config_name(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3258,12 +3279,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3618,12 +3639,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListApplicationRevisionsPaginator {
             crate::paginator::ListApplicationRevisionsPaginator::new(self.handle, self.inner)
         }
-        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
+        /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
+        /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3633,7 +3654,7 @@ pub mod fluent_builders {
         }
         /// <p>The column name to use to sort the list results:</p>
         /// <ul>
-        /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>
+        /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
         /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
         /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
         /// </ul>
@@ -3644,7 +3665,7 @@ pub mod fluent_builders {
         }
         /// <p>The column name to use to sort the list results:</p>
         /// <ul>
-        /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>
+        /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
         /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
         /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
         /// </ul>
@@ -3742,7 +3763,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApplications`.
     ///
-    /// <p>Lists the applications registered with the IAM user or AWS account.</p>
+    /// <p>Lists the applications registered with the IAM user or Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications {
         handle: std::sync::Arc<super::Handle>,
@@ -3825,7 +3846,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeploymentConfigs`.
     ///
-    /// <p>Lists the deployment configurations with the IAM user or AWS account.</p>
+    /// <p>Lists the deployment configurations with the IAM user or Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentConfigs {
         handle: std::sync::Arc<super::Handle>,
@@ -3908,7 +3929,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeploymentGroups`.
     ///
-    /// <p>Lists the deployment groups for an application registered with the IAM user or AWS account.</p>
+    /// <p>Lists the deployment groups for an application registered with the IAM user or Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentGroups {
         handle: std::sync::Arc<super::Handle>,
@@ -3978,12 +3999,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListDeploymentGroupsPaginator {
             crate::paginator::ListDeploymentGroupsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4005,9 +4026,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeploymentInstances`.
     ///
     /// <note>
-    /// <p> The newer <code>BatchGetDeploymentTargets</code> should be used instead because it works with all compute types. <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than EC2/On-premises or AWS Lambda. </p>
+    /// <p> The newer <code>BatchGetDeploymentTargets</code> should be used instead because it works with all compute types. <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than EC2/On-premises or Lambda. </p>
     /// </note>
-    /// <p> Lists the instance for a deployment associated with the IAM user or AWS account. </p>
+    /// <p> Lists the instance for a deployment associated with the IAM user or Amazon Web Services account. </p>
     #[deprecated(note = "This operation is deprecated, use ListDeploymentTargets instead.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentInstances {
@@ -4154,7 +4175,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeployments`.
     ///
-    /// <p>Lists the deployments in a deployment group for an application registered with the IAM user or AWS account.</p>
+    /// <p>Lists the deployments in a deployment group for an application registered with the IAM user or Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeployments {
         handle: std::sync::Arc<super::Handle>,
@@ -4224,14 +4245,14 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListDeploymentsPaginator {
             crate::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
         /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
         /// </note>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
         /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
         /// </note>
         pub fn set_application_name(
@@ -4731,7 +4752,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutLifecycleEventHookExecutionStatus`.
     ///
-    /// <p> Sets the result of a Lambda validation function. The function validates lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS compute platform. For AWS Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>, <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation functions return <code>Succeeded</code> or <code>Failed</code>. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec 'hooks' Section for an AWS Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec 'hooks' Section for an Amazon ECS Deployment</a>.</p>
+    /// <p> Sets the result of a Lambda validation function. The function validates lifecycle hooks during a deployment that uses the Lambda or Amazon ECS compute platform. For Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>, <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation functions return <code>Succeeded</code> or <code>Failed</code>. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec 'hooks' Section for an Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec 'hooks' Section for an Amazon ECS Deployment</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecycleEventHookExecutionStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -4828,12 +4849,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lifecycle_event_hook_execution_id(input);
             self
         }
-        /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
+        /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
         pub fn status(mut self, input: crate::model::LifecycleEventStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
+        /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventStatus>,
@@ -4844,7 +4865,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterApplicationRevision`.
     ///
-    /// <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
+    /// <p>Registers with CodeDeploy a revision for the specified application.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterApplicationRevision {
         handle: std::sync::Arc<super::Handle>,
@@ -4908,12 +4929,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5768,12 +5789,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
         ///
-        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.</p>
+        /// <ul>
+        /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
+        /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+        /// </ul>
         pub fn auto_scaling_groups(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.auto_scaling_groups(input.into());
             self
         }
-        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.</p>
+        /// <ul>
+        /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
+        /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+        /// </ul>
         pub fn set_auto_scaling_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5798,12 +5827,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
         ///
-        /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
             self.inner = self.inner.trigger_configurations(input);
             self
         }
-        /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn set_trigger_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
@@ -5840,9 +5869,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_rollback_configuration(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+        /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
             input: crate::model::OutdatedInstancesStrategy,
@@ -5850,9 +5879,9 @@ pub mod fluent_builders {
             self.inner = self.inner.outdated_instances_strategy(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+        /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
         pub fn set_outdated_instances_strategy(
             mut self,
             input: std::option::Option<crate::model::OutdatedInstancesStrategy>,
@@ -5902,12 +5931,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_load_balancer_info(input);
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups.</p>
         pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
             self.inner = self.inner.ec2_tag_set(input);
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,

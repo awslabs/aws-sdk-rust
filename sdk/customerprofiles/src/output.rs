@@ -890,6 +890,9 @@ pub struct PutIntegrationOutput {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    #[doc(hidden)]
+    pub is_unstructured: std::option::Option<bool>,
 }
 impl PutIntegrationOutput {
     /// <p>The unique name of the domain.</p>
@@ -930,6 +933,10 @@ impl PutIntegrationOutput {
     pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
+    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    pub fn is_unstructured(&self) -> std::option::Option<bool> {
+        self.is_unstructured
+    }
 }
 impl std::fmt::Debug for PutIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -942,6 +949,7 @@ impl std::fmt::Debug for PutIntegrationOutput {
         formatter.field("tags", &self.tags);
         formatter.field("object_type_names", &self.object_type_names);
         formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("is_unstructured", &self.is_unstructured);
         formatter.finish()
     }
 }
@@ -963,6 +971,7 @@ pub mod put_integration_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) is_unstructured: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -1084,6 +1093,16 @@ pub mod put_integration_output {
             self.workflow_id = input;
             self
         }
+        /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+        pub fn is_unstructured(mut self, input: bool) -> Self {
+            self.is_unstructured = Some(input);
+            self
+        }
+        /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+        pub fn set_is_unstructured(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_unstructured = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
         pub fn build(self) -> crate::output::PutIntegrationOutput {
             crate::output::PutIntegrationOutput {
@@ -1095,6 +1114,7 @@ pub mod put_integration_output {
                 tags: self.tags,
                 object_type_names: self.object_type_names,
                 workflow_id: self.workflow_id,
+                is_unstructured: self.is_unstructured,
             }
         }
     }
@@ -3026,6 +3046,9 @@ pub struct GetIntegrationOutput {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    #[doc(hidden)]
+    pub is_unstructured: std::option::Option<bool>,
 }
 impl GetIntegrationOutput {
     /// <p>The unique name of the domain.</p>
@@ -3066,6 +3089,10 @@ impl GetIntegrationOutput {
     pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
+    /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+    pub fn is_unstructured(&self) -> std::option::Option<bool> {
+        self.is_unstructured
+    }
 }
 impl std::fmt::Debug for GetIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3078,6 +3105,7 @@ impl std::fmt::Debug for GetIntegrationOutput {
         formatter.field("tags", &self.tags);
         formatter.field("object_type_names", &self.object_type_names);
         formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("is_unstructured", &self.is_unstructured);
         formatter.finish()
     }
 }
@@ -3099,6 +3127,7 @@ pub mod get_integration_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) is_unstructured: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -3220,6 +3249,16 @@ pub mod get_integration_output {
             self.workflow_id = input;
             self
         }
+        /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+        pub fn is_unstructured(mut self, input: bool) -> Self {
+            self.is_unstructured = Some(input);
+            self
+        }
+        /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
+        pub fn set_is_unstructured(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_unstructured = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
         pub fn build(self) -> crate::output::GetIntegrationOutput {
             crate::output::GetIntegrationOutput {
@@ -3231,6 +3270,7 @@ pub mod get_integration_output {
                 tags: self.tags,
                 object_type_names: self.object_type_names,
                 workflow_id: self.workflow_id,
+                is_unstructured: self.is_unstructured,
             }
         }
     }

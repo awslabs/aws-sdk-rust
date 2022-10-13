@@ -853,6 +853,93 @@ impl DetectedLanguageLowConfidenceException {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyTagsException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl TooManyTagsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for TooManyTagsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyTagsException");
+        formatter.field("message", &self.message);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+impl TooManyTagsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyTagsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyTagsException")?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyTagsException {}
+/// See [`TooManyTagsException`](crate::error::TooManyTagsException).
+pub mod too_many_tags_exception {
+
+    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
+        pub fn build(self) -> crate::error::TooManyTagsException {
+            crate::error::TooManyTagsException {
+                message: self.message,
+                resource_arn: self.resource_arn,
+            }
+        }
+    }
+}
+impl TooManyTagsException {
+    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
+    pub fn builder() -> crate::error::too_many_tags_exception::Builder {
+        crate::error::too_many_tags_exception::Builder::default()
+    }
+}
+
 /// <p>The filter specified for the operation is not valid. Specify a different filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -877,8 +964,8 @@ impl InvalidFilterException {
 impl std::fmt::Display for InvalidFilterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFilterException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -952,8 +1039,8 @@ impl UnsupportedDisplayLanguageCodeException {
 impl std::fmt::Display for UnsupportedDisplayLanguageCodeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedDisplayLanguageCodeException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -1021,6 +1108,8 @@ pub struct CreateParallelDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateParallelDataErrorKind {
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal server error occurred. Retry your request.</p>
@@ -1033,18 +1122,22 @@ pub enum CreateParallelDataErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    #[allow(missing_docs)] // documentation missing in model
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateParallelDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateParallelDataErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             CreateParallelDataErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateParallelDataErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateParallelDataErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             CreateParallelDataErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             CreateParallelDataErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateParallelDataErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateParallelDataErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateParallelDataErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1099,6 +1192,13 @@ impl CreateParallelDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateParallelDataErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateParallelDataErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateParallelDataErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
@@ -1141,16 +1241,25 @@ impl CreateParallelDataError {
             CreateParallelDataErrorKind::TooManyRequestsException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateParallelDataErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateParallelDataErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateParallelDataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateParallelDataErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::ConflictException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateParallelDataErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1788,6 +1897,8 @@ pub struct ImportTerminologyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportTerminologyErrorKind {
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
@@ -1796,16 +1907,20 @@ pub enum ImportTerminologyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    #[allow(missing_docs)] // documentation missing in model
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportTerminologyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ImportTerminologyErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             ImportTerminologyErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ImportTerminologyErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             ImportTerminologyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             ImportTerminologyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ImportTerminologyErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             ImportTerminologyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1860,6 +1975,13 @@ impl ImportTerminologyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ImportTerminologyErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportTerminologyErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ImportTerminologyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -1888,14 +2010,23 @@ impl ImportTerminologyError {
             ImportTerminologyErrorKind::TooManyRequestsException(_)
         )
     }
+    /// Returns `true` if the error kind is `ImportTerminologyErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportTerminologyErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for ImportTerminologyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ImportTerminologyErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             ImportTerminologyErrorKind::InternalServerException(_inner) => Some(_inner),
             ImportTerminologyErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ImportTerminologyErrorKind::LimitExceededException(_inner) => Some(_inner),
             ImportTerminologyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ImportTerminologyErrorKind::TooManyTagsException(_inner) => Some(_inner),
             ImportTerminologyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2140,6 +2271,121 @@ impl std::error::Error for ListParallelDataError {
             ListParallelDataErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListParallelDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListParallelDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTagsForResourceError {
+    /// Kind of error that occurred.
+    pub kind: ListTagsForResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTagsForResourceErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTagsForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
+    fn code(&self) -> Option<&str> {
+        ListTagsForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTagsForResourceError {
+    /// Creates a new `ListTagsForResourceError`.
+    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListTagsForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2656,6 +2902,137 @@ impl std::error::Error for StopTextTranslationJobError {
     }
 }
 
+/// Error type for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TagResourceError {
+    /// Kind of error that occurred.
+    pub kind: TagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TagResourceErrorKind {
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    #[allow(missing_docs)] // documentation missing in model
+    TooManyTagsException(crate::error::TooManyTagsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TagResourceErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
+    fn code(&self) -> Option<&str> {
+        TagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TagResourceError {
+    /// Creates a new `TagResourceError`.
+    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
+    }
+}
+impl std::error::Error for TagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TagResourceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            TagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `TranslateText` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2822,6 +3199,132 @@ impl std::error::Error for TranslateTextError {
             TranslateTextErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TranslateTextErrorKind::UnsupportedLanguagePairException(_inner) => Some(_inner),
             TranslateTextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UntagResourceError {
+    /// Kind of error that occurred.
+    pub kind: UntagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UntagResourceErrorKind {
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UntagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UntagResourceErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
+    fn code(&self) -> Option<&str> {
+        UntagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UntagResourceError {
+    /// Creates a new `UntagResourceError`.
+    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UntagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UntagResourceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            UntagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

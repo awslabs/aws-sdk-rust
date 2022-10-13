@@ -2455,6 +2455,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuWest3,
     #[allow(missing_docs)] // documentation missing in model
+    MeCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
     #[allow(missing_docs)] // documentation missing in model
     SaEast1,
@@ -2500,6 +2502,7 @@ impl std::convert::From<&str> for CloudWatchRegion {
             "eu-west-1" => CloudWatchRegion::EuWest1,
             "eu-west-2" => CloudWatchRegion::EuWest2,
             "eu-west-3" => CloudWatchRegion::EuWest3,
+            "me-central-1" => CloudWatchRegion::MeCentral1,
             "me-south-1" => CloudWatchRegion::MeSouth1,
             "sa-east-1" => CloudWatchRegion::SaEast1,
             "us-east-1" => CloudWatchRegion::UsEast1,
@@ -2544,6 +2547,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::EuWest1 => "eu-west-1",
             CloudWatchRegion::EuWest2 => "eu-west-2",
             CloudWatchRegion::EuWest3 => "eu-west-3",
+            CloudWatchRegion::MeCentral1 => "me-central-1",
             CloudWatchRegion::MeSouth1 => "me-south-1",
             CloudWatchRegion::SaEast1 => "sa-east-1",
             CloudWatchRegion::UsEast1 => "us-east-1",
@@ -2579,6 +2583,7 @@ impl CloudWatchRegion {
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
+            "me-central-1",
             "me-south-1",
             "sa-east-1",
             "us-east-1",
@@ -2969,6 +2974,8 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuWest3,
     #[allow(missing_docs)] // documentation missing in model
+    MeCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
     #[allow(missing_docs)] // documentation missing in model
     SaEast1,
@@ -3013,6 +3020,7 @@ impl std::convert::From<&str> for VpcRegion {
             "eu-west-1" => VpcRegion::EuWest1,
             "eu-west-2" => VpcRegion::EuWest2,
             "eu-west-3" => VpcRegion::EuWest3,
+            "me-central-1" => VpcRegion::MeCentral1,
             "me-south-1" => VpcRegion::MeSouth1,
             "sa-east-1" => VpcRegion::SaEast1,
             "us-east-1" => VpcRegion::UsEast1,
@@ -3056,6 +3064,7 @@ impl VpcRegion {
             VpcRegion::EuWest1 => "eu-west-1",
             VpcRegion::EuWest2 => "eu-west-2",
             VpcRegion::EuWest3 => "eu-west-3",
+            VpcRegion::MeCentral1 => "me-central-1",
             VpcRegion::MeSouth1 => "me-south-1",
             VpcRegion::SaEast1 => "sa-east-1",
             VpcRegion::UsEast1 => "us-east-1",
@@ -3090,6 +3099,7 @@ impl VpcRegion {
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
+            "me-central-1",
             "me-south-1",
             "sa-east-1",
             "us-east-1",
@@ -3769,7 +3779,6 @@ pub struct ResourceRecordSet {
     /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
     /// <ul>
     /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
-    /// <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li>
     /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -3960,7 +3969,6 @@ impl ResourceRecordSet {
     /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
     /// <ul>
     /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
-    /// <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li>
     /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
     /// </ul>
     pub fn alias_target(&self) -> std::option::Option<&crate::model::AliasTarget> {
@@ -4367,7 +4375,6 @@ pub mod resource_record_set {
         /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
         /// <ul>
         /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
-        /// <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li>
         /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
         /// </ul>
         pub fn alias_target(mut self, input: crate::model::AliasTarget) -> Self {
@@ -4378,7 +4385,6 @@ pub mod resource_record_set {
         /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
         /// <ul>
         /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
-        /// <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li>
         /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
         /// </ul>
         pub fn set_alias_target(
@@ -4630,7 +4636,6 @@ impl CidrRoutingConfig {
 /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p>
 /// <p>When creating resource record sets for a private hosted zone, note the following:</p>
 /// <ul>
-/// <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li>
 /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]

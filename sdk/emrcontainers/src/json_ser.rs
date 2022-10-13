@@ -187,6 +187,14 @@ pub fn serialize_structure_crate_model_job_driver(
         )?;
         object_48.finish();
     }
+    if let Some(var_49) = &input.spark_sql_job_driver {
+        let mut object_50 = object.key("sparkSqlJobDriver").start_object();
+        crate::json_ser::serialize_structure_crate_model_spark_sql_job_driver(
+            &mut object_50,
+            var_49,
+        )?;
+        object_50.finish();
+    }
     Ok(())
 }
 
@@ -194,31 +202,31 @@ pub fn serialize_structure_crate_model_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Configuration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_49) = &input.classification {
-        object.key("classification").string(var_49.as_str());
+    if let Some(var_51) = &input.classification {
+        object.key("classification").string(var_51.as_str());
     }
-    if let Some(var_50) = &input.properties {
-        let mut object_51 = object.key("properties").start_object();
-        for (key_52, value_53) in var_50 {
+    if let Some(var_52) = &input.properties {
+        let mut object_53 = object.key("properties").start_object();
+        for (key_54, value_55) in var_52 {
             {
-                object_51.key(key_52).string(value_53.as_str());
+                object_53.key(key_54).string(value_55.as_str());
             }
         }
-        object_51.finish();
+        object_53.finish();
     }
-    if let Some(var_54) = &input.configurations {
-        let mut array_55 = object.key("configurations").start_array();
-        for item_56 in var_54 {
+    if let Some(var_56) = &input.configurations {
+        let mut array_57 = object.key("configurations").start_array();
+        for item_58 in var_56 {
             {
-                let mut object_57 = array_55.value().start_object();
+                let mut object_59 = array_57.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_configuration(
-                    &mut object_57,
-                    item_56,
+                    &mut object_59,
+                    item_58,
                 )?;
-                object_57.finish();
+                object_59.finish();
             }
         }
-        array_55.finish();
+        array_57.finish();
     }
     Ok(())
 }
@@ -227,26 +235,26 @@ pub fn serialize_structure_crate_model_monitoring_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MonitoringConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_58) = &input.persistent_app_ui {
-        object.key("persistentAppUI").string(var_58.as_str());
+    if let Some(var_60) = &input.persistent_app_ui {
+        object.key("persistentAppUI").string(var_60.as_str());
     }
-    if let Some(var_59) = &input.cloud_watch_monitoring_configuration {
-        let mut object_60 = object
+    if let Some(var_61) = &input.cloud_watch_monitoring_configuration {
+        let mut object_62 = object
             .key("cloudWatchMonitoringConfiguration")
             .start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_monitoring_configuration(
-            &mut object_60,
-            var_59,
-        )?;
-        object_60.finish();
-    }
-    if let Some(var_61) = &input.s3_monitoring_configuration {
-        let mut object_62 = object.key("s3MonitoringConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_monitoring_configuration(
             &mut object_62,
             var_61,
         )?;
         object_62.finish();
+    }
+    if let Some(var_63) = &input.s3_monitoring_configuration {
+        let mut object_64 = object.key("s3MonitoringConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_s3_monitoring_configuration(
+            &mut object_64,
+            var_63,
+        )?;
+        object_64.finish();
     }
     Ok(())
 }
@@ -257,9 +265,9 @@ pub fn serialize_union_crate_model_container_info(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     match input {
         crate::model::ContainerInfo::EksInfo(inner) => {
-            let mut object_63 = object_46.key("eksInfo").start_object();
-            crate::json_ser::serialize_structure_crate_model_eks_info(&mut object_63, inner)?;
-            object_63.finish();
+            let mut object_65 = object_46.key("eksInfo").start_object();
+            crate::json_ser::serialize_structure_crate_model_eks_info(&mut object_65, inner)?;
+            object_65.finish();
         }
         crate::model::ContainerInfo::Unknown => {
             return Err(
@@ -274,20 +282,33 @@ pub fn serialize_structure_crate_model_spark_submit_job_driver(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SparkSubmitJobDriver,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_64) = &input.entry_point {
-        object.key("entryPoint").string(var_64.as_str());
+    if let Some(var_66) = &input.entry_point {
+        object.key("entryPoint").string(var_66.as_str());
     }
-    if let Some(var_65) = &input.entry_point_arguments {
-        let mut array_66 = object.key("entryPointArguments").start_array();
-        for item_67 in var_65 {
+    if let Some(var_67) = &input.entry_point_arguments {
+        let mut array_68 = object.key("entryPointArguments").start_array();
+        for item_69 in var_67 {
             {
-                array_66.value().string(item_67.as_str());
+                array_68.value().string(item_69.as_str());
             }
         }
-        array_66.finish();
+        array_68.finish();
     }
-    if let Some(var_68) = &input.spark_submit_parameters {
-        object.key("sparkSubmitParameters").string(var_68.as_str());
+    if let Some(var_70) = &input.spark_submit_parameters {
+        object.key("sparkSubmitParameters").string(var_70.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_spark_sql_job_driver(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::SparkSqlJobDriver,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_71) = &input.entry_point {
+        object.key("entryPoint").string(var_71.as_str());
+    }
+    if let Some(var_72) = &input.spark_sql_parameters {
+        object.key("sparkSqlParameters").string(var_72.as_str());
     }
     Ok(())
 }
@@ -296,11 +317,11 @@ pub fn serialize_structure_crate_model_cloud_watch_monitoring_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CloudWatchMonitoringConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_69) = &input.log_group_name {
-        object.key("logGroupName").string(var_69.as_str());
+    if let Some(var_73) = &input.log_group_name {
+        object.key("logGroupName").string(var_73.as_str());
     }
-    if let Some(var_70) = &input.log_stream_name_prefix {
-        object.key("logStreamNamePrefix").string(var_70.as_str());
+    if let Some(var_74) = &input.log_stream_name_prefix {
+        object.key("logStreamNamePrefix").string(var_74.as_str());
     }
     Ok(())
 }
@@ -309,8 +330,8 @@ pub fn serialize_structure_crate_model_s3_monitoring_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3MonitoringConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_71) = &input.log_uri {
-        object.key("logUri").string(var_71.as_str());
+    if let Some(var_75) = &input.log_uri {
+        object.key("logUri").string(var_75.as_str());
     }
     Ok(())
 }
@@ -319,8 +340,8 @@ pub fn serialize_structure_crate_model_eks_info(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EksInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_72) = &input.namespace {
-        object.key("namespace").string(var_72.as_str());
+    if let Some(var_76) = &input.namespace {
+        object.key("namespace").string(var_76.as_str());
     }
     Ok(())
 }

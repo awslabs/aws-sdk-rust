@@ -81,8 +81,9 @@ impl InvokeEndpointAsyncOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeEndpointOutput {
-    /// <p>Includes the inference provided by the model.</p>
+    /// <p>Includes the inference provided by the model. </p>
     /// <p>For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    /// <p>If the explainer is activated, the body includes the explanations provided by the model. For more information, see the <b>Response section</b> under <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke the Endpoint</a> in the Developer Guide.</p>
     #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The MIME type of the inference returned in the response body.</p>
@@ -98,8 +99,9 @@ pub struct InvokeEndpointOutput {
     pub custom_attributes: std::option::Option<std::string::String>,
 }
 impl InvokeEndpointOutput {
-    /// <p>Includes the inference provided by the model.</p>
+    /// <p>Includes the inference provided by the model. </p>
     /// <p>For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    /// <p>If the explainer is activated, the body includes the explanations provided by the model. For more information, see the <b>Response section</b> under <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke the Endpoint</a> in the Developer Guide.</p>
     pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.body.as_ref()
     }
@@ -143,14 +145,16 @@ pub mod invoke_endpoint_output {
         pub(crate) custom_attributes: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Includes the inference provided by the model.</p>
+        /// <p>Includes the inference provided by the model. </p>
         /// <p>For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+        /// <p>If the explainer is activated, the body includes the explanations provided by the model. For more information, see the <b>Response section</b> under <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke the Endpoint</a> in the Developer Guide.</p>
         pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
             self.body = Some(input);
             self
         }
-        /// <p>Includes the inference provided by the model.</p>
+        /// <p>Includes the inference provided by the model. </p>
         /// <p>For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+        /// <p>If the explainer is activated, the body includes the explanations provided by the model. For more information, see the <b>Response section</b> under <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke the Endpoint</a> in the Developer Guide.</p>
         pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.body = input;
             self

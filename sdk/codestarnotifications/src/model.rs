@@ -54,23 +54,31 @@ impl AsRef<str> for DetailType {
     }
 }
 
-/// <p>Information about the SNS topics associated with a notification rule.</p>
+/// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
-    /// <p>The target type. Can be an Amazon SNS topic.</p>
+    /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
+    /// <ul>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     #[doc(hidden)]
     pub target_address: std::option::Option<std::string::String>,
 }
 impl Target {
-    /// <p>The target type. Can be an Amazon SNS topic.</p>
+    /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
+    /// <ul>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// </ul>
     pub fn target_type(&self) -> std::option::Option<&str> {
         self.target_type.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     pub fn target_address(&self) -> std::option::Option<&str> {
         self.target_address.as_deref()
     }
@@ -93,22 +101,30 @@ pub mod target {
         pub(crate) target_address: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The target type. Can be an Amazon SNS topic.</p>
+        /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
+        /// <ul>
+        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+        /// </ul>
         pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_type = Some(input.into());
             self
         }
-        /// <p>The target type. Can be an Amazon SNS topic.</p>
+        /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
+        /// <ul>
+        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+        /// </ul>
         pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
         pub fn target_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_address = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
         pub fn set_target_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -191,10 +207,14 @@ impl AsRef<str> for NotificationRuleStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetSummary {
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     #[doc(hidden)]
     pub target_address: std::option::Option<std::string::String>,
-    /// <p>The type of the target (for example, SNS).</p>
+    /// <p>The type of the target (for example, <code>SNS</code>).</p>
+    /// <ul>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
     /// <p>The status of the target.</p>
@@ -202,11 +222,15 @@ pub struct TargetSummary {
     pub target_status: std::option::Option<crate::model::TargetStatus>,
 }
 impl TargetSummary {
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     pub fn target_address(&self) -> std::option::Option<&str> {
         self.target_address.as_deref()
     }
-    /// <p>The type of the target (for example, SNS).</p>
+    /// <p>The type of the target (for example, <code>SNS</code>).</p>
+    /// <ul>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// </ul>
     pub fn target_type(&self) -> std::option::Option<&str> {
         self.target_type.as_deref()
     }
@@ -235,12 +259,12 @@ pub mod target_summary {
         pub(crate) target_status: std::option::Option<crate::model::TargetStatus>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
         pub fn target_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_address = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
         pub fn set_target_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -248,12 +272,20 @@ pub mod target_summary {
             self.target_address = input;
             self
         }
-        /// <p>The type of the target (for example, SNS).</p>
+        /// <p>The type of the target (for example, <code>SNS</code>).</p>
+        /// <ul>
+        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+        /// </ul>
         pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_type = Some(input.into());
             self
         }
-        /// <p>The type of the target (for example, SNS).</p>
+        /// <p>The type of the target (for example, <code>SNS</code>).</p>
+        /// <ul>
+        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+        /// </ul>
         pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_type = input;
             self
@@ -361,14 +393,14 @@ impl AsRef<str> for TargetStatus {
     }
 }
 
-/// <p>Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Amazon SNS topics as targets, you could specify a ListTargetsFilter Name as TargetType and a Value of SNS, and a Name of TARGET_STATUS and a Value of ACTIVE.</p>
+/// <p>Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Chatbot topics as targets, you could specify a ListTargetsFilter Name as <code>TargetType</code> and a Value of <code>SNS</code>, and a Name of <code>TARGET_STATUS</code> and a Value of <code>ACTIVE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListTargetsFilterName>,
-    /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
+    /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
@@ -377,7 +409,7 @@ impl ListTargetsFilter {
     pub fn name(&self) -> std::option::Option<&crate::model::ListTargetsFilterName> {
         self.name.as_ref()
     }
-    /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
+    /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -413,12 +445,12 @@ pub mod list_targets_filter {
             self.name = input;
             self
         }
-        /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
+        /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
+        /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -580,7 +612,7 @@ pub struct ListNotificationRulesFilter {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListNotificationRulesFilterName>,
-    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
@@ -589,7 +621,7 @@ impl ListNotificationRulesFilter {
     pub fn name(&self) -> std::option::Option<&crate::model::ListNotificationRulesFilterName> {
         self.name.as_ref()
     }
-    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -625,12 +657,12 @@ pub mod list_notification_rules_filter {
             self.name = input;
             self
         }
-        /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+        /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+        /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -718,7 +750,7 @@ impl AsRef<str> for ListNotificationRulesFilterName {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTypeSummary {
-    /// <p>The system-generated ID of the event.</p>
+    /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
     #[doc(hidden)]
     pub event_type_id: std::option::Option<std::string::String>,
     /// <p>The name of the service for which the event applies.</p>
@@ -732,7 +764,7 @@ pub struct EventTypeSummary {
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl EventTypeSummary {
-    /// <p>The system-generated ID of the event.</p>
+    /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
     pub fn event_type_id(&self) -> std::option::Option<&str> {
         self.event_type_id.as_deref()
     }
@@ -771,12 +803,12 @@ pub mod event_type_summary {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The system-generated ID of the event.</p>
+        /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
         pub fn event_type_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_type_id = Some(input.into());
             self
         }
-        /// <p>The system-generated ID of the event.</p>
+        /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
         pub fn set_event_type_id(
             mut self,
             input: std::option::Option<std::string::String>,

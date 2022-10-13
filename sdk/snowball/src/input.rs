@@ -530,7 +530,7 @@ pub mod create_cluster_input {
             self.role_arn = input;
             self
         }
-        /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+        /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
         /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -538,7 +538,7 @@ pub mod create_cluster_input {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+        /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
         /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -950,7 +950,7 @@ pub mod create_job_input {
             self.cluster_id = input;
             self
         }
-        /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+        /// <p>The type of Snow Family devices to use for this job. </p> <note>
         /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
         /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -960,7 +960,7 @@ pub mod create_job_input {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+        /// <p>The type of Snow Family devices to use for this job. </p> <note>
         /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
         /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -1201,11 +1201,13 @@ pub mod create_long_term_pricing_input {
             self.long_term_pricing_type = input;
             self
         }
+        /// <p>snowballty</p>
         /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
             self.is_long_term_pricing_auto_renew = Some(input);
             self
         }
+        /// <p>snowballty</p>
         /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
@@ -1214,12 +1216,12 @@ pub mod create_long_term_pricing_input {
             self.is_long_term_pricing_auto_renew = input;
             self
         }
-        /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+        /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+        /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -5123,10 +5125,11 @@ pub struct CreateLongTermPricingInput {
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
     #[doc(hidden)]
     pub long_term_pricing_type: std::option::Option<crate::model::LongTermPricingType>,
+    /// <p>snowballty</p>
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     #[doc(hidden)]
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
-    /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+    /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
     #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
 }
@@ -5137,11 +5140,12 @@ impl CreateLongTermPricingInput {
     ) -> std::option::Option<&crate::model::LongTermPricingType> {
         self.long_term_pricing_type.as_ref()
     }
+    /// <p>snowballty</p>
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
         self.is_long_term_pricing_auto_renew
     }
-    /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+    /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
     pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
@@ -5206,7 +5210,7 @@ pub struct CreateJobInput {
     /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -5289,7 +5293,7 @@ impl CreateJobInput {
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -5377,7 +5381,7 @@ pub struct CreateClusterInput {
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+    /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -5443,7 +5447,7 @@ impl CreateClusterInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+    /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>

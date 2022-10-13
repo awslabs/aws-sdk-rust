@@ -5035,6 +5035,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainEntry {
     }
 }
 
+/// Operation shape for `UpdateInstanceMetadataOptions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_instance_metadata_options`](crate::client::Client::update_instance_metadata_options).
+///
+/// See [`crate::client::fluent_builders::UpdateInstanceMetadataOptions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateInstanceMetadataOptions {
+    _private: (),
+}
+impl UpdateInstanceMetadataOptions {
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceMetadataOptionsInput`](crate::input::UpdateInstanceMetadataOptionsInput).
+    pub fn builder() -> crate::input::update_instance_metadata_options_input::Builder {
+        crate::input::update_instance_metadata_options_input::Builder::default()
+    }
+    /// Creates a new `UpdateInstanceMetadataOptions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceMetadataOptions {
+    type Output = std::result::Result<
+        crate::output::UpdateInstanceMetadataOptionsOutput,
+        crate::error::UpdateInstanceMetadataOptionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_instance_metadata_options_error(response)
+        } else {
+            crate::operation_deser::parse_update_instance_metadata_options_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateLoadBalancerAttribute`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

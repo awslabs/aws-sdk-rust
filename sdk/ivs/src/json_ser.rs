@@ -79,6 +79,12 @@ pub fn serialize_structure_crate_input_create_recording_configuration_input(
     if let Some(var_17) = &input.name {
         object.key("name").string(var_17.as_str());
     }
+    if input.recording_reconnect_window_seconds != 0 {
+        object.key("recordingReconnectWindowSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.recording_reconnect_window_seconds).into()),
+        );
+    }
     if let Some(var_18) = &input.tags {
         let mut object_19 = object.key("tags").start_object();
         for (key_20, value_21) in var_18 {

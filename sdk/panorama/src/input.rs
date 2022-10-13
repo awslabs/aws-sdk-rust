@@ -3595,6 +3595,11 @@ pub mod list_devices_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) sort_by: std::option::Option<crate::model::ListDevicesSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) name_filter: std::option::Option<std::string::String>,
+        pub(crate) device_aggregated_status_filter:
+            std::option::Option<crate::model::DeviceAggregatedStatus>,
     }
     impl Builder {
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -3617,6 +3622,58 @@ pub mod list_devices_input {
             self.max_results = input;
             self
         }
+        /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+        pub fn sort_by(mut self, input: crate::model::ListDevicesSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ListDevicesSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>Filter based on device's name. Prefixes supported.</p>
+        pub fn name_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_filter = Some(input.into());
+            self
+        }
+        /// <p>Filter based on device's name. Prefixes supported.</p>
+        pub fn set_name_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name_filter = input;
+            self
+        }
+        /// <p>Filter based on a device's status.</p>
+        pub fn device_aggregated_status_filter(
+            mut self,
+            input: crate::model::DeviceAggregatedStatus,
+        ) -> Self {
+            self.device_aggregated_status_filter = Some(input);
+            self
+        }
+        /// <p>Filter based on a device's status.</p>
+        pub fn set_device_aggregated_status_filter(
+            mut self,
+            input: std::option::Option<crate::model::DeviceAggregatedStatus>,
+        ) -> Self {
+            self.device_aggregated_status_filter = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDevicesInput`](crate::input::ListDevicesInput).
         pub fn build(
             self,
@@ -3625,6 +3682,10 @@ pub mod list_devices_input {
             Ok(crate::input::ListDevicesInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                name_filter: self.name_filter,
+                device_aggregated_status_filter: self.device_aggregated_status_filter,
             })
         }
     }
@@ -3664,6 +3725,21 @@ impl ListDevicesInput {
                     query.push_kv(
                         "MaxResults",
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
+                }
+                if let Some(inner_29) = &_input.sort_by {
+                    query.push_kv("SortBy", &aws_smithy_http::query::fmt_string(&inner_29));
+                }
+                if let Some(inner_30) = &_input.sort_order {
+                    query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_30));
+                }
+                if let Some(inner_31) = &_input.name_filter {
+                    query.push_kv("NameFilter", &aws_smithy_http::query::fmt_string(&inner_31));
+                }
+                if let Some(inner_32) = &_input.device_aggregated_status_filter {
+                    query.push_kv(
+                        "DeviceAggregatedStatusFilter",
+                        &aws_smithy_http::query::fmt_string(&inner_32),
                     );
                 }
                 Ok(())
@@ -3822,11 +3898,11 @@ impl ListDevicesJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_29) = &_input.device_id {
-                    query.push_kv("DeviceId", &aws_smithy_http::query::fmt_string(&inner_29));
+                if let Some(inner_33) = &_input.device_id {
+                    query.push_kv("DeviceId", &aws_smithy_http::query::fmt_string(&inner_33));
                 }
-                if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                if let Some(inner_34) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3980,8 +4056,8 @@ impl ListNodeFromTemplateJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_31) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                if let Some(inner_35) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4204,35 +4280,35 @@ impl ListNodesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_32) = &_input.category {
-                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_32));
+                if let Some(inner_36) = &_input.category {
+                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_36));
                 }
-                if let Some(inner_33) = &_input.owner_account {
+                if let Some(inner_37) = &_input.owner_account {
                     query.push_kv(
                         "ownerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_33),
+                        &aws_smithy_http::query::fmt_string(&inner_37),
                     );
                 }
-                if let Some(inner_34) = &_input.package_name {
+                if let Some(inner_38) = &_input.package_name {
                     query.push_kv(
                         "packageName",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
+                        &aws_smithy_http::query::fmt_string(&inner_38),
                     );
                 }
-                if let Some(inner_35) = &_input.package_version {
+                if let Some(inner_39) = &_input.package_version {
                     query.push_kv(
                         "packageVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_35),
+                        &aws_smithy_http::query::fmt_string(&inner_39),
                     );
                 }
-                if let Some(inner_36) = &_input.patch_version {
+                if let Some(inner_40) = &_input.patch_version {
                     query.push_kv(
                         "patchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_36),
+                        &aws_smithy_http::query::fmt_string(&inner_40),
                     );
                 }
-                if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                if let Some(inner_41) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4382,8 +4458,8 @@ impl ListPackageImportJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_38) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                if let Some(inner_42) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_42));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4541,8 +4617,8 @@ impl ListPackagesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_39) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_39));
+                if let Some(inner_43) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                 }
                 Ok(())
             }
@@ -4668,14 +4744,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.resource_arn;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_44 = &_input.resource_arn;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5058,42 +5134,42 @@ impl RegisterPackageVersionInput {
                 _input: &crate::input::RegisterPackageVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.package_id;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_45 = &_input.package_id;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_id = aws_smithy_http::label::fmt_string(input_41, false);
+                let package_id = aws_smithy_http::label::fmt_string(input_45, false);
                 if package_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_42 = &_input.package_version;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_46 = &_input.package_version;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_version = aws_smithy_http::label::fmt_string(input_42, false);
+                let package_version = aws_smithy_http::label::fmt_string(input_46, false);
                 if package_version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_version",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_43 = &_input.patch_version;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_47 = &_input.patch_version;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "patch_version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let patch_version = aws_smithy_http::label::fmt_string(input_43, false);
+                let patch_version = aws_smithy_http::label::fmt_string(input_47, false);
                 if patch_version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "patch_version",
@@ -5252,14 +5328,14 @@ impl RemoveApplicationInstanceInput {
                 _input: &crate::input::RemoveApplicationInstanceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_44 = &_input.application_instance_id;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_48 = &_input.application_instance_id;
+                let input_48 = input_48.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_instance_id = aws_smithy_http::label::fmt_string(input_44, false);
+                let application_instance_id = aws_smithy_http::label::fmt_string(input_48, false);
                 if application_instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
@@ -5424,14 +5500,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.resource_arn;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_49 = &_input.resource_arn;
+                let input_49 = input_49.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_45, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_49, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5598,14 +5674,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_46 = &_input.resource_arn;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_50 = &_input.resource_arn;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_50, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5621,9 +5697,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_47) = &_input.tag_keys {
-                    for inner_48 in inner_47 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
+                if let Some(inner_51) = &_input.tag_keys {
+                    for inner_52 in inner_51 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_52));
                     }
                 }
                 Ok(())
@@ -5762,14 +5838,14 @@ impl UpdateDeviceMetadataInput {
                 _input: &crate::input::UpdateDeviceMetadataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_49 = &_input.device_id;
-                let input_49 = input_49.as_ref().ok_or(
+                let input_53 = &_input.device_id;
+                let input_53 = input_53.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let device_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let device_id = aws_smithy_http::label::fmt_string(input_53, false);
                 if device_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
@@ -6317,6 +6393,18 @@ pub struct ListDevicesInput {
     /// <p>The maximum number of devices to return in one page of results.</p>
     #[doc(hidden)]
     pub max_results: i32,
+    /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::ListDevicesSortBy>,
+    /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>Filter based on device's name. Prefixes supported.</p>
+    #[doc(hidden)]
+    pub name_filter: std::option::Option<std::string::String>,
+    /// <p>Filter based on a device's status.</p>
+    #[doc(hidden)]
+    pub device_aggregated_status_filter: std::option::Option<crate::model::DeviceAggregatedStatus>,
 }
 impl ListDevicesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -6327,12 +6415,37 @@ impl ListDevicesInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
+    /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListDevicesSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>Filter based on device's name. Prefixes supported.</p>
+    pub fn name_filter(&self) -> std::option::Option<&str> {
+        self.name_filter.as_deref()
+    }
+    /// <p>Filter based on a device's status.</p>
+    pub fn device_aggregated_status_filter(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceAggregatedStatus> {
+        self.device_aggregated_status_filter.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("sort_by", &self.sort_by);
+        formatter.field("sort_order", &self.sort_order);
+        formatter.field("name_filter", &self.name_filter);
+        formatter.field(
+            "device_aggregated_status_filter",
+            &self.device_aggregated_status_filter,
+        );
         formatter.finish()
     }
 }

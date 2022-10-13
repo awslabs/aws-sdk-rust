@@ -126,7 +126,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::ExportCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::ExportCertificate::set_certificate_arn): <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>  <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    ///   - [`passphrase(Blob)`](crate::client::fluent_builders::ExportCertificate::passphrase) / [`set_passphrase(Option<Blob>)`](crate::client::fluent_builders::ExportCertificate::set_passphrase): <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>  <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+    ///   - [`passphrase(Blob)`](crate::client::fluent_builders::ExportCertificate::passphrase) / [`set_passphrase(Option<Blob>)`](crate::client::fluent_builders::ExportCertificate::set_passphrase): <p>Passphrase to associate with the encrypted exported private key. </p> <note>   <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>  </note>  <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>  <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
     /// - On success, responds with [`ExportCertificateOutput`](crate::output::ExportCertificateOutput) with field(s):
     ///   - [`certificate(Option<String>)`](crate::output::ExportCertificateOutput::certificate): <p>The base64 PEM-encoded certificate.</p>
     ///   - [`certificate_chain(Option<String>)`](crate::output::ExportCertificateOutput::certificate_chain): <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
@@ -178,6 +178,8 @@ impl Client {
     ///   - [`includes(Filters)`](crate::client::fluent_builders::ListCertificates::includes) / [`set_includes(Option<Filters>)`](crate::client::fluent_builders::ListCertificates::set_includes): <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCertificates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCertificates::set_next_token): <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListCertificates::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListCertificates::set_max_items): <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListCertificates::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListCertificates::set_sort_by): <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListCertificates::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListCertificates::set_sort_order): <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
     /// - On success, responds with [`ListCertificatesOutput`](crate::output::ListCertificatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListCertificatesOutput::next_token): <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     ///   - [`certificate_summary_list(Option<Vec<CertificateSummary>>)`](crate::output::ListCertificatesOutput::certificate_summary_list): <p>A list of ACM certificates.</p>
@@ -230,13 +232,13 @@ impl Client {
     /// Constructs a fluent builder for the [`RequestCertificate`](crate::client::fluent_builders::RequestCertificate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_domain_name): <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>  <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_domain_name): <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>  <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
     ///   - [`validation_method(ValidationMethod)`](crate::client::fluent_builders::RequestCertificate::validation_method) / [`set_validation_method(Option<ValidationMethod>)`](crate::client::fluent_builders::RequestCertificate::set_validation_method): <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation. </p>
     ///   - [`subject_alternative_names(Vec<String>)`](crate::client::fluent_builders::RequestCertificate::subject_alternative_names) / [`set_subject_alternative_names(Option<Vec<String>>)`](crate::client::fluent_builders::RequestCertificate::set_subject_alternative_names): <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>  <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p>  <ul>   <li> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p> </li>   <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li>   <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li>  </ul>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_idempotency_token): <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
     ///   - [`domain_validation_options(Vec<DomainValidationOption>)`](crate::client::fluent_builders::RequestCertificate::domain_validation_options) / [`set_domain_validation_options(Option<Vec<DomainValidationOption>>)`](crate::client::fluent_builders::RequestCertificate::set_domain_validation_options): <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
     ///   - [`options(CertificateOptions)`](crate::client::fluent_builders::RequestCertificate::options) / [`set_options(Option<CertificateOptions>)`](crate::client::fluent_builders::RequestCertificate::set_options): <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
-    ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>  <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
+    ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>  <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RequestCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RequestCertificate::set_tags): <p>One or more resource tags to associate with the certificate.</p>
     /// - On success, responds with [`RequestCertificateOutput`](crate::output::RequestCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::RequestCertificateOutput::certificate_arn): <p>String that contains the ARN of the issued certificate. This must be of the form:</p>  <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -467,6 +469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCertificate`.
     ///
     /// <p>Returns detailed metadata about the specified ACM certificate.</p>
+    /// <p>If you have just created a certificate using the <code>RequestCertificate</code> action, there is a delay of several seconds before you can retrieve information about it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCertificate {
         handle: std::sync::Arc<super::Handle>,
@@ -630,13 +633,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_arn(input);
             self
         }
-        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
+        /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+        /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
+        /// </note>
+        /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
         /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
         pub fn passphrase(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.passphrase(input);
             self
         }
-        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
+        /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+        /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
+        /// </note>
+        /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
         /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
         pub fn set_passphrase(
             mut self,
@@ -799,7 +808,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportCertificate`.
     ///
-    /// <p>Imports a certificate into Amazon Web Services Certificate Manager (ACM) to use with services that are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated services</a> allow only certificate types and keys they support to be associated with their resources. Further, their support differs depending on whether the certificate is imported into IAM or into ACM. For more information, see the documentation for each service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p> <note>
+    /// <p>Imports a certificate into Certificate Manager (ACM) to use with services that are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated services</a> allow only certificate types and keys they support to be associated with their resources. Further, their support differs depending on whether the certificate is imported into IAM or into ACM. For more information, see the documentation for each service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the <i>Certificate Manager User Guide</i>. </p> <note>
     /// <p>ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for certificates that you import.</p>
     /// </note>
     /// <p>Note the following guidelines when importing third party certificates:</p>
@@ -1071,6 +1080,29 @@ pub mod fluent_builders {
         /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
+            self
+        }
+        /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
     }
@@ -1356,7 +1388,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RenewCertificate`.
     ///
-    /// <p>Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this operation. In order to renew your ACM PCA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the ACM User Guide.</p>
+    /// <p>Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this operation. In order to renew your ACM Private CA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the ACM User Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenewCertificate {
         handle: std::sync::Arc<super::Handle>,
@@ -1442,8 +1474,9 @@ pub mod fluent_builders {
     ///
     /// <p>Requests an ACM certificate for use with other Amazon Web Services services. To request an ACM certificate, you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code> parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p>
     /// <p>If you are requesting a private certificate, domain validation is not required. If you are requesting a public certificate, each domain name that you specify must be validated to verify that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email validation</a>. We recommend that you use DNS validation. ACM issues public certificates after receiving approval from the domain owner. </p> <note>
-    /// <p>ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC 6125 specification of the certificate validation process. first checks for a subject alternative name, and, if it finds one, ignores the common name (CN)</p>
+    /// <p>ACM behavior differs from the <a href="https://datatracker.ietf.org/doc/html/rfc6125#appendix-B.2">RFC 6125</a> specification of the certificate validation process. ACM first checks for a Subject Alternative Name, and, if it finds one, ignores the common name (CN).</p>
     /// </note>
+    /// <p>After successful completion of the <code>RequestCertificate</code> action, there is a delay of several seconds before you can retrieve information about the new certificate.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestCertificate {
         handle: std::sync::Arc<super::Handle>,
@@ -1507,14 +1540,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
-        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+        /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
+        /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
-        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+        /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
+        /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -1607,13 +1640,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_options(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
         /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_authority_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private Certificate Authority</a> user guide. The ARN must have the following form: </p>
         /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_certificate_authority_arn(
             mut self,

@@ -25,12 +25,12 @@ pub mod create_domain_input {
             self.name = input;
             self
         }
-        /// <p>A brief description of this domain.</p>
+        /// <p>A brief description of the domain.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A brief description of this domain.</p>
+        /// <p>A brief description of the domain.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1497,16 +1497,6 @@ impl EvaluateSessionInput {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::EvaluateSessionInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.domain_id {
-                    query.push_kv("domainId", &aws_smithy_http::query::fmt_string(&inner_1));
-                }
-                Ok(())
-            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::EvaluateSessionInput,
@@ -1515,7 +1505,6 @@ impl EvaluateSessionInput {
             {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1608,12 +1597,12 @@ pub mod list_domains_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+        /// <p>The maximum number of domains to list per API call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+        /// <p>The maximum number of domains to list per API call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1663,22 +1652,6 @@ impl ListDomainsInput {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDomainsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
-                    );
-                }
-                if let Some(inner_3) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
-                }
-                Ok(())
-            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListDomainsInput,
@@ -1687,7 +1660,6 @@ impl ListDomainsInput {
             {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1864,25 +1836,6 @@ impl ListFraudsterRegistrationJobsInput {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListFraudsterRegistrationJobsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_4) = &_input.job_status {
-                    query.push_kv("jobStatus", &aws_smithy_http::query::fmt_string(&inner_4));
-                }
-                if let Some(inner_5) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_5).encode(),
-                    );
-                }
-                if let Some(inner_6) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_6));
-                }
-                Ok(())
-            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListFraudsterRegistrationJobsInput,
@@ -1891,7 +1844,6 @@ impl ListFraudsterRegistrationJobsInput {
             {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2067,25 +2019,6 @@ impl ListSpeakerEnrollmentJobsInput {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListSpeakerEnrollmentJobsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_7) = &_input.job_status {
-                    query.push_kv("jobStatus", &aws_smithy_http::query::fmt_string(&inner_7));
-                }
-                if let Some(inner_8) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                    );
-                }
-                if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
-                }
-                Ok(())
-            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListSpeakerEnrollmentJobsInput,
@@ -2094,7 +2027,6 @@ impl ListSpeakerEnrollmentJobsInput {
             {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2256,22 +2188,6 @@ impl ListSpeakersInput {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListSpeakersInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_10) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_10).encode(),
-                    );
-                }
-                if let Some(inner_11) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
-                }
-                Ok(())
-            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListSpeakersInput,
@@ -2280,7 +2196,6 @@ impl ListSpeakersInput {
             {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2721,12 +2636,12 @@ pub mod start_fraudster_registration_job_input {
             self.data_access_role_arn = input;
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
         pub fn registration_config(mut self, input: crate::model::RegistrationConfig) -> Self {
             self.registration_config = Some(input);
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
         pub fn set_registration_config(
             mut self,
             input: std::option::Option<crate::model::RegistrationConfig>,
@@ -2939,12 +2854,12 @@ pub mod start_speaker_enrollment_job_input {
             self.domain_id = input;
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3366,18 +3281,6 @@ impl UntagResourceInput {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.tag_keys {
-                    for inner_13 in inner_12 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_13));
-                    }
-                }
-                Ok(())
-            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
@@ -3386,7 +3289,6 @@ impl UntagResourceInput {
             {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3502,17 +3404,17 @@ pub mod update_domain_input {
             self.name = input;
             self
         }
-        /// <p>A brief description about this domain.</p>
+        /// <p>A brief description of the domain.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A brief description about this domain.</p>
+        /// <p>A brief description of the domain.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -3520,7 +3422,7 @@ pub mod update_domain_input {
             self.server_side_encryption_configuration = Some(input);
             self
         }
-        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -3658,6 +3560,118 @@ impl UpdateDomainInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDomainsInput {
+    /// <p>The maximum number of domains to list per API call.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDomainsInput {
+    /// <p>The maximum number of domains to list per API call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListDomainsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDomainsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDomainInput {
+    /// <p>The name of the domain.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A brief description of the domain.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
+    #[doc(hidden)]
+    pub server_side_encryption_configuration:
+        std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>A list of tags you want added to the domain.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDomainInput {
+    /// <p>The name of the domain.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A brief description of the domain.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A list of tags you want added to the domain.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateDomainInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDomainInput");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "server_side_encryption_configuration",
+            &self.server_side_encryption_configuration,
+        );
+        formatter.field("client_token", &self.client_token);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDomainInput {
+    /// <p>The identifier of the domain you want to delete.</p>
+    #[doc(hidden)]
+    pub domain_id: std::option::Option<std::string::String>,
+}
+impl DeleteDomainInput {
+    /// <p>The identifier of the domain you want to delete.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteDomainInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDomainInput");
+        formatter.field("domain_id", &self.domain_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainInput {
     /// <p>The identifier of the domain to be updated.</p>
     #[doc(hidden)]
@@ -3665,10 +3679,10 @@ pub struct UpdateDomainInput {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A brief description about this domain.</p>
+    /// <p>A brief description of the domain.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
     #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -3682,11 +3696,11 @@ impl UpdateDomainInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A brief description about this domain.</p>
+    /// <p>A brief description of the domain.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
@@ -3703,6 +3717,28 @@ impl std::fmt::Debug for UpdateDomainInput {
             "server_side_encryption_configuration",
             &self.server_side_encryption_configuration,
         );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDomainInput {
+    /// <p>The identifier of the domain you are describing.</p>
+    #[doc(hidden)]
+    pub domain_id: std::option::Option<std::string::String>,
+}
+impl DescribeDomainInput {
+    /// <p>The identifier of the domain you are describing.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeDomainInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDomainInput");
+        formatter.field("domain_id", &self.domain_id);
         formatter.finish()
     }
 }
@@ -3780,7 +3816,7 @@ pub struct StartSpeakerEnrollmentJobInput {
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
@@ -3806,7 +3842,7 @@ impl StartSpeakerEnrollmentJobInput {
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -3853,7 +3889,7 @@ pub struct StartFraudsterRegistrationJobInput {
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     #[doc(hidden)]
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
@@ -3880,7 +3916,7 @@ impl StartFraudsterRegistrationJobInput {
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
         self.registration_config.as_ref()
     }
@@ -4092,36 +4128,6 @@ impl std::fmt::Debug for ListFraudsterRegistrationJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDomainsInput {
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
-    #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListDomainsInput {
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
-    pub fn max_results(&self) -> std::option::Option<i32> {
-        self.max_results
-    }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
     #[doc(hidden)]
@@ -4272,28 +4278,6 @@ impl std::fmt::Debug for DescribeFraudsterInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeDomainInput {
-    /// <p>The identifier of the domain you are describing.</p>
-    #[doc(hidden)]
-    pub domain_id: std::option::Option<std::string::String>,
-}
-impl DescribeDomainInput {
-    /// <p>The identifier of the domain you are describing.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
-        self.domain_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSpeakerInput {
     /// <p>The identifier of the domain containing the speaker.</p>
     #[doc(hidden)]
@@ -4347,88 +4331,6 @@ impl std::fmt::Debug for DeleteFraudsterInput {
         let mut formatter = f.debug_struct("DeleteFraudsterInput");
         formatter.field("domain_id", &self.domain_id);
         formatter.field("fraudster_id", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDomainInput {
-    /// <p>The identifier of the domain you want to delete.</p>
-    #[doc(hidden)]
-    pub domain_id: std::option::Option<std::string::String>,
-}
-impl DeleteDomainInput {
-    /// <p>The identifier of the domain you want to delete.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
-        self.domain_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateDomainInput {
-    /// <p>The name of the domain.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>A brief description of this domain.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
-    #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
-    #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>A list of tags you want added to the domain.</p>
-    #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-}
-impl CreateDomainInput {
-    /// <p>The name of the domain.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>A brief description of this domain.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
-        self.description.as_deref()
-    }
-    /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
-        self.server_side_encryption_configuration.as_ref()
-    }
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
-    /// <p>A list of tags you want added to the domain.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
-        self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainInput");
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

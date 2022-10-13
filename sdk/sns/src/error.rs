@@ -932,6 +932,71 @@ impl FilterPolicyLimitExceededException {
     }
 }
 
+/// <p>Indicates that a parameter in the request is invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidationException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ValidationException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ValidationException")?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ValidationException {}
+/// See [`ValidationException`](crate::error::ValidationException).
+pub mod validation_exception {
+
+    /// A builder for [`ValidationException`](crate::error::ValidationException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
+        pub fn build(self) -> crate::error::ValidationException {
+            crate::error::ValidationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ValidationException {
+    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
+    pub fn builder() -> crate::error::validation_exception::Builder {
+        crate::error::validation_exception::Builder::default()
+    }
+}
+
 /// <p>The batch request contains more entries than permissible.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -956,8 +1021,8 @@ impl TooManyEntriesInBatchRequestException {
 impl std::fmt::Display for TooManyEntriesInBatchRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyEntriesInBatchRequestException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -1021,8 +1086,8 @@ impl PlatformApplicationDisabledException {
 impl std::fmt::Display for PlatformApplicationDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PlatformApplicationDisabledException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -1086,8 +1151,8 @@ impl KmsThrottlingException {
 impl std::fmt::Display for KmsThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsThrottlingException [KMSThrottlingException]")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -1151,8 +1216,8 @@ impl KmsOptInRequired {
 impl std::fmt::Display for KmsOptInRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsOptInRequired [KMSOptInRequired]")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -1216,8 +1281,8 @@ impl KmsNotFoundException {
 impl std::fmt::Display for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsNotFoundException [KMSNotFoundException]")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -1281,8 +1346,8 @@ impl KmsInvalidStateException {
 impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -1346,8 +1411,8 @@ impl KmsDisabledException {
 impl std::fmt::Display for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsDisabledException [KMSDisabledException]")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -1411,8 +1476,8 @@ impl KmsAccessDeniedException {
 impl std::fmt::Display for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsAccessDeniedException [KMSAccessDeniedException]")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -1476,8 +1541,8 @@ impl InvalidParameterValueException {
 impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterValueException")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -1541,8 +1606,8 @@ impl InvalidBatchEntryIdException {
 impl std::fmt::Display for InvalidBatchEntryIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBatchEntryIdException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -1606,8 +1671,8 @@ impl EndpointDisabledException {
 impl std::fmt::Display for EndpointDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointDisabledException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -1671,8 +1736,8 @@ impl EmptyBatchRequestException {
 impl std::fmt::Display for EmptyBatchRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EmptyBatchRequestException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -1736,8 +1801,8 @@ impl BatchRequestTooLongException {
 impl std::fmt::Display for BatchRequestTooLongException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchRequestTooLongException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -1801,8 +1866,8 @@ impl BatchEntryIdsNotDistinctException {
 impl std::fmt::Display for BatchEntryIdsNotDistinctException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchEntryIdsNotDistinctException")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -1839,71 +1904,6 @@ impl BatchEntryIdsNotDistinctException {
     /// Creates a new builder-style object to manufacture [`BatchEntryIdsNotDistinctException`](crate::error::BatchEntryIdsNotDistinctException).
     pub fn builder() -> crate::error::batch_entry_ids_not_distinct_exception::Builder {
         crate::error::batch_entry_ids_not_distinct_exception::Builder::default()
-    }
-}
-
-/// <p>Indicates that a parameter in the request is invalid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ValidationException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ValidationException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ValidationException")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ValidationException {}
-/// See [`ValidationException`](crate::error::ValidationException).
-pub mod validation_exception {
-
-    /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
-        pub fn build(self) -> crate::error::ValidationException {
-            crate::error::ValidationException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ValidationException {
-    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
-    pub fn builder() -> crate::error::validation_exception::Builder {
-        crate::error::validation_exception::Builder::default()
     }
 }
 
@@ -3615,6 +3615,143 @@ impl std::error::Error for DeleteTopicError {
             DeleteTopicErrorKind::StaleTagException(_inner) => Some(_inner),
             DeleteTopicErrorKind::TagPolicyException(_inner) => Some(_inner),
             DeleteTopicErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetDataProtectionPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDataProtectionPolicyError {
+    /// Kind of error that occurred.
+    pub kind: GetDataProtectionPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetDataProtectionPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDataProtectionPolicyErrorKind {
+    /// <p>Indicates that the user has been denied access to the requested resource.</p>
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    /// <p>Indicates an internal service error.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    /// <p>Indicates that the requested resource does not exist.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetDataProtectionPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDataProtectionPolicyErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            GetDataProtectionPolicyErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            GetDataProtectionPolicyErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetDataProtectionPolicyErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            GetDataProtectionPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDataProtectionPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDataProtectionPolicyError {
+    fn code(&self) -> Option<&str> {
+        GetDataProtectionPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDataProtectionPolicyError {
+    /// Creates a new `GetDataProtectionPolicyError`.
+    pub fn new(kind: GetDataProtectionPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDataProtectionPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDataProtectionPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDataProtectionPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDataProtectionPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDataProtectionPolicyErrorKind::AuthorizationErrorException`.
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataProtectionPolicyErrorKind::AuthorizationErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataProtectionPolicyErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataProtectionPolicyErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataProtectionPolicyErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataProtectionPolicyErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataProtectionPolicyErrorKind::InvalidSecurityException`.
+    pub fn is_invalid_security_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataProtectionPolicyErrorKind::InvalidSecurityException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataProtectionPolicyErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataProtectionPolicyErrorKind::NotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetDataProtectionPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDataProtectionPolicyErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            GetDataProtectionPolicyErrorKind::InternalErrorException(_inner) => Some(_inner),
+            GetDataProtectionPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetDataProtectionPolicyErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            GetDataProtectionPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDataProtectionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5707,6 +5844,8 @@ pub enum PublishErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Exception error indicating platform application disabled.</p>
     PlatformApplicationDisabledException(crate::error::PlatformApplicationDisabledException),
+    /// <p>Indicates that a parameter in the request is invalid.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5727,6 +5866,7 @@ impl std::fmt::Display for PublishError {
             PublishErrorKind::KmsThrottlingException(_inner) => _inner.fmt(f),
             PublishErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             PublishErrorKind::PlatformApplicationDisabledException(_inner) => _inner.fmt(f),
+            PublishErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PublishErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5843,6 +5983,10 @@ impl PublishError {
             PublishErrorKind::PlatformApplicationDisabledException(_)
         )
     }
+    /// Returns `true` if the error kind is `PublishErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for PublishError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5861,6 +6005,7 @@ impl std::error::Error for PublishError {
             PublishErrorKind::KmsThrottlingException(_inner) => Some(_inner),
             PublishErrorKind::NotFoundException(_inner) => Some(_inner),
             PublishErrorKind::PlatformApplicationDisabledException(_inner) => Some(_inner),
+            PublishErrorKind::ValidationException(_inner) => Some(_inner),
             PublishErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5917,6 +6062,8 @@ pub enum PublishBatchErrorKind {
     PlatformApplicationDisabledException(crate::error::PlatformApplicationDisabledException),
     /// <p>The batch request contains more entries than permissible.</p>
     TooManyEntriesInBatchRequestException(crate::error::TooManyEntriesInBatchRequestException),
+    /// <p>Indicates that a parameter in the request is invalid.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5942,6 +6089,7 @@ impl std::fmt::Display for PublishBatchError {
             PublishBatchErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             PublishBatchErrorKind::PlatformApplicationDisabledException(_inner) => _inner.fmt(f),
             PublishBatchErrorKind::TooManyEntriesInBatchRequestException(_inner) => _inner.fmt(f),
+            PublishBatchErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PublishBatchErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6111,6 +6259,10 @@ impl PublishBatchError {
             PublishBatchErrorKind::TooManyEntriesInBatchRequestException(_)
         )
     }
+    /// Returns `true` if the error kind is `PublishBatchErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, PublishBatchErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for PublishBatchError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6134,7 +6286,145 @@ impl std::error::Error for PublishBatchError {
             PublishBatchErrorKind::NotFoundException(_inner) => Some(_inner),
             PublishBatchErrorKind::PlatformApplicationDisabledException(_inner) => Some(_inner),
             PublishBatchErrorKind::TooManyEntriesInBatchRequestException(_inner) => Some(_inner),
+            PublishBatchErrorKind::ValidationException(_inner) => Some(_inner),
             PublishBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `PutDataProtectionPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutDataProtectionPolicyError {
+    /// Kind of error that occurred.
+    pub kind: PutDataProtectionPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutDataProtectionPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutDataProtectionPolicyErrorKind {
+    /// <p>Indicates that the user has been denied access to the requested resource.</p>
+    AuthorizationErrorException(crate::error::AuthorizationErrorException),
+    /// <p>Indicates an internal service error.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
+    InvalidSecurityException(crate::error::InvalidSecurityException),
+    /// <p>Indicates that the requested resource does not exist.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutDataProtectionPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutDataProtectionPolicyErrorKind::AuthorizationErrorException(_inner) => _inner.fmt(f),
+            PutDataProtectionPolicyErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            PutDataProtectionPolicyErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PutDataProtectionPolicyErrorKind::InvalidSecurityException(_inner) => _inner.fmt(f),
+            PutDataProtectionPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutDataProtectionPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutDataProtectionPolicyError {
+    fn code(&self) -> Option<&str> {
+        PutDataProtectionPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutDataProtectionPolicyError {
+    /// Creates a new `PutDataProtectionPolicyError`.
+    pub fn new(kind: PutDataProtectionPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutDataProtectionPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutDataProtectionPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutDataProtectionPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutDataProtectionPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutDataProtectionPolicyErrorKind::AuthorizationErrorException`.
+    pub fn is_authorization_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDataProtectionPolicyErrorKind::AuthorizationErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutDataProtectionPolicyErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDataProtectionPolicyErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutDataProtectionPolicyErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDataProtectionPolicyErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutDataProtectionPolicyErrorKind::InvalidSecurityException`.
+    pub fn is_invalid_security_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDataProtectionPolicyErrorKind::InvalidSecurityException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutDataProtectionPolicyErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDataProtectionPolicyErrorKind::NotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for PutDataProtectionPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutDataProtectionPolicyErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
+            PutDataProtectionPolicyErrorKind::InternalErrorException(_inner) => Some(_inner),
+            PutDataProtectionPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PutDataProtectionPolicyErrorKind::InvalidSecurityException(_inner) => Some(_inner),
+            PutDataProtectionPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutDataProtectionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -7,12 +7,12 @@ pub struct ValidationException {
     /// <p>The message that informs you about what was invalid about the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p>The message that informs you about what the exception was.</p>
+    /// <p>The unique identifier for the resource that couldn't be found.</p>
     #[doc(hidden)]
     pub exception_cause: std::option::Option<crate::model::ExceptionCause>,
 }
 impl ValidationException {
-    /// <p>The message that informs you about what the exception was.</p>
+    /// <p>The unique identifier for the resource that couldn't be found.</p>
     pub fn exception_cause(&self) -> std::option::Option<&crate::model::ExceptionCause> {
         self.exception_cause.as_ref()
     }
@@ -61,12 +61,12 @@ pub mod validation_exception {
             self.message = input;
             self
         }
-        /// <p>The message that informs you about what the exception was.</p>
+        /// <p>The unique identifier for the resource that couldn't be found.</p>
         pub fn exception_cause(mut self, input: crate::model::ExceptionCause) -> Self {
             self.exception_cause = Some(input);
             self
         }
-        /// <p>The message that informs you about what the exception was.</p>
+        /// <p>The unique identifier for the resource that couldn't be found.</p>
         pub fn set_exception_cause(
             mut self,
             input: std::option::Option<crate::model::ExceptionCause>,
@@ -265,11 +265,11 @@ impl ResourceNotFoundException {
     }
 }
 
-/// An exception occurred with the service.
+/// <p>An exception occurred with the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
-    /// The message identifying the service exception that occurred.
+    /// <p>The message identifying the service exception that occurred.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -305,12 +305,12 @@ pub mod internal_server_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The message identifying the service exception that occurred.
+        /// <p>The message identifying the service exception that occurred.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// The message identifying the service exception that occurred.
+        /// <p>The message identifying the service exception that occurred.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -509,10 +509,10 @@ impl AccessDeniedException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLimitExceededException {
-    /// <p>The name of the quota that was exceeded.</p>
+    /// <p>The name of the limit that was reached.</p>
     #[doc(hidden)]
     pub limit_name: std::option::Option<crate::model::LimitName>,
-    /// <p>The maximum value for the service-specific limit.</p>
+    /// <p>The value of the exceeded limit.</p>
     #[doc(hidden)]
     pub limit_value: f64,
     /// <p>The request has exceeded the quotas imposed by the service.</p>
@@ -520,11 +520,11 @@ pub struct ServiceLimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceLimitExceededException {
-    /// <p>The name of the quota that was exceeded.</p>
+    /// <p>The name of the limit that was reached.</p>
     pub fn limit_name(&self) -> std::option::Option<&crate::model::LimitName> {
         self.limit_name.as_ref()
     }
-    /// <p>The maximum value for the service-specific limit.</p>
+    /// <p>The value of the exceeded limit.</p>
     pub fn limit_value(&self) -> f64 {
         self.limit_value
     }
@@ -565,12 +565,12 @@ pub mod service_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the quota that was exceeded.</p>
+        /// <p>The name of the limit that was reached.</p>
         pub fn limit_name(mut self, input: crate::model::LimitName) -> Self {
             self.limit_name = Some(input);
             self
         }
-        /// <p>The name of the quota that was exceeded.</p>
+        /// <p>The name of the limit that was reached.</p>
         pub fn set_limit_name(
             mut self,
             input: std::option::Option<crate::model::LimitName>,
@@ -578,12 +578,12 @@ pub mod service_limit_exceeded_exception {
             self.limit_name = input;
             self
         }
-        /// <p>The maximum value for the service-specific limit.</p>
+        /// <p>The value of the exceeded limit.</p>
         pub fn limit_value(mut self, input: f64) -> Self {
             self.limit_value = Some(input);
             self
         }
-        /// <p>The maximum value for the service-specific limit.</p>
+        /// <p>The value of the exceeded limit.</p>
         pub fn set_limit_value(mut self, input: std::option::Option<f64>) -> Self {
             self.limit_value = input;
             self
@@ -630,7 +630,7 @@ pub struct CancelJobError {
 pub enum CancelJobErrorKind {
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -752,7 +752,7 @@ pub struct CreateDataSetError {
 pub enum CreateDataSetErrorKind {
     /// <p>Access to the resource is denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request has exceeded the quotas imposed by the service.</p>
     ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
@@ -880,7 +880,7 @@ pub struct CreateEventActionError {
 pub enum CreateEventActionErrorKind {
     /// <p>Access to the resource is denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request has exceeded the quotas imposed by the service.</p>
     ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
@@ -1019,7 +1019,7 @@ pub enum CreateJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1147,7 +1147,7 @@ pub struct CreateRevisionError {
 pub enum CreateRevisionErrorKind {
     /// <p>Access to the resource is denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1280,7 +1280,7 @@ pub enum DeleteAssetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1413,7 +1413,7 @@ pub enum DeleteDataSetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1545,7 +1545,7 @@ pub struct DeleteEventActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEventActionErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1675,7 +1675,7 @@ pub enum DeleteRevisionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1810,7 +1810,7 @@ pub struct GetAssetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssetErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1924,7 +1924,7 @@ pub struct GetDataSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDataSetErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2041,7 +2041,7 @@ pub struct GetEventActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEventActionErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2161,7 +2161,7 @@ pub struct GetJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetJobErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2275,7 +2275,7 @@ pub struct GetRevisionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRevisionErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2392,7 +2392,7 @@ pub struct ListDataSetRevisionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDataSetRevisionsErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2518,7 +2518,7 @@ pub struct ListDataSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDataSetsErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2638,7 +2638,7 @@ pub struct ListEventActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEventActionsErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2764,7 +2764,7 @@ pub struct ListJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListJobsErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2878,7 +2878,7 @@ pub struct ListRevisionAssetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRevisionAssetsErrorKind {
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3090,7 +3090,7 @@ pub enum RevokeRevisionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3227,7 +3227,7 @@ pub struct SendApiAssetError {
 pub enum SendApiAssetErrorKind {
     /// <p>Access to the resource is denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3357,7 +3357,7 @@ pub enum StartJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3651,7 +3651,7 @@ pub enum UpdateAssetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3782,7 +3782,7 @@ pub struct UpdateDataSetError {
 pub enum UpdateDataSetErrorKind {
     /// <p>Access to the resource is denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3910,7 +3910,7 @@ pub struct UpdateEventActionError {
 pub enum UpdateEventActionErrorKind {
     /// <p>Access to the resource is denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4049,7 +4049,7 @@ pub enum UpdateRevisionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

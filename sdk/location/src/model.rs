@@ -3226,6 +3226,11 @@ pub struct SearchForTextResult {
     /// <p>Returned only when the partner selected is Esri.</p>
     #[doc(hidden)]
     pub relevance: std::option::Option<f64>,
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub place_id: std::option::Option<std::string::String>,
 }
 impl SearchForTextResult {
     /// <p>Details about the search result, such as its address and position.</p>
@@ -3243,6 +3248,12 @@ impl SearchForTextResult {
     pub fn relevance(&self) -> std::option::Option<f64> {
         self.relevance
     }
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+    /// </note>
+    pub fn place_id(&self) -> std::option::Option<&str> {
+        self.place_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchForTextResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3250,6 +3261,7 @@ impl std::fmt::Debug for SearchForTextResult {
         formatter.field("place", &self.place);
         formatter.field("distance", &self.distance);
         formatter.field("relevance", &self.relevance);
+        formatter.field("place_id", &self.place_id);
         formatter.finish()
     }
 }
@@ -3262,6 +3274,7 @@ pub mod search_for_text_result {
         pub(crate) place: std::option::Option<crate::model::Place>,
         pub(crate) distance: std::option::Option<f64>,
         pub(crate) relevance: std::option::Option<f64>,
+        pub(crate) place_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Details about the search result, such as its address and position.</p>
@@ -3300,12 +3313,27 @@ pub mod search_for_text_result {
             self.relevance = input;
             self
         }
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+        /// </note>
+        pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.place_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+        /// </note>
+        pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.place_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchForTextResult`](crate::model::SearchForTextResult).
         pub fn build(self) -> crate::model::SearchForTextResult {
             crate::model::SearchForTextResult {
                 place: self.place,
                 distance: self.distance,
                 relevance: self.relevance,
+                place_id: self.place_id,
             }
         }
     }
@@ -3361,6 +3389,14 @@ pub struct Place {
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.</p>
     #[doc(hidden)]
     pub time_zone: std::option::Option<crate::model::TimeZone>,
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+    #[doc(hidden)]
+    pub unit_type: std::option::Option<std::string::String>,
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub unit_number: std::option::Option<std::string::String>,
 }
 impl Place {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
@@ -3414,6 +3450,16 @@ impl Place {
     pub fn time_zone(&self) -> std::option::Option<&crate::model::TimeZone> {
         self.time_zone.as_ref()
     }
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+    pub fn unit_type(&self) -> std::option::Option<&str> {
+        self.unit_type.as_deref()
+    }
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// </note>
+    pub fn unit_number(&self) -> std::option::Option<&str> {
+        self.unit_number.as_deref()
+    }
 }
 impl std::fmt::Debug for Place {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3430,6 +3476,8 @@ impl std::fmt::Debug for Place {
         formatter.field("postal_code", &self.postal_code);
         formatter.field("interpolated", &self.interpolated);
         formatter.field("time_zone", &self.time_zone);
+        formatter.field("unit_type", &self.unit_type);
+        formatter.field("unit_number", &self.unit_number);
         formatter.finish()
     }
 }
@@ -3451,6 +3499,8 @@ pub mod place {
         pub(crate) postal_code: std::option::Option<std::string::String>,
         pub(crate) interpolated: std::option::Option<bool>,
         pub(crate) time_zone: std::option::Option<crate::model::TimeZone>,
+        pub(crate) unit_type: std::option::Option<std::string::String>,
+        pub(crate) unit_number: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
@@ -3585,6 +3635,30 @@ pub mod place {
             self.time_zone = input;
             self
         }
+        /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+        pub fn unit_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.unit_type = Some(input.into());
+            self
+        }
+        /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+        pub fn set_unit_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unit_type = input;
+            self
+        }
+        /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+        /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+        /// </note>
+        pub fn unit_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.unit_number = Some(input.into());
+            self
+        }
+        /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+        /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+        /// </note>
+        pub fn set_unit_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unit_number = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Place`](crate::model::Place).
         pub fn build(self) -> crate::model::Place {
             crate::model::Place {
@@ -3600,6 +3674,8 @@ pub mod place {
                 postal_code: self.postal_code,
                 interpolated: self.interpolated,
                 time_zone: self.time_zone,
+                unit_type: self.unit_type,
+                unit_number: self.unit_number,
             }
         }
     }
@@ -4026,17 +4102,29 @@ pub struct SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use HERE or Esri as data providers.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub place_id: std::option::Option<std::string::String>,
 }
 impl SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use HERE or Esri as data providers.</p>
+    /// </note>
+    pub fn place_id(&self) -> std::option::Option<&str> {
+        self.place_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchForSuggestionsResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchForSuggestionsResult");
         formatter.field("text", &self.text);
+        formatter.field("place_id", &self.place_id);
         formatter.finish()
     }
 }
@@ -4047,6 +4135,7 @@ pub mod search_for_suggestions_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) place_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The text of the place suggestion, typically formatted as an address string.</p>
@@ -4059,9 +4148,26 @@ pub mod search_for_suggestions_result {
             self.text = input;
             self
         }
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use HERE or Esri as data providers.</p>
+        /// </note>
+        pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.place_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use HERE or Esri as data providers.</p>
+        /// </note>
+        pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.place_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
         pub fn build(self) -> crate::model::SearchForSuggestionsResult {
-            crate::model::SearchForSuggestionsResult { text: self.text }
+            crate::model::SearchForSuggestionsResult {
+                text: self.text,
+                place_id: self.place_id,
+            }
         }
     }
 }
@@ -4308,6 +4414,11 @@ pub struct SearchForPositionResult {
     /// </note>
     #[doc(hidden)]
     pub distance: std::option::Option<f64>,
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub place_id: std::option::Option<std::string::String>,
 }
 impl SearchForPositionResult {
     /// <p>Details about the search result, such as its address and position.</p>
@@ -4320,12 +4431,19 @@ impl SearchForPositionResult {
     pub fn distance(&self) -> std::option::Option<f64> {
         self.distance
     }
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+    /// </note>
+    pub fn place_id(&self) -> std::option::Option<&str> {
+        self.place_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchForPositionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchForPositionResult");
         formatter.field("place", &self.place);
         formatter.field("distance", &self.distance);
+        formatter.field("place_id", &self.place_id);
         formatter.finish()
     }
 }
@@ -4337,6 +4455,7 @@ pub mod search_for_position_result {
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
         pub(crate) distance: std::option::Option<f64>,
+        pub(crate) place_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Details about the search result, such as its address and position.</p>
@@ -4363,11 +4482,26 @@ pub mod search_for_position_result {
             self.distance = input;
             self
         }
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+        /// </note>
+        pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.place_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE as a data provider.</p>
+        /// </note>
+        pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.place_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchForPositionResult`](crate::model::SearchForPositionResult).
         pub fn build(self) -> crate::model::SearchForPositionResult {
             crate::model::SearchForPositionResult {
                 place: self.place,
                 distance: self.distance,
+                place_id: self.place_id,
             }
         }
     }

@@ -2274,6 +2274,7 @@ pub mod create_slot_input {
         pub(crate) intent_id: std::option::Option<std::string::String>,
         pub(crate) multiple_values_setting:
             std::option::Option<crate::model::MultipleValuesSetting>,
+        pub(crate) sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
     }
     impl Builder {
         /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
@@ -2395,6 +2396,19 @@ pub mod create_slot_input {
             self.multiple_values_setting = input;
             self
         }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
+            self.sub_slot_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn set_sub_slot_setting(
+            mut self,
+            input: std::option::Option<crate::model::SubSlotSetting>,
+        ) -> Self {
+            self.sub_slot_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSlotInput`](crate::input::CreateSlotInput).
         pub fn build(
             self,
@@ -2410,6 +2424,7 @@ pub mod create_slot_input {
                 locale_id: self.locale_id,
                 intent_id: self.intent_id,
                 multiple_values_setting: self.multiple_values_setting,
+                sub_slot_setting: self.sub_slot_setting,
             })
         }
     }
@@ -2596,6 +2611,8 @@ pub mod create_slot_type_input {
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) external_source_setting:
             std::option::Option<crate::model::ExternalSourceSetting>,
+        pub(crate) composite_slot_type_setting:
+            std::option::Option<crate::model::CompositeSlotTypeSetting>,
     }
     impl Builder {
         /// <p>The name for the slot. A slot type name must be unique within the account.</p>
@@ -2727,6 +2744,22 @@ pub mod create_slot_type_input {
             self.external_source_setting = input;
             self
         }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn composite_slot_type_setting(
+            mut self,
+            input: crate::model::CompositeSlotTypeSetting,
+        ) -> Self {
+            self.composite_slot_type_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn set_composite_slot_type_setting(
+            mut self,
+            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        ) -> Self {
+            self.composite_slot_type_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSlotTypeInput`](crate::input::CreateSlotTypeInput).
         pub fn build(
             self,
@@ -2742,6 +2775,7 @@ pub mod create_slot_type_input {
                 bot_version: self.bot_version,
                 locale_id: self.locale_id,
                 external_source_setting: self.external_source_setting,
+                composite_slot_type_setting: self.composite_slot_type_setting,
             })
         }
     }
@@ -14197,6 +14231,7 @@ pub mod update_slot_input {
         pub(crate) intent_id: std::option::Option<std::string::String>,
         pub(crate) multiple_values_setting:
             std::option::Option<crate::model::MultipleValuesSetting>,
+        pub(crate) sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
     }
     impl Builder {
         /// <p>The unique identifier for the slot to update.</p>
@@ -14326,6 +14361,19 @@ pub mod update_slot_input {
             self.multiple_values_setting = input;
             self
         }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
+            self.sub_slot_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+        pub fn set_sub_slot_setting(
+            mut self,
+            input: std::option::Option<crate::model::SubSlotSetting>,
+        ) -> Self {
+            self.sub_slot_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSlotInput`](crate::input::UpdateSlotInput).
         pub fn build(
             self,
@@ -14342,6 +14390,7 @@ pub mod update_slot_input {
                 locale_id: self.locale_id,
                 intent_id: self.intent_id,
                 multiple_values_setting: self.multiple_values_setting,
+                sub_slot_setting: self.sub_slot_setting,
             })
         }
     }
@@ -14543,6 +14592,8 @@ pub mod update_slot_type_input {
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) external_source_setting:
             std::option::Option<crate::model::ExternalSourceSetting>,
+        pub(crate) composite_slot_type_setting:
+            std::option::Option<crate::model::CompositeSlotTypeSetting>,
     }
     impl Builder {
         /// <p>The unique identifier of the slot type to update.</p>
@@ -14672,6 +14723,22 @@ pub mod update_slot_type_input {
             self.external_source_setting = input;
             self
         }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn composite_slot_type_setting(
+            mut self,
+            input: crate::model::CompositeSlotTypeSetting,
+        ) -> Self {
+            self.composite_slot_type_setting = Some(input);
+            self
+        }
+        /// <p>Specifications for a composite slot type.</p>
+        pub fn set_composite_slot_type_setting(
+            mut self,
+            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        ) -> Self {
+            self.composite_slot_type_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSlotTypeInput`](crate::input::UpdateSlotTypeInput).
         pub fn build(
             self,
@@ -14688,6 +14755,7 @@ pub mod update_slot_type_input {
                 bot_version: self.bot_version,
                 locale_id: self.locale_id,
                 external_source_setting: self.external_source_setting,
+                composite_slot_type_setting: self.composite_slot_type_setting,
             })
         }
     }
@@ -14890,6 +14958,9 @@ pub struct UpdateSlotTypeInput {
     /// <p>Provides information about the external source of the slot type's definition.</p>
     #[doc(hidden)]
     pub external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
+    /// <p>Specifications for a composite slot type.</p>
+    #[doc(hidden)]
+    pub composite_slot_type_setting: std::option::Option<crate::model::CompositeSlotTypeSetting>,
 }
 impl UpdateSlotTypeInput {
     /// <p>The unique identifier of the slot type to update.</p>
@@ -14936,6 +15007,12 @@ impl UpdateSlotTypeInput {
     ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
+    /// <p>Specifications for a composite slot type.</p>
+    pub fn composite_slot_type_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::CompositeSlotTypeSetting> {
+        self.composite_slot_type_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSlotTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14953,6 +15030,10 @@ impl std::fmt::Debug for UpdateSlotTypeInput {
         formatter.field("bot_version", &self.bot_version);
         formatter.field("locale_id", &self.locale_id);
         formatter.field("external_source_setting", &self.external_source_setting);
+        formatter.field(
+            "composite_slot_type_setting",
+            &self.composite_slot_type_setting,
+        );
         formatter.finish()
     }
 }
@@ -14995,6 +15076,9 @@ pub struct UpdateSlotInput {
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    #[doc(hidden)]
+    pub sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
 }
 impl UpdateSlotInput {
     /// <p>The unique identifier for the slot to update.</p>
@@ -15046,6 +15130,10 @@ impl UpdateSlotInput {
     ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::model::SubSlotSetting> {
+        self.sub_slot_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSlotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15061,6 +15149,7 @@ impl std::fmt::Debug for UpdateSlotInput {
         formatter.field("locale_id", &self.locale_id);
         formatter.field("intent_id", &self.intent_id);
         formatter.field("multiple_values_setting", &self.multiple_values_setting);
+        formatter.field("sub_slot_setting", &self.sub_slot_setting);
         formatter.finish()
     }
 }
@@ -17711,6 +17800,9 @@ pub struct CreateSlotTypeInput {
     /// <p>Sets the type of external information used to create the slot type.</p>
     #[doc(hidden)]
     pub external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
+    /// <p>Specifications for a composite slot type.</p>
+    #[doc(hidden)]
+    pub composite_slot_type_setting: std::option::Option<crate::model::CompositeSlotTypeSetting>,
 }
 impl CreateSlotTypeInput {
     /// <p>The name for the slot. A slot type name must be unique within the account.</p>
@@ -17759,6 +17851,12 @@ impl CreateSlotTypeInput {
     ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
+    /// <p>Specifications for a composite slot type.</p>
+    pub fn composite_slot_type_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::CompositeSlotTypeSetting> {
+        self.composite_slot_type_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSlotTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17775,6 +17873,10 @@ impl std::fmt::Debug for CreateSlotTypeInput {
         formatter.field("bot_version", &self.bot_version);
         formatter.field("locale_id", &self.locale_id);
         formatter.field("external_source_setting", &self.external_source_setting);
+        formatter.field(
+            "composite_slot_type_setting",
+            &self.composite_slot_type_setting,
+        );
         formatter.finish()
     }
 }
@@ -17815,6 +17917,9 @@ pub struct CreateSlotInput {
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    #[doc(hidden)]
+    pub sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
 }
 impl CreateSlotInput {
     /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
@@ -17863,6 +17968,10 @@ impl CreateSlotInput {
     ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::model::SubSlotSetting> {
+        self.sub_slot_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSlotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17877,6 +17986,7 @@ impl std::fmt::Debug for CreateSlotInput {
         formatter.field("locale_id", &self.locale_id);
         formatter.field("intent_id", &self.intent_id);
         formatter.field("multiple_values_setting", &self.multiple_values_setting);
+        formatter.field("sub_slot_setting", &self.sub_slot_setting);
         formatter.finish()
     }
 }

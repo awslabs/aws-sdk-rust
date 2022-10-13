@@ -13,7 +13,7 @@ pub enum Error {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your AWS account.</p>
+    /// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your Amazon Web Services account.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -232,6 +232,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SubscribeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SubscribeErrorKind::ConfigurationException(inner) => {
+                    Error::ConfigurationException(inner)
+                }
                 crate::error::SubscribeErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
@@ -253,6 +256,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => {
                     Error::ConcurrentModificationException(inner)
+                }
+                crate::error::TagResourceErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
@@ -292,6 +298,9 @@ where
                 crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => {
                     Error::ConcurrentModificationException(inner)
                 }
+                crate::error::UntagResourceErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
@@ -314,6 +323,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateNotificationRuleErrorKind::ConfigurationException(inner) => {
+                    Error::ConfigurationException(inner)
+                }
                 crate::error::UpdateNotificationRuleErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }

@@ -96,9 +96,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::set_id): <p>The identifier of your Amazon Kendra experience.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`entity_list(Vec<EntityConfiguration>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::entity_list) / [`set_entity_list(Option<Vec<EntityConfiguration>>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::set_entity_list): <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+    ///   - [`entity_list(Vec<EntityConfiguration>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::entity_list) / [`set_entity_list(Option<Vec<EntityConfiguration>>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::set_entity_list): <p>Lists users or groups in your IAM Identity Center identity source.</p>
     /// - On success, responds with [`AssociateEntitiesToExperienceOutput`](crate::output::AssociateEntitiesToExperienceOutput) with field(s):
-    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::AssociateEntitiesToExperienceOutput::failed_entity_list): <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::AssociateEntitiesToExperienceOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<AssociateEntitiesToExperienceError>`](crate::error::AssociateEntitiesToExperienceError)
     pub fn associate_entities_to_experience(
         &self,
@@ -110,9 +110,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociatePersonasToEntities::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociatePersonasToEntities::set_id): <p>The identifier of your Amazon Kendra experience.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePersonasToEntities::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::AssociatePersonasToEntities::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`personas(Vec<EntityPersonaConfiguration>)`](crate::client::fluent_builders::AssociatePersonasToEntities::personas) / [`set_personas(Option<Vec<EntityPersonaConfiguration>>)`](crate::client::fluent_builders::AssociatePersonasToEntities::set_personas): <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    ///   - [`personas(Vec<EntityPersonaConfiguration>)`](crate::client::fluent_builders::AssociatePersonasToEntities::personas) / [`set_personas(Option<Vec<EntityPersonaConfiguration>>)`](crate::client::fluent_builders::AssociatePersonasToEntities::set_personas): <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     /// - On success, responds with [`AssociatePersonasToEntitiesOutput`](crate::output::AssociatePersonasToEntitiesOutput) with field(s):
-    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::AssociatePersonasToEntitiesOutput::failed_entity_list): <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::AssociatePersonasToEntitiesOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<AssociatePersonasToEntitiesError>`](crate::error::AssociatePersonasToEntitiesError)
     pub fn associate_personas_to_entities(&self) -> fluent_builders::AssociatePersonasToEntities {
         fluent_builders::AssociatePersonasToEntities::new(self.handle.clone())
@@ -207,7 +207,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_name): <p>A name for your Amazon Kendra experience.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::CreateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::CreateExperience::set_configuration): <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_description): <p>A description for your Amazon Kendra experience.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_client_token): <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
@@ -247,7 +247,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateIndex::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateIndex::set_tags): <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
     ///   - [`user_token_configurations(Vec<UserTokenConfiguration>)`](crate::client::fluent_builders::CreateIndex::user_token_configurations) / [`set_user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::client::fluent_builders::CreateIndex::set_user_token_configurations): <p>The user token configuration.</p>
     ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::CreateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::CreateIndex::set_user_context_policy): <p>The user context policy.</p>  <dl>   <dt>   ATTRIBUTE_FILTER  </dt>   <dd>    <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>   </dd>   <dt>   USER_TOKEN  </dt>   <dd>    <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>   </dd>  </dl>
-    ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::client::fluent_builders::CreateIndex::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::client::fluent_builders::CreateIndex::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     /// - On success, responds with [`CreateIndexOutput`](crate::output::CreateIndexOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateIndexOutput::id): <p>The unique identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
     /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::error::CreateIndexError)
@@ -438,7 +438,7 @@ impl Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeExperienceOutput::updated_at): <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeExperienceOutput::description): <p>Shows the description for your Amazon Kendra experience.</p>
     ///   - [`status(Option<ExperienceStatus>)`](crate::output::DescribeExperienceOutput::status): <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeExperienceOutput::role_arn): <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeExperienceOutput::role_arn): <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
     ///   - [`error_message(Option<String>)`](crate::output::DescribeExperienceOutput::error_message): <p>The reason your Amazon Kendra experience could not properly process.</p>
     /// - On failure, responds with [`SdkError<DescribeExperienceError>`](crate::error::DescribeExperienceError)
     pub fn describe_experience(&self) -> fluent_builders::DescribeExperience {
@@ -486,7 +486,7 @@ impl Client {
     ///   - [`capacity_units(Option<CapacityUnitsConfiguration>)`](crate::output::DescribeIndexOutput::capacity_units): <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     ///   - [`user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::output::DescribeIndexOutput::user_token_configurations): <p>The user token configuration for the Amazon Kendra index.</p>
     ///   - [`user_context_policy(Option<UserContextPolicy>)`](crate::output::DescribeIndexOutput::user_context_policy): <p>The user context policy for the Amazon Kendra index.</p>
-    ///   - [`user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::output::DescribeIndexOutput::user_group_resolution_configuration): <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+    ///   - [`user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::output::DescribeIndexOutput::user_group_resolution_configuration): <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
     /// - On failure, responds with [`SdkError<DescribeIndexError>`](crate::error::DescribeIndexError)
     pub fn describe_index(&self) -> fluent_builders::DescribeIndex {
         fluent_builders::DescribeIndex::new(self.handle.clone())
@@ -578,9 +578,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::set_id): <p>The identifier of your Amazon Kendra experience.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`entity_list(Vec<EntityConfiguration>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::entity_list) / [`set_entity_list(Option<Vec<EntityConfiguration>>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::set_entity_list): <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+    ///   - [`entity_list(Vec<EntityConfiguration>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::entity_list) / [`set_entity_list(Option<Vec<EntityConfiguration>>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::set_entity_list): <p>Lists users or groups in your IAM Identity Center identity source.</p>
     /// - On success, responds with [`DisassociateEntitiesFromExperienceOutput`](crate::output::DisassociateEntitiesFromExperienceOutput) with field(s):
-    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::DisassociateEntitiesFromExperienceOutput::failed_entity_list): <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::DisassociateEntitiesFromExperienceOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<DisassociateEntitiesFromExperienceError>`](crate::error::DisassociateEntitiesFromExperienceError)
     pub fn disassociate_entities_from_experience(
         &self,
@@ -592,9 +592,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::set_id): <p>The identifier of your Amazon Kendra experience.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`entity_ids(Vec<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::entity_ids) / [`set_entity_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::set_entity_ids): <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
+    ///   - [`entity_ids(Vec<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::entity_ids) / [`set_entity_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::set_entity_ids): <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
     /// - On success, responds with [`DisassociatePersonasFromEntitiesOutput`](crate::output::DisassociatePersonasFromEntitiesOutput) with field(s):
-    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::DisassociatePersonasFromEntitiesOutput::failed_entity_list): <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::DisassociatePersonasFromEntitiesOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<DisassociatePersonasFromEntitiesError>`](crate::error::DisassociatePersonasFromEntitiesError)
     pub fn disassociate_personas_from_entities(
         &self,
@@ -948,7 +948,7 @@ impl Client {
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_id): <p>The identifier of your Amazon Kendra experience you want to update.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_name): <p>A new name for your Amazon Kendra experience.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::UpdateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::UpdateExperience::set_configuration): <p>Configuration information you want to update for your Amazon Kendra experience.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_description): <p>A new description for your Amazon Kendra experience.</p>
     /// - On success, responds with [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
@@ -968,7 +968,7 @@ impl Client {
     ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::UpdateIndex::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_capacity_units): <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>  <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
     ///   - [`user_token_configurations(Vec<UserTokenConfiguration>)`](crate::client::fluent_builders::UpdateIndex::user_token_configurations) / [`set_user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_user_token_configurations): <p>The user token configuration.</p>
     ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::UpdateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::UpdateIndex::set_user_context_policy): <p>The user context policy.</p>
-    ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::client::fluent_builders::UpdateIndex::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::client::fluent_builders::UpdateIndex::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     /// - On success, responds with [`UpdateIndexOutput`](crate::output::UpdateIndexOutput)
 
     /// - On failure, responds with [`SdkError<UpdateIndexError>`](crate::error::UpdateIndexError)
@@ -1032,7 +1032,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AssociateEntitiesToExperience`.
     ///
-    /// <p>Grants users or groups in your Amazon Web Services SSO identity source access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
+    /// <p>Grants users or groups in your IAM Identity Center identity source access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateEntitiesToExperience {
         handle: std::sync::Arc<super::Handle>,
@@ -1120,12 +1120,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entity_list`](Self::set_entity_list).
         ///
-        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
         pub fn entity_list(mut self, input: crate::model::EntityConfiguration) -> Self {
             self.inner = self.inner.entity_list(input);
             self
         }
-        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
         pub fn set_entity_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
@@ -1136,7 +1136,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociatePersonasToEntities`.
     ///
-    /// <p>Defines the specific permissions of users or groups in your Amazon Web Services SSO identity source with access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
+    /// <p>Defines the specific permissions of users or groups in your IAM Identity Center identity source with access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePersonasToEntities {
         handle: std::sync::Arc<super::Handle>,
@@ -1224,12 +1224,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_personas`](Self::set_personas).
         ///
-        /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+        /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn personas(mut self, input: crate::model::EntityPersonaConfiguration) -> Self {
             self.inner = self.inner.personas(input);
             self
         }
-        /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+        /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn set_personas(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityPersonaConfiguration>>,
@@ -2130,12 +2130,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -2569,7 +2569,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_context_policy(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -2577,7 +2577,7 @@ pub mod fluent_builders {
             self.inner = self.inner.user_group_resolution_configuration(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -4403,7 +4403,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateEntitiesFromExperience`.
     ///
-    /// <p>Prevents users or groups in your Amazon Web Services SSO identity source from accessing your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
+    /// <p>Prevents users or groups in your IAM Identity Center identity source from accessing your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateEntitiesFromExperience {
         handle: std::sync::Arc<super::Handle>,
@@ -4495,12 +4495,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entity_list`](Self::set_entity_list).
         ///
-        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
         pub fn entity_list(mut self, input: crate::model::EntityConfiguration) -> Self {
             self.inner = self.inner.entity_list(input);
             self
         }
-        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
         pub fn set_entity_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
@@ -4511,7 +4511,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociatePersonasFromEntities`.
     ///
-    /// <p>Removes the specific permissions of users or groups in your Amazon Web Services SSO identity source with access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
+    /// <p>Removes the specific permissions of users or groups in your IAM Identity Center identity source with access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePersonasFromEntities {
         handle: std::sync::Arc<super::Handle>,
@@ -4599,12 +4599,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entity_ids`](Self::set_entity_ids).
         ///
-        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
+        /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
         pub fn entity_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_ids(input.into());
             self
         }
-        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
+        /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
         pub fn set_entity_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5319,7 +5319,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListExperienceEntities`.
     ///
-    /// <p>Lists users or groups in your Amazon Web Services SSO identity source that are granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
+    /// <p>Lists users or groups in your IAM Identity Center identity source that are granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperienceEntities {
         handle: std::sync::Arc<super::Handle>,
@@ -7460,12 +7460,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -7670,7 +7670,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_context_policy(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -7678,7 +7678,7 @@ pub mod fluent_builders {
             self.inner = self.inner.user_group_resolution_configuration(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,

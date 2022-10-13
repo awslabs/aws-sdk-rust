@@ -112,8 +112,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceScheduler::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_model_name): <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
     ///   - [`inference_scheduler_name(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceScheduler::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_inference_scheduler_name): <p>The name of the inference scheduler being created. </p>
-    ///   - [`data_delay_offset_in_minutes(i64)`](crate::client::fluent_builders::CreateInferenceScheduler::data_delay_offset_in_minutes) / [`set_data_delay_offset_in_minutes(Option<i64>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_data_delay_offset_in_minutes): <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
-    ///   - [`data_upload_frequency(DataUploadFrequency)`](crate::client::fluent_builders::CreateInferenceScheduler::data_upload_frequency) / [`set_data_upload_frequency(Option<DataUploadFrequency>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_data_upload_frequency): <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    ///   - [`data_delay_offset_in_minutes(i64)`](crate::client::fluent_builders::CreateInferenceScheduler::data_delay_offset_in_minutes) / [`set_data_delay_offset_in_minutes(Option<i64>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_data_delay_offset_in_minutes): <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
+    ///   - [`data_upload_frequency(DataUploadFrequency)`](crate::client::fluent_builders::CreateInferenceScheduler::data_upload_frequency) / [`set_data_upload_frequency(Option<DataUploadFrequency>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_data_upload_frequency): <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     ///   - [`data_input_configuration(InferenceInputConfiguration)`](crate::client::fluent_builders::CreateInferenceScheduler::data_input_configuration) / [`set_data_input_configuration(Option<InferenceInputConfiguration>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_data_input_configuration): <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
     ///   - [`data_output_configuration(InferenceOutputConfiguration)`](crate::client::fluent_builders::CreateInferenceScheduler::data_output_configuration) / [`set_data_output_configuration(Option<InferenceOutputConfiguration>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_data_output_configuration): <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceScheduler::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateInferenceScheduler::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
@@ -127,6 +127,37 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateInferenceSchedulerError>`](crate::error::CreateInferenceSchedulerError)
     pub fn create_inference_scheduler(&self) -> fluent_builders::CreateInferenceScheduler {
         fluent_builders::CreateInferenceScheduler::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateLabel`](crate::client::fluent_builders::CreateLabel) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateLabel::label_group_name) / [`set_label_group_name(Option<String>)`](crate::client::fluent_builders::CreateLabel::set_label_group_name): <p> The name of a group of labels. </p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::CreateLabel::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::CreateLabel::set_start_time): <p> The start time of the labeled event. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::CreateLabel::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::CreateLabel::set_end_time): <p> The end time of the labeled event. </p>
+    ///   - [`rating(LabelRating)`](crate::client::fluent_builders::CreateLabel::rating) / [`set_rating(Option<LabelRating>)`](crate::client::fluent_builders::CreateLabel::set_rating): <p> Indicates whether a labeled event represents an anomaly. </p>
+    ///   - [`fault_code(impl Into<String>)`](crate::client::fluent_builders::CreateLabel::fault_code) / [`set_fault_code(Option<String>)`](crate::client::fluent_builders::CreateLabel::set_fault_code): <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    ///   - [`notes(impl Into<String>)`](crate::client::fluent_builders::CreateLabel::notes) / [`set_notes(Option<String>)`](crate::client::fluent_builders::CreateLabel::set_notes): <p> Metadata providing additional information about the label. </p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    ///   - [`equipment(impl Into<String>)`](crate::client::fluent_builders::CreateLabel::equipment) / [`set_equipment(Option<String>)`](crate::client::fluent_builders::CreateLabel::set_equipment): <p> Indicates that a label pertains to a particular piece of equipment. </p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLabel::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLabel::set_client_token): <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    /// - On success, responds with [`CreateLabelOutput`](crate::output::CreateLabelOutput) with field(s):
+    ///   - [`label_id(Option<String>)`](crate::output::CreateLabelOutput::label_id): <p> The ID of the label that you have created. </p>
+    /// - On failure, responds with [`SdkError<CreateLabelError>`](crate::error::CreateLabelError)
+    pub fn create_label(&self) -> fluent_builders::CreateLabel {
+        fluent_builders::CreateLabel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateLabelGroup`](crate::client::fluent_builders::CreateLabelGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateLabelGroup::label_group_name) / [`set_label_group_name(Option<String>)`](crate::client::fluent_builders::CreateLabelGroup::set_label_group_name): <p> Names a group of labels.</p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    ///   - [`fault_codes(Vec<String>)`](crate::client::fluent_builders::CreateLabelGroup::fault_codes) / [`set_fault_codes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLabelGroup::set_fault_codes): <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLabelGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLabelGroup::set_client_token): <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLabelGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLabelGroup::set_tags): <p> Tags that provide metadata about the label group you are creating. </p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// - On success, responds with [`CreateLabelGroupOutput`](crate::output::CreateLabelGroupOutput) with field(s):
+    ///   - [`label_group_name(Option<String>)`](crate::output::CreateLabelGroupOutput::label_group_name): <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    ///   - [`label_group_arn(Option<String>)`](crate::output::CreateLabelGroupOutput::label_group_arn): <p> The ARN of the label group that you have created. </p>
+    /// - On failure, responds with [`SdkError<CreateLabelGroupError>`](crate::error::CreateLabelGroupError)
+    pub fn create_label_group(&self) -> fluent_builders::CreateLabelGroup {
+        fluent_builders::CreateLabelGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateModel`](crate::client::fluent_builders::CreateModel) operation.
     ///
@@ -171,6 +202,27 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteInferenceSchedulerError>`](crate::error::DeleteInferenceSchedulerError)
     pub fn delete_inference_scheduler(&self) -> fluent_builders::DeleteInferenceScheduler {
         fluent_builders::DeleteInferenceScheduler::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteLabel`](crate::client::fluent_builders::DeleteLabel) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLabel::label_group_name) / [`set_label_group_name(Option<String>)`](crate::client::fluent_builders::DeleteLabel::set_label_group_name): <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    ///   - [`label_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLabel::label_id) / [`set_label_id(Option<String>)`](crate::client::fluent_builders::DeleteLabel::set_label_id): <p> The ID of the label that you want to delete. </p>
+    /// - On success, responds with [`DeleteLabelOutput`](crate::output::DeleteLabelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLabelError>`](crate::error::DeleteLabelError)
+    pub fn delete_label(&self) -> fluent_builders::DeleteLabel {
+        fluent_builders::DeleteLabel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteLabelGroup`](crate::client::fluent_builders::DeleteLabelGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLabelGroup::label_group_name) / [`set_label_group_name(Option<String>)`](crate::client::fluent_builders::DeleteLabelGroup::set_label_group_name): <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// - On success, responds with [`DeleteLabelGroupOutput`](crate::output::DeleteLabelGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLabelGroupError>`](crate::error::DeleteLabelGroupError)
+    pub fn delete_label_group(&self) -> fluent_builders::DeleteLabelGroup {
+        fluent_builders::DeleteLabelGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteModel`](crate::client::fluent_builders::DeleteModel) operation.
     ///
@@ -244,9 +296,44 @@ impl Client {
     ///   - [`data_output_configuration(Option<InferenceOutputConfiguration>)`](crate::output::DescribeInferenceSchedulerOutput::data_output_configuration): <p> Specifies information for the output results for the inference scheduler, including the output S3 location. </p>
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeInferenceSchedulerOutput::role_arn): <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler being described. </p>
     ///   - [`server_side_kms_key_id(Option<String>)`](crate::output::DescribeInferenceSchedulerOutput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    ///   - [`latest_inference_result(Option<LatestInferenceResult>)`](crate::output::DescribeInferenceSchedulerOutput::latest_inference_result): <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
     /// - On failure, responds with [`SdkError<DescribeInferenceSchedulerError>`](crate::error::DescribeInferenceSchedulerError)
     pub fn describe_inference_scheduler(&self) -> fluent_builders::DescribeInferenceScheduler {
         fluent_builders::DescribeInferenceScheduler::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeLabel`](crate::client::fluent_builders::DescribeLabel) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLabel::label_group_name) / [`set_label_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLabel::set_label_group_name): <p> Returns the name of the group containing the label. </p>
+    ///   - [`label_id(impl Into<String>)`](crate::client::fluent_builders::DescribeLabel::label_id) / [`set_label_id(Option<String>)`](crate::client::fluent_builders::DescribeLabel::set_label_id): <p> Returns the ID of the label. </p>
+    /// - On success, responds with [`DescribeLabelOutput`](crate::output::DescribeLabelOutput) with field(s):
+    ///   - [`label_group_name(Option<String>)`](crate::output::DescribeLabelOutput::label_group_name): <p> The name of the requested label group. </p>
+    ///   - [`label_group_arn(Option<String>)`](crate::output::DescribeLabelOutput::label_group_arn): <p> The ARN of the requested label group. </p>
+    ///   - [`label_id(Option<String>)`](crate::output::DescribeLabelOutput::label_id): <p> The ID of the requested label. </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::DescribeLabelOutput::start_time): <p> The start time of the requested label. </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::DescribeLabelOutput::end_time): <p> The end time of the requested label. </p>
+    ///   - [`rating(Option<LabelRating>)`](crate::output::DescribeLabelOutput::rating): <p> Indicates whether a labeled event represents an anomaly. </p>
+    ///   - [`fault_code(Option<String>)`](crate::output::DescribeLabelOutput::fault_code): <p> Indicates the type of anomaly associated with the label. </p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    ///   - [`notes(Option<String>)`](crate::output::DescribeLabelOutput::notes): <p>Metadata providing additional information about the label.</p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    ///   - [`equipment(Option<String>)`](crate::output::DescribeLabelOutput::equipment): <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeLabelOutput::created_at): <p> The time at which the label was created. </p>
+    /// - On failure, responds with [`SdkError<DescribeLabelError>`](crate::error::DescribeLabelError)
+    pub fn describe_label(&self) -> fluent_builders::DescribeLabel {
+        fluent_builders::DescribeLabel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeLabelGroup`](crate::client::fluent_builders::DescribeLabelGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLabelGroup::label_group_name) / [`set_label_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLabelGroup::set_label_group_name): <p> Returns the name of the label group. </p>
+    /// - On success, responds with [`DescribeLabelGroupOutput`](crate::output::DescribeLabelGroupOutput) with field(s):
+    ///   - [`label_group_name(Option<String>)`](crate::output::DescribeLabelGroupOutput::label_group_name): <p> The name of the label group. </p>
+    ///   - [`label_group_arn(Option<String>)`](crate::output::DescribeLabelGroupOutput::label_group_arn): <p> The ARN of the label group. </p>
+    ///   - [`fault_codes(Option<Vec<String>>)`](crate::output::DescribeLabelGroupOutput::fault_codes): <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeLabelGroupOutput::created_at): <p> The time at which the label group was created. </p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeLabelGroupOutput::updated_at): <p> The time at which the label group was updated. </p>
+    /// - On failure, responds with [`SdkError<DescribeLabelGroupError>`](crate::error::DescribeLabelGroupError)
+    pub fn describe_label_group(&self) -> fluent_builders::DescribeLabelGroup {
+        fluent_builders::DescribeLabelGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeModel`](crate::client::fluent_builders::DescribeModel) operation.
     ///
@@ -283,7 +370,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::ListDataIngestionJobs::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::ListDataIngestionJobs::set_dataset_name): <p>The name of the dataset being used for the data ingestion job. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataIngestionJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataIngestionJobs::set_next_token): <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataIngestionJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataIngestionJobs::set_next_token): <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataIngestionJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataIngestionJobs::set_max_results): <p> Specifies the maximum number of data ingestion jobs to list. </p>
     ///   - [`status(IngestionJobStatus)`](crate::client::fluent_builders::ListDataIngestionJobs::status) / [`set_status(Option<IngestionJobStatus>)`](crate::client::fluent_builders::ListDataIngestionJobs::set_status): <p>Indicates the status of the data ingestion job. </p>
     /// - On success, responds with [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput) with field(s):
@@ -314,8 +401,8 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInferenceEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInferenceEvents::set_next_token): <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInferenceEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInferenceEvents::set_max_results): <p>Specifies the maximum number of inference events to list. </p>
     ///   - [`inference_scheduler_name(impl Into<String>)`](crate::client::fluent_builders::ListInferenceEvents::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::client::fluent_builders::ListInferenceEvents::set_inference_scheduler_name): <p>The name of the inference scheduler for the inference events listed. </p>
-    ///   - [`interval_start_time(DateTime)`](crate::client::fluent_builders::ListInferenceEvents::interval_start_time) / [`set_interval_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceEvents::set_interval_start_time): <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
-    ///   - [`interval_end_time(DateTime)`](crate::client::fluent_builders::ListInferenceEvents::interval_end_time) / [`set_interval_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceEvents::set_interval_end_time): <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+    ///   - [`interval_start_time(DateTime)`](crate::client::fluent_builders::ListInferenceEvents::interval_start_time) / [`set_interval_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceEvents::set_interval_start_time): <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
+    ///   - [`interval_end_time(DateTime)`](crate::client::fluent_builders::ListInferenceEvents::interval_end_time) / [`set_interval_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceEvents::set_interval_end_time): <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
     /// - On success, responds with [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListInferenceEventsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
     ///   - [`inference_event_summaries(Option<Vec<InferenceEventSummary>>)`](crate::output::ListInferenceEventsOutput::inference_event_summaries): <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
@@ -355,6 +442,38 @@ impl Client {
     pub fn list_inference_schedulers(&self) -> fluent_builders::ListInferenceSchedulers {
         fluent_builders::ListInferenceSchedulers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListLabelGroups`](crate::client::fluent_builders::ListLabelGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLabelGroups::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name_begins_with(impl Into<String>)`](crate::client::fluent_builders::ListLabelGroups::label_group_name_begins_with) / [`set_label_group_name_begins_with(Option<String>)`](crate::client::fluent_builders::ListLabelGroups::set_label_group_name_begins_with): <p> The beginning of the name of the label groups to be listed. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLabelGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLabelGroups::set_next_token): <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLabelGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLabelGroups::set_max_results): <p> Specifies the maximum number of label groups to list. </p>
+    /// - On success, responds with [`ListLabelGroupsOutput`](crate::output::ListLabelGroupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListLabelGroupsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+    ///   - [`label_group_summaries(Option<Vec<LabelGroupSummary>>)`](crate::output::ListLabelGroupsOutput::label_group_summaries): <p> A summary of the label groups. </p>
+    /// - On failure, responds with [`SdkError<ListLabelGroupsError>`](crate::error::ListLabelGroupsError)
+    pub fn list_label_groups(&self) -> fluent_builders::ListLabelGroups {
+        fluent_builders::ListLabelGroups::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListLabels`](crate::client::fluent_builders::ListLabels) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLabels::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name(impl Into<String>)`](crate::client::fluent_builders::ListLabels::label_group_name) / [`set_label_group_name(Option<String>)`](crate::client::fluent_builders::ListLabels::set_label_group_name): <p> Retruns the name of the label group. </p>
+    ///   - [`interval_start_time(DateTime)`](crate::client::fluent_builders::ListLabels::interval_start_time) / [`set_interval_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListLabels::set_interval_start_time): <p> Returns all the labels with a end time equal to or later than the start time given. </p>
+    ///   - [`interval_end_time(DateTime)`](crate::client::fluent_builders::ListLabels::interval_end_time) / [`set_interval_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListLabels::set_interval_end_time): <p> Returns all labels with a start time earlier than the end time given. </p>
+    ///   - [`fault_code(impl Into<String>)`](crate::client::fluent_builders::ListLabels::fault_code) / [`set_fault_code(Option<String>)`](crate::client::fluent_builders::ListLabels::set_fault_code): <p> Returns labels with a particular fault code. </p>
+    ///   - [`equipment(impl Into<String>)`](crate::client::fluent_builders::ListLabels::equipment) / [`set_equipment(Option<String>)`](crate::client::fluent_builders::ListLabels::set_equipment): <p> Lists the labels that pertain to a particular piece of equipment. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLabels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLabels::set_next_token): <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLabels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLabels::set_max_results): <p> Specifies the maximum number of labels to list. </p>
+    /// - On success, responds with [`ListLabelsOutput`](crate::output::ListLabelsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListLabelsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    ///   - [`label_summaries(Option<Vec<LabelSummary>>)`](crate::output::ListLabelsOutput::label_summaries): <p> A summary of the items in the label group. </p>
+    /// - On failure, responds with [`SdkError<ListLabelsError>`](crate::error::ListLabelsError)
+    pub fn list_labels(&self) -> fluent_builders::ListLabels {
+        fluent_builders::ListLabels::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListModels`](crate::client::fluent_builders::ListModels) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModels::into_paginator).
     ///
@@ -377,11 +496,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::ListSensorStatistics::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::ListSensorStatistics::set_dataset_name): <p> The name of the dataset associated with the list of Sensor Statistics. </p>
     ///   - [`ingestion_job_id(impl Into<String>)`](crate::client::fluent_builders::ListSensorStatistics::ingestion_job_id) / [`set_ingestion_job_id(Option<String>)`](crate::client::fluent_builders::ListSensorStatistics::set_ingestion_job_id): <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSensorStatistics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSensorStatistics::set_max_results): <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSensorStatistics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSensorStatistics::set_next_token): <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSensorStatistics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSensorStatistics::set_max_results): <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSensorStatistics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSensorStatistics::set_next_token): <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     /// - On success, responds with [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput) with field(s):
-    ///   - [`sensor_statistics_summaries(Option<Vec<SensorStatisticsSummary>>)`](crate::output::ListSensorStatisticsOutput::sensor_statistics_summaries): <p> Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSensorStatisticsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    ///   - [`sensor_statistics_summaries(Option<Vec<SensorStatisticsSummary>>)`](crate::output::ListSensorStatisticsOutput::sensor_statistics_summaries): <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSensorStatisticsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     /// - On failure, responds with [`SdkError<ListSensorStatisticsError>`](crate::error::ListSensorStatisticsError)
     pub fn list_sensor_statistics(&self) -> fluent_builders::ListSensorStatistics {
         fluent_builders::ListSensorStatistics::new(self.handle.clone())
@@ -474,6 +593,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateInferenceSchedulerError>`](crate::error::UpdateInferenceSchedulerError)
     pub fn update_inference_scheduler(&self) -> fluent_builders::UpdateInferenceScheduler {
         fluent_builders::UpdateInferenceScheduler::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateLabelGroup`](crate::client::fluent_builders::UpdateLabelGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`label_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLabelGroup::label_group_name) / [`set_label_group_name(Option<String>)`](crate::client::fluent_builders::UpdateLabelGroup::set_label_group_name): <p> The name of the label group to be updated. </p>
+    ///   - [`fault_codes(Vec<String>)`](crate::client::fluent_builders::UpdateLabelGroup::fault_codes) / [`set_fault_codes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLabelGroup::set_fault_codes): <p> Updates the code indicating the type of anomaly associated with the label. </p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// - On success, responds with [`UpdateLabelGroupOutput`](crate::output::UpdateLabelGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateLabelGroupError>`](crate::error::UpdateLabelGroupError)
+    pub fn update_label_group(&self) -> fluent_builders::UpdateLabelGroup {
+        fluent_builders::UpdateLabelGroup::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -702,22 +832,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_scheduler_name(input);
             self
         }
-        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+        /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.data_delay_offset_in_minutes(input);
             self
         }
-        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+        /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_data_delay_offset_in_minutes(input);
             self
         }
-        /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+        /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
             self.inner = self.inner.data_upload_frequency(input);
             self
         }
-        /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+        /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn set_data_upload_frequency(
             mut self,
             input: std::option::Option<crate::model::DataUploadFrequency>,
@@ -800,6 +934,300 @@ pub mod fluent_builders {
             self
         }
         /// <p>Any tags associated with the inference scheduler. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateLabel`.
+    ///
+    /// <p> Creates a label for an event. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateLabel {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_label_input::Builder,
+    }
+    impl CreateLabel {
+        /// Creates a new `CreateLabel`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateLabel,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateLabelError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLabelOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLabelError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The name of a group of labels. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_group_name(input.into());
+            self
+        }
+        /// <p> The name of a group of labels. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name(input);
+            self
+        }
+        /// <p> The start time of the labeled event. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
+            self
+        }
+        /// <p> The start time of the labeled event. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_start_time(input);
+            self
+        }
+        /// <p> The end time of the labeled event. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
+            self
+        }
+        /// <p> The end time of the labeled event. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_end_time(input);
+            self
+        }
+        /// <p> Indicates whether a labeled event represents an anomaly. </p>
+        pub fn rating(mut self, input: crate::model::LabelRating) -> Self {
+            self.inner = self.inner.rating(input);
+            self
+        }
+        /// <p> Indicates whether a labeled event represents an anomaly. </p>
+        pub fn set_rating(mut self, input: std::option::Option<crate::model::LabelRating>) -> Self {
+            self.inner = self.inner.set_rating(input);
+            self
+        }
+        /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fault_code(input.into());
+            self
+        }
+        /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_fault_code(input);
+            self
+        }
+        /// <p> Metadata providing additional information about the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
+            self
+        }
+        /// <p> Metadata providing additional information about the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notes(input);
+            self
+        }
+        /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.equipment(input.into());
+            self
+        }
+        /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_equipment(input);
+            self
+        }
+        /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateLabelGroup`.
+    ///
+    /// <p> Creates a group of labels. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateLabelGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_label_group_input::Builder,
+    }
+    impl CreateLabelGroup {
+        /// Creates a new `CreateLabelGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateLabelGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateLabelGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLabelGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLabelGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Names a group of labels.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_group_name(input.into());
+            self
+        }
+        /// <p> Names a group of labels.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name(input);
+            self
+        }
+        /// Appends an item to `FaultCodes`.
+        ///
+        /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
+        ///
+        /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn fault_codes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fault_codes(input.into());
+            self
+        }
+        /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_fault_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_fault_codes(input);
+            self
+        }
+        /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> Tags that provide metadata about the label group you are creating. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p> Tags that provide metadata about the label group you are creating. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1216,6 +1644,176 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteLabel`.
+    ///
+    /// <p> Deletes a label. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteLabel {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_label_input::Builder,
+    }
+    impl DeleteLabel {
+        /// Creates a new `DeleteLabel`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteLabel,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLabelError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteLabelOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLabelError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_group_name(input.into());
+            self
+        }
+        /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name(input);
+            self
+        }
+        /// <p> The ID of the label that you want to delete. </p>
+        pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_id(input.into());
+            self
+        }
+        /// <p> The ID of the label that you want to delete. </p>
+        pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_label_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteLabelGroup`.
+    ///
+    /// <p> Deletes a group of labels. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteLabelGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_label_group_input::Builder,
+    }
+    impl DeleteLabelGroup {
+        /// Creates a new `DeleteLabelGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteLabelGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLabelGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteLabelGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLabelGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_group_name(input.into());
+            self
+        }
+        /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteModel`.
     ///
     /// <p>Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from being used with an inference scheduler, even one that is already set up. </p>
@@ -1527,6 +2125,176 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeLabel`.
+    ///
+    /// <p> Returns the name of the label. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeLabel {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_label_input::Builder,
+    }
+    impl DescribeLabel {
+        /// Creates a new `DescribeLabel`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DescribeLabel,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeLabelError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeLabelOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeLabelError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Returns the name of the group containing the label. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_group_name(input.into());
+            self
+        }
+        /// <p> Returns the name of the group containing the label. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name(input);
+            self
+        }
+        /// <p> Returns the ID of the label. </p>
+        pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_id(input.into());
+            self
+        }
+        /// <p> Returns the ID of the label. </p>
+        pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_label_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeLabelGroup`.
+    ///
+    /// <p> Returns information about the label group. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeLabelGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_label_group_input::Builder,
+    }
+    impl DescribeLabelGroup {
+        /// Creates a new `DescribeLabelGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DescribeLabelGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeLabelGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeLabelGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeLabelGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Returns the name of the label group. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_group_name(input.into());
+            self
+        }
+        /// <p> Returns the name of the label group. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeModel`.
     ///
     /// <p>Provides a JSON containing the overall information about a specific ML model, including model name and ARN, dataset, training and evaluation information, status, and so on. </p>
@@ -1686,12 +2454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+        /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+        /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1931,12 +2699,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_scheduler_name(input);
             self
         }
-        /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+        /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
         pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.interval_start_time(input);
             self
         }
-        /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+        /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
         pub fn set_interval_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1944,12 +2712,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_interval_start_time(input);
             self
         }
-        /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+        /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
         pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.interval_end_time(input);
             self
         }
-        /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+        /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
         pub fn set_interval_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2224,6 +2992,267 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListLabelGroups`.
+    ///
+    /// <p> Returns a list of the label groups. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListLabelGroups {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_label_groups_input::Builder,
+    }
+    impl ListLabelGroups {
+        /// Creates a new `ListLabelGroups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListLabelGroups,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListLabelGroupsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListLabelGroupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListLabelGroupsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLabelGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLabelGroupsPaginator {
+            crate::paginator::ListLabelGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The beginning of the name of the label groups to be listed. </p>
+        pub fn label_group_name_begins_with(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.label_group_name_begins_with(input.into());
+            self
+        }
+        /// <p> The beginning of the name of the label groups to be listed. </p>
+        pub fn set_label_group_name_begins_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name_begins_with(input);
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p> Specifies the maximum number of label groups to list. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p> Specifies the maximum number of label groups to list. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListLabels`.
+    ///
+    /// <p> Provides a list of labels. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListLabels {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_labels_input::Builder,
+    }
+    impl ListLabels {
+        /// Creates a new `ListLabels`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListLabels,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListLabelsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListLabelsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListLabelsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLabelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLabelsPaginator {
+            crate::paginator::ListLabelsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> Retruns the name of the label group. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_group_name(input.into());
+            self
+        }
+        /// <p> Retruns the name of the label group. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name(input);
+            self
+        }
+        /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
+        pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.interval_start_time(input);
+            self
+        }
+        /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
+        pub fn set_interval_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_interval_start_time(input);
+            self
+        }
+        /// <p> Returns all labels with a start time earlier than the end time given. </p>
+        pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.interval_end_time(input);
+            self
+        }
+        /// <p> Returns all labels with a start time earlier than the end time given. </p>
+        pub fn set_interval_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_interval_end_time(input);
+            self
+        }
+        /// <p> Returns labels with a particular fault code. </p>
+        pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fault_code(input.into());
+            self
+        }
+        /// <p> Returns labels with a particular fault code. </p>
+        pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_fault_code(input);
+            self
+        }
+        /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
+        pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.equipment(input.into());
+            self
+        }
+        /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
+        pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_equipment(input);
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p> Specifies the maximum number of labels to list. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p> Specifies the maximum number of labels to list. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListModels`.
     ///
     /// <p>Generates a list of all models in the account, including model name and ARN, dataset, and status. </p>
@@ -2448,22 +3477,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ingestion_job_id(input);
             self
         }
-        /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+        /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+        /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+        /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+        /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3149,6 +4178,105 @@ pub mod fluent_builders {
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateLabelGroup`.
+    ///
+    /// <p> Updates the label group. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateLabelGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_label_group_input::Builder,
+    }
+    impl UpdateLabelGroup {
+        /// Creates a new `UpdateLabelGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateLabelGroup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateLabelGroupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateLabelGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateLabelGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The name of the label group to be updated. </p>
+        pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_group_name(input.into());
+            self
+        }
+        /// <p> The name of the label group to be updated. </p>
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_group_name(input);
+            self
+        }
+        /// Appends an item to `FaultCodes`.
+        ///
+        /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
+        ///
+        /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn fault_codes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fault_codes(input.into());
+            self
+        }
+        /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+        /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+        pub fn set_fault_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_fault_codes(input);
             self
         }
     }

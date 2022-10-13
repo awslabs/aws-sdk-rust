@@ -344,6 +344,171 @@ impl AssociateMemberToGroupInput {
     }
 }
 
+/// See [`AssumeImpersonationRoleInput`](crate::input::AssumeImpersonationRoleInput).
+pub mod assume_impersonation_role_input {
+
+    /// A builder for [`AssumeImpersonationRoleInput`](crate::input::AssumeImpersonationRoleInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The impersonation role ID to assume.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The impersonation role ID to assume.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssumeImpersonationRoleInput`](crate::input::AssumeImpersonationRoleInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AssumeImpersonationRoleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssumeImpersonationRoleInput {
+                organization_id: self.organization_id,
+                impersonation_role_id: self.impersonation_role_id,
+            })
+        }
+    }
+}
+impl AssumeImpersonationRoleInput {
+    /// Consumes the builder and constructs an Operation<[`AssumeImpersonationRole`](crate::operation::AssumeImpersonationRole)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssumeImpersonationRole,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AssumeImpersonationRoleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssumeImpersonationRoleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.AssumeImpersonationRole",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_assume_impersonation_role(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssumeImpersonationRole::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssumeImpersonationRole",
+            "workmail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`AssumeImpersonationRoleInput`](crate::input::AssumeImpersonationRoleInput).
+    pub fn builder() -> crate::input::assume_impersonation_role_input::Builder {
+        crate::input::assume_impersonation_role_input::Builder::default()
+    }
+}
+
 /// See [`CancelMailboxExportJobInput`](crate::input::CancelMailboxExportJobInput).
 pub mod cancel_mailbox_export_job_input {
 
@@ -712,12 +877,12 @@ pub mod create_availability_configuration_input {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1051,6 +1216,231 @@ impl CreateGroupInput {
     }
 }
 
+/// See [`CreateImpersonationRoleInput`](crate::input::CreateImpersonationRoleInput).
+pub mod create_impersonation_role_input {
+
+    /// A builder for [`CreateImpersonationRoleInput`](crate::input::CreateImpersonationRoleInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+    }
+    impl Builder {
+        /// <p>The idempotency token for the client request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>The idempotency token for the client request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>The WorkMail organization to create the new impersonation role within.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The WorkMail organization to create the new impersonation role within.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The name of the new impersonation role.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the new impersonation role.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ImpersonationRoleType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ImpersonationRoleType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The description of the new impersonation role.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the new impersonation role.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The list of rules for the impersonation role.</p>
+        pub fn rules(mut self, input: crate::model::ImpersonationRule) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input);
+            self.rules = Some(v);
+            self
+        }
+        /// <p>The list of rules for the impersonation role.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateImpersonationRoleInput`](crate::input::CreateImpersonationRoleInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateImpersonationRoleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateImpersonationRoleInput {
+                client_token: self.client_token,
+                organization_id: self.organization_id,
+                name: self.name,
+                r#type: self.r#type,
+                description: self.description,
+                rules: self.rules,
+            })
+        }
+    }
+}
+impl CreateImpersonationRoleInput {
+    /// Consumes the builder and constructs an Operation<[`CreateImpersonationRole`](crate::operation::CreateImpersonationRole)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateImpersonationRole,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateImpersonationRoleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateImpersonationRoleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.CreateImpersonationRole",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_impersonation_role(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateImpersonationRole::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateImpersonationRole",
+            "workmail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateImpersonationRoleInput`](crate::input::CreateImpersonationRoleInput).
+    pub fn builder() -> crate::input::create_impersonation_role_input::Builder {
+        crate::input::create_impersonation_role_input::Builder::default()
+    }
+}
+
 /// See [`CreateMobileDeviceAccessRuleInput`](crate::input::CreateMobileDeviceAccessRuleInput).
 pub mod create_mobile_device_access_rule_input {
 
@@ -1074,12 +1464,12 @@ pub mod create_mobile_device_access_rule_input {
         pub(crate) not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
+        /// <p>The WorkMail organization under which the rule will be created.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
+        /// <p>The WorkMail organization under which the rule will be created.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1488,22 +1878,22 @@ pub mod create_organization_input {
             self.domains = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+        /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
         pub fn enable_interoperability(mut self, input: bool) -> Self {
             self.enable_interoperability = Some(input);
             self
         }
-        /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+        /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
         pub fn set_enable_interoperability(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_interoperability = input;
             self
@@ -2333,12 +2723,12 @@ pub mod delete_availability_configuration_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2787,6 +3177,171 @@ impl DeleteGroupInput {
     }
 }
 
+/// See [`DeleteImpersonationRoleInput`](crate::input::DeleteImpersonationRoleInput).
+pub mod delete_impersonation_role_input {
+
+    /// A builder for [`DeleteImpersonationRoleInput`](crate::input::DeleteImpersonationRoleInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The ID of the impersonation role to delete.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the impersonation role to delete.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteImpersonationRoleInput`](crate::input::DeleteImpersonationRoleInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteImpersonationRoleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteImpersonationRoleInput {
+                organization_id: self.organization_id,
+                impersonation_role_id: self.impersonation_role_id,
+            })
+        }
+    }
+}
+impl DeleteImpersonationRoleInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteImpersonationRole`](crate::operation::DeleteImpersonationRole)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteImpersonationRole,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteImpersonationRoleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteImpersonationRoleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.DeleteImpersonationRole",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_impersonation_role(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteImpersonationRole::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteImpersonationRole",
+            "workmail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteImpersonationRoleInput`](crate::input::DeleteImpersonationRoleInput).
+    pub fn builder() -> crate::input::delete_impersonation_role_input::Builder {
+        crate::input::delete_impersonation_role_input::Builder::default()
+    }
+}
+
 /// See [`DeleteMailboxPermissionsInput`](crate::input::DeleteMailboxPermissionsInput).
 pub mod delete_mailbox_permissions_input {
 
@@ -2972,12 +3527,12 @@ pub mod delete_mobile_device_access_override_input {
         pub(crate) device_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+        /// <p>The WorkMail organization for which the access override will be deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+        /// <p>The WorkMail organization for which the access override will be deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3152,12 +3707,12 @@ pub mod delete_mobile_device_access_rule_input {
         pub(crate) mobile_device_access_rule_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+        /// <p>The WorkMail organization under which the rule will be deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+        /// <p>The WorkMail organization under which the rule will be deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3965,12 +4520,12 @@ pub mod deregister_from_work_mail_input {
         pub(crate) entity_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+        /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+        /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4125,12 +4680,12 @@ pub mod deregister_mail_domain_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+        /// <p>The WorkMail organization for which the domain will be deregistered.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+        /// <p>The WorkMail organization for which the domain will be deregistered.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4138,12 +4693,12 @@ pub mod deregister_mail_domain_input {
             self.organization_id = input;
             self
         }
-        /// <p>The domain to deregister in WorkMail and SES. </p>
+        /// <p>The domain to deregister in WorkMail and SES.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The domain to deregister in WorkMail and SES. </p>
+        /// <p>The domain to deregister in WorkMail and SES.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -5703,6 +6258,7 @@ pub mod get_access_control_effect_input {
         pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier for the organization.</p>
@@ -5748,6 +6304,19 @@ pub mod get_access_control_effect_input {
             self.user_id = input;
             self
         }
+        /// <p>The impersonation role ID.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The impersonation role ID.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccessControlEffectInput`](crate::input::GetAccessControlEffectInput).
         pub fn build(
             self,
@@ -5758,6 +6327,7 @@ pub mod get_access_control_effect_input {
                 ip_address: self.ip_address,
                 action: self.action,
                 user_id: self.user_id,
+                impersonation_role_id: self.impersonation_role_id,
             })
         }
     }
@@ -6027,6 +6597,353 @@ impl GetDefaultRetentionPolicyInput {
     }
 }
 
+/// See [`GetImpersonationRoleInput`](crate::input::GetImpersonationRoleInput).
+pub mod get_impersonation_role_input {
+
+    /// A builder for [`GetImpersonationRoleInput`](crate::input::GetImpersonationRoleInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The impersonation role ID to retrieve.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The impersonation role ID to retrieve.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetImpersonationRoleInput`](crate::input::GetImpersonationRoleInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetImpersonationRoleInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetImpersonationRoleInput {
+                organization_id: self.organization_id,
+                impersonation_role_id: self.impersonation_role_id,
+            })
+        }
+    }
+}
+impl GetImpersonationRoleInput {
+    /// Consumes the builder and constructs an Operation<[`GetImpersonationRole`](crate::operation::GetImpersonationRole)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetImpersonationRole,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetImpersonationRoleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetImpersonationRoleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.GetImpersonationRole",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_impersonation_role(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetImpersonationRole::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetImpersonationRole",
+            "workmail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetImpersonationRoleInput`](crate::input::GetImpersonationRoleInput).
+    pub fn builder() -> crate::input::get_impersonation_role_input::Builder {
+        crate::input::get_impersonation_role_input::Builder::default()
+    }
+}
+
+/// See [`GetImpersonationRoleEffectInput`](crate::input::GetImpersonationRoleEffectInput).
+pub mod get_impersonation_role_effect_input {
+
+    /// A builder for [`GetImpersonationRoleEffectInput`](crate::input::GetImpersonationRoleEffectInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
+        pub(crate) target_user: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The WorkMail organization where the impersonation role is defined.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The WorkMail organization where the impersonation role is defined.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The impersonation role ID to test.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The impersonation role ID to test.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
+        /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+        /// <ul>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
+        /// </ul>
+        pub fn target_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_user = Some(input.into());
+            self
+        }
+        /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+        /// <ul>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
+        /// </ul>
+        pub fn set_target_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_user = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetImpersonationRoleEffectInput`](crate::input::GetImpersonationRoleEffectInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetImpersonationRoleEffectInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetImpersonationRoleEffectInput {
+                organization_id: self.organization_id,
+                impersonation_role_id: self.impersonation_role_id,
+                target_user: self.target_user,
+            })
+        }
+    }
+}
+impl GetImpersonationRoleEffectInput {
+    /// Consumes the builder and constructs an Operation<[`GetImpersonationRoleEffect`](crate::operation::GetImpersonationRoleEffect)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetImpersonationRoleEffect,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetImpersonationRoleEffectInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetImpersonationRoleEffectInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.GetImpersonationRoleEffect",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_impersonation_role_effect(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetImpersonationRoleEffect::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetImpersonationRoleEffect",
+            "workmail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetImpersonationRoleEffectInput`](crate::input::GetImpersonationRoleEffectInput).
+    pub fn builder() -> crate::input::get_impersonation_role_effect_input::Builder {
+        crate::input::get_impersonation_role_effect_input::Builder::default()
+    }
+}
+
 /// See [`GetMailboxDetailsInput`](crate::input::GetMailboxDetailsInput).
 pub mod get_mailbox_details_input {
 
@@ -6195,12 +7112,12 @@ pub mod get_mail_domain_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+        /// <p>The WorkMail organization for which the domain is retrieved.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+        /// <p>The WorkMail organization for which the domain is retrieved.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6356,12 +7273,12 @@ pub mod get_mobile_device_access_effect_input {
         pub(crate) device_user_agent: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+        /// <p>The WorkMail organization to simulate the access effect for.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+        /// <p>The WorkMail organization to simulate the access effect for.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6555,12 +7472,12 @@ pub mod get_mobile_device_access_override_input {
         pub(crate) device_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+        /// <p>The WorkMail organization to which you want to apply the override.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+        /// <p>The WorkMail organization to which you want to apply the override.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7066,12 +7983,12 @@ pub mod list_availability_configurations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7577,6 +8494,178 @@ impl ListGroupsInput {
     }
 }
 
+/// See [`ListImpersonationRolesInput`](crate::input::ListImpersonationRolesInput).
+pub mod list_impersonation_roles_input {
+
+    /// A builder for [`ListImpersonationRolesInput`](crate::input::ListImpersonationRolesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The WorkMail organization to which the listed impersonation roles belong.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The WorkMail organization to which the listed impersonation roles belong.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The token used to retrieve the next page of results. The first call doesn't require a token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token used to retrieve the next page of results. The first call doesn't require a token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results returned in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results returned in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImpersonationRolesInput`](crate::input::ListImpersonationRolesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListImpersonationRolesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListImpersonationRolesInput {
+                organization_id: self.organization_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListImpersonationRolesInput {
+    /// Consumes the builder and constructs an Operation<[`ListImpersonationRoles`](crate::operation::ListImpersonationRoles)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListImpersonationRoles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListImpersonationRolesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListImpersonationRolesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.ListImpersonationRoles",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_impersonation_roles(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListImpersonationRoles::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListImpersonationRoles",
+            "workmail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListImpersonationRolesInput`](crate::input::ListImpersonationRolesInput).
+    pub fn builder() -> crate::input::list_impersonation_roles_input::Builder {
+        crate::input::list_impersonation_roles_input::Builder::default()
+    }
+}
+
 /// See [`ListMailboxExportJobsInput`](crate::input::ListMailboxExportJobsInput).
 pub mod list_mailbox_export_jobs_input {
 
@@ -7944,12 +9033,12 @@ pub mod list_mail_domains_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        /// <p>The WorkMail organization for which to list domains.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        /// <p>The WorkMail organization for which to list domains.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8116,12 +9205,12 @@ pub mod list_mobile_device_access_overrides_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+        /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+        /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8317,12 +9406,12 @@ pub mod list_mobile_device_access_rules_input {
         pub(crate) organization_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which to list the rules.</p>
+        /// <p>The WorkMail organization for which to list the rules.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which to list the rules.</p>
+        /// <p>The WorkMail organization for which to list the rules.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9292,6 +10381,9 @@ pub mod put_access_control_rule_input {
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) not_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) impersonation_role_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) not_impersonation_role_ids:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The rule name.</p>
@@ -9454,6 +10546,44 @@ pub mod put_access_control_rule_input {
             self.organization_id = input;
             self
         }
+        /// Appends an item to `impersonation_role_ids`.
+        ///
+        /// To override the contents of this collection use [`set_impersonation_role_ids`](Self::set_impersonation_role_ids).
+        ///
+        /// <p>Impersonation role IDs to include in the rule.</p>
+        pub fn impersonation_role_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.impersonation_role_ids.unwrap_or_default();
+            v.push(input.into());
+            self.impersonation_role_ids = Some(v);
+            self
+        }
+        /// <p>Impersonation role IDs to include in the rule.</p>
+        pub fn set_impersonation_role_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.impersonation_role_ids = input;
+            self
+        }
+        /// Appends an item to `not_impersonation_role_ids`.
+        ///
+        /// To override the contents of this collection use [`set_not_impersonation_role_ids`](Self::set_not_impersonation_role_ids).
+        ///
+        /// <p>Impersonation role IDs to exclude from the rule.</p>
+        pub fn not_impersonation_role_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.not_impersonation_role_ids.unwrap_or_default();
+            v.push(input.into());
+            self.not_impersonation_role_ids = Some(v);
+            self
+        }
+        /// <p>Impersonation role IDs to exclude from the rule.</p>
+        pub fn set_not_impersonation_role_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.not_impersonation_role_ids = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutAccessControlRuleInput`](crate::input::PutAccessControlRuleInput).
         pub fn build(
             self,
@@ -9470,6 +10600,8 @@ pub mod put_access_control_rule_input {
                 user_ids: self.user_ids,
                 not_user_ids: self.not_user_ids,
                 organization_id: self.organization_id,
+                impersonation_role_ids: self.impersonation_role_ids,
+                not_impersonation_role_ids: self.not_impersonation_role_ids,
             })
         }
     }
@@ -9773,12 +10905,12 @@ pub mod put_inbound_dmarc_settings_input {
         pub(crate) enforced: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+        /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+        /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10132,12 +11264,12 @@ pub mod put_mobile_device_access_override_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+        /// <p>Identifies the WorkMail organization for which you create the override.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+        /// <p>Identifies the WorkMail organization for which you create the override.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10552,12 +11684,12 @@ pub mod register_mail_domain_input {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+        /// <p>The WorkMail organization under which you're creating the domain.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+        /// <p>The WorkMail organization under which you're creating the domain.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10565,12 +11697,12 @@ pub mod register_mail_domain_input {
             self.organization_id = input;
             self
         }
-        /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+        /// <p>The name of the mail domain to create in WorkMail and SES.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+        /// <p>The name of the mail domain to create in WorkMail and SES.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -11458,12 +12590,12 @@ pub mod test_availability_configuration_input {
         pub(crate) lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+        /// <p>The WorkMail organization where the availability provider will be tested.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+        /// <p>The WorkMail organization where the availability provider will be tested.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11811,12 +12943,12 @@ pub mod update_availability_configuration_input {
         pub(crate) lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+        /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11998,12 +13130,12 @@ pub mod update_default_mail_domain_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        /// <p>The WorkMail organization for which to list domains.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        /// <p>The WorkMail organization for which to list domains.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12147,6 +13279,231 @@ impl UpdateDefaultMailDomainInput {
     /// Creates a new builder-style object to manufacture [`UpdateDefaultMailDomainInput`](crate::input::UpdateDefaultMailDomainInput).
     pub fn builder() -> crate::input::update_default_mail_domain_input::Builder {
         crate::input::update_default_mail_domain_input::Builder::default()
+    }
+}
+
+/// See [`UpdateImpersonationRoleInput`](crate::input::UpdateImpersonationRoleInput).
+pub mod update_impersonation_role_input {
+
+    /// A builder for [`UpdateImpersonationRoleInput`](crate::input::UpdateImpersonationRoleInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+    }
+    impl Builder {
+        /// <p>The WorkMail organization that contains the impersonation role to update.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The WorkMail organization that contains the impersonation role to update.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The ID of the impersonation role to update.</p>
+        pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.impersonation_role_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the impersonation role to update.</p>
+        pub fn set_impersonation_role_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.impersonation_role_id = input;
+            self
+        }
+        /// <p>The updated impersonation role name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The updated impersonation role name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The updated impersonation role type.</p>
+        pub fn r#type(mut self, input: crate::model::ImpersonationRoleType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The updated impersonation role type.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ImpersonationRoleType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The updated impersonation role description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The updated impersonation role description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The updated list of rules.</p>
+        pub fn rules(mut self, input: crate::model::ImpersonationRule) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input);
+            self.rules = Some(v);
+            self
+        }
+        /// <p>The updated list of rules.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateImpersonationRoleInput`](crate::input::UpdateImpersonationRoleInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateImpersonationRoleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateImpersonationRoleInput {
+                organization_id: self.organization_id,
+                impersonation_role_id: self.impersonation_role_id,
+                name: self.name,
+                r#type: self.r#type,
+                description: self.description,
+                rules: self.rules,
+            })
+        }
+    }
+}
+impl UpdateImpersonationRoleInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateImpersonationRole`](crate::operation::UpdateImpersonationRole)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateImpersonationRole,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateImpersonationRoleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateImpersonationRoleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.UpdateImpersonationRole",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_impersonation_role(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateImpersonationRole::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateImpersonationRole",
+            "workmail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateImpersonationRoleInput`](crate::input::UpdateImpersonationRoleInput).
+    pub fn builder() -> crate::input::update_impersonation_role_input::Builder {
+        crate::input::update_impersonation_role_input::Builder::default()
     }
 }
 
@@ -12343,12 +13700,12 @@ pub mod update_mobile_device_access_rule_input {
         pub(crate) not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+        /// <p>The WorkMail organization under which the rule will be updated.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+        /// <p>The WorkMail organization under which the rule will be updated.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13144,7 +14501,7 @@ impl std::fmt::Debug for UpdatePrimaryEmailAddressInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMobileDeviceAccessRuleInput {
-    /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+    /// <p>The WorkMail organization under which the rule will be updated.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the rule to be updated.</p>
@@ -13185,7 +14542,7 @@ pub struct UpdateMobileDeviceAccessRuleInput {
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateMobileDeviceAccessRuleInput {
-    /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+    /// <p>The WorkMail organization under which the rule will be updated.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13305,8 +14662,70 @@ impl std::fmt::Debug for UpdateMailboxQuotaInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateImpersonationRoleInput {
+    /// <p>The WorkMail organization that contains the impersonation role to update.</p>
+    #[doc(hidden)]
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the impersonation role to update.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
+    /// <p>The updated impersonation role name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The updated impersonation role type.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+    /// <p>The updated impersonation role description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The updated list of rules.</p>
+    #[doc(hidden)]
+    pub rules: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+}
+impl UpdateImpersonationRoleInput {
+    /// <p>The WorkMail organization that contains the impersonation role to update.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The ID of the impersonation role to update.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
+    /// <p>The updated impersonation role name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated impersonation role type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImpersonationRoleType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The updated impersonation role description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated list of rules.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ImpersonationRule]> {
+        self.rules.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateImpersonationRoleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateImpersonationRoleInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("description", &self.description);
+        formatter.field("rules", &self.rules);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDefaultMailDomainInput {
-    /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    /// <p>The WorkMail organization for which to list domains.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain name that will become the default domain.</p>
@@ -13314,7 +14733,7 @@ pub struct UpdateDefaultMailDomainInput {
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl UpdateDefaultMailDomainInput {
-    /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    /// <p>The WorkMail organization for which to list domains.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13336,7 +14755,7 @@ impl std::fmt::Debug for UpdateDefaultMailDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAvailabilityConfigurationInput {
-    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain to which the provider applies the availability configuration.</p>
@@ -13350,7 +14769,7 @@ pub struct UpdateAvailabilityConfigurationInput {
     pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
 }
 impl UpdateAvailabilityConfigurationInput {
-    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13414,7 +14833,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestAvailabilityConfigurationInput {
-    /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+    /// <p>The WorkMail organization where the availability provider will be tested.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
@@ -13428,7 +14847,7 @@ pub struct TestAvailabilityConfigurationInput {
     pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
 }
 impl TestAvailabilityConfigurationInput {
-    /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+    /// <p>The WorkMail organization where the availability provider will be tested.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13649,10 +15068,10 @@ pub struct RegisterMailDomainInput {
     /// <p>Idempotency token used when retrying requests.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+    /// <p>The WorkMail organization under which you're creating the domain.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+    /// <p>The name of the mail domain to create in WorkMail and SES.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
@@ -13661,11 +15080,11 @@ impl RegisterMailDomainInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+    /// <p>The WorkMail organization under which you're creating the domain.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+    /// <p>The name of the mail domain to create in WorkMail and SES.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -13741,7 +15160,7 @@ impl std::fmt::Debug for PutRetentionPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMobileDeviceAccessOverrideInput {
-    /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+    /// <p>Identifies the WorkMail organization for which you create the override.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
@@ -13763,7 +15182,7 @@ pub struct PutMobileDeviceAccessOverrideInput {
     pub description: std::option::Option<std::string::String>,
 }
 impl PutMobileDeviceAccessOverrideInput {
-    /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+    /// <p>Identifies the WorkMail organization for which you create the override.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13851,7 +15270,7 @@ impl std::fmt::Debug for PutMailboxPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInboundDmarcSettingsInput {
-    /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+    /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Enforces or suspends a policy after it's applied.</p>
@@ -13859,7 +15278,7 @@ pub struct PutInboundDmarcSettingsInput {
     pub enforced: std::option::Option<bool>,
 }
 impl PutInboundDmarcSettingsInput {
-    /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+    /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13949,6 +15368,12 @@ pub struct PutAccessControlRuleInput {
     /// <p>The identifier of the organization.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
+    /// <p>Impersonation role IDs to include in the rule.</p>
+    #[doc(hidden)]
+    pub impersonation_role_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Impersonation role IDs to exclude from the rule.</p>
+    #[doc(hidden)]
+    pub not_impersonation_role_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutAccessControlRuleInput {
     /// <p>The rule name.</p>
@@ -13991,6 +15416,14 @@ impl PutAccessControlRuleInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
+    /// <p>Impersonation role IDs to include in the rule.</p>
+    pub fn impersonation_role_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.impersonation_role_ids.as_deref()
+    }
+    /// <p>Impersonation role IDs to exclude from the rule.</p>
+    pub fn not_impersonation_role_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_impersonation_role_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAccessControlRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14005,6 +15438,11 @@ impl std::fmt::Debug for PutAccessControlRuleInput {
         formatter.field("user_ids", &self.user_ids);
         formatter.field("not_user_ids", &self.not_user_ids);
         formatter.field("organization_id", &self.organization_id);
+        formatter.field("impersonation_role_ids", &self.impersonation_role_ids);
+        formatter.field(
+            "not_impersonation_role_ids",
+            &self.not_impersonation_role_ids,
+        );
         formatter.finish()
     }
 }
@@ -14187,12 +15625,12 @@ impl std::fmt::Debug for ListOrganizationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileDeviceAccessRulesInput {
-    /// <p>The Amazon WorkMail organization for which to list the rules.</p>
+    /// <p>The WorkMail organization for which to list the rules.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl ListMobileDeviceAccessRulesInput {
-    /// <p>The Amazon WorkMail organization for which to list the rules.</p>
+    /// <p>The WorkMail organization for which to list the rules.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14209,7 +15647,7 @@ impl std::fmt::Debug for ListMobileDeviceAccessRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileDeviceAccessOverridesInput {
-    /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+    /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
@@ -14231,7 +15669,7 @@ pub struct ListMobileDeviceAccessOverridesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListMobileDeviceAccessOverridesInput {
-    /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+    /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14273,7 +15711,7 @@ impl std::fmt::Debug for ListMobileDeviceAccessOverridesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailDomainsInput {
-    /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    /// <p>The WorkMail organization for which to list domains.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
@@ -14284,7 +15722,7 @@ pub struct ListMailDomainsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMailDomainsInput {
-    /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    /// <p>The WorkMail organization for which to list domains.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14394,6 +15832,44 @@ impl std::fmt::Debug for ListMailboxExportJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImpersonationRolesInput {
+    /// <p>The WorkMail organization to which the listed impersonation roles belong.</p>
+    #[doc(hidden)]
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The token used to retrieve the next page of results. The first call doesn't require a token.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results returned in a single call.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListImpersonationRolesInput {
+    /// <p>The WorkMail organization to which the listed impersonation roles belong.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The token used to retrieve the next page of results. The first call doesn't require a token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListImpersonationRolesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImpersonationRolesInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
     /// <p>The identifier for the organization under which the groups exist.</p>
     #[doc(hidden)]
@@ -14479,7 +15955,7 @@ impl std::fmt::Debug for ListGroupMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailabilityConfigurationsInput {
-    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
@@ -14490,7 +15966,7 @@ pub struct ListAvailabilityConfigurationsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailabilityConfigurationsInput {
-    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14585,7 +16061,7 @@ impl std::fmt::Debug for ListAccessControlRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileDeviceAccessOverrideInput {
-    /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+    /// <p>The WorkMail organization to which you want to apply the override.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
@@ -14601,7 +16077,7 @@ pub struct GetMobileDeviceAccessOverrideInput {
     pub device_id: std::option::Option<std::string::String>,
 }
 impl GetMobileDeviceAccessOverrideInput {
-    /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+    /// <p>The WorkMail organization to which you want to apply the override.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14633,7 +16109,7 @@ impl std::fmt::Debug for GetMobileDeviceAccessOverrideInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileDeviceAccessEffectInput {
-    /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+    /// <p>The WorkMail organization to simulate the access effect for.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Device type the simulated user will report.</p>
@@ -14650,7 +16126,7 @@ pub struct GetMobileDeviceAccessEffectInput {
     pub device_user_agent: std::option::Option<std::string::String>,
 }
 impl GetMobileDeviceAccessEffectInput {
-    /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+    /// <p>The WorkMail organization to simulate the access effect for.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14687,7 +16163,7 @@ impl std::fmt::Debug for GetMobileDeviceAccessEffectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailDomainInput {
-    /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+    /// <p>The WorkMail organization for which the domain is retrieved.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain from which you want to retrieve details.</p>
@@ -14695,7 +16171,7 @@ pub struct GetMailDomainInput {
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetMailDomainInput {
-    /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+    /// <p>The WorkMail organization for which the domain is retrieved.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14746,6 +16222,84 @@ impl std::fmt::Debug for GetMailboxDetailsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetImpersonationRoleEffectInput {
+    /// <p>The WorkMail organization where the impersonation role is defined.</p>
+    #[doc(hidden)]
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The impersonation role ID to test.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
+    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub target_user: std::option::Option<std::string::String>,
+}
+impl GetImpersonationRoleEffectInput {
+    /// <p>The WorkMail organization where the impersonation role is defined.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The impersonation role ID to test.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
+    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// </ul>
+    pub fn target_user(&self) -> std::option::Option<&str> {
+        self.target_user.as_deref()
+    }
+}
+impl std::fmt::Debug for GetImpersonationRoleEffectInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetImpersonationRoleEffectInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
+        formatter.field("target_user", &self.target_user);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetImpersonationRoleInput {
+    /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+    #[doc(hidden)]
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The impersonation role ID to retrieve.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
+}
+impl GetImpersonationRoleInput {
+    /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The impersonation role ID to retrieve.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetImpersonationRoleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetImpersonationRoleInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDefaultRetentionPolicyInput {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
@@ -14781,6 +16335,9 @@ pub struct GetAccessControlEffectInput {
     /// <p>The user ID.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
+    /// <p>The impersonation role ID.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
 }
 impl GetAccessControlEffectInput {
     /// <p>The identifier for the organization.</p>
@@ -14799,6 +16356,10 @@ impl GetAccessControlEffectInput {
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
+    /// <p>The impersonation role ID.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessControlEffectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14807,6 +16368,7 @@ impl std::fmt::Debug for GetAccessControlEffectInput {
         formatter.field("ip_address", &self.ip_address);
         formatter.field("action", &self.action);
         formatter.field("user_id", &self.user_id);
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
         formatter.finish()
     }
 }
@@ -15077,19 +16639,19 @@ impl std::fmt::Debug for DescribeEmailMonitoringConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterMailDomainInput {
-    /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+    /// <p>The WorkMail organization for which the domain will be deregistered.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The domain to deregister in WorkMail and SES. </p>
+    /// <p>The domain to deregister in WorkMail and SES.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeregisterMailDomainInput {
-    /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+    /// <p>The WorkMail organization for which the domain will be deregistered.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The domain to deregister in WorkMail and SES. </p>
+    /// <p>The domain to deregister in WorkMail and SES.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -15107,7 +16669,7 @@ impl std::fmt::Debug for DeregisterMailDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterFromWorkMailInput {
-    /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+    /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the member (user or group) to be updated.</p>
@@ -15115,7 +16677,7 @@ pub struct DeregisterFromWorkMailInput {
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl DeregisterFromWorkMailInput {
-    /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+    /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -15265,7 +16827,7 @@ impl std::fmt::Debug for DeleteOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMobileDeviceAccessRuleInput {
-    /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+    /// <p>The WorkMail organization under which the rule will be deleted.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the rule to be deleted.</p>
@@ -15273,7 +16835,7 @@ pub struct DeleteMobileDeviceAccessRuleInput {
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
 }
 impl DeleteMobileDeviceAccessRuleInput {
-    /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+    /// <p>The WorkMail organization under which the rule will be deleted.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -15298,7 +16860,7 @@ impl std::fmt::Debug for DeleteMobileDeviceAccessRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMobileDeviceAccessOverrideInput {
-    /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+    /// <p>The WorkMail organization for which the access override will be deleted.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
@@ -15314,7 +16876,7 @@ pub struct DeleteMobileDeviceAccessOverrideInput {
     pub device_id: std::option::Option<std::string::String>,
 }
 impl DeleteMobileDeviceAccessOverrideInput {
-    /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+    /// <p>The WorkMail organization for which the access override will be deleted.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -15383,6 +16945,36 @@ impl std::fmt::Debug for DeleteMailboxPermissionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteImpersonationRoleInput {
+    /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+    #[doc(hidden)]
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the impersonation role to delete.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
+}
+impl DeleteImpersonationRoleInput {
+    /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The ID of the impersonation role to delete.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteImpersonationRoleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteImpersonationRoleInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupInput {
     /// <p>The organization that contains the group.</p>
     #[doc(hidden)]
@@ -15436,7 +17028,7 @@ impl std::fmt::Debug for DeleteEmailMonitoringConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAvailabilityConfigurationInput {
-    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
@@ -15444,7 +17036,7 @@ pub struct DeleteAvailabilityConfigurationInput {
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteAvailabilityConfigurationInput {
-    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -15630,10 +17222,10 @@ pub struct CreateOrganizationInput {
     /// <p>The email domains to associate with the organization.</p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
-    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+    /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+    /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
     #[doc(hidden)]
     pub enable_interoperability: bool,
 }
@@ -15654,11 +17246,11 @@ impl CreateOrganizationInput {
     pub fn domains(&self) -> std::option::Option<&[crate::model::Domain]> {
         self.domains.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+    /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+    /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
     pub fn enable_interoperability(&self) -> bool {
         self.enable_interoperability
     }
@@ -15680,7 +17272,7 @@ impl std::fmt::Debug for CreateOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMobileDeviceAccessRuleInput {
-    /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
+    /// <p>The WorkMail organization under which the rule will be created.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token for the client request.</p>
@@ -15721,7 +17313,7 @@ pub struct CreateMobileDeviceAccessRuleInput {
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateMobileDeviceAccessRuleInput {
-    /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
+    /// <p>The WorkMail organization under which the rule will be created.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -15800,6 +17392,68 @@ impl std::fmt::Debug for CreateMobileDeviceAccessRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateImpersonationRoleInput {
+    /// <p>The idempotency token for the client request.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The WorkMail organization to create the new impersonation role within.</p>
+    #[doc(hidden)]
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The name of the new impersonation role.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::ImpersonationRoleType>,
+    /// <p>The description of the new impersonation role.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The list of rules for the impersonation role.</p>
+    #[doc(hidden)]
+    pub rules: std::option::Option<std::vec::Vec<crate::model::ImpersonationRule>>,
+}
+impl CreateImpersonationRoleInput {
+    /// <p>The idempotency token for the client request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The WorkMail organization to create the new impersonation role within.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The name of the new impersonation role.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImpersonationRoleType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The description of the new impersonation role.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The list of rules for the impersonation role.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ImpersonationRule]> {
+        self.rules.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateImpersonationRoleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateImpersonationRoleInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("description", &self.description);
+        formatter.field("rules", &self.rules);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupInput {
     /// <p>The organization under which the group is to be created.</p>
     #[doc(hidden)]
@@ -15834,7 +17488,7 @@ pub struct CreateAvailabilityConfigurationInput {
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain to which the provider applies.</p>
@@ -15852,7 +17506,7 @@ impl CreateAvailabilityConfigurationInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -15955,6 +17609,36 @@ impl std::fmt::Debug for CancelMailboxExportJobInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("job_id", &self.job_id);
         formatter.field("organization_id", &self.organization_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssumeImpersonationRoleInput {
+    /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+    #[doc(hidden)]
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The impersonation role ID to assume.</p>
+    #[doc(hidden)]
+    pub impersonation_role_id: std::option::Option<std::string::String>,
+}
+impl AssumeImpersonationRoleInput {
+    /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The impersonation role ID to assume.</p>
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+        self.impersonation_role_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AssumeImpersonationRoleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssumeImpersonationRoleInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("impersonation_role_id", &self.impersonation_role_id);
         formatter.finish()
     }
 }

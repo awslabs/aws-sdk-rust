@@ -1044,6 +1044,48 @@ pub fn deser_structure_crate_error_invalid_schedule_json_err(
     Ok(builder)
 }
 
+pub fn deser_structure_crate_error_invalid_tag_json_err(
+    value: &[u8],
+    mut builder: crate::error::invalid_tag::Builder,
+) -> Result<crate::error::invalid_tag::Builder, aws_smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Message" => {
+                        builder = builder.set_message(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_structure_crate_error_invalid_target_json_err(
     value: &[u8],
     mut builder: crate::error::invalid_target::Builder,
@@ -6834,6 +6876,18 @@ pub fn deser_operation_crate_operation_get_maintenance_window_execution_task(
                             )?,
                         );
                     }
+                    "AlarmConfiguration" => {
+                        builder = builder.set_alarm_configuration(
+                            crate::json_deser::deser_structure_crate_model_alarm_configuration(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "TriggeredAlarms" => {
+                        builder = builder.set_triggered_alarms(
+                            crate::json_deser::deser_list_com_amazonaws_ssm_alarm_state_information_list(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -7147,6 +7201,13 @@ pub fn deser_operation_crate_operation_get_maintenance_window_task(
                                 })
                             })
                             .transpose()?,
+                        );
+                    }
+                    "AlarmConfiguration" => {
+                        builder = builder.set_alarm_configuration(
+                            crate::json_deser::deser_structure_crate_model_alarm_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -11991,6 +12052,13 @@ pub fn deser_operation_crate_operation_update_maintenance_window_task(
                             .transpose()?,
                         );
                     }
+                    "AlarmConfiguration" => {
+                        builder = builder.set_alarm_configuration(
+                            crate::json_deser::deser_structure_crate_model_alarm_configuration(
+                                tokens,
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -12571,6 +12639,16 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_ssm_target_maps(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "AlarmConfiguration" => {
+                                builder = builder.set_alarm_configuration(
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
+                                );
+                            }
+                            "TriggeredAlarms" => {
+                                builder = builder.set_triggered_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_ssm_alarm_state_information_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -14475,6 +14553,16 @@ where
                                     crate::json_deser::deser_structure_crate_model_progress_counters(tokens)?
                                 );
                             }
+                            "AlarmConfiguration" => {
+                                builder = builder.set_alarm_configuration(
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
+                                );
+                            }
+                            "TriggeredAlarms" => {
+                                builder = builder.set_triggered_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_ssm_alarm_state_information_list(tokens)?
+                                );
+                            }
                             "AutomationSubtype" => {
                                 builder = builder.set_automation_subtype(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -14838,6 +14926,98 @@ where
                         let value =
                             crate::json_deser::deser_map_com_amazonaws_ssm_maintenance_window_task_parameters(tokens)?
                         ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_alarm_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::AlarmConfiguration>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AlarmConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "IgnorePollAlarmFailure" => {
+                                builder = builder.set_ignore_poll_alarm_failure(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "Alarms" => {
+                                builder = builder.set_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_ssm_alarm_list(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_ssm_alarm_state_information_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_alarm_state_information(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -16720,6 +16900,16 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "AlarmConfiguration" => {
+                                builder = builder.set_alarm_configuration(
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
+                                );
+                            }
+                            "TriggeredAlarms" => {
+                                builder = builder.set_triggered_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_ssm_alarm_state_information_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -17705,6 +17895,16 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "AlarmConfiguration" => {
+                                builder = builder.set_alarm_configuration(
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
+                                );
+                            }
+                            "TriggeredAlarms" => {
+                                builder = builder.set_triggered_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_ssm_alarm_state_information_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -18051,6 +18251,16 @@ where
                                             .map(|u| crate::model::AutomationType::from(u.as_ref()))
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "AlarmConfiguration" => {
+                                builder = builder.set_alarm_configuration(
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
+                                );
+                            }
+                            "TriggeredAlarms" => {
+                                builder = builder.set_triggered_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_ssm_alarm_state_information_list(tokens)?
                                 );
                             }
                             "AutomationSubtype" => {
@@ -19913,6 +20123,16 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "AlarmConfiguration" => {
+                                builder = builder.set_alarm_configuration(
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
+                                );
+                            }
+                            "TriggeredAlarms" => {
+                                builder = builder.set_triggered_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_ssm_alarm_state_information_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -20447,6 +20667,11 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "AlarmConfiguration" => {
+                                builder = builder.set_alarm_configuration(
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -21551,6 +21776,100 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_ssm_alarm_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<crate::model::Alarm>>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value = crate::json_deser::deser_structure_crate_model_alarm(tokens)?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_alarm_state_information<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::AlarmStateInformation>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AlarmStateInformation::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "State" => {
+                                builder = builder.set_state(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::ExternalAlarmState::from(u.as_ref())
+                                        })
+                                    })
                                     .transpose()?,
                                 );
                             }
@@ -24670,6 +24989,11 @@ where
                                     )?,
                                 );
                             }
+                            "AlarmConfiguration" => {
+                                builder = builder.set_alarm_configuration(
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -25789,6 +26113,52 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_alarm<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::Alarm>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::Alarm::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }

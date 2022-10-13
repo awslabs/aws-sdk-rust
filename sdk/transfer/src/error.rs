@@ -2152,6 +2152,137 @@ impl std::error::Error for DeleteConnectorError {
     }
 }
 
+/// Error type for the `DeleteHostKey` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteHostKeyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteHostKeyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteHostKey` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteHostKeyErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteHostKeyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteHostKeyErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DeleteHostKeyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteHostKeyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteHostKeyErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteHostKeyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteHostKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteHostKeyError {
+    fn code(&self) -> Option<&str> {
+        DeleteHostKeyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteHostKeyError {
+    /// Creates a new `DeleteHostKeyError`.
+    pub fn new(kind: DeleteHostKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteHostKeyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteHostKeyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteHostKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteHostKeyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteHostKeyErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, DeleteHostKeyErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `DeleteHostKeyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHostKeyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteHostKeyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHostKeyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteHostKeyErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHostKeyErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteHostKeyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteHostKeyErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for DeleteHostKeyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteHostKeyErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DeleteHostKeyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteHostKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteHostKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteHostKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteHostKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteProfile` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3424,6 +3555,132 @@ impl std::error::Error for DescribeExecutionError {
     }
 }
 
+/// Error type for the `DescribeHostKey` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeHostKeyError {
+    /// Kind of error that occurred.
+    pub kind: DescribeHostKeyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeHostKey` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeHostKeyErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeHostKeyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeHostKeyErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DescribeHostKeyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeHostKeyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeHostKeyErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeHostKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeHostKeyError {
+    fn code(&self) -> Option<&str> {
+        DescribeHostKeyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeHostKeyError {
+    /// Creates a new `DescribeHostKeyError`.
+    pub fn new(kind: DescribeHostKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeHostKeyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeHostKeyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeHostKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeHostKeyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeHostKeyErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHostKeyErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeHostKeyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHostKeyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeHostKeyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHostKeyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeHostKeyErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHostKeyErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeHostKeyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeHostKeyErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DescribeHostKeyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeHostKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeHostKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeHostKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeProfile` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4170,6 +4427,148 @@ impl std::error::Error for ImportCertificateError {
             ImportCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ImportCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ImportCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ImportHostKey` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportHostKeyError {
+    /// Kind of error that occurred.
+    pub kind: ImportHostKeyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ImportHostKey` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportHostKeyErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource does not exist.</p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportHostKeyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportHostKeyErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ImportHostKeyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ImportHostKeyErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            ImportHostKeyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ImportHostKeyErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ImportHostKeyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ImportHostKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportHostKeyError {
+    fn code(&self) -> Option<&str> {
+        ImportHostKeyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportHostKeyError {
+    /// Creates a new `ImportHostKeyError`.
+    pub fn new(kind: ImportHostKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportHostKeyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportHostKeyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportHostKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportHostKeyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportHostKeyErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, ImportHostKeyErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `ImportHostKeyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportHostKeyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportHostKeyErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportHostKeyErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportHostKeyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportHostKeyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportHostKeyErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportHostKeyErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportHostKeyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ImportHostKeyErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for ImportHostKeyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportHostKeyErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ImportHostKeyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ImportHostKeyErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            ImportHostKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ImportHostKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ImportHostKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ImportHostKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4991,6 +5390,140 @@ impl std::error::Error for ListExecutionsError {
             ListExecutionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListExecutionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListExecutionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListHostKeys` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListHostKeysError {
+    /// Kind of error that occurred.
+    pub kind: ListHostKeysErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListHostKeys` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListHostKeysErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>The <code>NextToken</code> parameter that was passed is invalid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListHostKeysError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListHostKeysErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListHostKeysErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListHostKeysErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListHostKeysErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListHostKeysErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListHostKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListHostKeysError {
+    fn code(&self) -> Option<&str> {
+        ListHostKeysError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListHostKeysError {
+    /// Creates a new `ListHostKeysError`.
+    pub fn new(kind: ListHostKeysErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListHostKeysError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListHostKeysErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListHostKeysError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListHostKeysErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListHostKeysErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, ListHostKeysErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `ListHostKeysErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHostKeysErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListHostKeysErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHostKeysErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListHostKeysErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHostKeysErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListHostKeysErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHostKeysErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListHostKeysError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListHostKeysErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListHostKeysErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListHostKeysErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListHostKeysErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListHostKeysErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListHostKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -7189,6 +7722,137 @@ impl std::error::Error for UpdateConnectorError {
             UpdateConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateHostKey` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateHostKeyError {
+    /// Kind of error that occurred.
+    pub kind: UpdateHostKeyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateHostKey` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateHostKeyErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateHostKeyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateHostKeyErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            UpdateHostKeyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateHostKeyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateHostKeyErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateHostKeyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateHostKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateHostKeyError {
+    fn code(&self) -> Option<&str> {
+        UpdateHostKeyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateHostKeyError {
+    /// Creates a new `UpdateHostKeyError`.
+    pub fn new(kind: UpdateHostKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateHostKeyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateHostKeyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateHostKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateHostKeyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateHostKeyErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, UpdateHostKeyErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `UpdateHostKeyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHostKeyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateHostKeyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHostKeyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateHostKeyErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHostKeyErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateHostKeyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateHostKeyErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for UpdateHostKeyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateHostKeyErrorKind::InternalServiceError(_inner) => Some(_inner),
+            UpdateHostKeyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateHostKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateHostKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateHostKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateHostKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

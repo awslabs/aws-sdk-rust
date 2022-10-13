@@ -904,16 +904,16 @@ pub mod execute_statement_input {
             self.include_result_metadata = input;
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
         /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
-        /// </important>
+        /// </note>
         pub fn continue_after_timeout(mut self, input: bool) -> Self {
             self.continue_after_timeout = Some(input);
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
         /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
-        /// </important>
+        /// </note>
         pub fn set_continue_after_timeout(mut self, input: std::option::Option<bool>) -> Self {
             self.continue_after_timeout = input;
             self
@@ -1312,9 +1312,9 @@ pub struct ExecuteStatementInput {
     /// <p>A value that indicates whether to include metadata in the results.</p>
     #[doc(hidden)]
     pub include_result_metadata: bool,
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
-    /// </important>
+    /// </note>
     #[doc(hidden)]
     pub continue_after_timeout: bool,
     /// <p>Options that control how the result set is returned.</p>
@@ -1364,9 +1364,9 @@ impl ExecuteStatementInput {
     pub fn include_result_metadata(&self) -> bool {
         self.include_result_metadata
     }
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
-    /// </important>
+    /// </note>
     pub fn continue_after_timeout(&self) -> bool {
         self.continue_after_timeout
     }

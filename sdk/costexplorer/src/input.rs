@@ -388,6 +388,7 @@ pub mod create_cost_category_definition_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) effective_start: std::option::Option<std::string::String>,
         pub(crate) rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -404,6 +405,19 @@ pub mod create_cost_category_definition_input {
         /// <p>The unique name of the Cost Category.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
+            self
+        }
+        /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+        pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
+            self.effective_start = Some(input.into());
+            self
+        }
+        /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+        pub fn set_effective_start(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.effective_start = input;
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
@@ -521,6 +535,7 @@ pub mod create_cost_category_definition_input {
         > {
             Ok(crate::input::CreateCostCategoryDefinitionInput {
                 name: self.name,
+                effective_start: self.effective_start,
                 rule_version: self.rule_version,
                 rules: self.rules,
                 default_value: self.default_value,
@@ -2914,12 +2929,12 @@ pub mod get_dimension_values_input {
             self.time_period = input;
             self
         }
-        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>. </p>
         pub fn dimension(mut self, input: crate::model::Dimension) -> Self {
             self.dimension = Some(input);
             self
         }
-        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>. </p>
         pub fn set_dimension(
             mut self,
             input: std::option::Option<crate::model::Dimension>,
@@ -7592,6 +7607,7 @@ pub mod update_cost_category_definition_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
+        pub(crate) effective_start: std::option::Option<std::string::String>,
         pub(crate) rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -7610,6 +7626,19 @@ pub mod update_cost_category_definition_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.cost_category_arn = input;
+            self
+        }
+        /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+        pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
+            self.effective_start = Some(input.into());
+            self
+        }
+        /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+        pub fn set_effective_start(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.effective_start = input;
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
@@ -7688,6 +7717,7 @@ pub mod update_cost_category_definition_input {
         > {
             Ok(crate::input::UpdateCostCategoryDefinitionInput {
                 cost_category_arn: self.cost_category_arn,
+                effective_start: self.effective_start,
                 rule_version: self.rule_version,
                 rules: self.rules,
                 default_value: self.default_value,
@@ -7815,6 +7845,9 @@ pub struct UpdateCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category.</p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    #[doc(hidden)]
+    pub effective_start: std::option::Option<std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
     #[doc(hidden)]
     pub rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
@@ -7833,6 +7866,10 @@ impl UpdateCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category.</p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
+    }
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    pub fn effective_start(&self) -> std::option::Option<&str> {
+        self.effective_start.as_deref()
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn rule_version(&self) -> std::option::Option<&crate::model::CostCategoryRuleVersion> {
@@ -7857,6 +7894,7 @@ impl std::fmt::Debug for UpdateCostCategoryDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCostCategoryDefinitionInput");
         formatter.field("cost_category_arn", &self.cost_category_arn);
+        formatter.field("effective_start", &self.effective_start);
         formatter.field("rule_version", &self.rule_version);
         formatter.field("rules", &self.rules);
         formatter.field("default_value", &self.default_value);
@@ -9339,7 +9377,7 @@ pub struct GetDimensionValuesInput {
     /// <p>The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
-    /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+    /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>. </p>
     #[doc(hidden)]
     pub dimension: std::option::Option<crate::model::Dimension>,
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
@@ -9438,7 +9476,7 @@ impl GetDimensionValuesInput {
     pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
         self.time_period.as_ref()
     }
-    /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+    /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>. </p>
     pub fn dimension(&self) -> std::option::Option<&crate::model::Dimension> {
         self.dimension.as_ref()
     }
@@ -10192,6 +10230,9 @@ pub struct CreateCostCategoryDefinitionInput {
     /// <p>The unique name of the Cost Category.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    #[doc(hidden)]
+    pub effective_start: std::option::Option<std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
     #[doc(hidden)]
     pub rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
@@ -10223,6 +10264,10 @@ impl CreateCostCategoryDefinitionInput {
     /// <p>The unique name of the Cost Category.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    pub fn effective_start(&self) -> std::option::Option<&str> {
+        self.effective_start.as_deref()
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn rule_version(&self) -> std::option::Option<&crate::model::CostCategoryRuleVersion> {
@@ -10261,6 +10306,7 @@ impl std::fmt::Debug for CreateCostCategoryDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCostCategoryDefinitionInput");
         formatter.field("name", &self.name);
+        formatter.field("effective_start", &self.effective_start);
         formatter.field("rule_version", &self.rule_version);
         formatter.field("rules", &self.rules);
         formatter.field("default_value", &self.default_value);

@@ -2573,13 +2573,13 @@ pub mod create_cluster_input {
             self.hsm_configuration_identifier = input;
             self
         }
-        /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster.</p>
         /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.elastic_ip = Some(input.into());
             self
         }
-        /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster.</p>
         /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
@@ -2704,12 +2704,7 @@ pub mod create_cluster_input {
             self.availability_zone_relocation = input;
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration_status(
             mut self,
             input: crate::model::AquaConfigurationStatus,
@@ -2717,12 +2712,7 @@ pub mod create_cluster_input {
             self.aqua_configuration_status = Some(input);
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_configuration_status(
             mut self,
             input: std::option::Option<crate::model::AquaConfigurationStatus>,
@@ -16549,7 +16539,7 @@ pub mod get_cluster_credentials_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>First character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -16563,7 +16553,7 @@ pub mod get_cluster_credentials_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>First character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -16576,7 +16566,7 @@ pub mod get_cluster_credentials_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>First character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -16589,7 +16579,7 @@ pub mod get_cluster_credentials_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>First character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -17353,12 +17343,7 @@ pub mod modify_aqua_configuration_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration_status(
             mut self,
             input: crate::model::AquaConfigurationStatus,
@@ -17366,12 +17351,7 @@ pub mod modify_aqua_configuration_input {
             self.aqua_configuration_status = Some(input);
             self
         }
-        /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_configuration_status(
             mut self,
             input: std::option::Option<crate::model::AquaConfigurationStatus>,
@@ -21753,13 +21733,13 @@ pub mod restore_from_cluster_snapshot_input {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>
+        /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>
         /// <p>Example: <code>my-snapshot-id</code> </p>
         pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_identifier = Some(input.into());
             self
         }
-        /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>
+        /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>
         /// <p>Example: <code>my-snapshot-id</code> </p>
         pub fn set_snapshot_identifier(
             mut self,
@@ -21768,12 +21748,12 @@ pub mod restore_from_cluster_snapshot_input {
             self.snapshot_identifier = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
         pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
         pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_arn = input;
             self
@@ -21907,12 +21887,12 @@ pub mod restore_from_cluster_snapshot_input {
             self.hsm_configuration_identifier = input;
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+        /// <p>The elastic IP (EIP) address for the cluster.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.elastic_ip = Some(input.into());
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+        /// <p>The elastic IP (EIP) address for the cluster.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -22173,12 +22153,7 @@ pub mod restore_from_cluster_snapshot_input {
             self.availability_zone_relocation = input;
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration_status(
             mut self,
             input: crate::model::AquaConfigurationStatus,
@@ -22186,12 +22161,7 @@ pub mod restore_from_cluster_snapshot_input {
             self.aqua_configuration_status = Some(input);
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_configuration_status(
             mut self,
             input: std::option::Option<crate::model::AquaConfigurationStatus>,
@@ -24094,11 +24064,11 @@ pub struct RestoreFromClusterSnapshotInput {
     /// </ul>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>
+    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
     #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
@@ -24134,7 +24104,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
-    /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+    /// <p>The elastic IP (EIP) address for the cluster.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group to be associated with this cluster.</p>
@@ -24205,12 +24175,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
     #[doc(hidden)]
     pub availability_zone_relocation: std::option::Option<bool>,
-    /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-    /// <li> <p>disabled - Don't use AQUA. </p> </li>
-    /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-    /// </ul>
+    /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     #[doc(hidden)]
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
@@ -24239,12 +24204,12 @@ impl RestoreFromClusterSnapshotInput {
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>
+    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
     pub fn snapshot_arn(&self) -> std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
@@ -24290,7 +24255,7 @@ impl RestoreFromClusterSnapshotInput {
     pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
         self.hsm_configuration_identifier.as_deref()
     }
-    /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+    /// <p>The elastic IP (EIP) address for the cluster.</p>
     pub fn elastic_ip(&self) -> std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
@@ -24377,12 +24342,7 @@ impl RestoreFromClusterSnapshotInput {
     pub fn availability_zone_relocation(&self) -> std::option::Option<bool> {
         self.availability_zone_relocation
     }
-    /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-    /// <li> <p>disabled - Don't use AQUA. </p> </li>
-    /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-    /// </ul>
+    /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration_status(
         &self,
     ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
@@ -25692,12 +25652,7 @@ pub struct ModifyAquaConfigurationInput {
     /// <p>The identifier of the cluster to be modified.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-    /// <li> <p>disabled - Don't use AQUA. </p> </li>
-    /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-    /// </ul>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     #[doc(hidden)]
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
 }
@@ -25706,12 +25661,7 @@ impl ModifyAquaConfigurationInput {
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-    /// <li> <p>disabled - Don't use AQUA. </p> </li>
-    /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-    /// </ul>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration_status(
         &self,
     ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
@@ -25870,7 +25820,7 @@ pub struct GetClusterCredentialsInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -25881,7 +25831,7 @@ pub struct GetClusterCredentialsInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -25917,7 +25867,7 @@ impl GetClusterCredentialsInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -25929,7 +25879,7 @@ impl GetClusterCredentialsInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -29732,7 +29682,7 @@ pub struct CreateClusterInput {
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
-    /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+    /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
@@ -29763,12 +29713,7 @@ pub struct CreateClusterInput {
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
     #[doc(hidden)]
     pub availability_zone_relocation: std::option::Option<bool>,
-    /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-    /// <li> <p>disabled - Don't use AQUA. </p> </li>
-    /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-    /// </ul>
+    /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     #[doc(hidden)]
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
@@ -29939,7 +29884,7 @@ impl CreateClusterInput {
     pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
         self.hsm_configuration_identifier.as_deref()
     }
-    /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+    /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn elastic_ip(&self) -> std::option::Option<&str> {
         self.elastic_ip.as_deref()
@@ -29979,12 +29924,7 @@ impl CreateClusterInput {
     pub fn availability_zone_relocation(&self) -> std::option::Option<bool> {
         self.availability_zone_relocation
     }
-    /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-    /// <li> <p>disabled - Don't use AQUA. </p> </li>
-    /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-    /// </ul>
+    /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration_status(
         &self,
     ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {

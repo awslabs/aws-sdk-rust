@@ -1419,7 +1419,7 @@ pub struct RuleAction {
     /// <p>Instructs WAF to allow the web request.</p>
     #[doc(hidden)]
     pub allow: std::option::Option<crate::model::AllowAction>,
-    /// <p>Instructs WAF to count the web request and allow it.</p>
+    /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
     #[doc(hidden)]
     pub count: std::option::Option<crate::model::CountAction>,
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
@@ -1435,7 +1435,7 @@ impl RuleAction {
     pub fn allow(&self) -> std::option::Option<&crate::model::AllowAction> {
         self.allow.as_ref()
     }
-    /// <p>Instructs WAF to count the web request and allow it.</p>
+    /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
     pub fn count(&self) -> std::option::Option<&crate::model::CountAction> {
         self.count.as_ref()
     }
@@ -1486,12 +1486,12 @@ pub mod rule_action {
             self.allow = input;
             self
         }
-        /// <p>Instructs WAF to count the web request and allow it.</p>
+        /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
         pub fn count(mut self, input: crate::model::CountAction) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>Instructs WAF to count the web request and allow it.</p>
+        /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
         pub fn set_count(mut self, input: std::option::Option<crate::model::CountAction>) -> Self {
             self.count = input;
             self
@@ -1913,7 +1913,9 @@ pub struct Statement {
     #[doc(hidden)]
     pub not_statement: std::option::Option<crate::model::NotStatement>,
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+    /// </note>
     #[doc(hidden)]
     pub managed_rule_group_statement: std::option::Option<crate::model::ManagedRuleGroupStatement>,
     /// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
@@ -1996,7 +1998,9 @@ impl Statement {
         self.not_statement.as_ref()
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+    /// </note>
     pub fn managed_rule_group_statement(
         &self,
     ) -> std::option::Option<&crate::model::ManagedRuleGroupStatement> {
@@ -2270,7 +2274,9 @@ pub mod statement {
             self
         }
         /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-        /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+        /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+        /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+        /// </note>
         pub fn managed_rule_group_statement(
             mut self,
             input: crate::model::ManagedRuleGroupStatement,
@@ -2279,7 +2285,9 @@ pub mod statement {
             self
         }
         /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-        /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+        /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+        /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+        /// </note>
         pub fn set_managed_rule_group_statement(
             mut self,
             input: std::option::Option<crate::model::ManagedRuleGroupStatement>,
@@ -4726,7 +4734,9 @@ impl AsRef<str> for LabelMatchScope {
 }
 
 /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-/// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+/// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+/// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedRuleGroupStatement {
@@ -8310,7 +8320,7 @@ impl AsRef<str> for PositionalConstraint {
     }
 }
 
-/// <p>In a <code>WebACL</code>, this is the action that you want WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action, so you can't use count.</p>
+/// <p>In a <code>WebACL</code>, this is the action that you want WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultAction {
@@ -11257,7 +11267,9 @@ impl FirewallManagerRuleGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirewallManagerStatement {
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+    /// </note>
     #[doc(hidden)]
     pub managed_rule_group_statement: std::option::Option<crate::model::ManagedRuleGroupStatement>,
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
@@ -11268,7 +11280,9 @@ pub struct FirewallManagerStatement {
 }
 impl FirewallManagerStatement {
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+    /// </note>
     pub fn managed_rule_group_statement(
         &self,
     ) -> std::option::Option<&crate::model::ManagedRuleGroupStatement> {
@@ -11309,7 +11323,9 @@ pub mod firewall_manager_statement {
     }
     impl Builder {
         /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-        /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+        /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+        /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+        /// </note>
         pub fn managed_rule_group_statement(
             mut self,
             input: crate::model::ManagedRuleGroupStatement,
@@ -11318,7 +11334,9 @@ pub mod firewall_manager_statement {
             self
         }
         /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-        /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+        /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+        /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+        /// </note>
         pub fn set_managed_rule_group_statement(
             mut self,
             input: std::option::Option<crate::model::ManagedRuleGroupStatement>,
@@ -13445,7 +13463,7 @@ pub struct IpSet {
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     #[doc(hidden)]
     pub ip_address_version: std::option::Option<crate::model::IpAddressVersion>,
-    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
     /// <p>Example address strings: </p>
     /// <ul>
     /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
@@ -13485,7 +13503,7 @@ impl IpSet {
     pub fn ip_address_version(&self) -> std::option::Option<&crate::model::IpAddressVersion> {
         self.ip_address_version.as_ref()
     }
-    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
     /// <p>Example address strings: </p>
     /// <ul>
     /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
@@ -13588,7 +13606,7 @@ pub mod ip_set {
         ///
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
-        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
         /// <p>Example address strings: </p>
         /// <ul>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
@@ -13610,7 +13628,7 @@ pub mod ip_set {
             self.addresses = Some(v);
             self
         }
-        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
         /// <p>Example address strings: </p>
         /// <ul>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>

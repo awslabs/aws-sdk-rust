@@ -1048,6 +1048,13 @@ pub fn deser_operation_crate_operation_get_integration(
                             .transpose()?,
                         );
                     }
+                    "IsUnstructured" => {
+                        builder = builder.set_is_unstructured(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     "LastUpdatedAt" => {
                         builder = builder.set_last_updated_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -2082,6 +2089,13 @@ pub fn deser_operation_crate_operation_put_integration(
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                        );
+                    }
+                    "IsUnstructured" => {
+                        builder = builder.set_is_unstructured(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
                         );
                     }
                     "LastUpdatedAt" => {
@@ -4206,6 +4220,13 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "IsUnstructured" => {
+                                builder = builder.set_is_unstructured(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

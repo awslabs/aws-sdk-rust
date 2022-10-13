@@ -295,7 +295,7 @@ impl Client {
     ///   - [`encrypted(bool)`](crate::client::fluent_builders::CreateCluster::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_encrypted): <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>  <p>Default: false</p>
     ///   - [`hsm_client_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::hsm_client_certificate_identifier) / [`set_hsm_client_certificate_identifier(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_hsm_client_certificate_identifier): <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     ///   - [`hsm_configuration_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::hsm_configuration_identifier) / [`set_hsm_configuration_identifier(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_hsm_configuration_identifier): <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_elastic_ip): <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>  <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_elastic_ip): <p>The Elastic IP (EIP) address for the cluster.</p>  <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCluster::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCluster::set_tags): <p>A list of tag instances.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_kms_key_id): <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     ///   - [`enhanced_vpc_routing(bool)`](crate::client::fluent_builders::CreateCluster::enhanced_vpc_routing) / [`set_enhanced_vpc_routing(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_enhanced_vpc_routing): <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>  <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>  <p>Default: false</p>
@@ -304,7 +304,7 @@ impl Client {
     ///   - [`maintenance_track_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::maintenance_track_name) / [`set_maintenance_track_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_maintenance_track_name): <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
     ///   - [`snapshot_schedule_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::snapshot_schedule_identifier) / [`set_snapshot_schedule_identifier(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_snapshot_schedule_identifier): <p>A unique identifier for the snapshot schedule.</p>
     ///   - [`availability_zone_relocation(bool)`](crate::client::fluent_builders::CreateCluster::availability_zone_relocation) / [`set_availability_zone_relocation(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_availability_zone_relocation): <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
-    ///   - [`aqua_configuration_status(AquaConfigurationStatus)`](crate::client::fluent_builders::CreateCluster::aqua_configuration_status) / [`set_aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::client::fluent_builders::CreateCluster::set_aqua_configuration_status): <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>  <ul>   <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>   <li> <p>disabled - Don't use AQUA. </p> </li>   <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>  </ul>
+    ///   - [`aqua_configuration_status(AquaConfigurationStatus)`](crate::client::fluent_builders::CreateCluster::aqua_configuration_status) / [`set_aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::client::fluent_builders::CreateCluster::set_aqua_configuration_status): <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     ///   - [`default_iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::default_iam_role_arn) / [`set_default_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_default_iam_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
     ///   - [`load_sample_data(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::load_sample_data) / [`set_load_sample_data(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_load_sample_data): <p>A flag that specifies whether to load sample data once the cluster is created.</p>
     /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
@@ -1401,8 +1401,8 @@ impl Client {
     /// Constructs a fluent builder for the [`GetClusterCredentials`](crate::client::fluent_builders::GetClusterCredentials) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_user(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::db_user) / [`set_db_user(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_db_user): <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
-    ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_db_name): <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
+    ///   - [`db_user(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::db_user) / [`set_db_user(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_db_user): <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>   <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
+    ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_db_name): <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>   <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_cluster_identifier): <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
     ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::GetClusterCredentials::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::GetClusterCredentials::set_duration_seconds): <p>The number of seconds until the returned temporary password expires.</p>  <p>Constraint: minimum 900, maximum 3600.</p>  <p>Default: 900</p>
     ///   - [`auto_create(bool)`](crate::client::fluent_builders::GetClusterCredentials::auto_create) / [`set_auto_create(Option<bool>)`](crate::client::fluent_builders::GetClusterCredentials::set_auto_create): <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
@@ -1470,9 +1470,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyAquaConfiguration::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyAquaConfiguration::set_cluster_identifier): <p>The identifier of the cluster to be modified.</p>
-    ///   - [`aqua_configuration_status(AquaConfigurationStatus)`](crate::client::fluent_builders::ModifyAquaConfiguration::aqua_configuration_status) / [`set_aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::client::fluent_builders::ModifyAquaConfiguration::set_aqua_configuration_status): <p>The new value of AQUA configuration status. Possible values include the following.</p>  <ul>   <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>   <li> <p>disabled - Don't use AQUA. </p> </li>   <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>  </ul>
+    ///   - [`aqua_configuration_status(AquaConfigurationStatus)`](crate::client::fluent_builders::ModifyAquaConfiguration::aqua_configuration_status) / [`set_aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::client::fluent_builders::ModifyAquaConfiguration::set_aqua_configuration_status): <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     /// - On success, responds with [`ModifyAquaConfigurationOutput`](crate::output::ModifyAquaConfigurationOutput) with field(s):
-    ///   - [`aqua_configuration(Option<AquaConfiguration>)`](crate::output::ModifyAquaConfigurationOutput::aqua_configuration): <p>The updated AQUA configuration of the cluster. </p>
+    ///   - [`aqua_configuration(Option<AquaConfiguration>)`](crate::output::ModifyAquaConfigurationOutput::aqua_configuration): <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     /// - On failure, responds with [`SdkError<ModifyAquaConfigurationError>`](crate::error::ModifyAquaConfigurationError)
     pub fn modify_aqua_configuration(&self) -> fluent_builders::ModifyAquaConfiguration {
         fluent_builders::ModifyAquaConfiguration::new(self.handle.clone())
@@ -1801,8 +1801,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_cluster_identifier): <p>The identifier of the cluster that will be created from restoring the snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>   <li> <p>Alphabetic characters must be lowercase.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>  </ul>
-    ///   - [`snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_identifier) / [`set_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_identifier): <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>  <p>Example: <code>my-snapshot-id</code> </p>
-    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+    ///   - [`snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_identifier) / [`set_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_identifier): <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>  <p>Example: <code>my-snapshot-id</code> </p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
     ///   - [`snapshot_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_cluster_identifier) / [`set_snapshot_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_cluster_identifier): <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     ///   - [`port(i32)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_port): <p>The port number on which the cluster accepts connections.</p>  <p>Default: The same port as the original cluster.</p>  <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
     ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_availability_zone): <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>  <p>Default: A random, system-chosen Availability Zone.</p>  <p>Example: <code>us-east-2a</code> </p>
@@ -1812,7 +1812,7 @@ impl Client {
     ///   - [`owner_account(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::owner_account) / [`set_owner_account(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_owner_account): <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     ///   - [`hsm_client_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::hsm_client_certificate_identifier) / [`set_hsm_client_certificate_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_hsm_client_certificate_identifier): <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     ///   - [`hsm_configuration_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::hsm_configuration_identifier) / [`set_hsm_configuration_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_hsm_configuration_identifier): <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_elastic_ip): <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_elastic_ip): <p>The elastic IP (EIP) address for the cluster.</p>
     ///   - [`cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::cluster_parameter_group_name) / [`set_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_cluster_parameter_group_name): <p>The name of the parameter group to be associated with this cluster.</p>  <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
     ///   - [`cluster_security_groups(Vec<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::cluster_security_groups) / [`set_cluster_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_cluster_security_groups): <p>A list of security groups to be associated with this cluster.</p>  <p>Default: The default cluster security group for Amazon Redshift.</p>  <p>Cluster security groups only apply to clusters outside of VPCs.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_vpc_security_group_ids): <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>  <p>Default: The default VPC security group is associated with the cluster.</p>  <p>VPC security groups only apply to clusters in VPCs.</p>
@@ -1828,7 +1828,7 @@ impl Client {
     ///   - [`snapshot_schedule_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_schedule_identifier) / [`set_snapshot_schedule_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_schedule_identifier): <p>A unique identifier for the snapshot schedule.</p>
     ///   - [`number_of_nodes(i32)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::number_of_nodes) / [`set_number_of_nodes(Option<i32>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_number_of_nodes): <p>The number of nodes specified when provisioning the restored cluster.</p>
     ///   - [`availability_zone_relocation(bool)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::availability_zone_relocation) / [`set_availability_zone_relocation(Option<bool>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_availability_zone_relocation): <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
-    ///   - [`aqua_configuration_status(AquaConfigurationStatus)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::aqua_configuration_status) / [`set_aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_aqua_configuration_status): <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>  <ul>   <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>   <li> <p>disabled - Don't use AQUA. </p> </li>   <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>  </ul>
+    ///   - [`aqua_configuration_status(AquaConfigurationStatus)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::aqua_configuration_status) / [`set_aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_aqua_configuration_status): <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     ///   - [`default_iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::default_iam_role_arn) / [`set_default_iam_role_arn(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_default_iam_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
     ///   - [`reserved_node_id(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::reserved_node_id) / [`set_reserved_node_id(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_reserved_node_id): <p>The identifier of the target reserved node offering.</p>
     ///   - [`target_reserved_node_offering_id(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::target_reserved_node_offering_id) / [`set_target_reserved_node_offering_id(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_target_reserved_node_offering_id): <p>The identifier of the target reserved node offering.</p>
@@ -3757,13 +3757,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hsm_configuration_identifier(input);
             self
         }
-        /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster.</p>
         /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.elastic_ip(input.into());
             self
         }
-        /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster.</p>
         /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_elastic_ip(input);
@@ -3884,12 +3884,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone_relocation(input);
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration_status(
             mut self,
             input: crate::model::AquaConfigurationStatus,
@@ -3897,12 +3892,7 @@ pub mod fluent_builders {
             self.inner = self.inner.aqua_configuration_status(input);
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_configuration_status(
             mut self,
             input: std::option::Option<crate::model::AquaConfigurationStatus>,
@@ -12912,7 +12902,7 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>First character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -12926,7 +12916,7 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>First character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -12939,7 +12929,7 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>First character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -12952,7 +12942,7 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>
-        /// <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+        /// <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
         /// <li> <p>First character must be a letter.</p> </li>
         /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
         /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
@@ -13387,7 +13377,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyAquaConfiguration`.
     ///
-    /// <p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator). </p>
+    /// <p>This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyAquaConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -13464,12 +13454,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration_status(
             mut self,
             input: crate::model::AquaConfigurationStatus,
@@ -13477,12 +13462,7 @@ pub mod fluent_builders {
             self.inner = self.inner.aqua_configuration_status(input);
             self
         }
-        /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_configuration_status(
             mut self,
             input: std::option::Option<crate::model::AquaConfigurationStatus>,
@@ -16316,13 +16296,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_identifier(input);
             self
         }
-        /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>
+        /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>
         /// <p>Example: <code>my-snapshot-id</code> </p>
         pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
-        /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>
+        /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p>
         /// <p>Example: <code>my-snapshot-id</code> </p>
         pub fn set_snapshot_identifier(
             mut self,
@@ -16331,12 +16311,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_identifier(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
         pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
         pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_snapshot_arn(input);
             self
@@ -16470,12 +16450,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hsm_configuration_identifier(input);
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+        /// <p>The elastic IP (EIP) address for the cluster.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.elastic_ip(input.into());
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+        /// <p>The elastic IP (EIP) address for the cluster.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_elastic_ip(input);
             self
@@ -16730,12 +16710,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone_relocation(input);
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration_status(
             mut self,
             input: crate::model::AquaConfigurationStatus,
@@ -16743,12 +16718,7 @@ pub mod fluent_builders {
             self.inner = self.inner.aqua_configuration_status(input);
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_configuration_status(
             mut self,
             input: std::option::Option<crate::model::AquaConfigurationStatus>,

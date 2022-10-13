@@ -2170,6 +2170,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs14,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs16,
+    #[allow(missing_docs)] // documentation missing in model
     Python3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2181,6 +2183,7 @@ impl std::convert::From<&str> for Runtime {
             "CORRETTO_8" => Runtime::Corretto8,
             "NODEJS_12" => Runtime::Nodejs12,
             "NODEJS_14" => Runtime::Nodejs14,
+            "NODEJS_16" => Runtime::Nodejs16,
             "PYTHON_3" => Runtime::Python3,
             other => Runtime::Unknown(other.to_owned()),
         }
@@ -2201,6 +2204,7 @@ impl Runtime {
             Runtime::Corretto8 => "CORRETTO_8",
             Runtime::Nodejs12 => "NODEJS_12",
             Runtime::Nodejs14 => "NODEJS_14",
+            Runtime::Nodejs16 => "NODEJS_16",
             Runtime::Python3 => "PYTHON_3",
             Runtime::Unknown(s) => s.as_ref(),
         }
@@ -2212,6 +2216,7 @@ impl Runtime {
             "CORRETTO_8",
             "NODEJS_12",
             "NODEJS_14",
+            "NODEJS_16",
             "PYTHON_3",
         ]
     }

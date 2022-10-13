@@ -176,6 +176,18 @@ pub fn serialize_payload_put_bucket_tagging_input(
     )
 }
 
+pub fn serialize_payload_put_bucket_versioning_input(
+    payload: &std::option::Option<crate::model::VersioningConfiguration>,
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
+    let payload = match payload.as_ref() {
+        Some(t) => t,
+        None => return Ok(crate::operation_ser::rest_xml_unset_payload()),
+    };
+    Ok(
+        crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_bucket_versioning_input_versioning_configuration(payload)?
+    )
+}
+
 pub fn serialize_operation_crate_operation_put_job_tagging(
     input: &crate::input::PutJobTaggingInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {

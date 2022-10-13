@@ -1145,6 +1145,38 @@ pub fn parse_get_bucket_tagging_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_bucket_versioning_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetBucketVersioningOutput,
+    crate::error::GetBucketVersioningError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetBucketVersioningError::unhandled)?;
+    Err(crate::error::GetBucketVersioningError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_bucket_versioning_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetBucketVersioningOutput,
+    crate::error::GetBucketVersioningError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_bucket_versioning_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_bucket_versioning(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetBucketVersioningError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_job_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetJobTaggingOutput, crate::error::GetJobTaggingError> {
@@ -1847,6 +1879,33 @@ pub fn parse_put_bucket_tagging_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_tagging_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_bucket_versioning_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutBucketVersioningOutput,
+    crate::error::PutBucketVersioningError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutBucketVersioningError::unhandled)?;
+    Err(crate::error::PutBucketVersioningError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_bucket_versioning_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutBucketVersioningOutput,
+    crate::error::PutBucketVersioningError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::put_bucket_versioning_output::Builder::default();
         let _ = response;
         output.build()
     })

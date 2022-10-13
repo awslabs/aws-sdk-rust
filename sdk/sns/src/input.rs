@@ -1049,6 +1049,7 @@ pub mod create_topic_input {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) data_protection_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the topic you want to create.</p>
@@ -1153,6 +1154,25 @@ pub mod create_topic_input {
             self.tags = input;
             self
         }
+        /// <p>The body of the policy document you want to use for this topic.</p>
+        /// <p>You can only add one policy per topic.</p>
+        /// <p>The policy must be in JSON string format.</p>
+        /// <p>Length Constraints: Maximum length of 30,720.</p>
+        pub fn data_protection_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_protection_policy = Some(input.into());
+            self
+        }
+        /// <p>The body of the policy document you want to use for this topic.</p>
+        /// <p>You can only add one policy per topic.</p>
+        /// <p>The policy must be in JSON string format.</p>
+        /// <p>Length Constraints: Maximum length of 30,720.</p>
+        pub fn set_data_protection_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_protection_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTopicInput`](crate::input::CreateTopicInput).
         pub fn build(
             self,
@@ -1162,6 +1182,7 @@ pub mod create_topic_input {
                 name: self.name,
                 attributes: self.attributes,
                 tags: self.tags,
+                data_protection_policy: self.data_protection_policy,
             })
         }
     }
@@ -1831,6 +1852,150 @@ impl DeleteTopicInput {
     /// Creates a new builder-style object to manufacture [`DeleteTopicInput`](crate::input::DeleteTopicInput).
     pub fn builder() -> crate::input::delete_topic_input::Builder {
         crate::input::delete_topic_input::Builder::default()
+    }
+}
+
+/// See [`GetDataProtectionPolicyInput`](crate::input::GetDataProtectionPolicyInput).
+pub mod get_data_protection_policy_input {
+
+    /// A builder for [`GetDataProtectionPolicyInput`](crate::input::GetDataProtectionPolicyInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataProtectionPolicyInput`](crate::input::GetDataProtectionPolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetDataProtectionPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetDataProtectionPolicyInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+impl GetDataProtectionPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`GetDataProtectionPolicy`](crate::operation::GetDataProtectionPolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDataProtectionPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetDataProtectionPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDataProtectionPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_data_protection_policy(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDataProtectionPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDataProtectionPolicy",
+            "sns",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetDataProtectionPolicyInput`](crate::input::GetDataProtectionPolicyInput).
+    pub fn builder() -> crate::input::get_data_protection_policy_input::Builder {
+        crate::input::get_data_protection_policy_input::Builder::default()
     }
 }
 
@@ -4595,6 +4760,169 @@ impl PublishBatchInput {
     }
 }
 
+/// See [`PutDataProtectionPolicyInput`](crate::input::PutDataProtectionPolicyInput).
+pub mod put_data_protection_policy_input {
+
+    /// A builder for [`PutDataProtectionPolicyInput`](crate::input::PutDataProtectionPolicyInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) data_protection_policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
+        /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+        /// <p>Length Constraints: Maximum length of 30,720.</p>
+        pub fn data_protection_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_protection_policy = Some(input.into());
+            self
+        }
+        /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
+        /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+        /// <p>Length Constraints: Maximum length of 30,720.</p>
+        pub fn set_data_protection_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_protection_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutDataProtectionPolicyInput`](crate::input::PutDataProtectionPolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutDataProtectionPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutDataProtectionPolicyInput {
+                resource_arn: self.resource_arn,
+                data_protection_policy: self.data_protection_policy,
+            })
+        }
+    }
+}
+impl PutDataProtectionPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`PutDataProtectionPolicy`](crate::operation::PutDataProtectionPolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutDataProtectionPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutDataProtectionPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutDataProtectionPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_data_protection_policy(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutDataProtectionPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutDataProtectionPolicy",
+            "sns",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutDataProtectionPolicyInput`](crate::input::PutDataProtectionPolicyInput).
+    pub fn builder() -> crate::input::put_data_protection_policy_input::Builder {
+        crate::input::put_data_protection_policy_input::Builder::default()
+    }
+}
+
 /// See [`RemovePermissionInput`](crate::input::RemovePermissionInput).
 pub mod remove_permission_input {
 
@@ -7309,6 +7637,42 @@ impl std::fmt::Debug for RemovePermissionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutDataProtectionPolicyInput {
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
+    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+    /// <p>Length Constraints: Maximum length of 30,720.</p>
+    #[doc(hidden)]
+    pub data_protection_policy: std::option::Option<std::string::String>,
+}
+impl PutDataProtectionPolicyInput {
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
+    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+    /// <p>Length Constraints: Maximum length of 30,720.</p>
+    pub fn data_protection_policy(&self) -> std::option::Option<&str> {
+        self.data_protection_policy.as_deref()
+    }
+}
+impl std::fmt::Debug for PutDataProtectionPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutDataProtectionPolicyInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("data_protection_policy", &self.data_protection_policy);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishBatchInput {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
     #[doc(hidden)]
@@ -7876,6 +8240,30 @@ impl std::fmt::Debug for GetEndpointAttributesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDataProtectionPolicyInput {
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl GetDataProtectionPolicyInput {
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for GetDataProtectionPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDataProtectionPolicyInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTopicInput {
     /// <p>The ARN of the topic you want to delete.</p>
     #[doc(hidden)]
@@ -7999,6 +8387,12 @@ pub struct CreateTopicInput {
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The body of the policy document you want to use for this topic.</p>
+    /// <p>You can only add one policy per topic.</p>
+    /// <p>The policy must be in JSON string format.</p>
+    /// <p>Length Constraints: Maximum length of 30,720.</p>
+    #[doc(hidden)]
+    pub data_protection_policy: std::option::Option<std::string::String>,
 }
 impl CreateTopicInput {
     /// <p>The name of the topic you want to create.</p>
@@ -8040,6 +8434,13 @@ impl CreateTopicInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The body of the policy document you want to use for this topic.</p>
+    /// <p>You can only add one policy per topic.</p>
+    /// <p>The policy must be in JSON string format.</p>
+    /// <p>Length Constraints: Maximum length of 30,720.</p>
+    pub fn data_protection_policy(&self) -> std::option::Option<&str> {
+        self.data_protection_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTopicInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8047,6 +8448,7 @@ impl std::fmt::Debug for CreateTopicInput {
         formatter.field("name", &self.name);
         formatter.field("attributes", &self.attributes);
         formatter.field("tags", &self.tags);
+        formatter.field("data_protection_policy", &self.data_protection_policy);
         formatter.finish()
     }
 }

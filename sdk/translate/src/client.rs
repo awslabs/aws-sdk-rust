@@ -99,6 +99,7 @@ impl Client {
     ///   - [`parallel_data_config(ParallelDataConfig)`](crate::client::fluent_builders::CreateParallelData::parallel_data_config) / [`set_parallel_data_config(Option<ParallelDataConfig>)`](crate::client::fluent_builders::CreateParallelData::set_parallel_data_config): <p>Specifies the format and S3 location of the parallel data input file.</p>
     ///   - [`encryption_key(EncryptionKey)`](crate::client::fluent_builders::CreateParallelData::encryption_key) / [`set_encryption_key(Option<EncryptionKey>)`](crate::client::fluent_builders::CreateParallelData::set_encryption_key): <p>The encryption key used to encrypt this object.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateParallelData::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateParallelData::set_client_token): <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateParallelData::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateParallelData::set_tags): (undocumented)
     /// - On success, responds with [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateParallelDataOutput::name): <p>The custom name that you assigned to the parallel data resource.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::output::CreateParallelDataOutput::status): <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
@@ -171,6 +172,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::ImportTerminology::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::ImportTerminology::set_description): <p>The description of the custom terminology being imported.</p>
     ///   - [`terminology_data(TerminologyData)`](crate::client::fluent_builders::ImportTerminology::terminology_data) / [`set_terminology_data(Option<TerminologyData>)`](crate::client::fluent_builders::ImportTerminology::set_terminology_data): <p>The terminology data for the custom terminology being imported.</p>
     ///   - [`encryption_key(EncryptionKey)`](crate::client::fluent_builders::ImportTerminology::encryption_key) / [`set_encryption_key(Option<EncryptionKey>)`](crate::client::fluent_builders::ImportTerminology::set_encryption_key): <p>The encryption key for the custom terminology being imported.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportTerminology::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportTerminology::set_tags): (undocumented)
     /// - On success, responds with [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput) with field(s):
     ///   - [`terminology_properties(Option<TerminologyProperties>)`](crate::output::ImportTerminologyOutput::terminology_properties): <p>The properties of the custom terminology being imported.</p>
     ///   - [`auxiliary_data_location(Option<TerminologyDataLocation>)`](crate::output::ImportTerminologyOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
@@ -205,6 +207,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListParallelDataError>`](crate::error::ListParallelDataError)
     pub fn list_parallel_data(&self) -> fluent_builders::ListParallelData {
         fluent_builders::ListParallelData::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): (undocumented)
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): (undocumented)
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTerminologies`](crate::client::fluent_builders::ListTerminologies) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTerminologies::into_paginator).
@@ -264,6 +276,17 @@ impl Client {
     pub fn stop_text_translation_job(&self) -> fluent_builders::StopTextTranslationJob {
         fluent_builders::StopTextTranslationJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): (undocumented)
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): (undocumented)
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    pub fn tag_resource(&self) -> fluent_builders::TagResource {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`TranslateText`](crate::client::fluent_builders::TranslateText) operation.
     ///
     /// - The fluent builder is configurable:
@@ -281,6 +304,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<TranslateTextError>`](crate::error::TranslateTextError)
     pub fn translate_text(&self) -> fluent_builders::TranslateText {
         fluent_builders::TranslateText::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): (undocumented)
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): (undocumented)
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateParallelData`](crate::client::fluent_builders::UpdateParallelData) operation.
     ///
@@ -426,6 +460,23 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -960,6 +1011,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key(input);
             self
         }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListLanguages`.
     ///
@@ -1157,6 +1225,82 @@ pub mod fluent_builders {
         /// <p>The maximum number of parallel data resources returned for each request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTagsForResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl ListTagsForResource {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListTagsForResource,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -1662,6 +1806,99 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl TagResource {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::TagResource,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `TranslateText`.
     ///
     /// <p>Translates input text from the source language to the target language. For a list of available languages and language codes, see <code>what-is-languages</code>.</p>
@@ -1798,6 +2035,99 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::TranslationSettings>,
         ) -> Self {
             self.inner = self.inner.set_settings(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UntagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl UntagResource {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UntagResource,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `TagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }

@@ -845,7 +845,7 @@ impl InvalidFilterException {
     }
 }
 
-/// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+/// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedLanguageException {
@@ -1195,7 +1195,7 @@ pub enum BatchDetectEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1332,7 +1332,7 @@ pub enum BatchDetectKeyPhrasesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1471,7 +1471,7 @@ pub enum BatchDetectSentimentErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1608,7 +1608,7 @@ pub enum BatchDetectSyntaxErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1720,6 +1720,155 @@ impl std::error::Error for BatchDetectSyntaxError {
             BatchDetectSyntaxErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             BatchDetectSyntaxErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
             BatchDetectSyntaxErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `BatchDetectTargetedSentiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchDetectTargetedSentimentError {
+    /// Kind of error that occurred.
+    pub kind: BatchDetectTargetedSentimentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchDetectTargetedSentiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchDetectTargetedSentimentErrorKind {
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
+    BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
+    TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
+    UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchDetectTargetedSentimentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchDetectTargetedSentimentErrorKind::BatchSizeLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDetectTargetedSentimentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            BatchDetectTargetedSentimentErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            BatchDetectTargetedSentimentErrorKind::TextSizeLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDetectTargetedSentimentErrorKind::UnsupportedLanguageException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchDetectTargetedSentimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchDetectTargetedSentimentError {
+    fn code(&self) -> Option<&str> {
+        BatchDetectTargetedSentimentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchDetectTargetedSentimentError {
+    /// Creates a new `BatchDetectTargetedSentimentError`.
+    pub fn new(kind: BatchDetectTargetedSentimentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchDetectTargetedSentimentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchDetectTargetedSentimentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchDetectTargetedSentimentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchDetectTargetedSentimentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchDetectTargetedSentimentErrorKind::BatchSizeLimitExceededException`.
+    pub fn is_batch_size_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDetectTargetedSentimentErrorKind::BatchSizeLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDetectTargetedSentimentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDetectTargetedSentimentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDetectTargetedSentimentErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDetectTargetedSentimentErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDetectTargetedSentimentErrorKind::TextSizeLimitExceededException`.
+    pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDetectTargetedSentimentErrorKind::TextSizeLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchDetectTargetedSentimentErrorKind::UnsupportedLanguageException`.
+    pub fn is_unsupported_language_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDetectTargetedSentimentErrorKind::UnsupportedLanguageException(_)
+        )
+    }
+}
+impl std::error::Error for BatchDetectTargetedSentimentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchDetectTargetedSentimentErrorKind::BatchSizeLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            BatchDetectTargetedSentimentErrorKind::InternalServerException(_inner) => Some(_inner),
+            BatchDetectTargetedSentimentErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            BatchDetectTargetedSentimentErrorKind::TextSizeLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            BatchDetectTargetedSentimentErrorKind::UnsupportedLanguageException(_inner) => {
+                Some(_inner)
+            }
+            BatchDetectTargetedSentimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1869,7 +2018,7 @@ pub enum ContainsPiiEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2003,7 +2152,7 @@ pub enum CreateDocumentClassifierErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2346,7 +2495,7 @@ pub enum CreateEntityRecognizerErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4910,7 +5059,7 @@ pub enum DetectEntitiesErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5045,7 +5194,7 @@ pub enum DetectKeyPhrasesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5171,7 +5320,7 @@ pub enum DetectPiiEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5297,7 +5446,7 @@ pub enum DetectSentimentErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5423,7 +5572,7 @@ pub enum DetectSyntaxErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5526,6 +5675,136 @@ impl std::error::Error for DetectSyntaxError {
             DetectSyntaxErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             DetectSyntaxErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
             DetectSyntaxErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DetectTargetedSentiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DetectTargetedSentimentError {
+    /// Kind of error that occurred.
+    pub kind: DetectTargetedSentimentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DetectTargetedSentiment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DetectTargetedSentimentErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
+    TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
+    UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DetectTargetedSentimentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DetectTargetedSentimentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DetectTargetedSentimentErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DetectTargetedSentimentErrorKind::TextSizeLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            DetectTargetedSentimentErrorKind::UnsupportedLanguageException(_inner) => _inner.fmt(f),
+            DetectTargetedSentimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DetectTargetedSentimentError {
+    fn code(&self) -> Option<&str> {
+        DetectTargetedSentimentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DetectTargetedSentimentError {
+    /// Creates a new `DetectTargetedSentimentError`.
+    pub fn new(kind: DetectTargetedSentimentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DetectTargetedSentimentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DetectTargetedSentimentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DetectTargetedSentimentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DetectTargetedSentimentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DetectTargetedSentimentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectTargetedSentimentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DetectTargetedSentimentErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectTargetedSentimentErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DetectTargetedSentimentErrorKind::TextSizeLimitExceededException`.
+    pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectTargetedSentimentErrorKind::TextSizeLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DetectTargetedSentimentErrorKind::UnsupportedLanguageException`.
+    pub fn is_unsupported_language_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectTargetedSentimentErrorKind::UnsupportedLanguageException(_)
+        )
+    }
+}
+impl std::error::Error for DetectTargetedSentimentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DetectTargetedSentimentErrorKind::InternalServerException(_inner) => Some(_inner),
+            DetectTargetedSentimentErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DetectTargetedSentimentErrorKind::TextSizeLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            DetectTargetedSentimentErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
+            DetectTargetedSentimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -23,6 +23,8 @@ pub enum Error {
     DataRepositoryTaskExecuting(crate::error::DataRepositoryTaskExecuting),
     /// <p>The data repository task or tasks you specified could not be found.</p>
     DataRepositoryTaskNotFound(crate::error::DataRepositoryTaskNotFound),
+    /// <p>No caches were found based upon supplied parameters.</p>
+    FileCacheNotFound(crate::error::FileCacheNotFound),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
@@ -47,6 +49,8 @@ pub enum Error {
     InvalidRegion(crate::error::InvalidRegion),
     /// <p>The Key Management Service (KMS) key of the source backup is not valid.</p>
     InvalidSourceKmsKey(crate::error::InvalidSourceKmsKey),
+    /// <p>A cache configuration is required for this operation.</p>
+    MissingFileCacheConfiguration(crate::error::MissingFileCacheConfiguration),
     /// <p>A file system configuration is required for this operation.</p>
     MissingFileSystemConfiguration(crate::error::MissingFileSystemConfiguration),
     /// <p>A volume configuration is required for this operation.</p>
@@ -85,6 +89,7 @@ impl std::fmt::Display for Error {
             Error::DataRepositoryTaskEnded(inner) => inner.fmt(f),
             Error::DataRepositoryTaskExecuting(inner) => inner.fmt(f),
             Error::DataRepositoryTaskNotFound(inner) => inner.fmt(f),
+            Error::FileCacheNotFound(inner) => inner.fmt(f),
             Error::FileSystemNotFound(inner) => inner.fmt(f),
             Error::IncompatibleParameterError(inner) => inner.fmt(f),
             Error::IncompatibleRegionForMultiAz(inner) => inner.fmt(f),
@@ -97,6 +102,7 @@ impl std::fmt::Display for Error {
             Error::InvalidPerUnitStorageThroughput(inner) => inner.fmt(f),
             Error::InvalidRegion(inner) => inner.fmt(f),
             Error::InvalidSourceKmsKey(inner) => inner.fmt(f),
+            Error::MissingFileCacheConfiguration(inner) => inner.fmt(f),
             Error::MissingFileSystemConfiguration(inner) => inner.fmt(f),
             Error::MissingVolumeConfiguration(inner) => inner.fmt(f),
             Error::NotServiceResourceError(inner) => inner.fmt(f),
@@ -311,6 +317,40 @@ where
                 crate::error::CreateDataRepositoryTaskErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFileCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFileCacheError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateFileCacheErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::CreateFileCacheErrorKind::IncompatibleParameterError(inner) => {
+                    Error::IncompatibleParameterError(inner)
+                }
+                crate::error::CreateFileCacheErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::CreateFileCacheErrorKind::InvalidNetworkSettings(inner) => {
+                    Error::InvalidNetworkSettings(inner)
+                }
+                crate::error::CreateFileCacheErrorKind::InvalidPerUnitStorageThroughput(inner) => {
+                    Error::InvalidPerUnitStorageThroughput(inner)
+                }
+                crate::error::CreateFileCacheErrorKind::MissingFileCacheConfiguration(inner) => {
+                    Error::MissingFileCacheConfiguration(inner)
+                }
+                crate::error::CreateFileCacheErrorKind::ServiceLimitExceeded(inner) => {
+                    Error::ServiceLimitExceeded(inner)
+                }
+                crate::error::CreateFileCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -586,6 +626,34 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFileCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFileCacheError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteFileCacheErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::DeleteFileCacheErrorKind::FileCacheNotFound(inner) => {
+                    Error::FileCacheNotFound(inner)
+                }
+                crate::error::DeleteFileCacheErrorKind::IncompatibleParameterError(inner) => {
+                    Error::IncompatibleParameterError(inner)
+                }
+                crate::error::DeleteFileCacheErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DeleteFileCacheErrorKind::ServiceLimitExceeded(inner) => {
+                    Error::ServiceLimitExceeded(inner)
+                }
+                crate::error::DeleteFileCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFileSystemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -760,6 +828,32 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::DescribeDataRepositoryTasksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFileCachesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeFileCachesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeFileCachesErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::DescribeFileCachesErrorKind::FileCacheNotFound(inner) => {
+                    Error::FileCacheNotFound(inner)
+                }
+                crate::error::DescribeFileCachesErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DescribeFileCachesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1083,6 +1177,40 @@ where
                 crate::error::UpdateDataRepositoryAssociationErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
                 crate::error::UpdateDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFileCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFileCacheError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateFileCacheErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::UpdateFileCacheErrorKind::FileCacheNotFound(inner) => {
+                    Error::FileCacheNotFound(inner)
+                }
+                crate::error::UpdateFileCacheErrorKind::IncompatibleParameterError(inner) => {
+                    Error::IncompatibleParameterError(inner)
+                }
+                crate::error::UpdateFileCacheErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::UpdateFileCacheErrorKind::MissingFileCacheConfiguration(inner) => {
+                    Error::MissingFileCacheConfiguration(inner)
+                }
+                crate::error::UpdateFileCacheErrorKind::ServiceLimitExceeded(inner) => {
+                    Error::ServiceLimitExceeded(inner)
+                }
+                crate::error::UpdateFileCacheErrorKind::UnsupportedOperation(inner) => {
+                    Error::UnsupportedOperation(inner)
+                }
+                crate::error::UpdateFileCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
             _ => Error::Unhandled(err.into()),
         }
     }

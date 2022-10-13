@@ -390,12 +390,12 @@ pub mod create_event_data_store_input {
             self.organization_enabled = input;
             self
         }
-        /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+        /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
         pub fn retention_period(mut self, input: i32) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+        /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
         pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period = input;
             self
@@ -1530,6 +1530,148 @@ impl DescribeTrailsInput {
     }
 }
 
+/// See [`GetChannelInput`](crate::input::GetChannelInput).
+pub mod get_channel_input {
+
+    /// A builder for [`GetChannelInput`](crate::input::GetChannelInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. </p>
+        pub fn channel(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. </p>
+        pub fn set_channel(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetChannelInput`](crate::input::GetChannelInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetChannelInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::GetChannelInput {
+                channel: self.channel,
+            })
+        }
+    }
+}
+impl GetChannelInput {
+    /// Consumes the builder and constructs an Operation<[`GetChannel`](crate::operation::GetChannel)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetChannel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetChannelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetChannelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.GetChannel",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_channel(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetChannel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetChannel",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetChannelInput`](crate::input::GetChannelInput).
+    pub fn builder() -> crate::input::get_channel_input::Builder {
+        crate::input::get_channel_input::Builder::default()
+    }
+}
+
 /// See [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput).
 pub mod get_event_data_store_input {
 
@@ -1834,6 +1976,146 @@ impl GetEventSelectorsInput {
     /// Creates a new builder-style object to manufacture [`GetEventSelectorsInput`](crate::input::GetEventSelectorsInput).
     pub fn builder() -> crate::input::get_event_selectors_input::Builder {
         crate::input::get_event_selectors_input::Builder::default()
+    }
+}
+
+/// See [`GetImportInput`](crate::input::GetImportInput).
+pub mod get_import_input {
+
+    /// A builder for [`GetImportInput`](crate::input::GetImportInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The ID for the import. </p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_id = Some(input.into());
+            self
+        }
+        /// <p> The ID for the import. </p>
+        pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetImportInput`](crate::input::GetImportInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetImportInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::GetImportInput {
+                import_id: self.import_id,
+            })
+        }
+    }
+}
+impl GetImportInput {
+    /// Consumes the builder and constructs an Operation<[`GetImport`](crate::operation::GetImport)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetImport,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetImportInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetImportInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.GetImport",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_import(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetImport::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetImport",
+                    "cloudtrail",
+                ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetImportInput`](crate::input::GetImportInput).
+    pub fn builder() -> crate::input::get_import_input::Builder {
+        crate::input::get_import_input::Builder::default()
     }
 }
 
@@ -2461,6 +2743,161 @@ impl GetTrailStatusInput {
     }
 }
 
+/// See [`ListChannelsInput`](crate::input::ListChannelsInput).
+pub mod list_channels_input {
+
+    /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p> A token you can use to get the next page of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> A token you can use to get the next page of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListChannelsInput`](crate::input::ListChannelsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListChannelsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListChannelsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListChannelsInput {
+    /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListChannels,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListChannelsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListChannelsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.ListChannels",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_channels(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChannels::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListChannels",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput).
+    pub fn builder() -> crate::input::list_channels_input::Builder {
+        crate::input::list_channels_input::Builder::default()
+    }
+}
+
 /// See [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput).
 pub mod list_event_data_stores_input {
 
@@ -2615,6 +3052,355 @@ impl ListEventDataStoresInput {
     /// Creates a new builder-style object to manufacture [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput).
     pub fn builder() -> crate::input::list_event_data_stores_input::Builder {
         crate::input::list_event_data_stores_input::Builder::default()
+    }
+}
+
+/// See [`ListImportFailuresInput`](crate::input::ListImportFailuresInput).
+pub mod list_import_failures_input {
+
+    /// A builder for [`ListImportFailuresInput`](crate::input::ListImportFailuresInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The ID of the import. </p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the import. </p>
+        pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_id = input;
+            self
+        }
+        /// <p> The maximum number of failures to display on a single page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> The maximum number of failures to display on a single page. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p> A token you can use to get the next page of import failures. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> A token you can use to get the next page of import failures. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImportFailuresInput`](crate::input::ListImportFailuresInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListImportFailuresInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListImportFailuresInput {
+                import_id: self.import_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListImportFailuresInput {
+    /// Consumes the builder and constructs an Operation<[`ListImportFailures`](crate::operation::ListImportFailures)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListImportFailures,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListImportFailuresInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListImportFailuresInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.ListImportFailures",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_import_failures(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListImportFailures::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListImportFailures",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListImportFailuresInput`](crate::input::ListImportFailuresInput).
+    pub fn builder() -> crate::input::list_import_failures_input::Builder {
+        crate::input::list_import_failures_input::Builder::default()
+    }
+}
+
+/// See [`ListImportsInput`](crate::input::ListImportsInput).
+pub mod list_imports_input {
+
+    /// A builder for [`ListImportsInput`](crate::input::ListImportsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) destination: std::option::Option<std::string::String>,
+        pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The maximum number of imports to display on a single page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> The maximum number of imports to display on a single page. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p> The destination event data store. </p>
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        /// <p> The destination event data store. </p>
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
+            self.import_status = Some(input);
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn set_import_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatus>,
+        ) -> Self {
+            self.import_status = input;
+            self
+        }
+        /// <p> A token you can use to get the next page of import results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> A token you can use to get the next page of import results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImportsInput`](crate::input::ListImportsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListImportsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListImportsInput {
+                max_results: self.max_results,
+                destination: self.destination,
+                import_status: self.import_status,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListImportsInput {
+    /// Consumes the builder and constructs an Operation<[`ListImports`](crate::operation::ListImports)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListImports,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListImportsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListImportsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.ListImports",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_imports(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListImports::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListImports",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListImportsInput`](crate::input::ListImportsInput).
+    pub fn builder() -> crate::input::list_imports_input::Builder {
+        crate::input::list_imports_input::Builder::default()
     }
 }
 
@@ -3176,12 +3962,12 @@ pub mod list_trails_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3392,12 +4178,12 @@ pub mod lookup_events_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4218,6 +5004,215 @@ impl RestoreEventDataStoreInput {
     }
 }
 
+/// See [`StartImportInput`](crate::input::StartImportInput).
+pub mod start_import_input {
+
+    /// A builder for [`StartImportInput`](crate::input::StartImportInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) import_source: std::option::Option<crate::model::ImportSource>,
+        pub(crate) start_event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) import_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p> The destination event data store. Use this parameter for a new import. </p>
+        pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input.into());
+            self.destinations = Some(v);
+            self
+        }
+        /// <p> The destination event data store. Use this parameter for a new import. </p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
+        pub fn import_source(mut self, input: crate::model::ImportSource) -> Self {
+            self.import_source = Some(input);
+            self
+        }
+        /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
+        pub fn set_import_source(
+            mut self,
+            input: std::option::Option<crate::model::ImportSource>,
+        ) -> Self {
+            self.import_source = input;
+            self
+        }
+        /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn start_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_event_time = Some(input);
+            self
+        }
+        /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn set_start_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_event_time = input;
+            self
+        }
+        /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn end_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_event_time = Some(input);
+            self
+        }
+        /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn set_end_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_event_time = input;
+            self
+        }
+        /// <p> The ID of the import. Use this parameter when you are retrying an import. </p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the import. Use this parameter when you are retrying an import. </p>
+        pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartImportInput`](crate::input::StartImportInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartImportInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StartImportInput {
+                destinations: self.destinations,
+                import_source: self.import_source,
+                start_event_time: self.start_event_time,
+                end_event_time: self.end_event_time,
+                import_id: self.import_id,
+            })
+        }
+    }
+}
+impl StartImportInput {
+    /// Consumes the builder and constructs an Operation<[`StartImport`](crate::operation::StartImport)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartImport,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartImportInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartImportInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.StartImport",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_import(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartImport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartImport",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartImportInput`](crate::input::StartImportInput).
+    pub fn builder() -> crate::input::start_import_input::Builder {
+        crate::input::start_import_input::Builder::default()
+    }
+}
+
 /// See [`StartLoggingInput`](crate::input::StartLoggingInput).
 pub mod start_logging_input {
 
@@ -4506,6 +5501,148 @@ impl StartQueryInput {
     }
 }
 
+/// See [`StopImportInput`](crate::input::StopImportInput).
+pub mod stop_import_input {
+
+    /// A builder for [`StopImportInput`](crate::input::StopImportInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The ID of the import. </p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the import. </p>
+        pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopImportInput`](crate::input::StopImportInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StopImportInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::StopImportInput {
+                import_id: self.import_id,
+            })
+        }
+    }
+}
+impl StopImportInput {
+    /// Consumes the builder and constructs an Operation<[`StopImport`](crate::operation::StopImport)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopImport,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StopImportInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopImportInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.StopImport",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_import(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopImport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopImport",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StopImportInput`](crate::input::StopImportInput).
+    pub fn builder() -> crate::input::stop_import_input::Builder {
+        crate::input::stop_import_input::Builder::default()
+    }
+}
+
 /// See [`StopLoggingInput`](crate::input::StopLoggingInput).
 pub mod stop_logging_input {
 
@@ -4692,7 +5829,7 @@ pub mod update_event_data_store_input {
         ///
         /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
         ///
-        /// <p>The advanced event selectors used to select events for the event data store.</p>
+        /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
         pub fn advanced_event_selectors(
             mut self,
             input: crate::model::AdvancedEventSelector,
@@ -4702,7 +5839,7 @@ pub mod update_event_data_store_input {
             self.advanced_event_selectors = Some(v);
             self
         }
-        /// <p>The advanced event selectors used to select events for the event data store.</p>
+        /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
         pub fn set_advanced_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -5366,7 +6503,7 @@ pub struct UpdateEventDataStoreInput {
     /// <p>The event data store name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The advanced event selectors used to select events for the event data store.</p>
+    /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
     #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -5392,7 +6529,7 @@ impl UpdateEventDataStoreInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The advanced event selectors used to select events for the event data store.</p>
+    /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
     pub fn advanced_event_selectors(
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
@@ -5459,6 +6596,28 @@ impl std::fmt::Debug for StopLoggingInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopImportInput {
+    /// <p> The ID of the import. </p>
+    #[doc(hidden)]
+    pub import_id: std::option::Option<std::string::String>,
+}
+impl StopImportInput {
+    /// <p> The ID of the import. </p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StopImportInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopImportInput");
+        formatter.field("import_id", &self.import_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartQueryInput {
     /// <p>The SQL code of your query.</p>
     #[doc(hidden)]
@@ -5498,6 +6657,60 @@ impl std::fmt::Debug for StartLoggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartLoggingInput");
         formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartImportInput {
+    /// <p> The destination event data store. Use this parameter for a new import. </p>
+    #[doc(hidden)]
+    pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
+    #[doc(hidden)]
+    pub import_source: std::option::Option<crate::model::ImportSource>,
+    /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    #[doc(hidden)]
+    pub start_event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    #[doc(hidden)]
+    pub end_event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The ID of the import. Use this parameter when you are retrying an import. </p>
+    #[doc(hidden)]
+    pub import_id: std::option::Option<std::string::String>,
+}
+impl StartImportInput {
+    /// <p> The destination event data store. Use this parameter for a new import. </p>
+    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
+        self.destinations.as_deref()
+    }
+    /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
+    pub fn import_source(&self) -> std::option::Option<&crate::model::ImportSource> {
+        self.import_source.as_ref()
+    }
+    /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn start_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_event_time.as_ref()
+    }
+    /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn end_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_event_time.as_ref()
+    }
+    /// <p> The ID of the import. Use this parameter when you are retrying an import. </p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StartImportInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartImportInput");
+        formatter.field("destinations", &self.destinations);
+        formatter.field("import_source", &self.import_source);
+        formatter.field("start_event_time", &self.start_event_time);
+        formatter.field("end_event_time", &self.end_event_time);
+        formatter.field("import_id", &self.import_id);
         formatter.finish()
     }
 }
@@ -5666,7 +6879,7 @@ pub struct LookupEventsInput {
     /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -5691,7 +6904,7 @@ impl LookupEventsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5713,12 +6926,12 @@ impl std::fmt::Debug for LookupEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrailsInput {
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrailsInput {
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5864,6 +7077,90 @@ impl std::fmt::Debug for ListPublicKeysInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImportsInput {
+    /// <p> The maximum number of imports to display on a single page. </p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> The destination event data store. </p>
+    #[doc(hidden)]
+    pub destination: std::option::Option<std::string::String>,
+    /// <p> The status of the import. </p>
+    #[doc(hidden)]
+    pub import_status: std::option::Option<crate::model::ImportStatus>,
+    /// <p> A token you can use to get the next page of import results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImportsInput {
+    /// <p> The maximum number of imports to display on a single page. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> The destination event data store. </p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// <p> The status of the import. </p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p> A token you can use to get the next page of import results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListImportsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImportsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("destination", &self.destination);
+        formatter.field("import_status", &self.import_status);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImportFailuresInput {
+    /// <p> The ID of the import. </p>
+    #[doc(hidden)]
+    pub import_id: std::option::Option<std::string::String>,
+    /// <p> The maximum number of failures to display on a single page. </p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> A token you can use to get the next page of import failures. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImportFailuresInput {
+    /// <p> The ID of the import. </p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p> The maximum number of failures to display on a single page. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> A token you can use to get the next page of import failures. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListImportFailuresInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImportFailuresInput");
+        formatter.field("import_id", &self.import_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventDataStoresInput {
     /// <p>A token you can use to get the next page of event data store results.</p>
     #[doc(hidden)]
@@ -5887,6 +7184,36 @@ impl std::fmt::Debug for ListEventDataStoresInput {
         let mut formatter = f.debug_struct("ListEventDataStoresInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListChannelsInput {
+    /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> A token you can use to get the next page of results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsInput {
+    /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> A token you can use to get the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListChannelsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListChannelsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -6026,6 +7353,28 @@ impl std::fmt::Debug for GetInsightSelectorsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetImportInput {
+    /// <p> The ID for the import. </p>
+    #[doc(hidden)]
+    pub import_id: std::option::Option<std::string::String>,
+}
+impl GetImportInput {
+    /// <p> The ID for the import. </p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetImportInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetImportInput");
+        formatter.field("import_id", &self.import_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSelectorsInput {
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
@@ -6081,6 +7430,28 @@ impl std::fmt::Debug for GetEventDataStoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventDataStoreInput");
         formatter.field("event_data_store", &self.event_data_store);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetChannelInput {
+    /// <p> The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. </p>
+    #[doc(hidden)]
+    pub channel: std::option::Option<std::string::String>,
+}
+impl GetChannelInput {
+    /// <p> The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. </p>
+    pub fn channel(&self) -> std::option::Option<&str> {
+        self.channel.as_deref()
+    }
+}
+impl std::fmt::Debug for GetChannelInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetChannelInput");
+        formatter.field("channel", &self.channel);
         formatter.finish()
     }
 }
@@ -6375,7 +7746,7 @@ pub struct CreateEventDataStoreInput {
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
     #[doc(hidden)]
     pub organization_enabled: std::option::Option<bool>,
-    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
     #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
@@ -6404,7 +7775,7 @@ impl CreateEventDataStoreInput {
     pub fn organization_enabled(&self) -> std::option::Option<bool> {
         self.organization_enabled
     }
-    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
     pub fn retention_period(&self) -> std::option::Option<i32> {
         self.retention_period
     }

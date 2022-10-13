@@ -11,7 +11,7 @@ pub enum Error {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource <i>wasn't</i> found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton Quotas</a> in the <i>Proton User Guide</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),

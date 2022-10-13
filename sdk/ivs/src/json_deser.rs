@@ -1752,6 +1752,15 @@ where
                                     crate::json_deser::deser_structure_crate_model_thumbnail_configuration(tokens)?
                                 );
                             }
+                            "recordingReconnectWindowSeconds" => {
+                                builder = builder.set_recording_reconnect_window_seconds(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

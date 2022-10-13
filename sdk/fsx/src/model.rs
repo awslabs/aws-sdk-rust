@@ -2102,7 +2102,7 @@ pub struct FileSystem {
     /// </ul>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::FileSystemLifecycle>,
-    /// <p>A structure providing details of any failures that occurred when creating a file system.</p>
+    /// <p>A structure providing details of any failures that occurred.</p>
     #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FileSystemFailureDetails>,
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
@@ -2190,7 +2190,7 @@ impl FileSystem {
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileSystemLifecycle> {
         self.lifecycle.as_ref()
     }
-    /// <p>A structure providing details of any failures that occurred when creating a file system.</p>
+    /// <p>A structure providing details of any failures that occurred.</p>
     pub fn failure_details(&self) -> std::option::Option<&crate::model::FileSystemFailureDetails> {
         self.failure_details.as_ref()
     }
@@ -2414,12 +2414,12 @@ pub mod file_system {
             self.lifecycle = input;
             self
         }
-        /// <p>A structure providing details of any failures that occurred when creating a file system.</p>
+        /// <p>A structure providing details of any failures that occurred.</p>
         pub fn failure_details(mut self, input: crate::model::FileSystemFailureDetails) -> Self {
             self.failure_details = Some(input);
             self
         }
-        /// <p>A structure providing details of any failures that occurred when creating a file system.</p>
+        /// <p>A structure providing details of any failures that occurred.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::FileSystemFailureDetails>,
@@ -4218,8 +4218,7 @@ impl LustreRootSquashConfiguration {
     }
 }
 
-/// <p>The configuration for Lustre logging used to write the enabled logging events for your file system to Amazon CloudWatch Logs.</p>
-/// <p>When logging is enabled, Lustre logs error and warning events from data repository operations such as automatic export and data repository tasks. To learn more about Lustre logging, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html">Logging with Amazon CloudWatch Logs</a>. </p>
+/// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon FSx for Lustre file system or Amazon File Cache resource to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LustreLogConfiguration {
@@ -4230,6 +4229,7 @@ pub struct LustreLogConfiguration {
     /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
+    /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
     #[doc(hidden)]
     pub level: std::option::Option<crate::model::LustreAccessAuditLogLevel>,
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs. The destination can be any Amazon CloudWatch Logs log group ARN. The destination ARN must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
@@ -4244,6 +4244,7 @@ impl LustreLogConfiguration {
     /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
+    /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
     pub fn level(&self) -> std::option::Option<&crate::model::LustreAccessAuditLogLevel> {
         self.level.as_ref()
     }
@@ -4277,6 +4278,7 @@ pub mod lustre_log_configuration {
         /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
         /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
         /// </ul>
+        /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
         pub fn level(mut self, input: crate::model::LustreAccessAuditLogLevel) -> Self {
             self.level = Some(input);
             self
@@ -4288,6 +4290,7 @@ pub mod lustre_log_configuration {
         /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
         /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
         /// </ul>
+        /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
         pub fn set_level(
             mut self,
             input: std::option::Option<crate::model::LustreAccessAuditLogLevel>,
@@ -6215,16 +6218,16 @@ impl AsRef<str> for StorageType {
     }
 }
 
-/// <p>A structure providing details of any failures that occurred when creating a file system.</p>
+/// <p>A structure providing details of any failures that occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemFailureDetails {
-    /// <p>A message describing any failures that occurred during file system creation.</p>
+    /// <p>A message describing any failures that occurred.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl FileSystemFailureDetails {
-    /// <p>A message describing any failures that occurred during file system creation.</p>
+    /// <p>A message describing any failures that occurred.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -6245,12 +6248,12 @@ pub mod file_system_failure_details {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A message describing any failures that occurred during file system creation.</p>
+        /// <p>A message describing any failures that occurred.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>A message describing any failures that occurred during file system creation.</p>
+        /// <p>A message describing any failures that occurred.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -8919,6 +8922,8 @@ impl SelfManagedActiveDirectoryConfigurationUpdates {
 )]
 pub enum ServiceLimit {
     #[allow(missing_docs)] // documentation missing in model
+    FileCacheCount,
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemCount,
     #[allow(missing_docs)] // documentation missing in model
     StorageVirtualMachinesPerFileSystem,
@@ -8942,6 +8947,7 @@ pub enum ServiceLimit {
 impl std::convert::From<&str> for ServiceLimit {
     fn from(s: &str) -> Self {
         match s {
+            "FILE_CACHE_COUNT" => ServiceLimit::FileCacheCount,
             "FILE_SYSTEM_COUNT" => ServiceLimit::FileSystemCount,
             "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM" => {
                 ServiceLimit::StorageVirtualMachinesPerFileSystem
@@ -8968,6 +8974,7 @@ impl ServiceLimit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ServiceLimit::FileCacheCount => "FILE_CACHE_COUNT",
             ServiceLimit::FileSystemCount => "FILE_SYSTEM_COUNT",
             ServiceLimit::StorageVirtualMachinesPerFileSystem => {
                 "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM"
@@ -8985,6 +8992,7 @@ impl ServiceLimit {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "FILE_CACHE_COUNT",
             "FILE_SYSTEM_COUNT",
             "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM",
             "TOTAL_IN_PROGRESS_COPY_BACKUPS",
@@ -9701,13 +9709,8 @@ impl UpdateFileSystemLustreConfiguration {
     }
 }
 
-/// <p>The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. Lustre logging writes the enabled logging events for your file system to Amazon CloudWatch Logs.</p>
-/// <p>Error and warning events can be logged from the following data repository operations:</p>
-/// <ul>
-/// <li> <p>Automatic export</p> </li>
-/// <li> <p>Data repository tasks</p> </li>
-/// </ul>
-/// <p>To learn more about Lustre logging, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html">Logging to Amazon CloudWatch Logs</a>.</p>
+/// <p>The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. An Amazon File Cache is created with Lustre logging enabled by default, with a setting of <code>WARN_ERROR</code> for the logging events. which can't be changed.</p>
+/// <p>Lustre logging writes the enabled logging events for your file system or cache to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LustreLogCreateConfiguration {
@@ -9725,7 +9728,7 @@ pub struct LustreLogCreateConfiguration {
     /// <ul>
     /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
     /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group.</p> </li>
+    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
     /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
     /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
     /// </ul>
@@ -9748,7 +9751,7 @@ impl LustreLogCreateConfiguration {
     /// <ul>
     /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
     /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group.</p> </li>
+    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
     /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
     /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
     /// </ul>
@@ -9804,7 +9807,7 @@ pub mod lustre_log_create_configuration {
         /// <ul>
         /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
         /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-        /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group.</p> </li>
+        /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
         /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
         /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
         /// </ul>
@@ -9817,7 +9820,7 @@ pub mod lustre_log_create_configuration {
         /// <ul>
         /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
         /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-        /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group.</p> </li>
+        /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
         /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
         /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
         /// </ul>
@@ -10249,13 +10252,1013 @@ impl WindowsAuditLogCreateConfiguration {
     }
 }
 
-/// <p>The configuration of a data repository association that links an Amazon FSx for Lustre file system to an Amazon S3 bucket. The data repository association configuration object is returned in the response of the following operations:</p>
+/// <p>A description of a specific Amazon File Cache resource, which is a response object from the <code>DescribeFileCaches</code> operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileCache {
+    /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+    #[doc(hidden)]
+    pub owner_id: std::option::Option<std::string::String>,
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The system-generated, unique ID of the cache.</p>
+    #[doc(hidden)]
+    pub file_cache_id: std::option::Option<std::string::String>,
+    /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+    #[doc(hidden)]
+    pub file_cache_type: std::option::Option<crate::model::FileCacheType>,
+    /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+    #[doc(hidden)]
+    pub file_cache_type_version: std::option::Option<std::string::String>,
+    /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub lifecycle: std::option::Option<crate::model::FileCacheLifecycle>,
+    /// <p>A structure providing details of any failures that occurred.</p>
+    #[doc(hidden)]
+    pub failure_details: std::option::Option<crate::model::FileCacheFailureDetails>,
+    /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+    #[doc(hidden)]
+    pub storage_capacity: std::option::Option<i32>,
+    /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+    #[doc(hidden)]
+    pub vpc_id: std::option::Option<std::string::String>,
+    /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+    #[doc(hidden)]
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of network interface IDs.</p>
+    #[doc(hidden)]
+    pub network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Domain Name System (DNS) name for the cache.</p>
+    #[doc(hidden)]
+    pub dns_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The configuration for the Amazon File Cache resource.</p>
+    #[doc(hidden)]
+    pub lustre_configuration: std::option::Option<crate::model::FileCacheLustreConfiguration>,
+    /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+    #[doc(hidden)]
+    pub data_repository_association_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FileCache {
+    /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The system-generated, unique ID of the cache.</p>
+    pub fn file_cache_id(&self) -> std::option::Option<&str> {
+        self.file_cache_id.as_deref()
+    }
+    /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+    pub fn file_cache_type(&self) -> std::option::Option<&crate::model::FileCacheType> {
+        self.file_cache_type.as_ref()
+    }
+    /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+    pub fn file_cache_type_version(&self) -> std::option::Option<&str> {
+        self.file_cache_type_version.as_deref()
+    }
+    /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileCacheLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>A structure providing details of any failures that occurred.</p>
+    pub fn failure_details(&self) -> std::option::Option<&crate::model::FileCacheFailureDetails> {
+        self.failure_details.as_ref()
+    }
+    /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+    pub fn storage_capacity(&self) -> std::option::Option<i32> {
+        self.storage_capacity
+    }
+    /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of network interface IDs.</p>
+    pub fn network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.network_interface_ids.as_deref()
+    }
+    /// <p>The Domain Name System (DNS) name for the cache.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The configuration for the Amazon File Cache resource.</p>
+    pub fn lustre_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FileCacheLustreConfiguration> {
+        self.lustre_configuration.as_ref()
+    }
+    /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+    pub fn data_repository_association_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.data_repository_association_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for FileCache {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileCache");
+        formatter.field("owner_id", &self.owner_id);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("file_cache_id", &self.file_cache_id);
+        formatter.field("file_cache_type", &self.file_cache_type);
+        formatter.field("file_cache_type_version", &self.file_cache_type_version);
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.field("failure_details", &self.failure_details);
+        formatter.field("storage_capacity", &self.storage_capacity);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("network_interface_ids", &self.network_interface_ids);
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("lustre_configuration", &self.lustre_configuration);
+        formatter.field(
+            "data_repository_association_ids",
+            &self.data_repository_association_ids,
+        );
+        formatter.finish()
+    }
+}
+/// See [`FileCache`](crate::model::FileCache).
+pub mod file_cache {
+
+    /// A builder for [`FileCache`](crate::model::FileCache).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) owner_id: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) file_cache_id: std::option::Option<std::string::String>,
+        pub(crate) file_cache_type: std::option::Option<crate::model::FileCacheType>,
+        pub(crate) file_cache_type_version: std::option::Option<std::string::String>,
+        pub(crate) lifecycle: std::option::Option<crate::model::FileCacheLifecycle>,
+        pub(crate) failure_details: std::option::Option<crate::model::FileCacheFailureDetails>,
+        pub(crate) storage_capacity: std::option::Option<i32>,
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) dns_name: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) lustre_configuration:
+            std::option::Option<crate::model::FileCacheLustreConfiguration>,
+        pub(crate) data_repository_association_ids:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
+            self
+        }
+        /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The system-generated, unique ID of the cache.</p>
+        pub fn file_cache_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated, unique ID of the cache.</p>
+        pub fn set_file_cache_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_id = input;
+            self
+        }
+        /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+        pub fn file_cache_type(mut self, input: crate::model::FileCacheType) -> Self {
+            self.file_cache_type = Some(input);
+            self
+        }
+        /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+        pub fn set_file_cache_type(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheType>,
+        ) -> Self {
+            self.file_cache_type = input;
+            self
+        }
+        /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+        pub fn file_cache_type_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_type_version = Some(input.into());
+            self
+        }
+        /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+        pub fn set_file_cache_type_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_type_version = input;
+            self
+        }
+        /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+        /// <ul>
+        /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+        /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+        /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+        /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+        /// </ul>
+        pub fn lifecycle(mut self, input: crate::model::FileCacheLifecycle) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+        /// <ul>
+        /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+        /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+        /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+        /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+        /// </ul>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLifecycle>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// <p>A structure providing details of any failures that occurred.</p>
+        pub fn failure_details(mut self, input: crate::model::FileCacheFailureDetails) -> Self {
+            self.failure_details = Some(input);
+            self
+        }
+        /// <p>A structure providing details of any failures that occurred.</p>
+        pub fn set_failure_details(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheFailureDetails>,
+        ) -> Self {
+            self.failure_details = input;
+            self
+        }
+        /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+        pub fn storage_capacity(mut self, input: i32) -> Self {
+            self.storage_capacity = Some(input);
+            self
+        }
+        /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+        pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_capacity = input;
+            self
+        }
+        /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `network_interface_ids`.
+        ///
+        /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
+        ///
+        /// <p>A list of network interface IDs.</p>
+        pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.network_interface_ids.unwrap_or_default();
+            v.push(input.into());
+            self.network_interface_ids = Some(v);
+            self
+        }
+        /// <p>A list of network interface IDs.</p>
+        pub fn set_network_interface_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.network_interface_ids = input;
+            self
+        }
+        /// <p>The Domain Name System (DNS) name for the cache.</p>
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
+            self
+        }
+        /// <p>The Domain Name System (DNS) name for the cache.</p>
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
+            self
+        }
+        /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The configuration for the Amazon File Cache resource.</p>
+        pub fn lustre_configuration(
+            mut self,
+            input: crate::model::FileCacheLustreConfiguration,
+        ) -> Self {
+            self.lustre_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for the Amazon File Cache resource.</p>
+        pub fn set_lustre_configuration(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLustreConfiguration>,
+        ) -> Self {
+            self.lustre_configuration = input;
+            self
+        }
+        /// Appends an item to `data_repository_association_ids`.
+        ///
+        /// To override the contents of this collection use [`set_data_repository_association_ids`](Self::set_data_repository_association_ids).
+        ///
+        /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+        pub fn data_repository_association_ids(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.data_repository_association_ids.unwrap_or_default();
+            v.push(input.into());
+            self.data_repository_association_ids = Some(v);
+            self
+        }
+        /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+        pub fn set_data_repository_association_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.data_repository_association_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileCache`](crate::model::FileCache).
+        pub fn build(self) -> crate::model::FileCache {
+            crate::model::FileCache {
+                owner_id: self.owner_id,
+                creation_time: self.creation_time,
+                file_cache_id: self.file_cache_id,
+                file_cache_type: self.file_cache_type,
+                file_cache_type_version: self.file_cache_type_version,
+                lifecycle: self.lifecycle,
+                failure_details: self.failure_details,
+                storage_capacity: self.storage_capacity,
+                vpc_id: self.vpc_id,
+                subnet_ids: self.subnet_ids,
+                network_interface_ids: self.network_interface_ids,
+                dns_name: self.dns_name,
+                kms_key_id: self.kms_key_id,
+                resource_arn: self.resource_arn,
+                lustre_configuration: self.lustre_configuration,
+                data_repository_association_ids: self.data_repository_association_ids,
+            }
+        }
+    }
+}
+impl FileCache {
+    /// Creates a new builder-style object to manufacture [`FileCache`](crate::model::FileCache).
+    pub fn builder() -> crate::model::file_cache::Builder {
+        crate::model::file_cache::Builder::default()
+    }
+}
+
+/// <p>The configuration for the Amazon File Cache resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileCacheLustreConfiguration {
+    /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
+    #[doc(hidden)]
+    pub per_unit_storage_throughput: std::option::Option<i32>,
+    /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
+    #[doc(hidden)]
+    pub deployment_type: std::option::Option<crate::model::FileCacheLustreDeploymentType>,
+    /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
+    #[doc(hidden)]
+    pub mount_name: std::option::Option<std::string::String>,
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    #[doc(hidden)]
+    pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+    #[doc(hidden)]
+    pub metadata_configuration:
+        std::option::Option<crate::model::FileCacheLustreMetadataConfiguration>,
+    /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
+    pub log_configuration: std::option::Option<crate::model::LustreLogConfiguration>,
+}
+impl FileCacheLustreConfiguration {
+    /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
+    pub fn per_unit_storage_throughput(&self) -> std::option::Option<i32> {
+        self.per_unit_storage_throughput
+    }
+    /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
+    pub fn deployment_type(
+        &self,
+    ) -> std::option::Option<&crate::model::FileCacheLustreDeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
+    pub fn mount_name(&self) -> std::option::Option<&str> {
+        self.mount_name.as_deref()
+    }
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+    pub fn metadata_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FileCacheLustreMetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
+    /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
+    pub fn log_configuration(&self) -> std::option::Option<&crate::model::LustreLogConfiguration> {
+        self.log_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for FileCacheLustreConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileCacheLustreConfiguration");
+        formatter.field(
+            "per_unit_storage_throughput",
+            &self.per_unit_storage_throughput,
+        );
+        formatter.field("deployment_type", &self.deployment_type);
+        formatter.field("mount_name", &self.mount_name);
+        formatter.field(
+            "weekly_maintenance_start_time",
+            &self.weekly_maintenance_start_time,
+        );
+        formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("log_configuration", &self.log_configuration);
+        formatter.finish()
+    }
+}
+/// See [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
+pub mod file_cache_lustre_configuration {
+
+    /// A builder for [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) per_unit_storage_throughput: std::option::Option<i32>,
+        pub(crate) deployment_type:
+            std::option::Option<crate::model::FileCacheLustreDeploymentType>,
+        pub(crate) mount_name: std::option::Option<std::string::String>,
+        pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
+        pub(crate) metadata_configuration:
+            std::option::Option<crate::model::FileCacheLustreMetadataConfiguration>,
+        pub(crate) log_configuration: std::option::Option<crate::model::LustreLogConfiguration>,
+    }
+    impl Builder {
+        /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
+        pub fn per_unit_storage_throughput(mut self, input: i32) -> Self {
+            self.per_unit_storage_throughput = Some(input);
+            self
+        }
+        /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
+        pub fn set_per_unit_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.per_unit_storage_throughput = input;
+            self
+        }
+        /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
+        pub fn deployment_type(
+            mut self,
+            input: crate::model::FileCacheLustreDeploymentType,
+        ) -> Self {
+            self.deployment_type = Some(input);
+            self
+        }
+        /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
+        pub fn set_deployment_type(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLustreDeploymentType>,
+        ) -> Self {
+            self.deployment_type = input;
+            self
+        }
+        /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
+        pub fn mount_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mount_name = Some(input.into());
+            self
+        }
+        /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
+        pub fn set_mount_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mount_name = input;
+            self
+        }
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+        pub fn weekly_maintenance_start_time(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.weekly_maintenance_start_time = Some(input.into());
+            self
+        }
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+        pub fn set_weekly_maintenance_start_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.weekly_maintenance_start_time = input;
+            self
+        }
+        /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+        pub fn metadata_configuration(
+            mut self,
+            input: crate::model::FileCacheLustreMetadataConfiguration,
+        ) -> Self {
+            self.metadata_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+        pub fn set_metadata_configuration(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLustreMetadataConfiguration>,
+        ) -> Self {
+            self.metadata_configuration = input;
+            self
+        }
+        /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
+        pub fn log_configuration(mut self, input: crate::model::LustreLogConfiguration) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LustreLogConfiguration>,
+        ) -> Self {
+            self.log_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
+        pub fn build(self) -> crate::model::FileCacheLustreConfiguration {
+            crate::model::FileCacheLustreConfiguration {
+                per_unit_storage_throughput: self.per_unit_storage_throughput,
+                deployment_type: self.deployment_type,
+                mount_name: self.mount_name,
+                weekly_maintenance_start_time: self.weekly_maintenance_start_time,
+                metadata_configuration: self.metadata_configuration,
+                log_configuration: self.log_configuration,
+            }
+        }
+    }
+}
+impl FileCacheLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
+    pub fn builder() -> crate::model::file_cache_lustre_configuration::Builder {
+        crate::model::file_cache_lustre_configuration::Builder::default()
+    }
+}
+
+/// <p>The configuration for a Lustre MDT (Metadata Target) storage volume. The metadata on Amazon File Cache is managed by a Lustre Metadata Server (MDS) while the actual metadata is persisted on an MDT.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileCacheLustreMetadataConfiguration {
+    /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
+    #[doc(hidden)]
+    pub storage_capacity: std::option::Option<i32>,
+}
+impl FileCacheLustreMetadataConfiguration {
+    /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
+    pub fn storage_capacity(&self) -> std::option::Option<i32> {
+        self.storage_capacity
+    }
+}
+impl std::fmt::Debug for FileCacheLustreMetadataConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileCacheLustreMetadataConfiguration");
+        formatter.field("storage_capacity", &self.storage_capacity);
+        formatter.finish()
+    }
+}
+/// See [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
+pub mod file_cache_lustre_metadata_configuration {
+
+    /// A builder for [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) storage_capacity: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
+        pub fn storage_capacity(mut self, input: i32) -> Self {
+            self.storage_capacity = Some(input);
+            self
+        }
+        /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
+        pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_capacity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
+        pub fn build(self) -> crate::model::FileCacheLustreMetadataConfiguration {
+            crate::model::FileCacheLustreMetadataConfiguration {
+                storage_capacity: self.storage_capacity,
+            }
+        }
+    }
+}
+impl FileCacheLustreMetadataConfiguration {
+    /// Creates a new builder-style object to manufacture [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
+    pub fn builder() -> crate::model::file_cache_lustre_metadata_configuration::Builder {
+        crate::model::file_cache_lustre_metadata_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FileCacheLustreDeploymentType {
+    #[allow(missing_docs)] // documentation missing in model
+    Cache1,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FileCacheLustreDeploymentType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CACHE_1" => FileCacheLustreDeploymentType::Cache1,
+            other => FileCacheLustreDeploymentType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FileCacheLustreDeploymentType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FileCacheLustreDeploymentType::from(s))
+    }
+}
+impl FileCacheLustreDeploymentType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FileCacheLustreDeploymentType::Cache1 => "CACHE_1",
+            FileCacheLustreDeploymentType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CACHE_1"]
+    }
+}
+impl AsRef<str> for FileCacheLustreDeploymentType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A structure providing details of any failures that occurred.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileCacheFailureDetails {
+    /// <p>A message describing any failures that occurred.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl FileCacheFailureDetails {
+    /// <p>A message describing any failures that occurred.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for FileCacheFailureDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileCacheFailureDetails");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
+pub mod file_cache_failure_details {
+
+    /// A builder for [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing any failures that occurred.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing any failures that occurred.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
+        pub fn build(self) -> crate::model::FileCacheFailureDetails {
+            crate::model::FileCacheFailureDetails {
+                message: self.message,
+            }
+        }
+    }
+}
+impl FileCacheFailureDetails {
+    /// Creates a new builder-style object to manufacture [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
+    pub fn builder() -> crate::model::file_cache_failure_details::Builder {
+        crate::model::file_cache_failure_details::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FileCacheLifecycle {
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FileCacheLifecycle {
+    fn from(s: &str) -> Self {
+        match s {
+            "AVAILABLE" => FileCacheLifecycle::Available,
+            "CREATING" => FileCacheLifecycle::Creating,
+            "DELETING" => FileCacheLifecycle::Deleting,
+            "FAILED" => FileCacheLifecycle::Failed,
+            "UPDATING" => FileCacheLifecycle::Updating,
+            other => FileCacheLifecycle::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FileCacheLifecycle {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FileCacheLifecycle::from(s))
+    }
+}
+impl FileCacheLifecycle {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FileCacheLifecycle::Available => "AVAILABLE",
+            FileCacheLifecycle::Creating => "CREATING",
+            FileCacheLifecycle::Deleting => "DELETING",
+            FileCacheLifecycle::Failed => "FAILED",
+            FileCacheLifecycle::Updating => "UPDATING",
+            FileCacheLifecycle::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+    }
+}
+impl AsRef<str> for FileCacheLifecycle {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FileCacheType {
+    #[allow(missing_docs)] // documentation missing in model
+    Lustre,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FileCacheType {
+    fn from(s: &str) -> Self {
+        match s {
+            "LUSTRE" => FileCacheType::Lustre,
+            other => FileCacheType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FileCacheType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FileCacheType::from(s))
+    }
+}
+impl FileCacheType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FileCacheType::Lustre => "LUSTRE",
+            FileCacheType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LUSTRE"]
+    }
+}
+impl AsRef<str> for FileCacheType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The configuration update for an Amazon File Cache resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFileCacheLustreConfiguration {
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    #[doc(hidden)]
+    pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
+}
+impl UpdateFileCacheLustreConfiguration {
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateFileCacheLustreConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFileCacheLustreConfiguration");
+        formatter.field(
+            "weekly_maintenance_start_time",
+            &self.weekly_maintenance_start_time,
+        );
+        formatter.finish()
+    }
+}
+/// See [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
+pub mod update_file_cache_lustre_configuration {
+
+    /// A builder for [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+        pub fn weekly_maintenance_start_time(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.weekly_maintenance_start_time = Some(input.into());
+            self
+        }
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+        pub fn set_weekly_maintenance_start_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.weekly_maintenance_start_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
+        pub fn build(self) -> crate::model::UpdateFileCacheLustreConfiguration {
+            crate::model::UpdateFileCacheLustreConfiguration {
+                weekly_maintenance_start_time: self.weekly_maintenance_start_time,
+            }
+        }
+    }
+}
+impl UpdateFileCacheLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
+    pub fn builder() -> crate::model::update_file_cache_lustre_configuration::Builder {
+        crate::model::update_file_cache_lustre_configuration::Builder::default()
+    }
+}
+
+/// <p>The configuration of a data repository association that links an Amazon FSx for Lustre file system to an Amazon S3 bucket or an Amazon File Cache resource to an Amazon S3 bucket or an NFS file system. The data repository association configuration object is returned in the response of the following operations:</p>
 /// <ul>
 /// <li> <p> <code>CreateDataRepositoryAssociation</code> </p> </li>
 /// <li> <p> <code>UpdateDataRepositoryAssociation</code> </p> </li>
 /// <li> <p> <code>DescribeDataRepositoryAssociations</code> </p> </li>
 /// </ul>
-/// <p>Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
+/// <p>Data repository associations are supported only for an Amazon FSx for Lustre file system with the <code>Persistent_2</code> deployment type and for an Amazon File Cache resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataRepositoryAssociation {
@@ -10270,9 +11273,9 @@ pub struct DataRepositoryAssociation {
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is being created. The data repository is unavailable.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically export updates to the S3 bucket until the data repository association configuration is corrected.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
     /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
     /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
     /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
@@ -10282,23 +11285,34 @@ pub struct DataRepositoryAssociation {
     /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::DataRepositoryFailureDetails>,
-    /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
+    /// <p>A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
-    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
     #[doc(hidden)]
     pub file_system_path: std::option::Option<std::string::String>,
-    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    /// <p>The path to the data repository that will be linked to the cache or file system.</p>
+    /// <ul>
+    /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+    /// <ul>
+    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
+    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub data_repository_path: std::option::Option<std::string::String>,
-    /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p>
+    /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
+    /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+    /// </note>
     #[doc(hidden)]
     pub batch_import_meta_data_on_create: std::option::Option<bool>,
-    /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+    /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     #[doc(hidden)]
     pub imported_file_chunk_size: std::option::Option<i32>,
-    /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association.</p>
     #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3DataRepositoryConfiguration>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -10307,6 +11321,22 @@ pub struct DataRepositoryAssociation {
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The globally unique ID of the Amazon File Cache resource.</p>
+    #[doc(hidden)]
+    pub file_cache_id: std::option::Option<std::string::String>,
+    /// <p>A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
+    /// <p>This path specifies the directory in your cache where files will be exported from. This cache directory can be linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.</p> <note>
+    /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
+    /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub file_cache_path: std::option::Option<std::string::String>,
+    /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
+    #[doc(hidden)]
+    pub data_repository_subdirectories: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
+    #[doc(hidden)]
+    pub nfs: std::option::Option<crate::model::NfsDataRepositoryConfiguration>,
 }
 impl DataRepositoryAssociation {
     /// <p>The system-generated, unique ID of the data repository association.</p>
@@ -10323,9 +11353,9 @@ impl DataRepositoryAssociation {
     }
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is being created. The data repository is unavailable.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically export updates to the S3 bucket until the data repository association configuration is corrected.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
     /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
     /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
     /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
@@ -10339,27 +11369,38 @@ impl DataRepositoryAssociation {
     ) -> std::option::Option<&crate::model::DataRepositoryFailureDetails> {
         self.failure_details.as_ref()
     }
-    /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
+    /// <p>A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
-    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
     pub fn file_system_path(&self) -> std::option::Option<&str> {
         self.file_system_path.as_deref()
     }
-    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    /// <p>The path to the data repository that will be linked to the cache or file system.</p>
+    /// <ul>
+    /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+    /// <ul>
+    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
+    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// </ul>
     pub fn data_repository_path(&self) -> std::option::Option<&str> {
         self.data_repository_path.as_deref()
     }
-    /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p>
+    /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
+    /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+    /// </note>
     pub fn batch_import_meta_data_on_create(&self) -> std::option::Option<bool> {
         self.batch_import_meta_data_on_create
     }
-    /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+    /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub fn imported_file_chunk_size(&self) -> std::option::Option<i32> {
         self.imported_file_chunk_size
     }
-    /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3DataRepositoryConfiguration> {
         self.s3.as_ref()
     }
@@ -10370,6 +11411,26 @@ impl DataRepositoryAssociation {
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
+    }
+    /// <p>The globally unique ID of the Amazon File Cache resource.</p>
+    pub fn file_cache_id(&self) -> std::option::Option<&str> {
+        self.file_cache_id.as_deref()
+    }
+    /// <p>A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
+    /// <p>This path specifies the directory in your cache where files will be exported from. This cache directory can be linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.</p> <note>
+    /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
+    /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
+    /// </note>
+    pub fn file_cache_path(&self) -> std::option::Option<&str> {
+        self.file_cache_path.as_deref()
+    }
+    /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
+    pub fn data_repository_subdirectories(&self) -> std::option::Option<&[std::string::String]> {
+        self.data_repository_subdirectories.as_deref()
+    }
+    /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
+    pub fn nfs(&self) -> std::option::Option<&crate::model::NfsDataRepositoryConfiguration> {
+        self.nfs.as_ref()
     }
 }
 impl std::fmt::Debug for DataRepositoryAssociation {
@@ -10390,6 +11451,13 @@ impl std::fmt::Debug for DataRepositoryAssociation {
         formatter.field("s3", &self.s3);
         formatter.field("tags", &self.tags);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("file_cache_id", &self.file_cache_id);
+        formatter.field("file_cache_path", &self.file_cache_path);
+        formatter.field(
+            "data_repository_subdirectories",
+            &self.data_repository_subdirectories,
+        );
+        formatter.field("nfs", &self.nfs);
         formatter.finish()
     }
 }
@@ -10411,6 +11479,11 @@ pub mod data_repository_association {
         pub(crate) s3: std::option::Option<crate::model::S3DataRepositoryConfiguration>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) file_cache_id: std::option::Option<std::string::String>,
+        pub(crate) file_cache_path: std::option::Option<std::string::String>,
+        pub(crate) data_repository_subdirectories:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) nfs: std::option::Option<crate::model::NfsDataRepositoryConfiguration>,
     }
     impl Builder {
         /// <p>The system-generated, unique ID of the data repository association.</p>
@@ -10451,9 +11524,9 @@ pub mod data_repository_association {
         }
         /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
         /// <ul>
-        /// <li> <p> <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is being created. The data repository is unavailable.</p> </li>
+        /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
         /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-        /// <li> <p> <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically export updates to the S3 bucket until the data repository association configuration is corrected.</p> </li>
+        /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
         /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
         /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
         /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
@@ -10464,9 +11537,9 @@ pub mod data_repository_association {
         }
         /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
         /// <ul>
-        /// <li> <p> <code>CREATING</code> - The data repository association between the FSx file system and the S3 data repository is being created. The data repository is unavailable.</p> </li>
+        /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
         /// <li> <p> <code>AVAILABLE</code> - The data repository association is available for use.</p> </li>
-        /// <li> <p> <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket or automatically export updates to the S3 bucket until the data repository association configuration is corrected.</p> </li>
+        /// <li> <p> <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until the configuration is corrected, automatic import and automatic export will not work (only for Amazon FSx for Lustre).</p> </li>
         /// <li> <p> <code>UPDATING</code> - The data repository association is undergoing a customer initiated update that might affect its availability.</p> </li>
         /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
         /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
@@ -10494,17 +11567,17 @@ pub mod data_repository_association {
             self.failure_details = input;
             self
         }
-        /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
+        /// <p>A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
         /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
-        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
         /// </note>
         pub fn file_system_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_path = Some(input.into());
             self
         }
-        /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
+        /// <p>A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
         /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
-        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
         /// </note>
         pub fn set_file_system_path(
             mut self,
@@ -10513,12 +11586,30 @@ pub mod data_repository_association {
             self.file_system_path = input;
             self
         }
-        /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+        /// <p>The path to the data repository that will be linked to the cache or file system.</p>
+        /// <ul>
+        /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+        /// <ul>
+        /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
+        /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+        /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+        /// </ul>
         pub fn data_repository_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_repository_path = Some(input.into());
             self
         }
-        /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+        /// <p>The path to the data repository that will be linked to the cache or file system.</p>
+        /// <ul>
+        /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
+        /// <ul>
+        /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
+        /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+        /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+        /// </ul>
         pub fn set_data_repository_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10526,12 +11617,16 @@ pub mod data_repository_association {
             self.data_repository_path = input;
             self
         }
-        /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p>
+        /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
+        /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+        /// </note>
         pub fn batch_import_meta_data_on_create(mut self, input: bool) -> Self {
             self.batch_import_meta_data_on_create = Some(input);
             self
         }
-        /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p>
+        /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
+        /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
+        /// </note>
         pub fn set_batch_import_meta_data_on_create(
             mut self,
             input: std::option::Option<bool>,
@@ -10539,24 +11634,24 @@ pub mod data_repository_association {
             self.batch_import_meta_data_on_create = input;
             self
         }
-        /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+        /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
         /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
         pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
             self.imported_file_chunk_size = Some(input);
             self
         }
-        /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+        /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
         /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
         pub fn set_imported_file_chunk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.imported_file_chunk_size = input;
             self
         }
-        /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+        /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association.</p>
         pub fn s3(mut self, input: crate::model::S3DataRepositoryConfiguration) -> Self {
             self.s3 = Some(input);
             self
         }
-        /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+        /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association.</p>
         pub fn set_s3(
             mut self,
             input: std::option::Option<crate::model::S3DataRepositoryConfiguration>,
@@ -10596,6 +11691,75 @@ pub mod data_repository_association {
             self.creation_time = input;
             self
         }
+        /// <p>The globally unique ID of the Amazon File Cache resource.</p>
+        pub fn file_cache_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_id = Some(input.into());
+            self
+        }
+        /// <p>The globally unique ID of the Amazon File Cache resource.</p>
+        pub fn set_file_cache_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_id = input;
+            self
+        }
+        /// <p>A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
+        /// <p>This path specifies the directory in your cache where files will be exported from. This cache directory can be linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.</p> <note>
+        /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
+        /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
+        /// </note>
+        pub fn file_cache_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_path = Some(input.into());
+            self
+        }
+        /// <p>A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
+        /// <p>This path specifies the directory in your cache where files will be exported from. This cache directory can be linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.</p> <note>
+        /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
+        /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
+        /// </note>
+        pub fn set_file_cache_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_path = input;
+            self
+        }
+        /// Appends an item to `data_repository_subdirectories`.
+        ///
+        /// To override the contents of this collection use [`set_data_repository_subdirectories`](Self::set_data_repository_subdirectories).
+        ///
+        /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
+        pub fn data_repository_subdirectories(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.data_repository_subdirectories.unwrap_or_default();
+            v.push(input.into());
+            self.data_repository_subdirectories = Some(v);
+            self
+        }
+        /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
+        pub fn set_data_repository_subdirectories(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.data_repository_subdirectories = input;
+            self
+        }
+        /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
+        pub fn nfs(mut self, input: crate::model::NfsDataRepositoryConfiguration) -> Self {
+            self.nfs = Some(input);
+            self
+        }
+        /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
+        pub fn set_nfs(
+            mut self,
+            input: std::option::Option<crate::model::NfsDataRepositoryConfiguration>,
+        ) -> Self {
+            self.nfs = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
         pub fn build(self) -> crate::model::DataRepositoryAssociation {
             crate::model::DataRepositoryAssociation {
@@ -10611,6 +11775,10 @@ pub mod data_repository_association {
                 s3: self.s3,
                 tags: self.tags,
                 creation_time: self.creation_time,
+                file_cache_id: self.file_cache_id,
+                file_cache_path: self.file_cache_path,
+                data_repository_subdirectories: self.data_repository_subdirectories,
+                nfs: self.nfs,
             }
         }
     }
@@ -10622,64 +11790,89 @@ impl DataRepositoryAssociation {
     }
 }
 
-/// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration consists of an <code>AutoImportPolicy</code> that defines file events on the data repository are automatically imported to the file system and an <code>AutoExportPolicy</code> that defines which file events on the file system are automatically exported to the data repository. File events are when files or directories are added, changed, or deleted on the file system or the data repository.</p>
+/// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct S3DataRepositoryConfiguration {
-    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
+pub struct NfsDataRepositoryConfiguration {
+    /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. Currently, the only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
     #[doc(hidden)]
-    pub auto_import_policy: std::option::Option<crate::model::AutoImportPolicy>,
-    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+    pub version: std::option::Option<crate::model::NfsVersion>,
+    /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+    #[doc(hidden)]
+    pub dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>This parameter is not supported for Amazon File Cache.</p>
     #[doc(hidden)]
     pub auto_export_policy: std::option::Option<crate::model::AutoExportPolicy>,
 }
-impl S3DataRepositoryConfiguration {
-    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
-    pub fn auto_import_policy(&self) -> std::option::Option<&crate::model::AutoImportPolicy> {
-        self.auto_import_policy.as_ref()
+impl NfsDataRepositoryConfiguration {
+    /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. Currently, the only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::NfsVersion> {
+        self.version.as_ref()
     }
-    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+    /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+    pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ips.as_deref()
+    }
+    /// <p>This parameter is not supported for Amazon File Cache.</p>
     pub fn auto_export_policy(&self) -> std::option::Option<&crate::model::AutoExportPolicy> {
         self.auto_export_policy.as_ref()
     }
 }
-impl std::fmt::Debug for S3DataRepositoryConfiguration {
+impl std::fmt::Debug for NfsDataRepositoryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DataRepositoryConfiguration");
-        formatter.field("auto_import_policy", &self.auto_import_policy);
+        let mut formatter = f.debug_struct("NfsDataRepositoryConfiguration");
+        formatter.field("version", &self.version);
+        formatter.field("dns_ips", &self.dns_ips);
         formatter.field("auto_export_policy", &self.auto_export_policy);
         formatter.finish()
     }
 }
-/// See [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
-pub mod s3_data_repository_configuration {
+/// See [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
+pub mod nfs_data_repository_configuration {
 
-    /// A builder for [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
+    /// A builder for [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) auto_import_policy: std::option::Option<crate::model::AutoImportPolicy>,
+        pub(crate) version: std::option::Option<crate::model::NfsVersion>,
+        pub(crate) dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_export_policy: std::option::Option<crate::model::AutoExportPolicy>,
     }
     impl Builder {
-        /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
-        pub fn auto_import_policy(mut self, input: crate::model::AutoImportPolicy) -> Self {
-            self.auto_import_policy = Some(input);
+        /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. Currently, the only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+        pub fn version(mut self, input: crate::model::NfsVersion) -> Self {
+            self.version = Some(input);
             self
         }
-        /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
-        pub fn set_auto_import_policy(
+        /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. Currently, the only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+        pub fn set_version(mut self, input: std::option::Option<crate::model::NfsVersion>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Appends an item to `dns_ips`.
+        ///
+        /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
+        ///
+        /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+        pub fn dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.dns_ips.unwrap_or_default();
+            v.push(input.into());
+            self.dns_ips = Some(v);
+            self
+        }
+        /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+        pub fn set_dns_ips(
             mut self,
-            input: std::option::Option<crate::model::AutoImportPolicy>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.auto_import_policy = input;
+            self.dns_ips = input;
             self
         }
-        /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+        /// <p>This parameter is not supported for Amazon File Cache.</p>
         pub fn auto_export_policy(mut self, input: crate::model::AutoExportPolicy) -> Self {
             self.auto_export_policy = Some(input);
             self
         }
-        /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+        /// <p>This parameter is not supported for Amazon File Cache.</p>
         pub fn set_auto_export_policy(
             mut self,
             input: std::option::Option<crate::model::AutoExportPolicy>,
@@ -10687,31 +11880,32 @@ pub mod s3_data_repository_configuration {
             self.auto_export_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
-        pub fn build(self) -> crate::model::S3DataRepositoryConfiguration {
-            crate::model::S3DataRepositoryConfiguration {
-                auto_import_policy: self.auto_import_policy,
+        /// Consumes the builder and constructs a [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
+        pub fn build(self) -> crate::model::NfsDataRepositoryConfiguration {
+            crate::model::NfsDataRepositoryConfiguration {
+                version: self.version,
+                dns_ips: self.dns_ips,
                 auto_export_policy: self.auto_export_policy,
             }
         }
     }
 }
-impl S3DataRepositoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
-    pub fn builder() -> crate::model::s3_data_repository_configuration::Builder {
-        crate::model::s3_data_repository_configuration::Builder::default()
+impl NfsDataRepositoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
+    pub fn builder() -> crate::model::nfs_data_repository_configuration::Builder {
+        crate::model::nfs_data_repository_configuration::Builder::default()
     }
 }
 
-/// <p>Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx automatically exports the defined changes asynchronously once your application finishes modifying the file.</p>
-/// <p>This <code>AutoExportPolicy</code> is supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
+/// <p>Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx for Lustre automatically exports the defined changes asynchronously once your application finishes modifying the file.</p>
+/// <p>This <code>AutoExportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoExportPolicy {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are added to the file system.</p> </li>
-    /// <li> <p> <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to the data repository.</p> </li>
+    /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
+    /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
     /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
@@ -10721,8 +11915,8 @@ pub struct AutoExportPolicy {
 impl AutoExportPolicy {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are added to the file system.</p> </li>
-    /// <li> <p> <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to the data repository.</p> </li>
+    /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
+    /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
     /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
@@ -10752,8 +11946,8 @@ pub mod auto_export_policy {
         ///
         /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
         /// <ul>
-        /// <li> <p> <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are added to the file system.</p> </li>
-        /// <li> <p> <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to the data repository.</p> </li>
+        /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
+        /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
         /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
         /// </ul>
         /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
@@ -10765,8 +11959,8 @@ pub mod auto_export_policy {
         }
         /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
         /// <ul>
-        /// <li> <p> <code>NEW</code> - Amazon FSx automatically exports new files and directories to the data repository as they are added to the file system.</p> </li>
-        /// <li> <p> <code>CHANGED</code> - Amazon FSx automatically exports changes to files and directories on the file system to the data repository.</p> </li>
+        /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
+        /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
         /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
         /// </ul>
         /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
@@ -10851,8 +12045,142 @@ impl AsRef<str> for EventType {
     }
 }
 
-/// <p>Describes the data repository association's automatic import policy. The AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory listings up to date by importing changes to your file system as you modify objects in a linked S3 bucket.</p>
-/// <p>This <code>AutoImportPolicy</code> is supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NfsVersion {
+    #[allow(missing_docs)] // documentation missing in model
+    Nfs3,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for NfsVersion {
+    fn from(s: &str) -> Self {
+        match s {
+            "NFS3" => NfsVersion::Nfs3,
+            other => NfsVersion::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for NfsVersion {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NfsVersion::from(s))
+    }
+}
+impl NfsVersion {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NfsVersion::Nfs3 => "NFS3",
+            NfsVersion::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NFS3"]
+    }
+}
+impl AsRef<str> for NfsVersion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association. The configuration consists of an <code>AutoImportPolicy</code> that defines which file events on the data repository are automatically imported to the file system and an <code>AutoExportPolicy</code> that defines which file events on the file system are automatically exported to the data repository. File events are when files or directories are added, changed, or deleted on the file system or the data repository.</p> <note>
+/// <p>Data repository associations on Amazon File Cache don't use <code>S3DataRepositoryConfiguration</code> because they don't support automatic import or automatic export.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3DataRepositoryConfiguration {
+    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
+    #[doc(hidden)]
+    pub auto_import_policy: std::option::Option<crate::model::AutoImportPolicy>,
+    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+    #[doc(hidden)]
+    pub auto_export_policy: std::option::Option<crate::model::AutoExportPolicy>,
+}
+impl S3DataRepositoryConfiguration {
+    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
+    pub fn auto_import_policy(&self) -> std::option::Option<&crate::model::AutoImportPolicy> {
+        self.auto_import_policy.as_ref()
+    }
+    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+    pub fn auto_export_policy(&self) -> std::option::Option<&crate::model::AutoExportPolicy> {
+        self.auto_export_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for S3DataRepositoryConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3DataRepositoryConfiguration");
+        formatter.field("auto_import_policy", &self.auto_import_policy);
+        formatter.field("auto_export_policy", &self.auto_export_policy);
+        formatter.finish()
+    }
+}
+/// See [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
+pub mod s3_data_repository_configuration {
+
+    /// A builder for [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auto_import_policy: std::option::Option<crate::model::AutoImportPolicy>,
+        pub(crate) auto_export_policy: std::option::Option<crate::model::AutoExportPolicy>,
+    }
+    impl Builder {
+        /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
+        pub fn auto_import_policy(mut self, input: crate::model::AutoImportPolicy) -> Self {
+            self.auto_import_policy = Some(input);
+            self
+        }
+        /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
+        pub fn set_auto_import_policy(
+            mut self,
+            input: std::option::Option<crate::model::AutoImportPolicy>,
+        ) -> Self {
+            self.auto_import_policy = input;
+            self
+        }
+        /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+        pub fn auto_export_policy(mut self, input: crate::model::AutoExportPolicy) -> Self {
+            self.auto_export_policy = Some(input);
+            self
+        }
+        /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+        pub fn set_auto_export_policy(
+            mut self,
+            input: std::option::Option<crate::model::AutoExportPolicy>,
+        ) -> Self {
+            self.auto_export_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
+        pub fn build(self) -> crate::model::S3DataRepositoryConfiguration {
+            crate::model::S3DataRepositoryConfiguration {
+                auto_import_policy: self.auto_import_policy,
+                auto_export_policy: self.auto_export_policy,
+            }
+        }
+    }
+}
+impl S3DataRepositoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
+    pub fn builder() -> crate::model::s3_data_repository_configuration::Builder {
+        crate::model::s3_data_repository_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes the data repository association's automatic import policy. The AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory listings up to date by importing changes to your Amazon FSx for Lustre file system as you modify objects in a linked S3 bucket.</p>
+/// <p>The <code>AutoImportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoImportPolicy {
@@ -11421,7 +12749,7 @@ impl AsRef<str> for SnapshotFilterName {
     }
 }
 
-/// <p>A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and a linked data repository.</p>
+/// <p>A description of the data repository task. You use data repository tasks to perform bulk transfer operations between an Amazon FSx for Lustre file system and a linked data repository. An Amazon File Cache resource uses a task to automatically release files from the cache.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataRepositoryTask {
@@ -11430,12 +12758,12 @@ pub struct DataRepositoryTask {
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
+    /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
+    /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
+    /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
@@ -11443,18 +12771,19 @@ pub struct DataRepositoryTask {
     pub lifecycle: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
     /// <p>The type of data repository task.</p>
     /// <ul>
-    /// <li> <p>The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked S3 bucket.</p> </li>
-    /// <li> <p>The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
+    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
+    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataRepositoryTaskType>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time that Amazon FSx began processing the task.</p>
+    /// <p>The time the system began processing the task.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
+    /// <p>The time the system completed processing the task, populated after the task is complete.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -11463,10 +12792,10 @@ pub struct DataRepositoryTask {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    /// <p>The globally unique ID of the file system.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
+    /// <p>An array of paths that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
     /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
     #[doc(hidden)]
     pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11479,6 +12808,12 @@ pub struct DataRepositoryTask {
     /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
     #[doc(hidden)]
     pub report: std::option::Option<crate::model::CompletionReport>,
+    /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+    #[doc(hidden)]
+    pub capacity_to_release: std::option::Option<i64>,
+    /// <p>The system-generated, unique ID of the cache.</p>
+    #[doc(hidden)]
+    pub file_cache_id: std::option::Option<std::string::String>,
 }
 impl DataRepositoryTask {
     /// <p>The system-generated, unique 17-digit ID of the data repository task.</p>
@@ -11487,12 +12822,12 @@ impl DataRepositoryTask {
     }
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
+    /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
+    /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
+    /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
@@ -11501,8 +12836,9 @@ impl DataRepositoryTask {
     }
     /// <p>The type of data repository task.</p>
     /// <ul>
-    /// <li> <p>The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked S3 bucket.</p> </li>
-    /// <li> <p>The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
+    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
+    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataRepositoryTaskType> {
         self.r#type.as_ref()
@@ -11511,11 +12847,11 @@ impl DataRepositoryTask {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The time that Amazon FSx began processing the task.</p>
+    /// <p>The time the system began processing the task.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
+    /// <p>The time the system completed processing the task, populated after the task is complete.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -11527,11 +12863,11 @@ impl DataRepositoryTask {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    /// <p>The globally unique ID of the file system.</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
+    /// <p>An array of paths that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
     /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
     pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
         self.paths.as_deref()
@@ -11550,6 +12886,14 @@ impl DataRepositoryTask {
     pub fn report(&self) -> std::option::Option<&crate::model::CompletionReport> {
         self.report.as_ref()
     }
+    /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+    pub fn capacity_to_release(&self) -> std::option::Option<i64> {
+        self.capacity_to_release
+    }
+    /// <p>The system-generated, unique ID of the cache.</p>
+    pub fn file_cache_id(&self) -> std::option::Option<&str> {
+        self.file_cache_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DataRepositoryTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11567,6 +12911,8 @@ impl std::fmt::Debug for DataRepositoryTask {
         formatter.field("failure_details", &self.failure_details);
         formatter.field("status", &self.status);
         formatter.field("report", &self.report);
+        formatter.field("capacity_to_release", &self.capacity_to_release);
+        formatter.field("file_cache_id", &self.file_cache_id);
         formatter.finish()
     }
 }
@@ -11590,6 +12936,8 @@ pub mod data_repository_task {
             std::option::Option<crate::model::DataRepositoryTaskFailureDetails>,
         pub(crate) status: std::option::Option<crate::model::DataRepositoryTaskStatus>,
         pub(crate) report: std::option::Option<crate::model::CompletionReport>,
+        pub(crate) capacity_to_release: std::option::Option<i64>,
+        pub(crate) file_cache_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The system-generated, unique 17-digit ID of the data repository task.</p>
@@ -11604,12 +12952,12 @@ pub mod data_repository_task {
         }
         /// <p>The lifecycle status of the data repository task, as follows:</p>
         /// <ul>
-        /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-        /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-        /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-        /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-        /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-        /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+        /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
+        /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
+        /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
+        /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
+        /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
         /// </ul> <note>
         /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
         /// </note>
@@ -11619,12 +12967,12 @@ pub mod data_repository_task {
         }
         /// <p>The lifecycle status of the data repository task, as follows:</p>
         /// <ul>
-        /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-        /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-        /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-        /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-        /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-        /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+        /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
+        /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
+        /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
+        /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
+        /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
         /// </ul> <note>
         /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
         /// </note>
@@ -11637,8 +12985,9 @@ pub mod data_repository_task {
         }
         /// <p>The type of data repository task.</p>
         /// <ul>
-        /// <li> <p>The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked S3 bucket.</p> </li>
-        /// <li> <p>The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+        /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
+        /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
+        /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DataRepositoryTaskType) -> Self {
             self.r#type = Some(input);
@@ -11646,8 +12995,9 @@ pub mod data_repository_task {
         }
         /// <p>The type of data repository task.</p>
         /// <ul>
-        /// <li> <p>The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre file system from to a linked S3 bucket.</p> </li>
-        /// <li> <p>The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+        /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
+        /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
+        /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -11669,12 +13019,12 @@ pub mod data_repository_task {
             self.creation_time = input;
             self
         }
-        /// <p>The time that Amazon FSx began processing the task.</p>
+        /// <p>The time the system began processing the task.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time that Amazon FSx began processing the task.</p>
+        /// <p>The time the system began processing the task.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11682,12 +13032,12 @@ pub mod data_repository_task {
             self.start_time = input;
             self
         }
-        /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
+        /// <p>The time the system completed processing the task, populated after the task is complete.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
+        /// <p>The time the system completed processing the task, populated after the task is complete.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11724,12 +13074,12 @@ pub mod data_repository_task {
             self.tags = input;
             self
         }
-        /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+        /// <p>The globally unique ID of the file system.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_id = Some(input.into());
             self
         }
-        /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+        /// <p>The globally unique ID of the file system.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11741,7 +13091,7 @@ pub mod data_repository_task {
         ///
         /// To override the contents of this collection use [`set_paths`](Self::set_paths).
         ///
-        /// <p>An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
+        /// <p>An array of paths that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
         /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
         pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.paths.unwrap_or_default();
@@ -11749,7 +13099,7 @@ pub mod data_repository_task {
             self.paths = Some(v);
             self
         }
-        /// <p>An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
+        /// <p>An array of paths that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
         /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
         pub fn set_paths(
             mut self,
@@ -11800,6 +13150,29 @@ pub mod data_repository_task {
             self.report = input;
             self
         }
+        /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+        pub fn capacity_to_release(mut self, input: i64) -> Self {
+            self.capacity_to_release = Some(input);
+            self
+        }
+        /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+        pub fn set_capacity_to_release(mut self, input: std::option::Option<i64>) -> Self {
+            self.capacity_to_release = input;
+            self
+        }
+        /// <p>The system-generated, unique ID of the cache.</p>
+        pub fn file_cache_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated, unique ID of the cache.</p>
+        pub fn set_file_cache_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataRepositoryTask`](crate::model::DataRepositoryTask).
         pub fn build(self) -> crate::model::DataRepositoryTask {
             crate::model::DataRepositoryTask {
@@ -11816,6 +13189,8 @@ pub mod data_repository_task {
                 failure_details: self.failure_details,
                 status: self.status,
                 report: self.report,
+                capacity_to_release: self.capacity_to_release,
+                file_cache_id: self.file_cache_id,
             }
         }
     }
@@ -12063,6 +13438,9 @@ pub struct DataRepositoryTaskStatus {
     /// <p>The time at which the task status was last updated.</p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+    #[doc(hidden)]
+    pub released_capacity: std::option::Option<i64>,
 }
 impl DataRepositoryTaskStatus {
     /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
@@ -12081,6 +13459,10 @@ impl DataRepositoryTaskStatus {
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
+    /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+    pub fn released_capacity(&self) -> std::option::Option<i64> {
+        self.released_capacity
+    }
 }
 impl std::fmt::Debug for DataRepositoryTaskStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12089,6 +13471,7 @@ impl std::fmt::Debug for DataRepositoryTaskStatus {
         formatter.field("succeeded_count", &self.succeeded_count);
         formatter.field("failed_count", &self.failed_count);
         formatter.field("last_updated_time", &self.last_updated_time);
+        formatter.field("released_capacity", &self.released_capacity);
         formatter.finish()
     }
 }
@@ -12102,6 +13485,7 @@ pub mod data_repository_task_status {
         pub(crate) succeeded_count: std::option::Option<i64>,
         pub(crate) failed_count: std::option::Option<i64>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) released_capacity: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
@@ -12147,6 +13531,16 @@ pub mod data_repository_task_status {
             self.last_updated_time = input;
             self
         }
+        /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+        pub fn released_capacity(mut self, input: i64) -> Self {
+            self.released_capacity = Some(input);
+            self
+        }
+        /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+        pub fn set_released_capacity(mut self, input: std::option::Option<i64>) -> Self {
+            self.released_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
         pub fn build(self) -> crate::model::DataRepositoryTaskStatus {
             crate::model::DataRepositoryTaskStatus {
@@ -12154,6 +13548,7 @@ pub mod data_repository_task_status {
                 succeeded_count: self.succeeded_count,
                 failed_count: self.failed_count,
                 last_updated_time: self.last_updated_time,
+                released_capacity: self.released_capacity,
             }
         }
     }
@@ -12233,17 +13628,23 @@ impl DataRepositoryTaskFailureDetails {
 )]
 pub enum DataRepositoryTaskType {
     #[allow(missing_docs)] // documentation missing in model
+    AutoTriggeredEviction,
+    #[allow(missing_docs)] // documentation missing in model
     Export,
     #[allow(missing_docs)] // documentation missing in model
     Import,
+    #[allow(missing_docs)] // documentation missing in model
+    Eviction,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DataRepositoryTaskType {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO_RELEASE_DATA" => DataRepositoryTaskType::AutoTriggeredEviction,
             "EXPORT_TO_REPOSITORY" => DataRepositoryTaskType::Export,
             "IMPORT_METADATA_FROM_REPOSITORY" => DataRepositoryTaskType::Import,
+            "RELEASE_DATA_FROM_FILESYSTEM" => DataRepositoryTaskType::Eviction,
             other => DataRepositoryTaskType::Unknown(other.to_owned()),
         }
     }
@@ -12259,14 +13660,21 @@ impl DataRepositoryTaskType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DataRepositoryTaskType::AutoTriggeredEviction => "AUTO_RELEASE_DATA",
             DataRepositoryTaskType::Export => "EXPORT_TO_REPOSITORY",
             DataRepositoryTaskType::Import => "IMPORT_METADATA_FROM_REPOSITORY",
+            DataRepositoryTaskType::Eviction => "RELEASE_DATA_FROM_FILESYSTEM",
             DataRepositoryTaskType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["EXPORT_TO_REPOSITORY", "IMPORT_METADATA_FROM_REPOSITORY"]
+        &[
+            "AUTO_RELEASE_DATA",
+            "EXPORT_TO_REPOSITORY",
+            "IMPORT_METADATA_FROM_REPOSITORY",
+            "RELEASE_DATA_FROM_FILESYSTEM",
+        ]
     }
 }
 impl AsRef<str> for DataRepositoryTaskType {
@@ -12471,6 +13879,8 @@ pub enum DataRepositoryTaskFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DataRepoAssociationId,
     #[allow(missing_docs)] // documentation missing in model
+    FileCacheId,
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemId,
     #[allow(missing_docs)] // documentation missing in model
     TaskLifecycle,
@@ -12481,6 +13891,7 @@ impl std::convert::From<&str> for DataRepositoryTaskFilterName {
     fn from(s: &str) -> Self {
         match s {
             "data-repository-association-id" => DataRepositoryTaskFilterName::DataRepoAssociationId,
+            "file-cache-id" => DataRepositoryTaskFilterName::FileCacheId,
             "file-system-id" => DataRepositoryTaskFilterName::FileSystemId,
             "task-lifecycle" => DataRepositoryTaskFilterName::TaskLifecycle,
             other => DataRepositoryTaskFilterName::Unknown(other.to_owned()),
@@ -12499,6 +13910,7 @@ impl DataRepositoryTaskFilterName {
     pub fn as_str(&self) -> &str {
         match self {
             DataRepositoryTaskFilterName::DataRepoAssociationId => "data-repository-association-id",
+            DataRepositoryTaskFilterName::FileCacheId => "file-cache-id",
             DataRepositoryTaskFilterName::FileSystemId => "file-system-id",
             DataRepositoryTaskFilterName::TaskLifecycle => "task-lifecycle",
             DataRepositoryTaskFilterName::Unknown(s) => s.as_ref(),
@@ -12508,6 +13920,7 @@ impl DataRepositoryTaskFilterName {
     pub fn values() -> &'static [&'static str] {
         &[
             "data-repository-association-id",
+            "file-cache-id",
             "file-system-id",
             "task-lifecycle",
         ]
@@ -12620,6 +14033,10 @@ pub enum FilterName {
     #[allow(missing_docs)] // documentation missing in model
     DataRepositoryType,
     #[allow(missing_docs)] // documentation missing in model
+    FileCacheId,
+    #[allow(missing_docs)] // documentation missing in model
+    FileCacheType,
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemId,
     #[allow(missing_docs)] // documentation missing in model
     FileSystemType,
@@ -12633,6 +14050,8 @@ impl std::convert::From<&str> for FilterName {
         match s {
             "backup-type" => FilterName::BackupType,
             "data-repository-type" => FilterName::DataRepositoryType,
+            "file-cache-id" => FilterName::FileCacheId,
+            "file-cache-type" => FilterName::FileCacheType,
             "file-system-id" => FilterName::FileSystemId,
             "file-system-type" => FilterName::FileSystemType,
             "volume-id" => FilterName::VolumeId,
@@ -12653,6 +14072,8 @@ impl FilterName {
         match self {
             FilterName::BackupType => "backup-type",
             FilterName::DataRepositoryType => "data-repository-type",
+            FilterName::FileCacheId => "file-cache-id",
+            FilterName::FileCacheType => "file-cache-type",
             FilterName::FileSystemId => "file-system-id",
             FilterName::FileSystemType => "file-system-type",
             FilterName::VolumeId => "volume-id",
@@ -12664,6 +14085,8 @@ impl FilterName {
         &[
             "backup-type",
             "data-repository-type",
+            "file-cache-id",
+            "file-cache-type",
             "file-system-id",
             "file-system-type",
             "volume-id",
@@ -14392,9 +15815,9 @@ pub struct CreateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     #[doc(hidden)]
     pub junction_path: std::option::Option<std::string::String>,
-    /// <p>The security style for the volume. Specify one of the following values:</p>
+    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.</p> </li>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
     /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
@@ -14431,9 +15854,9 @@ impl CreateOntapVolumeConfiguration {
     pub fn junction_path(&self) -> std::option::Option<&str> {
         self.junction_path.as_deref()
     }
-    /// <p>The security style for the volume. Specify one of the following values:</p>
+    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.</p> </li>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
     /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
@@ -14515,9 +15938,9 @@ pub mod create_ontap_volume_configuration {
             self.junction_path = input;
             self
         }
-        /// <p>The security style for the volume. Specify one of the following values:</p>
+        /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
         /// <ul>
-        /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.</p> </li>
+        /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
         /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
         /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
         /// </ul>
@@ -14525,9 +15948,9 @@ pub mod create_ontap_volume_configuration {
             self.security_style = Some(input);
             self
         }
-        /// <p>The security style for the volume. Specify one of the following values:</p>
+        /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
         /// <ul>
-        /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.</p> </li>
+        /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
         /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
         /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
         /// </ul>
@@ -17110,5 +18533,936 @@ impl CreateFileSystemOntapConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
     pub fn builder() -> crate::model::create_file_system_ontap_configuration::Builder {
         crate::model::create_file_system_ontap_configuration::Builder::default()
+    }
+}
+
+/// <p>The response object for the Amazon File Cache resource being created in the <code>CreateFileCache</code> operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileCacheCreating {
+    /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+    #[doc(hidden)]
+    pub owner_id: std::option::Option<std::string::String>,
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The system-generated, unique ID of the cache.</p>
+    #[doc(hidden)]
+    pub file_cache_id: std::option::Option<std::string::String>,
+    /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+    #[doc(hidden)]
+    pub file_cache_type: std::option::Option<crate::model::FileCacheType>,
+    /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+    #[doc(hidden)]
+    pub file_cache_type_version: std::option::Option<std::string::String>,
+    /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub lifecycle: std::option::Option<crate::model::FileCacheLifecycle>,
+    /// <p>A structure providing details of any failures that occurred.</p>
+    #[doc(hidden)]
+    pub failure_details: std::option::Option<crate::model::FileCacheFailureDetails>,
+    /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+    #[doc(hidden)]
+    pub storage_capacity: std::option::Option<i32>,
+    /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+    #[doc(hidden)]
+    pub vpc_id: std::option::Option<std::string::String>,
+    /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+    #[doc(hidden)]
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of network interface IDs.</p>
+    #[doc(hidden)]
+    pub network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Domain Name System (DNS) name for the cache.</p>
+    #[doc(hidden)]
+    pub dns_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations.</p>
+    #[doc(hidden)]
+    pub copy_tags_to_data_repository_associations: std::option::Option<bool>,
+    /// <p>The configuration for the Amazon File Cache resource.</p>
+    #[doc(hidden)]
+    pub lustre_configuration: std::option::Option<crate::model::FileCacheLustreConfiguration>,
+    /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+    #[doc(hidden)]
+    pub data_repository_association_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FileCacheCreating {
+    /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The system-generated, unique ID of the cache.</p>
+    pub fn file_cache_id(&self) -> std::option::Option<&str> {
+        self.file_cache_id.as_deref()
+    }
+    /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+    pub fn file_cache_type(&self) -> std::option::Option<&crate::model::FileCacheType> {
+        self.file_cache_type.as_ref()
+    }
+    /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+    pub fn file_cache_type_version(&self) -> std::option::Option<&str> {
+        self.file_cache_type_version.as_deref()
+    }
+    /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileCacheLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>A structure providing details of any failures that occurred.</p>
+    pub fn failure_details(&self) -> std::option::Option<&crate::model::FileCacheFailureDetails> {
+        self.failure_details.as_ref()
+    }
+    /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+    pub fn storage_capacity(&self) -> std::option::Option<i32> {
+        self.storage_capacity
+    }
+    /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of network interface IDs.</p>
+    pub fn network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.network_interface_ids.as_deref()
+    }
+    /// <p>The Domain Name System (DNS) name for the cache.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations.</p>
+    pub fn copy_tags_to_data_repository_associations(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_data_repository_associations
+    }
+    /// <p>The configuration for the Amazon File Cache resource.</p>
+    pub fn lustre_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FileCacheLustreConfiguration> {
+        self.lustre_configuration.as_ref()
+    }
+    /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+    pub fn data_repository_association_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.data_repository_association_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for FileCacheCreating {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileCacheCreating");
+        formatter.field("owner_id", &self.owner_id);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("file_cache_id", &self.file_cache_id);
+        formatter.field("file_cache_type", &self.file_cache_type);
+        formatter.field("file_cache_type_version", &self.file_cache_type_version);
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.field("failure_details", &self.failure_details);
+        formatter.field("storage_capacity", &self.storage_capacity);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("network_interface_ids", &self.network_interface_ids);
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.field(
+            "copy_tags_to_data_repository_associations",
+            &self.copy_tags_to_data_repository_associations,
+        );
+        formatter.field("lustre_configuration", &self.lustre_configuration);
+        formatter.field(
+            "data_repository_association_ids",
+            &self.data_repository_association_ids,
+        );
+        formatter.finish()
+    }
+}
+/// See [`FileCacheCreating`](crate::model::FileCacheCreating).
+pub mod file_cache_creating {
+
+    /// A builder for [`FileCacheCreating`](crate::model::FileCacheCreating).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) owner_id: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) file_cache_id: std::option::Option<std::string::String>,
+        pub(crate) file_cache_type: std::option::Option<crate::model::FileCacheType>,
+        pub(crate) file_cache_type_version: std::option::Option<std::string::String>,
+        pub(crate) lifecycle: std::option::Option<crate::model::FileCacheLifecycle>,
+        pub(crate) failure_details: std::option::Option<crate::model::FileCacheFailureDetails>,
+        pub(crate) storage_capacity: std::option::Option<i32>,
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) dns_name: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) copy_tags_to_data_repository_associations: std::option::Option<bool>,
+        pub(crate) lustre_configuration:
+            std::option::Option<crate::model::FileCacheLustreConfiguration>,
+        pub(crate) data_repository_association_ids:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
+            self
+        }
+        /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The system-generated, unique ID of the cache.</p>
+        pub fn file_cache_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated, unique ID of the cache.</p>
+        pub fn set_file_cache_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_id = input;
+            self
+        }
+        /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+        pub fn file_cache_type(mut self, input: crate::model::FileCacheType) -> Self {
+            self.file_cache_type = Some(input);
+            self
+        }
+        /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+        pub fn set_file_cache_type(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheType>,
+        ) -> Self {
+            self.file_cache_type = input;
+            self
+        }
+        /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+        pub fn file_cache_type_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_type_version = Some(input.into());
+            self
+        }
+        /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+        pub fn set_file_cache_type_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_type_version = input;
+            self
+        }
+        /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+        /// <ul>
+        /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+        /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+        /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+        /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+        /// </ul>
+        pub fn lifecycle(mut self, input: crate::model::FileCacheLifecycle) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+        /// <ul>
+        /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+        /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+        /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+        /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+        /// </ul>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLifecycle>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// <p>A structure providing details of any failures that occurred.</p>
+        pub fn failure_details(mut self, input: crate::model::FileCacheFailureDetails) -> Self {
+            self.failure_details = Some(input);
+            self
+        }
+        /// <p>A structure providing details of any failures that occurred.</p>
+        pub fn set_failure_details(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheFailureDetails>,
+        ) -> Self {
+            self.failure_details = input;
+            self
+        }
+        /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+        pub fn storage_capacity(mut self, input: i32) -> Self {
+            self.storage_capacity = Some(input);
+            self
+        }
+        /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+        pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_capacity = input;
+            self
+        }
+        /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `network_interface_ids`.
+        ///
+        /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
+        ///
+        /// <p>A list of network interface IDs.</p>
+        pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.network_interface_ids.unwrap_or_default();
+            v.push(input.into());
+            self.network_interface_ids = Some(v);
+            self
+        }
+        /// <p>A list of network interface IDs.</p>
+        pub fn set_network_interface_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.network_interface_ids = input;
+            self
+        }
+        /// <p>The Domain Name System (DNS) name for the cache.</p>
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
+            self
+        }
+        /// <p>The Domain Name System (DNS) name for the cache.</p>
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
+            self
+        }
+        /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations.</p>
+        pub fn copy_tags_to_data_repository_associations(mut self, input: bool) -> Self {
+            self.copy_tags_to_data_repository_associations = Some(input);
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations.</p>
+        pub fn set_copy_tags_to_data_repository_associations(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.copy_tags_to_data_repository_associations = input;
+            self
+        }
+        /// <p>The configuration for the Amazon File Cache resource.</p>
+        pub fn lustre_configuration(
+            mut self,
+            input: crate::model::FileCacheLustreConfiguration,
+        ) -> Self {
+            self.lustre_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for the Amazon File Cache resource.</p>
+        pub fn set_lustre_configuration(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLustreConfiguration>,
+        ) -> Self {
+            self.lustre_configuration = input;
+            self
+        }
+        /// Appends an item to `data_repository_association_ids`.
+        ///
+        /// To override the contents of this collection use [`set_data_repository_association_ids`](Self::set_data_repository_association_ids).
+        ///
+        /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+        pub fn data_repository_association_ids(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.data_repository_association_ids.unwrap_or_default();
+            v.push(input.into());
+            self.data_repository_association_ids = Some(v);
+            self
+        }
+        /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+        pub fn set_data_repository_association_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.data_repository_association_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileCacheCreating`](crate::model::FileCacheCreating).
+        pub fn build(self) -> crate::model::FileCacheCreating {
+            crate::model::FileCacheCreating {
+                owner_id: self.owner_id,
+                creation_time: self.creation_time,
+                file_cache_id: self.file_cache_id,
+                file_cache_type: self.file_cache_type,
+                file_cache_type_version: self.file_cache_type_version,
+                lifecycle: self.lifecycle,
+                failure_details: self.failure_details,
+                storage_capacity: self.storage_capacity,
+                vpc_id: self.vpc_id,
+                subnet_ids: self.subnet_ids,
+                network_interface_ids: self.network_interface_ids,
+                dns_name: self.dns_name,
+                kms_key_id: self.kms_key_id,
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+                copy_tags_to_data_repository_associations: self
+                    .copy_tags_to_data_repository_associations,
+                lustre_configuration: self.lustre_configuration,
+                data_repository_association_ids: self.data_repository_association_ids,
+            }
+        }
+    }
+}
+impl FileCacheCreating {
+    /// Creates a new builder-style object to manufacture [`FileCacheCreating`](crate::model::FileCacheCreating).
+    pub fn builder() -> crate::model::file_cache_creating::Builder {
+        crate::model::file_cache_creating::Builder::default()
+    }
+}
+
+/// <p>The configuration for a data repository association (DRA) to be created during the Amazon File Cache resource creation. The DRA links the cache to either an Amazon S3 bucket or prefix, or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
+/// <p>The DRA does not support automatic import or automatic export.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileCacheDataRepositoryAssociation {
+    /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
+    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+    /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
+    /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub file_cache_path: std::option::Option<std::string::String>,
+    /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
+    /// <ul>
+    /// <li> <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+    /// <ul>
+    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
+    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub data_repository_path: std::option::Option<std::string::String>,
+    /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
+    #[doc(hidden)]
+    pub data_repository_subdirectories: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
+    #[doc(hidden)]
+    pub nfs: std::option::Option<crate::model::FileCacheNfsConfiguration>,
+}
+impl FileCacheDataRepositoryAssociation {
+    /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
+    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+    /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
+    /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
+    /// </note>
+    pub fn file_cache_path(&self) -> std::option::Option<&str> {
+        self.file_cache_path.as_deref()
+    }
+    /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
+    /// <ul>
+    /// <li> <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+    /// <ul>
+    /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
+    /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+    /// </ul>
+    pub fn data_repository_path(&self) -> std::option::Option<&str> {
+        self.data_repository_path.as_deref()
+    }
+    /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
+    pub fn data_repository_subdirectories(&self) -> std::option::Option<&[std::string::String]> {
+        self.data_repository_subdirectories.as_deref()
+    }
+    /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
+    pub fn nfs(&self) -> std::option::Option<&crate::model::FileCacheNfsConfiguration> {
+        self.nfs.as_ref()
+    }
+}
+impl std::fmt::Debug for FileCacheDataRepositoryAssociation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileCacheDataRepositoryAssociation");
+        formatter.field("file_cache_path", &self.file_cache_path);
+        formatter.field("data_repository_path", &self.data_repository_path);
+        formatter.field(
+            "data_repository_subdirectories",
+            &self.data_repository_subdirectories,
+        );
+        formatter.field("nfs", &self.nfs);
+        formatter.finish()
+    }
+}
+/// See [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
+pub mod file_cache_data_repository_association {
+
+    /// A builder for [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_cache_path: std::option::Option<std::string::String>,
+        pub(crate) data_repository_path: std::option::Option<std::string::String>,
+        pub(crate) data_repository_subdirectories:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) nfs: std::option::Option<crate::model::FileCacheNfsConfiguration>,
+    }
+    impl Builder {
+        /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
+        /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+        /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
+        /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
+        /// </note>
+        pub fn file_cache_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_cache_path = Some(input.into());
+            self
+        }
+        /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
+        /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+        /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
+        /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
+        /// </note>
+        pub fn set_file_cache_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_cache_path = input;
+            self
+        }
+        /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
+        /// <ul>
+        /// <li> <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+        /// <ul>
+        /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
+        /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+        /// </ul>
+        pub fn data_repository_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_repository_path = Some(input.into());
+            self
+        }
+        /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
+        /// <ul>
+        /// <li> <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+        /// <ul>
+        /// <li> <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p> </li>
+        /// <li> <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
+        /// </ul>
+        pub fn set_data_repository_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_repository_path = input;
+            self
+        }
+        /// Appends an item to `data_repository_subdirectories`.
+        ///
+        /// To override the contents of this collection use [`set_data_repository_subdirectories`](Self::set_data_repository_subdirectories).
+        ///
+        /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
+        pub fn data_repository_subdirectories(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.data_repository_subdirectories.unwrap_or_default();
+            v.push(input.into());
+            self.data_repository_subdirectories = Some(v);
+            self
+        }
+        /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
+        pub fn set_data_repository_subdirectories(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.data_repository_subdirectories = input;
+            self
+        }
+        /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
+        pub fn nfs(mut self, input: crate::model::FileCacheNfsConfiguration) -> Self {
+            self.nfs = Some(input);
+            self
+        }
+        /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
+        pub fn set_nfs(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheNfsConfiguration>,
+        ) -> Self {
+            self.nfs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
+        pub fn build(self) -> crate::model::FileCacheDataRepositoryAssociation {
+            crate::model::FileCacheDataRepositoryAssociation {
+                file_cache_path: self.file_cache_path,
+                data_repository_path: self.data_repository_path,
+                data_repository_subdirectories: self.data_repository_subdirectories,
+                nfs: self.nfs,
+            }
+        }
+    }
+}
+impl FileCacheDataRepositoryAssociation {
+    /// Creates a new builder-style object to manufacture [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
+    pub fn builder() -> crate::model::file_cache_data_repository_association::Builder {
+        crate::model::file_cache_data_repository_association::Builder::default()
+    }
+}
+
+/// <p>The configuration for an NFS data repository association (DRA) created during the creation of the Amazon File Cache resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileCacheNfsConfiguration {
+    /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+    #[doc(hidden)]
+    pub version: std::option::Option<crate::model::NfsVersion>,
+    /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+    #[doc(hidden)]
+    pub dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FileCacheNfsConfiguration {
+    /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::NfsVersion> {
+        self.version.as_ref()
+    }
+    /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+    pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ips.as_deref()
+    }
+}
+impl std::fmt::Debug for FileCacheNfsConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileCacheNfsConfiguration");
+        formatter.field("version", &self.version);
+        formatter.field("dns_ips", &self.dns_ips);
+        formatter.finish()
+    }
+}
+/// See [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
+pub mod file_cache_nfs_configuration {
+
+    /// A builder for [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) version: std::option::Option<crate::model::NfsVersion>,
+        pub(crate) dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+        pub fn version(mut self, input: crate::model::NfsVersion) -> Self {
+            self.version = Some(input);
+            self
+        }
+        /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+        pub fn set_version(mut self, input: std::option::Option<crate::model::NfsVersion>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Appends an item to `dns_ips`.
+        ///
+        /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
+        ///
+        /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+        pub fn dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.dns_ips.unwrap_or_default();
+            v.push(input.into());
+            self.dns_ips = Some(v);
+            self
+        }
+        /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+        pub fn set_dns_ips(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.dns_ips = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
+        pub fn build(self) -> crate::model::FileCacheNfsConfiguration {
+            crate::model::FileCacheNfsConfiguration {
+                version: self.version,
+                dns_ips: self.dns_ips,
+            }
+        }
+    }
+}
+impl FileCacheNfsConfiguration {
+    /// Creates a new builder-style object to manufacture [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
+    pub fn builder() -> crate::model::file_cache_nfs_configuration::Builder {
+        crate::model::file_cache_nfs_configuration::Builder::default()
+    }
+}
+
+/// <p>The Amazon File Cache configuration for the cache that you are creating.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFileCacheLustreConfiguration {
+    /// <p>Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.</p>
+    #[doc(hidden)]
+    pub per_unit_storage_throughput: std::option::Option<i32>,
+    /// <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
+    #[doc(hidden)]
+    pub deployment_type: std::option::Option<crate::model::FileCacheLustreDeploymentType>,
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    #[doc(hidden)]
+    pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+    #[doc(hidden)]
+    pub metadata_configuration:
+        std::option::Option<crate::model::FileCacheLustreMetadataConfiguration>,
+}
+impl CreateFileCacheLustreConfiguration {
+    /// <p>Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.</p>
+    pub fn per_unit_storage_throughput(&self) -> std::option::Option<i32> {
+        self.per_unit_storage_throughput
+    }
+    /// <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
+    pub fn deployment_type(
+        &self,
+    ) -> std::option::Option<&crate::model::FileCacheLustreDeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+    pub fn metadata_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FileCacheLustreMetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateFileCacheLustreConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFileCacheLustreConfiguration");
+        formatter.field(
+            "per_unit_storage_throughput",
+            &self.per_unit_storage_throughput,
+        );
+        formatter.field("deployment_type", &self.deployment_type);
+        formatter.field(
+            "weekly_maintenance_start_time",
+            &self.weekly_maintenance_start_time,
+        );
+        formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.finish()
+    }
+}
+/// See [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).
+pub mod create_file_cache_lustre_configuration {
+
+    /// A builder for [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) per_unit_storage_throughput: std::option::Option<i32>,
+        pub(crate) deployment_type:
+            std::option::Option<crate::model::FileCacheLustreDeploymentType>,
+        pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
+        pub(crate) metadata_configuration:
+            std::option::Option<crate::model::FileCacheLustreMetadataConfiguration>,
+    }
+    impl Builder {
+        /// <p>Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.</p>
+        pub fn per_unit_storage_throughput(mut self, input: i32) -> Self {
+            self.per_unit_storage_throughput = Some(input);
+            self
+        }
+        /// <p>Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.</p>
+        pub fn set_per_unit_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.per_unit_storage_throughput = input;
+            self
+        }
+        /// <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
+        pub fn deployment_type(
+            mut self,
+            input: crate::model::FileCacheLustreDeploymentType,
+        ) -> Self {
+            self.deployment_type = Some(input);
+            self
+        }
+        /// <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
+        pub fn set_deployment_type(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLustreDeploymentType>,
+        ) -> Self {
+            self.deployment_type = input;
+            self
+        }
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+        pub fn weekly_maintenance_start_time(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.weekly_maintenance_start_time = Some(input.into());
+            self
+        }
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+        pub fn set_weekly_maintenance_start_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.weekly_maintenance_start_time = input;
+            self
+        }
+        /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+        pub fn metadata_configuration(
+            mut self,
+            input: crate::model::FileCacheLustreMetadataConfiguration,
+        ) -> Self {
+            self.metadata_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+        pub fn set_metadata_configuration(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheLustreMetadataConfiguration>,
+        ) -> Self {
+            self.metadata_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).
+        pub fn build(self) -> crate::model::CreateFileCacheLustreConfiguration {
+            crate::model::CreateFileCacheLustreConfiguration {
+                per_unit_storage_throughput: self.per_unit_storage_throughput,
+                deployment_type: self.deployment_type,
+                weekly_maintenance_start_time: self.weekly_maintenance_start_time,
+                metadata_configuration: self.metadata_configuration,
+            }
+        }
+    }
+}
+impl CreateFileCacheLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).
+    pub fn builder() -> crate::model::create_file_cache_lustre_configuration::Builder {
+        crate::model::create_file_cache_lustre_configuration::Builder::default()
     }
 }

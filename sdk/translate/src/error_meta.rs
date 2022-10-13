@@ -27,6 +27,8 @@ pub enum Error {
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    #[allow(missing_docs)] // documentation missing in model
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>Requested display language code is not supported.</p>
     UnsupportedDisplayLanguageCodeException(crate::error::UnsupportedDisplayLanguageCodeException),
     /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
@@ -49,6 +51,7 @@ impl std::fmt::Display for Error {
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TextSizeLimitExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
+            Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnsupportedDisplayLanguageCodeException(inner) => inner.fmt(f),
             Error::UnsupportedLanguagePairException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -64,6 +67,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateParallelDataErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
                 crate::error::CreateParallelDataErrorKind::ConflictException(inner) => {
                     Error::ConflictException(inner)
                 }
@@ -81,6 +87,9 @@ where
                 }
                 crate::error::CreateParallelDataErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
+                }
+                crate::error::CreateParallelDataErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
                 }
                 crate::error::CreateParallelDataErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -234,6 +243,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ImportTerminologyErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
                 crate::error::ImportTerminologyErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -245,6 +257,9 @@ where
                 }
                 crate::error::ImportTerminologyErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
+                }
+                crate::error::ImportTerminologyErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
                 }
                 crate::error::ImportTerminologyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -298,6 +313,32 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListParallelDataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::InvalidParameterValueException(
+                    inner,
+                ) => Error::InvalidParameterValueException(inner),
+                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -410,6 +451,34 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
+                crate::error::TagResourceErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::TagResourceErrorKind::InvalidParameterValueException(inner) => {
+                    Error::InvalidParameterValueException(inner)
+                }
+                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
+                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::TranslateTextError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -442,6 +511,31 @@ where
                     Error::UnsupportedLanguagePairException(inner)
                 }
                 crate::error::TranslateTextErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
+                crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::UntagResourceErrorKind::InvalidParameterValueException(inner) => {
+                    Error::InvalidParameterValueException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

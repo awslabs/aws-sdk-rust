@@ -94,14 +94,14 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateNotificationRule`](crate::client::fluent_builders::CreateNotificationRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateNotificationRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateNotificationRule::set_name): <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateNotificationRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateNotificationRule::set_name): <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
     ///   - [`event_type_ids(Vec<String>)`](crate::client::fluent_builders::CreateNotificationRule::event_type_ids) / [`set_event_type_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNotificationRule::set_event_type_ids): <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
-    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::CreateNotificationRule::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::CreateNotificationRule::set_resource): <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
-    ///   - [`targets(Vec<Target>)`](crate::client::fluent_builders::CreateNotificationRule::targets) / [`set_targets(Option<Vec<Target>>)`](crate::client::fluent_builders::CreateNotificationRule::set_targets): <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>
-    ///   - [`detail_type(DetailType)`](crate::client::fluent_builders::CreateNotificationRule::detail_type) / [`set_detail_type(Option<DetailType>)`](crate::client::fluent_builders::CreateNotificationRule::set_detail_type): <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNotificationRule::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNotificationRule::set_client_request_token): <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>   <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>  </note>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateNotificationRule::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateNotificationRule::set_tags): <p>A list of tags to apply to this notification rule. Key names cannot start with "aws". </p>
-    ///   - [`status(NotificationRuleStatus)`](crate::client::fluent_builders::CreateNotificationRule::status) / [`set_status(Option<NotificationRuleStatus>)`](crate::client::fluent_builders::CreateNotificationRule::set_status): <p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::CreateNotificationRule::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::CreateNotificationRule::set_resource): <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
+    ///   - [`targets(Vec<Target>)`](crate::client::fluent_builders::CreateNotificationRule::targets) / [`set_targets(Option<Vec<Target>>)`](crate::client::fluent_builders::CreateNotificationRule::set_targets): <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
+    ///   - [`detail_type(DetailType)`](crate::client::fluent_builders::CreateNotificationRule::detail_type) / [`set_detail_type(Option<DetailType>)`](crate::client::fluent_builders::CreateNotificationRule::set_detail_type): <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNotificationRule::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNotificationRule::set_client_request_token): <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>   <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>  </note>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateNotificationRule::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateNotificationRule::set_tags): <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
+    ///   - [`status(NotificationRuleStatus)`](crate::client::fluent_builders::CreateNotificationRule::status) / [`set_status(Option<NotificationRuleStatus>)`](crate::client::fluent_builders::CreateNotificationRule::set_status): <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
     /// - On success, responds with [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     /// - On failure, responds with [`SdkError<CreateNotificationRuleError>`](crate::error::CreateNotificationRuleError)
@@ -121,8 +121,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteTarget`](crate::client::fluent_builders::DeleteTarget) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_address(impl Into<String>)`](crate::client::fluent_builders::DeleteTarget::target_address) / [`set_target_address(Option<String>)`](crate::client::fluent_builders::DeleteTarget::set_target_address): <p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>
-    ///   - [`force_unsubscribe_all(bool)`](crate::client::fluent_builders::DeleteTarget::force_unsubscribe_all) / [`set_force_unsubscribe_all(bool)`](crate::client::fluent_builders::DeleteTarget::set_force_unsubscribe_all): <p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>
+    ///   - [`target_address(impl Into<String>)`](crate::client::fluent_builders::DeleteTarget::target_address) / [`set_target_address(Option<String>)`](crate::client::fluent_builders::DeleteTarget::set_target_address): <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
+    ///   - [`force_unsubscribe_all(bool)`](crate::client::fluent_builders::DeleteTarget::force_unsubscribe_all) / [`set_force_unsubscribe_all(bool)`](crate::client::fluent_builders::DeleteTarget::set_force_unsubscribe_all): <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
     /// - On success, responds with [`DeleteTargetOutput`](crate::output::DeleteTargetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTargetError>`](crate::error::DeleteTargetError)
@@ -138,8 +138,8 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::DescribeNotificationRuleOutput::name): <p>The name of the notification rule.</p>
     ///   - [`event_types(Option<Vec<EventTypeSummary>>)`](crate::output::DescribeNotificationRuleOutput::event_types): <p>A list of the event types associated with the notification rule.</p>
     ///   - [`resource(Option<String>)`](crate::output::DescribeNotificationRuleOutput::resource): <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
-    ///   - [`targets(Option<Vec<TargetSummary>>)`](crate::output::DescribeNotificationRuleOutput::targets): <p>A list of the SNS topics associated with the notification rule.</p>
-    ///   - [`detail_type(Option<DetailType>)`](crate::output::DescribeNotificationRuleOutput::detail_type): <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    ///   - [`targets(Option<Vec<TargetSummary>>)`](crate::output::DescribeNotificationRuleOutput::targets): <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
+    ///   - [`detail_type(Option<DetailType>)`](crate::output::DescribeNotificationRuleOutput::detail_type): <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     ///   - [`created_by(Option<String>)`](crate::output::DescribeNotificationRuleOutput::created_by): <p>The name or email alias of the person who created the notification rule.</p>
     ///   - [`status(Option<NotificationRuleStatus>)`](crate::output::DescribeNotificationRuleOutput::status): <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::output::DescribeNotificationRuleOutput::created_timestamp): <p>The date and time the notification rule was created, in timestamp format.</p>
@@ -172,7 +172,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNotificationRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNotificationRules::set_max_results): <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
     /// - On success, responds with [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListNotificationRulesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    ///   - [`notification_rules(Option<Vec<NotificationRuleSummary>>)`](crate::output::ListNotificationRulesOutput::notification_rules): <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
+    ///   - [`notification_rules(Option<Vec<NotificationRuleSummary>>)`](crate::output::ListNotificationRulesOutput::notification_rules): <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     /// - On failure, responds with [`SdkError<ListNotificationRulesError>`](crate::error::ListNotificationRulesError)
     pub fn list_notification_rules(&self) -> fluent_builders::ListNotificationRules {
         fluent_builders::ListNotificationRules::new(self.handle.clone())
@@ -205,7 +205,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::Subscribe::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::Subscribe::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
-    ///   - [`target(Target)`](crate::client::fluent_builders::Subscribe::target) / [`set_target(Option<Target>)`](crate::client::fluent_builders::Subscribe::set_target): <p>Information about the SNS topics associated with a notification rule.</p>
+    ///   - [`target(Target)`](crate::client::fluent_builders::Subscribe::target) / [`set_target(Option<Target>)`](crate::client::fluent_builders::Subscribe::set_target): <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::Subscribe::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::Subscribe::set_client_request_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     /// - On success, responds with [`SubscribeOutput`](crate::output::SubscribeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::SubscribeOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
@@ -217,7 +217,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of tags to associate with the resource. Tag key names cannot start with "aws".</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::TagResourceOutput::tags): <p>The list of tags associated with the resource.</p>
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -228,7 +228,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::Unsubscribe::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::Unsubscribe::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    ///   - [`target_address(impl Into<String>)`](crate::client::fluent_builders::Unsubscribe::target_address) / [`set_target_address(Option<String>)`](crate::client::fluent_builders::Unsubscribe::set_target_address): <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+    ///   - [`target_address(impl Into<String>)`](crate::client::fluent_builders::Unsubscribe::target_address) / [`set_target_address(Option<String>)`](crate::client::fluent_builders::Unsubscribe::set_target_address): <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
     /// - On success, responds with [`UnsubscribeOutput`](crate::output::UnsubscribeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UnsubscribeOutput::arn): <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
     /// - On failure, responds with [`SdkError<UnsubscribeError>`](crate::error::UnsubscribeError)
@@ -252,9 +252,9 @@ impl Client {
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNotificationRule::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateNotificationRule::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotificationRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateNotificationRule::set_name): <p>The name of the notification rule.</p>
     ///   - [`status(NotificationRuleStatus)`](crate::client::fluent_builders::UpdateNotificationRule::status) / [`set_status(Option<NotificationRuleStatus>)`](crate::client::fluent_builders::UpdateNotificationRule::set_status): <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
-    ///   - [`event_type_ids(Vec<String>)`](crate::client::fluent_builders::UpdateNotificationRule::event_type_ids) / [`set_event_type_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNotificationRule::set_event_type_ids): <p>A list of event types associated with this notification rule.</p>
+    ///   - [`event_type_ids(Vec<String>)`](crate::client::fluent_builders::UpdateNotificationRule::event_type_ids) / [`set_event_type_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNotificationRule::set_event_type_ids): <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
     ///   - [`targets(Vec<Target>)`](crate::client::fluent_builders::UpdateNotificationRule::targets) / [`set_targets(Option<Vec<Target>>)`](crate::client::fluent_builders::UpdateNotificationRule::set_targets): <p>The address and type of the targets to receive notifications from this notification rule.</p>
-    ///   - [`detail_type(DetailType)`](crate::client::fluent_builders::UpdateNotificationRule::detail_type) / [`set_detail_type(Option<DetailType>)`](crate::client::fluent_builders::UpdateNotificationRule::set_detail_type): <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    ///   - [`detail_type(DetailType)`](crate::client::fluent_builders::UpdateNotificationRule::detail_type) / [`set_detail_type(Option<DetailType>)`](crate::client::fluent_builders::UpdateNotificationRule::set_detail_type): <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     /// - On success, responds with [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput)
 
     /// - On failure, responds with [`SdkError<UpdateNotificationRuleError>`](crate::error::UpdateNotificationRuleError)
@@ -271,7 +271,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `CreateNotificationRule`.
     ///
-    /// <p>Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as SNS topics) where you want to receive them.</p>
+    /// <p>Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as Chatbot topics or Chatbot clients configured for Slack) where you want to receive them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotificationRule {
         handle: std::sync::Arc<super::Handle>,
@@ -335,12 +335,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>
+        /// <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>
+        /// <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -362,12 +362,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_type_ids(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource(input);
             self
@@ -376,12 +376,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>
+        /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             self.inner = self.inner.targets(input);
             self
         }
-        /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>
+        /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -389,12 +389,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
             self.inner = self.inner.detail_type(input);
             self
         }
-        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn set_detail_type(
             mut self,
             input: std::option::Option<crate::model::DetailType>,
@@ -403,14 +403,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
-        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
+        /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
         /// </note>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
-        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
+        /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
         /// </note>
         pub fn set_client_request_token(
             mut self,
@@ -423,7 +423,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to apply to this notification rule. Key names cannot start with "aws". </p>
+        /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -432,7 +432,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of tags to apply to this notification rule. Key names cannot start with "aws". </p>
+        /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -442,12 +442,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>
+        /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
         pub fn status(mut self, input: crate::model::NotificationRuleStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>
+        /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::NotificationRuleStatus>,
@@ -599,12 +599,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
         pub fn target_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_address(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
         pub fn set_target_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -612,12 +612,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_address(input);
             self
         }
-        /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>
+        /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
         pub fn force_unsubscribe_all(mut self, input: bool) -> Self {
             self.inner = self.inner.force_unsubscribe_all(input);
             self
         }
-        /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>
+        /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
         pub fn set_force_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_unsubscribe_all(input);
             self
@@ -812,7 +812,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNotificationRules`.
     ///
-    /// <p>Returns a list of the notification rules for an AWS account.</p>
+    /// <p>Returns a list of the notification rules for an Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotificationRules {
         handle: std::sync::Arc<super::Handle>,
@@ -1003,7 +1003,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTargets`.
     ///
-    /// <p>Returns a list of the notification rule targets for an AWS account.</p>
+    /// <p>Returns a list of the notification rule targets for an Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTargets {
         handle: std::sync::Arc<super::Handle>,
@@ -1117,7 +1117,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Subscribe`.
     ///
-    /// <p>Creates an association between a notification rule and an SNS topic so that the associated target can receive notifications when the events described in the rule are triggered.</p>
+    /// <p>Creates an association between a notification rule and an Chatbot topic or Chatbot client so that the associated target can receive notifications when the events described in the rule are triggered.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Subscribe {
         handle: std::sync::Arc<super::Handle>,
@@ -1191,12 +1191,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>Information about the SNS topics associated with a notification rule.</p>
+        /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
         pub fn target(mut self, input: crate::model::Target) -> Self {
             self.inner = self.inner.target(input);
             self
         }
-        /// <p>Information about the SNS topics associated with a notification rule.</p>
+        /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.inner = self.inner.set_target(input);
             self
@@ -1295,7 +1295,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of tags to associate with the resource. Tag key names cannot start with "aws".</p>
+        /// <p>The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1304,7 +1304,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The list of tags to associate with the resource. Tag key names cannot start with "aws".</p>
+        /// <p>The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1317,7 +1317,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Unsubscribe`.
     ///
-    /// <p>Removes an association between a notification rule and an Amazon SNS topic so that subscribers to that topic stop receiving notifications when the events described in the rule are triggered.</p>
+    /// <p>Removes an association between a notification rule and an Chatbot topic so that subscribers to that topic stop receiving notifications when the events described in the rule are triggered.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Unsubscribe {
         handle: std::sync::Arc<super::Handle>,
@@ -1391,12 +1391,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+        /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
         pub fn target_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_address(input.into());
             self
         }
-        /// <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+        /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
         pub fn set_target_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1604,12 +1604,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_event_type_ids`](Self::set_event_type_ids).
         ///
-        /// <p>A list of event types associated with this notification rule.</p>
+        /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
         pub fn event_type_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_type_ids(input.into());
             self
         }
-        /// <p>A list of event types associated with this notification rule.</p>
+        /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
         pub fn set_event_type_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1634,12 +1634,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
             self.inner = self.inner.detail_type(input);
             self
         }
-        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn set_detail_type(
             mut self,
             input: std::option::Option<crate::model::DetailType>,

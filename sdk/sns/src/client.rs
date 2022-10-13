@@ -170,6 +170,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTopic::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTopic::set_name): <p>The name of the topic you want to create.</p>  <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>  <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
     ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::CreateTopic::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTopic::set_attributes): <p>A map of attributes with their corresponding values.</p>  <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>  <ul>   <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>   <li> <p> <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p> </li>   <li> <p> <code>FifoTopic</code> – Set to true to create a FIFO topic.</p> </li>   <li> <p> <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p> </li>  </ul>  <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side encryption</a>:</p>  <ul>   <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>  </ul>  <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>  <ul>   <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>   <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>    <ul>     <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>     <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>    </ul> </li>  </ul>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTopic::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTopic::set_tags): <p>The list of tags to add to a new topic.</p> <note>   <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>  </note>
+    ///   - [`data_protection_policy(impl Into<String>)`](crate::client::fluent_builders::CreateTopic::data_protection_policy) / [`set_data_protection_policy(Option<String>)`](crate::client::fluent_builders::CreateTopic::set_data_protection_policy): <p>The body of the policy document you want to use for this topic.</p>  <p>You can only add one policy per topic.</p>  <p>The policy must be in JSON string format.</p>  <p>Length Constraints: Maximum length of 30,720.</p>
     /// - On success, responds with [`CreateTopicOutput`](crate::output::CreateTopicOutput) with field(s):
     ///   - [`topic_arn(Option<String>)`](crate::output::CreateTopicOutput::topic_arn): <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
     /// - On failure, responds with [`SdkError<CreateTopicError>`](crate::error::CreateTopicError)
@@ -215,6 +216,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteTopicError>`](crate::error::DeleteTopicError)
     pub fn delete_topic(&self) -> fluent_builders::DeleteTopic {
         fluent_builders::DeleteTopic::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetDataProtectionPolicy`](crate::client::fluent_builders::GetDataProtectionPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetDataProtectionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetDataProtectionPolicy::set_resource_arn): <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+    /// - On success, responds with [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput) with field(s):
+    ///   - [`data_protection_policy(Option<String>)`](crate::output::GetDataProtectionPolicyOutput::data_protection_policy): <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
+    /// - On failure, responds with [`SdkError<GetDataProtectionPolicyError>`](crate::error::GetDataProtectionPolicyError)
+    pub fn get_data_protection_policy(&self) -> fluent_builders::GetDataProtectionPolicy {
+        fluent_builders::GetDataProtectionPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetEndpointAttributes`](crate::client::fluent_builders::GetEndpointAttributes) operation.
     ///
@@ -430,6 +441,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<PublishBatchError>`](crate::error::PublishBatchError)
     pub fn publish_batch(&self) -> fluent_builders::PublishBatch {
         fluent_builders::PublishBatch::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutDataProtectionPolicy`](crate::client::fluent_builders::PutDataProtectionPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutDataProtectionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutDataProtectionPolicy::set_resource_arn): <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+    ///   - [`data_protection_policy(impl Into<String>)`](crate::client::fluent_builders::PutDataProtectionPolicy::data_protection_policy) / [`set_data_protection_policy(Option<String>)`](crate::client::fluent_builders::PutDataProtectionPolicy::set_data_protection_policy): <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>  <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>  <p>Length Constraints: Maximum length of 30,720.</p>
+    /// - On success, responds with [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutDataProtectionPolicyError>`](crate::error::PutDataProtectionPolicyError)
+    pub fn put_data_protection_policy(&self) -> fluent_builders::PutDataProtectionPolicy {
+        fluent_builders::PutDataProtectionPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`RemovePermission`](crate::client::fluent_builders::RemovePermission) operation.
     ///
@@ -1372,6 +1394,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The body of the policy document you want to use for this topic.</p>
+        /// <p>You can only add one policy per topic.</p>
+        /// <p>The policy must be in JSON string format.</p>
+        /// <p>Length Constraints: Maximum length of 30,720.</p>
+        pub fn data_protection_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_protection_policy(input.into());
+            self
+        }
+        /// <p>The body of the policy document you want to use for this topic.</p>
+        /// <p>You can only add one policy per topic.</p>
+        /// <p>The policy must be in JSON string format.</p>
+        /// <p>Length Constraints: Maximum length of 30,720.</p>
+        pub fn set_data_protection_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_protection_policy(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
@@ -1683,6 +1724,85 @@ pub mod fluent_builders {
         /// <p>The ARN of the topic you want to delete.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_topic_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetDataProtectionPolicy`.
+    ///
+    /// <p>Retrieves the specified inline <code>DataProtectionPolicy</code> document that is stored in the specified Amazon SNS topic. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDataProtectionPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_data_protection_policy_input::Builder,
+    }
+    impl GetDataProtectionPolicy {
+        /// Creates a new `GetDataProtectionPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetDataProtectionPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetDataProtectionPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDataProtectionPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDataProtectionPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -3383,6 +3503,102 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::PublishBatchRequestEntry>>,
         ) -> Self {
             self.inner = self.inner.set_publish_batch_request_entries(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutDataProtectionPolicy`.
+    ///
+    /// <p>Adds or updates an inline policy document that is stored in the specified Amazon SNS topic.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutDataProtectionPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_data_protection_policy_input::Builder,
+    }
+    impl PutDataProtectionPolicy {
+        /// Creates a new `PutDataProtectionPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::PutDataProtectionPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutDataProtectionPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutDataProtectionPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutDataProtectionPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
+        /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+        /// <p>Length Constraints: Maximum length of 30,720.</p>
+        pub fn data_protection_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_protection_policy(input.into());
+            self
+        }
+        /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
+        /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+        /// <p>Length Constraints: Maximum length of 30,720.</p>
+        pub fn set_data_protection_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_protection_policy(input);
             self
         }
     }

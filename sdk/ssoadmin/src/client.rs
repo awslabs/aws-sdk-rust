@@ -94,9 +94,9 @@ impl Client {
     /// Constructs a fluent builder for the [`AttachCustomerManagedPolicyReferenceToPermissionSet`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
-    ///   - [`customer_managed_policy_reference(CustomerManagedPolicyReference)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::customer_managed_policy_reference) / [`set_customer_managed_policy_reference(Option<CustomerManagedPolicyReference>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::set_customer_managed_policy_reference): <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    ///   - [`customer_managed_policy_reference(CustomerManagedPolicyReference)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::customer_managed_policy_reference) / [`set_customer_managed_policy_reference(Option<CustomerManagedPolicyReference>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::set_customer_managed_policy_reference): <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     /// - On success, responds with [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<AttachCustomerManagedPolicyReferenceToPermissionSetError>`](crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError)
@@ -110,9 +110,9 @@ impl Client {
     /// Constructs a fluent builder for the [`AttachManagedPolicyToPermissionSet`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
-    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_managed_policy_arn): <p>The Amazon Web Services managed policy ARN to be attached to a permission set.</p>
+    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_managed_policy_arn): <p>The AWS managed policy ARN to be attached to a permission set.</p>
     /// - On success, responds with [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<AttachManagedPolicyToPermissionSetError>`](crate::error::AttachManagedPolicyToPermissionSetError)
@@ -124,12 +124,12 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateAccountAssignment`](crate::client::fluent_builders::CreateAccountAssignment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_target_id): <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
     ///   - [`target_type(TargetType)`](crate::client::fluent_builders::CreateAccountAssignment::target_type) / [`set_target_type(Option<TargetType>)`](crate::client::fluent_builders::CreateAccountAssignment::set_target_type): <p>The entity type for which the assignment will be created.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_permission_set_arn): <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
     ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::CreateAccountAssignment::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::CreateAccountAssignment::set_principal_type): <p>The entity type for which the assignment will be created.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_principal_id): <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_principal_id): <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     /// - On success, responds with [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput) with field(s):
     ///   - [`account_assignment_creation_status(Option<AccountAssignmentOperationStatus>)`](crate::output::CreateAccountAssignmentOutput::account_assignment_creation_status): <p>The status object for the account assignment creation operation.</p>
     /// - On failure, responds with [`SdkError<CreateAccountAssignmentError>`](crate::error::CreateAccountAssignmentError)
@@ -139,8 +139,8 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateInstanceAccessControlAttributeConfiguration`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
-    ///   - [`instance_access_control_attribute_configuration(InstanceAccessControlAttributeConfiguration)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::instance_access_control_attribute_configuration) / [`set_instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::set_instance_access_control_attribute_configuration): <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value from the Amazon Web Services SSO identity store.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    ///   - [`instance_access_control_attribute_configuration(InstanceAccessControlAttributeConfiguration)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::instance_access_control_attribute_configuration) / [`set_instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::set_instance_access_control_attribute_configuration): <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
     /// - On success, responds with [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<CreateInstanceAccessControlAttributeConfigurationError>`](crate::error::CreateInstanceAccessControlAttributeConfigurationError)
@@ -154,12 +154,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_name): <p>The name of the <code>PermissionSet</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_description): <p>The description of the <code>PermissionSet</code>.</p>
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`session_duration(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::session_duration) / [`set_session_duration(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_session_duration): <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
     ///   - [`relay_state(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::relay_state) / [`set_relay_state(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_relay_state): <p>Used to redirect users within the application during the federation authentication process.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePermissionSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePermissionSet::set_tags): <p>The tags to attach to the new <code>PermissionSet</code>.</p>
     /// - On success, responds with [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput) with field(s):
-    ///   - [`permission_set(Option<PermissionSet>)`](crate::output::CreatePermissionSetOutput::permission_set): <p>Defines the level of access on an Amazon Web Services account.</p>
+    ///   - [`permission_set(Option<PermissionSet>)`](crate::output::CreatePermissionSetOutput::permission_set): <p>Defines the level of access on an AWS account.</p>
     /// - On failure, responds with [`SdkError<CreatePermissionSetError>`](crate::error::CreatePermissionSetError)
     pub fn create_permission_set(&self) -> fluent_builders::CreatePermissionSet {
         fluent_builders::CreatePermissionSet::new(self.handle.clone())
@@ -167,12 +167,12 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteAccountAssignment`](crate::client::fluent_builders::DeleteAccountAssignment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_target_id): <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
     ///   - [`target_type(TargetType)`](crate::client::fluent_builders::DeleteAccountAssignment::target_type) / [`set_target_type(Option<TargetType>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_target_type): <p>The entity type for which the assignment will be deleted.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_permission_set_arn): <p>The ARN of the permission set that will be used to remove access.</p>
     ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::DeleteAccountAssignment::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_principal_type): <p>The entity type for which the assignment will be deleted.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_principal_id): <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_principal_id): <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     /// - On success, responds with [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput) with field(s):
     ///   - [`account_assignment_deletion_status(Option<AccountAssignmentOperationStatus>)`](crate::output::DeleteAccountAssignmentOutput::account_assignment_deletion_status): <p>The status object for the account assignment deletion operation.</p>
     /// - On failure, responds with [`SdkError<DeleteAccountAssignmentError>`](crate::error::DeleteAccountAssignmentError)
@@ -182,7 +182,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteInlinePolicyFromPermissionSet`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::set_permission_set_arn): <p>The ARN of the permission set that will be used to remove access.</p>
     /// - On success, responds with [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput)
 
@@ -195,7 +195,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteInstanceAccessControlAttributeConfiguration`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     /// - On success, responds with [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteInstanceAccessControlAttributeConfigurationError>`](crate::error::DeleteInstanceAccessControlAttributeConfigurationError)
@@ -207,7 +207,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeletePermissionsBoundaryFromPermissionSet`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
     /// - On success, responds with [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput)
 
@@ -220,7 +220,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeletePermissionSet`](crate::client::fluent_builders::DeletePermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionSet::set_permission_set_arn): <p>The ARN of the permission set that should be deleted.</p>
     /// - On success, responds with [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput)
 
@@ -231,7 +231,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeAccountAssignmentCreationStatus`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`account_assignment_creation_request_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::account_assignment_creation_request_id) / [`set_account_assignment_creation_request_id(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::set_account_assignment_creation_request_id): <p>The identifier that is used to track the request operation progress.</p>
     /// - On success, responds with [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput) with field(s):
     ///   - [`account_assignment_creation_status(Option<AccountAssignmentOperationStatus>)`](crate::output::DescribeAccountAssignmentCreationStatusOutput::account_assignment_creation_status): <p>The status object for the account assignment creation operation.</p>
@@ -244,7 +244,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeAccountAssignmentDeletionStatus`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`account_assignment_deletion_request_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::account_assignment_deletion_request_id) / [`set_account_assignment_deletion_request_id(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::set_account_assignment_deletion_request_id): <p>The identifier that is used to track the request operation progress.</p>
     /// - On success, responds with [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput) with field(s):
     ///   - [`account_assignment_deletion_status(Option<AccountAssignmentOperationStatus>)`](crate::output::DescribeAccountAssignmentDeletionStatusOutput::account_assignment_deletion_status): <p>The status object for the account assignment deletion operation.</p>
@@ -257,11 +257,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeInstanceAccessControlAttributeConfiguration`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     /// - On success, responds with [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput) with field(s):
     ///   - [`status(Option<InstanceAccessControlAttributeConfigurationStatus>)`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput::status): <p>The status of the attribute configuration process.</p>
     ///   - [`status_reason(Option<String>)`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput::status_reason): <p>Provides more details about the current status of the specified attribute.</p>
-    ///   - [`instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput::instance_access_control_attribute_configuration): <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
+    ///   - [`instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput::instance_access_control_attribute_configuration): <p>Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceAccessControlAttributeConfigurationError>`](crate::error::DescribeInstanceAccessControlAttributeConfigurationError)
     pub fn describe_instance_access_control_attribute_configuration(
         &self,
@@ -273,10 +273,10 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribePermissionSet`](crate::client::fluent_builders::DescribePermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissionSet::set_permission_set_arn): <p>The ARN of the permission set. </p>
     /// - On success, responds with [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput) with field(s):
-    ///   - [`permission_set(Option<PermissionSet>)`](crate::output::DescribePermissionSetOutput::permission_set): <p>Describes the level of access on an Amazon Web Services account.</p>
+    ///   - [`permission_set(Option<PermissionSet>)`](crate::output::DescribePermissionSetOutput::permission_set): <p>Describes the level of access on an AWS account.</p>
     /// - On failure, responds with [`SdkError<DescribePermissionSetError>`](crate::error::DescribePermissionSetError)
     pub fn describe_permission_set(&self) -> fluent_builders::DescribePermissionSet {
         fluent_builders::DescribePermissionSet::new(self.handle.clone())
@@ -284,7 +284,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribePermissionSetProvisioningStatus`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`provision_permission_set_request_id(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::provision_permission_set_request_id) / [`set_provision_permission_set_request_id(Option<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::set_provision_permission_set_request_id): <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
     /// - On success, responds with [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput) with field(s):
     ///   - [`permission_set_provisioning_status(Option<PermissionSetProvisioningStatus>)`](crate::output::DescribePermissionSetProvisioningStatusOutput::permission_set_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
@@ -297,9 +297,9 @@ impl Client {
     /// Constructs a fluent builder for the [`DetachCustomerManagedPolicyReferenceFromPermissionSet`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
-    ///   - [`customer_managed_policy_reference(CustomerManagedPolicyReference)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::customer_managed_policy_reference) / [`set_customer_managed_policy_reference(Option<CustomerManagedPolicyReference>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::set_customer_managed_policy_reference): <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    ///   - [`customer_managed_policy_reference(CustomerManagedPolicyReference)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::customer_managed_policy_reference) / [`set_customer_managed_policy_reference(Option<CustomerManagedPolicyReference>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::set_customer_managed_policy_reference): <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     /// - On success, responds with [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<DetachCustomerManagedPolicyReferenceFromPermissionSetError>`](crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError)
@@ -313,9 +313,9 @@ impl Client {
     /// Constructs a fluent builder for the [`DetachManagedPolicyFromPermissionSet`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
-    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_managed_policy_arn): <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
+    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_managed_policy_arn): <p>The AWS managed policy ARN to be detached from a permission set.</p>
     /// - On success, responds with [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<DetachManagedPolicyFromPermissionSetError>`](crate::error::DetachManagedPolicyFromPermissionSetError)
@@ -327,7 +327,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetInlinePolicyForPermissionSet`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
     /// - On success, responds with [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput) with field(s):
     ///   - [`inline_policy(Option<String>)`](crate::output::GetInlinePolicyForPermissionSetOutput::inline_policy): <p>The inline policy that is attached to the permission set.</p>
@@ -340,7 +340,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetPermissionsBoundaryForPermissionSet`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
     /// - On success, responds with [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput) with field(s):
     ///   - [`permissions_boundary(Option<PermissionsBoundary>)`](crate::output::GetPermissionsBoundaryForPermissionSetOutput::permissions_boundary): <p>The permissions boundary attached to the specified permission set.</p>
@@ -354,7 +354,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_max_results): <p>The maximum number of results to display for the assignment.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     ///   - [`filter(OperationStatusFilter)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::filter) / [`set_filter(Option<OperationStatusFilter>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_filter): <p>Filters results based on the passed attribute value.</p>
@@ -371,7 +371,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_max_results): <p>The maximum number of results to display for the assignment.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     ///   - [`filter(OperationStatusFilter)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::filter) / [`set_filter(Option<OperationStatusFilter>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_filter): <p>Filters results based on the passed attribute value.</p>
@@ -388,13 +388,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignments::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_account_id): <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_account_id): <p>The identifier of the AWS account from which to list the assignments.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_permission_set_arn): <p>The ARN of the permission set from which to list assignments.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountAssignments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountAssignments::set_max_results): <p>The maximum number of results to display for the assignment.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput) with field(s):
-    ///   - [`account_assignments(Option<Vec<AccountAssignment>>)`](crate::output::ListAccountAssignmentsOutput::account_assignments): <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
+    ///   - [`account_assignments(Option<Vec<AccountAssignment>>)`](crate::output::ListAccountAssignmentsOutput::account_assignments): <p>The list of assignments that match the input AWS account and permission set.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountAssignmentsOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListAccountAssignmentsError>`](crate::error::ListAccountAssignmentsError)
     pub fn list_account_assignments(&self) -> fluent_builders::ListAccountAssignments {
@@ -404,13 +404,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p>
-    ///   - [`provisioning_status(ProvisioningStatus)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::provisioning_status) / [`set_provisioning_status(Option<ProvisioningStatus>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_provisioning_status): <p>The permission set provisioning status for an Amazon Web Services account.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
+    ///   - [`provisioning_status(ProvisioningStatus)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::provisioning_status) / [`set_provisioning_status(Option<ProvisioningStatus>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_provisioning_status): <p>The permission set provisioning status for an AWS account.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_max_results): <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::output::ListAccountsForProvisionedPermissionSetOutput::account_ids): <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::output::ListAccountsForProvisionedPermissionSetOutput::account_ids): <p>The list of AWS <code>AccountIds</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountsForProvisionedPermissionSetOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListAccountsForProvisionedPermissionSetError>`](crate::error::ListAccountsForProvisionedPermissionSetError)
     pub fn list_accounts_for_provisioned_permission_set(
@@ -422,7 +422,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_max_results): <p>The maximum number of results to display for the list call.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -444,7 +444,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInstances::set_max_results): <p>The maximum number of results to display for the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstances::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListInstancesOutput`](crate::output::ListInstancesOutput) with field(s):
-    ///   - [`instances(Option<Vec<InstanceMetadata>>)`](crate::output::ListInstancesOutput::instances): <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
+    ///   - [`instances(Option<Vec<InstanceMetadata>>)`](crate::output::ListInstancesOutput::instances): <p>Lists the IAM Identity Center instances that the caller has access to.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListInstancesOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::error::ListInstancesError)
     pub fn list_instances(&self) -> fluent_builders::ListInstances {
@@ -454,7 +454,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_max_results): <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -471,7 +471,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_max_results): <p>The maximum number of results to display for the assignment.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     ///   - [`filter(OperationStatusFilter)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::filter) / [`set_filter(Option<OperationStatusFilter>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_filter): <p>Filters results based on the passed attribute value.</p>
@@ -488,11 +488,11 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSets::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSets::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSets::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSets::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSets::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissionSets::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissionSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissionSets::set_max_results): <p>The maximum number of results to display for the assignment.</p>
     /// - On success, responds with [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput) with field(s):
-    ///   - [`permission_sets(Option<Vec<String>>)`](crate::output::ListPermissionSetsOutput::permission_sets): <p>Defines the level of access on an Amazon Web Services account.</p>
+    ///   - [`permission_sets(Option<Vec<String>>)`](crate::output::ListPermissionSetsOutput::permission_sets): <p>Defines the level of access on an AWS account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPermissionSetsOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListPermissionSetsError>`](crate::error::ListPermissionSetsError)
     pub fn list_permission_sets(&self) -> fluent_builders::ListPermissionSets {
@@ -502,14 +502,14 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_account_id): <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_account_id): <p>The identifier of the AWS account from which to list the assignments.</p>
     ///   - [`provisioning_status(ProvisioningStatus)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::provisioning_status) / [`set_provisioning_status(Option<ProvisioningStatus>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_max_results): <p>The maximum number of results to display for the assignment.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListPermissionSetsProvisionedToAccountOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    ///   - [`permission_sets(Option<Vec<String>>)`](crate::output::ListPermissionSetsProvisionedToAccountOutput::permission_sets): <p>Defines the level of access that an Amazon Web Services account has.</p>
+    ///   - [`permission_sets(Option<Vec<String>>)`](crate::output::ListPermissionSetsProvisionedToAccountOutput::permission_sets): <p>Defines the level of access that an AWS account has.</p>
     /// - On failure, responds with [`SdkError<ListPermissionSetsProvisionedToAccountError>`](crate::error::ListPermissionSetsProvisionedToAccountError)
     pub fn list_permission_sets_provisioned_to_account(
         &self,
@@ -520,7 +520,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
@@ -533,9 +533,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ProvisionPermissionSet`](crate::client::fluent_builders::ProvisionPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
-    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_target_id): <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
     ///   - [`target_type(ProvisionTargetType)`](crate::client::fluent_builders::ProvisionPermissionSet::target_type) / [`set_target_type(Option<ProvisionTargetType>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_target_type): <p>The entity type for which the assignment will be created.</p>
     /// - On success, responds with [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput) with field(s):
     ///   - [`permission_set_provisioning_status(Option<PermissionSetProvisioningStatus>)`](crate::output::ProvisionPermissionSetOutput::permission_set_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
@@ -546,7 +546,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutInlinePolicyToPermissionSet`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
     ///   - [`inline_policy(impl Into<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::inline_policy) / [`set_inline_policy(Option<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::set_inline_policy): <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
     /// - On success, responds with [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput)
@@ -560,7 +560,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutPermissionsBoundaryToPermissionSet`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
     ///   - [`permissions_boundary(PermissionsBoundary)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::permissions_boundary) / [`set_permissions_boundary(Option<PermissionsBoundary>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::set_permissions_boundary): <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
     /// - On success, responds with [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput)
@@ -574,7 +574,7 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A set of key-value pairs that are used to manage the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
@@ -586,7 +586,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of tags that are attached to the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
@@ -598,7 +598,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateInstanceAccessControlAttributeConfiguration`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     ///   - [`instance_access_control_attribute_configuration(InstanceAccessControlAttributeConfiguration)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::instance_access_control_attribute_configuration) / [`set_instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::set_instance_access_control_attribute_configuration): <p>Updates the attributes for your ABAC configuration.</p>
     /// - On success, responds with [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput)
 
@@ -611,7 +611,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdatePermissionSet`](crate::client::fluent_builders::UpdatePermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_instance_arn): <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_instance_arn): <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_description): <p>The description of the <code>PermissionSet</code>.</p>
     ///   - [`session_duration(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::session_duration) / [`set_session_duration(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_session_duration): <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
@@ -701,12 +701,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -724,7 +724,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
         pub fn customer_managed_policy_reference(
             mut self,
             input: crate::model::CustomerManagedPolicyReference,
@@ -732,7 +732,7 @@ pub mod fluent_builders {
             self.inner = self.inner.customer_managed_policy_reference(input);
             self
         }
-        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
         pub fn set_customer_managed_policy_reference(
             mut self,
             input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
@@ -743,7 +743,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachManagedPolicyToPermissionSet`.
     ///
-    /// <p>Attaches an Amazon Web Services managed policy ARN to a permission set.</p> <note>
+    /// <p>Attaches an AWS managed policy ARN to a permission set.</p> <note>
     /// <p>If the permission set is already referenced by one or more account assignments, you will need to call <code> <code>ProvisionPermissionSet</code> </code> after this operation. Calling <code>ProvisionPermissionSet</code> applies the corresponding IAM policy updates to all assigned accounts.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -813,12 +813,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -836,12 +836,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The Amazon Web Services managed policy ARN to be attached to a permission set.</p>
+        /// <p>The AWS managed policy ARN to be attached to a permission set.</p>
         pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.managed_policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Web Services managed policy ARN to be attached to a permission set.</p>
+        /// <p>The AWS managed policy ARN to be attached to a permission set.</p>
         pub fn set_managed_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -852,10 +852,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccountAssignment`.
     ///
-    /// <p>Assigns access to a principal for a specified Amazon Web Services account using a specified permission set.</p> <note>
-    /// <p>The term <i>principal</i> here refers to a user or group that is defined in Amazon Web Services SSO.</p>
+    /// <p>Assigns access to a principal for a specified AWS account using a specified permission set.</p> <note>
+    /// <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p>
     /// </note> <note>
-    /// <p>As part of a successful <code>CreateAccountAssignment</code> call, the specified permission set will automatically be provisioned to the account in the form of an IAM policy. That policy is attached to the IAM role created in Amazon Web Services SSO. If the permission set is subsequently updated, the corresponding IAM policies attached to roles in your accounts will not be updated automatically. In this case, you must call <code> <code>ProvisionPermissionSet</code> </code> to make these updates.</p>
+    /// <p>As part of a successful <code>CreateAccountAssignment</code> call, the specified permission set will automatically be provisioned to the account in the form of an IAM policy. That policy is attached to the IAM role created in IAM Identity Center. If the permission set is subsequently updated, the corresponding IAM policies attached to roles in your accounts will not be updated automatically. In this case, you must call <code> <code>ProvisionPermissionSet</code> </code> to make these updates.</p>
     /// </note> <note>
     /// <p> After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of an assignment creation request. </p>
     /// </note>
@@ -922,22 +922,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_id(input.into());
             self
         }
-        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_id(input);
             self
@@ -981,12 +981,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal_type(input);
             self
         }
-        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input.into());
             self
         }
-        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
@@ -994,7 +994,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Enables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p> <note>
+    /// <p>Enables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p> <note>
     /// <p>After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code> to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1064,17 +1064,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value from the Amazon Web Services SSO identity store.</p>
+        /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
         pub fn instance_access_control_attribute_configuration(
             mut self,
             input: crate::model::InstanceAccessControlAttributeConfiguration,
@@ -1084,7 +1084,7 @@ pub mod fluent_builders {
                 .instance_access_control_attribute_configuration(input);
             self
         }
-        /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value from the Amazon Web Services SSO identity store.</p>
+        /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
         pub fn set_instance_access_control_attribute_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
@@ -1097,8 +1097,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePermissionSet`.
     ///
-    /// <p>Creates a permission set within a specified Amazon Web Services SSO instance.</p> <note>
-    /// <p>To grant users and groups access to Amazon Web Services account resources, use <code> <code>CreateAccountAssignment</code> </code>.</p>
+    /// <p>Creates a permission set within a specified IAM Identity Center instance.</p> <note>
+    /// <p>To grant users and groups access to AWS account resources, use <code> <code>CreateAccountAssignment</code> </code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePermissionSet {
@@ -1183,12 +1183,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1236,7 +1236,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccountAssignment`.
     ///
-    /// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.</p> <note>
+    /// <p>Deletes a principal's access from a specified AWS account using a specified permission set.</p> <note>
     /// <p>After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of an assignment deletion request.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1302,22 +1302,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_id(input.into());
             self
         }
-        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_id(input);
             self
@@ -1361,12 +1361,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal_type(input);
             self
         }
-        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input.into());
             self
         }
-        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
@@ -1442,12 +1442,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1468,7 +1468,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Disables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO instance and deletes all of the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity source and any custom attributes you have previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    /// <p>Disables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance and deletes all of the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity source and any custom attributes you have previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstanceAccessControlAttributeConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -1536,12 +1536,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1617,12 +1617,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1707,12 +1707,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1801,12 +1801,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1900,12 +1900,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1931,7 +1931,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Returns the list of Amazon Web Services SSO identity store attributes that have been configured to work with attributes-based access control (ABAC) for the specified Amazon Web Services SSO instance. This will not return attributes configured and sent by an external identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    /// <p>Returns the list of IAM Identity Center identity store attributes that have been configured to work with attributes-based access control (ABAC) for the specified IAM Identity Center instance. This will not return attributes configured and sent by an external identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceAccessControlAttributeConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -2000,12 +2000,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2077,12 +2077,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2171,12 +2171,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2268,12 +2268,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2291,7 +2291,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
         pub fn customer_managed_policy_reference(
             mut self,
             input: crate::model::CustomerManagedPolicyReference,
@@ -2299,7 +2299,7 @@ pub mod fluent_builders {
             self.inner = self.inner.customer_managed_policy_reference(input);
             self
         }
-        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
         pub fn set_customer_managed_policy_reference(
             mut self,
             input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
@@ -2310,7 +2310,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetachManagedPolicyFromPermissionSet`.
     ///
-    /// <p>Detaches the attached Amazon Web Services managed policy ARN from the specified permission set.</p>
+    /// <p>Detaches the attached AWS managed policy ARN from the specified permission set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachManagedPolicyFromPermissionSet {
         handle: std::sync::Arc<super::Handle>,
@@ -2378,12 +2378,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2401,12 +2401,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
+        /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
         pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.managed_policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
+        /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
         pub fn set_managed_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2481,12 +2481,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2575,12 +2575,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2601,7 +2601,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountAssignmentCreationStatus`.
     ///
-    /// <p>Lists the status of the Amazon Web Services account assignment creation requests for a specified Amazon Web Services SSO instance.</p>
+    /// <p>Lists the status of the AWS account assignment creation requests for a specified IAM Identity Center instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignmentCreationStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -2680,12 +2680,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2726,7 +2726,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountAssignmentDeletionStatus`.
     ///
-    /// <p>Lists the status of the Amazon Web Services account assignment deletion requests for a specified Amazon Web Services SSO instance.</p>
+    /// <p>Lists the status of the AWS account assignment deletion requests for a specified IAM Identity Center instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignmentDeletionStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -2805,12 +2805,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -2851,7 +2851,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountAssignments`.
     ///
-    /// <p>Lists the assignee of the specified Amazon Web Services account with the specified permission set.</p>
+    /// <p>Lists the assignee of the specified AWS account with the specified permission set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignments {
         handle: std::sync::Arc<super::Handle>,
@@ -2921,22 +2921,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAccountAssignmentsPaginator {
             crate::paginator::ListAccountAssignmentsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+        /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+        /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -2977,7 +2977,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountsForProvisionedPermissionSet`.
     ///
-    /// <p>Lists all the Amazon Web Services accounts where the specified permission set is provisioned.</p>
+    /// <p>Lists all the AWS accounts where the specified permission set is provisioned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountsForProvisionedPermissionSet {
         handle: std::sync::Arc<super::Handle>,
@@ -3056,22 +3056,22 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p>
+        /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_set_arn(input.into());
             self
         }
-        /// <p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p>
+        /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3079,12 +3079,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
+        /// <p>The permission set provisioning status for an AWS account.</p>
         pub fn provisioning_status(mut self, input: crate::model::ProvisioningStatus) -> Self {
             self.inner = self.inner.provisioning_status(input);
             self
         }
-        /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
+        /// <p>The permission set provisioning status for an AWS account.</p>
         pub fn set_provisioning_status(
             mut self,
             input: std::option::Option<crate::model::ProvisioningStatus>,
@@ -3195,12 +3195,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -3241,7 +3241,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInstances`.
     ///
-    /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
+    /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances {
         handle: std::sync::Arc<super::Handle>,
@@ -3334,7 +3334,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListManagedPoliciesInPermissionSet`.
     ///
-    /// <p>Lists the Amazon Web Services managed policy that is attached to a specified permission set.</p>
+    /// <p>Lists the AWS managed policy that is attached to a specified permission set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedPoliciesInPermissionSet {
         handle: std::sync::Arc<super::Handle>,
@@ -3413,12 +3413,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -3459,7 +3459,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPermissionSetProvisioningStatus`.
     ///
-    /// <p>Lists the status of the permission set provisioning requests for a specified Amazon Web Services SSO instance.</p>
+    /// <p>Lists the status of the permission set provisioning requests for a specified IAM Identity Center instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSetProvisioningStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -3538,12 +3538,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -3584,7 +3584,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPermissionSets`.
     ///
-    /// <p>Lists the <code>PermissionSet</code>s in an Amazon Web Services SSO instance.</p>
+    /// <p>Lists the <code>PermissionSet</code>s in an IAM Identity Center instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSets {
         handle: std::sync::Arc<super::Handle>,
@@ -3654,12 +3654,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListPermissionSetsPaginator {
             crate::paginator::ListPermissionSetsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -3687,7 +3687,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPermissionSetsProvisionedToAccount`.
     ///
-    /// <p>Lists all the permission sets that are provisioned to a specified Amazon Web Services account.</p>
+    /// <p>Lists all the permission sets that are provisioned to a specified AWS account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSetsProvisionedToAccount {
         handle: std::sync::Arc<super::Handle>,
@@ -3766,22 +3766,22 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+        /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+        /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -3892,12 +3892,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator {
             crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -3989,12 +3989,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -4012,12 +4012,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_id(input.into());
             self
         }
-        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_id(input);
             self
@@ -4104,12 +4104,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -4143,7 +4143,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPermissionsBoundaryToPermissionSet`.
     ///
-    /// <p>Attaches an Amazon Web Services managed or customer managed policy to the specified <code>PermissionSet</code> as a permissions boundary.</p>
+    /// <p>Attaches an AWS managed or customer managed policy to the specified <code>PermissionSet</code> as a permissions boundary.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPermissionsBoundaryToPermissionSet {
         handle: std::sync::Arc<super::Handle>,
@@ -4211,12 +4211,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -4314,12 +4314,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -4418,12 +4418,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -4458,7 +4458,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Updates the Amazon Web Services SSO identity store attributes that you can use with the Amazon Web Services SSO instance for attributes-based access control (ABAC). When using an external identity provider as an identity source, you can pass attributes through the SAML assertion as an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO replaces the attribute value with the value from the Amazon Web Services SSO identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    /// <p>Updates the IAM Identity Center identity store attributes that you can use with the IAM Identity Center instance for attributes-based access control (ABAC). When using an external identity provider as an identity source, you can pass attributes through the SAML assertion as an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center replaces the attribute value with the value from the IAM Identity Center identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceAccessControlAttributeConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -4526,12 +4526,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -4623,12 +4623,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self

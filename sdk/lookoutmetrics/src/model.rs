@@ -143,6 +143,222 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
+/// <p>Describes a list of filters for choosing a subset of dimension values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricSetDimensionFilter {
+    /// <p>The dimension that you want to filter on.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The list of filters that you are applying.</p>
+    #[doc(hidden)]
+    pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl MetricSetDimensionFilter {
+    /// <p>The dimension that you want to filter on.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The list of filters that you are applying.</p>
+    pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filter_list.as_deref()
+    }
+}
+impl std::fmt::Debug for MetricSetDimensionFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricSetDimensionFilter");
+        formatter.field("name", &self.name);
+        formatter.field("filter_list", &self.filter_list);
+        formatter.finish()
+    }
+}
+/// See [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
+pub mod metric_set_dimension_filter {
+
+    /// A builder for [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    }
+    impl Builder {
+        /// <p>The dimension that you want to filter on.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The dimension that you want to filter on.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `filter_list`.
+        ///
+        /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
+        ///
+        /// <p>The list of filters that you are applying.</p>
+        pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filter_list.unwrap_or_default();
+            v.push(input);
+            self.filter_list = Some(v);
+            self
+        }
+        /// <p>The list of filters that you are applying.</p>
+        pub fn set_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filter_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
+        pub fn build(self) -> crate::model::MetricSetDimensionFilter {
+            crate::model::MetricSetDimensionFilter {
+                name: self.name,
+                filter_list: self.filter_list,
+            }
+        }
+    }
+}
+impl MetricSetDimensionFilter {
+    /// Creates a new builder-style object to manufacture [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
+    pub fn builder() -> crate::model::metric_set_dimension_filter::Builder {
+        crate::model::metric_set_dimension_filter::Builder::default()
+    }
+}
+
+/// <p>Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Filter {
+    /// <p>The value that you want to include in the filter.</p>
+    #[doc(hidden)]
+    pub dimension_value: std::option::Option<std::string::String>,
+    /// <p>The condition to apply.</p>
+    #[doc(hidden)]
+    pub filter_operation: std::option::Option<crate::model::FilterOperation>,
+}
+impl Filter {
+    /// <p>The value that you want to include in the filter.</p>
+    pub fn dimension_value(&self) -> std::option::Option<&str> {
+        self.dimension_value.as_deref()
+    }
+    /// <p>The condition to apply.</p>
+    pub fn filter_operation(&self) -> std::option::Option<&crate::model::FilterOperation> {
+        self.filter_operation.as_ref()
+    }
+}
+impl std::fmt::Debug for Filter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Filter");
+        formatter.field("dimension_value", &self.dimension_value);
+        formatter.field("filter_operation", &self.filter_operation);
+        formatter.finish()
+    }
+}
+/// See [`Filter`](crate::model::Filter).
+pub mod filter {
+
+    /// A builder for [`Filter`](crate::model::Filter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dimension_value: std::option::Option<std::string::String>,
+        pub(crate) filter_operation: std::option::Option<crate::model::FilterOperation>,
+    }
+    impl Builder {
+        /// <p>The value that you want to include in the filter.</p>
+        pub fn dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dimension_value = Some(input.into());
+            self
+        }
+        /// <p>The value that you want to include in the filter.</p>
+        pub fn set_dimension_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dimension_value = input;
+            self
+        }
+        /// <p>The condition to apply.</p>
+        pub fn filter_operation(mut self, input: crate::model::FilterOperation) -> Self {
+            self.filter_operation = Some(input);
+            self
+        }
+        /// <p>The condition to apply.</p>
+        pub fn set_filter_operation(
+            mut self,
+            input: std::option::Option<crate::model::FilterOperation>,
+        ) -> Self {
+            self.filter_operation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
+        pub fn build(self) -> crate::model::Filter {
+            crate::model::Filter {
+                dimension_value: self.dimension_value,
+                filter_operation: self.filter_operation,
+            }
+        }
+    }
+}
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FilterOperation {
+    #[allow(missing_docs)] // documentation missing in model
+    Equals,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FilterOperation {
+    fn from(s: &str) -> Self {
+        match s {
+            "EQUALS" => FilterOperation::Equals,
+            other => FilterOperation::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FilterOperation {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FilterOperation::from(s))
+    }
+}
+impl FilterOperation {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FilterOperation::Equals => "EQUALS",
+            FilterOperation::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EQUALS"]
+    }
+}
+impl AsRef<str> for FilterOperation {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains information about source data used to generate metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

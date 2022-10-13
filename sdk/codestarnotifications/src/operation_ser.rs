@@ -124,16 +124,6 @@ pub fn serialize_operation_crate_operation_unsubscribe(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn serialize_operation_crate_operation_untag_resource(
-    input: &crate::input::UntagResourceInput,
-) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_crate_input_untag_resource_input(&mut object, input)?;
-    object.finish();
-    Ok(aws_smithy_http::body::SdkBody::from(out))
-}
-
 pub fn serialize_operation_crate_operation_update_notification_rule(
     input: &crate::input::UpdateNotificationRuleInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {

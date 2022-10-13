@@ -14,14 +14,14 @@ pub mod batch_detect_dominant_language_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -168,14 +168,14 @@ pub mod batch_detect_entities_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -335,14 +335,14 @@ pub mod batch_detect_key_phrases_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -504,14 +504,18 @@ pub mod batch_detect_sentiment_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
+        /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+        /// </note>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
+        /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+        /// </note>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -673,14 +677,14 @@ pub mod batch_detect_syntax_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -823,6 +827,174 @@ impl BatchDetectSyntaxInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxInput`](crate::input::BatchDetectSyntaxInput).
     pub fn builder() -> crate::input::batch_detect_syntax_input::Builder {
         crate::input::batch_detect_syntax_input::Builder::default()
+    }
+}
+
+/// See [`BatchDetectTargetedSentimentInput`](crate::input::BatchDetectTargetedSentimentInput).
+pub mod batch_detect_targeted_sentiment_input {
+
+    /// A builder for [`BatchDetectTargetedSentimentInput`](crate::input::BatchDetectTargetedSentimentInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+    }
+    impl Builder {
+        /// Appends an item to `text_list`.
+        ///
+        /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
+        ///
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+        pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.text_list.unwrap_or_default();
+            v.push(input.into());
+            self.text_list = Some(v);
+            self
+        }
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+        pub fn set_text_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.text_list = input;
+            self
+        }
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentInput`](crate::input::BatchDetectTargetedSentimentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::BatchDetectTargetedSentimentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchDetectTargetedSentimentInput {
+                text_list: self.text_list,
+                language_code: self.language_code,
+            })
+        }
+    }
+}
+impl BatchDetectTargetedSentimentInput {
+    /// Consumes the builder and constructs an Operation<[`BatchDetectTargetedSentiment`](crate::operation::BatchDetectTargetedSentiment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchDetectTargetedSentiment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchDetectTargetedSentimentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchDetectTargetedSentimentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.BatchDetectTargetedSentiment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_detect_targeted_sentiment(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchDetectTargetedSentiment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchDetectTargetedSentiment",
+            "comprehend",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentInput`](crate::input::BatchDetectTargetedSentimentInput).
+    pub fn builder() -> crate::input::batch_detect_targeted_sentiment_input::Builder {
+        crate::input::batch_detect_targeted_sentiment_input::Builder::default()
     }
 }
 
@@ -991,12 +1163,12 @@ pub mod contains_pii_entities_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -4551,12 +4723,12 @@ pub mod detect_dominant_language_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -4696,12 +4868,12 @@ pub mod detect_entities_input {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -4871,12 +5043,12 @@ pub mod detect_key_phrases_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -5029,12 +5201,12 @@ pub mod detect_pii_entities_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -5187,12 +5359,16 @@ pub mod detect_sentiment_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
+        /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+        /// </note>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
+        /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+        /// </note>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -5345,12 +5521,12 @@ pub mod detect_syntax_input {
         pub(crate) language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
     }
     impl Builder {
-        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
+        /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
+        /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -5490,6 +5666,168 @@ impl DetectSyntaxInput {
     /// Creates a new builder-style object to manufacture [`DetectSyntaxInput`](crate::input::DetectSyntaxInput).
     pub fn builder() -> crate::input::detect_syntax_input::Builder {
         crate::input::detect_syntax_input::Builder::default()
+    }
+}
+
+/// See [`DetectTargetedSentimentInput`](crate::input::DetectTargetedSentimentInput).
+pub mod detect_targeted_sentiment_input {
+
+    /// A builder for [`DetectTargetedSentimentInput`](crate::input::DetectTargetedSentimentInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+    }
+    impl Builder {
+        /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectTargetedSentimentInput`](crate::input::DetectTargetedSentimentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DetectTargetedSentimentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DetectTargetedSentimentInput {
+                text: self.text,
+                language_code: self.language_code,
+            })
+        }
+    }
+}
+impl DetectTargetedSentimentInput {
+    /// Consumes the builder and constructs an Operation<[`DetectTargetedSentiment`](crate::operation::DetectTargetedSentiment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DetectTargetedSentiment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DetectTargetedSentimentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DetectTargetedSentimentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.DetectTargetedSentiment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_detect_targeted_sentiment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DetectTargetedSentiment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DetectTargetedSentiment",
+            "comprehend",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentInput`](crate::input::DetectTargetedSentimentInput).
+    pub fn builder() -> crate::input::detect_targeted_sentiment_input::Builder {
+        crate::input::detect_targeted_sentiment_input::Builder::default()
     }
 }
 
@@ -10438,12 +10776,12 @@ pub mod start_targeted_sentiment_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -13176,7 +13514,7 @@ pub struct StartTargetedSentimentDetectionJobInput {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
@@ -13213,7 +13551,7 @@ impl StartTargetedSentimentDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -14547,8 +14885,38 @@ impl std::fmt::Debug for ImportModelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectTargetedSentimentInput {
+    /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+    #[doc(hidden)]
+    pub text: std::option::Option<std::string::String>,
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+    #[doc(hidden)]
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+}
+impl DetectTargetedSentimentInput {
+    /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
+impl std::fmt::Debug for DetectTargetedSentimentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectTargetedSentimentInput");
+        formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("language_code", &self.language_code);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSyntaxInput {
-    /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
+    /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
@@ -14556,7 +14924,7 @@ pub struct DetectSyntaxInput {
     pub language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
 }
 impl DetectSyntaxInput {
-    /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
+    /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -14578,7 +14946,9 @@ impl std::fmt::Debug for DetectSyntaxInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSentimentInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
+    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+    /// </note>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -14586,7 +14956,9 @@ pub struct DetectSentimentInput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl DetectSentimentInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
+    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+    /// </note>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -14608,7 +14980,7 @@ impl std::fmt::Debug for DetectSentimentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectPiiEntitiesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
@@ -14616,7 +14988,7 @@ pub struct DetectPiiEntitiesInput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl DetectPiiEntitiesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -14638,7 +15010,7 @@ impl std::fmt::Debug for DetectPiiEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectKeyPhrasesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -14646,7 +15018,7 @@ pub struct DetectKeyPhrasesInput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl DetectKeyPhrasesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -14668,7 +15040,7 @@ impl std::fmt::Debug for DetectKeyPhrasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -14682,7 +15054,7 @@ pub struct DetectEntitiesInput {
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -14712,12 +15084,12 @@ impl std::fmt::Debug for DetectEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectDominantLanguageInput {
-    /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl DetectDominantLanguageInput {
-    /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -15452,7 +15824,7 @@ impl std::fmt::Debug for CreateDocumentClassifierInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainsPiiEntitiesInput {
-    /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
@@ -15460,7 +15832,7 @@ pub struct ContainsPiiEntitiesInput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl ContainsPiiEntitiesInput {
-    /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -15511,8 +15883,38 @@ impl std::fmt::Debug for ClassifyDocumentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDetectTargetedSentimentInput {
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+    #[doc(hidden)]
+    pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+    #[doc(hidden)]
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+}
+impl BatchDetectTargetedSentimentInput {
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+    pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.text_list.as_deref()
+    }
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchDetectTargetedSentimentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDetectTargetedSentimentInput");
+        formatter.field("text_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("language_code", &self.language_code);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectSyntaxInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
@@ -15520,7 +15922,7 @@ pub struct BatchDetectSyntaxInput {
     pub language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
 }
 impl BatchDetectSyntaxInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
@@ -15542,7 +15944,9 @@ impl std::fmt::Debug for BatchDetectSyntaxInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectSentimentInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
+    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+    /// </note>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -15550,7 +15954,9 @@ pub struct BatchDetectSentimentInput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl BatchDetectSentimentInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
+    /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+    /// </note>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
@@ -15572,7 +15978,7 @@ impl std::fmt::Debug for BatchDetectSentimentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectKeyPhrasesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -15580,7 +15986,7 @@ pub struct BatchDetectKeyPhrasesInput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl BatchDetectKeyPhrasesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
@@ -15602,7 +16008,7 @@ impl std::fmt::Debug for BatchDetectKeyPhrasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectEntitiesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -15610,7 +16016,7 @@ pub struct BatchDetectEntitiesInput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl BatchDetectEntitiesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
@@ -15632,12 +16038,12 @@ impl std::fmt::Debug for BatchDetectEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectDominantLanguageInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDetectDominantLanguageInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }

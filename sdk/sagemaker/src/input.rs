@@ -1242,12 +1242,12 @@ pub mod create_app_input {
             self.user_profile_name = input;
             self
         }
-        /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+        /// <p>The type of app.</p>
         pub fn app_type(mut self, input: crate::model::AppType) -> Self {
             self.app_type = Some(input);
             self
         }
-        /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+        /// <p>The type of app.</p>
         pub fn set_app_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
             self.app_type = input;
             self
@@ -4535,6 +4535,7 @@ pub mod create_endpoint_config_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
+        pub(crate) explainer_config: std::option::Option<crate::model::ExplainerConfig>,
     }
     impl Builder {
         /// <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
@@ -4648,6 +4649,19 @@ pub mod create_endpoint_config_input {
             self.async_inference_config = input;
             self
         }
+        /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+        pub fn explainer_config(mut self, input: crate::model::ExplainerConfig) -> Self {
+            self.explainer_config = Some(input);
+            self
+        }
+        /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+        pub fn set_explainer_config(
+            mut self,
+            input: std::option::Option<crate::model::ExplainerConfig>,
+        ) -> Self {
+            self.explainer_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEndpointConfigInput`](crate::input::CreateEndpointConfigInput).
         pub fn build(
             self,
@@ -4660,6 +4674,7 @@ pub mod create_endpoint_config_input {
                 tags: self.tags,
                 kms_key_id: self.kms_key_id,
                 async_inference_config: self.async_inference_config,
+                explainer_config: self.explainer_config,
             })
         }
     }
@@ -11052,7 +11067,9 @@ pub mod create_training_job_input {
         /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
         ///
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
+        /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+        /// </important>
         pub fn hyper_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -11064,7 +11081,9 @@ pub mod create_training_job_input {
             self
         }
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
+        /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+        /// </important>
         pub fn set_hyper_parameters(
             mut self,
             input: std::option::Option<
@@ -12499,7 +12518,7 @@ pub mod create_user_profile_input {
             self.user_profile_name = input;
             self
         }
-        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
         pub fn single_sign_on_user_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -12507,7 +12526,7 @@ pub mod create_user_profile_input {
             self.single_sign_on_user_identifier = Some(input.into());
             self
         }
-        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
         pub fn set_single_sign_on_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12515,12 +12534,12 @@ pub mod create_user_profile_input {
             self.single_sign_on_user_identifier = input;
             self
         }
-        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
         pub fn single_sign_on_user_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.single_sign_on_user_value = Some(input.into());
             self
         }
-        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
         pub fn set_single_sign_on_user_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40579,6 +40598,8 @@ pub mod list_training_jobs_input {
         pub(crate) status_equals: std::option::Option<crate::model::TrainingJobStatus>,
         pub(crate) sort_by: std::option::Option<crate::model::SortBy>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) warm_pool_status_equals:
+            std::option::Option<crate::model::WarmPoolResourceStatus>,
     }
     impl Builder {
         /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
@@ -40702,6 +40723,22 @@ pub mod list_training_jobs_input {
             self.sort_order = input;
             self
         }
+        /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
+        pub fn warm_pool_status_equals(
+            mut self,
+            input: crate::model::WarmPoolResourceStatus,
+        ) -> Self {
+            self.warm_pool_status_equals = Some(input);
+            self
+        }
+        /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
+        pub fn set_warm_pool_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::WarmPoolResourceStatus>,
+        ) -> Self {
+            self.warm_pool_status_equals = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTrainingJobsInput`](crate::input::ListTrainingJobsInput).
         pub fn build(
             self,
@@ -40718,6 +40755,7 @@ pub mod list_training_jobs_input {
                 status_equals: self.status_equals,
                 sort_by: self.sort_by,
                 sort_order: self.sort_order,
+                warm_pool_status_equals: self.warm_pool_status_equals,
             })
         }
     }
@@ -50959,6 +50997,7 @@ pub mod update_training_job_input {
         pub(crate) profiler_config: std::option::Option<crate::model::ProfilerConfigForUpdate>,
         pub(crate) profiler_rule_configurations:
             std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
+        pub(crate) resource_config: std::option::Option<crate::model::ResourceConfigForUpdate>,
     }
     impl Builder {
         /// <p>The name of a training job to update the Debugger profiling configuration.</p>
@@ -51009,6 +51048,19 @@ pub mod update_training_job_input {
             self.profiler_rule_configurations = input;
             self
         }
+        /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
+        pub fn resource_config(mut self, input: crate::model::ResourceConfigForUpdate) -> Self {
+            self.resource_config = Some(input);
+            self
+        }
+        /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
+        pub fn set_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::ResourceConfigForUpdate>,
+        ) -> Self {
+            self.resource_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTrainingJobInput`](crate::input::UpdateTrainingJobInput).
         pub fn build(
             self,
@@ -51018,6 +51070,7 @@ pub mod update_training_job_input {
                 training_job_name: self.training_job_name,
                 profiler_config: self.profiler_config,
                 profiler_rule_configurations: self.profiler_rule_configurations,
+                resource_config: self.resource_config,
             })
         }
     }
@@ -52546,6 +52599,9 @@ pub struct UpdateTrainingJobInput {
     #[doc(hidden)]
     pub profiler_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
+    /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
+    #[doc(hidden)]
+    pub resource_config: std::option::Option<crate::model::ResourceConfigForUpdate>,
 }
 impl UpdateTrainingJobInput {
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
@@ -52562,6 +52618,10 @@ impl UpdateTrainingJobInput {
     ) -> std::option::Option<&[crate::model::ProfilerRuleConfiguration]> {
         self.profiler_rule_configurations.as_deref()
     }
+    /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfigForUpdate> {
+        self.resource_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateTrainingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52572,6 +52632,7 @@ impl std::fmt::Debug for UpdateTrainingJobInput {
             "profiler_rule_configurations",
             &self.profiler_rule_configurations,
         );
+        formatter.field("resource_config", &self.resource_config);
         formatter.finish()
     }
 }
@@ -55072,6 +55133,9 @@ pub struct ListTrainingJobsInput {
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
+    #[doc(hidden)]
+    pub warm_pool_status_equals: std::option::Option<crate::model::WarmPoolResourceStatus>,
 }
 impl ListTrainingJobsInput {
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
@@ -55114,6 +55178,12 @@ impl ListTrainingJobsInput {
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
+    /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
+    pub fn warm_pool_status_equals(
+        &self,
+    ) -> std::option::Option<&crate::model::WarmPoolResourceStatus> {
+        self.warm_pool_status_equals.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTrainingJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55128,6 +55198,7 @@ impl std::fmt::Debug for ListTrainingJobsInput {
         formatter.field("status_equals", &self.status_equals);
         formatter.field("sort_by", &self.sort_by);
         formatter.field("sort_order", &self.sort_order);
+        formatter.field("warm_pool_status_equals", &self.warm_pool_status_equals);
         formatter.finish()
     }
 }
@@ -61666,10 +61737,10 @@ pub struct CreateUserProfileInput {
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
     #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
-    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     #[doc(hidden)]
     pub single_sign_on_user_identifier: std::option::Option<std::string::String>,
-    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     #[doc(hidden)]
     pub single_sign_on_user_value: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
@@ -61689,11 +61760,11 @@ impl CreateUserProfileInput {
     pub fn user_profile_name(&self) -> std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
-    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     pub fn single_sign_on_user_identifier(&self) -> std::option::Option<&str> {
         self.single_sign_on_user_identifier.as_deref()
     }
-    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     pub fn single_sign_on_user_value(&self) -> std::option::Option<&str> {
         self.single_sign_on_user_value.as_deref()
     }
@@ -62049,7 +62120,9 @@ pub struct CreateTrainingJobInput {
     #[doc(hidden)]
     pub training_job_name: std::option::Option<std::string::String>,
     /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-    /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+    /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
+    /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+    /// </important>
     #[doc(hidden)]
     pub hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -62136,7 +62209,9 @@ impl CreateTrainingJobInput {
         self.training_job_name.as_deref()
     }
     /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-    /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+    /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
+    /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+    /// </important>
     pub fn hyper_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -64415,6 +64490,9 @@ pub struct CreateEndpointConfigInput {
     /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
     #[doc(hidden)]
     pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
+    /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+    #[doc(hidden)]
+    pub explainer_config: std::option::Option<crate::model::ExplainerConfig>,
 }
 impl CreateEndpointConfigInput {
     /// <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
@@ -64455,6 +64533,10 @@ impl CreateEndpointConfigInput {
     ) -> std::option::Option<&crate::model::AsyncInferenceConfig> {
         self.async_inference_config.as_ref()
     }
+    /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+    pub fn explainer_config(&self) -> std::option::Option<&crate::model::ExplainerConfig> {
+        self.explainer_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -64465,6 +64547,7 @@ impl std::fmt::Debug for CreateEndpointConfigInput {
         formatter.field("tags", &self.tags);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("async_inference_config", &self.async_inference_config);
+        formatter.field("explainer_config", &self.explainer_config);
         formatter.finish()
     }
 }
@@ -65396,7 +65479,7 @@ pub struct CreateAppInput {
     /// <p>The user profile name.</p>
     #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
-    /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+    /// <p>The type of app.</p>
     #[doc(hidden)]
     pub app_type: std::option::Option<crate::model::AppType>,
     /// <p>The name of the app.</p>
@@ -65420,7 +65503,7 @@ impl CreateAppInput {
     pub fn user_profile_name(&self) -> std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
-    /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+    /// <p>The type of app.</p>
     pub fn app_type(&self) -> std::option::Option<&crate::model::AppType> {
         self.app_type.as_ref()
     }

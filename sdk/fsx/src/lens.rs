@@ -29,6 +29,16 @@ pub(crate) fn reflens_structure_crate_output_describe_data_repository_tasks_outp
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_file_caches_output_next_token(
+    input: &crate::output::DescribeFileCachesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_file_systems_output_next_token(
     input: &crate::output::DescribeFileSystemsOutput,
 ) -> std::option::Option<&std::string::String> {

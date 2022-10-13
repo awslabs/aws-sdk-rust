@@ -413,8 +413,9 @@ impl Client {
     ///   - [`core_device_thing_name(impl Into<String>)`](crate::client::fluent_builders::ListInstalledComponents::core_device_thing_name) / [`set_core_device_thing_name(Option<String>)`](crate::client::fluent_builders::ListInstalledComponents::set_core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstalledComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInstalledComponents::set_max_results): <p>The maximum number of results to be returned per paginated request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstalledComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstalledComponents::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`topology_filter(InstalledComponentTopologyFilter)`](crate::client::fluent_builders::ListInstalledComponents::topology_filter) / [`set_topology_filter(Option<InstalledComponentTopologyFilter>)`](crate::client::fluent_builders::ListInstalledComponents::set_topology_filter): <p>The filter for the list of components. Choose from the following options:</p>  <ul>   <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>   <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>  </ul>  <p>Default: <code>ROOT</code> </p>
     /// - On success, responds with [`ListInstalledComponentsOutput`](crate::output::ListInstalledComponentsOutput) with field(s):
-    ///   - [`installed_components(Option<Vec<InstalledComponent>>)`](crate::output::ListInstalledComponentsOutput::installed_components): <p>A list that summarizes each component on the core device.</p>
+    ///   - [`installed_components(Option<Vec<InstalledComponent>>)`](crate::output::ListInstalledComponentsOutput::installed_components): <p>A list that summarizes each component on the core device.</p> <note>   <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.</p>  </note>
     ///   - [`next_token(Option<String>)`](crate::output::ListInstalledComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListInstalledComponentsError>`](crate::error::ListInstalledComponentsError)
     pub fn list_installed_components(&self) -> fluent_builders::ListInstalledComponents {
@@ -1573,7 +1574,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComponent`.
     ///
-    /// <p>Gets the recipe for a version of a component. Core devices can call this operation to identify the artifacts and requirements to install a component.</p>
+    /// <p>Gets the recipe for a version of a component.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponent {
         handle: std::sync::Arc<super::Handle>,
@@ -1841,6 +1842,7 @@ pub mod fluent_builders {
     /// <li> <p>When the core device receives a deployment from the Amazon Web Services Cloud</p> </li>
     /// <li> <p>When the status of any component on the core device becomes <code>BROKEN</code> </p> </li>
     /// <li> <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p> </li>
+    /// <li> <p>For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2403,6 +2405,7 @@ pub mod fluent_builders {
     /// <li> <p>When the core device receives a deployment from the Amazon Web Services Cloud</p> </li>
     /// <li> <p>When the status of any component on the core device becomes <code>BROKEN</code> </p> </li>
     /// <li> <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p> </li>
+    /// <li> <p>For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2763,7 +2766,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInstalledComponents`.
     ///
-    /// <p>Retrieves a paginated list of the components that a Greengrass core device runs. This list doesn't include components that are deployed from local deployments or components that are deployed as dependencies of other components.</p> <note>
+    /// <p>Retrieves a paginated list of the components that a Greengrass core device runs. By default, this list doesn't include components that are deployed as dependencies of other components. To include dependencies in the response, set the <code>topologyFilter</code> parameter to <code>ALL</code>.</p> <note>
     /// <p>IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services Cloud, then the reported status of that device might not reflect its current status. The status timestamp indicates when the device status was last updated.</p>
     /// <p>Core devices send status updates at the following times:</p>
     /// <ul>
@@ -2771,6 +2774,7 @@ pub mod fluent_builders {
     /// <li> <p>When the core device receives a deployment from the Amazon Web Services Cloud</p> </li>
     /// <li> <p>When the status of any component on the core device becomes <code>BROKEN</code> </p> </li>
     /// <li> <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p> </li>
+    /// <li> <p>For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2873,6 +2877,32 @@ pub mod fluent_builders {
         /// <p>The token to be used for the next set of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The filter for the list of components. Choose from the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
+        /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
+        /// </ul>
+        /// <p>Default: <code>ROOT</code> </p>
+        pub fn topology_filter(
+            mut self,
+            input: crate::model::InstalledComponentTopologyFilter,
+        ) -> Self {
+            self.inner = self.inner.topology_filter(input);
+            self
+        }
+        /// <p>The filter for the list of components. Choose from the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
+        /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
+        /// </ul>
+        /// <p>Default: <code>ROOT</code> </p>
+        pub fn set_topology_filter(
+            mut self,
+            input: std::option::Option<crate::model::InstalledComponentTopologyFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_topology_filter(input);
             self
         }
     }

@@ -361,6 +361,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnector {
     }
 }
 
+/// Operation shape for `DeleteHostKey`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_host_key`](crate::client::Client::delete_host_key).
+///
+/// See [`crate::client::fluent_builders::DeleteHostKey`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteHostKey {
+    _private: (),
+}
+impl DeleteHostKey {
+    /// Creates a new builder-style object to manufacture [`DeleteHostKeyInput`](crate::input::DeleteHostKeyInput).
+    pub fn builder() -> crate::input::delete_host_key_input::Builder {
+        crate::input::delete_host_key_input::Builder::default()
+    }
+    /// Creates a new `DeleteHostKey` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteHostKey {
+    type Output =
+        std::result::Result<crate::output::DeleteHostKeyOutput, crate::error::DeleteHostKeyError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_host_key_error(response)
+        } else {
+            crate::operation_deser::parse_delete_host_key_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -691,6 +723,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExecution {
     }
 }
 
+/// Operation shape for `DescribeHostKey`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_host_key`](crate::client::Client::describe_host_key).
+///
+/// See [`crate::client::fluent_builders::DescribeHostKey`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeHostKey {
+    _private: (),
+}
+impl DescribeHostKey {
+    /// Creates a new builder-style object to manufacture [`DescribeHostKeyInput`](crate::input::DescribeHostKeyInput).
+    pub fn builder() -> crate::input::describe_host_key_input::Builder {
+        crate::input::describe_host_key_input::Builder::default()
+    }
+    /// Creates a new `DescribeHostKey` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeHostKey {
+    type Output = std::result::Result<
+        crate::output::DescribeHostKeyOutput,
+        crate::error::DescribeHostKeyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_host_key_error(response)
+        } else {
+            crate::operation_deser::parse_describe_host_key_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -891,6 +957,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCertificate {
     }
 }
 
+/// Operation shape for `ImportHostKey`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_host_key`](crate::client::Client::import_host_key).
+///
+/// See [`crate::client::fluent_builders::ImportHostKey`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ImportHostKey {
+    _private: (),
+}
+impl ImportHostKey {
+    /// Creates a new builder-style object to manufacture [`ImportHostKeyInput`](crate::input::ImportHostKeyInput).
+    pub fn builder() -> crate::input::import_host_key_input::Builder {
+        crate::input::import_host_key_input::Builder::default()
+    }
+    /// Creates a new `ImportHostKey` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportHostKey {
+    type Output =
+        std::result::Result<crate::output::ImportHostKeyOutput, crate::error::ImportHostKeyError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_host_key_error(response)
+        } else {
+            crate::operation_deser::parse_import_host_key_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ImportSshPublicKey`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1083,6 +1181,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExecutions {
             crate::operation_deser::parse_list_executions_error(response)
         } else {
             crate::operation_deser::parse_list_executions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListHostKeys`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_host_keys`](crate::client::Client::list_host_keys).
+///
+/// See [`crate::client::fluent_builders::ListHostKeys`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListHostKeys {
+    _private: (),
+}
+impl ListHostKeys {
+    /// Creates a new builder-style object to manufacture [`ListHostKeysInput`](crate::input::ListHostKeysInput).
+    pub fn builder() -> crate::input::list_host_keys_input::Builder {
+        crate::input::list_host_keys_input::Builder::default()
+    }
+    /// Creates a new `ListHostKeys` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListHostKeys {
+    type Output =
+        std::result::Result<crate::output::ListHostKeysOutput, crate::error::ListHostKeysError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_host_keys_error(response)
+        } else {
+            crate::operation_deser::parse_list_host_keys_response(response)
         }
     }
 }
@@ -1642,6 +1772,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnector {
             crate::operation_deser::parse_update_connector_error(response)
         } else {
             crate::operation_deser::parse_update_connector_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateHostKey`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_host_key`](crate::client::Client::update_host_key).
+///
+/// See [`crate::client::fluent_builders::UpdateHostKey`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateHostKey {
+    _private: (),
+}
+impl UpdateHostKey {
+    /// Creates a new builder-style object to manufacture [`UpdateHostKeyInput`](crate::input::UpdateHostKeyInput).
+    pub fn builder() -> crate::input::update_host_key_input::Builder {
+        crate::input::update_host_key_input::Builder::default()
+    }
+    /// Creates a new `UpdateHostKey` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateHostKey {
+    type Output =
+        std::result::Result<crate::output::UpdateHostKeyOutput, crate::error::UpdateHostKeyError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_host_key_error(response)
+        } else {
+            crate::operation_deser::parse_update_host_key_response(response)
         }
     }
 }

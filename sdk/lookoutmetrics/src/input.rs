@@ -767,6 +767,8 @@ pub mod create_metric_set_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) dimension_filter_list:
+            std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
     }
     impl Builder {
         /// <p>The ARN of the anomaly detector that will use the dataset.</p>
@@ -930,6 +932,28 @@ pub mod create_metric_set_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `dimension_filter_list`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
+        ///
+        /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+        pub fn dimension_filter_list(
+            mut self,
+            input: crate::model::MetricSetDimensionFilter,
+        ) -> Self {
+            let mut v = self.dimension_filter_list.unwrap_or_default();
+            v.push(input);
+            self.dimension_filter_list = Some(v);
+            self
+        }
+        /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+        pub fn set_dimension_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
+        ) -> Self {
+            self.dimension_filter_list = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMetricSetInput`](crate::input::CreateMetricSetInput).
         pub fn build(
             self,
@@ -947,6 +971,7 @@ pub mod create_metric_set_input {
                 metric_source: self.metric_source,
                 timezone: self.timezone,
                 tags: self.tags,
+                dimension_filter_list: self.dimension_filter_list,
             })
         }
     }
@@ -4993,6 +5018,8 @@ pub mod update_metric_set_input {
         pub(crate) dimension_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) metric_set_frequency: std::option::Option<crate::model::Frequency>,
         pub(crate) metric_source: std::option::Option<crate::model::MetricSource>,
+        pub(crate) dimension_filter_list:
+            std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
     }
     impl Builder {
         /// <p>The ARN of the dataset to update.</p>
@@ -5108,6 +5135,28 @@ pub mod update_metric_set_input {
             self.metric_source = input;
             self
         }
+        /// Appends an item to `dimension_filter_list`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
+        ///
+        /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
+        pub fn dimension_filter_list(
+            mut self,
+            input: crate::model::MetricSetDimensionFilter,
+        ) -> Self {
+            let mut v = self.dimension_filter_list.unwrap_or_default();
+            v.push(input);
+            self.dimension_filter_list = Some(v);
+            self
+        }
+        /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
+        pub fn set_dimension_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
+        ) -> Self {
+            self.dimension_filter_list = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateMetricSetInput`](crate::input::UpdateMetricSetInput).
         pub fn build(
             self,
@@ -5122,6 +5171,7 @@ pub mod update_metric_set_input {
                 dimension_list: self.dimension_list,
                 metric_set_frequency: self.metric_set_frequency,
                 metric_source: self.metric_source,
+                dimension_filter_list: self.dimension_filter_list,
             })
         }
     }
@@ -5262,6 +5312,10 @@ pub struct UpdateMetricSetInput {
     /// <p>Contains information about source data used to generate metrics.</p>
     #[doc(hidden)]
     pub metric_source: std::option::Option<crate::model::MetricSource>,
+    /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
+    #[doc(hidden)]
+    pub dimension_filter_list:
+        std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
 }
 impl UpdateMetricSetInput {
     /// <p>The ARN of the dataset to update.</p>
@@ -5296,6 +5350,12 @@ impl UpdateMetricSetInput {
     pub fn metric_source(&self) -> std::option::Option<&crate::model::MetricSource> {
         self.metric_source.as_ref()
     }
+    /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
+    pub fn dimension_filter_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricSetDimensionFilter]> {
+        self.dimension_filter_list.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateMetricSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5308,6 +5368,7 @@ impl std::fmt::Debug for UpdateMetricSetInput {
         formatter.field("dimension_list", &self.dimension_list);
         formatter.field("metric_set_frequency", &self.metric_set_frequency);
         formatter.field("metric_source", &self.metric_source);
+        formatter.field("dimension_filter_list", &self.dimension_filter_list);
         formatter.finish()
     }
 }
@@ -6187,6 +6248,10 @@ pub struct CreateMetricSetInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+    #[doc(hidden)]
+    pub dimension_filter_list:
+        std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
 }
 impl CreateMetricSetInput {
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
@@ -6236,6 +6301,12 @@ impl CreateMetricSetInput {
     {
         self.tags.as_ref()
     }
+    /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+    pub fn dimension_filter_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricSetDimensionFilter]> {
+        self.dimension_filter_list.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMetricSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6251,6 +6322,7 @@ impl std::fmt::Debug for CreateMetricSetInput {
         formatter.field("metric_source", &self.metric_source);
         formatter.field("timezone", &self.timezone);
         formatter.field("tags", &self.tags);
+        formatter.field("dimension_filter_list", &self.dimension_filter_list);
         formatter.finish()
     }
 }

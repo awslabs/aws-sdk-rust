@@ -1418,6 +1418,20 @@ pub fn parse_create_deployment_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AlarmsLimitExceededException" => crate::error::CreateDeploymentError { meta: generic, kind: crate::error::CreateDeploymentErrorKind::AlarmsLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::alarms_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_alarms_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeploymentError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "ApplicationDoesNotExistException" => crate::error::CreateDeploymentError { meta: generic, kind: crate::error::CreateDeploymentErrorKind::ApplicationDoesNotExistException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1508,6 +1522,20 @@ pub fn parse_create_deployment_error(
                     #[allow(unused_mut)]let mut output = crate::error::description_too_long_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_description_too_long_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeploymentError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidAlarmConfigException" => crate::error::CreateDeploymentError { meta: generic, kind: crate::error::CreateDeploymentErrorKind::InvalidAlarmConfigException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_alarm_config_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_alarm_config_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeploymentError::unhandled)?;
                     output.build()
                 }
             ;

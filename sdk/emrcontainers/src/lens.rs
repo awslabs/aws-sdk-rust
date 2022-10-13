@@ -28,3 +28,33 @@ pub(crate) fn reflens_structure_crate_output_list_virtual_clusters_output_next_t
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_job_runs_output_job_runs(
+    input: crate::output::ListJobRunsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::JobRun>> {
+    let input = match input.job_runs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_managed_endpoints_output_endpoints(
+    input: crate::output::ListManagedEndpointsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Endpoint>> {
+    let input = match input.endpoints {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_virtual_clusters_output_virtual_clusters(
+    input: crate::output::ListVirtualClustersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::VirtualCluster>> {
+    let input = match input.virtual_clusters {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

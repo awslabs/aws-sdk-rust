@@ -177,6 +177,8 @@ impl Client {
     ///   - [`target_locations(Vec<TargetLocation>)`](crate::client::fluent_builders::CreateAssociation::target_locations) / [`set_target_locations(Option<Vec<TargetLocation>>)`](crate::client::fluent_builders::CreateAssociation::set_target_locations): <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
     ///   - [`schedule_offset(i32)`](crate::client::fluent_builders::CreateAssociation::schedule_offset) / [`set_schedule_offset(Option<i32>)`](crate::client::fluent_builders::CreateAssociation::set_schedule_offset): <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>   <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>  </note>
     ///   - [`target_maps(Vec<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::CreateAssociation::target_maps) / [`set_target_maps(Option<Vec<HashMap<String, Vec<String>>>>)`](crate::client::fluent_builders::CreateAssociation::set_target_maps): <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAssociation::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAssociation::set_tags): <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+    ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::CreateAssociation::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::CreateAssociation::set_alarm_configuration): <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     /// - On success, responds with [`CreateAssociationOutput`](crate::output::CreateAssociationOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::output::CreateAssociationOutput::association_description): <p>Information about the association.</p>
     /// - On failure, responds with [`SdkError<CreateAssociationError>`](crate::error::CreateAssociationError)
@@ -200,7 +202,7 @@ impl Client {
     ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_content): <p>The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>  <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>  </ul>
     ///   - [`requires(Vec<DocumentRequires>)`](crate::client::fluent_builders::CreateDocument::requires) / [`set_requires(Option<Vec<DocumentRequires>>)`](crate::client::fluent_builders::CreateDocument::set_requires): <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
     ///   - [`attachments(Vec<AttachmentsSource>)`](crate::client::fluent_builders::CreateDocument::attachments) / [`set_attachments(Option<Vec<AttachmentsSource>>)`](crate::client::fluent_builders::CreateDocument::set_attachments): <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_name): <p>A name for the SSM document.</p> <important>   <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>   <ul>    <li> <p> <code>aws-</code> </p> </li>    <li> <p> <code>amazon</code> </p> </li>    <li> <p> <code>amzn</code> </p> </li>   </ul>  </important>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_name): <p>A name for the SSM document.</p> <important>   <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>   <ul>    <li> <p> <code>aws</code> </p> </li>    <li> <p> <code>amazon</code> </p> </li>    <li> <p> <code>amzn</code> </p> </li>   </ul>  </important>
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_display_name): <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
     ///   - [`version_name(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::version_name) / [`set_version_name(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_version_name): <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
     ///   - [`document_type(DocumentType)`](crate::client::fluent_builders::CreateDocument::document_type) / [`set_document_type(Option<DocumentType>)`](crate::client::fluent_builders::CreateDocument::set_document_type): <p>The type of document to create.</p> <note>   <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>  </note>
@@ -658,7 +660,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_information_filter_list(Vec<InstanceInformationFilter>)`](crate::client::fluent_builders::DescribeInstanceInformation::instance_information_filter_list) / [`set_instance_information_filter_list(Option<Vec<InstanceInformationFilter>>)`](crate::client::fluent_builders::DescribeInstanceInformation::set_instance_information_filter_list): <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>   <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>  </note>
-    ///   - [`filters(Vec<InstanceInformationStringFilter>)`](crate::client::fluent_builders::DescribeInstanceInformation::filters) / [`set_filters(Option<Vec<InstanceInformationStringFilter>>)`](crate::client::fluent_builders::DescribeInstanceInformation::set_filters): <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+    ///   - [`filters(Vec<InstanceInformationStringFilter>)`](crate::client::fluent_builders::DescribeInstanceInformation::filters) / [`set_filters(Option<Vec<InstanceInformationStringFilter>>)`](crate::client::fluent_builders::DescribeInstanceInformation::set_filters): <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeInstanceInformation::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeInstanceInformation::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceInformation::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeInstanceInformation::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     /// - On success, responds with [`DescribeInstanceInformationOutput`](crate::output::DescribeInstanceInformationOutput) with field(s):
@@ -1193,6 +1195,8 @@ impl Client {
     ///   - [`status_details(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::status_details): <p>The details explaining the status. Not available for all status values.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::start_time): <p>The time the task execution started.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::end_time): <p>The time the task execution completed.</p>
+    ///   - [`alarm_configuration(Option<AlarmConfiguration>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::alarm_configuration): <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    ///   - [`triggered_alarms(Option<Vec<AlarmStateInformation>>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::triggered_alarms): <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
     /// - On failure, responds with [`SdkError<GetMaintenanceWindowExecutionTaskError>`](crate::error::GetMaintenanceWindowExecutionTaskError)
     pub fn get_maintenance_window_execution_task(
         &self,
@@ -1245,6 +1249,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::name): <p>The retrieved task name.</p>
     ///   - [`description(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::description): <p>The retrieved task description.</p>
     ///   - [`cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::output::GetMaintenanceWindowTaskOutput::cutoff_behavior): <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+    ///   - [`alarm_configuration(Option<AlarmConfiguration>)`](crate::output::GetMaintenanceWindowTaskOutput::alarm_configuration): <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     /// - On failure, responds with [`SdkError<GetMaintenanceWindowTaskError>`](crate::error::GetMaintenanceWindowTaskError)
     pub fn get_maintenance_window_task(&self) -> fluent_builders::GetMaintenanceWindowTask {
         fluent_builders::GetMaintenanceWindowTask::new(self.handle.clone())
@@ -1770,6 +1775,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow::set_description): <p>An optional description for the task.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow::set_client_token): <p>User-provided idempotency token.</p>
     ///   - [`cutoff_behavior(MaintenanceWindowTaskCutoffBehavior)`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow::cutoff_behavior) / [`set_cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow::set_cutoff_behavior): <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>  <ul>   <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>   <li> <p> <code>CANCEL_TASK</code>:</p>    <ul>     <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>     <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>    </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>  </ul>
+    ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow::set_alarm_configuration): <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
     /// - On success, responds with [`RegisterTaskWithMaintenanceWindowOutput`](crate::output::RegisterTaskWithMaintenanceWindowOutput) with field(s):
     ///   - [`window_task_id(Option<String>)`](crate::output::RegisterTaskWithMaintenanceWindowOutput::window_task_id): <p>The ID of the task in the maintenance window.</p>
     /// - On failure, responds with [`SdkError<RegisterTaskWithMaintenanceWindowError>`](crate::error::RegisterTaskWithMaintenanceWindowError)
@@ -1841,9 +1847,10 @@ impl Client {
     ///   - [`output_s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::SendCommand::output_s3_key_prefix) / [`set_output_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::SendCommand::set_output_s3_key_prefix): <p>The directory structure within the S3 bucket where the responses should be stored.</p>
     ///   - [`max_concurrency(impl Into<String>)`](crate::client::fluent_builders::SendCommand::max_concurrency) / [`set_max_concurrency(Option<String>)`](crate::client::fluent_builders::SendCommand::set_max_concurrency): <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///   - [`max_errors(impl Into<String>)`](crate::client::fluent_builders::SendCommand::max_errors) / [`set_max_errors(Option<String>)`](crate::client::fluent_builders::SendCommand::set_max_errors): <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::SendCommand::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::SendCommand::set_service_role_arn): <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::SendCommand::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::SendCommand::set_service_role_arn): <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>  <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///   - [`notification_config(NotificationConfig)`](crate::client::fluent_builders::SendCommand::notification_config) / [`set_notification_config(Option<NotificationConfig>)`](crate::client::fluent_builders::SendCommand::set_notification_config): <p>Configurations for sending notifications.</p>
     ///   - [`cloud_watch_output_config(CloudWatchOutputConfig)`](crate::client::fluent_builders::SendCommand::cloud_watch_output_config) / [`set_cloud_watch_output_config(Option<CloudWatchOutputConfig>)`](crate::client::fluent_builders::SendCommand::set_cloud_watch_output_config): <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
+    ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::SendCommand::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::SendCommand::set_alarm_configuration): <p>The CloudWatch alarm you want to apply to your command.</p>
     /// - On success, responds with [`SendCommandOutput`](crate::output::SendCommandOutput) with field(s):
     ///   - [`command(Option<Command>)`](crate::output::SendCommandOutput::command): <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     /// - On failure, responds with [`SdkError<SendCommandError>`](crate::error::SendCommandError)
@@ -1875,6 +1882,7 @@ impl Client {
     ///   - [`max_errors(impl Into<String>)`](crate::client::fluent_builders::StartAutomationExecution::max_errors) / [`set_max_errors(Option<String>)`](crate::client::fluent_builders::StartAutomationExecution::set_max_errors): <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>  <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
     ///   - [`target_locations(Vec<TargetLocation>)`](crate::client::fluent_builders::StartAutomationExecution::target_locations) / [`set_target_locations(Option<Vec<TargetLocation>>)`](crate::client::fluent_builders::StartAutomationExecution::set_target_locations): <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartAutomationExecution::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartAutomationExecution::set_tags): <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=environment,Value=test</code> </p> </li>   <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>  </ul> <note>   <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>  </note>
+    ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::StartAutomationExecution::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::StartAutomationExecution::set_alarm_configuration): <p>The CloudWatch alarm you want to apply to your automation.</p>
     /// - On success, responds with [`StartAutomationExecutionOutput`](crate::output::StartAutomationExecutionOutput) with field(s):
     ///   - [`automation_execution_id(Option<String>)`](crate::output::StartAutomationExecutionOutput::automation_execution_id): <p>The unique ID of a newly scheduled automation execution.</p>
     /// - On failure, responds with [`SdkError<StartAutomationExecutionError>`](crate::error::StartAutomationExecutionError)
@@ -1910,7 +1918,7 @@ impl Client {
     ///   - [`parameters(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::StartSession::parameters) / [`set_parameters(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::StartSession::set_parameters): <p>The values you want to specify for the parameters defined in the Session document.</p>
     /// - On success, responds with [`StartSessionOutput`](crate::output::StartSessionOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::output::StartSessionOutput::session_id): <p>The ID of the session.</p>
-    ///   - [`token_value(Option<String>)`](crate::output::StartSessionOutput::token_value): <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+    ///   - [`token_value(Option<String>)`](crate::output::StartSessionOutput::token_value): <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
     ///   - [`stream_url(Option<String>)`](crate::output::StartSessionOutput::stream_url): <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>  <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     /// - On failure, responds with [`SdkError<StartSessionError>`](crate::error::StartSessionError)
     pub fn start_session(&self) -> fluent_builders::StartSession {
@@ -1972,6 +1980,7 @@ impl Client {
     ///   - [`target_locations(Vec<TargetLocation>)`](crate::client::fluent_builders::UpdateAssociation::target_locations) / [`set_target_locations(Option<Vec<TargetLocation>>)`](crate::client::fluent_builders::UpdateAssociation::set_target_locations): <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
     ///   - [`schedule_offset(i32)`](crate::client::fluent_builders::UpdateAssociation::schedule_offset) / [`set_schedule_offset(Option<i32>)`](crate::client::fluent_builders::UpdateAssociation::set_schedule_offset): <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>   <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>  </note>
     ///   - [`target_maps(Vec<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::UpdateAssociation::target_maps) / [`set_target_maps(Option<Vec<HashMap<String, Vec<String>>>>)`](crate::client::fluent_builders::UpdateAssociation::set_target_maps): <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::UpdateAssociation::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::UpdateAssociation::set_alarm_configuration): <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     /// - On success, responds with [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::output::UpdateAssociationOutput::association_description): <p>The description of the association that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateAssociationError>`](crate::error::UpdateAssociationError)
@@ -2104,6 +2113,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateMaintenanceWindowTask::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateMaintenanceWindowTask::set_description): <p>The new task description to specify.</p>
     ///   - [`replace(bool)`](crate::client::fluent_builders::UpdateMaintenanceWindowTask::replace) / [`set_replace(Option<bool>)`](crate::client::fluent_builders::UpdateMaintenanceWindowTask::set_replace): <p>If True, then all fields that are required by the <code>RegisterTaskWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
     ///   - [`cutoff_behavior(MaintenanceWindowTaskCutoffBehavior)`](crate::client::fluent_builders::UpdateMaintenanceWindowTask::cutoff_behavior) / [`set_cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::client::fluent_builders::UpdateMaintenanceWindowTask::set_cutoff_behavior): <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>  <ul>   <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>   <li> <p> <code>CANCEL_TASK</code>:</p>    <ul>     <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>     <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>    </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>  </ul>
+    ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::UpdateMaintenanceWindowTask::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::UpdateMaintenanceWindowTask::set_alarm_configuration): <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
     /// - On success, responds with [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput) with field(s):
     ///   - [`window_id(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::window_id): <p>The ID of the maintenance window that was updated.</p>
     ///   - [`window_task_id(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::window_task_id): <p>The task ID of the maintenance window that was updated.</p>
@@ -2119,6 +2129,7 @@ impl Client {
     ///   - [`name(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::name): <p>The updated task name.</p>
     ///   - [`description(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::description): <p>The updated task description.</p>
     ///   - [`cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::output::UpdateMaintenanceWindowTaskOutput::cutoff_behavior): <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    ///   - [`alarm_configuration(Option<AlarmConfiguration>)`](crate::output::UpdateMaintenanceWindowTaskOutput::alarm_configuration): <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     /// - On failure, responds with [`SdkError<UpdateMaintenanceWindowTaskError>`](crate::error::UpdateMaintenanceWindowTaskError)
     pub fn update_maintenance_window_task(&self) -> fluent_builders::UpdateMaintenanceWindowTask {
         fluent_builders::UpdateMaintenanceWindowTask::new(self.handle.clone())
@@ -3219,6 +3230,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_maps(input);
             self
         }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_alarm_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateAssociationBatch`.
     ///
@@ -3433,7 +3474,7 @@ pub mod fluent_builders {
         /// <p>A name for the SSM document.</p> <important>
         /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
         /// <ul>
-        /// <li> <p> <code>aws-</code> </p> </li>
+        /// <li> <p> <code>aws</code> </p> </li>
         /// <li> <p> <code>amazon</code> </p> </li>
         /// <li> <p> <code>amzn</code> </p> </li>
         /// </ul>
@@ -3445,7 +3486,7 @@ pub mod fluent_builders {
         /// <p>A name for the SSM document.</p> <important>
         /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
         /// <ul>
-        /// <li> <p> <code>aws-</code> </p> </li>
+        /// <li> <p> <code>aws</code> </p> </li>
         /// <li> <p> <code>amazon</code> </p> </li>
         /// <li> <p> <code>amzn</code> </p> </li>
         /// </ul>
@@ -7398,12 +7439,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
         pub fn filters(mut self, input: crate::model::InstanceInformationStringFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -15848,6 +15889,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cutoff_behavior(input);
             self
         }
+        /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_alarm_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `RemoveTagsFromResource`.
     ///
@@ -16564,11 +16618,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+        /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+        /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16603,6 +16659,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CloudWatchOutputConfig>,
         ) -> Self {
             self.inner = self.inner.set_cloud_watch_output_config(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_alarm_configuration(input);
             self
         }
     }
@@ -16954,6 +17023,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your automation.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your automation.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_alarm_configuration(input);
             self
         }
     }
@@ -17984,6 +18066,19 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_target_maps(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
+            self
+        }
+        /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_alarm_configuration(input);
             self
         }
     }
@@ -19149,6 +19244,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
         ) -> Self {
             self.inner = self.inner.set_cutoff_behavior(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
+            self
+        }
+        /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+        pub fn set_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_alarm_configuration(input);
             self
         }
     }

@@ -116,15 +116,31 @@ impl Client {
     ) -> fluent_builders::BatchGetCustomDataIdentifiers {
         fluent_builders::BatchGetCustomDataIdentifiers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateAllowList`](crate::client::fluent_builders::CreateAllowList) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAllowList::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAllowList::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`criteria(AllowListCriteria)`](crate::client::fluent_builders::CreateAllowList::criteria) / [`set_criteria(Option<AllowListCriteria>)`](crate::client::fluent_builders::CreateAllowList::set_criteria): <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAllowList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAllowList::set_description): <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAllowList::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAllowList::set_name): <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAllowList::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAllowList::set_tags): <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>  <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - On success, responds with [`CreateAllowListOutput`](crate::output::CreateAllowListOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateAllowListOutput::arn): <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateAllowListOutput::id): <p>The unique identifier for the allow list.</p>
+    /// - On failure, responds with [`SdkError<CreateAllowListError>`](crate::error::CreateAllowListError)
+    pub fn create_allow_list(&self) -> fluent_builders::CreateAllowList {
+        fluent_builders::CreateAllowList::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateClassificationJob`](crate::client::fluent_builders::CreateClassificationJob) operation.
     ///
     /// - The fluent builder is configurable:
+    ///   - [`allow_list_ids(Vec<String>)`](crate::client::fluent_builders::CreateClassificationJob::allow_list_ids) / [`set_allow_list_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateClassificationJob::set_allow_list_ids): <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateClassificationJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateClassificationJob::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     ///   - [`custom_data_identifier_ids(Vec<String>)`](crate::client::fluent_builders::CreateClassificationJob::custom_data_identifier_ids) / [`set_custom_data_identifier_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateClassificationJob::set_custom_data_identifier_ids): <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateClassificationJob::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateClassificationJob::set_description): <p>A custom description of the job. The description can contain as many as 200 characters.</p>
-    ///   - [`initial_run(bool)`](crate::client::fluent_builders::CreateClassificationJob::initial_run) / [`set_initial_run(bool)`](crate::client::fluent_builders::CreateClassificationJob::set_initial_run): <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p> <p>If you configure the job to run only once, don't specify a value for this property.</p>
+    ///   - [`initial_run(bool)`](crate::client::fluent_builders::CreateClassificationJob::initial_run) / [`set_initial_run(bool)`](crate::client::fluent_builders::CreateClassificationJob::set_initial_run): <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>  <p>If you configure the job to run only once, don't specify a value for this property.</p>
     ///   - [`job_type(JobType)`](crate::client::fluent_builders::CreateClassificationJob::job_type) / [`set_job_type(Option<JobType>)`](crate::client::fluent_builders::CreateClassificationJob::set_job_type): <p>The schedule for running the job. Valid values are:</p>  <ul>  <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>   <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li> </ul>
-    ///   - [`managed_data_identifier_ids(Vec<String>)`](crate::client::fluent_builders::CreateClassificationJob::managed_data_identifier_ids) / [`set_managed_data_identifier_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateClassificationJob::set_managed_data_identifier_ids): <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+    ///   - [`managed_data_identifier_ids(Vec<String>)`](crate::client::fluent_builders::CreateClassificationJob::managed_data_identifier_ids) / [`set_managed_data_identifier_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateClassificationJob::set_managed_data_identifier_ids): <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>  <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
     ///   - [`managed_data_identifier_selector(ManagedDataIdentifierSelector)`](crate::client::fluent_builders::CreateClassificationJob::managed_data_identifier_selector) / [`set_managed_data_identifier_selector(Option<ManagedDataIdentifierSelector>)`](crate::client::fluent_builders::CreateClassificationJob::set_managed_data_identifier_selector): <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>  <ul>  <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>   <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li> </ul>  <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateClassificationJob::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateClassificationJob::set_name): <p>A custom name for the job. The name can contain as many as 500 characters.</p>
     ///   - [`s3_job_definition(S3JobDefinition)`](crate::client::fluent_builders::CreateClassificationJob::s3_job_definition) / [`set_s3_job_definition(Option<S3JobDefinition>)`](crate::client::fluent_builders::CreateClassificationJob::set_s3_job_definition): <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
@@ -216,10 +232,21 @@ impl Client {
     pub fn decline_invitations(&self) -> fluent_builders::DeclineInvitations {
         fluent_builders::DeclineInvitations::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteAllowList`](crate::client::fluent_builders::DeleteAllowList) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteAllowList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteAllowList::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`ignore_job_checks(impl Into<String>)`](crate::client::fluent_builders::DeleteAllowList::ignore_job_checks) / [`set_ignore_job_checks(Option<String>)`](crate::client::fluent_builders::DeleteAllowList::set_ignore_job_checks): <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>  <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+    /// - On success, responds with [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAllowListError>`](crate::error::DeleteAllowListError)
+    pub fn delete_allow_list(&self) -> fluent_builders::DeleteAllowList {
+        fluent_builders::DeleteAllowList::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteCustomDataIdentifier`](crate::client::fluent_builders::DeleteCustomDataIdentifier) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomDataIdentifier::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCustomDataIdentifier::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomDataIdentifier::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCustomDataIdentifier::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`DeleteCustomDataIdentifierOutput`](crate::output::DeleteCustomDataIdentifierOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCustomDataIdentifierError>`](crate::error::DeleteCustomDataIdentifierError)
@@ -229,7 +256,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteFindingsFilter`](crate::client::fluent_builders::DeleteFindingsFilter) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`DeleteFindingsFilterOutput`](crate::output::DeleteFindingsFilterOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFindingsFilterError>`](crate::error::DeleteFindingsFilterError)
@@ -249,7 +276,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteMember`](crate::client::fluent_builders::DeleteMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteMember::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteMember::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`DeleteMemberOutput`](crate::output::DeleteMemberOutput)
 
     /// - On failure, responds with [`SdkError<DeleteMemberError>`](crate::error::DeleteMemberError)
@@ -276,9 +303,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeClassificationJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeClassificationJob::set_job_id): <p>The unique identifier for the classification job.</p>
     /// - On success, responds with [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput) with field(s):
+    ///   - [`allow_list_ids(Option<Vec<String>>)`](crate::output::DescribeClassificationJobOutput::allow_list_ids): <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
     ///   - [`client_token(Option<String>)`](crate::output::DescribeClassificationJobOutput::client_token): <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeClassificationJobOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    ///   - [`custom_data_identifier_ids(Option<Vec<String>>)`](crate::output::DescribeClassificationJobOutput::custom_data_identifier_ids): <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
+    ///   - [`custom_data_identifier_ids(Option<Vec<String>>)`](crate::output::DescribeClassificationJobOutput::custom_data_identifier_ids): <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeClassificationJobOutput::description): <p>The custom description of the job.</p>
     ///   - [`initial_run(bool)`](crate::output::DescribeClassificationJobOutput::initial_run): <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
     ///   - [`job_arn(Option<String>)`](crate::output::DescribeClassificationJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the job.</p>
@@ -362,7 +390,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DisassociateMember`](crate::client::fluent_builders::DisassociateMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateMember::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateMember::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateMemberError>`](crate::error::DisassociateMemberError)
@@ -373,7 +401,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::EnableMacie::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::EnableMacie::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    ///   - [`finding_publishing_frequency(FindingPublishingFrequency)`](crate::client::fluent_builders::EnableMacie::finding_publishing_frequency) / [`set_finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::client::fluent_builders::EnableMacie::set_finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    ///   - [`finding_publishing_frequency(FindingPublishingFrequency)`](crate::client::fluent_builders::EnableMacie::finding_publishing_frequency) / [`set_finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::client::fluent_builders::EnableMacie::set_finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     ///   - [`status(MacieStatus)`](crate::client::fluent_builders::EnableMacie::status) / [`set_status(Option<MacieStatus>)`](crate::client::fluent_builders::EnableMacie::set_status): <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
     /// - On success, responds with [`EnableMacieOutput`](crate::output::EnableMacieOutput)
 
@@ -403,6 +431,24 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetAdministratorAccountError>`](crate::error::GetAdministratorAccountError)
     pub fn get_administrator_account(&self) -> fluent_builders::GetAdministratorAccount {
         fluent_builders::GetAdministratorAccount::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetAllowList`](crate::client::fluent_builders::GetAllowList) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetAllowList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetAllowList::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// - On success, responds with [`GetAllowListOutput`](crate::output::GetAllowListOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetAllowListOutput::arn): <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetAllowListOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
+    ///   - [`criteria(Option<AllowListCriteria>)`](crate::output::GetAllowListOutput::criteria): <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetAllowListOutput::description): <p>The custom description of the allow list.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetAllowListOutput::id): <p>The unique identifier for the allow list.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetAllowListOutput::name): <p>The custom name of the allow list.</p>
+    ///   - [`status(Option<AllowListStatus>)`](crate::output::GetAllowListOutput::status): <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetAllowListOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetAllowListOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
+    /// - On failure, responds with [`SdkError<GetAllowListError>`](crate::error::GetAllowListError)
+    pub fn get_allow_list(&self) -> fluent_builders::GetAllowList {
+        fluent_builders::GetAllowList::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetBucketStatistics`](crate::client::fluent_builders::GetBucketStatistics) operation.
     ///
@@ -441,7 +487,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetCustomDataIdentifier`](crate::client::fluent_builders::GetCustomDataIdentifier) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCustomDataIdentifier::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCustomDataIdentifier::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCustomDataIdentifier::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCustomDataIdentifier::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`GetCustomDataIdentifierOutput`](crate::output::GetCustomDataIdentifierOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::arn): <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::GetCustomDataIdentifierOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
@@ -473,7 +519,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetFindingsFilter`](crate::client::fluent_builders::GetFindingsFilter) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`GetFindingsFilterOutput`](crate::output::GetFindingsFilterOutput) with field(s):
     ///   - [`action(Option<FindingsFilterAction>)`](crate::output::GetFindingsFilterOutput::action): <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     ///   - [`arn(Option<String>)`](crate::output::GetFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter.</p>
@@ -482,7 +528,7 @@ impl Client {
     ///   - [`id(Option<String>)`](crate::output::GetFindingsFilterOutput::id): <p>The unique identifier for the filter.</p>
     ///   - [`name(Option<String>)`](crate::output::GetFindingsFilterOutput::name): <p>The custom name of the filter.</p>
     ///   - [`position(i32)`](crate::output::GetFindingsFilterOutput::position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetFindingsFilterOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetFindingsFilterOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     /// - On failure, responds with [`SdkError<GetFindingsFilterError>`](crate::error::GetFindingsFilterError)
     pub fn get_findings_filter(&self) -> fluent_builders::GetFindingsFilter {
         fluent_builders::GetFindingsFilter::new(self.handle.clone())
@@ -528,7 +574,7 @@ impl Client {
 
     /// - On success, responds with [`GetMacieSessionOutput`](crate::output::GetMacieSessionOutput) with field(s):
     ///   - [`created_at(Option<DateTime>)`](crate::output::GetMacieSessionOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
-    ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::output::GetMacieSessionOutput::finding_publishing_frequency): <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::output::GetMacieSessionOutput::finding_publishing_frequency): <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     ///   - [`service_role(Option<String>)`](crate::output::GetMacieSessionOutput::service_role): <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
     ///   - [`status(Option<MacieStatus>)`](crate::output::GetMacieSessionOutput::status): <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::GetMacieSessionOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
@@ -549,7 +595,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetMember`](crate::client::fluent_builders::GetMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetMember::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetMember::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`GetMemberOutput`](crate::output::GetMemberOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::GetMemberOutput::account_id): <p>The Amazon Web Services account ID for the account.</p>
     ///   - [`administrator_account_id(Option<String>)`](crate::output::GetMemberOutput::administrator_account_id): <p>The Amazon Web Services account ID for the administrator account.</p>
@@ -558,7 +604,7 @@ impl Client {
     ///   - [`invited_at(Option<DateTime>)`](crate::output::GetMemberOutput::invited_at): <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
     ///   - [`master_account_id(Option<String>)`](crate::output::GetMemberOutput::master_account_id): <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     ///   - [`relationship_status(Option<RelationshipStatus>)`](crate::output::GetMemberOutput::relationship_status): <p>The current status of the relationship between the account and the administrator account.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetMemberOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account in Amazon Macie.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetMemberOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::GetMemberOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
     /// - On failure, responds with [`SdkError<GetMemberError>`](crate::error::GetMemberError)
     pub fn get_member(&self) -> fluent_builders::GetMember {
@@ -592,7 +638,7 @@ impl Client {
     ///   - [`finding_id(impl Into<String>)`](crate::client::fluent_builders::GetSensitiveDataOccurrencesAvailability::finding_id) / [`set_finding_id(Option<String>)`](crate::client::fluent_builders::GetSensitiveDataOccurrencesAvailability::set_finding_id): <p>The unique identifier for the finding.</p>
     /// - On success, responds with [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput) with field(s):
     ///   - [`code(Option<AvailabilityCode>)`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput::code): <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
-    ///   - [`reasons(Option<Vec<UnavailabilityReasonCode>>)`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput::reasons): <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>  <ul>  <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>   <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>   <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>   <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>   <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li> </ul>  <p>This value is null if sensitive data can be retrieved for the finding.</p>
+    ///   - [`reasons(Option<Vec<UnavailabilityReasonCode>>)`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput::reasons): <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>  <ul>  <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>   <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>   <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>   <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>   <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li> </ul>  <p>This value is null if sensitive data can be retrieved for the finding.</p>
     /// - On failure, responds with [`SdkError<GetSensitiveDataOccurrencesAvailabilityError>`](crate::error::GetSensitiveDataOccurrencesAvailabilityError)
     pub fn get_sensitive_data_occurrences_availability(
         &self,
@@ -626,6 +672,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetUsageTotalsError>`](crate::error::GetUsageTotalsError)
     pub fn get_usage_totals(&self) -> fluent_builders::GetUsageTotals {
         fluent_builders::GetUsageTotals::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListAllowLists`](crate::client::fluent_builders::ListAllowLists) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAllowLists::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAllowLists::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAllowLists::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAllowLists::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - On success, responds with [`ListAllowListsOutput`](crate::output::ListAllowListsOutput) with field(s):
+    ///   - [`allow_lists(Option<Vec<AllowListSummary>>)`](crate::output::ListAllowListsOutput::allow_lists): <p>An array of objects, one for each allow list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAllowListsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListAllowListsError>`](crate::error::ListAllowListsError)
+    pub fn list_allow_lists(&self) -> fluent_builders::ListAllowLists {
+        fluent_builders::ListAllowLists::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListClassificationJobs`](crate::client::fluent_builders::ListClassificationJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClassificationJobs::into_paginator).
@@ -739,9 +797,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -789,7 +847,7 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>  <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
@@ -814,13 +872,27 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateAllowList`](crate::client::fluent_builders::UpdateAllowList) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`criteria(AllowListCriteria)`](crate::client::fluent_builders::UpdateAllowList::criteria) / [`set_criteria(Option<AllowListCriteria>)`](crate::client::fluent_builders::UpdateAllowList::set_criteria): <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>  <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAllowList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAllowList::set_description): <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateAllowList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateAllowList::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAllowList::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAllowList::set_name): <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    /// - On success, responds with [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateAllowListOutput::arn): <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    ///   - [`id(Option<String>)`](crate::output::UpdateAllowListOutput::id): <p>The unique identifier for the allow list.</p>
+    /// - On failure, responds with [`SdkError<UpdateAllowListError>`](crate::error::UpdateAllowListError)
+    pub fn update_allow_list(&self) -> fluent_builders::UpdateAllowList {
+        fluent_builders::UpdateAllowList::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateClassificationJob`](crate::client::fluent_builders::UpdateClassificationJob) operation.
     ///
@@ -839,7 +911,7 @@ impl Client {
     ///   - [`action(FindingsFilterAction)`](crate::client::fluent_builders::UpdateFindingsFilter::action) / [`set_action(Option<FindingsFilterAction>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::UpdateFindingsFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_finding_criteria): <p>The criteria to use to filter findings.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_name): <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     ///   - [`position(i32)`](crate::client::fluent_builders::UpdateFindingsFilter::position) / [`set_position(i32)`](crate::client::fluent_builders::UpdateFindingsFilter::set_position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -853,7 +925,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateMacieSession`](crate::client::fluent_builders::UpdateMacieSession) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`finding_publishing_frequency(FindingPublishingFrequency)`](crate::client::fluent_builders::UpdateMacieSession::finding_publishing_frequency) / [`set_finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::client::fluent_builders::UpdateMacieSession::set_finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    ///   - [`finding_publishing_frequency(FindingPublishingFrequency)`](crate::client::fluent_builders::UpdateMacieSession::finding_publishing_frequency) / [`set_finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::client::fluent_builders::UpdateMacieSession::set_finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     ///   - [`status(MacieStatus)`](crate::client::fluent_builders::UpdateMacieSession::status) / [`set_status(Option<MacieStatus>)`](crate::client::fluent_builders::UpdateMacieSession::set_status): <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     /// - On success, responds with [`UpdateMacieSessionOutput`](crate::output::UpdateMacieSessionOutput)
 
@@ -864,7 +936,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateMemberSession`](crate::client::fluent_builders::UpdateMemberSession) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateMemberSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateMemberSession::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateMemberSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateMemberSession::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     ///   - [`status(MacieStatus)`](crate::client::fluent_builders::UpdateMemberSession::status) / [`set_status(Option<MacieStatus>)`](crate::client::fluent_builders::UpdateMemberSession::set_status): <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     /// - On success, responds with [`UpdateMemberSessionOutput`](crate::output::UpdateMemberSessionOutput)
 
@@ -1092,6 +1164,141 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateAllowList`.
+    ///
+    /// <p>Creates and defines the settings for an allow list.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateAllowList {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_allow_list_input::Builder,
+    }
+    impl CreateAllowList {
+        /// Creates a new `CreateAllowList`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateAllowList,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateAllowListError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAllowListOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateAllowListError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+        pub fn criteria(mut self, input: crate::model::AllowListCriteria) -> Self {
+            self.inner = self.inner.criteria(input);
+            self
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+        pub fn set_criteria(
+            mut self,
+            input: std::option::Option<crate::model::AllowListCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_criteria(input);
+            self
+        }
+        /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
+        /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
+        /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateClassificationJob`.
     ///
     /// <p>Creates and defines the settings for a classification job.</p>
@@ -1157,6 +1364,23 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Appends an item to `allowListIds`.
+        ///
+        /// To override the contents of this collection use [`set_allow_list_ids`](Self::set_allow_list_ids).
+        ///
+        /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
+        pub fn allow_list_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.allow_list_ids(input.into());
+            self
+        }
+        /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
+        pub fn set_allow_list_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_allow_list_ids(input);
+            self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2087,6 +2311,98 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteAllowList`.
+    ///
+    /// <p>Deletes an allow list.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteAllowList {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_allow_list_input::Builder,
+    }
+    impl DeleteAllowList {
+        /// Creates a new `DeleteAllowList`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteAllowList,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAllowListError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAllowListOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAllowListError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
+        /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+        pub fn ignore_job_checks(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ignore_job_checks(input.into());
+            self
+        }
+        /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
+        /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+        pub fn set_ignore_job_checks(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ignore_job_checks(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteCustomDataIdentifier`.
     ///
     /// <p>Soft deletes a custom data identifier.</p>
@@ -2153,12 +2469,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -2230,12 +2546,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -2391,12 +2707,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3030,12 +3346,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3117,7 +3433,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -3125,7 +3441,7 @@ pub mod fluent_builders {
             self.inner = self.inner.finding_publishing_frequency(input);
             self
         }
-        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -3299,6 +3615,83 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `GetAllowList`.
+    ///
+    /// <p>Retrieves the settings and status of an allow list.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetAllowList {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_allow_list_input::Builder,
+    }
+    impl GetAllowList {
+        /// Creates a new `GetAllowList`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::GetAllowList,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetAllowListError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetAllowListOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetAllowListError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
         }
     }
     /// Fluent builder constructing a request to `GetBucketStatistics`.
@@ -3515,12 +3908,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3689,12 +4082,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4164,12 +4557,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4177,7 +4570,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRevealConfiguration`.
     ///
-    /// <p>Retrieves the status and configuration settings for retrieving (revealing) occurrences of sensitive data reported by findings.</p>
+    /// <p>Retrieves the status and configuration settings for retrieving occurrences of sensitive data reported by findings.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRevealConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -4244,7 +4637,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSensitiveDataOccurrences`.
     ///
-    /// <p>Retrieves (reveals) occurrences of sensitive data reported by a finding.</p>
+    /// <p>Retrieves occurrences of sensitive data reported by a finding.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSensitiveDataOccurrences {
         handle: std::sync::Arc<super::Handle>,
@@ -4321,7 +4714,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSensitiveDataOccurrencesAvailability`.
     ///
-    /// <p>Checks whether occurrences of sensitive data can be retrieved (revealed) for a finding.</p>
+    /// <p>Checks whether occurrences of sensitive data can be retrieved for a finding.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSensitiveDataOccurrencesAvailability {
         handle: std::sync::Arc<super::Handle>,
@@ -4610,6 +5003,93 @@ pub mod fluent_builders {
         /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
         pub fn set_time_range(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_time_range(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAllowLists`.
+    ///
+    /// <p>Retrieves a subset of information about all the allow lists for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAllowLists {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_allow_lists_input::Builder,
+    }
+    impl ListAllowLists {
+        /// Creates a new `ListAllowLists`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::ListAllowLists,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListAllowListsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAllowListsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAllowListsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items to include in each page of a paginated response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -5408,7 +5888,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieves the tags (keys and values) that are associated with a classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>Retrieves the tags (keys and values) that are associated with an Amazon Macie resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -5472,12 +5952,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5791,7 +6271,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds or updates one or more tags (keys and values) that are associated with a classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>Adds or updates one or more tags (keys and values) that are associated with an Amazon Macie resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -5855,12 +6335,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6024,7 +6504,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags (keys and values) from a classification job, custom data identifier, findings filter, or member account.</p>
+    /// <p>Removes one or more tags (keys and values) from an Amazon Macie resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -6088,12 +6568,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6102,17 +6582,129 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
+        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
+        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, separated by an ampersand (&amp;).</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateAllowList`.
+    ///
+    /// <p>Updates the settings for an allow list.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateAllowList {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_allow_list_input::Builder,
+    }
+    impl UpdateAllowList {
+        /// Creates a new `UpdateAllowList`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateAllowList,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAllowListError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAllowListOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAllowListError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
+        /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+        pub fn criteria(mut self, input: crate::model::AllowListCriteria) -> Self {
+            self.inner = self.inner.criteria(input);
+            self
+        }
+        /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
+        /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+        pub fn set_criteria(
+            mut self,
+            input: std::option::Option<crate::model::AllowListCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_criteria(input);
+            self
+        }
+        /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -6320,12 +6912,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_finding_criteria(input);
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -6429,7 +7021,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -6437,7 +7029,7 @@ pub mod fluent_builders {
             self.inner = self.inner.finding_publishing_frequency(input);
             self
         }
-        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -6522,12 +7114,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+        /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -6622,7 +7214,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRevealConfiguration`.
     ///
-    /// <p>Updates the status and configuration settings for retrieving (revealing) occurrences of sensitive data reported by findings.</p>
+    /// <p>Updates the status and configuration settings for retrieving occurrences of sensitive data reported by findings.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRevealConfiguration {
         handle: std::sync::Arc<super::Handle>,

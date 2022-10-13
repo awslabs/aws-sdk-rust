@@ -176,7 +176,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::CreateApp::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::CreateApp::set_domain_id): <p>The domain ID.</p>
     ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_user_profile_name): <p>The user profile name.</p>
-    ///   - [`app_type(AppType)`](crate::client::fluent_builders::CreateApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::CreateApp::set_app_type): <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+    ///   - [`app_type(AppType)`](crate::client::fluent_builders::CreateApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::CreateApp::set_app_type): <p>The type of app.</p>
     ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_app_name): <p>The name of the app.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApp::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApp::set_tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     ///   - [`resource_spec(ResourceSpec)`](crate::client::fluent_builders::CreateApp::resource_spec) / [`set_resource_spec(Option<ResourceSpec>)`](crate::client::fluent_builders::CreateApp::set_resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>   <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>  </note>
@@ -397,6 +397,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpointConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>  <p>The KmsKeyId can be any of the following formats: </p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>   <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>   <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>   <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>  </note>
     ///   - [`async_inference_config(AsyncInferenceConfig)`](crate::client::fluent_builders::CreateEndpointConfig::async_inference_config) / [`set_async_inference_config(Option<AsyncInferenceConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_async_inference_config): <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
+    ///   - [`explainer_config(ExplainerConfig)`](crate::client::fluent_builders::CreateEndpointConfig::explainer_config) / [`set_explainer_config(Option<ExplainerConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_explainer_config): <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
     /// - On success, responds with [`CreateEndpointConfigOutput`](crate::output::CreateEndpointConfigOutput) with field(s):
     ///   - [`endpoint_config_arn(Option<String>)`](crate::output::CreateEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     /// - On failure, responds with [`SdkError<CreateEndpointConfigError>`](crate::error::CreateEndpointConfigError)
@@ -808,7 +809,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_training_job_name): <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::hyper_parameters) / [`set_hyper_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_hyper_parameters): <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>  <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::hyper_parameters) / [`set_hyper_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_hyper_parameters): <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>  <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>   <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>  </important>
     ///   - [`algorithm_specification(AlgorithmSpecification)`](crate::client::fluent_builders::CreateTrainingJob::algorithm_specification) / [`set_algorithm_specification(Option<AlgorithmSpecification>)`](crate::client::fluent_builders::CreateTrainingJob::set_algorithm_specification): <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf. </p>  <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
     ///   - [`input_data_config(Vec<Channel>)`](crate::client::fluent_builders::CreateTrainingJob::input_data_config) / [`set_input_data_config(Option<Vec<Channel>>)`](crate::client::fluent_builders::CreateTrainingJob::set_input_data_config): <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>  <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>  <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
@@ -895,8 +896,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_domain_id): <p>The ID of the associated Domain.</p>
     ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_user_profile_name): <p>A name for the UserProfile. This value is not case sensitive.</p>
-    ///   - [`single_sign_on_user_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::single_sign_on_user_identifier) / [`set_single_sign_on_user_identifier(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_single_sign_on_user_identifier): <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
-    ///   - [`single_sign_on_user_value(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::single_sign_on_user_value) / [`set_single_sign_on_user_value(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_single_sign_on_user_value): <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    ///   - [`single_sign_on_user_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::single_sign_on_user_identifier) / [`set_single_sign_on_user_identifier(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_single_sign_on_user_identifier): <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    ///   - [`single_sign_on_user_value(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::single_sign_on_user_value) / [`set_single_sign_on_user_value(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_single_sign_on_user_value): <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateUserProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateUserProfile::set_tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>  <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
     ///   - [`user_settings(UserSettings)`](crate::client::fluent_builders::CreateUserProfile::user_settings) / [`set_user_settings(Option<UserSettings>)`](crate::client::fluent_builders::CreateUserProfile::set_user_settings): <p>A collection of settings.</p>
     /// - On success, responds with [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput) with field(s):
@@ -1629,7 +1630,7 @@ impl Client {
     ///   - [`domain_id(Option<String>)`](crate::output::DescribeDomainOutput::domain_id): <p>The domain ID.</p>
     ///   - [`domain_name(Option<String>)`](crate::output::DescribeDomainOutput::domain_name): <p>The domain name.</p>
     ///   - [`home_efs_file_system_id(Option<String>)`](crate::output::DescribeDomainOutput::home_efs_file_system_id): <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
-    ///   - [`single_sign_on_managed_application_instance_id(Option<String>)`](crate::output::DescribeDomainOutput::single_sign_on_managed_application_instance_id): <p>The SSO managed application instance ID.</p>
+    ///   - [`single_sign_on_managed_application_instance_id(Option<String>)`](crate::output::DescribeDomainOutput::single_sign_on_managed_application_instance_id): <p>The IAM Identity Center managed application instance ID.</p>
     ///   - [`status(Option<DomainStatus>)`](crate::output::DescribeDomainOutput::status): <p>The status.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeDomainOutput::creation_time): <p>The creation time.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeDomainOutput::last_modified_time): <p>The last modified time.</p>
@@ -1712,6 +1713,7 @@ impl Client {
     ///   - [`last_deployment_config(Option<DeploymentConfig>)`](crate::output::DescribeEndpointOutput::last_deployment_config): <p>The most recent deployment configuration for the endpoint.</p>
     ///   - [`async_inference_config(Option<AsyncInferenceConfig>)`](crate::output::DescribeEndpointOutput::async_inference_config): <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     ///   - [`pending_deployment_summary(Option<PendingDeploymentSummary>)`](crate::output::DescribeEndpointOutput::pending_deployment_summary): <p>Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or updating with a new endpoint configuration.</p>
+    ///   - [`explainer_config(Option<ExplainerConfig>)`](crate::output::DescribeEndpointOutput::explainer_config): <p>The configuration parameters for an explainer.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::error::DescribeEndpointError)
     pub fn describe_endpoint(&self) -> fluent_builders::DescribeEndpoint {
         fluent_builders::DescribeEndpoint::new(self.handle.clone())
@@ -1728,6 +1730,7 @@ impl Client {
     ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeEndpointConfigOutput::kms_key_id): <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEndpointConfigOutput::creation_time): <p>A timestamp that shows when the endpoint configuration was created.</p>
     ///   - [`async_inference_config(Option<AsyncInferenceConfig>)`](crate::output::DescribeEndpointConfigOutput::async_inference_config): <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
+    ///   - [`explainer_config(Option<ExplainerConfig>)`](crate::output::DescribeEndpointConfigOutput::explainer_config): <p>The configuration parameters for an explainer.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointConfigError>`](crate::error::DescribeEndpointConfigError)
     pub fn describe_endpoint_config(&self) -> fluent_builders::DescribeEndpointConfig {
         fluent_builders::DescribeEndpointConfig::new(self.handle.clone())
@@ -2337,6 +2340,7 @@ impl Client {
     ///   - [`profiling_status(Option<ProfilingStatus>)`](crate::output::DescribeTrainingJobOutput::profiling_status): <p>Profiling status of a training job.</p>
     ///   - [`retry_strategy(Option<RetryStrategy>)`](crate::output::DescribeTrainingJobOutput::retry_strategy): <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     ///   - [`environment(Option<HashMap<String, String>>)`](crate::output::DescribeTrainingJobOutput::environment): <p>The environment variables to set in the Docker container.</p>
+    ///   - [`warm_pool_status(Option<WarmPoolStatus>)`](crate::output::DescribeTrainingJobOutput::warm_pool_status): <p>The status of the warm pool associated with the training job.</p>
     /// - On failure, responds with [`SdkError<DescribeTrainingJobError>`](crate::error::DescribeTrainingJobError)
     pub fn describe_training_job(&self) -> fluent_builders::DescribeTrainingJob {
         fluent_builders::DescribeTrainingJob::new(self.handle.clone())
@@ -2429,8 +2433,8 @@ impl Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeUserProfileOutput::last_modified_time): <p>The last modified time.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeUserProfileOutput::creation_time): <p>The creation time.</p>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeUserProfileOutput::failure_reason): <p>The failure reason.</p>
-    ///   - [`single_sign_on_user_identifier(Option<String>)`](crate::output::DescribeUserProfileOutput::single_sign_on_user_identifier): <p>The SSO user identifier.</p>
-    ///   - [`single_sign_on_user_value(Option<String>)`](crate::output::DescribeUserProfileOutput::single_sign_on_user_value): <p>The SSO user value.</p>
+    ///   - [`single_sign_on_user_identifier(Option<String>)`](crate::output::DescribeUserProfileOutput::single_sign_on_user_identifier): <p>The IAM Identity Center user identifier.</p>
+    ///   - [`single_sign_on_user_value(Option<String>)`](crate::output::DescribeUserProfileOutput::single_sign_on_user_value): <p>The IAM Identity Center user value.</p>
     ///   - [`user_settings(Option<UserSettings>)`](crate::output::DescribeUserProfileOutput::user_settings): <p>A collection of settings.</p>
     /// - On failure, responds with [`SdkError<DescribeUserProfileError>`](crate::error::DescribeUserProfileError)
     pub fn describe_user_profile(&self) -> fluent_builders::DescribeUserProfile {
@@ -3543,6 +3547,7 @@ impl Client {
     ///   - [`status_equals(TrainingJobStatus)`](crate::client::fluent_builders::ListTrainingJobs::status_equals) / [`set_status_equals(Option<TrainingJobStatus>)`](crate::client::fluent_builders::ListTrainingJobs::set_status_equals): <p>A filter that retrieves only training jobs with a specific status.</p>
     ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListTrainingJobs::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListTrainingJobs::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListTrainingJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListTrainingJobs::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    ///   - [`warm_pool_status_equals(WarmPoolResourceStatus)`](crate::client::fluent_builders::ListTrainingJobs::warm_pool_status_equals) / [`set_warm_pool_status_equals(Option<WarmPoolResourceStatus>)`](crate::client::fluent_builders::ListTrainingJobs::set_warm_pool_status_equals): <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
     /// - On success, responds with [`ListTrainingJobsOutput`](crate::output::ListTrainingJobsOutput) with field(s):
     ///   - [`training_job_summaries(Option<Vec<TrainingJobSummary>>)`](crate::output::ListTrainingJobsOutput::training_job_summaries): <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTrainingJobsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
@@ -4260,6 +4265,7 @@ impl Client {
     ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::UpdateTrainingJob::set_training_job_name): <p>The name of a training job to update the Debugger profiling configuration.</p>
     ///   - [`profiler_config(ProfilerConfigForUpdate)`](crate::client::fluent_builders::UpdateTrainingJob::profiler_config) / [`set_profiler_config(Option<ProfilerConfigForUpdate>)`](crate::client::fluent_builders::UpdateTrainingJob::set_profiler_config): <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
     ///   - [`profiler_rule_configurations(Vec<ProfilerRuleConfiguration>)`](crate::client::fluent_builders::UpdateTrainingJob::profiler_rule_configurations) / [`set_profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::client::fluent_builders::UpdateTrainingJob::set_profiler_rule_configurations): <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    ///   - [`resource_config(ResourceConfigForUpdate)`](crate::client::fluent_builders::UpdateTrainingJob::resource_config) / [`set_resource_config(Option<ResourceConfigForUpdate>)`](crate::client::fluent_builders::UpdateTrainingJob::set_resource_config): <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
     /// - On success, responds with [`UpdateTrainingJobOutput`](crate::output::UpdateTrainingJobOutput) with field(s):
     ///   - [`training_job_arn(Option<String>)`](crate::output::UpdateTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>
     /// - On failure, responds with [`SdkError<UpdateTrainingJobError>`](crate::error::UpdateTrainingJobError)
@@ -5105,7 +5111,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApp`.
     ///
-    /// <p>Creates a running app for the specified UserProfile. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. This operation is automatically invoked by Amazon SageMaker Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps active simultaneously.</p>
+    /// <p>Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps active simultaneously.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp {
         handle: std::sync::Arc<super::Handle>,
@@ -5192,12 +5198,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_profile_name(input);
             self
         }
-        /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+        /// <p>The type of app.</p>
         pub fn app_type(mut self, input: crate::model::AppType) -> Self {
             self.inner = self.inner.app_type(input);
             self
         }
-        /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+        /// <p>The type of app.</p>
         pub fn set_app_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
             self.inner = self.inner.set_app_type(input);
             self
@@ -7498,6 +7504,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::AsyncInferenceConfig>,
         ) -> Self {
             self.inner = self.inner.set_async_inference_config(input);
+            self
+        }
+        /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+        pub fn explainer_config(mut self, input: crate::model::ExplainerConfig) -> Self {
+            self.inner = self.inner.explainer_config(input);
+            self
+        }
+        /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+        pub fn set_explainer_config(
+            mut self,
+            input: std::option::Option<crate::model::ExplainerConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_explainer_config(input);
             self
         }
     }
@@ -11056,7 +11075,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePresignedDomainUrl`.
     ///
     /// <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be automatically signed in to Amazon SageMaker Studio, and granted access to all of the Apps and files associated with the Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the authentication mode equals IAM. </p>
-    /// <p>The IAM role or user used to call this API defines the permissions to access the app. Once the presigned URL is created, no additional permission is required to access this URL. IAM authorization policies for this API are also enforced for every HTTP request and WebSocket frame that attempts to connect to the app.</p>
+    /// <p>The IAM role or user passed to this API defines the permissions to access the app. Once the presigned URL is created, no additional permission is required to access this URL. IAM authorization policies for this API are also enforced for every HTTP request and WebSocket frame that attempts to connect to the app.</p>
     /// <p>You can restrict access to this API and to the URL that it returns to a list of IP addresses, Amazon VPCs or Amazon VPC Endpoints that you specify. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to SageMaker Studio Through an Interface VPC Endpoint</a> .</p> <note>
     /// <p>The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5 minutes. You can configure this value using <code>ExpiresInSeconds</code>. If you try to use the URL after the timeout limit expires, you are directed to the Amazon Web Services console sign-in page.</p>
     /// </note>
@@ -11774,7 +11793,9 @@ pub mod fluent_builders {
     /// <p>In the request body, you provide the following: </p>
     /// <ul>
     /// <li> <p> <code>AlgorithmSpecification</code> - Identifies the training algorithm to use. </p> </li>
-    /// <li> <p> <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable the estimation of model parameters during training. Hyperparameters can be tuned to optimize this learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p> </li>
+    /// <li> <p> <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable the estimation of model parameters during training. Hyperparameters can be tuned to optimize this learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p> <important>
+    /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+    /// </important> </li>
     /// <li> <p> <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
     /// <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want SageMaker to save the results of model training. </p> </li>
     /// <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and ML storage volumes to deploy for model training. In distributed training, you specify more than one instance. </p> </li>
@@ -11866,7 +11887,9 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
         ///
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
+        /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+        /// </important>
         pub fn hyper_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -11876,7 +11899,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
+        /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+        /// </important>
         pub fn set_hyper_parameters(
             mut self,
             input: std::option::Option<
@@ -12863,7 +12888,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUserProfile`.
     ///
-    /// <p>Creates a user profile. A user profile represents a single user within a domain, and is the main way to reference a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when a user onboards to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from SSO, a user profile is automatically created. A user profile is the primary holder of settings for an individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory. </p>
+    /// <p>Creates a user profile. A user profile represents a single user within a domain, and is the main way to reference a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when a user onboards to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from IAM Identity Center, a user profile is automatically created. A user profile is the primary holder of settings for an individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserProfile {
         handle: std::sync::Arc<super::Handle>,
@@ -12950,7 +12975,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_profile_name(input);
             self
         }
-        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
         pub fn single_sign_on_user_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -12958,7 +12983,7 @@ pub mod fluent_builders {
             self.inner = self.inner.single_sign_on_user_identifier(input.into());
             self
         }
-        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
         pub fn set_single_sign_on_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12966,12 +12991,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_single_sign_on_user_identifier(input);
             self
         }
-        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
         pub fn single_sign_on_user_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.single_sign_on_user_value(input.into());
             self
         }
-        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
         pub fn set_single_sign_on_user_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14179,7 +14204,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again using SSO. Use with caution. All of the members of the domain will lose access to their EFS volume, including data, notebooks, and other artifacts. </p>
+    /// <p>Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again using IAM Identity Center. Use with caution. All of the members of the domain will lose access to their EFS volume, including data, notebooks, and other artifacts. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -30481,6 +30506,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
+        /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
+        pub fn warm_pool_status_equals(
+            mut self,
+            input: crate::model::WarmPoolResourceStatus,
+        ) -> Self {
+            self.inner = self.inner.warm_pool_status_equals(input);
+            self
+        }
+        /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
+        pub fn set_warm_pool_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::WarmPoolResourceStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_warm_pool_status_equals(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListTrainingJobsForHyperParameterTuningJob`.
     ///
@@ -36764,7 +36805,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateTrainingJob`.
     ///
-    /// <p>Update a model training job to request a new Debugger profiling configuration.</p>
+    /// <p>Update a model training job to request a new Debugger profiling configuration or to change warm pool retention length.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrainingJob {
         handle: std::sync::Arc<super::Handle>,
@@ -36872,6 +36913,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
         ) -> Self {
             self.inner = self.inner.set_profiler_rule_configurations(input);
+            self
+        }
+        /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
+        pub fn resource_config(mut self, input: crate::model::ResourceConfigForUpdate) -> Self {
+            self.inner = self.inner.resource_config(input);
+            self
+        }
+        /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
+        pub fn set_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::ResourceConfigForUpdate>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_config(input);
             self
         }
     }

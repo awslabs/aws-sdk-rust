@@ -2769,12 +2769,12 @@ impl ModifyAuthenticationProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAquaConfigurationOutput {
-    /// <p>The updated AQUA configuration of the cluster. </p>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     #[doc(hidden)]
     pub aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
 }
 impl ModifyAquaConfigurationOutput {
-    /// <p>The updated AQUA configuration of the cluster. </p>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     pub fn aqua_configuration(&self) -> std::option::Option<&crate::model::AquaConfiguration> {
         self.aqua_configuration.as_ref()
     }
@@ -2795,12 +2795,12 @@ pub mod modify_aqua_configuration_output {
         pub(crate) aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
     }
     impl Builder {
-        /// <p>The updated AQUA configuration of the cluster. </p>
+        /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
         pub fn aqua_configuration(mut self, input: crate::model::AquaConfiguration) -> Self {
             self.aqua_configuration = Some(input);
             self
         }
-        /// <p>The updated AQUA configuration of the cluster. </p>
+        /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
         pub fn set_aqua_configuration(
             mut self,
             input: std::option::Option<crate::model::AquaConfiguration>,

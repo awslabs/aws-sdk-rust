@@ -1774,6 +1774,9 @@ pub struct UserSettings {
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
     #[doc(hidden)]
     pub r_session_app_settings: std::option::Option<crate::model::RSessionAppSettings>,
+    /// <p>The Canvas app settings.</p>
+    #[doc(hidden)]
+    pub canvas_app_settings: std::option::Option<crate::model::CanvasAppSettings>,
 }
 impl UserSettings {
     /// <p>The execution role for the user.</p>
@@ -1821,6 +1824,10 @@ impl UserSettings {
     ) -> std::option::Option<&crate::model::RSessionAppSettings> {
         self.r_session_app_settings.as_ref()
     }
+    /// <p>The Canvas app settings.</p>
+    pub fn canvas_app_settings(&self) -> std::option::Option<&crate::model::CanvasAppSettings> {
+        self.canvas_app_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1842,6 +1849,7 @@ impl std::fmt::Debug for UserSettings {
             &self.r_studio_server_pro_app_settings,
         );
         formatter.field("r_session_app_settings", &self.r_session_app_settings);
+        formatter.field("canvas_app_settings", &self.canvas_app_settings);
         formatter.finish()
     }
 }
@@ -1863,6 +1871,7 @@ pub mod user_settings {
         pub(crate) r_studio_server_pro_app_settings:
             std::option::Option<crate::model::RStudioServerProAppSettings>,
         pub(crate) r_session_app_settings: std::option::Option<crate::model::RSessionAppSettings>,
+        pub(crate) canvas_app_settings: std::option::Option<crate::model::CanvasAppSettings>,
     }
     impl Builder {
         /// <p>The execution role for the user.</p>
@@ -1993,6 +2002,19 @@ pub mod user_settings {
             self.r_session_app_settings = input;
             self
         }
+        /// <p>The Canvas app settings.</p>
+        pub fn canvas_app_settings(mut self, input: crate::model::CanvasAppSettings) -> Self {
+            self.canvas_app_settings = Some(input);
+            self
+        }
+        /// <p>The Canvas app settings.</p>
+        pub fn set_canvas_app_settings(
+            mut self,
+            input: std::option::Option<crate::model::CanvasAppSettings>,
+        ) -> Self {
+            self.canvas_app_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserSettings`](crate::model::UserSettings).
         pub fn build(self) -> crate::model::UserSettings {
             crate::model::UserSettings {
@@ -2004,6 +2026,7 @@ pub mod user_settings {
                 tensor_board_app_settings: self.tensor_board_app_settings,
                 r_studio_server_pro_app_settings: self.r_studio_server_pro_app_settings,
                 r_session_app_settings: self.r_session_app_settings,
+                canvas_app_settings: self.canvas_app_settings,
             }
         }
     }
@@ -2012,6 +2035,210 @@ impl UserSettings {
     /// Creates a new builder-style object to manufacture [`UserSettings`](crate::model::UserSettings).
     pub fn builder() -> crate::model::user_settings::Builder {
         crate::model::user_settings::Builder::default()
+    }
+}
+
+/// <p>The SageMaker Canvas app settings.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CanvasAppSettings {
+    /// <p>Time series forecast settings for the Canvas app.</p>
+    #[doc(hidden)]
+    pub time_series_forecasting_settings:
+        std::option::Option<crate::model::TimeSeriesForecastingSettings>,
+}
+impl CanvasAppSettings {
+    /// <p>Time series forecast settings for the Canvas app.</p>
+    pub fn time_series_forecasting_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeSeriesForecastingSettings> {
+        self.time_series_forecasting_settings.as_ref()
+    }
+}
+impl std::fmt::Debug for CanvasAppSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CanvasAppSettings");
+        formatter.field(
+            "time_series_forecasting_settings",
+            &self.time_series_forecasting_settings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CanvasAppSettings`](crate::model::CanvasAppSettings).
+pub mod canvas_app_settings {
+
+    /// A builder for [`CanvasAppSettings`](crate::model::CanvasAppSettings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) time_series_forecasting_settings:
+            std::option::Option<crate::model::TimeSeriesForecastingSettings>,
+    }
+    impl Builder {
+        /// <p>Time series forecast settings for the Canvas app.</p>
+        pub fn time_series_forecasting_settings(
+            mut self,
+            input: crate::model::TimeSeriesForecastingSettings,
+        ) -> Self {
+            self.time_series_forecasting_settings = Some(input);
+            self
+        }
+        /// <p>Time series forecast settings for the Canvas app.</p>
+        pub fn set_time_series_forecasting_settings(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesForecastingSettings>,
+        ) -> Self {
+            self.time_series_forecasting_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CanvasAppSettings`](crate::model::CanvasAppSettings).
+        pub fn build(self) -> crate::model::CanvasAppSettings {
+            crate::model::CanvasAppSettings {
+                time_series_forecasting_settings: self.time_series_forecasting_settings,
+            }
+        }
+    }
+}
+impl CanvasAppSettings {
+    /// Creates a new builder-style object to manufacture [`CanvasAppSettings`](crate::model::CanvasAppSettings).
+    pub fn builder() -> crate::model::canvas_app_settings::Builder {
+        crate::model::canvas_app_settings::Builder::default()
+    }
+}
+
+/// <p>Time series forecast settings for the SageMaker Canvas app.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesForecastingSettings {
+    /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas app.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::FeatureStatus>,
+    /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas app. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
+    #[doc(hidden)]
+    pub amazon_forecast_role_arn: std::option::Option<std::string::String>,
+}
+impl TimeSeriesForecastingSettings {
+    /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas app.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FeatureStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas app. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
+    pub fn amazon_forecast_role_arn(&self) -> std::option::Option<&str> {
+        self.amazon_forecast_role_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesForecastingSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesForecastingSettings");
+        formatter.field("status", &self.status);
+        formatter.field("amazon_forecast_role_arn", &self.amazon_forecast_role_arn);
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesForecastingSettings`](crate::model::TimeSeriesForecastingSettings).
+pub mod time_series_forecasting_settings {
+
+    /// A builder for [`TimeSeriesForecastingSettings`](crate::model::TimeSeriesForecastingSettings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::FeatureStatus>,
+        pub(crate) amazon_forecast_role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas app.</p>
+        pub fn status(mut self, input: crate::model::FeatureStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas app.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::FeatureStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas app. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
+        pub fn amazon_forecast_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.amazon_forecast_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas app. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
+        pub fn set_amazon_forecast_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.amazon_forecast_role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesForecastingSettings`](crate::model::TimeSeriesForecastingSettings).
+        pub fn build(self) -> crate::model::TimeSeriesForecastingSettings {
+            crate::model::TimeSeriesForecastingSettings {
+                status: self.status,
+                amazon_forecast_role_arn: self.amazon_forecast_role_arn,
+            }
+        }
+    }
+}
+impl TimeSeriesForecastingSettings {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesForecastingSettings`](crate::model::TimeSeriesForecastingSettings).
+    pub fn builder() -> crate::model::time_series_forecasting_settings::Builder {
+        crate::model::time_series_forecasting_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FeatureStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FeatureStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => FeatureStatus::Disabled,
+            "ENABLED" => FeatureStatus::Enabled,
+            other => FeatureStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FeatureStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FeatureStatus::from(s))
+    }
+}
+impl FeatureStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FeatureStatus::Disabled => "DISABLED",
+            FeatureStatus::Enabled => "ENABLED",
+            FeatureStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for FeatureStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3589,6 +3816,64 @@ impl TrialComponentPrimaryStatus {
 impl AsRef<str> for TrialComponentPrimaryStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The <code>ResourceConfig</code> to update <code>KeepAlivePeriodInSeconds</code>. Other fields in the <code>ResourceConfig</code> cannot be updated.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceConfigForUpdate {
+    /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
+    #[doc(hidden)]
+    pub keep_alive_period_in_seconds: std::option::Option<i32>,
+}
+impl ResourceConfigForUpdate {
+    /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
+    pub fn keep_alive_period_in_seconds(&self) -> std::option::Option<i32> {
+        self.keep_alive_period_in_seconds
+    }
+}
+impl std::fmt::Debug for ResourceConfigForUpdate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceConfigForUpdate");
+        formatter.field(
+            "keep_alive_period_in_seconds",
+            &self.keep_alive_period_in_seconds,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ResourceConfigForUpdate`](crate::model::ResourceConfigForUpdate).
+pub mod resource_config_for_update {
+
+    /// A builder for [`ResourceConfigForUpdate`](crate::model::ResourceConfigForUpdate).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) keep_alive_period_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
+        pub fn keep_alive_period_in_seconds(mut self, input: i32) -> Self {
+            self.keep_alive_period_in_seconds = Some(input);
+            self
+        }
+        /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
+        pub fn set_keep_alive_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.keep_alive_period_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceConfigForUpdate`](crate::model::ResourceConfigForUpdate).
+        pub fn build(self) -> crate::model::ResourceConfigForUpdate {
+            crate::model::ResourceConfigForUpdate {
+                keep_alive_period_in_seconds: self.keep_alive_period_in_seconds,
+            }
+        }
+    }
+}
+impl ResourceConfigForUpdate {
+    /// Creates a new builder-style object to manufacture [`ResourceConfigForUpdate`](crate::model::ResourceConfigForUpdate).
+    pub fn builder() -> crate::model::resource_config_for_update::Builder {
+        crate::model::resource_config_for_update::Builder::default()
     }
 }
 
@@ -9944,6 +10229,10 @@ pub struct DomainSettingsForUpdate {
     #[doc(hidden)]
     pub r_studio_server_pro_domain_settings_for_update:
         std::option::Option<crate::model::RStudioServerProDomainSettingsForUpdate>,
+    /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
+    #[doc(hidden)]
+    pub execution_role_identity_config:
+        std::option::Option<crate::model::ExecutionRoleIdentityConfig>,
 }
 impl DomainSettingsForUpdate {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
@@ -9952,6 +10241,12 @@ impl DomainSettingsForUpdate {
     ) -> std::option::Option<&crate::model::RStudioServerProDomainSettingsForUpdate> {
         self.r_studio_server_pro_domain_settings_for_update.as_ref()
     }
+    /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
+    pub fn execution_role_identity_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionRoleIdentityConfig> {
+        self.execution_role_identity_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainSettingsForUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9959,6 +10254,10 @@ impl std::fmt::Debug for DomainSettingsForUpdate {
         formatter.field(
             "r_studio_server_pro_domain_settings_for_update",
             &self.r_studio_server_pro_domain_settings_for_update,
+        );
+        formatter.field(
+            "execution_role_identity_config",
+            &self.execution_role_identity_config,
         );
         formatter.finish()
     }
@@ -9971,6 +10270,8 @@ pub mod domain_settings_for_update {
     pub struct Builder {
         pub(crate) r_studio_server_pro_domain_settings_for_update:
             std::option::Option<crate::model::RStudioServerProDomainSettingsForUpdate>,
+        pub(crate) execution_role_identity_config:
+            std::option::Option<crate::model::ExecutionRoleIdentityConfig>,
     }
     impl Builder {
         /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
@@ -9989,11 +10290,28 @@ pub mod domain_settings_for_update {
             self.r_studio_server_pro_domain_settings_for_update = input;
             self
         }
+        /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
+        pub fn execution_role_identity_config(
+            mut self,
+            input: crate::model::ExecutionRoleIdentityConfig,
+        ) -> Self {
+            self.execution_role_identity_config = Some(input);
+            self
+        }
+        /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
+        pub fn set_execution_role_identity_config(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionRoleIdentityConfig>,
+        ) -> Self {
+            self.execution_role_identity_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DomainSettingsForUpdate`](crate::model::DomainSettingsForUpdate).
         pub fn build(self) -> crate::model::DomainSettingsForUpdate {
             crate::model::DomainSettingsForUpdate {
                 r_studio_server_pro_domain_settings_for_update: self
                     .r_studio_server_pro_domain_settings_for_update,
+                execution_role_identity_config: self.execution_role_identity_config,
             }
         }
     }
@@ -10002,6 +10320,61 @@ impl DomainSettingsForUpdate {
     /// Creates a new builder-style object to manufacture [`DomainSettingsForUpdate`](crate::model::DomainSettingsForUpdate).
     pub fn builder() -> crate::model::domain_settings_for_update::Builder {
         crate::model::domain_settings_for_update::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExecutionRoleIdentityConfig {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    UserProfileName,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExecutionRoleIdentityConfig {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => ExecutionRoleIdentityConfig::Disabled,
+            "USER_PROFILE_NAME" => ExecutionRoleIdentityConfig::UserProfileName,
+            other => ExecutionRoleIdentityConfig::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExecutionRoleIdentityConfig {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExecutionRoleIdentityConfig::from(s))
+    }
+}
+impl ExecutionRoleIdentityConfig {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExecutionRoleIdentityConfig::Disabled => "DISABLED",
+            ExecutionRoleIdentityConfig::UserProfileName => "USER_PROFILE_NAME",
+            ExecutionRoleIdentityConfig::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "USER_PROFILE_NAME"]
+    }
+}
+impl AsRef<str> for ExecutionRoleIdentityConfig {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -10985,6 +11358,10 @@ pub struct SearchRecord {
     /// <p>The feature metadata used to search through the features.</p>
     #[doc(hidden)]
     pub feature_metadata: std::option::Option<crate::model::FeatureMetadata>,
+    /// <p>The properties of a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_job:
+        std::option::Option<crate::model::HyperParameterTuningJobSearchEntity>,
 }
 impl SearchRecord {
     /// <p>The properties of a training job.</p>
@@ -11035,6 +11412,12 @@ impl SearchRecord {
     pub fn feature_metadata(&self) -> std::option::Option<&crate::model::FeatureMetadata> {
         self.feature_metadata.as_ref()
     }
+    /// <p>The properties of a hyperparameter tuning job.</p>
+    pub fn hyper_parameter_tuning_job(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobSearchEntity> {
+        self.hyper_parameter_tuning_job.as_ref()
+    }
 }
 impl std::fmt::Debug for SearchRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11051,6 +11434,10 @@ impl std::fmt::Debug for SearchRecord {
         formatter.field("feature_group", &self.feature_group);
         formatter.field("project", &self.project);
         formatter.field("feature_metadata", &self.feature_metadata);
+        formatter.field(
+            "hyper_parameter_tuning_job",
+            &self.hyper_parameter_tuning_job,
+        );
         formatter.finish()
     }
 }
@@ -11072,6 +11459,8 @@ pub mod search_record {
         pub(crate) feature_group: std::option::Option<crate::model::FeatureGroup>,
         pub(crate) project: std::option::Option<crate::model::Project>,
         pub(crate) feature_metadata: std::option::Option<crate::model::FeatureMetadata>,
+        pub(crate) hyper_parameter_tuning_job:
+            std::option::Option<crate::model::HyperParameterTuningJobSearchEntity>,
     }
     impl Builder {
         /// <p>The properties of a training job.</p>
@@ -11218,6 +11607,22 @@ pub mod search_record {
             self.feature_metadata = input;
             self
         }
+        /// <p>The properties of a hyperparameter tuning job.</p>
+        pub fn hyper_parameter_tuning_job(
+            mut self,
+            input: crate::model::HyperParameterTuningJobSearchEntity,
+        ) -> Self {
+            self.hyper_parameter_tuning_job = Some(input);
+            self
+        }
+        /// <p>The properties of a hyperparameter tuning job.</p>
+        pub fn set_hyper_parameter_tuning_job(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobSearchEntity>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchRecord`](crate::model::SearchRecord).
         pub fn build(self) -> crate::model::SearchRecord {
             crate::model::SearchRecord {
@@ -11233,6 +11638,7 @@ pub mod search_record {
                 feature_group: self.feature_group,
                 project: self.project,
                 feature_metadata: self.feature_metadata,
+                hyper_parameter_tuning_job: self.hyper_parameter_tuning_job,
             }
         }
     }
@@ -11241,6 +11647,6485 @@ impl SearchRecord {
     /// Creates a new builder-style object to manufacture [`SearchRecord`](crate::model::SearchRecord).
     pub fn builder() -> crate::model::search_record::Builder {
         crate::model::search_record::Builder::default()
+    }
+}
+
+/// <p>An entity returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a> API containing the properties of a hyperparameter tuning job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningJobSearchEntity {
+    /// <p>The name of a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_job_arn: std::option::Option<std::string::String>,
+    /// <p>Configures a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_job_config:
+        std::option::Option<crate::model::HyperParameterTuningJobConfig>,
+    /// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub training_job_definition:
+        std::option::Option<crate::model::HyperParameterTrainingJobDefinition>,
+    /// <p>The job definitions included in a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub training_job_definitions:
+        std::option::Option<std::vec::Vec<crate::model::HyperParameterTrainingJobDefinition>>,
+    /// <p>The status of a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_job_status:
+        std::option::Option<crate::model::HyperParameterTuningJobStatus>,
+    /// <p>The time that a hyperparameter tuning job was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time that a hyperparameter tuning job ended.</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time that a hyperparameter tuning job was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
+    #[doc(hidden)]
+    pub training_job_status_counters: std::option::Option<crate::model::TrainingJobStatusCounters>,
+    /// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
+    #[doc(hidden)]
+    pub objective_status_counters: std::option::Option<crate::model::ObjectiveStatusCounters>,
+    /// <p>The container for the summary information about a training job.</p>
+    #[doc(hidden)]
+    pub best_training_job: std::option::Option<crate::model::HyperParameterTrainingJobSummary>,
+    /// <p>The container for the summary information about a training job.</p>
+    #[doc(hidden)]
+    pub overall_best_training_job:
+        std::option::Option<crate::model::HyperParameterTrainingJobSummary>,
+    /// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
+    /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
+    /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub warm_start_config:
+        std::option::Option<crate::model::HyperParameterTuningJobWarmStartConfig>,
+    /// <p>The error that was created when a hyperparameter tuning job failed.</p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl HyperParameterTuningJobSearchEntity {
+    /// <p>The name of a hyperparameter tuning job.</p>
+    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a hyperparameter tuning job.</p>
+    pub fn hyper_parameter_tuning_job_arn(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_arn.as_deref()
+    }
+    /// <p>Configures a hyperparameter tuning job.</p>
+    pub fn hyper_parameter_tuning_job_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobConfig> {
+        self.hyper_parameter_tuning_job_config.as_ref()
+    }
+    /// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
+    pub fn training_job_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTrainingJobDefinition> {
+        self.training_job_definition.as_ref()
+    }
+    /// <p>The job definitions included in a hyperparameter tuning job.</p>
+    pub fn training_job_definitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::HyperParameterTrainingJobDefinition]> {
+        self.training_job_definitions.as_deref()
+    }
+    /// <p>The status of a hyperparameter tuning job.</p>
+    pub fn hyper_parameter_tuning_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobStatus> {
+        self.hyper_parameter_tuning_job_status.as_ref()
+    }
+    /// <p>The time that a hyperparameter tuning job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that a hyperparameter tuning job ended.</p>
+    pub fn hyper_parameter_tuning_end_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.hyper_parameter_tuning_end_time.as_ref()
+    }
+    /// <p>The time that a hyperparameter tuning job was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
+    pub fn training_job_status_counters(
+        &self,
+    ) -> std::option::Option<&crate::model::TrainingJobStatusCounters> {
+        self.training_job_status_counters.as_ref()
+    }
+    /// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
+    pub fn objective_status_counters(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectiveStatusCounters> {
+        self.objective_status_counters.as_ref()
+    }
+    /// <p>The container for the summary information about a training job.</p>
+    pub fn best_training_job(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTrainingJobSummary> {
+        self.best_training_job.as_ref()
+    }
+    /// <p>The container for the summary information about a training job.</p>
+    pub fn overall_best_training_job(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTrainingJobSummary> {
+        self.overall_best_training_job.as_ref()
+    }
+    /// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
+    /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
+    /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
+    /// </note>
+    pub fn warm_start_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobWarmStartConfig> {
+        self.warm_start_config.as_ref()
+    }
+    /// <p>The error that was created when a hyperparameter tuning job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningJobSearchEntity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningJobSearchEntity");
+        formatter.field(
+            "hyper_parameter_tuning_job_name",
+            &self.hyper_parameter_tuning_job_name,
+        );
+        formatter.field(
+            "hyper_parameter_tuning_job_arn",
+            &self.hyper_parameter_tuning_job_arn,
+        );
+        formatter.field(
+            "hyper_parameter_tuning_job_config",
+            &self.hyper_parameter_tuning_job_config,
+        );
+        formatter.field("training_job_definition", &self.training_job_definition);
+        formatter.field("training_job_definitions", &self.training_job_definitions);
+        formatter.field(
+            "hyper_parameter_tuning_job_status",
+            &self.hyper_parameter_tuning_job_status,
+        );
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field(
+            "hyper_parameter_tuning_end_time",
+            &self.hyper_parameter_tuning_end_time,
+        );
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field(
+            "training_job_status_counters",
+            &self.training_job_status_counters,
+        );
+        formatter.field("objective_status_counters", &self.objective_status_counters);
+        formatter.field("best_training_job", &self.best_training_job);
+        formatter.field("overall_best_training_job", &self.overall_best_training_job);
+        formatter.field("warm_start_config", &self.warm_start_config);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningJobSearchEntity`](crate::model::HyperParameterTuningJobSearchEntity).
+pub mod hyper_parameter_tuning_job_search_entity {
+
+    /// A builder for [`HyperParameterTuningJobSearchEntity`](crate::model::HyperParameterTuningJobSearchEntity).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+        pub(crate) hyper_parameter_tuning_job_arn: std::option::Option<std::string::String>,
+        pub(crate) hyper_parameter_tuning_job_config:
+            std::option::Option<crate::model::HyperParameterTuningJobConfig>,
+        pub(crate) training_job_definition:
+            std::option::Option<crate::model::HyperParameterTrainingJobDefinition>,
+        pub(crate) training_job_definitions:
+            std::option::Option<std::vec::Vec<crate::model::HyperParameterTrainingJobDefinition>>,
+        pub(crate) hyper_parameter_tuning_job_status:
+            std::option::Option<crate::model::HyperParameterTuningJobStatus>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) hyper_parameter_tuning_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_job_status_counters:
+            std::option::Option<crate::model::TrainingJobStatusCounters>,
+        pub(crate) objective_status_counters:
+            std::option::Option<crate::model::ObjectiveStatusCounters>,
+        pub(crate) best_training_job:
+            std::option::Option<crate::model::HyperParameterTrainingJobSummary>,
+        pub(crate) overall_best_training_job:
+            std::option::Option<crate::model::HyperParameterTrainingJobSummary>,
+        pub(crate) warm_start_config:
+            std::option::Option<crate::model::HyperParameterTuningJobWarmStartConfig>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of a hyperparameter tuning job.</p>
+        pub fn hyper_parameter_tuning_job_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a hyperparameter tuning job.</p>
+        pub fn set_hyper_parameter_tuning_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a hyperparameter tuning job.</p>
+        pub fn hyper_parameter_tuning_job_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a hyperparameter tuning job.</p>
+        pub fn set_hyper_parameter_tuning_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_arn = input;
+            self
+        }
+        /// <p>Configures a hyperparameter tuning job.</p>
+        pub fn hyper_parameter_tuning_job_config(
+            mut self,
+            input: crate::model::HyperParameterTuningJobConfig,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_config = Some(input);
+            self
+        }
+        /// <p>Configures a hyperparameter tuning job.</p>
+        pub fn set_hyper_parameter_tuning_job_config(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_config = input;
+            self
+        }
+        /// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
+        pub fn training_job_definition(
+            mut self,
+            input: crate::model::HyperParameterTrainingJobDefinition,
+        ) -> Self {
+            self.training_job_definition = Some(input);
+            self
+        }
+        /// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
+        pub fn set_training_job_definition(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTrainingJobDefinition>,
+        ) -> Self {
+            self.training_job_definition = input;
+            self
+        }
+        /// Appends an item to `training_job_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_training_job_definitions`](Self::set_training_job_definitions).
+        ///
+        /// <p>The job definitions included in a hyperparameter tuning job.</p>
+        pub fn training_job_definitions(
+            mut self,
+            input: crate::model::HyperParameterTrainingJobDefinition,
+        ) -> Self {
+            let mut v = self.training_job_definitions.unwrap_or_default();
+            v.push(input);
+            self.training_job_definitions = Some(v);
+            self
+        }
+        /// <p>The job definitions included in a hyperparameter tuning job.</p>
+        pub fn set_training_job_definitions(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::HyperParameterTrainingJobDefinition>,
+            >,
+        ) -> Self {
+            self.training_job_definitions = input;
+            self
+        }
+        /// <p>The status of a hyperparameter tuning job.</p>
+        pub fn hyper_parameter_tuning_job_status(
+            mut self,
+            input: crate::model::HyperParameterTuningJobStatus,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_status = Some(input);
+            self
+        }
+        /// <p>The status of a hyperparameter tuning job.</p>
+        pub fn set_hyper_parameter_tuning_job_status(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobStatus>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_status = input;
+            self
+        }
+        /// <p>The time that a hyperparameter tuning job was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time that a hyperparameter tuning job was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The time that a hyperparameter tuning job ended.</p>
+        pub fn hyper_parameter_tuning_end_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.hyper_parameter_tuning_end_time = Some(input);
+            self
+        }
+        /// <p>The time that a hyperparameter tuning job ended.</p>
+        pub fn set_hyper_parameter_tuning_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.hyper_parameter_tuning_end_time = input;
+            self
+        }
+        /// <p>The time that a hyperparameter tuning job was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The time that a hyperparameter tuning job was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
+        pub fn training_job_status_counters(
+            mut self,
+            input: crate::model::TrainingJobStatusCounters,
+        ) -> Self {
+            self.training_job_status_counters = Some(input);
+            self
+        }
+        /// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
+        pub fn set_training_job_status_counters(
+            mut self,
+            input: std::option::Option<crate::model::TrainingJobStatusCounters>,
+        ) -> Self {
+            self.training_job_status_counters = input;
+            self
+        }
+        /// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
+        pub fn objective_status_counters(
+            mut self,
+            input: crate::model::ObjectiveStatusCounters,
+        ) -> Self {
+            self.objective_status_counters = Some(input);
+            self
+        }
+        /// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
+        pub fn set_objective_status_counters(
+            mut self,
+            input: std::option::Option<crate::model::ObjectiveStatusCounters>,
+        ) -> Self {
+            self.objective_status_counters = input;
+            self
+        }
+        /// <p>The container for the summary information about a training job.</p>
+        pub fn best_training_job(
+            mut self,
+            input: crate::model::HyperParameterTrainingJobSummary,
+        ) -> Self {
+            self.best_training_job = Some(input);
+            self
+        }
+        /// <p>The container for the summary information about a training job.</p>
+        pub fn set_best_training_job(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTrainingJobSummary>,
+        ) -> Self {
+            self.best_training_job = input;
+            self
+        }
+        /// <p>The container for the summary information about a training job.</p>
+        pub fn overall_best_training_job(
+            mut self,
+            input: crate::model::HyperParameterTrainingJobSummary,
+        ) -> Self {
+            self.overall_best_training_job = Some(input);
+            self
+        }
+        /// <p>The container for the summary information about a training job.</p>
+        pub fn set_overall_best_training_job(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTrainingJobSummary>,
+        ) -> Self {
+            self.overall_best_training_job = input;
+            self
+        }
+        /// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
+        /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
+        /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
+        /// </note>
+        pub fn warm_start_config(
+            mut self,
+            input: crate::model::HyperParameterTuningJobWarmStartConfig,
+        ) -> Self {
+            self.warm_start_config = Some(input);
+            self
+        }
+        /// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
+        /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
+        /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
+        /// </note>
+        pub fn set_warm_start_config(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobWarmStartConfig>,
+        ) -> Self {
+            self.warm_start_config = input;
+            self
+        }
+        /// <p>The error that was created when a hyperparameter tuning job failed.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The error that was created when a hyperparameter tuning job failed.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningJobSearchEntity`](crate::model::HyperParameterTuningJobSearchEntity).
+        pub fn build(self) -> crate::model::HyperParameterTuningJobSearchEntity {
+            crate::model::HyperParameterTuningJobSearchEntity {
+                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
+                hyper_parameter_tuning_job_arn: self.hyper_parameter_tuning_job_arn,
+                hyper_parameter_tuning_job_config: self.hyper_parameter_tuning_job_config,
+                training_job_definition: self.training_job_definition,
+                training_job_definitions: self.training_job_definitions,
+                hyper_parameter_tuning_job_status: self.hyper_parameter_tuning_job_status,
+                creation_time: self.creation_time,
+                hyper_parameter_tuning_end_time: self.hyper_parameter_tuning_end_time,
+                last_modified_time: self.last_modified_time,
+                training_job_status_counters: self.training_job_status_counters,
+                objective_status_counters: self.objective_status_counters,
+                best_training_job: self.best_training_job,
+                overall_best_training_job: self.overall_best_training_job,
+                warm_start_config: self.warm_start_config,
+                failure_reason: self.failure_reason,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl HyperParameterTuningJobSearchEntity {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobSearchEntity`](crate::model::HyperParameterTuningJobSearchEntity).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_job_search_entity::Builder {
+        crate::model::hyper_parameter_tuning_job_search_entity::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
+/// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
+/// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningJobWarmStartConfig {
+    /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+    /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
+    #[doc(hidden)]
+    pub parent_hyper_parameter_tuning_jobs:
+        std::option::Option<std::vec::Vec<crate::model::ParentHyperParameterTuningJob>>,
+    /// <p>Specifies one of the following:</p>
+    /// <dl>
+    /// <dt>
+    /// IDENTICAL_DATA_AND_ALGORITHM
+    /// </dt>
+    /// <dd>
+    /// <p>The new hyperparameter tuning job uses the same input data and training image as the parent tuning jobs. You can change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do not affect the algorithm itself. For example, changes that improve logging or adding support for a different data format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
+    /// </dd>
+    /// <dt>
+    /// TRANSFER_LEARNING
+    /// </dt>
+    /// <dd>
+    /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub warm_start_type: std::option::Option<crate::model::HyperParameterTuningJobWarmStartType>,
+}
+impl HyperParameterTuningJobWarmStartConfig {
+    /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+    /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
+    pub fn parent_hyper_parameter_tuning_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ParentHyperParameterTuningJob]> {
+        self.parent_hyper_parameter_tuning_jobs.as_deref()
+    }
+    /// <p>Specifies one of the following:</p>
+    /// <dl>
+    /// <dt>
+    /// IDENTICAL_DATA_AND_ALGORITHM
+    /// </dt>
+    /// <dd>
+    /// <p>The new hyperparameter tuning job uses the same input data and training image as the parent tuning jobs. You can change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do not affect the algorithm itself. For example, changes that improve logging or adding support for a different data format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
+    /// </dd>
+    /// <dt>
+    /// TRANSFER_LEARNING
+    /// </dt>
+    /// <dd>
+    /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
+    /// </dd>
+    /// </dl>
+    pub fn warm_start_type(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobWarmStartType> {
+        self.warm_start_type.as_ref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningJobWarmStartConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningJobWarmStartConfig");
+        formatter.field(
+            "parent_hyper_parameter_tuning_jobs",
+            &self.parent_hyper_parameter_tuning_jobs,
+        );
+        formatter.field("warm_start_type", &self.warm_start_type);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningJobWarmStartConfig`](crate::model::HyperParameterTuningJobWarmStartConfig).
+pub mod hyper_parameter_tuning_job_warm_start_config {
+
+    /// A builder for [`HyperParameterTuningJobWarmStartConfig`](crate::model::HyperParameterTuningJobWarmStartConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) parent_hyper_parameter_tuning_jobs:
+            std::option::Option<std::vec::Vec<crate::model::ParentHyperParameterTuningJob>>,
+        pub(crate) warm_start_type:
+            std::option::Option<crate::model::HyperParameterTuningJobWarmStartType>,
+    }
+    impl Builder {
+        /// Appends an item to `parent_hyper_parameter_tuning_jobs`.
+        ///
+        /// To override the contents of this collection use [`set_parent_hyper_parameter_tuning_jobs`](Self::set_parent_hyper_parameter_tuning_jobs).
+        ///
+        /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+        /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
+        pub fn parent_hyper_parameter_tuning_jobs(
+            mut self,
+            input: crate::model::ParentHyperParameterTuningJob,
+        ) -> Self {
+            let mut v = self.parent_hyper_parameter_tuning_jobs.unwrap_or_default();
+            v.push(input);
+            self.parent_hyper_parameter_tuning_jobs = Some(v);
+            self
+        }
+        /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+        /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
+        pub fn set_parent_hyper_parameter_tuning_jobs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ParentHyperParameterTuningJob>>,
+        ) -> Self {
+            self.parent_hyper_parameter_tuning_jobs = input;
+            self
+        }
+        /// <p>Specifies one of the following:</p>
+        /// <dl>
+        /// <dt>
+        /// IDENTICAL_DATA_AND_ALGORITHM
+        /// </dt>
+        /// <dd>
+        /// <p>The new hyperparameter tuning job uses the same input data and training image as the parent tuning jobs. You can change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do not affect the algorithm itself. For example, changes that improve logging or adding support for a different data format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
+        /// </dd>
+        /// <dt>
+        /// TRANSFER_LEARNING
+        /// </dt>
+        /// <dd>
+        /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
+        /// </dd>
+        /// </dl>
+        pub fn warm_start_type(
+            mut self,
+            input: crate::model::HyperParameterTuningJobWarmStartType,
+        ) -> Self {
+            self.warm_start_type = Some(input);
+            self
+        }
+        /// <p>Specifies one of the following:</p>
+        /// <dl>
+        /// <dt>
+        /// IDENTICAL_DATA_AND_ALGORITHM
+        /// </dt>
+        /// <dd>
+        /// <p>The new hyperparameter tuning job uses the same input data and training image as the parent tuning jobs. You can change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do not affect the algorithm itself. For example, changes that improve logging or adding support for a different data format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
+        /// </dd>
+        /// <dt>
+        /// TRANSFER_LEARNING
+        /// </dt>
+        /// <dd>
+        /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_warm_start_type(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobWarmStartType>,
+        ) -> Self {
+            self.warm_start_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningJobWarmStartConfig`](crate::model::HyperParameterTuningJobWarmStartConfig).
+        pub fn build(self) -> crate::model::HyperParameterTuningJobWarmStartConfig {
+            crate::model::HyperParameterTuningJobWarmStartConfig {
+                parent_hyper_parameter_tuning_jobs: self.parent_hyper_parameter_tuning_jobs,
+                warm_start_type: self.warm_start_type,
+            }
+        }
+    }
+}
+impl HyperParameterTuningJobWarmStartConfig {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobWarmStartConfig`](crate::model::HyperParameterTuningJobWarmStartConfig).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_job_warm_start_config::Builder {
+        crate::model::hyper_parameter_tuning_job_warm_start_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HyperParameterTuningJobWarmStartType {
+    #[allow(missing_docs)] // documentation missing in model
+    IdenticalDataAndAlgorithm,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferLearning,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HyperParameterTuningJobWarmStartType {
+    fn from(s: &str) -> Self {
+        match s {
+            "IdenticalDataAndAlgorithm" => {
+                HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm
+            }
+            "TransferLearning" => HyperParameterTuningJobWarmStartType::TransferLearning,
+            other => HyperParameterTuningJobWarmStartType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HyperParameterTuningJobWarmStartType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HyperParameterTuningJobWarmStartType::from(s))
+    }
+}
+impl HyperParameterTuningJobWarmStartType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm => {
+                "IdenticalDataAndAlgorithm"
+            }
+            HyperParameterTuningJobWarmStartType::TransferLearning => "TransferLearning",
+            HyperParameterTuningJobWarmStartType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["IdenticalDataAndAlgorithm", "TransferLearning"]
+    }
+}
+impl AsRef<str> for HyperParameterTuningJobWarmStartType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ParentHyperParameterTuningJob {
+    /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+}
+impl ParentHyperParameterTuningJob {
+    /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
+    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ParentHyperParameterTuningJob {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ParentHyperParameterTuningJob");
+        formatter.field(
+            "hyper_parameter_tuning_job_name",
+            &self.hyper_parameter_tuning_job_name,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ParentHyperParameterTuningJob`](crate::model::ParentHyperParameterTuningJob).
+pub mod parent_hyper_parameter_tuning_job {
+
+    /// A builder for [`ParentHyperParameterTuningJob`](crate::model::ParentHyperParameterTuningJob).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
+        pub fn hyper_parameter_tuning_job_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
+        pub fn set_hyper_parameter_tuning_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ParentHyperParameterTuningJob`](crate::model::ParentHyperParameterTuningJob).
+        pub fn build(self) -> crate::model::ParentHyperParameterTuningJob {
+            crate::model::ParentHyperParameterTuningJob {
+                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
+            }
+        }
+    }
+}
+impl ParentHyperParameterTuningJob {
+    /// Creates a new builder-style object to manufacture [`ParentHyperParameterTuningJob`](crate::model::ParentHyperParameterTuningJob).
+    pub fn builder() -> crate::model::parent_hyper_parameter_tuning_job::Builder {
+        crate::model::parent_hyper_parameter_tuning_job::Builder::default()
+    }
+}
+
+/// <p>The container for the summary information about a training job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTrainingJobSummary {
+    /// <p>The training job definition name.</p>
+    #[doc(hidden)]
+    pub training_job_definition_name: std::option::Option<std::string::String>,
+    /// <p>The name of the training job.</p>
+    #[doc(hidden)]
+    pub training_job_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+    #[doc(hidden)]
+    pub training_job_arn: std::option::Option<std::string::String>,
+    /// <p>The HyperParameter tuning job that launched the training job.</p>
+    #[doc(hidden)]
+    pub tuning_job_name: std::option::Option<std::string::String>,
+    /// <p>The date and time that the training job was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the training job started.</p>
+    #[doc(hidden)]
+    pub training_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
+    #[doc(hidden)]
+    pub training_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The status of the training job.</p>
+    #[doc(hidden)]
+    pub training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
+    /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
+    #[doc(hidden)]
+    pub tuned_hyper_parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The reason that the training job failed. </p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The <code>FinalHyperParameterTuningJobObjectiveMetric</code> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
+    #[doc(hidden)]
+    pub final_hyper_parameter_tuning_job_objective_metric:
+        std::option::Option<crate::model::FinalHyperParameterTuningJobObjectiveMetric>,
+    /// <p>The status of the objective metric for the training job:</p>
+    /// <ul>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub objective_status: std::option::Option<crate::model::ObjectiveStatus>,
+}
+impl HyperParameterTrainingJobSummary {
+    /// <p>The training job definition name.</p>
+    pub fn training_job_definition_name(&self) -> std::option::Option<&str> {
+        self.training_job_definition_name.as_deref()
+    }
+    /// <p>The name of the training job.</p>
+    pub fn training_job_name(&self) -> std::option::Option<&str> {
+        self.training_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+    pub fn training_job_arn(&self) -> std::option::Option<&str> {
+        self.training_job_arn.as_deref()
+    }
+    /// <p>The HyperParameter tuning job that launched the training job.</p>
+    pub fn tuning_job_name(&self) -> std::option::Option<&str> {
+        self.tuning_job_name.as_deref()
+    }
+    /// <p>The date and time that the training job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the training job started.</p>
+    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.training_start_time.as_ref()
+    }
+    /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
+    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.training_end_time.as_ref()
+    }
+    /// <p>The status of the training job.</p>
+    pub fn training_job_status(&self) -> std::option::Option<&crate::model::TrainingJobStatus> {
+        self.training_job_status.as_ref()
+    }
+    /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
+    pub fn tuned_hyper_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tuned_hyper_parameters.as_ref()
+    }
+    /// <p>The reason that the training job failed. </p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The <code>FinalHyperParameterTuningJobObjectiveMetric</code> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
+    pub fn final_hyper_parameter_tuning_job_objective_metric(
+        &self,
+    ) -> std::option::Option<&crate::model::FinalHyperParameterTuningJobObjectiveMetric> {
+        self.final_hyper_parameter_tuning_job_objective_metric
+            .as_ref()
+    }
+    /// <p>The status of the objective metric for the training job:</p>
+    /// <ul>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
+    /// </ul>
+    pub fn objective_status(&self) -> std::option::Option<&crate::model::ObjectiveStatus> {
+        self.objective_status.as_ref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTrainingJobSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTrainingJobSummary");
+        formatter.field(
+            "training_job_definition_name",
+            &self.training_job_definition_name,
+        );
+        formatter.field("training_job_name", &self.training_job_name);
+        formatter.field("training_job_arn", &self.training_job_arn);
+        formatter.field("tuning_job_name", &self.tuning_job_name);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("training_start_time", &self.training_start_time);
+        formatter.field("training_end_time", &self.training_end_time);
+        formatter.field("training_job_status", &self.training_job_status);
+        formatter.field("tuned_hyper_parameters", &self.tuned_hyper_parameters);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.field(
+            "final_hyper_parameter_tuning_job_objective_metric",
+            &self.final_hyper_parameter_tuning_job_objective_metric,
+        );
+        formatter.field("objective_status", &self.objective_status);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTrainingJobSummary`](crate::model::HyperParameterTrainingJobSummary).
+pub mod hyper_parameter_training_job_summary {
+
+    /// A builder for [`HyperParameterTrainingJobSummary`](crate::model::HyperParameterTrainingJobSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) training_job_definition_name: std::option::Option<std::string::String>,
+        pub(crate) training_job_name: std::option::Option<std::string::String>,
+        pub(crate) training_job_arn: std::option::Option<std::string::String>,
+        pub(crate) tuning_job_name: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
+        pub(crate) tuned_hyper_parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) final_hyper_parameter_tuning_job_objective_metric:
+            std::option::Option<crate::model::FinalHyperParameterTuningJobObjectiveMetric>,
+        pub(crate) objective_status: std::option::Option<crate::model::ObjectiveStatus>,
+    }
+    impl Builder {
+        /// <p>The training job definition name.</p>
+        pub fn training_job_definition_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.training_job_definition_name = Some(input.into());
+            self
+        }
+        /// <p>The training job definition name.</p>
+        pub fn set_training_job_definition_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.training_job_definition_name = input;
+            self
+        }
+        /// <p>The name of the training job.</p>
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.training_job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the training job.</p>
+        pub fn set_training_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.training_job_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+        pub fn training_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.training_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+        pub fn set_training_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.training_job_arn = input;
+            self
+        }
+        /// <p>The HyperParameter tuning job that launched the training job.</p>
+        pub fn tuning_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tuning_job_name = Some(input.into());
+            self
+        }
+        /// <p>The HyperParameter tuning job that launched the training job.</p>
+        pub fn set_tuning_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tuning_job_name = input;
+            self
+        }
+        /// <p>The date and time that the training job was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the training job was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The date and time that the training job started.</p>
+        pub fn training_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.training_start_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the training job started.</p>
+        pub fn set_training_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.training_start_time = input;
+            self
+        }
+        /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
+        pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.training_end_time = Some(input);
+            self
+        }
+        /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
+        pub fn set_training_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.training_end_time = input;
+            self
+        }
+        /// <p>The status of the training job.</p>
+        pub fn training_job_status(mut self, input: crate::model::TrainingJobStatus) -> Self {
+            self.training_job_status = Some(input);
+            self
+        }
+        /// <p>The status of the training job.</p>
+        pub fn set_training_job_status(
+            mut self,
+            input: std::option::Option<crate::model::TrainingJobStatus>,
+        ) -> Self {
+            self.training_job_status = input;
+            self
+        }
+        /// Adds a key-value pair to `tuned_hyper_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_tuned_hyper_parameters`](Self::set_tuned_hyper_parameters).
+        ///
+        /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
+        pub fn tuned_hyper_parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tuned_hyper_parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tuned_hyper_parameters = Some(hash_map);
+            self
+        }
+        /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
+        pub fn set_tuned_hyper_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tuned_hyper_parameters = input;
+            self
+        }
+        /// <p>The reason that the training job failed. </p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason that the training job failed. </p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>The <code>FinalHyperParameterTuningJobObjectiveMetric</code> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
+        pub fn final_hyper_parameter_tuning_job_objective_metric(
+            mut self,
+            input: crate::model::FinalHyperParameterTuningJobObjectiveMetric,
+        ) -> Self {
+            self.final_hyper_parameter_tuning_job_objective_metric = Some(input);
+            self
+        }
+        /// <p>The <code>FinalHyperParameterTuningJobObjectiveMetric</code> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
+        pub fn set_final_hyper_parameter_tuning_job_objective_metric(
+            mut self,
+            input: std::option::Option<crate::model::FinalHyperParameterTuningJobObjectiveMetric>,
+        ) -> Self {
+            self.final_hyper_parameter_tuning_job_objective_metric = input;
+            self
+        }
+        /// <p>The status of the objective metric for the training job:</p>
+        /// <ul>
+        /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
+        /// </ul>
+        pub fn objective_status(mut self, input: crate::model::ObjectiveStatus) -> Self {
+            self.objective_status = Some(input);
+            self
+        }
+        /// <p>The status of the objective metric for the training job:</p>
+        /// <ul>
+        /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
+        /// </ul>
+        pub fn set_objective_status(
+            mut self,
+            input: std::option::Option<crate::model::ObjectiveStatus>,
+        ) -> Self {
+            self.objective_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTrainingJobSummary`](crate::model::HyperParameterTrainingJobSummary).
+        pub fn build(self) -> crate::model::HyperParameterTrainingJobSummary {
+            crate::model::HyperParameterTrainingJobSummary {
+                training_job_definition_name: self.training_job_definition_name,
+                training_job_name: self.training_job_name,
+                training_job_arn: self.training_job_arn,
+                tuning_job_name: self.tuning_job_name,
+                creation_time: self.creation_time,
+                training_start_time: self.training_start_time,
+                training_end_time: self.training_end_time,
+                training_job_status: self.training_job_status,
+                tuned_hyper_parameters: self.tuned_hyper_parameters,
+                failure_reason: self.failure_reason,
+                final_hyper_parameter_tuning_job_objective_metric: self
+                    .final_hyper_parameter_tuning_job_objective_metric,
+                objective_status: self.objective_status,
+            }
+        }
+    }
+}
+impl HyperParameterTrainingJobSummary {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTrainingJobSummary`](crate::model::HyperParameterTrainingJobSummary).
+    pub fn builder() -> crate::model::hyper_parameter_training_job_summary::Builder {
+        crate::model::hyper_parameter_training_job_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ObjectiveStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ObjectiveStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Failed" => ObjectiveStatus::Failed,
+            "Pending" => ObjectiveStatus::Pending,
+            "Succeeded" => ObjectiveStatus::Succeeded,
+            other => ObjectiveStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ObjectiveStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ObjectiveStatus::from(s))
+    }
+}
+impl ObjectiveStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ObjectiveStatus::Failed => "Failed",
+            ObjectiveStatus::Pending => "Pending",
+            ObjectiveStatus::Succeeded => "Succeeded",
+            ObjectiveStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Failed", "Pending", "Succeeded"]
+    }
+}
+impl AsRef<str> for ObjectiveStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <code>HyperParameterTuningJobConfig</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FinalHyperParameterTuningJobObjectiveMetric {
+    /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
+    /// <p>The name of the objective metric.</p>
+    #[doc(hidden)]
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The value of the objective metric.</p>
+    #[doc(hidden)]
+    pub value: f32,
+}
+impl FinalHyperParameterTuningJobObjectiveMetric {
+    /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
+    pub fn r#type(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobObjectiveType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the objective metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The value of the objective metric.</p>
+    pub fn value(&self) -> f32 {
+        self.value
+    }
+}
+impl std::fmt::Debug for FinalHyperParameterTuningJobObjectiveMetric {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FinalHyperParameterTuningJobObjectiveMetric");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`FinalHyperParameterTuningJobObjectiveMetric`](crate::model::FinalHyperParameterTuningJobObjectiveMetric).
+pub mod final_hyper_parameter_tuning_job_objective_metric {
+
+    /// A builder for [`FinalHyperParameterTuningJobObjectiveMetric`](crate::model::FinalHyperParameterTuningJobObjectiveMetric).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
+        pub fn r#type(mut self, input: crate::model::HyperParameterTuningJobObjectiveType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The name of the objective metric.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the objective metric.</p>
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The value of the objective metric.</p>
+        pub fn value(mut self, input: f32) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p>The value of the objective metric.</p>
+        pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FinalHyperParameterTuningJobObjectiveMetric`](crate::model::FinalHyperParameterTuningJobObjectiveMetric).
+        pub fn build(self) -> crate::model::FinalHyperParameterTuningJobObjectiveMetric {
+            crate::model::FinalHyperParameterTuningJobObjectiveMetric {
+                r#type: self.r#type,
+                metric_name: self.metric_name,
+                value: self.value.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl FinalHyperParameterTuningJobObjectiveMetric {
+    /// Creates a new builder-style object to manufacture [`FinalHyperParameterTuningJobObjectiveMetric`](crate::model::FinalHyperParameterTuningJobObjectiveMetric).
+    pub fn builder() -> crate::model::final_hyper_parameter_tuning_job_objective_metric::Builder {
+        crate::model::final_hyper_parameter_tuning_job_objective_metric::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HyperParameterTuningJobObjectiveType {
+    #[allow(missing_docs)] // documentation missing in model
+    Maximize,
+    #[allow(missing_docs)] // documentation missing in model
+    Minimize,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HyperParameterTuningJobObjectiveType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Maximize" => HyperParameterTuningJobObjectiveType::Maximize,
+            "Minimize" => HyperParameterTuningJobObjectiveType::Minimize,
+            other => HyperParameterTuningJobObjectiveType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HyperParameterTuningJobObjectiveType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HyperParameterTuningJobObjectiveType::from(s))
+    }
+}
+impl HyperParameterTuningJobObjectiveType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HyperParameterTuningJobObjectiveType::Maximize => "Maximize",
+            HyperParameterTuningJobObjectiveType::Minimize => "Minimize",
+            HyperParameterTuningJobObjectiveType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Maximize", "Minimize"]
+    }
+}
+impl AsRef<str> for HyperParameterTuningJobObjectiveType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TrainingJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TrainingJobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Completed" => TrainingJobStatus::Completed,
+            "Failed" => TrainingJobStatus::Failed,
+            "InProgress" => TrainingJobStatus::InProgress,
+            "Stopped" => TrainingJobStatus::Stopped,
+            "Stopping" => TrainingJobStatus::Stopping,
+            other => TrainingJobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TrainingJobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrainingJobStatus::from(s))
+    }
+}
+impl TrainingJobStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrainingJobStatus::Completed => "Completed",
+            TrainingJobStatus::Failed => "Failed",
+            TrainingJobStatus::InProgress => "InProgress",
+            TrainingJobStatus::Stopped => "Stopped",
+            TrainingJobStatus::Stopping => "Stopping",
+            TrainingJobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
+}
+impl AsRef<str> for TrainingJobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ObjectiveStatusCounters {
+    /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
+    #[doc(hidden)]
+    pub succeeded: i32,
+    /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
+    #[doc(hidden)]
+    pub pending: i32,
+    /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
+    #[doc(hidden)]
+    pub failed: i32,
+}
+impl ObjectiveStatusCounters {
+    /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
+    pub fn succeeded(&self) -> i32 {
+        self.succeeded
+    }
+    /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
+    pub fn pending(&self) -> i32 {
+        self.pending
+    }
+    /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
+    pub fn failed(&self) -> i32 {
+        self.failed
+    }
+}
+impl std::fmt::Debug for ObjectiveStatusCounters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ObjectiveStatusCounters");
+        formatter.field("succeeded", &self.succeeded);
+        formatter.field("pending", &self.pending);
+        formatter.field("failed", &self.failed);
+        formatter.finish()
+    }
+}
+/// See [`ObjectiveStatusCounters`](crate::model::ObjectiveStatusCounters).
+pub mod objective_status_counters {
+
+    /// A builder for [`ObjectiveStatusCounters`](crate::model::ObjectiveStatusCounters).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) succeeded: std::option::Option<i32>,
+        pub(crate) pending: std::option::Option<i32>,
+        pub(crate) failed: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
+        pub fn succeeded(mut self, input: i32) -> Self {
+            self.succeeded = Some(input);
+            self
+        }
+        /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
+        pub fn set_succeeded(mut self, input: std::option::Option<i32>) -> Self {
+            self.succeeded = input;
+            self
+        }
+        /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
+        pub fn pending(mut self, input: i32) -> Self {
+            self.pending = Some(input);
+            self
+        }
+        /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
+        pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending = input;
+            self
+        }
+        /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
+        pub fn failed(mut self, input: i32) -> Self {
+            self.failed = Some(input);
+            self
+        }
+        /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
+        pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
+            self.failed = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ObjectiveStatusCounters`](crate::model::ObjectiveStatusCounters).
+        pub fn build(self) -> crate::model::ObjectiveStatusCounters {
+            crate::model::ObjectiveStatusCounters {
+                succeeded: self.succeeded.unwrap_or_default(),
+                pending: self.pending.unwrap_or_default(),
+                failed: self.failed.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ObjectiveStatusCounters {
+    /// Creates a new builder-style object to manufacture [`ObjectiveStatusCounters`](crate::model::ObjectiveStatusCounters).
+    pub fn builder() -> crate::model::objective_status_counters::Builder {
+        crate::model::objective_status_counters::Builder::default()
+    }
+}
+
+/// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TrainingJobStatusCounters {
+    /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub completed: i32,
+    /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub in_progress: i32,
+    /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
+    #[doc(hidden)]
+    pub retryable_error: i32,
+    /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
+    #[doc(hidden)]
+    pub non_retryable_error: i32,
+    /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
+    #[doc(hidden)]
+    pub stopped: i32,
+}
+impl TrainingJobStatusCounters {
+    /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
+    pub fn completed(&self) -> i32 {
+        self.completed
+    }
+    /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
+    pub fn in_progress(&self) -> i32 {
+        self.in_progress
+    }
+    /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
+    pub fn retryable_error(&self) -> i32 {
+        self.retryable_error
+    }
+    /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
+    pub fn non_retryable_error(&self) -> i32 {
+        self.non_retryable_error
+    }
+    /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
+    pub fn stopped(&self) -> i32 {
+        self.stopped
+    }
+}
+impl std::fmt::Debug for TrainingJobStatusCounters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TrainingJobStatusCounters");
+        formatter.field("completed", &self.completed);
+        formatter.field("in_progress", &self.in_progress);
+        formatter.field("retryable_error", &self.retryable_error);
+        formatter.field("non_retryable_error", &self.non_retryable_error);
+        formatter.field("stopped", &self.stopped);
+        formatter.finish()
+    }
+}
+/// See [`TrainingJobStatusCounters`](crate::model::TrainingJobStatusCounters).
+pub mod training_job_status_counters {
+
+    /// A builder for [`TrainingJobStatusCounters`](crate::model::TrainingJobStatusCounters).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) completed: std::option::Option<i32>,
+        pub(crate) in_progress: std::option::Option<i32>,
+        pub(crate) retryable_error: std::option::Option<i32>,
+        pub(crate) non_retryable_error: std::option::Option<i32>,
+        pub(crate) stopped: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
+        pub fn completed(mut self, input: i32) -> Self {
+            self.completed = Some(input);
+            self
+        }
+        /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
+        pub fn set_completed(mut self, input: std::option::Option<i32>) -> Self {
+            self.completed = input;
+            self
+        }
+        /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
+        pub fn in_progress(mut self, input: i32) -> Self {
+            self.in_progress = Some(input);
+            self
+        }
+        /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
+        pub fn set_in_progress(mut self, input: std::option::Option<i32>) -> Self {
+            self.in_progress = input;
+            self
+        }
+        /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
+        pub fn retryable_error(mut self, input: i32) -> Self {
+            self.retryable_error = Some(input);
+            self
+        }
+        /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
+        pub fn set_retryable_error(mut self, input: std::option::Option<i32>) -> Self {
+            self.retryable_error = input;
+            self
+        }
+        /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
+        pub fn non_retryable_error(mut self, input: i32) -> Self {
+            self.non_retryable_error = Some(input);
+            self
+        }
+        /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
+        pub fn set_non_retryable_error(mut self, input: std::option::Option<i32>) -> Self {
+            self.non_retryable_error = input;
+            self
+        }
+        /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
+        pub fn stopped(mut self, input: i32) -> Self {
+            self.stopped = Some(input);
+            self
+        }
+        /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
+        pub fn set_stopped(mut self, input: std::option::Option<i32>) -> Self {
+            self.stopped = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TrainingJobStatusCounters`](crate::model::TrainingJobStatusCounters).
+        pub fn build(self) -> crate::model::TrainingJobStatusCounters {
+            crate::model::TrainingJobStatusCounters {
+                completed: self.completed.unwrap_or_default(),
+                in_progress: self.in_progress.unwrap_or_default(),
+                retryable_error: self.retryable_error.unwrap_or_default(),
+                non_retryable_error: self.non_retryable_error.unwrap_or_default(),
+                stopped: self.stopped.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl TrainingJobStatusCounters {
+    /// Creates a new builder-style object to manufacture [`TrainingJobStatusCounters`](crate::model::TrainingJobStatusCounters).
+    pub fn builder() -> crate::model::training_job_status_counters::Builder {
+        crate::model::training_job_status_counters::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HyperParameterTuningJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HyperParameterTuningJobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Completed" => HyperParameterTuningJobStatus::Completed,
+            "Failed" => HyperParameterTuningJobStatus::Failed,
+            "InProgress" => HyperParameterTuningJobStatus::InProgress,
+            "Stopped" => HyperParameterTuningJobStatus::Stopped,
+            "Stopping" => HyperParameterTuningJobStatus::Stopping,
+            other => HyperParameterTuningJobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HyperParameterTuningJobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HyperParameterTuningJobStatus::from(s))
+    }
+}
+impl HyperParameterTuningJobStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HyperParameterTuningJobStatus::Completed => "Completed",
+            HyperParameterTuningJobStatus::Failed => "Failed",
+            HyperParameterTuningJobStatus::InProgress => "InProgress",
+            HyperParameterTuningJobStatus::Stopped => "Stopped",
+            HyperParameterTuningJobStatus::Stopping => "Stopping",
+            HyperParameterTuningJobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
+}
+impl AsRef<str> for HyperParameterTuningJobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTrainingJobDefinition {
+    /// <p>The job definition name.</p>
+    #[doc(hidden)]
+    pub definition_name: std::option::Option<std::string::String>,
+    /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
+    #[doc(hidden)]
+    pub tuning_objective: std::option::Option<crate::model::HyperParameterTuningJobObjective>,
+    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
+    /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub hyper_parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
+    /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
+    #[doc(hidden)]
+    pub static_hyper_parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The <code>HyperParameterAlgorithmSpecification</code> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
+    #[doc(hidden)]
+    pub algorithm_specification:
+        std::option::Option<crate::model::HyperParameterAlgorithmSpecification>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>An array of <code>Channel</code> objects that specify the input for the training jobs that the tuning job launches.</p>
+    #[doc(hidden)]
+    pub input_data_config: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+    /// <p>The <code>VpcConfig</code> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    #[doc(hidden)]
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+    /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
+    #[doc(hidden)]
+    pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+    /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+    /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub resource_config: std::option::Option<crate::model::ResourceConfig>,
+    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    #[doc(hidden)]
+    pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
+    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    #[doc(hidden)]
+    pub enable_network_isolation: bool,
+    /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
+    #[doc(hidden)]
+    pub enable_inter_container_traffic_encryption: bool,
+    /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
+    #[doc(hidden)]
+    pub enable_managed_spot_training: bool,
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+    #[doc(hidden)]
+    pub checkpoint_config: std::option::Option<crate::model::CheckpointConfig>,
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    #[doc(hidden)]
+    pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_resource_config:
+        std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
+}
+impl HyperParameterTrainingJobDefinition {
+    /// <p>The job definition name.</p>
+    pub fn definition_name(&self) -> std::option::Option<&str> {
+        self.definition_name.as_deref()
+    }
+    /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
+    pub fn tuning_objective(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobObjective> {
+        self.tuning_objective.as_ref()
+    }
+    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
+    /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
+    /// </note>
+    pub fn hyper_parameter_ranges(&self) -> std::option::Option<&crate::model::ParameterRanges> {
+        self.hyper_parameter_ranges.as_ref()
+    }
+    /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
+    pub fn static_hyper_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.static_hyper_parameters.as_ref()
+    }
+    /// <p>The <code>HyperParameterAlgorithmSpecification</code> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
+    pub fn algorithm_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterAlgorithmSpecification> {
+        self.algorithm_specification.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An array of <code>Channel</code> objects that specify the input for the training jobs that the tuning job launches.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.input_data_config.as_deref()
+    }
+    /// <p>The <code>VpcConfig</code> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+    /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+    /// </note>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    pub fn enable_network_isolation(&self) -> bool {
+        self.enable_network_isolation
+    }
+    /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
+    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
+        self.enable_inter_container_traffic_encryption
+    }
+    /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
+    pub fn enable_managed_spot_training(&self) -> bool {
+        self.enable_managed_spot_training
+    }
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+    pub fn checkpoint_config(&self) -> std::option::Option<&crate::model::CheckpointConfig> {
+        self.checkpoint_config.as_ref()
+    }
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
+        self.retry_strategy.as_ref()
+    }
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+    pub fn hyper_parameter_tuning_resource_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningResourceConfig> {
+        self.hyper_parameter_tuning_resource_config.as_ref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTrainingJobDefinition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTrainingJobDefinition");
+        formatter.field("definition_name", &self.definition_name);
+        formatter.field("tuning_objective", &self.tuning_objective);
+        formatter.field("hyper_parameter_ranges", &self.hyper_parameter_ranges);
+        formatter.field("static_hyper_parameters", &self.static_hyper_parameters);
+        formatter.field("algorithm_specification", &self.algorithm_specification);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("input_data_config", &self.input_data_config);
+        formatter.field("vpc_config", &self.vpc_config);
+        formatter.field("output_data_config", &self.output_data_config);
+        formatter.field("resource_config", &self.resource_config);
+        formatter.field("stopping_condition", &self.stopping_condition);
+        formatter.field("enable_network_isolation", &self.enable_network_isolation);
+        formatter.field(
+            "enable_inter_container_traffic_encryption",
+            &self.enable_inter_container_traffic_encryption,
+        );
+        formatter.field(
+            "enable_managed_spot_training",
+            &self.enable_managed_spot_training,
+        );
+        formatter.field("checkpoint_config", &self.checkpoint_config);
+        formatter.field("retry_strategy", &self.retry_strategy);
+        formatter.field(
+            "hyper_parameter_tuning_resource_config",
+            &self.hyper_parameter_tuning_resource_config,
+        );
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
+pub mod hyper_parameter_training_job_definition {
+
+    /// A builder for [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) definition_name: std::option::Option<std::string::String>,
+        pub(crate) tuning_objective:
+            std::option::Option<crate::model::HyperParameterTuningJobObjective>,
+        pub(crate) hyper_parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
+        pub(crate) static_hyper_parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) algorithm_specification:
+            std::option::Option<crate::model::HyperParameterAlgorithmSpecification>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) input_data_config: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
+        pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+        pub(crate) resource_config: std::option::Option<crate::model::ResourceConfig>,
+        pub(crate) stopping_condition: std::option::Option<crate::model::StoppingCondition>,
+        pub(crate) enable_network_isolation: std::option::Option<bool>,
+        pub(crate) enable_inter_container_traffic_encryption: std::option::Option<bool>,
+        pub(crate) enable_managed_spot_training: std::option::Option<bool>,
+        pub(crate) checkpoint_config: std::option::Option<crate::model::CheckpointConfig>,
+        pub(crate) retry_strategy: std::option::Option<crate::model::RetryStrategy>,
+        pub(crate) hyper_parameter_tuning_resource_config:
+            std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
+    }
+    impl Builder {
+        /// <p>The job definition name.</p>
+        pub fn definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.definition_name = Some(input.into());
+            self
+        }
+        /// <p>The job definition name.</p>
+        pub fn set_definition_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.definition_name = input;
+            self
+        }
+        /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
+        pub fn tuning_objective(
+            mut self,
+            input: crate::model::HyperParameterTuningJobObjective,
+        ) -> Self {
+            self.tuning_objective = Some(input);
+            self
+        }
+        /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
+        pub fn set_tuning_objective(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobObjective>,
+        ) -> Self {
+            self.tuning_objective = input;
+            self
+        }
+        /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
+        /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
+        /// </note>
+        pub fn hyper_parameter_ranges(mut self, input: crate::model::ParameterRanges) -> Self {
+            self.hyper_parameter_ranges = Some(input);
+            self
+        }
+        /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
+        /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
+        /// </note>
+        pub fn set_hyper_parameter_ranges(
+            mut self,
+            input: std::option::Option<crate::model::ParameterRanges>,
+        ) -> Self {
+            self.hyper_parameter_ranges = input;
+            self
+        }
+        /// Adds a key-value pair to `static_hyper_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_static_hyper_parameters`](Self::set_static_hyper_parameters).
+        ///
+        /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
+        pub fn static_hyper_parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.static_hyper_parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.static_hyper_parameters = Some(hash_map);
+            self
+        }
+        /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
+        pub fn set_static_hyper_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.static_hyper_parameters = input;
+            self
+        }
+        /// <p>The <code>HyperParameterAlgorithmSpecification</code> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
+        pub fn algorithm_specification(
+            mut self,
+            input: crate::model::HyperParameterAlgorithmSpecification,
+        ) -> Self {
+            self.algorithm_specification = Some(input);
+            self
+        }
+        /// <p>The <code>HyperParameterAlgorithmSpecification</code> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
+        pub fn set_algorithm_specification(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterAlgorithmSpecification>,
+        ) -> Self {
+            self.algorithm_specification = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Appends an item to `input_data_config`.
+        ///
+        /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
+        ///
+        /// <p>An array of <code>Channel</code> objects that specify the input for the training jobs that the tuning job launches.</p>
+        pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
+            let mut v = self.input_data_config.unwrap_or_default();
+            v.push(input);
+            self.input_data_config = Some(v);
+            self
+        }
+        /// <p>An array of <code>Channel</code> objects that specify the input for the training jobs that the tuning job launches.</p>
+        pub fn set_input_data_config(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+        ) -> Self {
+            self.input_data_config = input;
+            self
+        }
+        /// <p>The <code>VpcConfig</code> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p>The <code>VpcConfig</code> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
+        }
+        /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.output_data_config = Some(input);
+            self
+        }
+        /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
+        pub fn set_output_data_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputDataConfig>,
+        ) -> Self {
+            self.output_data_config = input;
+            self
+        }
+        /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
+        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+        /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+        /// </note>
+        pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
+            self.resource_config = Some(input);
+            self
+        }
+        /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
+        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+        /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+        /// </note>
+        pub fn set_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::ResourceConfig>,
+        ) -> Self {
+            self.resource_config = input;
+            self
+        }
+        /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
+            self.stopping_condition = Some(input);
+            self
+        }
+        /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        pub fn set_stopping_condition(
+            mut self,
+            input: std::option::Option<crate::model::StoppingCondition>,
+        ) -> Self {
+            self.stopping_condition = input;
+            self
+        }
+        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+        pub fn enable_network_isolation(mut self, input: bool) -> Self {
+            self.enable_network_isolation = Some(input);
+            self
+        }
+        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+        pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_network_isolation = input;
+            self
+        }
+        /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
+        pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
+            self.enable_inter_container_traffic_encryption = Some(input);
+            self
+        }
+        /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
+        pub fn set_enable_inter_container_traffic_encryption(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_inter_container_traffic_encryption = input;
+            self
+        }
+        /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
+        pub fn enable_managed_spot_training(mut self, input: bool) -> Self {
+            self.enable_managed_spot_training = Some(input);
+            self
+        }
+        /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
+        pub fn set_enable_managed_spot_training(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_managed_spot_training = input;
+            self
+        }
+        /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+        pub fn checkpoint_config(mut self, input: crate::model::CheckpointConfig) -> Self {
+            self.checkpoint_config = Some(input);
+            self
+        }
+        /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+        pub fn set_checkpoint_config(
+            mut self,
+            input: std::option::Option<crate::model::CheckpointConfig>,
+        ) -> Self {
+            self.checkpoint_config = input;
+            self
+        }
+        /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+        pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
+            self.retry_strategy = Some(input);
+            self
+        }
+        /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+        pub fn set_retry_strategy(
+            mut self,
+            input: std::option::Option<crate::model::RetryStrategy>,
+        ) -> Self {
+            self.retry_strategy = input;
+            self
+        }
+        /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+        pub fn hyper_parameter_tuning_resource_config(
+            mut self,
+            input: crate::model::HyperParameterTuningResourceConfig,
+        ) -> Self {
+            self.hyper_parameter_tuning_resource_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+        pub fn set_hyper_parameter_tuning_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
+        ) -> Self {
+            self.hyper_parameter_tuning_resource_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
+        pub fn build(self) -> crate::model::HyperParameterTrainingJobDefinition {
+            crate::model::HyperParameterTrainingJobDefinition {
+                definition_name: self.definition_name,
+                tuning_objective: self.tuning_objective,
+                hyper_parameter_ranges: self.hyper_parameter_ranges,
+                static_hyper_parameters: self.static_hyper_parameters,
+                algorithm_specification: self.algorithm_specification,
+                role_arn: self.role_arn,
+                input_data_config: self.input_data_config,
+                vpc_config: self.vpc_config,
+                output_data_config: self.output_data_config,
+                resource_config: self.resource_config,
+                stopping_condition: self.stopping_condition,
+                enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
+                enable_inter_container_traffic_encryption: self
+                    .enable_inter_container_traffic_encryption
+                    .unwrap_or_default(),
+                enable_managed_spot_training: self.enable_managed_spot_training.unwrap_or_default(),
+                checkpoint_config: self.checkpoint_config,
+                retry_strategy: self.retry_strategy,
+                hyper_parameter_tuning_resource_config: self.hyper_parameter_tuning_resource_config,
+            }
+        }
+    }
+}
+impl HyperParameterTrainingJobDefinition {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
+    pub fn builder() -> crate::model::hyper_parameter_training_job_definition::Builder {
+        crate::model::hyper_parameter_training_job_definition::Builder::default()
+    }
+}
+
+/// <p>The configuration of resources, including compute instances and storage volumes for use in training jobs launched by hyperparameter tuning jobs. Specify one or more instance type and count and the allocation strategy for instance selection.</p> <note>
+/// <p> <code>HyperParameterTuningResourceConfig</code> supports all of the capabilities of ResourceConfig with added functionality for flexible instance management.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningResourceConfig {
+    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+    #[doc(hidden)]
+    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+    /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
+    #[doc(hidden)]
+    pub instance_count: i32,
+    /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
+    /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
+    /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub volume_size_in_gb: i32,
+    /// <p>A key used by Amazon Web Services Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
+    /// <p>KMS Key ID:</p>
+    /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+    /// <p>Amazon Resource Name (ARN) of a KMS key:</p>
+    /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+    /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about Amazon Web Services Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS encryption</a> for more information.</p>
+    #[doc(hidden)]
+    pub volume_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
+    #[doc(hidden)]
+    pub allocation_strategy:
+        std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
+    /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
+    /// <p>If you only want to use a single instance configuration inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub instance_configs:
+        std::option::Option<std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>>,
+}
+impl HyperParameterTuningResourceConfig {
+    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+    /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
+    /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
+    /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
+    /// </note>
+    pub fn volume_size_in_gb(&self) -> i32 {
+        self.volume_size_in_gb
+    }
+    /// <p>A key used by Amazon Web Services Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
+    /// <p>KMS Key ID:</p>
+    /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+    /// <p>Amazon Resource Name (ARN) of a KMS key:</p>
+    /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+    /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about Amazon Web Services Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS encryption</a> for more information.</p>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
+    pub fn allocation_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningAllocationStrategy> {
+        self.allocation_strategy.as_ref()
+    }
+    /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
+    /// <p>If you only want to use a single instance configuration inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
+    /// </note>
+    pub fn instance_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::HyperParameterTuningInstanceConfig]> {
+        self.instance_configs.as_deref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningResourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningResourceConfig");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+        formatter.field("allocation_strategy", &self.allocation_strategy);
+        formatter.field("instance_configs", &self.instance_configs);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
+pub mod hyper_parameter_tuning_resource_config {
+
+    /// A builder for [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+        pub(crate) instance_count: std::option::Option<i32>,
+        pub(crate) volume_size_in_gb: std::option::Option<i32>,
+        pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) allocation_strategy:
+            std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
+        pub(crate) instance_configs:
+            std::option::Option<std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>>,
+    }
+    impl Builder {
+        /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
+        /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
+        /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
+        /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
+        /// </note>
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.volume_size_in_gb = Some(input);
+            self
+        }
+        /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
+        /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
+        /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
+        /// </note>
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_in_gb = input;
+            self
+        }
+        /// <p>A key used by Amazon Web Services Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
+        /// <p>KMS Key ID:</p>
+        /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+        /// <p>Amazon Resource Name (ARN) of a KMS key:</p>
+        /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+        /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about Amazon Web Services Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS encryption</a> for more information.</p>
+        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>A key used by Amazon Web Services Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
+        /// <p>KMS Key ID:</p>
+        /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+        /// <p>Amazon Resource Name (ARN) of a KMS key:</p>
+        /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+        /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about Amazon Web Services Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS encryption</a> for more information.</p>
+        pub fn set_volume_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.volume_kms_key_id = input;
+            self
+        }
+        /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
+        pub fn allocation_strategy(
+            mut self,
+            input: crate::model::HyperParameterTuningAllocationStrategy,
+        ) -> Self {
+            self.allocation_strategy = Some(input);
+            self
+        }
+        /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
+        pub fn set_allocation_strategy(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
+        ) -> Self {
+            self.allocation_strategy = input;
+            self
+        }
+        /// Appends an item to `instance_configs`.
+        ///
+        /// To override the contents of this collection use [`set_instance_configs`](Self::set_instance_configs).
+        ///
+        /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
+        /// <p>If you only want to use a single instance configuration inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
+        /// </note>
+        pub fn instance_configs(
+            mut self,
+            input: crate::model::HyperParameterTuningInstanceConfig,
+        ) -> Self {
+            let mut v = self.instance_configs.unwrap_or_default();
+            v.push(input);
+            self.instance_configs = Some(v);
+            self
+        }
+        /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
+        /// <p>If you only want to use a single instance configuration inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
+        /// </note>
+        pub fn set_instance_configs(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>,
+            >,
+        ) -> Self {
+            self.instance_configs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
+        pub fn build(self) -> crate::model::HyperParameterTuningResourceConfig {
+            crate::model::HyperParameterTuningResourceConfig {
+                instance_type: self.instance_type,
+                instance_count: self.instance_count.unwrap_or_default(),
+                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+                volume_kms_key_id: self.volume_kms_key_id,
+                allocation_strategy: self.allocation_strategy,
+                instance_configs: self.instance_configs,
+            }
+        }
+    }
+}
+impl HyperParameterTuningResourceConfig {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_resource_config::Builder {
+        crate::model::hyper_parameter_tuning_resource_config::Builder::default()
+    }
+}
+
+/// <p>The configuration for hyperparameter tuning resources for use in training jobs launched by the tuning job. These resources include compute instances and storage volumes. Specify one or more compute instance configurations and allocation strategies to select resources (optional).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningInstanceConfig {
+    /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+    #[doc(hidden)]
+    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+    /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
+    #[doc(hidden)]
+    pub instance_count: i32,
+    /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+    #[doc(hidden)]
+    pub volume_size_in_gb: i32,
+}
+impl HyperParameterTuningInstanceConfig {
+    /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+    /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+    pub fn volume_size_in_gb(&self) -> i32 {
+        self.volume_size_in_gb
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningInstanceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningInstanceConfig");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
+pub mod hyper_parameter_tuning_instance_config {
+
+    /// A builder for [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+        pub(crate) instance_count: std::option::Option<i32>,
+        pub(crate) volume_size_in_gb: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
+        /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.volume_size_in_gb = Some(input);
+            self
+        }
+        /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_in_gb = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
+        pub fn build(self) -> crate::model::HyperParameterTuningInstanceConfig {
+            crate::model::HyperParameterTuningInstanceConfig {
+                instance_type: self.instance_type,
+                instance_count: self.instance_count.unwrap_or_default(),
+                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl HyperParameterTuningInstanceConfig {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_instance_config::Builder {
+        crate::model::hyper_parameter_tuning_instance_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TrainingInstanceType {
+    #[allow(missing_docs)] // documentation missing in model
+    MlC42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC518Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC59Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5N18Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5N2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5N4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5N9Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5NXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4DnXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG516Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG548Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG58Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM410Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM416Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP216Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP28Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP316Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP38Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP3Dn24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP4D24Xlarge,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TrainingInstanceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ml.c4.2xlarge" => TrainingInstanceType::MlC42Xlarge,
+            "ml.c4.4xlarge" => TrainingInstanceType::MlC44Xlarge,
+            "ml.c4.8xlarge" => TrainingInstanceType::MlC48Xlarge,
+            "ml.c4.xlarge" => TrainingInstanceType::MlC4Xlarge,
+            "ml.c5.18xlarge" => TrainingInstanceType::MlC518Xlarge,
+            "ml.c5.2xlarge" => TrainingInstanceType::MlC52Xlarge,
+            "ml.c5.4xlarge" => TrainingInstanceType::MlC54Xlarge,
+            "ml.c5.9xlarge" => TrainingInstanceType::MlC59Xlarge,
+            "ml.c5.xlarge" => TrainingInstanceType::MlC5Xlarge,
+            "ml.c5n.18xlarge" => TrainingInstanceType::MlC5N18Xlarge,
+            "ml.c5n.2xlarge" => TrainingInstanceType::MlC5N2Xlarge,
+            "ml.c5n.4xlarge" => TrainingInstanceType::MlC5N4Xlarge,
+            "ml.c5n.9xlarge" => TrainingInstanceType::MlC5N9Xlarge,
+            "ml.c5n.xlarge" => TrainingInstanceType::MlC5NXlarge,
+            "ml.g4dn.12xlarge" => TrainingInstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => TrainingInstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => TrainingInstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => TrainingInstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => TrainingInstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => TrainingInstanceType::MlG4DnXlarge,
+            "ml.g5.12xlarge" => TrainingInstanceType::MlG512Xlarge,
+            "ml.g5.16xlarge" => TrainingInstanceType::MlG516Xlarge,
+            "ml.g5.24xlarge" => TrainingInstanceType::MlG524Xlarge,
+            "ml.g5.2xlarge" => TrainingInstanceType::MlG52Xlarge,
+            "ml.g5.48xlarge" => TrainingInstanceType::MlG548Xlarge,
+            "ml.g5.4xlarge" => TrainingInstanceType::MlG54Xlarge,
+            "ml.g5.8xlarge" => TrainingInstanceType::MlG58Xlarge,
+            "ml.g5.xlarge" => TrainingInstanceType::MlG5Xlarge,
+            "ml.m4.10xlarge" => TrainingInstanceType::MlM410Xlarge,
+            "ml.m4.16xlarge" => TrainingInstanceType::MlM416Xlarge,
+            "ml.m4.2xlarge" => TrainingInstanceType::MlM42Xlarge,
+            "ml.m4.4xlarge" => TrainingInstanceType::MlM44Xlarge,
+            "ml.m4.xlarge" => TrainingInstanceType::MlM4Xlarge,
+            "ml.m5.12xlarge" => TrainingInstanceType::MlM512Xlarge,
+            "ml.m5.24xlarge" => TrainingInstanceType::MlM524Xlarge,
+            "ml.m5.2xlarge" => TrainingInstanceType::MlM52Xlarge,
+            "ml.m5.4xlarge" => TrainingInstanceType::MlM54Xlarge,
+            "ml.m5.large" => TrainingInstanceType::MlM5Large,
+            "ml.m5.xlarge" => TrainingInstanceType::MlM5Xlarge,
+            "ml.p2.16xlarge" => TrainingInstanceType::MlP216Xlarge,
+            "ml.p2.8xlarge" => TrainingInstanceType::MlP28Xlarge,
+            "ml.p2.xlarge" => TrainingInstanceType::MlP2Xlarge,
+            "ml.p3.16xlarge" => TrainingInstanceType::MlP316Xlarge,
+            "ml.p3.2xlarge" => TrainingInstanceType::MlP32Xlarge,
+            "ml.p3.8xlarge" => TrainingInstanceType::MlP38Xlarge,
+            "ml.p3dn.24xlarge" => TrainingInstanceType::MlP3Dn24Xlarge,
+            "ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
+            other => TrainingInstanceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TrainingInstanceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrainingInstanceType::from(s))
+    }
+}
+impl TrainingInstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrainingInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
+            TrainingInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
+            TrainingInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
+            TrainingInstanceType::MlC4Xlarge => "ml.c4.xlarge",
+            TrainingInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+            TrainingInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+            TrainingInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+            TrainingInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+            TrainingInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            TrainingInstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
+            TrainingInstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
+            TrainingInstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
+            TrainingInstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
+            TrainingInstanceType::MlC5NXlarge => "ml.c5n.xlarge",
+            TrainingInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            TrainingInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            TrainingInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            TrainingInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            TrainingInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            TrainingInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            TrainingInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
+            TrainingInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
+            TrainingInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
+            TrainingInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
+            TrainingInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
+            TrainingInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
+            TrainingInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
+            TrainingInstanceType::MlG5Xlarge => "ml.g5.xlarge",
+            TrainingInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
+            TrainingInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
+            TrainingInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
+            TrainingInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
+            TrainingInstanceType::MlM4Xlarge => "ml.m4.xlarge",
+            TrainingInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+            TrainingInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+            TrainingInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+            TrainingInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+            TrainingInstanceType::MlM5Large => "ml.m5.large",
+            TrainingInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            TrainingInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
+            TrainingInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
+            TrainingInstanceType::MlP2Xlarge => "ml.p2.xlarge",
+            TrainingInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+            TrainingInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+            TrainingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            TrainingInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+            TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            TrainingInstanceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.c5n.18xlarge",
+            "ml.c5n.2xlarge",
+            "ml.c5n.4xlarge",
+            "ml.c5n.9xlarge",
+            "ml.c5n.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.g5.12xlarge",
+            "ml.g5.16xlarge",
+            "ml.g5.24xlarge",
+            "ml.g5.2xlarge",
+            "ml.g5.48xlarge",
+            "ml.g5.4xlarge",
+            "ml.g5.8xlarge",
+            "ml.g5.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.p3dn.24xlarge",
+            "ml.p4d.24xlarge",
+        ]
+    }
+}
+impl AsRef<str> for TrainingInstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HyperParameterTuningAllocationStrategy {
+    #[allow(missing_docs)] // documentation missing in model
+    Prioritized,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HyperParameterTuningAllocationStrategy {
+    fn from(s: &str) -> Self {
+        match s {
+            "Prioritized" => HyperParameterTuningAllocationStrategy::Prioritized,
+            other => HyperParameterTuningAllocationStrategy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HyperParameterTuningAllocationStrategy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HyperParameterTuningAllocationStrategy::from(s))
+    }
+}
+impl HyperParameterTuningAllocationStrategy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HyperParameterTuningAllocationStrategy::Prioritized => "Prioritized",
+            HyperParameterTuningAllocationStrategy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Prioritized"]
+    }
+}
+impl AsRef<str> for HyperParameterTuningAllocationStrategy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The retry strategy to use when a training job fails due to an <code>InternalServerError</code>. <code>RetryStrategy</code> is specified as part of the <code>CreateTrainingJob</code> and <code>CreateHyperParameterTuningJob</code> requests. You can add the <code>StoppingCondition</code> parameter to the request to limit the training time for the complete job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RetryStrategy {
+    /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
+    #[doc(hidden)]
+    pub maximum_retry_attempts: i32,
+}
+impl RetryStrategy {
+    /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
+    pub fn maximum_retry_attempts(&self) -> i32 {
+        self.maximum_retry_attempts
+    }
+}
+impl std::fmt::Debug for RetryStrategy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RetryStrategy");
+        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
+        formatter.finish()
+    }
+}
+/// See [`RetryStrategy`](crate::model::RetryStrategy).
+pub mod retry_strategy {
+
+    /// A builder for [`RetryStrategy`](crate::model::RetryStrategy).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) maximum_retry_attempts: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
+        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
+            self.maximum_retry_attempts = Some(input);
+            self
+        }
+        /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
+        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_retry_attempts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RetryStrategy`](crate::model::RetryStrategy).
+        pub fn build(self) -> crate::model::RetryStrategy {
+            crate::model::RetryStrategy {
+                maximum_retry_attempts: self.maximum_retry_attempts.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl RetryStrategy {
+    /// Creates a new builder-style object to manufacture [`RetryStrategy`](crate::model::RetryStrategy).
+    pub fn builder() -> crate::model::retry_strategy::Builder {
+        crate::model::retry_strategy::Builder::default()
+    }
+}
+
+/// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CheckpointConfig {
+    /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    #[doc(hidden)]
+    pub s3_uri: std::option::Option<std::string::String>,
+    /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
+    #[doc(hidden)]
+    pub local_path: std::option::Option<std::string::String>,
+}
+impl CheckpointConfig {
+    /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
+    pub fn local_path(&self) -> std::option::Option<&str> {
+        self.local_path.as_deref()
+    }
+}
+impl std::fmt::Debug for CheckpointConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CheckpointConfig");
+        formatter.field("s3_uri", &self.s3_uri);
+        formatter.field("local_path", &self.local_path);
+        formatter.finish()
+    }
+}
+/// See [`CheckpointConfig`](crate::model::CheckpointConfig).
+pub mod checkpoint_config {
+
+    /// A builder for [`CheckpointConfig`](crate::model::CheckpointConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_uri: std::option::Option<std::string::String>,
+        pub(crate) local_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_uri = Some(input.into());
+            self
+        }
+        /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_uri = input;
+            self
+        }
+        /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
+        pub fn local_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.local_path = Some(input.into());
+            self
+        }
+        /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
+        pub fn set_local_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.local_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CheckpointConfig`](crate::model::CheckpointConfig).
+        pub fn build(self) -> crate::model::CheckpointConfig {
+            crate::model::CheckpointConfig {
+                s3_uri: self.s3_uri,
+                local_path: self.local_path,
+            }
+        }
+    }
+}
+impl CheckpointConfig {
+    /// Creates a new builder-style object to manufacture [`CheckpointConfig`](crate::model::CheckpointConfig).
+    pub fn builder() -> crate::model::checkpoint_config::Builder {
+        crate::model::checkpoint_config::Builder::default()
+    }
+}
+
+/// <p>Specifies a limit to how long a model training job or model compilation job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training or compilation job. Use this API to cap model training costs.</p>
+/// <p>To stop a training job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+/// <p>The training algorithms provided by SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note>
+/// <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StoppingCondition {
+    /// <p>The maximum length of time, in seconds, that a training or compilation job can run before it is stopped.</p>
+    /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
+    /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
+    /// <p>The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing metrics or archiving and uploading models after it has been stopped, is 30 days.</p>
+    #[doc(hidden)]
+    pub max_runtime_in_seconds: i32,
+    /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
+    /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
+    #[doc(hidden)]
+    pub max_wait_time_in_seconds: std::option::Option<i32>,
+}
+impl StoppingCondition {
+    /// <p>The maximum length of time, in seconds, that a training or compilation job can run before it is stopped.</p>
+    /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
+    /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
+    /// <p>The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing metrics or archiving and uploading models after it has been stopped, is 30 days.</p>
+    pub fn max_runtime_in_seconds(&self) -> i32 {
+        self.max_runtime_in_seconds
+    }
+    /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
+    /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
+    pub fn max_wait_time_in_seconds(&self) -> std::option::Option<i32> {
+        self.max_wait_time_in_seconds
+    }
+}
+impl std::fmt::Debug for StoppingCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StoppingCondition");
+        formatter.field("max_runtime_in_seconds", &self.max_runtime_in_seconds);
+        formatter.field("max_wait_time_in_seconds", &self.max_wait_time_in_seconds);
+        formatter.finish()
+    }
+}
+/// See [`StoppingCondition`](crate::model::StoppingCondition).
+pub mod stopping_condition {
+
+    /// A builder for [`StoppingCondition`](crate::model::StoppingCondition).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_runtime_in_seconds: std::option::Option<i32>,
+        pub(crate) max_wait_time_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The maximum length of time, in seconds, that a training or compilation job can run before it is stopped.</p>
+        /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
+        /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
+        /// <p>The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing metrics or archiving and uploading models after it has been stopped, is 30 days.</p>
+        pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
+            self.max_runtime_in_seconds = Some(input);
+            self
+        }
+        /// <p>The maximum length of time, in seconds, that a training or compilation job can run before it is stopped.</p>
+        /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
+        /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
+        /// <p>The maximum time that a <code>TrainingJob</code> can run in total, including any time spent publishing metrics or archiving and uploading models after it has been stopped, is 30 days.</p>
+        pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_runtime_in_seconds = input;
+            self
+        }
+        /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
+        /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
+        pub fn max_wait_time_in_seconds(mut self, input: i32) -> Self {
+            self.max_wait_time_in_seconds = Some(input);
+            self
+        }
+        /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
+        /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
+        pub fn set_max_wait_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_wait_time_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StoppingCondition`](crate::model::StoppingCondition).
+        pub fn build(self) -> crate::model::StoppingCondition {
+            crate::model::StoppingCondition {
+                max_runtime_in_seconds: self.max_runtime_in_seconds.unwrap_or_default(),
+                max_wait_time_in_seconds: self.max_wait_time_in_seconds,
+            }
+        }
+    }
+}
+impl StoppingCondition {
+    /// Creates a new builder-style object to manufacture [`StoppingCondition`](crate::model::StoppingCondition).
+    pub fn builder() -> crate::model::stopping_condition::Builder {
+        crate::model::stopping_condition::Builder::default()
+    }
+}
+
+/// <p>Describes the resources, including ML compute instances and ML storage volumes, to use for model training. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceConfig {
+    /// <p>The ML compute instance type. </p>
+    #[doc(hidden)]
+    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+    /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
+    #[doc(hidden)]
+    pub instance_count: i32,
+    /// <p>The size of the ML storage volume that you want to provision. </p>
+    /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
+    /// <p>When using an ML instance with <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD (gp2) storage. Available storage is fixed to the NVMe-type instance's storage capacity. SageMaker configures storage paths for training datasets, checkpoints, model artifacts, and outputs to use the entire capacity of the instance storage. For example, ML instance families with the NVMe-type instance storage include <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p>
+    /// <p>When using an ML instance with the EBS-only storage option and without instance storage, you must define the size of EBS volume through <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example, ML instance families that use EBS volumes include <code>ml.c5</code> and <code>ml.p2</code>. </p>
+    /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
+    /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
+    #[doc(hidden)]
+    pub volume_size_in_gb: i32,
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+    /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+    /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
+    /// </note>
+    /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub volume_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+    #[doc(hidden)]
+    pub instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
+    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
+    #[doc(hidden)]
+    pub keep_alive_period_in_seconds: std::option::Option<i32>,
+}
+impl ResourceConfig {
+    /// <p>The ML compute instance type. </p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+    /// <p>The size of the ML storage volume that you want to provision. </p>
+    /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
+    /// <p>When using an ML instance with <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD (gp2) storage. Available storage is fixed to the NVMe-type instance's storage capacity. SageMaker configures storage paths for training datasets, checkpoints, model artifacts, and outputs to use the entire capacity of the instance storage. For example, ML instance families with the NVMe-type instance storage include <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p>
+    /// <p>When using an ML instance with the EBS-only storage option and without instance storage, you must define the size of EBS volume through <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example, ML instance families that use EBS volumes include <code>ml.c5</code> and <code>ml.p2</code>. </p>
+    /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
+    /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
+    pub fn volume_size_in_gb(&self) -> i32 {
+        self.volume_size_in_gb
+    }
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+    /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+    /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
+    /// </note>
+    /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+    pub fn instance_groups(&self) -> std::option::Option<&[crate::model::InstanceGroup]> {
+        self.instance_groups.as_deref()
+    }
+    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
+    pub fn keep_alive_period_in_seconds(&self) -> std::option::Option<i32> {
+        self.keep_alive_period_in_seconds
+    }
+}
+impl std::fmt::Debug for ResourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceConfig");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+        formatter.field("instance_groups", &self.instance_groups);
+        formatter.field(
+            "keep_alive_period_in_seconds",
+            &self.keep_alive_period_in_seconds,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ResourceConfig`](crate::model::ResourceConfig).
+pub mod resource_config {
+
+    /// A builder for [`ResourceConfig`](crate::model::ResourceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+        pub(crate) instance_count: std::option::Option<i32>,
+        pub(crate) volume_size_in_gb: std::option::Option<i32>,
+        pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
+        pub(crate) keep_alive_period_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ML compute instance type. </p>
+        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>The ML compute instance type. </p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
+        /// <p>The size of the ML storage volume that you want to provision. </p>
+        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
+        /// <p>When using an ML instance with <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD (gp2) storage. Available storage is fixed to the NVMe-type instance's storage capacity. SageMaker configures storage paths for training datasets, checkpoints, model artifacts, and outputs to use the entire capacity of the instance storage. For example, ML instance families with the NVMe-type instance storage include <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p>
+        /// <p>When using an ML instance with the EBS-only storage option and without instance storage, you must define the size of EBS volume through <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example, ML instance families that use EBS volumes include <code>ml.c5</code> and <code>ml.p2</code>. </p>
+        /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
+        /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.volume_size_in_gb = Some(input);
+            self
+        }
+        /// <p>The size of the ML storage volume that you want to provision. </p>
+        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
+        /// <p>When using an ML instance with <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD (gp2) storage. Available storage is fixed to the NVMe-type instance's storage capacity. SageMaker configures storage paths for training datasets, checkpoints, model artifacts, and outputs to use the entire capacity of the instance storage. For example, ML instance families with the NVMe-type instance storage include <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p>
+        /// <p>When using an ML instance with the EBS-only storage option and without instance storage, you must define the size of EBS volume through <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example, ML instance families that use EBS volumes include <code>ml.c5</code> and <code>ml.p2</code>. </p>
+        /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
+        /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_in_gb = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+        /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+        /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
+        /// </note>
+        /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
+        /// <ul>
+        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+        /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+        /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
+        /// </note>
+        /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
+        /// <ul>
+        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn set_volume_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.volume_kms_key_id = input;
+            self
+        }
+        /// Appends an item to `instance_groups`.
+        ///
+        /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
+        ///
+        /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroup) -> Self {
+            let mut v = self.instance_groups.unwrap_or_default();
+            v.push(input);
+            self.instance_groups = Some(v);
+            self
+        }
+        /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+        pub fn set_instance_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
+        ) -> Self {
+            self.instance_groups = input;
+            self
+        }
+        /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
+        pub fn keep_alive_period_in_seconds(mut self, input: i32) -> Self {
+            self.keep_alive_period_in_seconds = Some(input);
+            self
+        }
+        /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
+        pub fn set_keep_alive_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.keep_alive_period_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceConfig`](crate::model::ResourceConfig).
+        pub fn build(self) -> crate::model::ResourceConfig {
+            crate::model::ResourceConfig {
+                instance_type: self.instance_type,
+                instance_count: self.instance_count.unwrap_or_default(),
+                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+                volume_kms_key_id: self.volume_kms_key_id,
+                instance_groups: self.instance_groups,
+                keep_alive_period_in_seconds: self.keep_alive_period_in_seconds,
+            }
+        }
+    }
+}
+impl ResourceConfig {
+    /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::model::ResourceConfig).
+    pub fn builder() -> crate::model::resource_config::Builder {
+        crate::model::resource_config::Builder::default()
+    }
+}
+
+/// <p>Defines an instance group for heterogeneous cluster training. When requesting a training job using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API, you can configure multiple instance groups .</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceGroup {
+    /// <p>Specifies the instance type of the instance group.</p>
+    #[doc(hidden)]
+    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+    /// <p>Specifies the number of instances of the instance group.</p>
+    #[doc(hidden)]
+    pub instance_count: i32,
+    /// <p>Specifies the name of the instance group.</p>
+    #[doc(hidden)]
+    pub instance_group_name: std::option::Option<std::string::String>,
+}
+impl InstanceGroup {
+    /// <p>Specifies the instance type of the instance group.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>Specifies the number of instances of the instance group.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+    /// <p>Specifies the name of the instance group.</p>
+    pub fn instance_group_name(&self) -> std::option::Option<&str> {
+        self.instance_group_name.as_deref()
+    }
+}
+impl std::fmt::Debug for InstanceGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceGroup");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("instance_group_name", &self.instance_group_name);
+        formatter.finish()
+    }
+}
+/// See [`InstanceGroup`](crate::model::InstanceGroup).
+pub mod instance_group {
+
+    /// A builder for [`InstanceGroup`](crate::model::InstanceGroup).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+        pub(crate) instance_count: std::option::Option<i32>,
+        pub(crate) instance_group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the instance type of the instance group.</p>
+        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>Specifies the instance type of the instance group.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>Specifies the number of instances of the instance group.</p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        /// <p>Specifies the number of instances of the instance group.</p>
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
+        /// <p>Specifies the name of the instance group.</p>
+        pub fn instance_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_group_name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the instance group.</p>
+        pub fn set_instance_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceGroup`](crate::model::InstanceGroup).
+        pub fn build(self) -> crate::model::InstanceGroup {
+            crate::model::InstanceGroup {
+                instance_type: self.instance_type,
+                instance_count: self.instance_count.unwrap_or_default(),
+                instance_group_name: self.instance_group_name,
+            }
+        }
+    }
+}
+impl InstanceGroup {
+    /// Creates a new builder-style object to manufacture [`InstanceGroup`](crate::model::InstanceGroup).
+    pub fn builder() -> crate::model::instance_group::Builder {
+        crate::model::instance_group::Builder::default()
+    }
+}
+
+/// <p>Provides information about how to store model training results (model artifacts).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OutputDataConfig {
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+    /// </ul>
+    /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
+    #[doc(hidden)]
+    pub s3_output_path: std::option::Option<std::string::String>,
+}
+impl OutputDataConfig {
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+    /// </ul>
+    /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
+    pub fn s3_output_path(&self) -> std::option::Option<&str> {
+        self.s3_output_path.as_deref()
+    }
+}
+impl std::fmt::Debug for OutputDataConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OutputDataConfig");
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("s3_output_path", &self.s3_output_path);
+        formatter.finish()
+    }
+}
+/// See [`OutputDataConfig`](crate::model::OutputDataConfig).
+pub mod output_data_config {
+
+    /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) s3_output_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+        /// <ul>
+        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+        /// </ul>
+        /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
+        /// <ul>
+        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+        /// </ul>
+        /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
+        pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_output_path = Some(input.into());
+            self
+        }
+        /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
+        pub fn set_s3_output_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_output_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OutputDataConfig`](crate::model::OutputDataConfig).
+        pub fn build(self) -> crate::model::OutputDataConfig {
+            crate::model::OutputDataConfig {
+                kms_key_id: self.kms_key_id,
+                s3_output_path: self.s3_output_path,
+            }
+        }
+    }
+}
+impl OutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
+    pub fn builder() -> crate::model::output_data_config::Builder {
+        crate::model::output_data_config::Builder::default()
+    }
+}
+
+/// <p>A channel is a named input source that training algorithms can consume. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Channel {
+    /// <p>The name of the channel. </p>
+    #[doc(hidden)]
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The location of the channel data.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>The MIME type of the data.</p>
+    #[doc(hidden)]
+    pub content_type: std::option::Option<std::string::String>,
+    /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
+    #[doc(hidden)]
+    pub compression_type: std::option::Option<crate::model::CompressionType>,
+    /// <p></p>
+    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+    /// <p>In File mode, leave this field unset or set it to None.</p>
+    #[doc(hidden)]
+    pub record_wrapper_type: std::option::Option<crate::model::RecordWrapper>,
+    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+    /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
+    #[doc(hidden)]
+    pub input_mode: std::option::Option<crate::model::TrainingInputMode>,
+    /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
+    /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
+    #[doc(hidden)]
+    pub shuffle_config: std::option::Option<crate::model::ShuffleConfig>,
+}
+impl Channel {
+    /// <p>The name of the channel. </p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The location of the channel data.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The MIME type of the data.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
+    pub fn compression_type(&self) -> std::option::Option<&crate::model::CompressionType> {
+        self.compression_type.as_ref()
+    }
+    /// <p></p>
+    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+    /// <p>In File mode, leave this field unset or set it to None.</p>
+    pub fn record_wrapper_type(&self) -> std::option::Option<&crate::model::RecordWrapper> {
+        self.record_wrapper_type.as_ref()
+    }
+    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+    /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
+    pub fn input_mode(&self) -> std::option::Option<&crate::model::TrainingInputMode> {
+        self.input_mode.as_ref()
+    }
+    /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
+    /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
+    pub fn shuffle_config(&self) -> std::option::Option<&crate::model::ShuffleConfig> {
+        self.shuffle_config.as_ref()
+    }
+}
+impl std::fmt::Debug for Channel {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Channel");
+        formatter.field("channel_name", &self.channel_name);
+        formatter.field("data_source", &self.data_source);
+        formatter.field("content_type", &self.content_type);
+        formatter.field("compression_type", &self.compression_type);
+        formatter.field("record_wrapper_type", &self.record_wrapper_type);
+        formatter.field("input_mode", &self.input_mode);
+        formatter.field("shuffle_config", &self.shuffle_config);
+        formatter.finish()
+    }
+}
+/// See [`Channel`](crate::model::Channel).
+pub mod channel {
+
+    /// A builder for [`Channel`](crate::model::Channel).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
+        pub(crate) record_wrapper_type: std::option::Option<crate::model::RecordWrapper>,
+        pub(crate) input_mode: std::option::Option<crate::model::TrainingInputMode>,
+        pub(crate) shuffle_config: std::option::Option<crate::model::ShuffleConfig>,
+    }
+    impl Builder {
+        /// <p>The name of the channel. </p>
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the channel. </p>
+        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_name = input;
+            self
+        }
+        /// <p>The location of the channel data.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The location of the channel data.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>The MIME type of the data.</p>
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
+            self
+        }
+        /// <p>The MIME type of the data.</p>
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
+            self
+        }
+        /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
+        pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
+            self.compression_type = Some(input);
+            self
+        }
+        /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
+        pub fn set_compression_type(
+            mut self,
+            input: std::option::Option<crate::model::CompressionType>,
+        ) -> Self {
+            self.compression_type = input;
+            self
+        }
+        /// <p></p>
+        /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+        /// <p>In File mode, leave this field unset or set it to None.</p>
+        pub fn record_wrapper_type(mut self, input: crate::model::RecordWrapper) -> Self {
+            self.record_wrapper_type = Some(input);
+            self
+        }
+        /// <p></p>
+        /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+        /// <p>In File mode, leave this field unset or set it to None.</p>
+        pub fn set_record_wrapper_type(
+            mut self,
+            input: std::option::Option<crate::model::RecordWrapper>,
+        ) -> Self {
+            self.record_wrapper_type = input;
+            self
+        }
+        /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+        /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
+        pub fn input_mode(mut self, input: crate::model::TrainingInputMode) -> Self {
+            self.input_mode = Some(input);
+            self
+        }
+        /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+        /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
+        pub fn set_input_mode(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInputMode>,
+        ) -> Self {
+            self.input_mode = input;
+            self
+        }
+        /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
+        /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
+        pub fn shuffle_config(mut self, input: crate::model::ShuffleConfig) -> Self {
+            self.shuffle_config = Some(input);
+            self
+        }
+        /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
+        /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
+        pub fn set_shuffle_config(
+            mut self,
+            input: std::option::Option<crate::model::ShuffleConfig>,
+        ) -> Self {
+            self.shuffle_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
+        pub fn build(self) -> crate::model::Channel {
+            crate::model::Channel {
+                channel_name: self.channel_name,
+                data_source: self.data_source,
+                content_type: self.content_type,
+                compression_type: self.compression_type,
+                record_wrapper_type: self.record_wrapper_type,
+                input_mode: self.input_mode,
+                shuffle_config: self.shuffle_config,
+            }
+        }
+    }
+}
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
+/// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
+/// <p>For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ShuffleConfig {
+    /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
+    #[doc(hidden)]
+    pub seed: i64,
+}
+impl ShuffleConfig {
+    /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
+    pub fn seed(&self) -> i64 {
+        self.seed
+    }
+}
+impl std::fmt::Debug for ShuffleConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ShuffleConfig");
+        formatter.field("seed", &self.seed);
+        formatter.finish()
+    }
+}
+/// See [`ShuffleConfig`](crate::model::ShuffleConfig).
+pub mod shuffle_config {
+
+    /// A builder for [`ShuffleConfig`](crate::model::ShuffleConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) seed: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
+        pub fn seed(mut self, input: i64) -> Self {
+            self.seed = Some(input);
+            self
+        }
+        /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
+        pub fn set_seed(mut self, input: std::option::Option<i64>) -> Self {
+            self.seed = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ShuffleConfig`](crate::model::ShuffleConfig).
+        pub fn build(self) -> crate::model::ShuffleConfig {
+            crate::model::ShuffleConfig {
+                seed: self.seed.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ShuffleConfig {
+    /// Creates a new builder-style object to manufacture [`ShuffleConfig`](crate::model::ShuffleConfig).
+    pub fn builder() -> crate::model::shuffle_config::Builder {
+        crate::model::shuffle_config::Builder::default()
+    }
+}
+
+/// <p>The training input mode that the algorithm supports. For more information about input
+/// modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+///
+/// <p>
+/// <b>Pipe mode</b>
+/// </p>
+/// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from
+/// Amazon S3 to the container.</p>
+///
+/// <p>
+/// <b>File mode</b>
+/// </p>
+/// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from
+/// S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume
+/// for the training container.</p>
+/// <p>You must provision the ML storage volume with sufficient capacity to accommodate the
+/// data downloaded from S3. In addition to the training data, the ML storage volume also
+/// stores the output model. The algorithm container uses the ML storage volume to also
+/// store intermediate information, if any.</p>
+/// <p>For distributed algorithms, training data is distributed uniformly. Your training
+/// duration is predictable if the input data objects sizes are approximately the same. SageMaker
+/// does not split the files any further for model training. If the object sizes are skewed,
+/// training won't be optimal as the data distribution is also skewed when one host in a
+/// training cluster is overloaded, thus becoming a bottleneck in training.</p>
+///
+/// <p>
+/// <b>FastFile mode</b>
+/// </p>
+/// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from
+/// S3 to the container with no code changes, and provides file system access to the data.
+/// Users can author their training script to interact with these files as if they were
+/// stored on disk.</p>
+/// <p>
+/// <code>FastFile</code> mode works best when the data is read sequentially. Augmented
+/// manifest files aren't supported. The startup time is lower when there are fewer files in
+/// the S3 bucket provided.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TrainingInputMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Fastfile,
+    #[allow(missing_docs)] // documentation missing in model
+    File,
+    #[allow(missing_docs)] // documentation missing in model
+    Pipe,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TrainingInputMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "FastFile" => TrainingInputMode::Fastfile,
+            "File" => TrainingInputMode::File,
+            "Pipe" => TrainingInputMode::Pipe,
+            other => TrainingInputMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TrainingInputMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrainingInputMode::from(s))
+    }
+}
+impl TrainingInputMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrainingInputMode::Fastfile => "FastFile",
+            TrainingInputMode::File => "File",
+            TrainingInputMode::Pipe => "Pipe",
+            TrainingInputMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FastFile", "File", "Pipe"]
+    }
+}
+impl AsRef<str> for TrainingInputMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecordWrapper {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Recordio,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecordWrapper {
+    fn from(s: &str) -> Self {
+        match s {
+            "None" => RecordWrapper::None,
+            "RecordIO" => RecordWrapper::Recordio,
+            other => RecordWrapper::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecordWrapper {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecordWrapper::from(s))
+    }
+}
+impl RecordWrapper {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecordWrapper::None => "None",
+            RecordWrapper::Recordio => "RecordIO",
+            RecordWrapper::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["None", "RecordIO"]
+    }
+}
+impl AsRef<str> for RecordWrapper {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CompressionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Gzip,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CompressionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Gzip" => CompressionType::Gzip,
+            "None" => CompressionType::None,
+            other => CompressionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CompressionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CompressionType::from(s))
+    }
+}
+impl CompressionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CompressionType::Gzip => "Gzip",
+            CompressionType::None => "None",
+            CompressionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Gzip", "None"]
+    }
+}
+impl AsRef<str> for CompressionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the location of the channel data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSource {
+    /// <p>The S3 location of the data source that is associated with a channel.</p>
+    #[doc(hidden)]
+    pub s3_data_source: std::option::Option<crate::model::S3DataSource>,
+    /// <p>The file system that is associated with a channel.</p>
+    #[doc(hidden)]
+    pub file_system_data_source: std::option::Option<crate::model::FileSystemDataSource>,
+}
+impl DataSource {
+    /// <p>The S3 location of the data source that is associated with a channel.</p>
+    pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataSource> {
+        self.s3_data_source.as_ref()
+    }
+    /// <p>The file system that is associated with a channel.</p>
+    pub fn file_system_data_source(
+        &self,
+    ) -> std::option::Option<&crate::model::FileSystemDataSource> {
+        self.file_system_data_source.as_ref()
+    }
+}
+impl std::fmt::Debug for DataSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSource");
+        formatter.field("s3_data_source", &self.s3_data_source);
+        formatter.field("file_system_data_source", &self.file_system_data_source);
+        formatter.finish()
+    }
+}
+/// See [`DataSource`](crate::model::DataSource).
+pub mod data_source {
+
+    /// A builder for [`DataSource`](crate::model::DataSource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_data_source: std::option::Option<crate::model::S3DataSource>,
+        pub(crate) file_system_data_source: std::option::Option<crate::model::FileSystemDataSource>,
+    }
+    impl Builder {
+        /// <p>The S3 location of the data source that is associated with a channel.</p>
+        pub fn s3_data_source(mut self, input: crate::model::S3DataSource) -> Self {
+            self.s3_data_source = Some(input);
+            self
+        }
+        /// <p>The S3 location of the data source that is associated with a channel.</p>
+        pub fn set_s3_data_source(
+            mut self,
+            input: std::option::Option<crate::model::S3DataSource>,
+        ) -> Self {
+            self.s3_data_source = input;
+            self
+        }
+        /// <p>The file system that is associated with a channel.</p>
+        pub fn file_system_data_source(
+            mut self,
+            input: crate::model::FileSystemDataSource,
+        ) -> Self {
+            self.file_system_data_source = Some(input);
+            self
+        }
+        /// <p>The file system that is associated with a channel.</p>
+        pub fn set_file_system_data_source(
+            mut self,
+            input: std::option::Option<crate::model::FileSystemDataSource>,
+        ) -> Self {
+            self.file_system_data_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
+        pub fn build(self) -> crate::model::DataSource {
+            crate::model::DataSource {
+                s3_data_source: self.s3_data_source,
+                file_system_data_source: self.file_system_data_source,
+            }
+        }
+    }
+}
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a file system data source for a channel.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileSystemDataSource {
+    /// <p>The file system id.</p>
+    #[doc(hidden)]
+    pub file_system_id: std::option::Option<std::string::String>,
+    /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
+    #[doc(hidden)]
+    pub file_system_access_mode: std::option::Option<crate::model::FileSystemAccessMode>,
+    /// <p>The file system type. </p>
+    #[doc(hidden)]
+    pub file_system_type: std::option::Option<crate::model::FileSystemType>,
+    /// <p>The full path to the directory to associate with the channel.</p>
+    #[doc(hidden)]
+    pub directory_path: std::option::Option<std::string::String>,
+}
+impl FileSystemDataSource {
+    /// <p>The file system id.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
+    pub fn file_system_access_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::FileSystemAccessMode> {
+        self.file_system_access_mode.as_ref()
+    }
+    /// <p>The file system type. </p>
+    pub fn file_system_type(&self) -> std::option::Option<&crate::model::FileSystemType> {
+        self.file_system_type.as_ref()
+    }
+    /// <p>The full path to the directory to associate with the channel.</p>
+    pub fn directory_path(&self) -> std::option::Option<&str> {
+        self.directory_path.as_deref()
+    }
+}
+impl std::fmt::Debug for FileSystemDataSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileSystemDataSource");
+        formatter.field("file_system_id", &self.file_system_id);
+        formatter.field("file_system_access_mode", &self.file_system_access_mode);
+        formatter.field("file_system_type", &self.file_system_type);
+        formatter.field("directory_path", &self.directory_path);
+        formatter.finish()
+    }
+}
+/// See [`FileSystemDataSource`](crate::model::FileSystemDataSource).
+pub mod file_system_data_source {
+
+    /// A builder for [`FileSystemDataSource`](crate::model::FileSystemDataSource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_system_id: std::option::Option<std::string::String>,
+        pub(crate) file_system_access_mode: std::option::Option<crate::model::FileSystemAccessMode>,
+        pub(crate) file_system_type: std::option::Option<crate::model::FileSystemType>,
+        pub(crate) directory_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The file system id.</p>
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_id = Some(input.into());
+            self
+        }
+        /// <p>The file system id.</p>
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_id = input;
+            self
+        }
+        /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
+        pub fn file_system_access_mode(
+            mut self,
+            input: crate::model::FileSystemAccessMode,
+        ) -> Self {
+            self.file_system_access_mode = Some(input);
+            self
+        }
+        /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
+        pub fn set_file_system_access_mode(
+            mut self,
+            input: std::option::Option<crate::model::FileSystemAccessMode>,
+        ) -> Self {
+            self.file_system_access_mode = input;
+            self
+        }
+        /// <p>The file system type. </p>
+        pub fn file_system_type(mut self, input: crate::model::FileSystemType) -> Self {
+            self.file_system_type = Some(input);
+            self
+        }
+        /// <p>The file system type. </p>
+        pub fn set_file_system_type(
+            mut self,
+            input: std::option::Option<crate::model::FileSystemType>,
+        ) -> Self {
+            self.file_system_type = input;
+            self
+        }
+        /// <p>The full path to the directory to associate with the channel.</p>
+        pub fn directory_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_path = Some(input.into());
+            self
+        }
+        /// <p>The full path to the directory to associate with the channel.</p>
+        pub fn set_directory_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.directory_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileSystemDataSource`](crate::model::FileSystemDataSource).
+        pub fn build(self) -> crate::model::FileSystemDataSource {
+            crate::model::FileSystemDataSource {
+                file_system_id: self.file_system_id,
+                file_system_access_mode: self.file_system_access_mode,
+                file_system_type: self.file_system_type,
+                directory_path: self.directory_path,
+            }
+        }
+    }
+}
+impl FileSystemDataSource {
+    /// Creates a new builder-style object to manufacture [`FileSystemDataSource`](crate::model::FileSystemDataSource).
+    pub fn builder() -> crate::model::file_system_data_source::Builder {
+        crate::model::file_system_data_source::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FileSystemType {
+    #[allow(missing_docs)] // documentation missing in model
+    Efs,
+    #[allow(missing_docs)] // documentation missing in model
+    Fsxlustre,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FileSystemType {
+    fn from(s: &str) -> Self {
+        match s {
+            "EFS" => FileSystemType::Efs,
+            "FSxLustre" => FileSystemType::Fsxlustre,
+            other => FileSystemType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FileSystemType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FileSystemType::from(s))
+    }
+}
+impl FileSystemType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FileSystemType::Efs => "EFS",
+            FileSystemType::Fsxlustre => "FSxLustre",
+            FileSystemType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EFS", "FSxLustre"]
+    }
+}
+impl AsRef<str> for FileSystemType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FileSystemAccessMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Ro,
+    #[allow(missing_docs)] // documentation missing in model
+    Rw,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FileSystemAccessMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ro" => FileSystemAccessMode::Ro,
+            "rw" => FileSystemAccessMode::Rw,
+            other => FileSystemAccessMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FileSystemAccessMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FileSystemAccessMode::from(s))
+    }
+}
+impl FileSystemAccessMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FileSystemAccessMode::Ro => "ro",
+            FileSystemAccessMode::Rw => "rw",
+            FileSystemAccessMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ro", "rw"]
+    }
+}
+impl AsRef<str> for FileSystemAccessMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the S3 data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3DataSource {
+    /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
+    /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
+    /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
+    #[doc(hidden)]
+    pub s3_data_type: std::option::Option<crate::model::S3DataType>,
+    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
+    /// <ul>
+    /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
+    /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub s3_uri: std::option::Option<std::string::String>,
+    /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
+    /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
+    /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
+    /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
+    #[doc(hidden)]
+    pub s3_data_distribution_type: std::option::Option<crate::model::S3DataDistribution>,
+    /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
+    #[doc(hidden)]
+    pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of names of instance groups that get data from the S3 data source.</p>
+    #[doc(hidden)]
+    pub instance_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl S3DataSource {
+    /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
+    /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
+    /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
+    pub fn s3_data_type(&self) -> std::option::Option<&crate::model::S3DataType> {
+        self.s3_data_type.as_ref()
+    }
+    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
+    /// <ul>
+    /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
+    /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
+    /// </ul>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
+    /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
+    /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
+    /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
+    pub fn s3_data_distribution_type(
+        &self,
+    ) -> std::option::Option<&crate::model::S3DataDistribution> {
+        self.s3_data_distribution_type.as_ref()
+    }
+    /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_names.as_deref()
+    }
+    /// <p>A list of names of instance groups that get data from the S3 data source.</p>
+    pub fn instance_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_group_names.as_deref()
+    }
+}
+impl std::fmt::Debug for S3DataSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3DataSource");
+        formatter.field("s3_data_type", &self.s3_data_type);
+        formatter.field("s3_uri", &self.s3_uri);
+        formatter.field("s3_data_distribution_type", &self.s3_data_distribution_type);
+        formatter.field("attribute_names", &self.attribute_names);
+        formatter.field("instance_group_names", &self.instance_group_names);
+        formatter.finish()
+    }
+}
+/// See [`S3DataSource`](crate::model::S3DataSource).
+pub mod s3_data_source {
+
+    /// A builder for [`S3DataSource`](crate::model::S3DataSource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_data_type: std::option::Option<crate::model::S3DataType>,
+        pub(crate) s3_uri: std::option::Option<std::string::String>,
+        pub(crate) s3_data_distribution_type: std::option::Option<crate::model::S3DataDistribution>,
+        pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) instance_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
+        /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
+        /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
+        pub fn s3_data_type(mut self, input: crate::model::S3DataType) -> Self {
+            self.s3_data_type = Some(input);
+            self
+        }
+        /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
+        /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
+        /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
+        pub fn set_s3_data_type(
+            mut self,
+            input: std::option::Option<crate::model::S3DataType>,
+        ) -> Self {
+            self.s3_data_type = input;
+            self
+        }
+        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
+        /// <ul>
+        /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
+        /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
+        /// </ul>
+        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_uri = Some(input.into());
+            self
+        }
+        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
+        /// <ul>
+        /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
+        /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
+        /// </ul>
+        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_uri = input;
+            self
+        }
+        /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
+        /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
+        /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
+        /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
+        pub fn s3_data_distribution_type(
+            mut self,
+            input: crate::model::S3DataDistribution,
+        ) -> Self {
+            self.s3_data_distribution_type = Some(input);
+            self
+        }
+        /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
+        /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
+        /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
+        /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
+        pub fn set_s3_data_distribution_type(
+            mut self,
+            input: std::option::Option<crate::model::S3DataDistribution>,
+        ) -> Self {
+            self.s3_data_distribution_type = input;
+            self
+        }
+        /// Appends an item to `attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
+        ///
+        /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
+        pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.attribute_names.unwrap_or_default();
+            v.push(input.into());
+            self.attribute_names = Some(v);
+            self
+        }
+        /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
+        pub fn set_attribute_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.attribute_names = input;
+            self
+        }
+        /// Appends an item to `instance_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_instance_group_names`](Self::set_instance_group_names).
+        ///
+        /// <p>A list of names of instance groups that get data from the S3 data source.</p>
+        pub fn instance_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.instance_group_names.unwrap_or_default();
+            v.push(input.into());
+            self.instance_group_names = Some(v);
+            self
+        }
+        /// <p>A list of names of instance groups that get data from the S3 data source.</p>
+        pub fn set_instance_group_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.instance_group_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DataSource`](crate::model::S3DataSource).
+        pub fn build(self) -> crate::model::S3DataSource {
+            crate::model::S3DataSource {
+                s3_data_type: self.s3_data_type,
+                s3_uri: self.s3_uri,
+                s3_data_distribution_type: self.s3_data_distribution_type,
+                attribute_names: self.attribute_names,
+                instance_group_names: self.instance_group_names,
+            }
+        }
+    }
+}
+impl S3DataSource {
+    /// Creates a new builder-style object to manufacture [`S3DataSource`](crate::model::S3DataSource).
+    pub fn builder() -> crate::model::s3_data_source::Builder {
+        crate::model::s3_data_source::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum S3DataDistribution {
+    #[allow(missing_docs)] // documentation missing in model
+    FullyReplicated,
+    #[allow(missing_docs)] // documentation missing in model
+    ShardedByS3Key,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for S3DataDistribution {
+    fn from(s: &str) -> Self {
+        match s {
+            "FullyReplicated" => S3DataDistribution::FullyReplicated,
+            "ShardedByS3Key" => S3DataDistribution::ShardedByS3Key,
+            other => S3DataDistribution::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for S3DataDistribution {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(S3DataDistribution::from(s))
+    }
+}
+impl S3DataDistribution {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            S3DataDistribution::FullyReplicated => "FullyReplicated",
+            S3DataDistribution::ShardedByS3Key => "ShardedByS3Key",
+            S3DataDistribution::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FullyReplicated", "ShardedByS3Key"]
+    }
+}
+impl AsRef<str> for S3DataDistribution {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum S3DataType {
+    #[allow(missing_docs)] // documentation missing in model
+    AugmentedManifestFile,
+    #[allow(missing_docs)] // documentation missing in model
+    ManifestFile,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Prefix,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for S3DataType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AugmentedManifestFile" => S3DataType::AugmentedManifestFile,
+            "ManifestFile" => S3DataType::ManifestFile,
+            "S3Prefix" => S3DataType::S3Prefix,
+            other => S3DataType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for S3DataType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(S3DataType::from(s))
+    }
+}
+impl S3DataType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            S3DataType::AugmentedManifestFile => "AugmentedManifestFile",
+            S3DataType::ManifestFile => "ManifestFile",
+            S3DataType::S3Prefix => "S3Prefix",
+            S3DataType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AugmentedManifestFile", "ManifestFile", "S3Prefix"]
+    }
+}
+impl AsRef<str> for S3DataType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterAlgorithmSpecification {
+    /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    #[doc(hidden)]
+    pub training_image: std::option::Option<std::string::String>,
+    /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+    /// <p> <b>Pipe mode</b> </p>
+    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
+    /// <p> <b>File mode</b> </p>
+    /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
+    /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
+    /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
+    /// <p> <b>FastFile mode</b> </p>
+    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
+    /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+    #[doc(hidden)]
+    pub training_input_mode: std::option::Option<crate::model::TrainingInputMode>,
+    /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
+    #[doc(hidden)]
+    pub algorithm_name: std::option::Option<std::string::String>,
+    /// <p>An array of <code>MetricDefinition</code> objects that specify the metrics that the algorithm emits.</p>
+    #[doc(hidden)]
+    pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+}
+impl HyperParameterAlgorithmSpecification {
+    /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    pub fn training_image(&self) -> std::option::Option<&str> {
+        self.training_image.as_deref()
+    }
+    /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+    /// <p> <b>Pipe mode</b> </p>
+    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
+    /// <p> <b>File mode</b> </p>
+    /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
+    /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
+    /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
+    /// <p> <b>FastFile mode</b> </p>
+    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
+    /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+    pub fn training_input_mode(&self) -> std::option::Option<&crate::model::TrainingInputMode> {
+        self.training_input_mode.as_ref()
+    }
+    /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
+    pub fn algorithm_name(&self) -> std::option::Option<&str> {
+        self.algorithm_name.as_deref()
+    }
+    /// <p>An array of <code>MetricDefinition</code> objects that specify the metrics that the algorithm emits.</p>
+    pub fn metric_definitions(&self) -> std::option::Option<&[crate::model::MetricDefinition]> {
+        self.metric_definitions.as_deref()
+    }
+}
+impl std::fmt::Debug for HyperParameterAlgorithmSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterAlgorithmSpecification");
+        formatter.field("training_image", &self.training_image);
+        formatter.field("training_input_mode", &self.training_input_mode);
+        formatter.field("algorithm_name", &self.algorithm_name);
+        formatter.field("metric_definitions", &self.metric_definitions);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterAlgorithmSpecification`](crate::model::HyperParameterAlgorithmSpecification).
+pub mod hyper_parameter_algorithm_specification {
+
+    /// A builder for [`HyperParameterAlgorithmSpecification`](crate::model::HyperParameterAlgorithmSpecification).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) training_image: std::option::Option<std::string::String>,
+        pub(crate) training_input_mode: std::option::Option<crate::model::TrainingInputMode>,
+        pub(crate) algorithm_name: std::option::Option<std::string::String>,
+        pub(crate) metric_definitions:
+            std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+    }
+    impl Builder {
+        /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        pub fn training_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.training_image = Some(input.into());
+            self
+        }
+        /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+        pub fn set_training_image(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.training_image = input;
+            self
+        }
+        /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+        /// <p> <b>Pipe mode</b> </p>
+        /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
+        /// <p> <b>File mode</b> </p>
+        /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
+        /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
+        /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
+        /// <p> <b>FastFile mode</b> </p>
+        /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
+        /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+        pub fn training_input_mode(mut self, input: crate::model::TrainingInputMode) -> Self {
+            self.training_input_mode = Some(input);
+            self
+        }
+        /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+        /// <p> <b>Pipe mode</b> </p>
+        /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
+        /// <p> <b>File mode</b> </p>
+        /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
+        /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
+        /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
+        /// <p> <b>FastFile mode</b> </p>
+        /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
+        /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+        pub fn set_training_input_mode(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInputMode>,
+        ) -> Self {
+            self.training_input_mode = input;
+            self
+        }
+        /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
+        pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.algorithm_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
+        pub fn set_algorithm_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.algorithm_name = input;
+            self
+        }
+        /// Appends an item to `metric_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_metric_definitions`](Self::set_metric_definitions).
+        ///
+        /// <p>An array of <code>MetricDefinition</code> objects that specify the metrics that the algorithm emits.</p>
+        pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
+            let mut v = self.metric_definitions.unwrap_or_default();
+            v.push(input);
+            self.metric_definitions = Some(v);
+            self
+        }
+        /// <p>An array of <code>MetricDefinition</code> objects that specify the metrics that the algorithm emits.</p>
+        pub fn set_metric_definitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+        ) -> Self {
+            self.metric_definitions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterAlgorithmSpecification`](crate::model::HyperParameterAlgorithmSpecification).
+        pub fn build(self) -> crate::model::HyperParameterAlgorithmSpecification {
+            crate::model::HyperParameterAlgorithmSpecification {
+                training_image: self.training_image,
+                training_input_mode: self.training_input_mode,
+                algorithm_name: self.algorithm_name,
+                metric_definitions: self.metric_definitions,
+            }
+        }
+    }
+}
+impl HyperParameterAlgorithmSpecification {
+    /// Creates a new builder-style object to manufacture [`HyperParameterAlgorithmSpecification`](crate::model::HyperParameterAlgorithmSpecification).
+    pub fn builder() -> crate::model::hyper_parameter_algorithm_specification::Builder {
+        crate::model::hyper_parameter_algorithm_specification::Builder::default()
+    }
+}
+
+/// <p>Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricDefinition {
+    /// <p>The name of the metric.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining Objective Metrics</a>.</p>
+    #[doc(hidden)]
+    pub regex: std::option::Option<std::string::String>,
+}
+impl MetricDefinition {
+    /// <p>The name of the metric.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining Objective Metrics</a>.</p>
+    pub fn regex(&self) -> std::option::Option<&str> {
+        self.regex.as_deref()
+    }
+}
+impl std::fmt::Debug for MetricDefinition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricDefinition");
+        formatter.field("name", &self.name);
+        formatter.field("regex", &self.regex);
+        formatter.finish()
+    }
+}
+/// See [`MetricDefinition`](crate::model::MetricDefinition).
+pub mod metric_definition {
+
+    /// A builder for [`MetricDefinition`](crate::model::MetricDefinition).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) regex: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the metric.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the metric.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining Objective Metrics</a>.</p>
+        pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regex = Some(input.into());
+            self
+        }
+        /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining Objective Metrics</a>.</p>
+        pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricDefinition`](crate::model::MetricDefinition).
+        pub fn build(self) -> crate::model::MetricDefinition {
+            crate::model::MetricDefinition {
+                name: self.name,
+                regex: self.regex,
+            }
+        }
+    }
+}
+impl MetricDefinition {
+    /// Creates a new builder-style object to manufacture [`MetricDefinition`](crate::model::MetricDefinition).
+    pub fn builder() -> crate::model::metric_definition::Builder {
+        crate::model::metric_definition::Builder::default()
+    }
+}
+
+/// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
+/// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ParameterRanges {
+    /// <p>The array of <code>IntegerParameterRange</code> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
+    #[doc(hidden)]
+    pub integer_parameter_ranges:
+        std::option::Option<std::vec::Vec<crate::model::IntegerParameterRange>>,
+    /// <p>The array of <code>ContinuousParameterRange</code> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
+    #[doc(hidden)]
+    pub continuous_parameter_ranges:
+        std::option::Option<std::vec::Vec<crate::model::ContinuousParameterRange>>,
+    /// <p>The array of <code>CategoricalParameterRange</code> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
+    #[doc(hidden)]
+    pub categorical_parameter_ranges:
+        std::option::Option<std::vec::Vec<crate::model::CategoricalParameterRange>>,
+}
+impl ParameterRanges {
+    /// <p>The array of <code>IntegerParameterRange</code> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
+    pub fn integer_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::IntegerParameterRange]> {
+        self.integer_parameter_ranges.as_deref()
+    }
+    /// <p>The array of <code>ContinuousParameterRange</code> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
+    pub fn continuous_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContinuousParameterRange]> {
+        self.continuous_parameter_ranges.as_deref()
+    }
+    /// <p>The array of <code>CategoricalParameterRange</code> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
+    pub fn categorical_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::CategoricalParameterRange]> {
+        self.categorical_parameter_ranges.as_deref()
+    }
+}
+impl std::fmt::Debug for ParameterRanges {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ParameterRanges");
+        formatter.field("integer_parameter_ranges", &self.integer_parameter_ranges);
+        formatter.field(
+            "continuous_parameter_ranges",
+            &self.continuous_parameter_ranges,
+        );
+        formatter.field(
+            "categorical_parameter_ranges",
+            &self.categorical_parameter_ranges,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ParameterRanges`](crate::model::ParameterRanges).
+pub mod parameter_ranges {
+
+    /// A builder for [`ParameterRanges`](crate::model::ParameterRanges).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) integer_parameter_ranges:
+            std::option::Option<std::vec::Vec<crate::model::IntegerParameterRange>>,
+        pub(crate) continuous_parameter_ranges:
+            std::option::Option<std::vec::Vec<crate::model::ContinuousParameterRange>>,
+        pub(crate) categorical_parameter_ranges:
+            std::option::Option<std::vec::Vec<crate::model::CategoricalParameterRange>>,
+    }
+    impl Builder {
+        /// Appends an item to `integer_parameter_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_integer_parameter_ranges`](Self::set_integer_parameter_ranges).
+        ///
+        /// <p>The array of <code>IntegerParameterRange</code> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
+        pub fn integer_parameter_ranges(
+            mut self,
+            input: crate::model::IntegerParameterRange,
+        ) -> Self {
+            let mut v = self.integer_parameter_ranges.unwrap_or_default();
+            v.push(input);
+            self.integer_parameter_ranges = Some(v);
+            self
+        }
+        /// <p>The array of <code>IntegerParameterRange</code> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
+        pub fn set_integer_parameter_ranges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IntegerParameterRange>>,
+        ) -> Self {
+            self.integer_parameter_ranges = input;
+            self
+        }
+        /// Appends an item to `continuous_parameter_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_continuous_parameter_ranges`](Self::set_continuous_parameter_ranges).
+        ///
+        /// <p>The array of <code>ContinuousParameterRange</code> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
+        pub fn continuous_parameter_ranges(
+            mut self,
+            input: crate::model::ContinuousParameterRange,
+        ) -> Self {
+            let mut v = self.continuous_parameter_ranges.unwrap_or_default();
+            v.push(input);
+            self.continuous_parameter_ranges = Some(v);
+            self
+        }
+        /// <p>The array of <code>ContinuousParameterRange</code> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
+        pub fn set_continuous_parameter_ranges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ContinuousParameterRange>>,
+        ) -> Self {
+            self.continuous_parameter_ranges = input;
+            self
+        }
+        /// Appends an item to `categorical_parameter_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_categorical_parameter_ranges`](Self::set_categorical_parameter_ranges).
+        ///
+        /// <p>The array of <code>CategoricalParameterRange</code> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
+        pub fn categorical_parameter_ranges(
+            mut self,
+            input: crate::model::CategoricalParameterRange,
+        ) -> Self {
+            let mut v = self.categorical_parameter_ranges.unwrap_or_default();
+            v.push(input);
+            self.categorical_parameter_ranges = Some(v);
+            self
+        }
+        /// <p>The array of <code>CategoricalParameterRange</code> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
+        pub fn set_categorical_parameter_ranges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CategoricalParameterRange>>,
+        ) -> Self {
+            self.categorical_parameter_ranges = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ParameterRanges`](crate::model::ParameterRanges).
+        pub fn build(self) -> crate::model::ParameterRanges {
+            crate::model::ParameterRanges {
+                integer_parameter_ranges: self.integer_parameter_ranges,
+                continuous_parameter_ranges: self.continuous_parameter_ranges,
+                categorical_parameter_ranges: self.categorical_parameter_ranges,
+            }
+        }
+    }
+}
+impl ParameterRanges {
+    /// Creates a new builder-style object to manufacture [`ParameterRanges`](crate::model::ParameterRanges).
+    pub fn builder() -> crate::model::parameter_ranges::Builder {
+        crate::model::parameter_ranges::Builder::default()
+    }
+}
+
+/// <p>A list of categorical hyperparameters to tune.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CategoricalParameterRange {
+    /// <p>The name of the categorical hyperparameter to tune.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A list of the categories for the hyperparameter.</p>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CategoricalParameterRange {
+    /// <p>The name of the categorical hyperparameter to tune.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the categories for the hyperparameter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
+impl std::fmt::Debug for CategoricalParameterRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CategoricalParameterRange");
+        formatter.field("name", &self.name);
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
+pub mod categorical_parameter_range {
+
+    /// A builder for [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the categorical hyperparameter to tune.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the categorical hyperparameter to tune.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of the categories for the hyperparameter.</p>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p>A list of the categories for the hyperparameter.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
+        pub fn build(self) -> crate::model::CategoricalParameterRange {
+            crate::model::CategoricalParameterRange {
+                name: self.name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl CategoricalParameterRange {
+    /// Creates a new builder-style object to manufacture [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
+    pub fn builder() -> crate::model::categorical_parameter_range::Builder {
+        crate::model::categorical_parameter_range::Builder::default()
+    }
+}
+
+/// <p>A list of continuous hyperparameters to tune.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContinuousParameterRange {
+    /// <p>The name of the continuous hyperparameter to tune.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
+    #[doc(hidden)]
+    pub min_value: std::option::Option<std::string::String>,
+    /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
+    #[doc(hidden)]
+    pub max_value: std::option::Option<std::string::String>,
+    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// Auto
+    /// </dt>
+    /// <dd>
+    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+    /// </dd>
+    /// <dt>
+    /// Linear
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
+    /// </dd>
+    /// <dt>
+    /// Logarithmic
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
+    /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
+    /// </dd>
+    /// <dt>
+    /// ReverseLogarithmic
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
+    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub scaling_type: std::option::Option<crate::model::HyperParameterScalingType>,
+}
+impl ContinuousParameterRange {
+    /// <p>The name of the continuous hyperparameter to tune.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
+    pub fn min_value(&self) -> std::option::Option<&str> {
+        self.min_value.as_deref()
+    }
+    /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
+    pub fn max_value(&self) -> std::option::Option<&str> {
+        self.max_value.as_deref()
+    }
+    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// Auto
+    /// </dt>
+    /// <dd>
+    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+    /// </dd>
+    /// <dt>
+    /// Linear
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
+    /// </dd>
+    /// <dt>
+    /// Logarithmic
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
+    /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
+    /// </dd>
+    /// <dt>
+    /// ReverseLogarithmic
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
+    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
+    /// </dd>
+    /// </dl>
+    pub fn scaling_type(&self) -> std::option::Option<&crate::model::HyperParameterScalingType> {
+        self.scaling_type.as_ref()
+    }
+}
+impl std::fmt::Debug for ContinuousParameterRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContinuousParameterRange");
+        formatter.field("name", &self.name);
+        formatter.field("min_value", &self.min_value);
+        formatter.field("max_value", &self.max_value);
+        formatter.field("scaling_type", &self.scaling_type);
+        formatter.finish()
+    }
+}
+/// See [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
+pub mod continuous_parameter_range {
+
+    /// A builder for [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) min_value: std::option::Option<std::string::String>,
+        pub(crate) max_value: std::option::Option<std::string::String>,
+        pub(crate) scaling_type: std::option::Option<crate::model::HyperParameterScalingType>,
+    }
+    impl Builder {
+        /// <p>The name of the continuous hyperparameter to tune.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the continuous hyperparameter to tune.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
+        pub fn min_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.min_value = Some(input.into());
+            self
+        }
+        /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
+        pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.min_value = input;
+            self
+        }
+        /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
+        pub fn max_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_value = Some(input.into());
+            self
+        }
+        /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
+        pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_value = input;
+            self
+        }
+        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+        /// <dl>
+        /// <dt>
+        /// Auto
+        /// </dt>
+        /// <dd>
+        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+        /// </dd>
+        /// <dt>
+        /// Linear
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
+        /// </dd>
+        /// <dt>
+        /// Logarithmic
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
+        /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
+        /// </dd>
+        /// <dt>
+        /// ReverseLogarithmic
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
+        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
+        /// </dd>
+        /// </dl>
+        pub fn scaling_type(mut self, input: crate::model::HyperParameterScalingType) -> Self {
+            self.scaling_type = Some(input);
+            self
+        }
+        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+        /// <dl>
+        /// <dt>
+        /// Auto
+        /// </dt>
+        /// <dd>
+        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+        /// </dd>
+        /// <dt>
+        /// Linear
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
+        /// </dd>
+        /// <dt>
+        /// Logarithmic
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
+        /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
+        /// </dd>
+        /// <dt>
+        /// ReverseLogarithmic
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
+        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_scaling_type(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterScalingType>,
+        ) -> Self {
+            self.scaling_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
+        pub fn build(self) -> crate::model::ContinuousParameterRange {
+            crate::model::ContinuousParameterRange {
+                name: self.name,
+                min_value: self.min_value,
+                max_value: self.max_value,
+                scaling_type: self.scaling_type,
+            }
+        }
+    }
+}
+impl ContinuousParameterRange {
+    /// Creates a new builder-style object to manufacture [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
+    pub fn builder() -> crate::model::continuous_parameter_range::Builder {
+        crate::model::continuous_parameter_range::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HyperParameterScalingType {
+    #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
+    Linear,
+    #[allow(missing_docs)] // documentation missing in model
+    Logarithmic,
+    #[allow(missing_docs)] // documentation missing in model
+    ReverseLogarithmic,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HyperParameterScalingType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Auto" => HyperParameterScalingType::Auto,
+            "Linear" => HyperParameterScalingType::Linear,
+            "Logarithmic" => HyperParameterScalingType::Logarithmic,
+            "ReverseLogarithmic" => HyperParameterScalingType::ReverseLogarithmic,
+            other => HyperParameterScalingType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HyperParameterScalingType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HyperParameterScalingType::from(s))
+    }
+}
+impl HyperParameterScalingType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HyperParameterScalingType::Auto => "Auto",
+            HyperParameterScalingType::Linear => "Linear",
+            HyperParameterScalingType::Logarithmic => "Logarithmic",
+            HyperParameterScalingType::ReverseLogarithmic => "ReverseLogarithmic",
+            HyperParameterScalingType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Auto", "Linear", "Logarithmic", "ReverseLogarithmic"]
+    }
+}
+impl AsRef<str> for HyperParameterScalingType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IntegerParameterRange {
+    /// <p>The name of the hyperparameter to search.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The minimum value of the hyperparameter to search.</p>
+    #[doc(hidden)]
+    pub min_value: std::option::Option<std::string::String>,
+    /// <p>The maximum value of the hyperparameter to search.</p>
+    #[doc(hidden)]
+    pub max_value: std::option::Option<std::string::String>,
+    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// Auto
+    /// </dt>
+    /// <dd>
+    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+    /// </dd>
+    /// <dt>
+    /// Linear
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
+    /// </dd>
+    /// <dt>
+    /// Logarithmic
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
+    /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub scaling_type: std::option::Option<crate::model::HyperParameterScalingType>,
+}
+impl IntegerParameterRange {
+    /// <p>The name of the hyperparameter to search.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The minimum value of the hyperparameter to search.</p>
+    pub fn min_value(&self) -> std::option::Option<&str> {
+        self.min_value.as_deref()
+    }
+    /// <p>The maximum value of the hyperparameter to search.</p>
+    pub fn max_value(&self) -> std::option::Option<&str> {
+        self.max_value.as_deref()
+    }
+    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// Auto
+    /// </dt>
+    /// <dd>
+    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+    /// </dd>
+    /// <dt>
+    /// Linear
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
+    /// </dd>
+    /// <dt>
+    /// Logarithmic
+    /// </dt>
+    /// <dd>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
+    /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
+    /// </dd>
+    /// </dl>
+    pub fn scaling_type(&self) -> std::option::Option<&crate::model::HyperParameterScalingType> {
+        self.scaling_type.as_ref()
+    }
+}
+impl std::fmt::Debug for IntegerParameterRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IntegerParameterRange");
+        formatter.field("name", &self.name);
+        formatter.field("min_value", &self.min_value);
+        formatter.field("max_value", &self.max_value);
+        formatter.field("scaling_type", &self.scaling_type);
+        formatter.finish()
+    }
+}
+/// See [`IntegerParameterRange`](crate::model::IntegerParameterRange).
+pub mod integer_parameter_range {
+
+    /// A builder for [`IntegerParameterRange`](crate::model::IntegerParameterRange).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) min_value: std::option::Option<std::string::String>,
+        pub(crate) max_value: std::option::Option<std::string::String>,
+        pub(crate) scaling_type: std::option::Option<crate::model::HyperParameterScalingType>,
+    }
+    impl Builder {
+        /// <p>The name of the hyperparameter to search.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hyperparameter to search.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The minimum value of the hyperparameter to search.</p>
+        pub fn min_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.min_value = Some(input.into());
+            self
+        }
+        /// <p>The minimum value of the hyperparameter to search.</p>
+        pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.min_value = input;
+            self
+        }
+        /// <p>The maximum value of the hyperparameter to search.</p>
+        pub fn max_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_value = Some(input.into());
+            self
+        }
+        /// <p>The maximum value of the hyperparameter to search.</p>
+        pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_value = input;
+            self
+        }
+        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+        /// <dl>
+        /// <dt>
+        /// Auto
+        /// </dt>
+        /// <dd>
+        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+        /// </dd>
+        /// <dt>
+        /// Linear
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
+        /// </dd>
+        /// <dt>
+        /// Logarithmic
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
+        /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
+        /// </dd>
+        /// </dl>
+        pub fn scaling_type(mut self, input: crate::model::HyperParameterScalingType) -> Self {
+            self.scaling_type = Some(input);
+            self
+        }
+        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+        /// <dl>
+        /// <dt>
+        /// Auto
+        /// </dt>
+        /// <dd>
+        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
+        /// </dd>
+        /// <dt>
+        /// Linear
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
+        /// </dd>
+        /// <dt>
+        /// Logarithmic
+        /// </dt>
+        /// <dd>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
+        /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_scaling_type(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterScalingType>,
+        ) -> Self {
+            self.scaling_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IntegerParameterRange`](crate::model::IntegerParameterRange).
+        pub fn build(self) -> crate::model::IntegerParameterRange {
+            crate::model::IntegerParameterRange {
+                name: self.name,
+                min_value: self.min_value,
+                max_value: self.max_value,
+                scaling_type: self.scaling_type,
+            }
+        }
+    }
+}
+impl IntegerParameterRange {
+    /// Creates a new builder-style object to manufacture [`IntegerParameterRange`](crate::model::IntegerParameterRange).
+    pub fn builder() -> crate::model::integer_parameter_range::Builder {
+        crate::model::integer_parameter_range::Builder::default()
+    }
+}
+
+/// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningJobObjective {
+    /// <p>Whether to minimize or maximize the objective metric.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
+    /// <p>The name of the metric to use for the objective metric.</p>
+    #[doc(hidden)]
+    pub metric_name: std::option::Option<std::string::String>,
+}
+impl HyperParameterTuningJobObjective {
+    /// <p>Whether to minimize or maximize the objective metric.</p>
+    pub fn r#type(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobObjectiveType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the metric to use for the objective metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningJobObjective {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningJobObjective");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("metric_name", &self.metric_name);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningJobObjective`](crate::model::HyperParameterTuningJobObjective).
+pub mod hyper_parameter_tuning_job_objective {
+
+    /// A builder for [`HyperParameterTuningJobObjective`](crate::model::HyperParameterTuningJobObjective).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Whether to minimize or maximize the objective metric.</p>
+        pub fn r#type(mut self, input: crate::model::HyperParameterTuningJobObjectiveType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Whether to minimize or maximize the objective metric.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The name of the metric to use for the objective metric.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the metric to use for the objective metric.</p>
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningJobObjective`](crate::model::HyperParameterTuningJobObjective).
+        pub fn build(self) -> crate::model::HyperParameterTuningJobObjective {
+            crate::model::HyperParameterTuningJobObjective {
+                r#type: self.r#type,
+                metric_name: self.metric_name,
+            }
+        }
+    }
+}
+impl HyperParameterTuningJobObjective {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobObjective`](crate::model::HyperParameterTuningJobObjective).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_job_objective::Builder {
+        crate::model::hyper_parameter_tuning_job_objective::Builder::default()
+    }
+}
+
+/// <p>Configures a hyperparameter tuning job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningJobConfig {
+    /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
+    #[doc(hidden)]
+    pub strategy: std::option::Option<crate::model::HyperParameterTuningJobStrategyType>,
+    /// <p>The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+    #[doc(hidden)]
+    pub strategy_config: std::option::Option<crate::model::HyperParameterTuningJobStrategyConfig>,
+    /// <p>The <code>HyperParameterTuningJobObjective</code> object that specifies the objective metric for this tuning job.</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_job_objective:
+        std::option::Option<crate::model::HyperParameterTuningJobObjective>,
+    /// <p>The <code>ResourceLimits</code> object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
+    #[doc(hidden)]
+    pub resource_limits: std::option::Option<crate::model::ResourceLimits>,
+    /// <p>The <code>ParameterRanges</code> object that specifies the ranges of hyperparameters that this tuning job searches.</p>
+    #[doc(hidden)]
+    pub parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
+    /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
+    /// <dl>
+    /// <dt>
+    /// OFF
+    /// </dt>
+    /// <dd>
+    /// <p>Training jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+    /// </dd>
+    /// <dt>
+    /// AUTO
+    /// </dt>
+    /// <dd>
+    /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub training_job_early_stopping_type:
+        std::option::Option<crate::model::TrainingJobEarlyStoppingType>,
+    /// <p>The tuning job's completion criteria.</p>
+    #[doc(hidden)]
+    pub tuning_job_completion_criteria:
+        std::option::Option<crate::model::TuningJobCompletionCriteria>,
+}
+impl HyperParameterTuningJobConfig {
+    /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
+    pub fn strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobStrategyType> {
+        self.strategy.as_ref()
+    }
+    /// <p>The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+    pub fn strategy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobStrategyConfig> {
+        self.strategy_config.as_ref()
+    }
+    /// <p>The <code>HyperParameterTuningJobObjective</code> object that specifies the objective metric for this tuning job.</p>
+    pub fn hyper_parameter_tuning_job_objective(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobObjective> {
+        self.hyper_parameter_tuning_job_objective.as_ref()
+    }
+    /// <p>The <code>ResourceLimits</code> object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
+    pub fn resource_limits(&self) -> std::option::Option<&crate::model::ResourceLimits> {
+        self.resource_limits.as_ref()
+    }
+    /// <p>The <code>ParameterRanges</code> object that specifies the ranges of hyperparameters that this tuning job searches.</p>
+    pub fn parameter_ranges(&self) -> std::option::Option<&crate::model::ParameterRanges> {
+        self.parameter_ranges.as_ref()
+    }
+    /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
+    /// <dl>
+    /// <dt>
+    /// OFF
+    /// </dt>
+    /// <dd>
+    /// <p>Training jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+    /// </dd>
+    /// <dt>
+    /// AUTO
+    /// </dt>
+    /// <dd>
+    /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn training_job_early_stopping_type(
+        &self,
+    ) -> std::option::Option<&crate::model::TrainingJobEarlyStoppingType> {
+        self.training_job_early_stopping_type.as_ref()
+    }
+    /// <p>The tuning job's completion criteria.</p>
+    pub fn tuning_job_completion_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::TuningJobCompletionCriteria> {
+        self.tuning_job_completion_criteria.as_ref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningJobConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningJobConfig");
+        formatter.field("strategy", &self.strategy);
+        formatter.field("strategy_config", &self.strategy_config);
+        formatter.field(
+            "hyper_parameter_tuning_job_objective",
+            &self.hyper_parameter_tuning_job_objective,
+        );
+        formatter.field("resource_limits", &self.resource_limits);
+        formatter.field("parameter_ranges", &self.parameter_ranges);
+        formatter.field(
+            "training_job_early_stopping_type",
+            &self.training_job_early_stopping_type,
+        );
+        formatter.field(
+            "tuning_job_completion_criteria",
+            &self.tuning_job_completion_criteria,
+        );
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
+pub mod hyper_parameter_tuning_job_config {
+
+    /// A builder for [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) strategy: std::option::Option<crate::model::HyperParameterTuningJobStrategyType>,
+        pub(crate) strategy_config:
+            std::option::Option<crate::model::HyperParameterTuningJobStrategyConfig>,
+        pub(crate) hyper_parameter_tuning_job_objective:
+            std::option::Option<crate::model::HyperParameterTuningJobObjective>,
+        pub(crate) resource_limits: std::option::Option<crate::model::ResourceLimits>,
+        pub(crate) parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
+        pub(crate) training_job_early_stopping_type:
+            std::option::Option<crate::model::TrainingJobEarlyStoppingType>,
+        pub(crate) tuning_job_completion_criteria:
+            std::option::Option<crate::model::TuningJobCompletionCriteria>,
+    }
+    impl Builder {
+        /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
+        pub fn strategy(
+            mut self,
+            input: crate::model::HyperParameterTuningJobStrategyType,
+        ) -> Self {
+            self.strategy = Some(input);
+            self
+        }
+        /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
+        pub fn set_strategy(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobStrategyType>,
+        ) -> Self {
+            self.strategy = input;
+            self
+        }
+        /// <p>The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+        pub fn strategy_config(
+            mut self,
+            input: crate::model::HyperParameterTuningJobStrategyConfig,
+        ) -> Self {
+            self.strategy_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+        pub fn set_strategy_config(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobStrategyConfig>,
+        ) -> Self {
+            self.strategy_config = input;
+            self
+        }
+        /// <p>The <code>HyperParameterTuningJobObjective</code> object that specifies the objective metric for this tuning job.</p>
+        pub fn hyper_parameter_tuning_job_objective(
+            mut self,
+            input: crate::model::HyperParameterTuningJobObjective,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_objective = Some(input);
+            self
+        }
+        /// <p>The <code>HyperParameterTuningJobObjective</code> object that specifies the objective metric for this tuning job.</p>
+        pub fn set_hyper_parameter_tuning_job_objective(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningJobObjective>,
+        ) -> Self {
+            self.hyper_parameter_tuning_job_objective = input;
+            self
+        }
+        /// <p>The <code>ResourceLimits</code> object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
+        pub fn resource_limits(mut self, input: crate::model::ResourceLimits) -> Self {
+            self.resource_limits = Some(input);
+            self
+        }
+        /// <p>The <code>ResourceLimits</code> object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
+        pub fn set_resource_limits(
+            mut self,
+            input: std::option::Option<crate::model::ResourceLimits>,
+        ) -> Self {
+            self.resource_limits = input;
+            self
+        }
+        /// <p>The <code>ParameterRanges</code> object that specifies the ranges of hyperparameters that this tuning job searches.</p>
+        pub fn parameter_ranges(mut self, input: crate::model::ParameterRanges) -> Self {
+            self.parameter_ranges = Some(input);
+            self
+        }
+        /// <p>The <code>ParameterRanges</code> object that specifies the ranges of hyperparameters that this tuning job searches.</p>
+        pub fn set_parameter_ranges(
+            mut self,
+            input: std::option::Option<crate::model::ParameterRanges>,
+        ) -> Self {
+            self.parameter_ranges = input;
+            self
+        }
+        /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
+        /// <dl>
+        /// <dt>
+        /// OFF
+        /// </dt>
+        /// <dd>
+        /// <p>Training jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+        /// </dd>
+        /// <dt>
+        /// AUTO
+        /// </dt>
+        /// <dd>
+        /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
+        /// </dd>
+        /// </dl>
+        pub fn training_job_early_stopping_type(
+            mut self,
+            input: crate::model::TrainingJobEarlyStoppingType,
+        ) -> Self {
+            self.training_job_early_stopping_type = Some(input);
+            self
+        }
+        /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
+        /// <dl>
+        /// <dt>
+        /// OFF
+        /// </dt>
+        /// <dd>
+        /// <p>Training jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+        /// </dd>
+        /// <dt>
+        /// AUTO
+        /// </dt>
+        /// <dd>
+        /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_training_job_early_stopping_type(
+            mut self,
+            input: std::option::Option<crate::model::TrainingJobEarlyStoppingType>,
+        ) -> Self {
+            self.training_job_early_stopping_type = input;
+            self
+        }
+        /// <p>The tuning job's completion criteria.</p>
+        pub fn tuning_job_completion_criteria(
+            mut self,
+            input: crate::model::TuningJobCompletionCriteria,
+        ) -> Self {
+            self.tuning_job_completion_criteria = Some(input);
+            self
+        }
+        /// <p>The tuning job's completion criteria.</p>
+        pub fn set_tuning_job_completion_criteria(
+            mut self,
+            input: std::option::Option<crate::model::TuningJobCompletionCriteria>,
+        ) -> Self {
+            self.tuning_job_completion_criteria = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
+        pub fn build(self) -> crate::model::HyperParameterTuningJobConfig {
+            crate::model::HyperParameterTuningJobConfig {
+                strategy: self.strategy,
+                strategy_config: self.strategy_config,
+                hyper_parameter_tuning_job_objective: self.hyper_parameter_tuning_job_objective,
+                resource_limits: self.resource_limits,
+                parameter_ranges: self.parameter_ranges,
+                training_job_early_stopping_type: self.training_job_early_stopping_type,
+                tuning_job_completion_criteria: self.tuning_job_completion_criteria,
+            }
+        }
+    }
+}
+impl HyperParameterTuningJobConfig {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_job_config::Builder {
+        crate::model::hyper_parameter_tuning_job_config::Builder::default()
+    }
+}
+
+/// <p>The job completion criteria.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TuningJobCompletionCriteria {
+    /// <p>The value of the objective metric.</p>
+    #[doc(hidden)]
+    pub target_objective_metric_value: std::option::Option<f32>,
+}
+impl TuningJobCompletionCriteria {
+    /// <p>The value of the objective metric.</p>
+    pub fn target_objective_metric_value(&self) -> std::option::Option<f32> {
+        self.target_objective_metric_value
+    }
+}
+impl std::fmt::Debug for TuningJobCompletionCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TuningJobCompletionCriteria");
+        formatter.field(
+            "target_objective_metric_value",
+            &self.target_objective_metric_value,
+        );
+        formatter.finish()
+    }
+}
+/// See [`TuningJobCompletionCriteria`](crate::model::TuningJobCompletionCriteria).
+pub mod tuning_job_completion_criteria {
+
+    /// A builder for [`TuningJobCompletionCriteria`](crate::model::TuningJobCompletionCriteria).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_objective_metric_value: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The value of the objective metric.</p>
+        pub fn target_objective_metric_value(mut self, input: f32) -> Self {
+            self.target_objective_metric_value = Some(input);
+            self
+        }
+        /// <p>The value of the objective metric.</p>
+        pub fn set_target_objective_metric_value(
+            mut self,
+            input: std::option::Option<f32>,
+        ) -> Self {
+            self.target_objective_metric_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TuningJobCompletionCriteria`](crate::model::TuningJobCompletionCriteria).
+        pub fn build(self) -> crate::model::TuningJobCompletionCriteria {
+            crate::model::TuningJobCompletionCriteria {
+                target_objective_metric_value: self.target_objective_metric_value,
+            }
+        }
+    }
+}
+impl TuningJobCompletionCriteria {
+    /// Creates a new builder-style object to manufacture [`TuningJobCompletionCriteria`](crate::model::TuningJobCompletionCriteria).
+    pub fn builder() -> crate::model::tuning_job_completion_criteria::Builder {
+        crate::model::tuning_job_completion_criteria::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TrainingJobEarlyStoppingType {
+    #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
+    Off,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TrainingJobEarlyStoppingType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Auto" => TrainingJobEarlyStoppingType::Auto,
+            "Off" => TrainingJobEarlyStoppingType::Off,
+            other => TrainingJobEarlyStoppingType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TrainingJobEarlyStoppingType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrainingJobEarlyStoppingType::from(s))
+    }
+}
+impl TrainingJobEarlyStoppingType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrainingJobEarlyStoppingType::Auto => "Auto",
+            TrainingJobEarlyStoppingType::Off => "Off",
+            TrainingJobEarlyStoppingType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Auto", "Off"]
+    }
+}
+impl AsRef<str> for TrainingJobEarlyStoppingType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceLimits {
+    /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
+    #[doc(hidden)]
+    pub max_number_of_training_jobs: i32,
+    /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
+    #[doc(hidden)]
+    pub max_parallel_training_jobs: i32,
+}
+impl ResourceLimits {
+    /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
+    pub fn max_number_of_training_jobs(&self) -> i32 {
+        self.max_number_of_training_jobs
+    }
+    /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
+    pub fn max_parallel_training_jobs(&self) -> i32 {
+        self.max_parallel_training_jobs
+    }
+}
+impl std::fmt::Debug for ResourceLimits {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceLimits");
+        formatter.field(
+            "max_number_of_training_jobs",
+            &self.max_number_of_training_jobs,
+        );
+        formatter.field(
+            "max_parallel_training_jobs",
+            &self.max_parallel_training_jobs,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ResourceLimits`](crate::model::ResourceLimits).
+pub mod resource_limits {
+
+    /// A builder for [`ResourceLimits`](crate::model::ResourceLimits).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_number_of_training_jobs: std::option::Option<i32>,
+        pub(crate) max_parallel_training_jobs: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
+        pub fn max_number_of_training_jobs(mut self, input: i32) -> Self {
+            self.max_number_of_training_jobs = Some(input);
+            self
+        }
+        /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
+        pub fn set_max_number_of_training_jobs(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_number_of_training_jobs = input;
+            self
+        }
+        /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
+        pub fn max_parallel_training_jobs(mut self, input: i32) -> Self {
+            self.max_parallel_training_jobs = Some(input);
+            self
+        }
+        /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
+        pub fn set_max_parallel_training_jobs(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parallel_training_jobs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceLimits`](crate::model::ResourceLimits).
+        pub fn build(self) -> crate::model::ResourceLimits {
+            crate::model::ResourceLimits {
+                max_number_of_training_jobs: self.max_number_of_training_jobs.unwrap_or_default(),
+                max_parallel_training_jobs: self.max_parallel_training_jobs.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ResourceLimits {
+    /// Creates a new builder-style object to manufacture [`ResourceLimits`](crate::model::ResourceLimits).
+    pub fn builder() -> crate::model::resource_limits::Builder {
+        crate::model::resource_limits::Builder::default()
+    }
+}
+
+/// <p>The configuration for a training job launched by a hyperparameter tuning job. Choose <code>Bayesian</code> for Bayesian optimization, and <code>Random</code> for random search optimization. For more advanced use cases, use <code>Hyperband</code>, which evaluates objective metrics for training jobs after every epoch. For more information about strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningJobStrategyConfig {
+    /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
+    #[doc(hidden)]
+    pub hyperband_strategy_config: std::option::Option<crate::model::HyperbandStrategyConfig>,
+}
+impl HyperParameterTuningJobStrategyConfig {
+    /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
+    pub fn hyperband_strategy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperbandStrategyConfig> {
+        self.hyperband_strategy_config.as_ref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningJobStrategyConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningJobStrategyConfig");
+        formatter.field("hyperband_strategy_config", &self.hyperband_strategy_config);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningJobStrategyConfig`](crate::model::HyperParameterTuningJobStrategyConfig).
+pub mod hyper_parameter_tuning_job_strategy_config {
+
+    /// A builder for [`HyperParameterTuningJobStrategyConfig`](crate::model::HyperParameterTuningJobStrategyConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hyperband_strategy_config:
+            std::option::Option<crate::model::HyperbandStrategyConfig>,
+    }
+    impl Builder {
+        /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
+        pub fn hyperband_strategy_config(
+            mut self,
+            input: crate::model::HyperbandStrategyConfig,
+        ) -> Self {
+            self.hyperband_strategy_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
+        pub fn set_hyperband_strategy_config(
+            mut self,
+            input: std::option::Option<crate::model::HyperbandStrategyConfig>,
+        ) -> Self {
+            self.hyperband_strategy_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningJobStrategyConfig`](crate::model::HyperParameterTuningJobStrategyConfig).
+        pub fn build(self) -> crate::model::HyperParameterTuningJobStrategyConfig {
+            crate::model::HyperParameterTuningJobStrategyConfig {
+                hyperband_strategy_config: self.hyperband_strategy_config,
+            }
+        }
+    }
+}
+impl HyperParameterTuningJobStrategyConfig {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobStrategyConfig`](crate::model::HyperParameterTuningJobStrategyConfig).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_job_strategy_config::Builder {
+        crate::model::hyper_parameter_tuning_job_strategy_config::Builder::default()
+    }
+}
+
+/// <p>The configuration for <code>Hyperband</code>, a multi-fidelity based hyperparameter tuning strategy. <code>Hyperband</code> uses the final and intermediate results of a training job to dynamically allocate resources to utilized hyperparameter configurations while automatically stopping under-performing configurations. This parameter should be provided only if <code>Hyperband</code> is selected as the <code>StrategyConfig</code> under the <code>HyperParameterTuningJobConfig</code> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperbandStrategyConfig {
+    /// <p>The minimum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter tuning job. If the value for <code>MinResource</code> has not been reached, the training job will not be stopped by <code>Hyperband</code>.</p>
+    #[doc(hidden)]
+    pub min_resource: std::option::Option<i32>,
+    /// <p>The maximum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a value for <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code> from the following keys (if present) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>epochs</code> </p> </li>
+    /// <li> <p> <code>numepochs</code> </p> </li>
+    /// <li> <p> <code>n-epochs</code> </p> </li>
+    /// <li> <p> <code>n_epochs</code> </p> </li>
+    /// <li> <p> <code>num_epochs</code> </p> </li>
+    /// </ul>
+    /// <p>If <code>HyperbandStrategyConfig</code> is unable to infer a value for <code>MaxResource</code>, it generates a validation error. The maximum value is 20,000 epochs. All metrics that correspond to an objective metric are used to derive <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early stopping decisions</a>. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training jobs, ensure that duplicate metrics are not printed in the logs across the individual nodes in a training job. If multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect stopping decision and stop the job prematurely. </p>
+    #[doc(hidden)]
+    pub max_resource: std::option::Option<i32>,
+}
+impl HyperbandStrategyConfig {
+    /// <p>The minimum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter tuning job. If the value for <code>MinResource</code> has not been reached, the training job will not be stopped by <code>Hyperband</code>.</p>
+    pub fn min_resource(&self) -> std::option::Option<i32> {
+        self.min_resource
+    }
+    /// <p>The maximum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a value for <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code> from the following keys (if present) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>epochs</code> </p> </li>
+    /// <li> <p> <code>numepochs</code> </p> </li>
+    /// <li> <p> <code>n-epochs</code> </p> </li>
+    /// <li> <p> <code>n_epochs</code> </p> </li>
+    /// <li> <p> <code>num_epochs</code> </p> </li>
+    /// </ul>
+    /// <p>If <code>HyperbandStrategyConfig</code> is unable to infer a value for <code>MaxResource</code>, it generates a validation error. The maximum value is 20,000 epochs. All metrics that correspond to an objective metric are used to derive <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early stopping decisions</a>. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training jobs, ensure that duplicate metrics are not printed in the logs across the individual nodes in a training job. If multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect stopping decision and stop the job prematurely. </p>
+    pub fn max_resource(&self) -> std::option::Option<i32> {
+        self.max_resource
+    }
+}
+impl std::fmt::Debug for HyperbandStrategyConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperbandStrategyConfig");
+        formatter.field("min_resource", &self.min_resource);
+        formatter.field("max_resource", &self.max_resource);
+        formatter.finish()
+    }
+}
+/// See [`HyperbandStrategyConfig`](crate::model::HyperbandStrategyConfig).
+pub mod hyperband_strategy_config {
+
+    /// A builder for [`HyperbandStrategyConfig`](crate::model::HyperbandStrategyConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) min_resource: std::option::Option<i32>,
+        pub(crate) max_resource: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The minimum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter tuning job. If the value for <code>MinResource</code> has not been reached, the training job will not be stopped by <code>Hyperband</code>.</p>
+        pub fn min_resource(mut self, input: i32) -> Self {
+            self.min_resource = Some(input);
+            self
+        }
+        /// <p>The minimum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter tuning job. If the value for <code>MinResource</code> has not been reached, the training job will not be stopped by <code>Hyperband</code>.</p>
+        pub fn set_min_resource(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_resource = input;
+            self
+        }
+        /// <p>The maximum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a value for <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code> from the following keys (if present) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:</p>
+        /// <ul>
+        /// <li> <p> <code>epochs</code> </p> </li>
+        /// <li> <p> <code>numepochs</code> </p> </li>
+        /// <li> <p> <code>n-epochs</code> </p> </li>
+        /// <li> <p> <code>n_epochs</code> </p> </li>
+        /// <li> <p> <code>num_epochs</code> </p> </li>
+        /// </ul>
+        /// <p>If <code>HyperbandStrategyConfig</code> is unable to infer a value for <code>MaxResource</code>, it generates a validation error. The maximum value is 20,000 epochs. All metrics that correspond to an objective metric are used to derive <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early stopping decisions</a>. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training jobs, ensure that duplicate metrics are not printed in the logs across the individual nodes in a training job. If multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect stopping decision and stop the job prematurely. </p>
+        pub fn max_resource(mut self, input: i32) -> Self {
+            self.max_resource = Some(input);
+            self
+        }
+        /// <p>The maximum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a value for <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code> from the following keys (if present) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:</p>
+        /// <ul>
+        /// <li> <p> <code>epochs</code> </p> </li>
+        /// <li> <p> <code>numepochs</code> </p> </li>
+        /// <li> <p> <code>n-epochs</code> </p> </li>
+        /// <li> <p> <code>n_epochs</code> </p> </li>
+        /// <li> <p> <code>num_epochs</code> </p> </li>
+        /// </ul>
+        /// <p>If <code>HyperbandStrategyConfig</code> is unable to infer a value for <code>MaxResource</code>, it generates a validation error. The maximum value is 20,000 epochs. All metrics that correspond to an objective metric are used to derive <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early stopping decisions</a>. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training jobs, ensure that duplicate metrics are not printed in the logs across the individual nodes in a training job. If multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect stopping decision and stop the job prematurely. </p>
+        pub fn set_max_resource(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_resource = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperbandStrategyConfig`](crate::model::HyperbandStrategyConfig).
+        pub fn build(self) -> crate::model::HyperbandStrategyConfig {
+            crate::model::HyperbandStrategyConfig {
+                min_resource: self.min_resource,
+                max_resource: self.max_resource,
+            }
+        }
+    }
+}
+impl HyperbandStrategyConfig {
+    /// Creates a new builder-style object to manufacture [`HyperbandStrategyConfig`](crate::model::HyperbandStrategyConfig).
+    pub fn builder() -> crate::model::hyperband_strategy_config::Builder {
+        crate::model::hyperband_strategy_config::Builder::default()
+    }
+}
+
+/// <p>The strategy hyperparameter tuning uses to
+/// find
+/// the best combination of hyperparameters for your model. Currently,
+/// the only
+/// supported
+/// value is <code>Bayesian</code>.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HyperParameterTuningJobStrategyType {
+    #[allow(missing_docs)] // documentation missing in model
+    Bayesian,
+    #[allow(missing_docs)] // documentation missing in model
+    Hyperband,
+    #[allow(missing_docs)] // documentation missing in model
+    Random,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HyperParameterTuningJobStrategyType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Bayesian" => HyperParameterTuningJobStrategyType::Bayesian,
+            "Hyperband" => HyperParameterTuningJobStrategyType::Hyperband,
+            "Random" => HyperParameterTuningJobStrategyType::Random,
+            other => HyperParameterTuningJobStrategyType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HyperParameterTuningJobStrategyType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HyperParameterTuningJobStrategyType::from(s))
+    }
+}
+impl HyperParameterTuningJobStrategyType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HyperParameterTuningJobStrategyType::Bayesian => "Bayesian",
+            HyperParameterTuningJobStrategyType::Hyperband => "Hyperband",
+            HyperParameterTuningJobStrategyType::Random => "Random",
+            HyperParameterTuningJobStrategyType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Bayesian", "Hyperband", "Random"]
+    }
+}
+impl AsRef<str> for HyperParameterTuningJobStrategyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -18080,61 +24965,6 @@ impl AsRef<str> for SplitType {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum CompressionType {
-    #[allow(missing_docs)] // documentation missing in model
-    Gzip,
-    #[allow(missing_docs)] // documentation missing in model
-    None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for CompressionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Gzip" => CompressionType::Gzip,
-            "None" => CompressionType::None,
-            other => CompressionType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for CompressionType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CompressionType::from(s))
-    }
-}
-impl CompressionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CompressionType::Gzip => "Gzip",
-            CompressionType::None => "None",
-            CompressionType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Gzip", "None"]
-    }
-}
-impl AsRef<str> for CompressionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Describes the location of the channel data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -18296,65 +25126,6 @@ impl TransformS3DataSource {
     /// Creates a new builder-style object to manufacture [`TransformS3DataSource`](crate::model::TransformS3DataSource).
     pub fn builder() -> crate::model::transform_s3_data_source::Builder {
         crate::model::transform_s3_data_source::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum S3DataType {
-    #[allow(missing_docs)] // documentation missing in model
-    AugmentedManifestFile,
-    #[allow(missing_docs)] // documentation missing in model
-    ManifestFile,
-    #[allow(missing_docs)] // documentation missing in model
-    S3Prefix,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for S3DataType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AugmentedManifestFile" => S3DataType::AugmentedManifestFile,
-            "ManifestFile" => S3DataType::ManifestFile,
-            "S3Prefix" => S3DataType::S3Prefix,
-            other => S3DataType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for S3DataType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3DataType::from(s))
-    }
-}
-impl S3DataType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            S3DataType::AugmentedManifestFile => "AugmentedManifestFile",
-            S3DataType::ManifestFile => "ManifestFile",
-            S3DataType::S3Prefix => "S3Prefix",
-            S3DataType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["AugmentedManifestFile", "ManifestFile", "S3Prefix"]
-    }
-}
-impl AsRef<str> for S3DataType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -26661,61 +33432,6 @@ impl TrainingJob {
     }
 }
 
-/// <p>The retry strategy to use when a training job fails due to an <code>InternalServerError</code>. <code>RetryStrategy</code> is specified as part of the <code>CreateTrainingJob</code> and <code>CreateHyperParameterTuningJob</code> requests. You can add the <code>StoppingCondition</code> parameter to the request to limit the training time for the complete job.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RetryStrategy {
-    /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-    #[doc(hidden)]
-    pub maximum_retry_attempts: i32,
-}
-impl RetryStrategy {
-    /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-    pub fn maximum_retry_attempts(&self) -> i32 {
-        self.maximum_retry_attempts
-    }
-}
-impl std::fmt::Debug for RetryStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryStrategy");
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.finish()
-    }
-}
-/// See [`RetryStrategy`](crate::model::RetryStrategy).
-pub mod retry_strategy {
-
-    /// A builder for [`RetryStrategy`](crate::model::RetryStrategy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) maximum_retry_attempts: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-        pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
-            self.maximum_retry_attempts = Some(input);
-            self
-        }
-        /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-        pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`RetryStrategy`](crate::model::RetryStrategy).
-        pub fn build(self) -> crate::model::RetryStrategy {
-            crate::model::RetryStrategy {
-                maximum_retry_attempts: self.maximum_retry_attempts.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl RetryStrategy {
-    /// Creates a new builder-style object to manufacture [`RetryStrategy`](crate::model::RetryStrategy).
-    pub fn builder() -> crate::model::retry_strategy::Builder {
-        crate::model::retry_strategy::Builder::default()
-    }
-}
-
 /// <p>Information about the status of the rule evaluation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -27486,81 +34202,6 @@ impl CollectionConfiguration {
     }
 }
 
-/// <p>Contains information about the output location for managed spot training checkpoint data. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CheckpointConfig {
-    /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    #[doc(hidden)]
-    pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
-    #[doc(hidden)]
-    pub local_path: std::option::Option<std::string::String>,
-}
-impl CheckpointConfig {
-    /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
-        self.s3_uri.as_deref()
-    }
-    /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
-    pub fn local_path(&self) -> std::option::Option<&str> {
-        self.local_path.as_deref()
-    }
-}
-impl std::fmt::Debug for CheckpointConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckpointConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("local_path", &self.local_path);
-        formatter.finish()
-    }
-}
-/// See [`CheckpointConfig`](crate::model::CheckpointConfig).
-pub mod checkpoint_config {
-
-    /// A builder for [`CheckpointConfig`](crate::model::CheckpointConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) s3_uri: std::option::Option<std::string::String>,
-        pub(crate) local_path: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-            self.s3_uri = Some(input.into());
-            self
-        }
-        /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
-        }
-        /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
-        pub fn local_path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.local_path = Some(input.into());
-            self
-        }
-        /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
-        pub fn set_local_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.local_path = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CheckpointConfig`](crate::model::CheckpointConfig).
-        pub fn build(self) -> crate::model::CheckpointConfig {
-            crate::model::CheckpointConfig {
-                s3_uri: self.s3_uri,
-                local_path: self.local_path,
-            }
-        }
-    }
-}
-impl CheckpointConfig {
-    /// Creates a new builder-style object to manufacture [`CheckpointConfig`](crate::model::CheckpointConfig).
-    pub fn builder() -> crate::model::checkpoint_config::Builder {
-        crate::model::checkpoint_config::Builder::default()
-    }
-}
-
 /// <p>The name, value, and date and time of a metric that was emitted to Amazon CloudWatch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -28255,1799 +34896,6 @@ impl AsRef<str> for SecondaryStatus {
     }
 }
 
-/// <p>Specifies a limit to how long a model training job or model compilation job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training or compilation job. Use this API to cap model training costs.</p>
-/// <p>To stop a training job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
-/// <p>The training algorithms provided by SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note>
-/// <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p>
-/// </note>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StoppingCondition {
-    /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
-    /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
-    /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
-    #[doc(hidden)]
-    pub max_runtime_in_seconds: i32,
-    /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
-    /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
-    #[doc(hidden)]
-    pub max_wait_time_in_seconds: std::option::Option<i32>,
-}
-impl StoppingCondition {
-    /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
-    /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
-    /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
-    pub fn max_runtime_in_seconds(&self) -> i32 {
-        self.max_runtime_in_seconds
-    }
-    /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
-    /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
-    pub fn max_wait_time_in_seconds(&self) -> std::option::Option<i32> {
-        self.max_wait_time_in_seconds
-    }
-}
-impl std::fmt::Debug for StoppingCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StoppingCondition");
-        formatter.field("max_runtime_in_seconds", &self.max_runtime_in_seconds);
-        formatter.field("max_wait_time_in_seconds", &self.max_wait_time_in_seconds);
-        formatter.finish()
-    }
-}
-/// See [`StoppingCondition`](crate::model::StoppingCondition).
-pub mod stopping_condition {
-
-    /// A builder for [`StoppingCondition`](crate::model::StoppingCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) max_runtime_in_seconds: std::option::Option<i32>,
-        pub(crate) max_wait_time_in_seconds: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
-        /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
-        /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
-        pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
-            self.max_runtime_in_seconds = Some(input);
-            self
-        }
-        /// <p>The maximum length of time, in seconds, that a training or compilation job can run.</p>
-        /// <p>For compilation jobs, if the job does not complete during this time, a <code>TimeOut</code> error is generated. We recommend starting with 900 seconds and increasing as necessary based on your model.</p>
-        /// <p>For all other jobs, if the job does not complete during this time, SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt. The default value is 1 day. The maximum value is 28 days.</p>
-        pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_runtime_in_seconds = input;
-            self
-        }
-        /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
-        /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
-        pub fn max_wait_time_in_seconds(mut self, input: i32) -> Self {
-            self.max_wait_time_in_seconds = Some(input);
-            self
-        }
-        /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
-        /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
-        pub fn set_max_wait_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_wait_time_in_seconds = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`StoppingCondition`](crate::model::StoppingCondition).
-        pub fn build(self) -> crate::model::StoppingCondition {
-            crate::model::StoppingCondition {
-                max_runtime_in_seconds: self.max_runtime_in_seconds.unwrap_or_default(),
-                max_wait_time_in_seconds: self.max_wait_time_in_seconds,
-            }
-        }
-    }
-}
-impl StoppingCondition {
-    /// Creates a new builder-style object to manufacture [`StoppingCondition`](crate::model::StoppingCondition).
-    pub fn builder() -> crate::model::stopping_condition::Builder {
-        crate::model::stopping_condition::Builder::default()
-    }
-}
-
-/// <p>Describes the resources, including ML compute instances and ML storage volumes, to use for model training. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceConfig {
-    /// <p>The ML compute instance type. </p>
-    #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
-    /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
-    #[doc(hidden)]
-    pub instance_count: i32,
-    /// <p>The size of the ML storage volume that you want to provision. </p>
-    /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
-    /// <p>You must specify sufficient ML storage for your scenario. </p> <note>
-    /// <p> SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
-    /// </note> <note>
-    /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
-    /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-    /// </note>
-    #[doc(hidden)]
-    pub volume_size_in_gb: i32,
-    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
-    /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
-    /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-    /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
-    /// </note>
-    /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
-    /// <ul>
-    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// </ul>
-    #[doc(hidden)]
-    pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    #[doc(hidden)]
-    pub instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
-}
-impl ResourceConfig {
-    /// <p>The ML compute instance type. </p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
-        self.instance_type.as_ref()
-    }
-    /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
-    pub fn instance_count(&self) -> i32 {
-        self.instance_count
-    }
-    /// <p>The size of the ML storage volume that you want to provision. </p>
-    /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
-    /// <p>You must specify sufficient ML storage for your scenario. </p> <note>
-    /// <p> SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
-    /// </note> <note>
-    /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
-    /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-    /// </note>
-    pub fn volume_size_in_gb(&self) -> i32 {
-        self.volume_size_in_gb
-    }
-    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
-    /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
-    /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-    /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
-    /// </note>
-    /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
-    /// <ul>
-    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// </ul>
-    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
-        self.volume_kms_key_id.as_deref()
-    }
-    /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    pub fn instance_groups(&self) -> std::option::Option<&[crate::model::InstanceGroup]> {
-        self.instance_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConfig");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("instance_groups", &self.instance_groups);
-        formatter.finish()
-    }
-}
-/// See [`ResourceConfig`](crate::model::ResourceConfig).
-pub mod resource_config {
-
-    /// A builder for [`ResourceConfig`](crate::model::ResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
-        pub(crate) instance_count: std::option::Option<i32>,
-        pub(crate) volume_size_in_gb: std::option::Option<i32>,
-        pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
-    }
-    impl Builder {
-        /// <p>The ML compute instance type. </p>
-        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
-            self.instance_type = Some(input);
-            self
-        }
-        /// <p>The ML compute instance type. </p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<crate::model::TrainingInstanceType>,
-        ) -> Self {
-            self.instance_type = input;
-            self
-        }
-        /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
-        pub fn instance_count(mut self, input: i32) -> Self {
-            self.instance_count = Some(input);
-            self
-        }
-        /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
-        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
-        }
-        /// <p>The size of the ML storage volume that you want to provision. </p>
-        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
-        /// <p>You must specify sufficient ML storage for your scenario. </p> <note>
-        /// <p> SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
-        /// </note> <note>
-        /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
-        /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-        /// </note>
-        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
-            self.volume_size_in_gb = Some(input);
-            self
-        }
-        /// <p>The size of the ML storage volume that you want to provision. </p>
-        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
-        /// <p>You must specify sufficient ML storage for your scenario. </p> <note>
-        /// <p> SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. </p>
-        /// </note> <note>
-        /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for training, SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
-        /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-        /// </note>
-        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-            self.volume_size_in_gb = input;
-            self
-        }
-        /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
-        /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
-        /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
-        /// </note>
-        /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
-        /// <ul>
-        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-        /// </ul>
-        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.volume_kms_key_id = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
-        /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
-        /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
-        /// </note>
-        /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
-        /// <ul>
-        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-        /// </ul>
-        pub fn set_volume_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_kms_key_id = input;
-            self
-        }
-        /// Appends an item to `instance_groups`.
-        ///
-        /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
-        ///
-        /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-        pub fn instance_groups(mut self, input: crate::model::InstanceGroup) -> Self {
-            let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input);
-            self.instance_groups = Some(v);
-            self
-        }
-        /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-        pub fn set_instance_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
-        ) -> Self {
-            self.instance_groups = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceConfig`](crate::model::ResourceConfig).
-        pub fn build(self) -> crate::model::ResourceConfig {
-            crate::model::ResourceConfig {
-                instance_type: self.instance_type,
-                instance_count: self.instance_count.unwrap_or_default(),
-                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
-                volume_kms_key_id: self.volume_kms_key_id,
-                instance_groups: self.instance_groups,
-            }
-        }
-    }
-}
-impl ResourceConfig {
-    /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::model::ResourceConfig).
-    pub fn builder() -> crate::model::resource_config::Builder {
-        crate::model::resource_config::Builder::default()
-    }
-}
-
-/// <p>Defines an instance group for heterogeneous cluster training. When requesting a training job using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API, you can configure multiple instance groups .</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InstanceGroup {
-    /// <p>Specifies the instance type of the instance group.</p>
-    #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
-    /// <p>Specifies the number of instances of the instance group.</p>
-    #[doc(hidden)]
-    pub instance_count: i32,
-    /// <p>Specifies the name of the instance group.</p>
-    #[doc(hidden)]
-    pub instance_group_name: std::option::Option<std::string::String>,
-}
-impl InstanceGroup {
-    /// <p>Specifies the instance type of the instance group.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
-        self.instance_type.as_ref()
-    }
-    /// <p>Specifies the number of instances of the instance group.</p>
-    pub fn instance_count(&self) -> i32 {
-        self.instance_count
-    }
-    /// <p>Specifies the name of the instance group.</p>
-    pub fn instance_group_name(&self) -> std::option::Option<&str> {
-        self.instance_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceGroup");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("instance_group_name", &self.instance_group_name);
-        formatter.finish()
-    }
-}
-/// See [`InstanceGroup`](crate::model::InstanceGroup).
-pub mod instance_group {
-
-    /// A builder for [`InstanceGroup`](crate::model::InstanceGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
-        pub(crate) instance_count: std::option::Option<i32>,
-        pub(crate) instance_group_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Specifies the instance type of the instance group.</p>
-        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
-            self.instance_type = Some(input);
-            self
-        }
-        /// <p>Specifies the instance type of the instance group.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<crate::model::TrainingInstanceType>,
-        ) -> Self {
-            self.instance_type = input;
-            self
-        }
-        /// <p>Specifies the number of instances of the instance group.</p>
-        pub fn instance_count(mut self, input: i32) -> Self {
-            self.instance_count = Some(input);
-            self
-        }
-        /// <p>Specifies the number of instances of the instance group.</p>
-        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
-        }
-        /// <p>Specifies the name of the instance group.</p>
-        pub fn instance_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.instance_group_name = Some(input.into());
-            self
-        }
-        /// <p>Specifies the name of the instance group.</p>
-        pub fn set_instance_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_group_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InstanceGroup`](crate::model::InstanceGroup).
-        pub fn build(self) -> crate::model::InstanceGroup {
-            crate::model::InstanceGroup {
-                instance_type: self.instance_type,
-                instance_count: self.instance_count.unwrap_or_default(),
-                instance_group_name: self.instance_group_name,
-            }
-        }
-    }
-}
-impl InstanceGroup {
-    /// Creates a new builder-style object to manufacture [`InstanceGroup`](crate::model::InstanceGroup).
-    pub fn builder() -> crate::model::instance_group::Builder {
-        crate::model::instance_group::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TrainingInstanceType {
-    #[allow(missing_docs)] // documentation missing in model
-    MlC42Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC44Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC48Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC518Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC52Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC54Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC59Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5N18Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5N2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5N4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5N9Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5NXlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn12Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn16Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn8Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4DnXlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG512Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG516Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG524Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG52Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG548Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG54Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG58Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG5Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM410Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM416Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM42Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM44Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM512Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM524Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM52Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM54Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5Large,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP216Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP28Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP316Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP32Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP38Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP3Dn24Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP4D24Xlarge,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TrainingInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ml.c4.2xlarge" => TrainingInstanceType::MlC42Xlarge,
-            "ml.c4.4xlarge" => TrainingInstanceType::MlC44Xlarge,
-            "ml.c4.8xlarge" => TrainingInstanceType::MlC48Xlarge,
-            "ml.c4.xlarge" => TrainingInstanceType::MlC4Xlarge,
-            "ml.c5.18xlarge" => TrainingInstanceType::MlC518Xlarge,
-            "ml.c5.2xlarge" => TrainingInstanceType::MlC52Xlarge,
-            "ml.c5.4xlarge" => TrainingInstanceType::MlC54Xlarge,
-            "ml.c5.9xlarge" => TrainingInstanceType::MlC59Xlarge,
-            "ml.c5.xlarge" => TrainingInstanceType::MlC5Xlarge,
-            "ml.c5n.18xlarge" => TrainingInstanceType::MlC5N18Xlarge,
-            "ml.c5n.2xlarge" => TrainingInstanceType::MlC5N2Xlarge,
-            "ml.c5n.4xlarge" => TrainingInstanceType::MlC5N4Xlarge,
-            "ml.c5n.9xlarge" => TrainingInstanceType::MlC5N9Xlarge,
-            "ml.c5n.xlarge" => TrainingInstanceType::MlC5NXlarge,
-            "ml.g4dn.12xlarge" => TrainingInstanceType::MlG4Dn12Xlarge,
-            "ml.g4dn.16xlarge" => TrainingInstanceType::MlG4Dn16Xlarge,
-            "ml.g4dn.2xlarge" => TrainingInstanceType::MlG4Dn2Xlarge,
-            "ml.g4dn.4xlarge" => TrainingInstanceType::MlG4Dn4Xlarge,
-            "ml.g4dn.8xlarge" => TrainingInstanceType::MlG4Dn8Xlarge,
-            "ml.g4dn.xlarge" => TrainingInstanceType::MlG4DnXlarge,
-            "ml.g5.12xlarge" => TrainingInstanceType::MlG512Xlarge,
-            "ml.g5.16xlarge" => TrainingInstanceType::MlG516Xlarge,
-            "ml.g5.24xlarge" => TrainingInstanceType::MlG524Xlarge,
-            "ml.g5.2xlarge" => TrainingInstanceType::MlG52Xlarge,
-            "ml.g5.48xlarge" => TrainingInstanceType::MlG548Xlarge,
-            "ml.g5.4xlarge" => TrainingInstanceType::MlG54Xlarge,
-            "ml.g5.8xlarge" => TrainingInstanceType::MlG58Xlarge,
-            "ml.g5.xlarge" => TrainingInstanceType::MlG5Xlarge,
-            "ml.m4.10xlarge" => TrainingInstanceType::MlM410Xlarge,
-            "ml.m4.16xlarge" => TrainingInstanceType::MlM416Xlarge,
-            "ml.m4.2xlarge" => TrainingInstanceType::MlM42Xlarge,
-            "ml.m4.4xlarge" => TrainingInstanceType::MlM44Xlarge,
-            "ml.m4.xlarge" => TrainingInstanceType::MlM4Xlarge,
-            "ml.m5.12xlarge" => TrainingInstanceType::MlM512Xlarge,
-            "ml.m5.24xlarge" => TrainingInstanceType::MlM524Xlarge,
-            "ml.m5.2xlarge" => TrainingInstanceType::MlM52Xlarge,
-            "ml.m5.4xlarge" => TrainingInstanceType::MlM54Xlarge,
-            "ml.m5.large" => TrainingInstanceType::MlM5Large,
-            "ml.m5.xlarge" => TrainingInstanceType::MlM5Xlarge,
-            "ml.p2.16xlarge" => TrainingInstanceType::MlP216Xlarge,
-            "ml.p2.8xlarge" => TrainingInstanceType::MlP28Xlarge,
-            "ml.p2.xlarge" => TrainingInstanceType::MlP2Xlarge,
-            "ml.p3.16xlarge" => TrainingInstanceType::MlP316Xlarge,
-            "ml.p3.2xlarge" => TrainingInstanceType::MlP32Xlarge,
-            "ml.p3.8xlarge" => TrainingInstanceType::MlP38Xlarge,
-            "ml.p3dn.24xlarge" => TrainingInstanceType::MlP3Dn24Xlarge,
-            "ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
-            other => TrainingInstanceType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TrainingInstanceType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrainingInstanceType::from(s))
-    }
-}
-impl TrainingInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TrainingInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
-            TrainingInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
-            TrainingInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
-            TrainingInstanceType::MlC4Xlarge => "ml.c4.xlarge",
-            TrainingInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-            TrainingInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-            TrainingInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-            TrainingInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-            TrainingInstanceType::MlC5Xlarge => "ml.c5.xlarge",
-            TrainingInstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
-            TrainingInstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
-            TrainingInstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
-            TrainingInstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
-            TrainingInstanceType::MlC5NXlarge => "ml.c5n.xlarge",
-            TrainingInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
-            TrainingInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
-            TrainingInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
-            TrainingInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
-            TrainingInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
-            TrainingInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
-            TrainingInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
-            TrainingInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
-            TrainingInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
-            TrainingInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
-            TrainingInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
-            TrainingInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
-            TrainingInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
-            TrainingInstanceType::MlG5Xlarge => "ml.g5.xlarge",
-            TrainingInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
-            TrainingInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
-            TrainingInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
-            TrainingInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
-            TrainingInstanceType::MlM4Xlarge => "ml.m4.xlarge",
-            TrainingInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-            TrainingInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-            TrainingInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-            TrainingInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-            TrainingInstanceType::MlM5Large => "ml.m5.large",
-            TrainingInstanceType::MlM5Xlarge => "ml.m5.xlarge",
-            TrainingInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
-            TrainingInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
-            TrainingInstanceType::MlP2Xlarge => "ml.p2.xlarge",
-            TrainingInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
-            TrainingInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
-            TrainingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
-            TrainingInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
-            TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
-            TrainingInstanceType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "ml.c4.2xlarge",
-            "ml.c4.4xlarge",
-            "ml.c4.8xlarge",
-            "ml.c4.xlarge",
-            "ml.c5.18xlarge",
-            "ml.c5.2xlarge",
-            "ml.c5.4xlarge",
-            "ml.c5.9xlarge",
-            "ml.c5.xlarge",
-            "ml.c5n.18xlarge",
-            "ml.c5n.2xlarge",
-            "ml.c5n.4xlarge",
-            "ml.c5n.9xlarge",
-            "ml.c5n.xlarge",
-            "ml.g4dn.12xlarge",
-            "ml.g4dn.16xlarge",
-            "ml.g4dn.2xlarge",
-            "ml.g4dn.4xlarge",
-            "ml.g4dn.8xlarge",
-            "ml.g4dn.xlarge",
-            "ml.g5.12xlarge",
-            "ml.g5.16xlarge",
-            "ml.g5.24xlarge",
-            "ml.g5.2xlarge",
-            "ml.g5.48xlarge",
-            "ml.g5.4xlarge",
-            "ml.g5.8xlarge",
-            "ml.g5.xlarge",
-            "ml.m4.10xlarge",
-            "ml.m4.16xlarge",
-            "ml.m4.2xlarge",
-            "ml.m4.4xlarge",
-            "ml.m4.xlarge",
-            "ml.m5.12xlarge",
-            "ml.m5.24xlarge",
-            "ml.m5.2xlarge",
-            "ml.m5.4xlarge",
-            "ml.m5.large",
-            "ml.m5.xlarge",
-            "ml.p2.16xlarge",
-            "ml.p2.8xlarge",
-            "ml.p2.xlarge",
-            "ml.p3.16xlarge",
-            "ml.p3.2xlarge",
-            "ml.p3.8xlarge",
-            "ml.p3dn.24xlarge",
-            "ml.p4d.24xlarge",
-        ]
-    }
-}
-impl AsRef<str> for TrainingInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Provides information about how to store model training results (model artifacts).</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OutputDataConfig {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
-    /// <ul>
-    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
-    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-    /// </ul>
-    /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
-    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-    #[doc(hidden)]
-    pub s3_output_path: std::option::Option<std::string::String>,
-}
-impl OutputDataConfig {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
-    /// <ul>
-    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
-    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-    /// </ul>
-    /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
-    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
-        self.kms_key_id.as_deref()
-    }
-    /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-    pub fn s3_output_path(&self) -> std::option::Option<&str> {
-        self.s3_output_path.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDataConfig");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("s3_output_path", &self.s3_output_path);
-        formatter.finish()
-    }
-}
-/// See [`OutputDataConfig`](crate::model::OutputDataConfig).
-pub mod output_data_config {
-
-    /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) s3_output_path: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
-        /// <ul>
-        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-        /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
-        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-        /// </ul>
-        /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
-        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
-        /// <ul>
-        /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-        /// <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
-        /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-        /// </ul>
-        /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
-        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
-        }
-        /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-        pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.s3_output_path = Some(input.into());
-            self
-        }
-        /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-        pub fn set_s3_output_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_output_path = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`OutputDataConfig`](crate::model::OutputDataConfig).
-        pub fn build(self) -> crate::model::OutputDataConfig {
-            crate::model::OutputDataConfig {
-                kms_key_id: self.kms_key_id,
-                s3_output_path: self.s3_output_path,
-            }
-        }
-    }
-}
-impl OutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
-    pub fn builder() -> crate::model::output_data_config::Builder {
-        crate::model::output_data_config::Builder::default()
-    }
-}
-
-/// <p>A channel is a named input source that training algorithms can consume. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Channel {
-    /// <p>The name of the channel. </p>
-    #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The location of the channel data.</p>
-    #[doc(hidden)]
-    pub data_source: std::option::Option<crate::model::DataSource>,
-    /// <p>The MIME type of the data.</p>
-    #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
-    /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
-    #[doc(hidden)]
-    pub compression_type: std::option::Option<crate::model::CompressionType>,
-    /// <p></p>
-    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
-    /// <p>In File mode, leave this field unset or set it to None.</p>
-    #[doc(hidden)]
-    pub record_wrapper_type: std::option::Option<crate::model::RecordWrapper>,
-    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
-    /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
-    #[doc(hidden)]
-    pub input_mode: std::option::Option<crate::model::TrainingInputMode>,
-    /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
-    /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
-    #[doc(hidden)]
-    pub shuffle_config: std::option::Option<crate::model::ShuffleConfig>,
-}
-impl Channel {
-    /// <p>The name of the channel. </p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
-        self.channel_name.as_deref()
-    }
-    /// <p>The location of the channel data.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
-        self.data_source.as_ref()
-    }
-    /// <p>The MIME type of the data.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
-        self.content_type.as_deref()
-    }
-    /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
-    pub fn compression_type(&self) -> std::option::Option<&crate::model::CompressionType> {
-        self.compression_type.as_ref()
-    }
-    /// <p></p>
-    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
-    /// <p>In File mode, leave this field unset or set it to None.</p>
-    pub fn record_wrapper_type(&self) -> std::option::Option<&crate::model::RecordWrapper> {
-        self.record_wrapper_type.as_ref()
-    }
-    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
-    /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
-    pub fn input_mode(&self) -> std::option::Option<&crate::model::TrainingInputMode> {
-        self.input_mode.as_ref()
-    }
-    /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
-    /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
-    pub fn shuffle_config(&self) -> std::option::Option<&crate::model::ShuffleConfig> {
-        self.shuffle_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("compression_type", &self.compression_type);
-        formatter.field("record_wrapper_type", &self.record_wrapper_type);
-        formatter.field("input_mode", &self.input_mode);
-        formatter.field("shuffle_config", &self.shuffle_config);
-        formatter.finish()
-    }
-}
-/// See [`Channel`](crate::model::Channel).
-pub mod channel {
-
-    /// A builder for [`Channel`](crate::model::Channel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) channel_name: std::option::Option<std::string::String>,
-        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
-        pub(crate) content_type: std::option::Option<std::string::String>,
-        pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
-        pub(crate) record_wrapper_type: std::option::Option<crate::model::RecordWrapper>,
-        pub(crate) input_mode: std::option::Option<crate::model::TrainingInputMode>,
-        pub(crate) shuffle_config: std::option::Option<crate::model::ShuffleConfig>,
-    }
-    impl Builder {
-        /// <p>The name of the channel. </p>
-        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the channel. </p>
-        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
-        }
-        /// <p>The location of the channel data.</p>
-        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
-            self.data_source = Some(input);
-            self
-        }
-        /// <p>The location of the channel data.</p>
-        pub fn set_data_source(
-            mut self,
-            input: std::option::Option<crate::model::DataSource>,
-        ) -> Self {
-            self.data_source = input;
-            self
-        }
-        /// <p>The MIME type of the data.</p>
-        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(input.into());
-            self
-        }
-        /// <p>The MIME type of the data.</p>
-        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
-        }
-        /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
-        pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
-            self.compression_type = Some(input);
-            self
-        }
-        /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
-        pub fn set_compression_type(
-            mut self,
-            input: std::option::Option<crate::model::CompressionType>,
-        ) -> Self {
-            self.compression_type = input;
-            self
-        }
-        /// <p></p>
-        /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
-        /// <p>In File mode, leave this field unset or set it to None.</p>
-        pub fn record_wrapper_type(mut self, input: crate::model::RecordWrapper) -> Self {
-            self.record_wrapper_type = Some(input);
-            self
-        }
-        /// <p></p>
-        /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
-        /// <p>In File mode, leave this field unset or set it to None.</p>
-        pub fn set_record_wrapper_type(
-            mut self,
-            input: std::option::Option<crate::model::RecordWrapper>,
-        ) -> Self {
-            self.record_wrapper_type = input;
-            self
-        }
-        /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
-        /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
-        pub fn input_mode(mut self, input: crate::model::TrainingInputMode) -> Self {
-            self.input_mode = Some(input);
-            self
-        }
-        /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <code>AlgorithmSpecification</code> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
-        /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
-        pub fn set_input_mode(
-            mut self,
-            input: std::option::Option<crate::model::TrainingInputMode>,
-        ) -> Self {
-            self.input_mode = input;
-            self
-        }
-        /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
-        /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
-        pub fn shuffle_config(mut self, input: crate::model::ShuffleConfig) -> Self {
-            self.shuffle_config = Some(input);
-            self
-        }
-        /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
-        /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
-        pub fn set_shuffle_config(
-            mut self,
-            input: std::option::Option<crate::model::ShuffleConfig>,
-        ) -> Self {
-            self.shuffle_config = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
-        pub fn build(self) -> crate::model::Channel {
-            crate::model::Channel {
-                channel_name: self.channel_name,
-                data_source: self.data_source,
-                content_type: self.content_type,
-                compression_type: self.compression_type,
-                record_wrapper_type: self.record_wrapper_type,
-                input_mode: self.input_mode,
-                shuffle_config: self.shuffle_config,
-            }
-        }
-    }
-}
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
-}
-
-/// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
-/// <p>For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ShuffleConfig {
-    /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-    #[doc(hidden)]
-    pub seed: i64,
-}
-impl ShuffleConfig {
-    /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-    pub fn seed(&self) -> i64 {
-        self.seed
-    }
-}
-impl std::fmt::Debug for ShuffleConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShuffleConfig");
-        formatter.field("seed", &self.seed);
-        formatter.finish()
-    }
-}
-/// See [`ShuffleConfig`](crate::model::ShuffleConfig).
-pub mod shuffle_config {
-
-    /// A builder for [`ShuffleConfig`](crate::model::ShuffleConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) seed: std::option::Option<i64>,
-    }
-    impl Builder {
-        /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-        pub fn seed(mut self, input: i64) -> Self {
-            self.seed = Some(input);
-            self
-        }
-        /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-        pub fn set_seed(mut self, input: std::option::Option<i64>) -> Self {
-            self.seed = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ShuffleConfig`](crate::model::ShuffleConfig).
-        pub fn build(self) -> crate::model::ShuffleConfig {
-            crate::model::ShuffleConfig {
-                seed: self.seed.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl ShuffleConfig {
-    /// Creates a new builder-style object to manufacture [`ShuffleConfig`](crate::model::ShuffleConfig).
-    pub fn builder() -> crate::model::shuffle_config::Builder {
-        crate::model::shuffle_config::Builder::default()
-    }
-}
-
-/// <p>The training input mode that the algorithm supports. For more information about input
-/// modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-///
-/// <p>
-/// <b>Pipe mode</b>
-/// </p>
-/// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from
-/// Amazon S3 to the container.</p>
-///
-/// <p>
-/// <b>File mode</b>
-/// </p>
-/// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from
-/// S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume
-/// for the training container.</p>
-/// <p>You must provision the ML storage volume with sufficient capacity to accommodate the
-/// data downloaded from S3. In addition to the training data, the ML storage volume also
-/// stores the output model. The algorithm container uses the ML storage volume to also
-/// store intermediate information, if any.</p>
-/// <p>For distributed algorithms, training data is distributed uniformly. Your training
-/// duration is predictable if the input data objects sizes are approximately the same. SageMaker
-/// does not split the files any further for model training. If the object sizes are skewed,
-/// training won't be optimal as the data distribution is also skewed when one host in a
-/// training cluster is overloaded, thus becoming a bottleneck in training.</p>
-///
-/// <p>
-/// <b>FastFile mode</b>
-/// </p>
-/// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from
-/// S3 to the container with no code changes, and provides file system access to the data.
-/// Users can author their training script to interact with these files as if they were
-/// stored on disk.</p>
-/// <p>
-/// <code>FastFile</code> mode works best when the data is read sequentially. Augmented
-/// manifest files aren't supported. The startup time is lower when there are fewer files in
-/// the S3 bucket provided.</p>
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TrainingInputMode {
-    #[allow(missing_docs)] // documentation missing in model
-    Fastfile,
-    #[allow(missing_docs)] // documentation missing in model
-    File,
-    #[allow(missing_docs)] // documentation missing in model
-    Pipe,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TrainingInputMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "FastFile" => TrainingInputMode::Fastfile,
-            "File" => TrainingInputMode::File,
-            "Pipe" => TrainingInputMode::Pipe,
-            other => TrainingInputMode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TrainingInputMode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrainingInputMode::from(s))
-    }
-}
-impl TrainingInputMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TrainingInputMode::Fastfile => "FastFile",
-            TrainingInputMode::File => "File",
-            TrainingInputMode::Pipe => "Pipe",
-            TrainingInputMode::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["FastFile", "File", "Pipe"]
-    }
-}
-impl AsRef<str> for TrainingInputMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum RecordWrapper {
-    #[allow(missing_docs)] // documentation missing in model
-    None,
-    #[allow(missing_docs)] // documentation missing in model
-    Recordio,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for RecordWrapper {
-    fn from(s: &str) -> Self {
-        match s {
-            "None" => RecordWrapper::None,
-            "RecordIO" => RecordWrapper::Recordio,
-            other => RecordWrapper::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for RecordWrapper {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecordWrapper::from(s))
-    }
-}
-impl RecordWrapper {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecordWrapper::None => "None",
-            RecordWrapper::Recordio => "RecordIO",
-            RecordWrapper::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["None", "RecordIO"]
-    }
-}
-impl AsRef<str> for RecordWrapper {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Describes the location of the channel data.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSource {
-    /// <p>The S3 location of the data source that is associated with a channel.</p>
-    #[doc(hidden)]
-    pub s3_data_source: std::option::Option<crate::model::S3DataSource>,
-    /// <p>The file system that is associated with a channel.</p>
-    #[doc(hidden)]
-    pub file_system_data_source: std::option::Option<crate::model::FileSystemDataSource>,
-}
-impl DataSource {
-    /// <p>The S3 location of the data source that is associated with a channel.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataSource> {
-        self.s3_data_source.as_ref()
-    }
-    /// <p>The file system that is associated with a channel.</p>
-    pub fn file_system_data_source(
-        &self,
-    ) -> std::option::Option<&crate::model::FileSystemDataSource> {
-        self.file_system_data_source.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("s3_data_source", &self.s3_data_source);
-        formatter.field("file_system_data_source", &self.file_system_data_source);
-        formatter.finish()
-    }
-}
-/// See [`DataSource`](crate::model::DataSource).
-pub mod data_source {
-
-    /// A builder for [`DataSource`](crate::model::DataSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) s3_data_source: std::option::Option<crate::model::S3DataSource>,
-        pub(crate) file_system_data_source: std::option::Option<crate::model::FileSystemDataSource>,
-    }
-    impl Builder {
-        /// <p>The S3 location of the data source that is associated with a channel.</p>
-        pub fn s3_data_source(mut self, input: crate::model::S3DataSource) -> Self {
-            self.s3_data_source = Some(input);
-            self
-        }
-        /// <p>The S3 location of the data source that is associated with a channel.</p>
-        pub fn set_s3_data_source(
-            mut self,
-            input: std::option::Option<crate::model::S3DataSource>,
-        ) -> Self {
-            self.s3_data_source = input;
-            self
-        }
-        /// <p>The file system that is associated with a channel.</p>
-        pub fn file_system_data_source(
-            mut self,
-            input: crate::model::FileSystemDataSource,
-        ) -> Self {
-            self.file_system_data_source = Some(input);
-            self
-        }
-        /// <p>The file system that is associated with a channel.</p>
-        pub fn set_file_system_data_source(
-            mut self,
-            input: std::option::Option<crate::model::FileSystemDataSource>,
-        ) -> Self {
-            self.file_system_data_source = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
-        pub fn build(self) -> crate::model::DataSource {
-            crate::model::DataSource {
-                s3_data_source: self.s3_data_source,
-                file_system_data_source: self.file_system_data_source,
-            }
-        }
-    }
-}
-impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
-    pub fn builder() -> crate::model::data_source::Builder {
-        crate::model::data_source::Builder::default()
-    }
-}
-
-/// <p>Specifies a file system data source for a channel.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FileSystemDataSource {
-    /// <p>The file system id.</p>
-    #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
-    #[doc(hidden)]
-    pub file_system_access_mode: std::option::Option<crate::model::FileSystemAccessMode>,
-    /// <p>The file system type. </p>
-    #[doc(hidden)]
-    pub file_system_type: std::option::Option<crate::model::FileSystemType>,
-    /// <p>The full path to the directory to associate with the channel.</p>
-    #[doc(hidden)]
-    pub directory_path: std::option::Option<std::string::String>,
-}
-impl FileSystemDataSource {
-    /// <p>The file system id.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
-        self.file_system_id.as_deref()
-    }
-    /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
-    pub fn file_system_access_mode(
-        &self,
-    ) -> std::option::Option<&crate::model::FileSystemAccessMode> {
-        self.file_system_access_mode.as_ref()
-    }
-    /// <p>The file system type. </p>
-    pub fn file_system_type(&self) -> std::option::Option<&crate::model::FileSystemType> {
-        self.file_system_type.as_ref()
-    }
-    /// <p>The full path to the directory to associate with the channel.</p>
-    pub fn directory_path(&self) -> std::option::Option<&str> {
-        self.directory_path.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemDataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemDataSource");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("file_system_access_mode", &self.file_system_access_mode);
-        formatter.field("file_system_type", &self.file_system_type);
-        formatter.field("directory_path", &self.directory_path);
-        formatter.finish()
-    }
-}
-/// See [`FileSystemDataSource`](crate::model::FileSystemDataSource).
-pub mod file_system_data_source {
-
-    /// A builder for [`FileSystemDataSource`](crate::model::FileSystemDataSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) file_system_id: std::option::Option<std::string::String>,
-        pub(crate) file_system_access_mode: std::option::Option<crate::model::FileSystemAccessMode>,
-        pub(crate) file_system_type: std::option::Option<crate::model::FileSystemType>,
-        pub(crate) directory_path: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The file system id.</p>
-        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.file_system_id = Some(input.into());
-            self
-        }
-        /// <p>The file system id.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
-        }
-        /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
-        pub fn file_system_access_mode(
-            mut self,
-            input: crate::model::FileSystemAccessMode,
-        ) -> Self {
-            self.file_system_access_mode = Some(input);
-            self
-        }
-        /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
-        pub fn set_file_system_access_mode(
-            mut self,
-            input: std::option::Option<crate::model::FileSystemAccessMode>,
-        ) -> Self {
-            self.file_system_access_mode = input;
-            self
-        }
-        /// <p>The file system type. </p>
-        pub fn file_system_type(mut self, input: crate::model::FileSystemType) -> Self {
-            self.file_system_type = Some(input);
-            self
-        }
-        /// <p>The file system type. </p>
-        pub fn set_file_system_type(
-            mut self,
-            input: std::option::Option<crate::model::FileSystemType>,
-        ) -> Self {
-            self.file_system_type = input;
-            self
-        }
-        /// <p>The full path to the directory to associate with the channel.</p>
-        pub fn directory_path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.directory_path = Some(input.into());
-            self
-        }
-        /// <p>The full path to the directory to associate with the channel.</p>
-        pub fn set_directory_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_path = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`FileSystemDataSource`](crate::model::FileSystemDataSource).
-        pub fn build(self) -> crate::model::FileSystemDataSource {
-            crate::model::FileSystemDataSource {
-                file_system_id: self.file_system_id,
-                file_system_access_mode: self.file_system_access_mode,
-                file_system_type: self.file_system_type,
-                directory_path: self.directory_path,
-            }
-        }
-    }
-}
-impl FileSystemDataSource {
-    /// Creates a new builder-style object to manufacture [`FileSystemDataSource`](crate::model::FileSystemDataSource).
-    pub fn builder() -> crate::model::file_system_data_source::Builder {
-        crate::model::file_system_data_source::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum FileSystemType {
-    #[allow(missing_docs)] // documentation missing in model
-    Efs,
-    #[allow(missing_docs)] // documentation missing in model
-    Fsxlustre,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for FileSystemType {
-    fn from(s: &str) -> Self {
-        match s {
-            "EFS" => FileSystemType::Efs,
-            "FSxLustre" => FileSystemType::Fsxlustre,
-            other => FileSystemType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for FileSystemType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileSystemType::from(s))
-    }
-}
-impl FileSystemType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FileSystemType::Efs => "EFS",
-            FileSystemType::Fsxlustre => "FSxLustre",
-            FileSystemType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["EFS", "FSxLustre"]
-    }
-}
-impl AsRef<str> for FileSystemType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum FileSystemAccessMode {
-    #[allow(missing_docs)] // documentation missing in model
-    Ro,
-    #[allow(missing_docs)] // documentation missing in model
-    Rw,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for FileSystemAccessMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ro" => FileSystemAccessMode::Ro,
-            "rw" => FileSystemAccessMode::Rw,
-            other => FileSystemAccessMode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for FileSystemAccessMode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileSystemAccessMode::from(s))
-    }
-}
-impl FileSystemAccessMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FileSystemAccessMode::Ro => "ro",
-            FileSystemAccessMode::Rw => "rw",
-            FileSystemAccessMode::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["ro", "rw"]
-    }
-}
-impl AsRef<str> for FileSystemAccessMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Describes the S3 data source.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct S3DataSource {
-    /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
-    /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
-    /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
-    #[doc(hidden)]
-    pub s3_data_type: std::option::Option<crate::model::S3DataType>,
-    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
-    /// <ul>
-    /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
-    /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
-    /// </ul>
-    #[doc(hidden)]
-    pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
-    /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
-    /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
-    /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
-    #[doc(hidden)]
-    pub s3_data_distribution_type: std::option::Option<crate::model::S3DataDistribution>,
-    /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-    #[doc(hidden)]
-    pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-    #[doc(hidden)]
-    pub instance_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl S3DataSource {
-    /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
-    /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
-    /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
-    pub fn s3_data_type(&self) -> std::option::Option<&crate::model::S3DataType> {
-        self.s3_data_type.as_ref()
-    }
-    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
-    /// <ul>
-    /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
-    /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
-    /// </ul>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
-        self.s3_uri.as_deref()
-    }
-    /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
-    /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
-    /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
-    /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
-    pub fn s3_data_distribution_type(
-        &self,
-    ) -> std::option::Option<&crate::model::S3DataDistribution> {
-        self.s3_data_distribution_type.as_ref()
-    }
-    /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
-        self.attribute_names.as_deref()
-    }
-    /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-    pub fn instance_group_names(&self) -> std::option::Option<&[std::string::String]> {
-        self.instance_group_names.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DataSource");
-        formatter.field("s3_data_type", &self.s3_data_type);
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("s3_data_distribution_type", &self.s3_data_distribution_type);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.field("instance_group_names", &self.instance_group_names);
-        formatter.finish()
-    }
-}
-/// See [`S3DataSource`](crate::model::S3DataSource).
-pub mod s3_data_source {
-
-    /// A builder for [`S3DataSource`](crate::model::S3DataSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) s3_data_type: std::option::Option<crate::model::S3DataType>,
-        pub(crate) s3_uri: std::option::Option<std::string::String>,
-        pub(crate) s3_data_distribution_type: std::option::Option<crate::model::S3DataDistribution>,
-        pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) instance_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
-        /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
-        /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
-        pub fn s3_data_type(mut self, input: crate::model::S3DataType) -> Self {
-            self.s3_data_type = Some(input);
-            self
-        }
-        /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
-        /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
-        /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
-        pub fn set_s3_data_type(
-            mut self,
-            input: std::option::Option<crate::model::S3DataType>,
-        ) -> Self {
-            self.s3_data_type = input;
-            self
-        }
-        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
-        /// <ul>
-        /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
-        /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
-        /// </ul>
-        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-            self.s3_uri = Some(input.into());
-            self
-        }
-        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example: </p>
-        /// <ul>
-        /// <li> <p> A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code> </p> </li>
-        /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
-        /// </ul>
-        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
-        }
-        /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
-        /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
-        /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
-        /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
-        pub fn s3_data_distribution_type(
-            mut self,
-            input: crate::model::S3DataDistribution,
-        ) -> Self {
-            self.s3_data_distribution_type = Some(input);
-            self
-        }
-        /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>. </p>
-        /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. </p>
-        /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms. </p>
-        /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects. </p>
-        pub fn set_s3_data_distribution_type(
-            mut self,
-            input: std::option::Option<crate::model::S3DataDistribution>,
-        ) -> Self {
-            self.s3_data_distribution_type = input;
-            self
-        }
-        /// Appends an item to `attribute_names`.
-        ///
-        /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
-        ///
-        /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-        pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.attribute_names.unwrap_or_default();
-            v.push(input.into());
-            self.attribute_names = Some(v);
-            self
-        }
-        /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-        pub fn set_attribute_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.attribute_names = input;
-            self
-        }
-        /// Appends an item to `instance_group_names`.
-        ///
-        /// To override the contents of this collection use [`set_instance_group_names`](Self::set_instance_group_names).
-        ///
-        /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-        pub fn instance_group_names(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.instance_group_names.unwrap_or_default();
-            v.push(input.into());
-            self.instance_group_names = Some(v);
-            self
-        }
-        /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-        pub fn set_instance_group_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instance_group_names = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`S3DataSource`](crate::model::S3DataSource).
-        pub fn build(self) -> crate::model::S3DataSource {
-            crate::model::S3DataSource {
-                s3_data_type: self.s3_data_type,
-                s3_uri: self.s3_uri,
-                s3_data_distribution_type: self.s3_data_distribution_type,
-                attribute_names: self.attribute_names,
-                instance_group_names: self.instance_group_names,
-            }
-        }
-    }
-}
-impl S3DataSource {
-    /// Creates a new builder-style object to manufacture [`S3DataSource`](crate::model::S3DataSource).
-    pub fn builder() -> crate::model::s3_data_source::Builder {
-        crate::model::s3_data_source::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum S3DataDistribution {
-    #[allow(missing_docs)] // documentation missing in model
-    FullyReplicated,
-    #[allow(missing_docs)] // documentation missing in model
-    ShardedByS3Key,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for S3DataDistribution {
-    fn from(s: &str) -> Self {
-        match s {
-            "FullyReplicated" => S3DataDistribution::FullyReplicated,
-            "ShardedByS3Key" => S3DataDistribution::ShardedByS3Key,
-            other => S3DataDistribution::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for S3DataDistribution {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3DataDistribution::from(s))
-    }
-}
-impl S3DataDistribution {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            S3DataDistribution::FullyReplicated => "FullyReplicated",
-            S3DataDistribution::ShardedByS3Key => "ShardedByS3Key",
-            S3DataDistribution::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["FullyReplicated", "ShardedByS3Key"]
-    }
-}
-impl AsRef<str> for S3DataDistribution {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Specifies the training algorithm to use in a <code>CreateTrainingJob</code> request.</p>
 /// <p>For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
 #[non_exhaustive]
@@ -30312,148 +35160,6 @@ impl AlgorithmSpecification {
     /// Creates a new builder-style object to manufacture [`AlgorithmSpecification`](crate::model::AlgorithmSpecification).
     pub fn builder() -> crate::model::algorithm_specification::Builder {
         crate::model::algorithm_specification::Builder::default()
-    }
-}
-
-/// <p>Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MetricDefinition {
-    /// <p>The name of the metric.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining Objective Metrics</a>.</p>
-    #[doc(hidden)]
-    pub regex: std::option::Option<std::string::String>,
-}
-impl MetricDefinition {
-    /// <p>The name of the metric.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining Objective Metrics</a>.</p>
-    pub fn regex(&self) -> std::option::Option<&str> {
-        self.regex.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("regex", &self.regex);
-        formatter.finish()
-    }
-}
-/// See [`MetricDefinition`](crate::model::MetricDefinition).
-pub mod metric_definition {
-
-    /// A builder for [`MetricDefinition`](crate::model::MetricDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) regex: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the metric.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the metric.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining Objective Metrics</a>.</p>
-        pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
-            self.regex = Some(input.into());
-            self
-        }
-        /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining Objective Metrics</a>.</p>
-        pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.regex = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MetricDefinition`](crate::model::MetricDefinition).
-        pub fn build(self) -> crate::model::MetricDefinition {
-            crate::model::MetricDefinition {
-                name: self.name,
-                regex: self.regex,
-            }
-        }
-    }
-}
-impl MetricDefinition {
-    /// Creates a new builder-style object to manufacture [`MetricDefinition`](crate::model::MetricDefinition).
-    pub fn builder() -> crate::model::metric_definition::Builder {
-        crate::model::metric_definition::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TrainingJobStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Completed,
-    #[allow(missing_docs)] // documentation missing in model
-    Failed,
-    #[allow(missing_docs)] // documentation missing in model
-    InProgress,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopped,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopping,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TrainingJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Completed" => TrainingJobStatus::Completed,
-            "Failed" => TrainingJobStatus::Failed,
-            "InProgress" => TrainingJobStatus::InProgress,
-            "Stopped" => TrainingJobStatus::Stopped,
-            "Stopping" => TrainingJobStatus::Stopping,
-            other => TrainingJobStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TrainingJobStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrainingJobStatus::from(s))
-    }
-}
-impl TrainingJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TrainingJobStatus::Completed => "Completed",
-            TrainingJobStatus::Failed => "Failed",
-            TrainingJobStatus::InProgress => "InProgress",
-            TrainingJobStatus::Stopped => "Stopped",
-            TrainingJobStatus::Stopping => "Stopping",
-            TrainingJobStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
-    }
-}
-impl AsRef<str> for TrainingJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -32615,6 +37321,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     FeatureMetadata,
     #[allow(missing_docs)] // documentation missing in model
+    HyperParameterTuningJob,
+    #[allow(missing_docs)] // documentation missing in model
     ModelPackage,
     #[allow(missing_docs)] // documentation missing in model
     ModelPackageGroup,
@@ -32638,6 +37346,7 @@ impl std::convert::From<&str> for ResourceType {
             "ExperimentTrialComponent" => ResourceType::ExperimentTrialComponent,
             "FeatureGroup" => ResourceType::FeatureGroup,
             "FeatureMetadata" => ResourceType::FeatureMetadata,
+            "HyperParameterTuningJob" => ResourceType::HyperParameterTuningJob,
             "ModelPackage" => ResourceType::ModelPackage,
             "ModelPackageGroup" => ResourceType::ModelPackageGroup,
             "Pipeline" => ResourceType::Pipeline,
@@ -32665,6 +37374,7 @@ impl ResourceType {
             ResourceType::ExperimentTrialComponent => "ExperimentTrialComponent",
             ResourceType::FeatureGroup => "FeatureGroup",
             ResourceType::FeatureMetadata => "FeatureMetadata",
+            ResourceType::HyperParameterTuningJob => "HyperParameterTuningJob",
             ResourceType::ModelPackage => "ModelPackage",
             ResourceType::ModelPackageGroup => "ModelPackageGroup",
             ResourceType::Pipeline => "Pipeline",
@@ -32683,6 +37393,7 @@ impl ResourceType {
             "ExperimentTrialComponent",
             "FeatureGroup",
             "FeatureMetadata",
+            "HyperParameterTuningJob",
             "ModelPackage",
             "ModelPackageGroup",
             "Pipeline",
@@ -34777,603 +39488,6 @@ impl AsRef<str> for SortBy {
     }
 }
 
-/// <p>The container for the summary information about a training job.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HyperParameterTrainingJobSummary {
-    /// <p>The training job definition name.</p>
-    #[doc(hidden)]
-    pub training_job_definition_name: std::option::Option<std::string::String>,
-    /// <p>The name of the training job.</p>
-    #[doc(hidden)]
-    pub training_job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    #[doc(hidden)]
-    pub training_job_arn: std::option::Option<std::string::String>,
-    /// <p>The HyperParameter tuning job that launched the training job.</p>
-    #[doc(hidden)]
-    pub tuning_job_name: std::option::Option<std::string::String>,
-    /// <p>The date and time that the training job was created.</p>
-    #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time that the training job started.</p>
-    #[doc(hidden)]
-    pub training_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-    #[doc(hidden)]
-    pub training_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the training job.</p>
-    #[doc(hidden)]
-    pub training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
-    /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
-    #[doc(hidden)]
-    pub tuned_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The reason that the training job failed. </p>
-    #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The <code>FinalHyperParameterTuningJobObjectiveMetric</code> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
-    #[doc(hidden)]
-    pub final_hyper_parameter_tuning_job_objective_metric:
-        std::option::Option<crate::model::FinalHyperParameterTuningJobObjectiveMetric>,
-    /// <p>The status of the objective metric for the training job:</p>
-    /// <ul>
-    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
-    /// </ul>
-    #[doc(hidden)]
-    pub objective_status: std::option::Option<crate::model::ObjectiveStatus>,
-}
-impl HyperParameterTrainingJobSummary {
-    /// <p>The training job definition name.</p>
-    pub fn training_job_definition_name(&self) -> std::option::Option<&str> {
-        self.training_job_definition_name.as_deref()
-    }
-    /// <p>The name of the training job.</p>
-    pub fn training_job_name(&self) -> std::option::Option<&str> {
-        self.training_job_name.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn training_job_arn(&self) -> std::option::Option<&str> {
-        self.training_job_arn.as_deref()
-    }
-    /// <p>The HyperParameter tuning job that launched the training job.</p>
-    pub fn tuning_job_name(&self) -> std::option::Option<&str> {
-        self.tuning_job_name.as_deref()
-    }
-    /// <p>The date and time that the training job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
-    }
-    /// <p>The date and time that the training job started.</p>
-    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.training_start_time.as_ref()
-    }
-    /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.training_end_time.as_ref()
-    }
-    /// <p>The status of the training job.</p>
-    pub fn training_job_status(&self) -> std::option::Option<&crate::model::TrainingJobStatus> {
-        self.training_job_status.as_ref()
-    }
-    /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
-    pub fn tuned_hyper_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tuned_hyper_parameters.as_ref()
-    }
-    /// <p>The reason that the training job failed. </p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
-        self.failure_reason.as_deref()
-    }
-    /// <p>The <code>FinalHyperParameterTuningJobObjectiveMetric</code> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
-    pub fn final_hyper_parameter_tuning_job_objective_metric(
-        &self,
-    ) -> std::option::Option<&crate::model::FinalHyperParameterTuningJobObjectiveMetric> {
-        self.final_hyper_parameter_tuning_job_objective_metric
-            .as_ref()
-    }
-    /// <p>The status of the objective metric for the training job:</p>
-    /// <ul>
-    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
-    /// </ul>
-    pub fn objective_status(&self) -> std::option::Option<&crate::model::ObjectiveStatus> {
-        self.objective_status.as_ref()
-    }
-}
-impl std::fmt::Debug for HyperParameterTrainingJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterTrainingJobSummary");
-        formatter.field(
-            "training_job_definition_name",
-            &self.training_job_definition_name,
-        );
-        formatter.field("training_job_name", &self.training_job_name);
-        formatter.field("training_job_arn", &self.training_job_arn);
-        formatter.field("tuning_job_name", &self.tuning_job_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("training_start_time", &self.training_start_time);
-        formatter.field("training_end_time", &self.training_end_time);
-        formatter.field("training_job_status", &self.training_job_status);
-        formatter.field("tuned_hyper_parameters", &self.tuned_hyper_parameters);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field(
-            "final_hyper_parameter_tuning_job_objective_metric",
-            &self.final_hyper_parameter_tuning_job_objective_metric,
-        );
-        formatter.field("objective_status", &self.objective_status);
-        formatter.finish()
-    }
-}
-/// See [`HyperParameterTrainingJobSummary`](crate::model::HyperParameterTrainingJobSummary).
-pub mod hyper_parameter_training_job_summary {
-
-    /// A builder for [`HyperParameterTrainingJobSummary`](crate::model::HyperParameterTrainingJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) training_job_definition_name: std::option::Option<std::string::String>,
-        pub(crate) training_job_name: std::option::Option<std::string::String>,
-        pub(crate) training_job_arn: std::option::Option<std::string::String>,
-        pub(crate) tuning_job_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) training_start_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) training_end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
-        pub(crate) tuned_hyper_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) failure_reason: std::option::Option<std::string::String>,
-        pub(crate) final_hyper_parameter_tuning_job_objective_metric:
-            std::option::Option<crate::model::FinalHyperParameterTuningJobObjectiveMetric>,
-        pub(crate) objective_status: std::option::Option<crate::model::ObjectiveStatus>,
-    }
-    impl Builder {
-        /// <p>The training job definition name.</p>
-        pub fn training_job_definition_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.training_job_definition_name = Some(input.into());
-            self
-        }
-        /// <p>The training job definition name.</p>
-        pub fn set_training_job_definition_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.training_job_definition_name = input;
-            self
-        }
-        /// <p>The name of the training job.</p>
-        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.training_job_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the training job.</p>
-        pub fn set_training_job_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.training_job_name = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-        pub fn training_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.training_job_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-        pub fn set_training_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.training_job_arn = input;
-            self
-        }
-        /// <p>The HyperParameter tuning job that launched the training job.</p>
-        pub fn tuning_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.tuning_job_name = Some(input.into());
-            self
-        }
-        /// <p>The HyperParameter tuning job that launched the training job.</p>
-        pub fn set_tuning_job_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.tuning_job_name = input;
-            self
-        }
-        /// <p>The date and time that the training job was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.creation_time = Some(input);
-            self
-        }
-        /// <p>The date and time that the training job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
-        }
-        /// <p>The date and time that the training job started.</p>
-        pub fn training_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.training_start_time = Some(input);
-            self
-        }
-        /// <p>The date and time that the training job started.</p>
-        pub fn set_training_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.training_start_time = input;
-            self
-        }
-        /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-        pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.training_end_time = Some(input);
-            self
-        }
-        /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-        pub fn set_training_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.training_end_time = input;
-            self
-        }
-        /// <p>The status of the training job.</p>
-        pub fn training_job_status(mut self, input: crate::model::TrainingJobStatus) -> Self {
-            self.training_job_status = Some(input);
-            self
-        }
-        /// <p>The status of the training job.</p>
-        pub fn set_training_job_status(
-            mut self,
-            input: std::option::Option<crate::model::TrainingJobStatus>,
-        ) -> Self {
-            self.training_job_status = input;
-            self
-        }
-        /// Adds a key-value pair to `tuned_hyper_parameters`.
-        ///
-        /// To override the contents of this collection use [`set_tuned_hyper_parameters`](Self::set_tuned_hyper_parameters).
-        ///
-        /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
-        pub fn tuned_hyper_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tuned_hyper_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tuned_hyper_parameters = Some(hash_map);
-            self
-        }
-        /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
-        pub fn set_tuned_hyper_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tuned_hyper_parameters = input;
-            self
-        }
-        /// <p>The reason that the training job failed. </p>
-        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-            self.failure_reason = Some(input.into());
-            self
-        }
-        /// <p>The reason that the training job failed. </p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
-        }
-        /// <p>The <code>FinalHyperParameterTuningJobObjectiveMetric</code> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
-        pub fn final_hyper_parameter_tuning_job_objective_metric(
-            mut self,
-            input: crate::model::FinalHyperParameterTuningJobObjectiveMetric,
-        ) -> Self {
-            self.final_hyper_parameter_tuning_job_objective_metric = Some(input);
-            self
-        }
-        /// <p>The <code>FinalHyperParameterTuningJobObjectiveMetric</code> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
-        pub fn set_final_hyper_parameter_tuning_job_objective_metric(
-            mut self,
-            input: std::option::Option<crate::model::FinalHyperParameterTuningJobObjectiveMetric>,
-        ) -> Self {
-            self.final_hyper_parameter_tuning_job_objective_metric = input;
-            self
-        }
-        /// <p>The status of the objective metric for the training job:</p>
-        /// <ul>
-        /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
-        /// </ul>
-        pub fn objective_status(mut self, input: crate::model::ObjectiveStatus) -> Self {
-            self.objective_status = Some(input);
-            self
-        }
-        /// <p>The status of the objective metric for the training job:</p>
-        /// <ul>
-        /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
-        /// </ul>
-        pub fn set_objective_status(
-            mut self,
-            input: std::option::Option<crate::model::ObjectiveStatus>,
-        ) -> Self {
-            self.objective_status = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HyperParameterTrainingJobSummary`](crate::model::HyperParameterTrainingJobSummary).
-        pub fn build(self) -> crate::model::HyperParameterTrainingJobSummary {
-            crate::model::HyperParameterTrainingJobSummary {
-                training_job_definition_name: self.training_job_definition_name,
-                training_job_name: self.training_job_name,
-                training_job_arn: self.training_job_arn,
-                tuning_job_name: self.tuning_job_name,
-                creation_time: self.creation_time,
-                training_start_time: self.training_start_time,
-                training_end_time: self.training_end_time,
-                training_job_status: self.training_job_status,
-                tuned_hyper_parameters: self.tuned_hyper_parameters,
-                failure_reason: self.failure_reason,
-                final_hyper_parameter_tuning_job_objective_metric: self
-                    .final_hyper_parameter_tuning_job_objective_metric,
-                objective_status: self.objective_status,
-            }
-        }
-    }
-}
-impl HyperParameterTrainingJobSummary {
-    /// Creates a new builder-style object to manufacture [`HyperParameterTrainingJobSummary`](crate::model::HyperParameterTrainingJobSummary).
-    pub fn builder() -> crate::model::hyper_parameter_training_job_summary::Builder {
-        crate::model::hyper_parameter_training_job_summary::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ObjectiveStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Failed,
-    #[allow(missing_docs)] // documentation missing in model
-    Pending,
-    #[allow(missing_docs)] // documentation missing in model
-    Succeeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ObjectiveStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Failed" => ObjectiveStatus::Failed,
-            "Pending" => ObjectiveStatus::Pending,
-            "Succeeded" => ObjectiveStatus::Succeeded,
-            other => ObjectiveStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ObjectiveStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectiveStatus::from(s))
-    }
-}
-impl ObjectiveStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ObjectiveStatus::Failed => "Failed",
-            ObjectiveStatus::Pending => "Pending",
-            ObjectiveStatus::Succeeded => "Succeeded",
-            ObjectiveStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Failed", "Pending", "Succeeded"]
-    }
-}
-impl AsRef<str> for ObjectiveStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <code>HyperParameterTuningJobConfig</code>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FinalHyperParameterTuningJobObjectiveMetric {
-    /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
-    #[doc(hidden)]
-    pub r#type: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
-    /// <p>The name of the objective metric.</p>
-    #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
-    /// <p>The value of the objective metric.</p>
-    #[doc(hidden)]
-    pub value: f32,
-}
-impl FinalHyperParameterTuningJobObjectiveMetric {
-    /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
-    pub fn r#type(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterTuningJobObjectiveType> {
-        self.r#type.as_ref()
-    }
-    /// <p>The name of the objective metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
-        self.metric_name.as_deref()
-    }
-    /// <p>The value of the objective metric.</p>
-    pub fn value(&self) -> f32 {
-        self.value
-    }
-}
-impl std::fmt::Debug for FinalHyperParameterTuningJobObjectiveMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FinalHyperParameterTuningJobObjectiveMetric");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
-/// See [`FinalHyperParameterTuningJobObjectiveMetric`](crate::model::FinalHyperParameterTuningJobObjectiveMetric).
-pub mod final_hyper_parameter_tuning_job_objective_metric {
-
-    /// A builder for [`FinalHyperParameterTuningJobObjectiveMetric`](crate::model::FinalHyperParameterTuningJobObjectiveMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) r#type: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
-        pub(crate) metric_name: std::option::Option<std::string::String>,
-        pub(crate) value: std::option::Option<f32>,
-    }
-    impl Builder {
-        /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
-        pub fn r#type(mut self, input: crate::model::HyperParameterTuningJobObjectiveType) -> Self {
-            self.r#type = Some(input);
-            self
-        }
-        /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
-        ) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// <p>The name of the objective metric.</p>
-        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.metric_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the objective metric.</p>
-        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
-        }
-        /// <p>The value of the objective metric.</p>
-        pub fn value(mut self, input: f32) -> Self {
-            self.value = Some(input);
-            self
-        }
-        /// <p>The value of the objective metric.</p>
-        pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
-            self.value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`FinalHyperParameterTuningJobObjectiveMetric`](crate::model::FinalHyperParameterTuningJobObjectiveMetric).
-        pub fn build(self) -> crate::model::FinalHyperParameterTuningJobObjectiveMetric {
-            crate::model::FinalHyperParameterTuningJobObjectiveMetric {
-                r#type: self.r#type,
-                metric_name: self.metric_name,
-                value: self.value.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl FinalHyperParameterTuningJobObjectiveMetric {
-    /// Creates a new builder-style object to manufacture [`FinalHyperParameterTuningJobObjectiveMetric`](crate::model::FinalHyperParameterTuningJobObjectiveMetric).
-    pub fn builder() -> crate::model::final_hyper_parameter_tuning_job_objective_metric::Builder {
-        crate::model::final_hyper_parameter_tuning_job_objective_metric::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum HyperParameterTuningJobObjectiveType {
-    #[allow(missing_docs)] // documentation missing in model
-    Maximize,
-    #[allow(missing_docs)] // documentation missing in model
-    Minimize,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for HyperParameterTuningJobObjectiveType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Maximize" => HyperParameterTuningJobObjectiveType::Maximize,
-            "Minimize" => HyperParameterTuningJobObjectiveType::Minimize,
-            other => HyperParameterTuningJobObjectiveType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for HyperParameterTuningJobObjectiveType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HyperParameterTuningJobObjectiveType::from(s))
-    }
-}
-impl HyperParameterTuningJobObjectiveType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HyperParameterTuningJobObjectiveType::Maximize => "Maximize",
-            HyperParameterTuningJobObjectiveType::Minimize => "Minimize",
-            HyperParameterTuningJobObjectiveType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Maximize", "Minimize"]
-    }
-}
-impl AsRef<str> for HyperParameterTuningJobObjectiveType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -35464,6 +39578,9 @@ pub struct TrainingJobSummary {
     /// <p>The status of the training job.</p>
     #[doc(hidden)]
     pub training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
+    /// <p>The status of the warm pool associated with the training job.</p>
+    #[doc(hidden)]
+    pub warm_pool_status: std::option::Option<crate::model::WarmPoolStatus>,
 }
 impl TrainingJobSummary {
     /// <p>The name of the training job that you want a summary for.</p>
@@ -35490,6 +39607,10 @@ impl TrainingJobSummary {
     pub fn training_job_status(&self) -> std::option::Option<&crate::model::TrainingJobStatus> {
         self.training_job_status.as_ref()
     }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn warm_pool_status(&self) -> std::option::Option<&crate::model::WarmPoolStatus> {
+        self.warm_pool_status.as_ref()
+    }
 }
 impl std::fmt::Debug for TrainingJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35500,6 +39621,7 @@ impl std::fmt::Debug for TrainingJobSummary {
         formatter.field("training_end_time", &self.training_end_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("training_job_status", &self.training_job_status);
+        formatter.field("warm_pool_status", &self.warm_pool_status);
         formatter.finish()
     }
 }
@@ -35515,6 +39637,7 @@ pub mod training_job_summary {
         pub(crate) training_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) training_job_status: std::option::Option<crate::model::TrainingJobStatus>,
+        pub(crate) warm_pool_status: std::option::Option<crate::model::WarmPoolStatus>,
     }
     impl Builder {
         /// <p>The name of the training job that you want a summary for.</p>
@@ -35595,6 +39718,19 @@ pub mod training_job_summary {
             self.training_job_status = input;
             self
         }
+        /// <p>The status of the warm pool associated with the training job.</p>
+        pub fn warm_pool_status(mut self, input: crate::model::WarmPoolStatus) -> Self {
+            self.warm_pool_status = Some(input);
+            self
+        }
+        /// <p>The status of the warm pool associated with the training job.</p>
+        pub fn set_warm_pool_status(
+            mut self,
+            input: std::option::Option<crate::model::WarmPoolStatus>,
+        ) -> Self {
+            self.warm_pool_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TrainingJobSummary`](crate::model::TrainingJobSummary).
         pub fn build(self) -> crate::model::TrainingJobSummary {
             crate::model::TrainingJobSummary {
@@ -35604,6 +39740,7 @@ pub mod training_job_summary {
                 training_end_time: self.training_end_time,
                 last_modified_time: self.last_modified_time,
                 training_job_status: self.training_job_status,
+                warm_pool_status: self.warm_pool_status,
             }
         }
     }
@@ -35612,6 +39749,205 @@ impl TrainingJobSummary {
     /// Creates a new builder-style object to manufacture [`TrainingJobSummary`](crate::model::TrainingJobSummary).
     pub fn builder() -> crate::model::training_job_summary::Builder {
         crate::model::training_job_summary::Builder::default()
+    }
+}
+
+/// <p>Status and billing information about the warm pool.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WarmPoolStatus {
+    /// <p>The status of the warm pool.</p>
+    /// <ul>
+    /// <li> <p> <code>InUse</code>: The warm pool is in use for the training job.</p> </li>
+    /// <li> <p> <code>Available</code>: The warm pool is available to reuse for a matching training job.</p> </li>
+    /// <li> <p> <code>Reused</code>: The warm pool moved to a matching training job for reuse.</p> </li>
+    /// <li> <p> <code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::WarmPoolResourceStatus>,
+    /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
+    /// <p>Multiply <code>ResourceRetainedBillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run warm pool training. The formula is as follows: <code>ResourceRetainedBillableTimeInSeconds * InstanceCount</code>.</p>
+    #[doc(hidden)]
+    pub resource_retained_billable_time_in_seconds: std::option::Option<i32>,
+    /// <p>The name of the matching training job that reused the warm pool.</p>
+    #[doc(hidden)]
+    pub reused_by_job: std::option::Option<std::string::String>,
+}
+impl WarmPoolStatus {
+    /// <p>The status of the warm pool.</p>
+    /// <ul>
+    /// <li> <p> <code>InUse</code>: The warm pool is in use for the training job.</p> </li>
+    /// <li> <p> <code>Available</code>: The warm pool is available to reuse for a matching training job.</p> </li>
+    /// <li> <p> <code>Reused</code>: The warm pool moved to a matching training job for reuse.</p> </li>
+    /// <li> <p> <code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::WarmPoolResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
+    /// <p>Multiply <code>ResourceRetainedBillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run warm pool training. The formula is as follows: <code>ResourceRetainedBillableTimeInSeconds * InstanceCount</code>.</p>
+    pub fn resource_retained_billable_time_in_seconds(&self) -> std::option::Option<i32> {
+        self.resource_retained_billable_time_in_seconds
+    }
+    /// <p>The name of the matching training job that reused the warm pool.</p>
+    pub fn reused_by_job(&self) -> std::option::Option<&str> {
+        self.reused_by_job.as_deref()
+    }
+}
+impl std::fmt::Debug for WarmPoolStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WarmPoolStatus");
+        formatter.field("status", &self.status);
+        formatter.field(
+            "resource_retained_billable_time_in_seconds",
+            &self.resource_retained_billable_time_in_seconds,
+        );
+        formatter.field("reused_by_job", &self.reused_by_job);
+        formatter.finish()
+    }
+}
+/// See [`WarmPoolStatus`](crate::model::WarmPoolStatus).
+pub mod warm_pool_status {
+
+    /// A builder for [`WarmPoolStatus`](crate::model::WarmPoolStatus).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::WarmPoolResourceStatus>,
+        pub(crate) resource_retained_billable_time_in_seconds: std::option::Option<i32>,
+        pub(crate) reused_by_job: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of the warm pool.</p>
+        /// <ul>
+        /// <li> <p> <code>InUse</code>: The warm pool is in use for the training job.</p> </li>
+        /// <li> <p> <code>Available</code>: The warm pool is available to reuse for a matching training job.</p> </li>
+        /// <li> <p> <code>Reused</code>: The warm pool moved to a matching training job for reuse.</p> </li>
+        /// <li> <p> <code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::WarmPoolResourceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the warm pool.</p>
+        /// <ul>
+        /// <li> <p> <code>InUse</code>: The warm pool is in use for the training job.</p> </li>
+        /// <li> <p> <code>Available</code>: The warm pool is available to reuse for a matching training job.</p> </li>
+        /// <li> <p> <code>Reused</code>: The warm pool moved to a matching training job for reuse.</p> </li>
+        /// <li> <p> <code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::WarmPoolResourceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
+        /// <p>Multiply <code>ResourceRetainedBillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run warm pool training. The formula is as follows: <code>ResourceRetainedBillableTimeInSeconds * InstanceCount</code>.</p>
+        pub fn resource_retained_billable_time_in_seconds(mut self, input: i32) -> Self {
+            self.resource_retained_billable_time_in_seconds = Some(input);
+            self
+        }
+        /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
+        /// <p>Multiply <code>ResourceRetainedBillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run warm pool training. The formula is as follows: <code>ResourceRetainedBillableTimeInSeconds * InstanceCount</code>.</p>
+        pub fn set_resource_retained_billable_time_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.resource_retained_billable_time_in_seconds = input;
+            self
+        }
+        /// <p>The name of the matching training job that reused the warm pool.</p>
+        pub fn reused_by_job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reused_by_job = Some(input.into());
+            self
+        }
+        /// <p>The name of the matching training job that reused the warm pool.</p>
+        pub fn set_reused_by_job(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reused_by_job = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WarmPoolStatus`](crate::model::WarmPoolStatus).
+        pub fn build(self) -> crate::model::WarmPoolStatus {
+            crate::model::WarmPoolStatus {
+                status: self.status,
+                resource_retained_billable_time_in_seconds: self
+                    .resource_retained_billable_time_in_seconds,
+                reused_by_job: self.reused_by_job,
+            }
+        }
+    }
+}
+impl WarmPoolStatus {
+    /// Creates a new builder-style object to manufacture [`WarmPoolStatus`](crate::model::WarmPoolStatus).
+    pub fn builder() -> crate::model::warm_pool_status::Builder {
+        crate::model::warm_pool_status::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WarmPoolResourceStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Inuse,
+    #[allow(missing_docs)] // documentation missing in model
+    Reused,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminated,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WarmPoolResourceStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Available" => WarmPoolResourceStatus::Available,
+            "InUse" => WarmPoolResourceStatus::Inuse,
+            "Reused" => WarmPoolResourceStatus::Reused,
+            "Terminated" => WarmPoolResourceStatus::Terminated,
+            other => WarmPoolResourceStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WarmPoolResourceStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WarmPoolResourceStatus::from(s))
+    }
+}
+impl WarmPoolResourceStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WarmPoolResourceStatus::Available => "Available",
+            WarmPoolResourceStatus::Inuse => "InUse",
+            WarmPoolResourceStatus::Reused => "Reused",
+            WarmPoolResourceStatus::Terminated => "Terminated",
+            WarmPoolResourceStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Available", "InUse", "Reused", "Terminated"]
+    }
+}
+impl AsRef<str> for WarmPoolResourceStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -44767,7 +49103,7 @@ pub struct HyperParameterTuningJobSummary {
     #[doc(hidden)]
     pub hyper_parameter_tuning_job_status:
         std::option::Option<crate::model::HyperParameterTuningJobStatus>,
-    /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each iteration. Currently, the only valid value is Bayesian.</p>
+    /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
     #[doc(hidden)]
     pub strategy: std::option::Option<crate::model::HyperParameterTuningJobStrategyType>,
     /// <p>The date and time that the tuning job was created.</p>
@@ -44804,7 +49140,7 @@ impl HyperParameterTuningJobSummary {
     ) -> std::option::Option<&crate::model::HyperParameterTuningJobStatus> {
         self.hyper_parameter_tuning_job_status.as_ref()
     }
-    /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each iteration. Currently, the only valid value is Bayesian.</p>
+    /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
     pub fn strategy(
         &self,
     ) -> std::option::Option<&crate::model::HyperParameterTuningJobStrategyType> {
@@ -44941,7 +49277,7 @@ pub mod hyper_parameter_tuning_job_summary {
             self.hyper_parameter_tuning_job_status = input;
             self
         }
-        /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each iteration. Currently, the only valid value is Bayesian.</p>
+        /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
         pub fn strategy(
             mut self,
             input: crate::model::HyperParameterTuningJobStrategyType,
@@ -44949,7 +49285,7 @@ pub mod hyper_parameter_tuning_job_summary {
             self.strategy = Some(input);
             self
         }
-        /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to use for each iteration. Currently, the only valid value is Bayesian.</p>
+        /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
         pub fn set_strategy(
             mut self,
             input: std::option::Option<crate::model::HyperParameterTuningJobStrategyType>,
@@ -45065,444 +49401,6 @@ impl HyperParameterTuningJobSummary {
     /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobSummary`](crate::model::HyperParameterTuningJobSummary).
     pub fn builder() -> crate::model::hyper_parameter_tuning_job_summary::Builder {
         crate::model::hyper_parameter_tuning_job_summary::Builder::default()
-    }
-}
-
-/// <p>Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceLimits {
-    /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
-    #[doc(hidden)]
-    pub max_number_of_training_jobs: i32,
-    /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
-    #[doc(hidden)]
-    pub max_parallel_training_jobs: i32,
-}
-impl ResourceLimits {
-    /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
-    pub fn max_number_of_training_jobs(&self) -> i32 {
-        self.max_number_of_training_jobs
-    }
-    /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
-    pub fn max_parallel_training_jobs(&self) -> i32 {
-        self.max_parallel_training_jobs
-    }
-}
-impl std::fmt::Debug for ResourceLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLimits");
-        formatter.field(
-            "max_number_of_training_jobs",
-            &self.max_number_of_training_jobs,
-        );
-        formatter.field(
-            "max_parallel_training_jobs",
-            &self.max_parallel_training_jobs,
-        );
-        formatter.finish()
-    }
-}
-/// See [`ResourceLimits`](crate::model::ResourceLimits).
-pub mod resource_limits {
-
-    /// A builder for [`ResourceLimits`](crate::model::ResourceLimits).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) max_number_of_training_jobs: std::option::Option<i32>,
-        pub(crate) max_parallel_training_jobs: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
-        pub fn max_number_of_training_jobs(mut self, input: i32) -> Self {
-            self.max_number_of_training_jobs = Some(input);
-            self
-        }
-        /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
-        pub fn set_max_number_of_training_jobs(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_number_of_training_jobs = input;
-            self
-        }
-        /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
-        pub fn max_parallel_training_jobs(mut self, input: i32) -> Self {
-            self.max_parallel_training_jobs = Some(input);
-            self
-        }
-        /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
-        pub fn set_max_parallel_training_jobs(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_parallel_training_jobs = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceLimits`](crate::model::ResourceLimits).
-        pub fn build(self) -> crate::model::ResourceLimits {
-            crate::model::ResourceLimits {
-                max_number_of_training_jobs: self.max_number_of_training_jobs.unwrap_or_default(),
-                max_parallel_training_jobs: self.max_parallel_training_jobs.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl ResourceLimits {
-    /// Creates a new builder-style object to manufacture [`ResourceLimits`](crate::model::ResourceLimits).
-    pub fn builder() -> crate::model::resource_limits::Builder {
-        crate::model::resource_limits::Builder::default()
-    }
-}
-
-/// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ObjectiveStatusCounters {
-    /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
-    #[doc(hidden)]
-    pub succeeded: i32,
-    /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
-    #[doc(hidden)]
-    pub pending: i32,
-    /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
-    #[doc(hidden)]
-    pub failed: i32,
-}
-impl ObjectiveStatusCounters {
-    /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
-    pub fn succeeded(&self) -> i32 {
-        self.succeeded
-    }
-    /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
-    pub fn pending(&self) -> i32 {
-        self.pending
-    }
-    /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
-    pub fn failed(&self) -> i32 {
-        self.failed
-    }
-}
-impl std::fmt::Debug for ObjectiveStatusCounters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectiveStatusCounters");
-        formatter.field("succeeded", &self.succeeded);
-        formatter.field("pending", &self.pending);
-        formatter.field("failed", &self.failed);
-        formatter.finish()
-    }
-}
-/// See [`ObjectiveStatusCounters`](crate::model::ObjectiveStatusCounters).
-pub mod objective_status_counters {
-
-    /// A builder for [`ObjectiveStatusCounters`](crate::model::ObjectiveStatusCounters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) succeeded: std::option::Option<i32>,
-        pub(crate) pending: std::option::Option<i32>,
-        pub(crate) failed: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
-        pub fn succeeded(mut self, input: i32) -> Self {
-            self.succeeded = Some(input);
-            self
-        }
-        /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
-        pub fn set_succeeded(mut self, input: std::option::Option<i32>) -> Self {
-            self.succeeded = input;
-            self
-        }
-        /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
-        pub fn pending(mut self, input: i32) -> Self {
-            self.pending = Some(input);
-            self
-        }
-        /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
-        pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
-            self.pending = input;
-            self
-        }
-        /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
-        pub fn failed(mut self, input: i32) -> Self {
-            self.failed = Some(input);
-            self
-        }
-        /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
-        pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ObjectiveStatusCounters`](crate::model::ObjectiveStatusCounters).
-        pub fn build(self) -> crate::model::ObjectiveStatusCounters {
-            crate::model::ObjectiveStatusCounters {
-                succeeded: self.succeeded.unwrap_or_default(),
-                pending: self.pending.unwrap_or_default(),
-                failed: self.failed.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl ObjectiveStatusCounters {
-    /// Creates a new builder-style object to manufacture [`ObjectiveStatusCounters`](crate::model::ObjectiveStatusCounters).
-    pub fn builder() -> crate::model::objective_status_counters::Builder {
-        crate::model::objective_status_counters::Builder::default()
-    }
-}
-
-/// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TrainingJobStatusCounters {
-    /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
-    #[doc(hidden)]
-    pub completed: i32,
-    /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
-    #[doc(hidden)]
-    pub in_progress: i32,
-    /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
-    #[doc(hidden)]
-    pub retryable_error: i32,
-    /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
-    #[doc(hidden)]
-    pub non_retryable_error: i32,
-    /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
-    #[doc(hidden)]
-    pub stopped: i32,
-}
-impl TrainingJobStatusCounters {
-    /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
-    pub fn completed(&self) -> i32 {
-        self.completed
-    }
-    /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
-    pub fn in_progress(&self) -> i32 {
-        self.in_progress
-    }
-    /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
-    pub fn retryable_error(&self) -> i32 {
-        self.retryable_error
-    }
-    /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
-    pub fn non_retryable_error(&self) -> i32 {
-        self.non_retryable_error
-    }
-    /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
-    pub fn stopped(&self) -> i32 {
-        self.stopped
-    }
-}
-impl std::fmt::Debug for TrainingJobStatusCounters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingJobStatusCounters");
-        formatter.field("completed", &self.completed);
-        formatter.field("in_progress", &self.in_progress);
-        formatter.field("retryable_error", &self.retryable_error);
-        formatter.field("non_retryable_error", &self.non_retryable_error);
-        formatter.field("stopped", &self.stopped);
-        formatter.finish()
-    }
-}
-/// See [`TrainingJobStatusCounters`](crate::model::TrainingJobStatusCounters).
-pub mod training_job_status_counters {
-
-    /// A builder for [`TrainingJobStatusCounters`](crate::model::TrainingJobStatusCounters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) completed: std::option::Option<i32>,
-        pub(crate) in_progress: std::option::Option<i32>,
-        pub(crate) retryable_error: std::option::Option<i32>,
-        pub(crate) non_retryable_error: std::option::Option<i32>,
-        pub(crate) stopped: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
-        pub fn completed(mut self, input: i32) -> Self {
-            self.completed = Some(input);
-            self
-        }
-        /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
-        pub fn set_completed(mut self, input: std::option::Option<i32>) -> Self {
-            self.completed = input;
-            self
-        }
-        /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
-        pub fn in_progress(mut self, input: i32) -> Self {
-            self.in_progress = Some(input);
-            self
-        }
-        /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
-        pub fn set_in_progress(mut self, input: std::option::Option<i32>) -> Self {
-            self.in_progress = input;
-            self
-        }
-        /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
-        pub fn retryable_error(mut self, input: i32) -> Self {
-            self.retryable_error = Some(input);
-            self
-        }
-        /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
-        pub fn set_retryable_error(mut self, input: std::option::Option<i32>) -> Self {
-            self.retryable_error = input;
-            self
-        }
-        /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
-        pub fn non_retryable_error(mut self, input: i32) -> Self {
-            self.non_retryable_error = Some(input);
-            self
-        }
-        /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
-        pub fn set_non_retryable_error(mut self, input: std::option::Option<i32>) -> Self {
-            self.non_retryable_error = input;
-            self
-        }
-        /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
-        pub fn stopped(mut self, input: i32) -> Self {
-            self.stopped = Some(input);
-            self
-        }
-        /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
-        pub fn set_stopped(mut self, input: std::option::Option<i32>) -> Self {
-            self.stopped = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TrainingJobStatusCounters`](crate::model::TrainingJobStatusCounters).
-        pub fn build(self) -> crate::model::TrainingJobStatusCounters {
-            crate::model::TrainingJobStatusCounters {
-                completed: self.completed.unwrap_or_default(),
-                in_progress: self.in_progress.unwrap_or_default(),
-                retryable_error: self.retryable_error.unwrap_or_default(),
-                non_retryable_error: self.non_retryable_error.unwrap_or_default(),
-                stopped: self.stopped.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl TrainingJobStatusCounters {
-    /// Creates a new builder-style object to manufacture [`TrainingJobStatusCounters`](crate::model::TrainingJobStatusCounters).
-    pub fn builder() -> crate::model::training_job_status_counters::Builder {
-        crate::model::training_job_status_counters::Builder::default()
-    }
-}
-
-/// <p>The strategy hyperparameter tuning uses to
-/// find
-/// the best combination of hyperparameters for your model. Currently,
-/// the only
-/// supported
-/// value is <code>Bayesian</code>.</p>
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum HyperParameterTuningJobStrategyType {
-    #[allow(missing_docs)] // documentation missing in model
-    Bayesian,
-    #[allow(missing_docs)] // documentation missing in model
-    Random,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for HyperParameterTuningJobStrategyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Bayesian" => HyperParameterTuningJobStrategyType::Bayesian,
-            "Random" => HyperParameterTuningJobStrategyType::Random,
-            other => HyperParameterTuningJobStrategyType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for HyperParameterTuningJobStrategyType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HyperParameterTuningJobStrategyType::from(s))
-    }
-}
-impl HyperParameterTuningJobStrategyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HyperParameterTuningJobStrategyType::Bayesian => "Bayesian",
-            HyperParameterTuningJobStrategyType::Random => "Random",
-            HyperParameterTuningJobStrategyType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Bayesian", "Random"]
-    }
-}
-impl AsRef<str> for HyperParameterTuningJobStrategyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum HyperParameterTuningJobStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Completed,
-    #[allow(missing_docs)] // documentation missing in model
-    Failed,
-    #[allow(missing_docs)] // documentation missing in model
-    InProgress,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopped,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopping,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for HyperParameterTuningJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Completed" => HyperParameterTuningJobStatus::Completed,
-            "Failed" => HyperParameterTuningJobStatus::Failed,
-            "InProgress" => HyperParameterTuningJobStatus::InProgress,
-            "Stopped" => HyperParameterTuningJobStatus::Stopped,
-            "Stopping" => HyperParameterTuningJobStatus::Stopping,
-            other => HyperParameterTuningJobStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for HyperParameterTuningJobStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HyperParameterTuningJobStatus::from(s))
-    }
-}
-impl HyperParameterTuningJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HyperParameterTuningJobStatus::Completed => "Completed",
-            HyperParameterTuningJobStatus::Failed => "Failed",
-            HyperParameterTuningJobStatus::InProgress => "InProgress",
-            HyperParameterTuningJobStatus::Stopped => "Stopped",
-            HyperParameterTuningJobStatus::Stopping => "Stopping",
-            HyperParameterTuningJobStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
-    }
-}
-impl AsRef<str> for HyperParameterTuningJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -57049,7 +60947,7 @@ pub struct HumanTaskConfig {
     /// </ul>
     #[doc(hidden)]
     pub task_availability_lifetime_in_seconds: std::option::Option<i32>,
-    /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.</p>
+    /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
     #[doc(hidden)]
     pub max_concurrent_task_count: std::option::Option<i32>,
     /// <p>Configures how labels are consolidated across human workers.</p>
@@ -57442,7 +61340,7 @@ impl HumanTaskConfig {
     pub fn task_availability_lifetime_in_seconds(&self) -> std::option::Option<i32> {
         self.task_availability_lifetime_in_seconds
     }
-    /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.</p>
+    /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
     pub fn max_concurrent_task_count(&self) -> std::option::Option<i32> {
         self.max_concurrent_task_count
     }
@@ -58315,12 +62213,12 @@ pub mod human_task_config {
             self.task_availability_lifetime_in_seconds = input;
             self
         }
-        /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.</p>
+        /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
         pub fn max_concurrent_task_count(mut self, input: i32) -> Self {
             self.max_concurrent_task_count = Some(input);
             self
         }
-        /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.</p>
+        /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
         pub fn set_max_concurrent_task_count(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrent_task_count = input;
             self
@@ -61454,6 +65352,9 @@ pub struct RecommendationJobInputConfig {
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     #[doc(hidden)]
     pub volume_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Specifies mandatory fields for running an Inference Recommender job. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package.</p>
+    #[doc(hidden)]
+    pub container_config: std::option::Option<crate::model::RecommendationJobContainerConfig>,
 }
 impl RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
@@ -61511,6 +65412,12 @@ impl RecommendationJobInputConfig {
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
+    /// <p>Specifies mandatory fields for running an Inference Recommender job. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package.</p>
+    pub fn container_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationJobContainerConfig> {
+        self.container_config.as_ref()
+    }
 }
 impl std::fmt::Debug for RecommendationJobInputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -61521,6 +65428,7 @@ impl std::fmt::Debug for RecommendationJobInputConfig {
         formatter.field("resource_limit", &self.resource_limit);
         formatter.field("endpoint_configurations", &self.endpoint_configurations);
         formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+        formatter.field("container_config", &self.container_config);
         formatter.finish()
     }
 }
@@ -61538,6 +65446,8 @@ pub mod recommendation_job_input_config {
         pub(crate) endpoint_configurations:
             std::option::Option<std::vec::Vec<crate::model::EndpointInputConfiguration>>,
         pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) container_config:
+            std::option::Option<crate::model::RecommendationJobContainerConfig>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
@@ -61681,6 +65591,22 @@ pub mod recommendation_job_input_config {
             self.volume_kms_key_id = input;
             self
         }
+        /// <p>Specifies mandatory fields for running an Inference Recommender job. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package.</p>
+        pub fn container_config(
+            mut self,
+            input: crate::model::RecommendationJobContainerConfig,
+        ) -> Self {
+            self.container_config = Some(input);
+            self
+        }
+        /// <p>Specifies mandatory fields for running an Inference Recommender job. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package.</p>
+        pub fn set_container_config(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobContainerConfig>,
+        ) -> Self {
+            self.container_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecommendationJobInputConfig`](crate::model::RecommendationJobInputConfig).
         pub fn build(self) -> crate::model::RecommendationJobInputConfig {
             crate::model::RecommendationJobInputConfig {
@@ -61690,6 +65616,7 @@ pub mod recommendation_job_input_config {
                 resource_limit: self.resource_limit,
                 endpoint_configurations: self.endpoint_configurations,
                 volume_kms_key_id: self.volume_kms_key_id,
+                container_config: self.container_config,
             }
         }
     }
@@ -61698,6 +65625,309 @@ impl RecommendationJobInputConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobInputConfig`](crate::model::RecommendationJobInputConfig).
     pub fn builder() -> crate::model::recommendation_job_input_config::Builder {
         crate::model::recommendation_job_input_config::Builder::default()
+    }
+}
+
+/// <p>Specifies mandatory fields for running an Inference Recommender job directly in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJob</a> API. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package. Use <code>ContainerConfig</code> if you want to specify these fields for the recommendation job but don't want to edit them in your model package.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationJobContainerConfig {
+    /// <p>The machine learning domain of the model and its components.</p>
+    /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code> </p>
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
+    /// <p>The machine learning task that the model accomplishes.</p>
+    /// <p>Valid Values: <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION | IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code> </p>
+    #[doc(hidden)]
+    pub task: std::option::Option<std::string::String>,
+    /// <p>The machine learning framework of the container image.</p>
+    /// <p>Valid Values: <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code> </p>
+    #[doc(hidden)]
+    pub framework: std::option::Option<std::string::String>,
+    /// <p>The framework version of the container image.</p>
+    #[doc(hidden)]
+    pub framework_version: std::option::Option<std::string::String>,
+    /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
+    #[doc(hidden)]
+    pub payload_config: std::option::Option<crate::model::RecommendationJobPayloadConfig>,
+    /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
+    /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code> </p>
+    #[doc(hidden)]
+    pub nearest_model_name: std::option::Option<std::string::String>,
+    /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+    #[doc(hidden)]
+    pub supported_instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RecommendationJobContainerConfig {
+    /// <p>The machine learning domain of the model and its components.</p>
+    /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code> </p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The machine learning task that the model accomplishes.</p>
+    /// <p>Valid Values: <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION | IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code> </p>
+    pub fn task(&self) -> std::option::Option<&str> {
+        self.task.as_deref()
+    }
+    /// <p>The machine learning framework of the container image.</p>
+    /// <p>Valid Values: <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code> </p>
+    pub fn framework(&self) -> std::option::Option<&str> {
+        self.framework.as_deref()
+    }
+    /// <p>The framework version of the container image.</p>
+    pub fn framework_version(&self) -> std::option::Option<&str> {
+        self.framework_version.as_deref()
+    }
+    /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
+    pub fn payload_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationJobPayloadConfig> {
+        self.payload_config.as_ref()
+    }
+    /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
+    /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code> </p>
+    pub fn nearest_model_name(&self) -> std::option::Option<&str> {
+        self.nearest_model_name.as_deref()
+    }
+    /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+    pub fn supported_instance_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_instance_types.as_deref()
+    }
+}
+impl std::fmt::Debug for RecommendationJobContainerConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationJobContainerConfig");
+        formatter.field("domain", &self.domain);
+        formatter.field("task", &self.task);
+        formatter.field("framework", &self.framework);
+        formatter.field("framework_version", &self.framework_version);
+        formatter.field("payload_config", &self.payload_config);
+        formatter.field("nearest_model_name", &self.nearest_model_name);
+        formatter.field("supported_instance_types", &self.supported_instance_types);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationJobContainerConfig`](crate::model::RecommendationJobContainerConfig).
+pub mod recommendation_job_container_config {
+
+    /// A builder for [`RecommendationJobContainerConfig`](crate::model::RecommendationJobContainerConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) task: std::option::Option<std::string::String>,
+        pub(crate) framework: std::option::Option<std::string::String>,
+        pub(crate) framework_version: std::option::Option<std::string::String>,
+        pub(crate) payload_config:
+            std::option::Option<crate::model::RecommendationJobPayloadConfig>,
+        pub(crate) nearest_model_name: std::option::Option<std::string::String>,
+        pub(crate) supported_instance_types:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The machine learning domain of the model and its components.</p>
+        /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code> </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>The machine learning domain of the model and its components.</p>
+        /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code> </p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p>The machine learning task that the model accomplishes.</p>
+        /// <p>Valid Values: <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION | IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code> </p>
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task = Some(input.into());
+            self
+        }
+        /// <p>The machine learning task that the model accomplishes.</p>
+        /// <p>Valid Values: <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION | IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code> </p>
+        pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task = input;
+            self
+        }
+        /// <p>The machine learning framework of the container image.</p>
+        /// <p>Valid Values: <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code> </p>
+        pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.framework = Some(input.into());
+            self
+        }
+        /// <p>The machine learning framework of the container image.</p>
+        /// <p>Valid Values: <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code> </p>
+        pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.framework = input;
+            self
+        }
+        /// <p>The framework version of the container image.</p>
+        pub fn framework_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.framework_version = Some(input.into());
+            self
+        }
+        /// <p>The framework version of the container image.</p>
+        pub fn set_framework_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.framework_version = input;
+            self
+        }
+        /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
+        pub fn payload_config(
+            mut self,
+            input: crate::model::RecommendationJobPayloadConfig,
+        ) -> Self {
+            self.payload_config = Some(input);
+            self
+        }
+        /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
+        pub fn set_payload_config(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobPayloadConfig>,
+        ) -> Self {
+            self.payload_config = input;
+            self
+        }
+        /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
+        /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code> </p>
+        pub fn nearest_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.nearest_model_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
+        /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code> </p>
+        pub fn set_nearest_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.nearest_model_name = input;
+            self
+        }
+        /// Appends an item to `supported_instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_instance_types`](Self::set_supported_instance_types).
+        ///
+        /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+        pub fn supported_instance_types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_instance_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_instance_types = Some(v);
+            self
+        }
+        /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+        pub fn set_supported_instance_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_instance_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationJobContainerConfig`](crate::model::RecommendationJobContainerConfig).
+        pub fn build(self) -> crate::model::RecommendationJobContainerConfig {
+            crate::model::RecommendationJobContainerConfig {
+                domain: self.domain,
+                task: self.task,
+                framework: self.framework,
+                framework_version: self.framework_version,
+                payload_config: self.payload_config,
+                nearest_model_name: self.nearest_model_name,
+                supported_instance_types: self.supported_instance_types,
+            }
+        }
+    }
+}
+impl RecommendationJobContainerConfig {
+    /// Creates a new builder-style object to manufacture [`RecommendationJobContainerConfig`](crate::model::RecommendationJobContainerConfig).
+    pub fn builder() -> crate::model::recommendation_job_container_config::Builder {
+        crate::model::recommendation_job_container_config::Builder::default()
+    }
+}
+
+/// <p>The configuration for the payload for a recommendation job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationJobPayloadConfig {
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    #[doc(hidden)]
+    pub sample_payload_url: std::option::Option<std::string::String>,
+    /// <p>The supported MIME types for the input data.</p>
+    #[doc(hidden)]
+    pub supported_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RecommendationJobPayloadConfig {
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn sample_payload_url(&self) -> std::option::Option<&str> {
+        self.sample_payload_url.as_deref()
+    }
+    /// <p>The supported MIME types for the input data.</p>
+    pub fn supported_content_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_content_types.as_deref()
+    }
+}
+impl std::fmt::Debug for RecommendationJobPayloadConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationJobPayloadConfig");
+        formatter.field("sample_payload_url", &self.sample_payload_url);
+        formatter.field("supported_content_types", &self.supported_content_types);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationJobPayloadConfig`](crate::model::RecommendationJobPayloadConfig).
+pub mod recommendation_job_payload_config {
+
+    /// A builder for [`RecommendationJobPayloadConfig`](crate::model::RecommendationJobPayloadConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sample_payload_url: std::option::Option<std::string::String>,
+        pub(crate) supported_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+        pub fn sample_payload_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sample_payload_url = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+        pub fn set_sample_payload_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sample_payload_url = input;
+            self
+        }
+        /// Appends an item to `supported_content_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_content_types`](Self::set_supported_content_types).
+        ///
+        /// <p>The supported MIME types for the input data.</p>
+        pub fn supported_content_types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_content_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_content_types = Some(v);
+            self
+        }
+        /// <p>The supported MIME types for the input data.</p>
+        pub fn set_supported_content_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_content_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationJobPayloadConfig`](crate::model::RecommendationJobPayloadConfig).
+        pub fn build(self) -> crate::model::RecommendationJobPayloadConfig {
+            crate::model::RecommendationJobPayloadConfig {
+                sample_payload_url: self.sample_payload_url,
+                supported_content_types: self.supported_content_types,
+            }
+        }
+    }
+}
+impl RecommendationJobPayloadConfig {
+    /// Creates a new builder-style object to manufacture [`RecommendationJobPayloadConfig`](crate::model::RecommendationJobPayloadConfig).
+    pub fn builder() -> crate::model::recommendation_job_payload_config::Builder {
+        crate::model::recommendation_job_payload_config::Builder::default()
     }
 }
 
@@ -62283,2530 +66513,6 @@ impl TrafficType {
     }
 }
 impl AsRef<str> for TrafficType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
-/// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
-/// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
-/// </note>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HyperParameterTuningJobWarmStartConfig {
-    /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
-    /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-    #[doc(hidden)]
-    pub parent_hyper_parameter_tuning_jobs:
-        std::option::Option<std::vec::Vec<crate::model::ParentHyperParameterTuningJob>>,
-    /// <p>Specifies one of the following:</p>
-    /// <dl>
-    /// <dt>
-    /// IDENTICAL_DATA_AND_ALGORITHM
-    /// </dt>
-    /// <dd>
-    /// <p>The new hyperparameter tuning job uses the same input data and training image as the parent tuning jobs. You can change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do not affect the algorithm itself. For example, changes that improve logging or adding support for a different data format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
-    /// </dd>
-    /// <dt>
-    /// TRANSFER_LEARNING
-    /// </dt>
-    /// <dd>
-    /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
-    /// </dd>
-    /// </dl>
-    #[doc(hidden)]
-    pub warm_start_type: std::option::Option<crate::model::HyperParameterTuningJobWarmStartType>,
-}
-impl HyperParameterTuningJobWarmStartConfig {
-    /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
-    /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-    pub fn parent_hyper_parameter_tuning_jobs(
-        &self,
-    ) -> std::option::Option<&[crate::model::ParentHyperParameterTuningJob]> {
-        self.parent_hyper_parameter_tuning_jobs.as_deref()
-    }
-    /// <p>Specifies one of the following:</p>
-    /// <dl>
-    /// <dt>
-    /// IDENTICAL_DATA_AND_ALGORITHM
-    /// </dt>
-    /// <dd>
-    /// <p>The new hyperparameter tuning job uses the same input data and training image as the parent tuning jobs. You can change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do not affect the algorithm itself. For example, changes that improve logging or adding support for a different data format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
-    /// </dd>
-    /// <dt>
-    /// TRANSFER_LEARNING
-    /// </dt>
-    /// <dd>
-    /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
-    /// </dd>
-    /// </dl>
-    pub fn warm_start_type(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterTuningJobWarmStartType> {
-        self.warm_start_type.as_ref()
-    }
-}
-impl std::fmt::Debug for HyperParameterTuningJobWarmStartConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterTuningJobWarmStartConfig");
-        formatter.field(
-            "parent_hyper_parameter_tuning_jobs",
-            &self.parent_hyper_parameter_tuning_jobs,
-        );
-        formatter.field("warm_start_type", &self.warm_start_type);
-        formatter.finish()
-    }
-}
-/// See [`HyperParameterTuningJobWarmStartConfig`](crate::model::HyperParameterTuningJobWarmStartConfig).
-pub mod hyper_parameter_tuning_job_warm_start_config {
-
-    /// A builder for [`HyperParameterTuningJobWarmStartConfig`](crate::model::HyperParameterTuningJobWarmStartConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) parent_hyper_parameter_tuning_jobs:
-            std::option::Option<std::vec::Vec<crate::model::ParentHyperParameterTuningJob>>,
-        pub(crate) warm_start_type:
-            std::option::Option<crate::model::HyperParameterTuningJobWarmStartType>,
-    }
-    impl Builder {
-        /// Appends an item to `parent_hyper_parameter_tuning_jobs`.
-        ///
-        /// To override the contents of this collection use [`set_parent_hyper_parameter_tuning_jobs`](Self::set_parent_hyper_parameter_tuning_jobs).
-        ///
-        /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
-        /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-        pub fn parent_hyper_parameter_tuning_jobs(
-            mut self,
-            input: crate::model::ParentHyperParameterTuningJob,
-        ) -> Self {
-            let mut v = self.parent_hyper_parameter_tuning_jobs.unwrap_or_default();
-            v.push(input);
-            self.parent_hyper_parameter_tuning_jobs = Some(v);
-            self
-        }
-        /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
-        /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-        pub fn set_parent_hyper_parameter_tuning_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParentHyperParameterTuningJob>>,
-        ) -> Self {
-            self.parent_hyper_parameter_tuning_jobs = input;
-            self
-        }
-        /// <p>Specifies one of the following:</p>
-        /// <dl>
-        /// <dt>
-        /// IDENTICAL_DATA_AND_ALGORITHM
-        /// </dt>
-        /// <dd>
-        /// <p>The new hyperparameter tuning job uses the same input data and training image as the parent tuning jobs. You can change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do not affect the algorithm itself. For example, changes that improve logging or adding support for a different data format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
-        /// </dd>
-        /// <dt>
-        /// TRANSFER_LEARNING
-        /// </dt>
-        /// <dd>
-        /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
-        /// </dd>
-        /// </dl>
-        pub fn warm_start_type(
-            mut self,
-            input: crate::model::HyperParameterTuningJobWarmStartType,
-        ) -> Self {
-            self.warm_start_type = Some(input);
-            self
-        }
-        /// <p>Specifies one of the following:</p>
-        /// <dl>
-        /// <dt>
-        /// IDENTICAL_DATA_AND_ALGORITHM
-        /// </dt>
-        /// <dd>
-        /// <p>The new hyperparameter tuning job uses the same input data and training image as the parent tuning jobs. You can change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do not affect the algorithm itself. For example, changes that improve logging or adding support for a different data format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
-        /// </dd>
-        /// <dt>
-        /// TRANSFER_LEARNING
-        /// </dt>
-        /// <dd>
-        /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
-        /// </dd>
-        /// </dl>
-        pub fn set_warm_start_type(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterTuningJobWarmStartType>,
-        ) -> Self {
-            self.warm_start_type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HyperParameterTuningJobWarmStartConfig`](crate::model::HyperParameterTuningJobWarmStartConfig).
-        pub fn build(self) -> crate::model::HyperParameterTuningJobWarmStartConfig {
-            crate::model::HyperParameterTuningJobWarmStartConfig {
-                parent_hyper_parameter_tuning_jobs: self.parent_hyper_parameter_tuning_jobs,
-                warm_start_type: self.warm_start_type,
-            }
-        }
-    }
-}
-impl HyperParameterTuningJobWarmStartConfig {
-    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobWarmStartConfig`](crate::model::HyperParameterTuningJobWarmStartConfig).
-    pub fn builder() -> crate::model::hyper_parameter_tuning_job_warm_start_config::Builder {
-        crate::model::hyper_parameter_tuning_job_warm_start_config::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum HyperParameterTuningJobWarmStartType {
-    #[allow(missing_docs)] // documentation missing in model
-    IdenticalDataAndAlgorithm,
-    #[allow(missing_docs)] // documentation missing in model
-    TransferLearning,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for HyperParameterTuningJobWarmStartType {
-    fn from(s: &str) -> Self {
-        match s {
-            "IdenticalDataAndAlgorithm" => {
-                HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm
-            }
-            "TransferLearning" => HyperParameterTuningJobWarmStartType::TransferLearning,
-            other => HyperParameterTuningJobWarmStartType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for HyperParameterTuningJobWarmStartType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HyperParameterTuningJobWarmStartType::from(s))
-    }
-}
-impl HyperParameterTuningJobWarmStartType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm => {
-                "IdenticalDataAndAlgorithm"
-            }
-            HyperParameterTuningJobWarmStartType::TransferLearning => "TransferLearning",
-            HyperParameterTuningJobWarmStartType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["IdenticalDataAndAlgorithm", "TransferLearning"]
-    }
-}
-impl AsRef<str> for HyperParameterTuningJobWarmStartType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ParentHyperParameterTuningJob {
-    /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-    #[doc(hidden)]
-    pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
-}
-impl ParentHyperParameterTuningJob {
-    /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
-        self.hyper_parameter_tuning_job_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ParentHyperParameterTuningJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentHyperParameterTuningJob");
-        formatter.field(
-            "hyper_parameter_tuning_job_name",
-            &self.hyper_parameter_tuning_job_name,
-        );
-        formatter.finish()
-    }
-}
-/// See [`ParentHyperParameterTuningJob`](crate::model::ParentHyperParameterTuningJob).
-pub mod parent_hyper_parameter_tuning_job {
-
-    /// A builder for [`ParentHyperParameterTuningJob`](crate::model::ParentHyperParameterTuningJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-        pub fn hyper_parameter_tuning_job_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.hyper_parameter_tuning_job_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-        pub fn set_hyper_parameter_tuning_job_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hyper_parameter_tuning_job_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ParentHyperParameterTuningJob`](crate::model::ParentHyperParameterTuningJob).
-        pub fn build(self) -> crate::model::ParentHyperParameterTuningJob {
-            crate::model::ParentHyperParameterTuningJob {
-                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
-            }
-        }
-    }
-}
-impl ParentHyperParameterTuningJob {
-    /// Creates a new builder-style object to manufacture [`ParentHyperParameterTuningJob`](crate::model::ParentHyperParameterTuningJob).
-    pub fn builder() -> crate::model::parent_hyper_parameter_tuning_job::Builder {
-        crate::model::parent_hyper_parameter_tuning_job::Builder::default()
-    }
-}
-
-/// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HyperParameterTrainingJobDefinition {
-    /// <p>The job definition name.</p>
-    #[doc(hidden)]
-    pub definition_name: std::option::Option<std::string::String>,
-    /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
-    #[doc(hidden)]
-    pub tuning_objective: std::option::Option<crate::model::HyperParameterTuningJobObjective>,
-    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-    /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
-    /// </note>
-    #[doc(hidden)]
-    pub hyper_parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
-    /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
-    #[doc(hidden)]
-    pub static_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The <code>HyperParameterAlgorithmSpecification</code> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
-    #[doc(hidden)]
-    pub algorithm_specification:
-        std::option::Option<crate::model::HyperParameterAlgorithmSpecification>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
-    #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>An array of <code>Channel</code> objects that specify the input for the training jobs that the tuning job launches.</p>
-    #[doc(hidden)]
-    pub input_data_config: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-    /// <p>The <code>VpcConfig</code> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    #[doc(hidden)]
-    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
-    #[doc(hidden)]
-    pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
-    /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
-    /// </note>
-    #[doc(hidden)]
-    pub resource_config: std::option::Option<crate::model::ResourceConfig>,
-    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-    #[doc(hidden)]
-    pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
-    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    #[doc(hidden)]
-    pub enable_network_isolation: bool,
-    /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
-    #[doc(hidden)]
-    pub enable_inter_container_traffic_encryption: bool,
-    /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-    #[doc(hidden)]
-    pub enable_managed_spot_training: bool,
-    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
-    #[doc(hidden)]
-    pub checkpoint_config: std::option::Option<crate::model::CheckpointConfig>,
-    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    #[doc(hidden)]
-    pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
-    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter to additionally store training data in the storage volume (optional).</p>
-    #[doc(hidden)]
-    pub hyper_parameter_tuning_resource_config:
-        std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
-}
-impl HyperParameterTrainingJobDefinition {
-    /// <p>The job definition name.</p>
-    pub fn definition_name(&self) -> std::option::Option<&str> {
-        self.definition_name.as_deref()
-    }
-    /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
-    pub fn tuning_objective(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterTuningJobObjective> {
-        self.tuning_objective.as_ref()
-    }
-    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-    /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
-    /// </note>
-    pub fn hyper_parameter_ranges(&self) -> std::option::Option<&crate::model::ParameterRanges> {
-        self.hyper_parameter_ranges.as_ref()
-    }
-    /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
-    pub fn static_hyper_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.static_hyper_parameters.as_ref()
-    }
-    /// <p>The <code>HyperParameterAlgorithmSpecification</code> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
-    pub fn algorithm_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterAlgorithmSpecification> {
-        self.algorithm_specification.as_ref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
-        self.role_arn.as_deref()
-    }
-    /// <p>An array of <code>Channel</code> objects that specify the input for the training jobs that the tuning job launches.</p>
-    pub fn input_data_config(&self) -> std::option::Option<&[crate::model::Channel]> {
-        self.input_data_config.as_deref()
-    }
-    /// <p>The <code>VpcConfig</code> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
-        self.vpc_config.as_ref()
-    }
-    /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
-    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
-        self.output_data_config.as_ref()
-    }
-    /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
-    /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
-    /// </note>
-    pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
-        self.resource_config.as_ref()
-    }
-    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-    pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
-        self.stopping_condition.as_ref()
-    }
-    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    pub fn enable_network_isolation(&self) -> bool {
-        self.enable_network_isolation
-    }
-    /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
-    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
-        self.enable_inter_container_traffic_encryption
-    }
-    /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-    pub fn enable_managed_spot_training(&self) -> bool {
-        self.enable_managed_spot_training
-    }
-    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
-    pub fn checkpoint_config(&self) -> std::option::Option<&crate::model::CheckpointConfig> {
-        self.checkpoint_config.as_ref()
-    }
-    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
-        self.retry_strategy.as_ref()
-    }
-    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter to additionally store training data in the storage volume (optional).</p>
-    pub fn hyper_parameter_tuning_resource_config(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterTuningResourceConfig> {
-        self.hyper_parameter_tuning_resource_config.as_ref()
-    }
-}
-impl std::fmt::Debug for HyperParameterTrainingJobDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterTrainingJobDefinition");
-        formatter.field("definition_name", &self.definition_name);
-        formatter.field("tuning_objective", &self.tuning_objective);
-        formatter.field("hyper_parameter_ranges", &self.hyper_parameter_ranges);
-        formatter.field("static_hyper_parameters", &self.static_hyper_parameters);
-        formatter.field("algorithm_specification", &self.algorithm_specification);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("stopping_condition", &self.stopping_condition);
-        formatter.field("enable_network_isolation", &self.enable_network_isolation);
-        formatter.field(
-            "enable_inter_container_traffic_encryption",
-            &self.enable_inter_container_traffic_encryption,
-        );
-        formatter.field(
-            "enable_managed_spot_training",
-            &self.enable_managed_spot_training,
-        );
-        formatter.field("checkpoint_config", &self.checkpoint_config);
-        formatter.field("retry_strategy", &self.retry_strategy);
-        formatter.field(
-            "hyper_parameter_tuning_resource_config",
-            &self.hyper_parameter_tuning_resource_config,
-        );
-        formatter.finish()
-    }
-}
-/// See [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
-pub mod hyper_parameter_training_job_definition {
-
-    /// A builder for [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) definition_name: std::option::Option<std::string::String>,
-        pub(crate) tuning_objective:
-            std::option::Option<crate::model::HyperParameterTuningJobObjective>,
-        pub(crate) hyper_parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
-        pub(crate) static_hyper_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) algorithm_specification:
-            std::option::Option<crate::model::HyperParameterAlgorithmSpecification>,
-        pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) input_data_config: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
-        pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-        pub(crate) resource_config: std::option::Option<crate::model::ResourceConfig>,
-        pub(crate) stopping_condition: std::option::Option<crate::model::StoppingCondition>,
-        pub(crate) enable_network_isolation: std::option::Option<bool>,
-        pub(crate) enable_inter_container_traffic_encryption: std::option::Option<bool>,
-        pub(crate) enable_managed_spot_training: std::option::Option<bool>,
-        pub(crate) checkpoint_config: std::option::Option<crate::model::CheckpointConfig>,
-        pub(crate) retry_strategy: std::option::Option<crate::model::RetryStrategy>,
-        pub(crate) hyper_parameter_tuning_resource_config:
-            std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
-    }
-    impl Builder {
-        /// <p>The job definition name.</p>
-        pub fn definition_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.definition_name = Some(input.into());
-            self
-        }
-        /// <p>The job definition name.</p>
-        pub fn set_definition_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.definition_name = input;
-            self
-        }
-        /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
-        pub fn tuning_objective(
-            mut self,
-            input: crate::model::HyperParameterTuningJobObjective,
-        ) -> Self {
-            self.tuning_objective = Some(input);
-            self
-        }
-        /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
-        pub fn set_tuning_objective(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterTuningJobObjective>,
-        ) -> Self {
-            self.tuning_objective = input;
-            self
-        }
-        /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-        /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
-        /// </note>
-        pub fn hyper_parameter_ranges(mut self, input: crate::model::ParameterRanges) -> Self {
-            self.hyper_parameter_ranges = Some(input);
-            self
-        }
-        /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-        /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
-        /// </note>
-        pub fn set_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<crate::model::ParameterRanges>,
-        ) -> Self {
-            self.hyper_parameter_ranges = input;
-            self
-        }
-        /// Adds a key-value pair to `static_hyper_parameters`.
-        ///
-        /// To override the contents of this collection use [`set_static_hyper_parameters`](Self::set_static_hyper_parameters).
-        ///
-        /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
-        pub fn static_hyper_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.static_hyper_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.static_hyper_parameters = Some(hash_map);
-            self
-        }
-        /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
-        pub fn set_static_hyper_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.static_hyper_parameters = input;
-            self
-        }
-        /// <p>The <code>HyperParameterAlgorithmSpecification</code> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
-        pub fn algorithm_specification(
-            mut self,
-            input: crate::model::HyperParameterAlgorithmSpecification,
-        ) -> Self {
-            self.algorithm_specification = Some(input);
-            self
-        }
-        /// <p>The <code>HyperParameterAlgorithmSpecification</code> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
-        pub fn set_algorithm_specification(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterAlgorithmSpecification>,
-        ) -> Self {
-            self.algorithm_specification = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
-        }
-        /// Appends an item to `input_data_config`.
-        ///
-        /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
-        ///
-        /// <p>An array of <code>Channel</code> objects that specify the input for the training jobs that the tuning job launches.</p>
-        pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
-            let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input);
-            self.input_data_config = Some(v);
-            self
-        }
-        /// <p>An array of <code>Channel</code> objects that specify the input for the training jobs that the tuning job launches.</p>
-        pub fn set_input_data_config(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-        ) -> Self {
-            self.input_data_config = input;
-            self
-        }
-        /// <p>The <code>VpcConfig</code> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
-            self.vpc_config = Some(input);
-            self
-        }
-        /// <p>The <code>VpcConfig</code> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfig>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
-        }
-        /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
-        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
-            self.output_data_config = Some(input);
-            self
-        }
-        /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
-        pub fn set_output_data_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputDataConfig>,
-        ) -> Self {
-            self.output_data_config = input;
-            self
-        }
-        /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
-        /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
-        /// </note>
-        pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
-            self.resource_config = Some(input);
-            self
-        }
-        /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
-        /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
-        /// </note>
-        pub fn set_resource_config(
-            mut self,
-            input: std::option::Option<crate::model::ResourceConfig>,
-        ) -> Self {
-            self.resource_config = input;
-            self
-        }
-        /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-        pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
-            self.stopping_condition = Some(input);
-            self
-        }
-        /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-        pub fn set_stopping_condition(
-            mut self,
-            input: std::option::Option<crate::model::StoppingCondition>,
-        ) -> Self {
-            self.stopping_condition = input;
-            self
-        }
-        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-        pub fn enable_network_isolation(mut self, input: bool) -> Self {
-            self.enable_network_isolation = Some(input);
-            self
-        }
-        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-        pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_network_isolation = input;
-            self
-        }
-        /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
-        pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
-            self.enable_inter_container_traffic_encryption = Some(input);
-            self
-        }
-        /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
-        pub fn set_enable_inter_container_traffic_encryption(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_inter_container_traffic_encryption = input;
-            self
-        }
-        /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-        pub fn enable_managed_spot_training(mut self, input: bool) -> Self {
-            self.enable_managed_spot_training = Some(input);
-            self
-        }
-        /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-        pub fn set_enable_managed_spot_training(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_managed_spot_training = input;
-            self
-        }
-        /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
-        pub fn checkpoint_config(mut self, input: crate::model::CheckpointConfig) -> Self {
-            self.checkpoint_config = Some(input);
-            self
-        }
-        /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
-        pub fn set_checkpoint_config(
-            mut self,
-            input: std::option::Option<crate::model::CheckpointConfig>,
-        ) -> Self {
-            self.checkpoint_config = input;
-            self
-        }
-        /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-        pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
-            self.retry_strategy = Some(input);
-            self
-        }
-        /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-        pub fn set_retry_strategy(
-            mut self,
-            input: std::option::Option<crate::model::RetryStrategy>,
-        ) -> Self {
-            self.retry_strategy = input;
-            self
-        }
-        /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter to additionally store training data in the storage volume (optional).</p>
-        pub fn hyper_parameter_tuning_resource_config(
-            mut self,
-            input: crate::model::HyperParameterTuningResourceConfig,
-        ) -> Self {
-            self.hyper_parameter_tuning_resource_config = Some(input);
-            self
-        }
-        /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter to additionally store training data in the storage volume (optional).</p>
-        pub fn set_hyper_parameter_tuning_resource_config(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
-        ) -> Self {
-            self.hyper_parameter_tuning_resource_config = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
-        pub fn build(self) -> crate::model::HyperParameterTrainingJobDefinition {
-            crate::model::HyperParameterTrainingJobDefinition {
-                definition_name: self.definition_name,
-                tuning_objective: self.tuning_objective,
-                hyper_parameter_ranges: self.hyper_parameter_ranges,
-                static_hyper_parameters: self.static_hyper_parameters,
-                algorithm_specification: self.algorithm_specification,
-                role_arn: self.role_arn,
-                input_data_config: self.input_data_config,
-                vpc_config: self.vpc_config,
-                output_data_config: self.output_data_config,
-                resource_config: self.resource_config,
-                stopping_condition: self.stopping_condition,
-                enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
-                enable_inter_container_traffic_encryption: self
-                    .enable_inter_container_traffic_encryption
-                    .unwrap_or_default(),
-                enable_managed_spot_training: self.enable_managed_spot_training.unwrap_or_default(),
-                checkpoint_config: self.checkpoint_config,
-                retry_strategy: self.retry_strategy,
-                hyper_parameter_tuning_resource_config: self.hyper_parameter_tuning_resource_config,
-            }
-        }
-    }
-}
-impl HyperParameterTrainingJobDefinition {
-    /// Creates a new builder-style object to manufacture [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
-    pub fn builder() -> crate::model::hyper_parameter_training_job_definition::Builder {
-        crate::model::hyper_parameter_training_job_definition::Builder::default()
-    }
-}
-
-/// <p>The configuration of resources, including compute instances and storage volumes for use in training jobs launched by hyperparameter tuning jobs. Specify one or more instance type and count and the allocation strategy for instance selection.</p> <note>
-/// <p>HyperParameterTuningResourceConfig supports all of the capabilities of ResourceConfig with added functionality for flexible instance management.</p>
-/// </note>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HyperParameterTuningResourceConfig {
-    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
-    #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
-    /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
-    #[doc(hidden)]
-    pub instance_count: i32,
-    /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
-    /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
-    /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
-    /// </note>
-    #[doc(hidden)]
-    pub volume_size_in_gb: i32,
-    /// <p>A key used by AWS Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
-    /// <p>KMS Key ID:</p>
-    /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-    /// <p>Amazon Resource Name (ARN) of a AWS KMS key:</p>
-    /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-    /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS KMS encryption</a> for more information.</p>
-    #[doc(hidden)]
-    pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
-    #[doc(hidden)]
-    pub allocation_strategy:
-        std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
-    /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
-    /// <p>If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
-    /// </note>
-    #[doc(hidden)]
-    pub instance_configs:
-        std::option::Option<std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>>,
-}
-impl HyperParameterTuningResourceConfig {
-    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
-        self.instance_type.as_ref()
-    }
-    /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
-    pub fn instance_count(&self) -> i32 {
-        self.instance_count
-    }
-    /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
-    /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
-    /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
-    /// </note>
-    pub fn volume_size_in_gb(&self) -> i32 {
-        self.volume_size_in_gb
-    }
-    /// <p>A key used by AWS Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
-    /// <p>KMS Key ID:</p>
-    /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-    /// <p>Amazon Resource Name (ARN) of a AWS KMS key:</p>
-    /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-    /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS KMS encryption</a> for more information.</p>
-    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
-        self.volume_kms_key_id.as_deref()
-    }
-    /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
-    pub fn allocation_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterTuningAllocationStrategy> {
-        self.allocation_strategy.as_ref()
-    }
-    /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
-    /// <p>If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
-    /// </note>
-    pub fn instance_configs(
-        &self,
-    ) -> std::option::Option<&[crate::model::HyperParameterTuningInstanceConfig]> {
-        self.instance_configs.as_deref()
-    }
-}
-impl std::fmt::Debug for HyperParameterTuningResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterTuningResourceConfig");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("allocation_strategy", &self.allocation_strategy);
-        formatter.field("instance_configs", &self.instance_configs);
-        formatter.finish()
-    }
-}
-/// See [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
-pub mod hyper_parameter_tuning_resource_config {
-
-    /// A builder for [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
-        pub(crate) instance_count: std::option::Option<i32>,
-        pub(crate) volume_size_in_gb: std::option::Option<i32>,
-        pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) allocation_strategy:
-            std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
-        pub(crate) instance_configs:
-            std::option::Option<std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>>,
-    }
-    impl Builder {
-        /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
-        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
-            self.instance_type = Some(input);
-            self
-        }
-        /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<crate::model::TrainingInstanceType>,
-        ) -> Self {
-            self.instance_type = input;
-            self
-        }
-        /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
-        pub fn instance_count(mut self, input: i32) -> Self {
-            self.instance_count = Some(input);
-            self
-        }
-        /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
-        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
-        }
-        /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
-        /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
-        /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
-        /// </note>
-        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
-            self.volume_size_in_gb = Some(input);
-            self
-        }
-        /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
-        /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
-        /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
-        /// </note>
-        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-            self.volume_size_in_gb = input;
-            self
-        }
-        /// <p>A key used by AWS Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
-        /// <p>KMS Key ID:</p>
-        /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-        /// <p>Amazon Resource Name (ARN) of a AWS KMS key:</p>
-        /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-        /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS KMS encryption</a> for more information.</p>
-        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.volume_kms_key_id = Some(input.into());
-            self
-        }
-        /// <p>A key used by AWS Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
-        /// <p>KMS Key ID:</p>
-        /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-        /// <p>Amazon Resource Name (ARN) of a AWS KMS key:</p>
-        /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-        /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS KMS encryption</a> for more information.</p>
-        pub fn set_volume_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_kms_key_id = input;
-            self
-        }
-        /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
-        pub fn allocation_strategy(
-            mut self,
-            input: crate::model::HyperParameterTuningAllocationStrategy,
-        ) -> Self {
-            self.allocation_strategy = Some(input);
-            self
-        }
-        /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
-        pub fn set_allocation_strategy(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
-        ) -> Self {
-            self.allocation_strategy = input;
-            self
-        }
-        /// Appends an item to `instance_configs`.
-        ///
-        /// To override the contents of this collection use [`set_instance_configs`](Self::set_instance_configs).
-        ///
-        /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
-        /// <p>If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
-        /// </note>
-        pub fn instance_configs(
-            mut self,
-            input: crate::model::HyperParameterTuningInstanceConfig,
-        ) -> Self {
-            let mut v = self.instance_configs.unwrap_or_default();
-            v.push(input);
-            self.instance_configs = Some(v);
-            self
-        }
-        /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
-        /// <p>If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
-        /// </note>
-        pub fn set_instance_configs(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>,
-            >,
-        ) -> Self {
-            self.instance_configs = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
-        pub fn build(self) -> crate::model::HyperParameterTuningResourceConfig {
-            crate::model::HyperParameterTuningResourceConfig {
-                instance_type: self.instance_type,
-                instance_count: self.instance_count.unwrap_or_default(),
-                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
-                volume_kms_key_id: self.volume_kms_key_id,
-                allocation_strategy: self.allocation_strategy,
-                instance_configs: self.instance_configs,
-            }
-        }
-    }
-}
-impl HyperParameterTuningResourceConfig {
-    /// Creates a new builder-style object to manufacture [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
-    pub fn builder() -> crate::model::hyper_parameter_tuning_resource_config::Builder {
-        crate::model::hyper_parameter_tuning_resource_config::Builder::default()
-    }
-}
-
-/// <p>The configuration for hyperparameter tuning resources for use in training jobs launched by the tuning job. These resources include compute instances and storage volumes. Specify one or more compute instance configurations and allocation strategies to select resources (optional).</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HyperParameterTuningInstanceConfig {
-    /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
-    #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
-    /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
-    #[doc(hidden)]
-    pub instance_count: i32,
-    /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
-    #[doc(hidden)]
-    pub volume_size_in_gb: i32,
-}
-impl HyperParameterTuningInstanceConfig {
-    /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
-        self.instance_type.as_ref()
-    }
-    /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
-    pub fn instance_count(&self) -> i32 {
-        self.instance_count
-    }
-    /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
-    pub fn volume_size_in_gb(&self) -> i32 {
-        self.volume_size_in_gb
-    }
-}
-impl std::fmt::Debug for HyperParameterTuningInstanceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterTuningInstanceConfig");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
-        formatter.finish()
-    }
-}
-/// See [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
-pub mod hyper_parameter_tuning_instance_config {
-
-    /// A builder for [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
-        pub(crate) instance_count: std::option::Option<i32>,
-        pub(crate) volume_size_in_gb: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
-        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
-            self.instance_type = Some(input);
-            self
-        }
-        /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<crate::model::TrainingInstanceType>,
-        ) -> Self {
-            self.instance_type = input;
-            self
-        }
-        /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
-        pub fn instance_count(mut self, input: i32) -> Self {
-            self.instance_count = Some(input);
-            self
-        }
-        /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
-        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
-        }
-        /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
-        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
-            self.volume_size_in_gb = Some(input);
-            self
-        }
-        /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
-        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-            self.volume_size_in_gb = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
-        pub fn build(self) -> crate::model::HyperParameterTuningInstanceConfig {
-            crate::model::HyperParameterTuningInstanceConfig {
-                instance_type: self.instance_type,
-                instance_count: self.instance_count.unwrap_or_default(),
-                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl HyperParameterTuningInstanceConfig {
-    /// Creates a new builder-style object to manufacture [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
-    pub fn builder() -> crate::model::hyper_parameter_tuning_instance_config::Builder {
-        crate::model::hyper_parameter_tuning_instance_config::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum HyperParameterTuningAllocationStrategy {
-    #[allow(missing_docs)] // documentation missing in model
-    Prioritized,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for HyperParameterTuningAllocationStrategy {
-    fn from(s: &str) -> Self {
-        match s {
-            "Prioritized" => HyperParameterTuningAllocationStrategy::Prioritized,
-            other => HyperParameterTuningAllocationStrategy::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for HyperParameterTuningAllocationStrategy {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HyperParameterTuningAllocationStrategy::from(s))
-    }
-}
-impl HyperParameterTuningAllocationStrategy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HyperParameterTuningAllocationStrategy::Prioritized => "Prioritized",
-            HyperParameterTuningAllocationStrategy::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Prioritized"]
-    }
-}
-impl AsRef<str> for HyperParameterTuningAllocationStrategy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HyperParameterAlgorithmSpecification {
-    /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-    #[doc(hidden)]
-    pub training_image: std::option::Option<std::string::String>,
-    /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-    /// <p> <b>Pipe mode</b> </p>
-    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
-    /// <p> <b>File mode</b> </p>
-    /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
-    /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
-    /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
-    /// <p> <b>FastFile mode</b> </p>
-    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
-    /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    #[doc(hidden)]
-    pub training_input_mode: std::option::Option<crate::model::TrainingInputMode>,
-    /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
-    #[doc(hidden)]
-    pub algorithm_name: std::option::Option<std::string::String>,
-    /// <p>An array of <code>MetricDefinition</code> objects that specify the metrics that the algorithm emits.</p>
-    #[doc(hidden)]
-    pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
-}
-impl HyperParameterAlgorithmSpecification {
-    /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-    pub fn training_image(&self) -> std::option::Option<&str> {
-        self.training_image.as_deref()
-    }
-    /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-    /// <p> <b>Pipe mode</b> </p>
-    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
-    /// <p> <b>File mode</b> </p>
-    /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
-    /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
-    /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
-    /// <p> <b>FastFile mode</b> </p>
-    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
-    /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    pub fn training_input_mode(&self) -> std::option::Option<&crate::model::TrainingInputMode> {
-        self.training_input_mode.as_ref()
-    }
-    /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
-    pub fn algorithm_name(&self) -> std::option::Option<&str> {
-        self.algorithm_name.as_deref()
-    }
-    /// <p>An array of <code>MetricDefinition</code> objects that specify the metrics that the algorithm emits.</p>
-    pub fn metric_definitions(&self) -> std::option::Option<&[crate::model::MetricDefinition]> {
-        self.metric_definitions.as_deref()
-    }
-}
-impl std::fmt::Debug for HyperParameterAlgorithmSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterAlgorithmSpecification");
-        formatter.field("training_image", &self.training_image);
-        formatter.field("training_input_mode", &self.training_input_mode);
-        formatter.field("algorithm_name", &self.algorithm_name);
-        formatter.field("metric_definitions", &self.metric_definitions);
-        formatter.finish()
-    }
-}
-/// See [`HyperParameterAlgorithmSpecification`](crate::model::HyperParameterAlgorithmSpecification).
-pub mod hyper_parameter_algorithm_specification {
-
-    /// A builder for [`HyperParameterAlgorithmSpecification`](crate::model::HyperParameterAlgorithmSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) training_image: std::option::Option<std::string::String>,
-        pub(crate) training_input_mode: std::option::Option<crate::model::TrainingInputMode>,
-        pub(crate) algorithm_name: std::option::Option<std::string::String>,
-        pub(crate) metric_definitions:
-            std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
-    }
-    impl Builder {
-        /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-        pub fn training_image(mut self, input: impl Into<std::string::String>) -> Self {
-            self.training_image = Some(input.into());
-            self
-        }
-        /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-        pub fn set_training_image(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.training_image = input;
-            self
-        }
-        /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-        /// <p> <b>Pipe mode</b> </p>
-        /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
-        /// <p> <b>File mode</b> </p>
-        /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
-        /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
-        /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
-        /// <p> <b>FastFile mode</b> </p>
-        /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
-        /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-        pub fn training_input_mode(mut self, input: crate::model::TrainingInputMode) -> Self {
-            self.training_input_mode = Some(input);
-            self
-        }
-        /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-        /// <p> <b>Pipe mode</b> </p>
-        /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
-        /// <p> <b>File mode</b> </p>
-        /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
-        /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
-        /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
-        /// <p> <b>FastFile mode</b> </p>
-        /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
-        /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-        pub fn set_training_input_mode(
-            mut self,
-            input: std::option::Option<crate::model::TrainingInputMode>,
-        ) -> Self {
-            self.training_input_mode = input;
-            self
-        }
-        /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
-        pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.algorithm_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
-        pub fn set_algorithm_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.algorithm_name = input;
-            self
-        }
-        /// Appends an item to `metric_definitions`.
-        ///
-        /// To override the contents of this collection use [`set_metric_definitions`](Self::set_metric_definitions).
-        ///
-        /// <p>An array of <code>MetricDefinition</code> objects that specify the metrics that the algorithm emits.</p>
-        pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
-            let mut v = self.metric_definitions.unwrap_or_default();
-            v.push(input);
-            self.metric_definitions = Some(v);
-            self
-        }
-        /// <p>An array of <code>MetricDefinition</code> objects that specify the metrics that the algorithm emits.</p>
-        pub fn set_metric_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
-        ) -> Self {
-            self.metric_definitions = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HyperParameterAlgorithmSpecification`](crate::model::HyperParameterAlgorithmSpecification).
-        pub fn build(self) -> crate::model::HyperParameterAlgorithmSpecification {
-            crate::model::HyperParameterAlgorithmSpecification {
-                training_image: self.training_image,
-                training_input_mode: self.training_input_mode,
-                algorithm_name: self.algorithm_name,
-                metric_definitions: self.metric_definitions,
-            }
-        }
-    }
-}
-impl HyperParameterAlgorithmSpecification {
-    /// Creates a new builder-style object to manufacture [`HyperParameterAlgorithmSpecification`](crate::model::HyperParameterAlgorithmSpecification).
-    pub fn builder() -> crate::model::hyper_parameter_algorithm_specification::Builder {
-        crate::model::hyper_parameter_algorithm_specification::Builder::default()
-    }
-}
-
-/// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-/// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
-/// </note>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ParameterRanges {
-    /// <p>The array of <code>IntegerParameterRange</code> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-    #[doc(hidden)]
-    pub integer_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::IntegerParameterRange>>,
-    /// <p>The array of <code>ContinuousParameterRange</code> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-    #[doc(hidden)]
-    pub continuous_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::ContinuousParameterRange>>,
-    /// <p>The array of <code>CategoricalParameterRange</code> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-    #[doc(hidden)]
-    pub categorical_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::CategoricalParameterRange>>,
-}
-impl ParameterRanges {
-    /// <p>The array of <code>IntegerParameterRange</code> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn integer_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::IntegerParameterRange]> {
-        self.integer_parameter_ranges.as_deref()
-    }
-    /// <p>The array of <code>ContinuousParameterRange</code> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn continuous_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::ContinuousParameterRange]> {
-        self.continuous_parameter_ranges.as_deref()
-    }
-    /// <p>The array of <code>CategoricalParameterRange</code> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn categorical_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::CategoricalParameterRange]> {
-        self.categorical_parameter_ranges.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterRanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterRanges");
-        formatter.field("integer_parameter_ranges", &self.integer_parameter_ranges);
-        formatter.field(
-            "continuous_parameter_ranges",
-            &self.continuous_parameter_ranges,
-        );
-        formatter.field(
-            "categorical_parameter_ranges",
-            &self.categorical_parameter_ranges,
-        );
-        formatter.finish()
-    }
-}
-/// See [`ParameterRanges`](crate::model::ParameterRanges).
-pub mod parameter_ranges {
-
-    /// A builder for [`ParameterRanges`](crate::model::ParameterRanges).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) integer_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::IntegerParameterRange>>,
-        pub(crate) continuous_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::ContinuousParameterRange>>,
-        pub(crate) categorical_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::CategoricalParameterRange>>,
-    }
-    impl Builder {
-        /// Appends an item to `integer_parameter_ranges`.
-        ///
-        /// To override the contents of this collection use [`set_integer_parameter_ranges`](Self::set_integer_parameter_ranges).
-        ///
-        /// <p>The array of <code>IntegerParameterRange</code> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-        pub fn integer_parameter_ranges(
-            mut self,
-            input: crate::model::IntegerParameterRange,
-        ) -> Self {
-            let mut v = self.integer_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.integer_parameter_ranges = Some(v);
-            self
-        }
-        /// <p>The array of <code>IntegerParameterRange</code> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-        pub fn set_integer_parameter_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IntegerParameterRange>>,
-        ) -> Self {
-            self.integer_parameter_ranges = input;
-            self
-        }
-        /// Appends an item to `continuous_parameter_ranges`.
-        ///
-        /// To override the contents of this collection use [`set_continuous_parameter_ranges`](Self::set_continuous_parameter_ranges).
-        ///
-        /// <p>The array of <code>ContinuousParameterRange</code> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-        pub fn continuous_parameter_ranges(
-            mut self,
-            input: crate::model::ContinuousParameterRange,
-        ) -> Self {
-            let mut v = self.continuous_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.continuous_parameter_ranges = Some(v);
-            self
-        }
-        /// <p>The array of <code>ContinuousParameterRange</code> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-        pub fn set_continuous_parameter_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContinuousParameterRange>>,
-        ) -> Self {
-            self.continuous_parameter_ranges = input;
-            self
-        }
-        /// Appends an item to `categorical_parameter_ranges`.
-        ///
-        /// To override the contents of this collection use [`set_categorical_parameter_ranges`](Self::set_categorical_parameter_ranges).
-        ///
-        /// <p>The array of <code>CategoricalParameterRange</code> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-        pub fn categorical_parameter_ranges(
-            mut self,
-            input: crate::model::CategoricalParameterRange,
-        ) -> Self {
-            let mut v = self.categorical_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.categorical_parameter_ranges = Some(v);
-            self
-        }
-        /// <p>The array of <code>CategoricalParameterRange</code> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-        pub fn set_categorical_parameter_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CategoricalParameterRange>>,
-        ) -> Self {
-            self.categorical_parameter_ranges = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ParameterRanges`](crate::model::ParameterRanges).
-        pub fn build(self) -> crate::model::ParameterRanges {
-            crate::model::ParameterRanges {
-                integer_parameter_ranges: self.integer_parameter_ranges,
-                continuous_parameter_ranges: self.continuous_parameter_ranges,
-                categorical_parameter_ranges: self.categorical_parameter_ranges,
-            }
-        }
-    }
-}
-impl ParameterRanges {
-    /// Creates a new builder-style object to manufacture [`ParameterRanges`](crate::model::ParameterRanges).
-    pub fn builder() -> crate::model::parameter_ranges::Builder {
-        crate::model::parameter_ranges::Builder::default()
-    }
-}
-
-/// <p>A list of categorical hyperparameters to tune.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CategoricalParameterRange {
-    /// <p>The name of the categorical hyperparameter to tune.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>A list of the categories for the hyperparameter.</p>
-    #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl CategoricalParameterRange {
-    /// <p>The name of the categorical hyperparameter to tune.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>A list of the categories for the hyperparameter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
-        self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for CategoricalParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CategoricalParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
-/// See [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
-pub mod categorical_parameter_range {
-
-    /// A builder for [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// <p>The name of the categorical hyperparameter to tune.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the categorical hyperparameter to tune.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// Appends an item to `values`.
-        ///
-        /// To override the contents of this collection use [`set_values`](Self::set_values).
-        ///
-        /// <p>A list of the categories for the hyperparameter.</p>
-        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
-        }
-        /// <p>A list of the categories for the hyperparameter.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
-        pub fn build(self) -> crate::model::CategoricalParameterRange {
-            crate::model::CategoricalParameterRange {
-                name: self.name,
-                values: self.values,
-            }
-        }
-    }
-}
-impl CategoricalParameterRange {
-    /// Creates a new builder-style object to manufacture [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
-    pub fn builder() -> crate::model::categorical_parameter_range::Builder {
-        crate::model::categorical_parameter_range::Builder::default()
-    }
-}
-
-/// <p>A list of continuous hyperparameters to tune.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ContinuousParameterRange {
-    /// <p>The name of the continuous hyperparameter to tune.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
-    #[doc(hidden)]
-    pub min_value: std::option::Option<std::string::String>,
-    /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
-    #[doc(hidden)]
-    pub max_value: std::option::Option<std::string::String>,
-    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-    /// <dl>
-    /// <dt>
-    /// Auto
-    /// </dt>
-    /// <dd>
-    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
-    /// </dd>
-    /// <dt>
-    /// Linear
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
-    /// </dd>
-    /// <dt>
-    /// Logarithmic
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
-    /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
-    /// </dd>
-    /// <dt>
-    /// ReverseLogarithmic
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
-    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
-    /// </dd>
-    /// </dl>
-    #[doc(hidden)]
-    pub scaling_type: std::option::Option<crate::model::HyperParameterScalingType>,
-}
-impl ContinuousParameterRange {
-    /// <p>The name of the continuous hyperparameter to tune.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
-    pub fn min_value(&self) -> std::option::Option<&str> {
-        self.min_value.as_deref()
-    }
-    /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
-    pub fn max_value(&self) -> std::option::Option<&str> {
-        self.max_value.as_deref()
-    }
-    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-    /// <dl>
-    /// <dt>
-    /// Auto
-    /// </dt>
-    /// <dd>
-    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
-    /// </dd>
-    /// <dt>
-    /// Linear
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
-    /// </dd>
-    /// <dt>
-    /// Logarithmic
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
-    /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
-    /// </dd>
-    /// <dt>
-    /// ReverseLogarithmic
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
-    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
-    /// </dd>
-    /// </dl>
-    pub fn scaling_type(&self) -> std::option::Option<&crate::model::HyperParameterScalingType> {
-        self.scaling_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ContinuousParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinuousParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("scaling_type", &self.scaling_type);
-        formatter.finish()
-    }
-}
-/// See [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
-pub mod continuous_parameter_range {
-
-    /// A builder for [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) min_value: std::option::Option<std::string::String>,
-        pub(crate) max_value: std::option::Option<std::string::String>,
-        pub(crate) scaling_type: std::option::Option<crate::model::HyperParameterScalingType>,
-    }
-    impl Builder {
-        /// <p>The name of the continuous hyperparameter to tune.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the continuous hyperparameter to tune.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
-        pub fn min_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.min_value = Some(input.into());
-            self
-        }
-        /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
-        pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.min_value = input;
-            self
-        }
-        /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
-        pub fn max_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.max_value = Some(input.into());
-            self
-        }
-        /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
-        pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max_value = input;
-            self
-        }
-        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-        /// <dl>
-        /// <dt>
-        /// Auto
-        /// </dt>
-        /// <dd>
-        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
-        /// </dd>
-        /// <dt>
-        /// Linear
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
-        /// </dd>
-        /// <dt>
-        /// Logarithmic
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
-        /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
-        /// </dd>
-        /// <dt>
-        /// ReverseLogarithmic
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
-        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
-        /// </dd>
-        /// </dl>
-        pub fn scaling_type(mut self, input: crate::model::HyperParameterScalingType) -> Self {
-            self.scaling_type = Some(input);
-            self
-        }
-        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-        /// <dl>
-        /// <dt>
-        /// Auto
-        /// </dt>
-        /// <dd>
-        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
-        /// </dd>
-        /// <dt>
-        /// Linear
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
-        /// </dd>
-        /// <dt>
-        /// Logarithmic
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
-        /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
-        /// </dd>
-        /// <dt>
-        /// ReverseLogarithmic
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
-        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
-        /// </dd>
-        /// </dl>
-        pub fn set_scaling_type(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterScalingType>,
-        ) -> Self {
-            self.scaling_type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
-        pub fn build(self) -> crate::model::ContinuousParameterRange {
-            crate::model::ContinuousParameterRange {
-                name: self.name,
-                min_value: self.min_value,
-                max_value: self.max_value,
-                scaling_type: self.scaling_type,
-            }
-        }
-    }
-}
-impl ContinuousParameterRange {
-    /// Creates a new builder-style object to manufacture [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
-    pub fn builder() -> crate::model::continuous_parameter_range::Builder {
-        crate::model::continuous_parameter_range::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum HyperParameterScalingType {
-    #[allow(missing_docs)] // documentation missing in model
-    Auto,
-    #[allow(missing_docs)] // documentation missing in model
-    Linear,
-    #[allow(missing_docs)] // documentation missing in model
-    Logarithmic,
-    #[allow(missing_docs)] // documentation missing in model
-    ReverseLogarithmic,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for HyperParameterScalingType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Auto" => HyperParameterScalingType::Auto,
-            "Linear" => HyperParameterScalingType::Linear,
-            "Logarithmic" => HyperParameterScalingType::Logarithmic,
-            "ReverseLogarithmic" => HyperParameterScalingType::ReverseLogarithmic,
-            other => HyperParameterScalingType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for HyperParameterScalingType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HyperParameterScalingType::from(s))
-    }
-}
-impl HyperParameterScalingType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HyperParameterScalingType::Auto => "Auto",
-            HyperParameterScalingType::Linear => "Linear",
-            HyperParameterScalingType::Logarithmic => "Logarithmic",
-            HyperParameterScalingType::ReverseLogarithmic => "ReverseLogarithmic",
-            HyperParameterScalingType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Auto", "Linear", "Logarithmic", "ReverseLogarithmic"]
-    }
-}
-impl AsRef<str> for HyperParameterScalingType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IntegerParameterRange {
-    /// <p>The name of the hyperparameter to search.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The minimum value of the hyperparameter to search.</p>
-    #[doc(hidden)]
-    pub min_value: std::option::Option<std::string::String>,
-    /// <p>The maximum value of the hyperparameter to search.</p>
-    #[doc(hidden)]
-    pub max_value: std::option::Option<std::string::String>,
-    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-    /// <dl>
-    /// <dt>
-    /// Auto
-    /// </dt>
-    /// <dd>
-    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
-    /// </dd>
-    /// <dt>
-    /// Linear
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
-    /// </dd>
-    /// <dt>
-    /// Logarithmic
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
-    /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
-    /// </dd>
-    /// </dl>
-    #[doc(hidden)]
-    pub scaling_type: std::option::Option<crate::model::HyperParameterScalingType>,
-}
-impl IntegerParameterRange {
-    /// <p>The name of the hyperparameter to search.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The minimum value of the hyperparameter to search.</p>
-    pub fn min_value(&self) -> std::option::Option<&str> {
-        self.min_value.as_deref()
-    }
-    /// <p>The maximum value of the hyperparameter to search.</p>
-    pub fn max_value(&self) -> std::option::Option<&str> {
-        self.max_value.as_deref()
-    }
-    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-    /// <dl>
-    /// <dt>
-    /// Auto
-    /// </dt>
-    /// <dd>
-    /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
-    /// </dd>
-    /// <dt>
-    /// Linear
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
-    /// </dd>
-    /// <dt>
-    /// Logarithmic
-    /// </dt>
-    /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
-    /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
-    /// </dd>
-    /// </dl>
-    pub fn scaling_type(&self) -> std::option::Option<&crate::model::HyperParameterScalingType> {
-        self.scaling_type.as_ref()
-    }
-}
-impl std::fmt::Debug for IntegerParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntegerParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("scaling_type", &self.scaling_type);
-        formatter.finish()
-    }
-}
-/// See [`IntegerParameterRange`](crate::model::IntegerParameterRange).
-pub mod integer_parameter_range {
-
-    /// A builder for [`IntegerParameterRange`](crate::model::IntegerParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) min_value: std::option::Option<std::string::String>,
-        pub(crate) max_value: std::option::Option<std::string::String>,
-        pub(crate) scaling_type: std::option::Option<crate::model::HyperParameterScalingType>,
-    }
-    impl Builder {
-        /// <p>The name of the hyperparameter to search.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the hyperparameter to search.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The minimum value of the hyperparameter to search.</p>
-        pub fn min_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.min_value = Some(input.into());
-            self
-        }
-        /// <p>The minimum value of the hyperparameter to search.</p>
-        pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.min_value = input;
-            self
-        }
-        /// <p>The maximum value of the hyperparameter to search.</p>
-        pub fn max_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.max_value = Some(input.into());
-            self
-        }
-        /// <p>The maximum value of the hyperparameter to search.</p>
-        pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max_value = input;
-            self
-        }
-        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-        /// <dl>
-        /// <dt>
-        /// Auto
-        /// </dt>
-        /// <dd>
-        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
-        /// </dd>
-        /// <dt>
-        /// Linear
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
-        /// </dd>
-        /// <dt>
-        /// Logarithmic
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
-        /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
-        /// </dd>
-        /// </dl>
-        pub fn scaling_type(mut self, input: crate::model::HyperParameterScalingType) -> Self {
-            self.scaling_type = Some(input);
-            self
-        }
-        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-        /// <dl>
-        /// <dt>
-        /// Auto
-        /// </dt>
-        /// <dd>
-        /// <p>SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.</p>
-        /// </dd>
-        /// <dt>
-        /// Linear
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
-        /// </dd>
-        /// <dt>
-        /// Logarithmic
-        /// </dt>
-        /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
-        /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
-        /// </dd>
-        /// </dl>
-        pub fn set_scaling_type(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterScalingType>,
-        ) -> Self {
-            self.scaling_type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`IntegerParameterRange`](crate::model::IntegerParameterRange).
-        pub fn build(self) -> crate::model::IntegerParameterRange {
-            crate::model::IntegerParameterRange {
-                name: self.name,
-                min_value: self.min_value,
-                max_value: self.max_value,
-                scaling_type: self.scaling_type,
-            }
-        }
-    }
-}
-impl IntegerParameterRange {
-    /// Creates a new builder-style object to manufacture [`IntegerParameterRange`](crate::model::IntegerParameterRange).
-    pub fn builder() -> crate::model::integer_parameter_range::Builder {
-        crate::model::integer_parameter_range::Builder::default()
-    }
-}
-
-/// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HyperParameterTuningJobObjective {
-    /// <p>Whether to minimize or maximize the objective metric.</p>
-    #[doc(hidden)]
-    pub r#type: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
-    /// <p>The name of the metric to use for the objective metric.</p>
-    #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
-}
-impl HyperParameterTuningJobObjective {
-    /// <p>Whether to minimize or maximize the objective metric.</p>
-    pub fn r#type(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterTuningJobObjectiveType> {
-        self.r#type.as_ref()
-    }
-    /// <p>The name of the metric to use for the objective metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
-        self.metric_name.as_deref()
-    }
-}
-impl std::fmt::Debug for HyperParameterTuningJobObjective {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterTuningJobObjective");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.finish()
-    }
-}
-/// See [`HyperParameterTuningJobObjective`](crate::model::HyperParameterTuningJobObjective).
-pub mod hyper_parameter_tuning_job_objective {
-
-    /// A builder for [`HyperParameterTuningJobObjective`](crate::model::HyperParameterTuningJobObjective).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) r#type: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
-        pub(crate) metric_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Whether to minimize or maximize the objective metric.</p>
-        pub fn r#type(mut self, input: crate::model::HyperParameterTuningJobObjectiveType) -> Self {
-            self.r#type = Some(input);
-            self
-        }
-        /// <p>Whether to minimize or maximize the objective metric.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterTuningJobObjectiveType>,
-        ) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// <p>The name of the metric to use for the objective metric.</p>
-        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.metric_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the metric to use for the objective metric.</p>
-        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HyperParameterTuningJobObjective`](crate::model::HyperParameterTuningJobObjective).
-        pub fn build(self) -> crate::model::HyperParameterTuningJobObjective {
-            crate::model::HyperParameterTuningJobObjective {
-                r#type: self.r#type,
-                metric_name: self.metric_name,
-            }
-        }
-    }
-}
-impl HyperParameterTuningJobObjective {
-    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobObjective`](crate::model::HyperParameterTuningJobObjective).
-    pub fn builder() -> crate::model::hyper_parameter_tuning_job_objective::Builder {
-        crate::model::hyper_parameter_tuning_job_objective::Builder::default()
-    }
-}
-
-/// <p>Configures a hyperparameter tuning job.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HyperParameterTuningJobConfig {
-    /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
-    #[doc(hidden)]
-    pub strategy: std::option::Option<crate::model::HyperParameterTuningJobStrategyType>,
-    /// <p>The <code>HyperParameterTuningJobObjective</code> object that specifies the objective metric for this tuning job.</p>
-    #[doc(hidden)]
-    pub hyper_parameter_tuning_job_objective:
-        std::option::Option<crate::model::HyperParameterTuningJobObjective>,
-    /// <p>The <code>ResourceLimits</code> object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
-    #[doc(hidden)]
-    pub resource_limits: std::option::Option<crate::model::ResourceLimits>,
-    /// <p>The <code>ParameterRanges</code> object that specifies the ranges of hyperparameters that this tuning job searches.</p>
-    #[doc(hidden)]
-    pub parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
-    /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be one of the following values (the default value is <code>OFF</code>):</p>
-    /// <dl>
-    /// <dt>
-    /// OFF
-    /// </dt>
-    /// <dd>
-    /// <p>Training jobs launched by the hyperparameter tuning job do not use early stopping.</p>
-    /// </dd>
-    /// <dt>
-    /// AUTO
-    /// </dt>
-    /// <dd>
-    /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
-    /// </dd>
-    /// </dl>
-    #[doc(hidden)]
-    pub training_job_early_stopping_type:
-        std::option::Option<crate::model::TrainingJobEarlyStoppingType>,
-    /// <p>The tuning job's completion criteria.</p>
-    #[doc(hidden)]
-    pub tuning_job_completion_criteria:
-        std::option::Option<crate::model::TuningJobCompletionCriteria>,
-}
-impl HyperParameterTuningJobConfig {
-    /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
-    pub fn strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterTuningJobStrategyType> {
-        self.strategy.as_ref()
-    }
-    /// <p>The <code>HyperParameterTuningJobObjective</code> object that specifies the objective metric for this tuning job.</p>
-    pub fn hyper_parameter_tuning_job_objective(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterTuningJobObjective> {
-        self.hyper_parameter_tuning_job_objective.as_ref()
-    }
-    /// <p>The <code>ResourceLimits</code> object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
-    pub fn resource_limits(&self) -> std::option::Option<&crate::model::ResourceLimits> {
-        self.resource_limits.as_ref()
-    }
-    /// <p>The <code>ParameterRanges</code> object that specifies the ranges of hyperparameters that this tuning job searches.</p>
-    pub fn parameter_ranges(&self) -> std::option::Option<&crate::model::ParameterRanges> {
-        self.parameter_ranges.as_ref()
-    }
-    /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be one of the following values (the default value is <code>OFF</code>):</p>
-    /// <dl>
-    /// <dt>
-    /// OFF
-    /// </dt>
-    /// <dd>
-    /// <p>Training jobs launched by the hyperparameter tuning job do not use early stopping.</p>
-    /// </dd>
-    /// <dt>
-    /// AUTO
-    /// </dt>
-    /// <dd>
-    /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
-    /// </dd>
-    /// </dl>
-    pub fn training_job_early_stopping_type(
-        &self,
-    ) -> std::option::Option<&crate::model::TrainingJobEarlyStoppingType> {
-        self.training_job_early_stopping_type.as_ref()
-    }
-    /// <p>The tuning job's completion criteria.</p>
-    pub fn tuning_job_completion_criteria(
-        &self,
-    ) -> std::option::Option<&crate::model::TuningJobCompletionCriteria> {
-        self.tuning_job_completion_criteria.as_ref()
-    }
-}
-impl std::fmt::Debug for HyperParameterTuningJobConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterTuningJobConfig");
-        formatter.field("strategy", &self.strategy);
-        formatter.field(
-            "hyper_parameter_tuning_job_objective",
-            &self.hyper_parameter_tuning_job_objective,
-        );
-        formatter.field("resource_limits", &self.resource_limits);
-        formatter.field("parameter_ranges", &self.parameter_ranges);
-        formatter.field(
-            "training_job_early_stopping_type",
-            &self.training_job_early_stopping_type,
-        );
-        formatter.field(
-            "tuning_job_completion_criteria",
-            &self.tuning_job_completion_criteria,
-        );
-        formatter.finish()
-    }
-}
-/// See [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
-pub mod hyper_parameter_tuning_job_config {
-
-    /// A builder for [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) strategy: std::option::Option<crate::model::HyperParameterTuningJobStrategyType>,
-        pub(crate) hyper_parameter_tuning_job_objective:
-            std::option::Option<crate::model::HyperParameterTuningJobObjective>,
-        pub(crate) resource_limits: std::option::Option<crate::model::ResourceLimits>,
-        pub(crate) parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
-        pub(crate) training_job_early_stopping_type:
-            std::option::Option<crate::model::TrainingJobEarlyStoppingType>,
-        pub(crate) tuning_job_completion_criteria:
-            std::option::Option<crate::model::TuningJobCompletionCriteria>,
-    }
-    impl Builder {
-        /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
-        pub fn strategy(
-            mut self,
-            input: crate::model::HyperParameterTuningJobStrategyType,
-        ) -> Self {
-            self.strategy = Some(input);
-            self
-        }
-        /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. To use the Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
-        pub fn set_strategy(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterTuningJobStrategyType>,
-        ) -> Self {
-            self.strategy = input;
-            self
-        }
-        /// <p>The <code>HyperParameterTuningJobObjective</code> object that specifies the objective metric for this tuning job.</p>
-        pub fn hyper_parameter_tuning_job_objective(
-            mut self,
-            input: crate::model::HyperParameterTuningJobObjective,
-        ) -> Self {
-            self.hyper_parameter_tuning_job_objective = Some(input);
-            self
-        }
-        /// <p>The <code>HyperParameterTuningJobObjective</code> object that specifies the objective metric for this tuning job.</p>
-        pub fn set_hyper_parameter_tuning_job_objective(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterTuningJobObjective>,
-        ) -> Self {
-            self.hyper_parameter_tuning_job_objective = input;
-            self
-        }
-        /// <p>The <code>ResourceLimits</code> object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
-        pub fn resource_limits(mut self, input: crate::model::ResourceLimits) -> Self {
-            self.resource_limits = Some(input);
-            self
-        }
-        /// <p>The <code>ResourceLimits</code> object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
-        pub fn set_resource_limits(
-            mut self,
-            input: std::option::Option<crate::model::ResourceLimits>,
-        ) -> Self {
-            self.resource_limits = input;
-            self
-        }
-        /// <p>The <code>ParameterRanges</code> object that specifies the ranges of hyperparameters that this tuning job searches.</p>
-        pub fn parameter_ranges(mut self, input: crate::model::ParameterRanges) -> Self {
-            self.parameter_ranges = Some(input);
-            self
-        }
-        /// <p>The <code>ParameterRanges</code> object that specifies the ranges of hyperparameters that this tuning job searches.</p>
-        pub fn set_parameter_ranges(
-            mut self,
-            input: std::option::Option<crate::model::ParameterRanges>,
-        ) -> Self {
-            self.parameter_ranges = input;
-            self
-        }
-        /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be one of the following values (the default value is <code>OFF</code>):</p>
-        /// <dl>
-        /// <dt>
-        /// OFF
-        /// </dt>
-        /// <dd>
-        /// <p>Training jobs launched by the hyperparameter tuning job do not use early stopping.</p>
-        /// </dd>
-        /// <dt>
-        /// AUTO
-        /// </dt>
-        /// <dd>
-        /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
-        /// </dd>
-        /// </dl>
-        pub fn training_job_early_stopping_type(
-            mut self,
-            input: crate::model::TrainingJobEarlyStoppingType,
-        ) -> Self {
-            self.training_job_early_stopping_type = Some(input);
-            self
-        }
-        /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. This can be one of the following values (the default value is <code>OFF</code>):</p>
-        /// <dl>
-        /// <dt>
-        /// OFF
-        /// </dt>
-        /// <dd>
-        /// <p>Training jobs launched by the hyperparameter tuning job do not use early stopping.</p>
-        /// </dd>
-        /// <dt>
-        /// AUTO
-        /// </dt>
-        /// <dd>
-        /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
-        /// </dd>
-        /// </dl>
-        pub fn set_training_job_early_stopping_type(
-            mut self,
-            input: std::option::Option<crate::model::TrainingJobEarlyStoppingType>,
-        ) -> Self {
-            self.training_job_early_stopping_type = input;
-            self
-        }
-        /// <p>The tuning job's completion criteria.</p>
-        pub fn tuning_job_completion_criteria(
-            mut self,
-            input: crate::model::TuningJobCompletionCriteria,
-        ) -> Self {
-            self.tuning_job_completion_criteria = Some(input);
-            self
-        }
-        /// <p>The tuning job's completion criteria.</p>
-        pub fn set_tuning_job_completion_criteria(
-            mut self,
-            input: std::option::Option<crate::model::TuningJobCompletionCriteria>,
-        ) -> Self {
-            self.tuning_job_completion_criteria = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
-        pub fn build(self) -> crate::model::HyperParameterTuningJobConfig {
-            crate::model::HyperParameterTuningJobConfig {
-                strategy: self.strategy,
-                hyper_parameter_tuning_job_objective: self.hyper_parameter_tuning_job_objective,
-                resource_limits: self.resource_limits,
-                parameter_ranges: self.parameter_ranges,
-                training_job_early_stopping_type: self.training_job_early_stopping_type,
-                tuning_job_completion_criteria: self.tuning_job_completion_criteria,
-            }
-        }
-    }
-}
-impl HyperParameterTuningJobConfig {
-    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
-    pub fn builder() -> crate::model::hyper_parameter_tuning_job_config::Builder {
-        crate::model::hyper_parameter_tuning_job_config::Builder::default()
-    }
-}
-
-/// <p>The job completion criteria.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TuningJobCompletionCriteria {
-    /// <p>The value of the objective metric.</p>
-    #[doc(hidden)]
-    pub target_objective_metric_value: std::option::Option<f32>,
-}
-impl TuningJobCompletionCriteria {
-    /// <p>The value of the objective metric.</p>
-    pub fn target_objective_metric_value(&self) -> std::option::Option<f32> {
-        self.target_objective_metric_value
-    }
-}
-impl std::fmt::Debug for TuningJobCompletionCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TuningJobCompletionCriteria");
-        formatter.field(
-            "target_objective_metric_value",
-            &self.target_objective_metric_value,
-        );
-        formatter.finish()
-    }
-}
-/// See [`TuningJobCompletionCriteria`](crate::model::TuningJobCompletionCriteria).
-pub mod tuning_job_completion_criteria {
-
-    /// A builder for [`TuningJobCompletionCriteria`](crate::model::TuningJobCompletionCriteria).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) target_objective_metric_value: std::option::Option<f32>,
-    }
-    impl Builder {
-        /// <p>The value of the objective metric.</p>
-        pub fn target_objective_metric_value(mut self, input: f32) -> Self {
-            self.target_objective_metric_value = Some(input);
-            self
-        }
-        /// <p>The value of the objective metric.</p>
-        pub fn set_target_objective_metric_value(
-            mut self,
-            input: std::option::Option<f32>,
-        ) -> Self {
-            self.target_objective_metric_value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TuningJobCompletionCriteria`](crate::model::TuningJobCompletionCriteria).
-        pub fn build(self) -> crate::model::TuningJobCompletionCriteria {
-            crate::model::TuningJobCompletionCriteria {
-                target_objective_metric_value: self.target_objective_metric_value,
-            }
-        }
-    }
-}
-impl TuningJobCompletionCriteria {
-    /// Creates a new builder-style object to manufacture [`TuningJobCompletionCriteria`](crate::model::TuningJobCompletionCriteria).
-    pub fn builder() -> crate::model::tuning_job_completion_criteria::Builder {
-        crate::model::tuning_job_completion_criteria::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TrainingJobEarlyStoppingType {
-    #[allow(missing_docs)] // documentation missing in model
-    Auto,
-    #[allow(missing_docs)] // documentation missing in model
-    Off,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TrainingJobEarlyStoppingType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Auto" => TrainingJobEarlyStoppingType::Auto,
-            "Off" => TrainingJobEarlyStoppingType::Off,
-            other => TrainingJobEarlyStoppingType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TrainingJobEarlyStoppingType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrainingJobEarlyStoppingType::from(s))
-    }
-}
-impl TrainingJobEarlyStoppingType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TrainingJobEarlyStoppingType::Auto => "Auto",
-            TrainingJobEarlyStoppingType::Off => "Off",
-            TrainingJobEarlyStoppingType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Auto", "Off"]
-    }
-}
-impl AsRef<str> for TrainingJobEarlyStoppingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -65997,6 +67703,1250 @@ impl AsRef<str> for AwsManagedHumanLoopRequestSource {
     }
 }
 
+/// <p>A parameter to activate explainers.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExplainerConfig {
+    /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
+    #[doc(hidden)]
+    pub clarify_explainer_config: std::option::Option<crate::model::ClarifyExplainerConfig>,
+}
+impl ExplainerConfig {
+    /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
+    pub fn clarify_explainer_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ClarifyExplainerConfig> {
+        self.clarify_explainer_config.as_ref()
+    }
+}
+impl std::fmt::Debug for ExplainerConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExplainerConfig");
+        formatter.field("clarify_explainer_config", &self.clarify_explainer_config);
+        formatter.finish()
+    }
+}
+/// See [`ExplainerConfig`](crate::model::ExplainerConfig).
+pub mod explainer_config {
+
+    /// A builder for [`ExplainerConfig`](crate::model::ExplainerConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) clarify_explainer_config:
+            std::option::Option<crate::model::ClarifyExplainerConfig>,
+    }
+    impl Builder {
+        /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
+        pub fn clarify_explainer_config(
+            mut self,
+            input: crate::model::ClarifyExplainerConfig,
+        ) -> Self {
+            self.clarify_explainer_config = Some(input);
+            self
+        }
+        /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
+        pub fn set_clarify_explainer_config(
+            mut self,
+            input: std::option::Option<crate::model::ClarifyExplainerConfig>,
+        ) -> Self {
+            self.clarify_explainer_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExplainerConfig`](crate::model::ExplainerConfig).
+        pub fn build(self) -> crate::model::ExplainerConfig {
+            crate::model::ExplainerConfig {
+                clarify_explainer_config: self.clarify_explainer_config,
+            }
+        }
+    }
+}
+impl ExplainerConfig {
+    /// Creates a new builder-style object to manufacture [`ExplainerConfig`](crate::model::ExplainerConfig).
+    pub fn builder() -> crate::model::explainer_config::Builder {
+        crate::model::explainer_config::Builder::default()
+    }
+}
+
+/// <p>The configuration parameters for the SageMaker Clarify explainer.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClarifyExplainerConfig {
+    /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker-dg/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
+    #[doc(hidden)]
+    pub enable_explanations: std::option::Option<std::string::String>,
+    /// <p>The inference configuration parameter for the model container.</p>
+    #[doc(hidden)]
+    pub inference_config: std::option::Option<crate::model::ClarifyInferenceConfig>,
+    /// <p>The configuration for SHAP analysis.</p>
+    #[doc(hidden)]
+    pub shap_config: std::option::Option<crate::model::ClarifyShapConfig>,
+}
+impl ClarifyExplainerConfig {
+    /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker-dg/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
+    pub fn enable_explanations(&self) -> std::option::Option<&str> {
+        self.enable_explanations.as_deref()
+    }
+    /// <p>The inference configuration parameter for the model container.</p>
+    pub fn inference_config(&self) -> std::option::Option<&crate::model::ClarifyInferenceConfig> {
+        self.inference_config.as_ref()
+    }
+    /// <p>The configuration for SHAP analysis.</p>
+    pub fn shap_config(&self) -> std::option::Option<&crate::model::ClarifyShapConfig> {
+        self.shap_config.as_ref()
+    }
+}
+impl std::fmt::Debug for ClarifyExplainerConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClarifyExplainerConfig");
+        formatter.field("enable_explanations", &self.enable_explanations);
+        formatter.field("inference_config", &self.inference_config);
+        formatter.field("shap_config", &self.shap_config);
+        formatter.finish()
+    }
+}
+/// See [`ClarifyExplainerConfig`](crate::model::ClarifyExplainerConfig).
+pub mod clarify_explainer_config {
+
+    /// A builder for [`ClarifyExplainerConfig`](crate::model::ClarifyExplainerConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable_explanations: std::option::Option<std::string::String>,
+        pub(crate) inference_config: std::option::Option<crate::model::ClarifyInferenceConfig>,
+        pub(crate) shap_config: std::option::Option<crate::model::ClarifyShapConfig>,
+    }
+    impl Builder {
+        /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker-dg/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
+        pub fn enable_explanations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.enable_explanations = Some(input.into());
+            self
+        }
+        /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker-dg/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
+        pub fn set_enable_explanations(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.enable_explanations = input;
+            self
+        }
+        /// <p>The inference configuration parameter for the model container.</p>
+        pub fn inference_config(mut self, input: crate::model::ClarifyInferenceConfig) -> Self {
+            self.inference_config = Some(input);
+            self
+        }
+        /// <p>The inference configuration parameter for the model container.</p>
+        pub fn set_inference_config(
+            mut self,
+            input: std::option::Option<crate::model::ClarifyInferenceConfig>,
+        ) -> Self {
+            self.inference_config = input;
+            self
+        }
+        /// <p>The configuration for SHAP analysis.</p>
+        pub fn shap_config(mut self, input: crate::model::ClarifyShapConfig) -> Self {
+            self.shap_config = Some(input);
+            self
+        }
+        /// <p>The configuration for SHAP analysis.</p>
+        pub fn set_shap_config(
+            mut self,
+            input: std::option::Option<crate::model::ClarifyShapConfig>,
+        ) -> Self {
+            self.shap_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClarifyExplainerConfig`](crate::model::ClarifyExplainerConfig).
+        pub fn build(self) -> crate::model::ClarifyExplainerConfig {
+            crate::model::ClarifyExplainerConfig {
+                enable_explanations: self.enable_explanations,
+                inference_config: self.inference_config,
+                shap_config: self.shap_config,
+            }
+        }
+    }
+}
+impl ClarifyExplainerConfig {
+    /// Creates a new builder-style object to manufacture [`ClarifyExplainerConfig`](crate::model::ClarifyExplainerConfig).
+    pub fn builder() -> crate::model::clarify_explainer_config::Builder {
+        crate::model::clarify_explainer_config::Builder::default()
+    }
+}
+
+/// <p>The configuration for SHAP analysis using SageMaker Clarify Explainer.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClarifyShapConfig {
+    /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
+    #[doc(hidden)]
+    pub shap_baseline_config: std::option::Option<crate::model::ClarifyShapBaselineConfig>,
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
+    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub number_of_samples: std::option::Option<i32>,
+    /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
+    #[doc(hidden)]
+    pub use_logit: std::option::Option<bool>,
+    /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
+    #[doc(hidden)]
+    pub seed: std::option::Option<i32>,
+    /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
+    #[doc(hidden)]
+    pub text_config: std::option::Option<crate::model::ClarifyTextConfig>,
+}
+impl ClarifyShapConfig {
+    /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
+    pub fn shap_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ClarifyShapBaselineConfig> {
+        self.shap_baseline_config.as_ref()
+    }
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
+    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
+    /// </note>
+    pub fn number_of_samples(&self) -> std::option::Option<i32> {
+        self.number_of_samples
+    }
+    /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
+    pub fn use_logit(&self) -> std::option::Option<bool> {
+        self.use_logit
+    }
+    /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
+    pub fn seed(&self) -> std::option::Option<i32> {
+        self.seed
+    }
+    /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
+    pub fn text_config(&self) -> std::option::Option<&crate::model::ClarifyTextConfig> {
+        self.text_config.as_ref()
+    }
+}
+impl std::fmt::Debug for ClarifyShapConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClarifyShapConfig");
+        formatter.field("shap_baseline_config", &self.shap_baseline_config);
+        formatter.field("number_of_samples", &self.number_of_samples);
+        formatter.field("use_logit", &self.use_logit);
+        formatter.field("seed", &self.seed);
+        formatter.field("text_config", &self.text_config);
+        formatter.finish()
+    }
+}
+/// See [`ClarifyShapConfig`](crate::model::ClarifyShapConfig).
+pub mod clarify_shap_config {
+
+    /// A builder for [`ClarifyShapConfig`](crate::model::ClarifyShapConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) shap_baseline_config:
+            std::option::Option<crate::model::ClarifyShapBaselineConfig>,
+        pub(crate) number_of_samples: std::option::Option<i32>,
+        pub(crate) use_logit: std::option::Option<bool>,
+        pub(crate) seed: std::option::Option<i32>,
+        pub(crate) text_config: std::option::Option<crate::model::ClarifyTextConfig>,
+    }
+    impl Builder {
+        /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
+        pub fn shap_baseline_config(
+            mut self,
+            input: crate::model::ClarifyShapBaselineConfig,
+        ) -> Self {
+            self.shap_baseline_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
+        pub fn set_shap_baseline_config(
+            mut self,
+            input: std::option::Option<crate::model::ClarifyShapBaselineConfig>,
+        ) -> Self {
+            self.shap_baseline_config = input;
+            self
+        }
+        /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
+        /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
+        /// </note>
+        pub fn number_of_samples(mut self, input: i32) -> Self {
+            self.number_of_samples = Some(input);
+            self
+        }
+        /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
+        /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
+        /// </note>
+        pub fn set_number_of_samples(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_samples = input;
+            self
+        }
+        /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
+        pub fn use_logit(mut self, input: bool) -> Self {
+            self.use_logit = Some(input);
+            self
+        }
+        /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
+        pub fn set_use_logit(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_logit = input;
+            self
+        }
+        /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
+        pub fn seed(mut self, input: i32) -> Self {
+            self.seed = Some(input);
+            self
+        }
+        /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
+        pub fn set_seed(mut self, input: std::option::Option<i32>) -> Self {
+            self.seed = input;
+            self
+        }
+        /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
+        pub fn text_config(mut self, input: crate::model::ClarifyTextConfig) -> Self {
+            self.text_config = Some(input);
+            self
+        }
+        /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
+        pub fn set_text_config(
+            mut self,
+            input: std::option::Option<crate::model::ClarifyTextConfig>,
+        ) -> Self {
+            self.text_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClarifyShapConfig`](crate::model::ClarifyShapConfig).
+        pub fn build(self) -> crate::model::ClarifyShapConfig {
+            crate::model::ClarifyShapConfig {
+                shap_baseline_config: self.shap_baseline_config,
+                number_of_samples: self.number_of_samples,
+                use_logit: self.use_logit,
+                seed: self.seed,
+                text_config: self.text_config,
+            }
+        }
+    }
+}
+impl ClarifyShapConfig {
+    /// Creates a new builder-style object to manufacture [`ClarifyShapConfig`](crate::model::ClarifyShapConfig).
+    pub fn builder() -> crate::model::clarify_shap_config::Builder {
+        crate::model::clarify_shap_config::Builder::default()
+    }
+}
+
+/// <p>A parameter used to configure the SageMaker Clarify explainer to treat text features as text so that explanations are provided for individual units of text. Required only for natural language processing (NLP) explainability. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClarifyTextConfig {
+    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language. </p> <note>
+    /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub language: std::option::Option<crate::model::ClarifyTextLanguage>,
+    /// <p>The unit of granularity for the analysis of text features. For example, if the unit is <code>'token'</code>, then each token (like a word in English) of the text is treated as a feature. SHAP values are computed for each unit/feature.</p>
+    #[doc(hidden)]
+    pub granularity: std::option::Option<crate::model::ClarifyTextGranularity>,
+}
+impl ClarifyTextConfig {
+    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language. </p> <note>
+    /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
+    /// </note>
+    pub fn language(&self) -> std::option::Option<&crate::model::ClarifyTextLanguage> {
+        self.language.as_ref()
+    }
+    /// <p>The unit of granularity for the analysis of text features. For example, if the unit is <code>'token'</code>, then each token (like a word in English) of the text is treated as a feature. SHAP values are computed for each unit/feature.</p>
+    pub fn granularity(&self) -> std::option::Option<&crate::model::ClarifyTextGranularity> {
+        self.granularity.as_ref()
+    }
+}
+impl std::fmt::Debug for ClarifyTextConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClarifyTextConfig");
+        formatter.field("language", &self.language);
+        formatter.field("granularity", &self.granularity);
+        formatter.finish()
+    }
+}
+/// See [`ClarifyTextConfig`](crate::model::ClarifyTextConfig).
+pub mod clarify_text_config {
+
+    /// A builder for [`ClarifyTextConfig`](crate::model::ClarifyTextConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) language: std::option::Option<crate::model::ClarifyTextLanguage>,
+        pub(crate) granularity: std::option::Option<crate::model::ClarifyTextGranularity>,
+    }
+    impl Builder {
+        /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language. </p> <note>
+        /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
+        /// </note>
+        pub fn language(mut self, input: crate::model::ClarifyTextLanguage) -> Self {
+            self.language = Some(input);
+            self
+        }
+        /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language. </p> <note>
+        /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
+        /// </note>
+        pub fn set_language(
+            mut self,
+            input: std::option::Option<crate::model::ClarifyTextLanguage>,
+        ) -> Self {
+            self.language = input;
+            self
+        }
+        /// <p>The unit of granularity for the analysis of text features. For example, if the unit is <code>'token'</code>, then each token (like a word in English) of the text is treated as a feature. SHAP values are computed for each unit/feature.</p>
+        pub fn granularity(mut self, input: crate::model::ClarifyTextGranularity) -> Self {
+            self.granularity = Some(input);
+            self
+        }
+        /// <p>The unit of granularity for the analysis of text features. For example, if the unit is <code>'token'</code>, then each token (like a word in English) of the text is treated as a feature. SHAP values are computed for each unit/feature.</p>
+        pub fn set_granularity(
+            mut self,
+            input: std::option::Option<crate::model::ClarifyTextGranularity>,
+        ) -> Self {
+            self.granularity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClarifyTextConfig`](crate::model::ClarifyTextConfig).
+        pub fn build(self) -> crate::model::ClarifyTextConfig {
+            crate::model::ClarifyTextConfig {
+                language: self.language,
+                granularity: self.granularity,
+            }
+        }
+    }
+}
+impl ClarifyTextConfig {
+    /// Creates a new builder-style object to manufacture [`ClarifyTextConfig`](crate::model::ClarifyTextConfig).
+    pub fn builder() -> crate::model::clarify_text_config::Builder {
+        crate::model::clarify_text_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClarifyTextGranularity {
+    #[allow(missing_docs)] // documentation missing in model
+    Paragraph,
+    #[allow(missing_docs)] // documentation missing in model
+    Sentence,
+    #[allow(missing_docs)] // documentation missing in model
+    Token,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClarifyTextGranularity {
+    fn from(s: &str) -> Self {
+        match s {
+            "paragraph" => ClarifyTextGranularity::Paragraph,
+            "sentence" => ClarifyTextGranularity::Sentence,
+            "token" => ClarifyTextGranularity::Token,
+            other => ClarifyTextGranularity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClarifyTextGranularity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClarifyTextGranularity::from(s))
+    }
+}
+impl ClarifyTextGranularity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClarifyTextGranularity::Paragraph => "paragraph",
+            ClarifyTextGranularity::Sentence => "sentence",
+            ClarifyTextGranularity::Token => "token",
+            ClarifyTextGranularity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["paragraph", "sentence", "token"]
+    }
+}
+impl AsRef<str> for ClarifyTextGranularity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClarifyTextLanguage {
+    #[allow(missing_docs)] // documentation missing in model
+    Afrikaans,
+    #[allow(missing_docs)] // documentation missing in model
+    Arabic,
+    #[allow(missing_docs)] // documentation missing in model
+    Bulgarian,
+    #[allow(missing_docs)] // documentation missing in model
+    Bengali,
+    #[allow(missing_docs)] // documentation missing in model
+    Catalan,
+    #[allow(missing_docs)] // documentation missing in model
+    Czech,
+    #[allow(missing_docs)] // documentation missing in model
+    Danish,
+    #[allow(missing_docs)] // documentation missing in model
+    German,
+    #[allow(missing_docs)] // documentation missing in model
+    Greek,
+    #[allow(missing_docs)] // documentation missing in model
+    English,
+    #[allow(missing_docs)] // documentation missing in model
+    Spanish,
+    #[allow(missing_docs)] // documentation missing in model
+    Estonian,
+    #[allow(missing_docs)] // documentation missing in model
+    Basque,
+    #[allow(missing_docs)] // documentation missing in model
+    Persian,
+    #[allow(missing_docs)] // documentation missing in model
+    Finnish,
+    #[allow(missing_docs)] // documentation missing in model
+    French,
+    #[allow(missing_docs)] // documentation missing in model
+    Irish,
+    #[allow(missing_docs)] // documentation missing in model
+    Gujarati,
+    #[allow(missing_docs)] // documentation missing in model
+    Hebrew,
+    #[allow(missing_docs)] // documentation missing in model
+    Hindi,
+    #[allow(missing_docs)] // documentation missing in model
+    Croatian,
+    #[allow(missing_docs)] // documentation missing in model
+    Hungarian,
+    #[allow(missing_docs)] // documentation missing in model
+    Armenian,
+    #[allow(missing_docs)] // documentation missing in model
+    Indonesian,
+    #[allow(missing_docs)] // documentation missing in model
+    Icelandic,
+    #[allow(missing_docs)] // documentation missing in model
+    Italian,
+    #[allow(missing_docs)] // documentation missing in model
+    Kannada,
+    #[allow(missing_docs)] // documentation missing in model
+    Kyrgyz,
+    #[allow(missing_docs)] // documentation missing in model
+    Luxembourgish,
+    #[allow(missing_docs)] // documentation missing in model
+    Ligurian,
+    #[allow(missing_docs)] // documentation missing in model
+    Lithuanian,
+    #[allow(missing_docs)] // documentation missing in model
+    Latvian,
+    #[allow(missing_docs)] // documentation missing in model
+    Macedonian,
+    #[allow(missing_docs)] // documentation missing in model
+    Malayalam,
+    #[allow(missing_docs)] // documentation missing in model
+    Marathi,
+    #[allow(missing_docs)] // documentation missing in model
+    NorwegianBokmal,
+    #[allow(missing_docs)] // documentation missing in model
+    Nepali,
+    #[allow(missing_docs)] // documentation missing in model
+    Dutch,
+    #[allow(missing_docs)] // documentation missing in model
+    Polish,
+    #[allow(missing_docs)] // documentation missing in model
+    Portuguese,
+    #[allow(missing_docs)] // documentation missing in model
+    Romanian,
+    #[allow(missing_docs)] // documentation missing in model
+    Russian,
+    #[allow(missing_docs)] // documentation missing in model
+    Sanskrit,
+    #[allow(missing_docs)] // documentation missing in model
+    Sinhala,
+    #[allow(missing_docs)] // documentation missing in model
+    Slovak,
+    #[allow(missing_docs)] // documentation missing in model
+    Slovenian,
+    #[allow(missing_docs)] // documentation missing in model
+    Albanian,
+    #[allow(missing_docs)] // documentation missing in model
+    Serbian,
+    #[allow(missing_docs)] // documentation missing in model
+    Swedish,
+    #[allow(missing_docs)] // documentation missing in model
+    Tamil,
+    #[allow(missing_docs)] // documentation missing in model
+    Telugu,
+    #[allow(missing_docs)] // documentation missing in model
+    Tagalog,
+    #[allow(missing_docs)] // documentation missing in model
+    Setswana,
+    #[allow(missing_docs)] // documentation missing in model
+    Turkish,
+    #[allow(missing_docs)] // documentation missing in model
+    Tatar,
+    #[allow(missing_docs)] // documentation missing in model
+    Ukrainian,
+    #[allow(missing_docs)] // documentation missing in model
+    Urdu,
+    #[allow(missing_docs)] // documentation missing in model
+    MultiLanguage,
+    #[allow(missing_docs)] // documentation missing in model
+    Yoruba,
+    #[allow(missing_docs)] // documentation missing in model
+    Chinese,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClarifyTextLanguage {
+    fn from(s: &str) -> Self {
+        match s {
+            "af" => ClarifyTextLanguage::Afrikaans,
+            "ar" => ClarifyTextLanguage::Arabic,
+            "bg" => ClarifyTextLanguage::Bulgarian,
+            "bn" => ClarifyTextLanguage::Bengali,
+            "ca" => ClarifyTextLanguage::Catalan,
+            "cs" => ClarifyTextLanguage::Czech,
+            "da" => ClarifyTextLanguage::Danish,
+            "de" => ClarifyTextLanguage::German,
+            "el" => ClarifyTextLanguage::Greek,
+            "en" => ClarifyTextLanguage::English,
+            "es" => ClarifyTextLanguage::Spanish,
+            "et" => ClarifyTextLanguage::Estonian,
+            "eu" => ClarifyTextLanguage::Basque,
+            "fa" => ClarifyTextLanguage::Persian,
+            "fi" => ClarifyTextLanguage::Finnish,
+            "fr" => ClarifyTextLanguage::French,
+            "ga" => ClarifyTextLanguage::Irish,
+            "gu" => ClarifyTextLanguage::Gujarati,
+            "he" => ClarifyTextLanguage::Hebrew,
+            "hi" => ClarifyTextLanguage::Hindi,
+            "hr" => ClarifyTextLanguage::Croatian,
+            "hu" => ClarifyTextLanguage::Hungarian,
+            "hy" => ClarifyTextLanguage::Armenian,
+            "id" => ClarifyTextLanguage::Indonesian,
+            "is" => ClarifyTextLanguage::Icelandic,
+            "it" => ClarifyTextLanguage::Italian,
+            "kn" => ClarifyTextLanguage::Kannada,
+            "ky" => ClarifyTextLanguage::Kyrgyz,
+            "lb" => ClarifyTextLanguage::Luxembourgish,
+            "lij" => ClarifyTextLanguage::Ligurian,
+            "lt" => ClarifyTextLanguage::Lithuanian,
+            "lv" => ClarifyTextLanguage::Latvian,
+            "mk" => ClarifyTextLanguage::Macedonian,
+            "ml" => ClarifyTextLanguage::Malayalam,
+            "mr" => ClarifyTextLanguage::Marathi,
+            "nb" => ClarifyTextLanguage::NorwegianBokmal,
+            "ne" => ClarifyTextLanguage::Nepali,
+            "nl" => ClarifyTextLanguage::Dutch,
+            "pl" => ClarifyTextLanguage::Polish,
+            "pt" => ClarifyTextLanguage::Portuguese,
+            "ro" => ClarifyTextLanguage::Romanian,
+            "ru" => ClarifyTextLanguage::Russian,
+            "sa" => ClarifyTextLanguage::Sanskrit,
+            "si" => ClarifyTextLanguage::Sinhala,
+            "sk" => ClarifyTextLanguage::Slovak,
+            "sl" => ClarifyTextLanguage::Slovenian,
+            "sq" => ClarifyTextLanguage::Albanian,
+            "sr" => ClarifyTextLanguage::Serbian,
+            "sv" => ClarifyTextLanguage::Swedish,
+            "ta" => ClarifyTextLanguage::Tamil,
+            "te" => ClarifyTextLanguage::Telugu,
+            "tl" => ClarifyTextLanguage::Tagalog,
+            "tn" => ClarifyTextLanguage::Setswana,
+            "tr" => ClarifyTextLanguage::Turkish,
+            "tt" => ClarifyTextLanguage::Tatar,
+            "uk" => ClarifyTextLanguage::Ukrainian,
+            "ur" => ClarifyTextLanguage::Urdu,
+            "xx" => ClarifyTextLanguage::MultiLanguage,
+            "yo" => ClarifyTextLanguage::Yoruba,
+            "zh" => ClarifyTextLanguage::Chinese,
+            other => ClarifyTextLanguage::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClarifyTextLanguage {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClarifyTextLanguage::from(s))
+    }
+}
+impl ClarifyTextLanguage {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClarifyTextLanguage::Afrikaans => "af",
+            ClarifyTextLanguage::Arabic => "ar",
+            ClarifyTextLanguage::Bulgarian => "bg",
+            ClarifyTextLanguage::Bengali => "bn",
+            ClarifyTextLanguage::Catalan => "ca",
+            ClarifyTextLanguage::Czech => "cs",
+            ClarifyTextLanguage::Danish => "da",
+            ClarifyTextLanguage::German => "de",
+            ClarifyTextLanguage::Greek => "el",
+            ClarifyTextLanguage::English => "en",
+            ClarifyTextLanguage::Spanish => "es",
+            ClarifyTextLanguage::Estonian => "et",
+            ClarifyTextLanguage::Basque => "eu",
+            ClarifyTextLanguage::Persian => "fa",
+            ClarifyTextLanguage::Finnish => "fi",
+            ClarifyTextLanguage::French => "fr",
+            ClarifyTextLanguage::Irish => "ga",
+            ClarifyTextLanguage::Gujarati => "gu",
+            ClarifyTextLanguage::Hebrew => "he",
+            ClarifyTextLanguage::Hindi => "hi",
+            ClarifyTextLanguage::Croatian => "hr",
+            ClarifyTextLanguage::Hungarian => "hu",
+            ClarifyTextLanguage::Armenian => "hy",
+            ClarifyTextLanguage::Indonesian => "id",
+            ClarifyTextLanguage::Icelandic => "is",
+            ClarifyTextLanguage::Italian => "it",
+            ClarifyTextLanguage::Kannada => "kn",
+            ClarifyTextLanguage::Kyrgyz => "ky",
+            ClarifyTextLanguage::Luxembourgish => "lb",
+            ClarifyTextLanguage::Ligurian => "lij",
+            ClarifyTextLanguage::Lithuanian => "lt",
+            ClarifyTextLanguage::Latvian => "lv",
+            ClarifyTextLanguage::Macedonian => "mk",
+            ClarifyTextLanguage::Malayalam => "ml",
+            ClarifyTextLanguage::Marathi => "mr",
+            ClarifyTextLanguage::NorwegianBokmal => "nb",
+            ClarifyTextLanguage::Nepali => "ne",
+            ClarifyTextLanguage::Dutch => "nl",
+            ClarifyTextLanguage::Polish => "pl",
+            ClarifyTextLanguage::Portuguese => "pt",
+            ClarifyTextLanguage::Romanian => "ro",
+            ClarifyTextLanguage::Russian => "ru",
+            ClarifyTextLanguage::Sanskrit => "sa",
+            ClarifyTextLanguage::Sinhala => "si",
+            ClarifyTextLanguage::Slovak => "sk",
+            ClarifyTextLanguage::Slovenian => "sl",
+            ClarifyTextLanguage::Albanian => "sq",
+            ClarifyTextLanguage::Serbian => "sr",
+            ClarifyTextLanguage::Swedish => "sv",
+            ClarifyTextLanguage::Tamil => "ta",
+            ClarifyTextLanguage::Telugu => "te",
+            ClarifyTextLanguage::Tagalog => "tl",
+            ClarifyTextLanguage::Setswana => "tn",
+            ClarifyTextLanguage::Turkish => "tr",
+            ClarifyTextLanguage::Tatar => "tt",
+            ClarifyTextLanguage::Ukrainian => "uk",
+            ClarifyTextLanguage::Urdu => "ur",
+            ClarifyTextLanguage::MultiLanguage => "xx",
+            ClarifyTextLanguage::Yoruba => "yo",
+            ClarifyTextLanguage::Chinese => "zh",
+            ClarifyTextLanguage::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "af", "ar", "bg", "bn", "ca", "cs", "da", "de", "el", "en", "es", "et", "eu", "fa",
+            "fi", "fr", "ga", "gu", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "kn", "ky",
+            "lb", "lij", "lt", "lv", "mk", "ml", "mr", "nb", "ne", "nl", "pl", "pt", "ro", "ru",
+            "sa", "si", "sk", "sl", "sq", "sr", "sv", "ta", "te", "tl", "tn", "tr", "tt", "uk",
+            "ur", "xx", "yo", "zh",
+        ]
+    }
+}
+impl AsRef<str> for ClarifyTextLanguage {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The configuration for the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-feature-attribute-shap-baselines.html">SHAP baseline</a> (also called the background or reference dataset) of the Kernal SHAP algorithm.</p> <note>
+/// <ul>
+/// <li> <p>The number of records in the baseline data determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p> </li>
+/// <li> <p> <code>ShapBaseline</code> and <code>ShapBaselineUri</code> are mutually exclusive parameters. One or the either is required to configure a SHAP baseline. </p> </li>
+/// </ul>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClarifyShapBaselineConfig {
+    /// <p>The MIME type of the baseline data. Choose from <code>'text/csv'</code> or <code>'application/jsonlines'</code>. Defaults to <code>'text/csv'</code>.</p>
+    #[doc(hidden)]
+    pub mime_type: std::option::Option<std::string::String>,
+    /// <p>The inline SHAP baseline data in string format. <code>ShapBaseline</code> can have one or multiple records to be used as the baseline dataset. The format of the SHAP baseline file should be the same format as the training dataset. For example, if the training dataset is in CSV format and each record contains four features, and all features are numerical, then the format of the baseline data should also share these characteristics. For natural language processing (NLP) of text columns, the baseline value should be the value used to replace the unit of text specified by the <code>Granularity</code> of the <code>TextConfig</code> parameter. The size limit for <code>ShapBasline</code> is 4 KB. Use the <code>ShapBaselineUri</code> parameter if you want to provide more than 4 KB of baseline data.</p>
+    #[doc(hidden)]
+    pub shap_baseline: std::option::Option<std::string::String>,
+    /// <p>The uniform resource identifier (URI) of the S3 bucket where the SHAP baseline file is stored. The format of the SHAP baseline file should be the same format as the format of the training dataset. For example, if the training dataset is in CSV format, and each record in the training dataset has four features, and all features are numerical, then the baseline file should also have this same format. Each record should contain only the features. If you are using a virtual private cloud (VPC), the <code>ShapBaselineUri</code> should be accessible to the VPC. For more information about setting up endpoints with Amazon Virtual Private Cloud, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to Resources in your Amazon Virtual Private Cloud</a>.</p>
+    #[doc(hidden)]
+    pub shap_baseline_uri: std::option::Option<std::string::String>,
+}
+impl ClarifyShapBaselineConfig {
+    /// <p>The MIME type of the baseline data. Choose from <code>'text/csv'</code> or <code>'application/jsonlines'</code>. Defaults to <code>'text/csv'</code>.</p>
+    pub fn mime_type(&self) -> std::option::Option<&str> {
+        self.mime_type.as_deref()
+    }
+    /// <p>The inline SHAP baseline data in string format. <code>ShapBaseline</code> can have one or multiple records to be used as the baseline dataset. The format of the SHAP baseline file should be the same format as the training dataset. For example, if the training dataset is in CSV format and each record contains four features, and all features are numerical, then the format of the baseline data should also share these characteristics. For natural language processing (NLP) of text columns, the baseline value should be the value used to replace the unit of text specified by the <code>Granularity</code> of the <code>TextConfig</code> parameter. The size limit for <code>ShapBasline</code> is 4 KB. Use the <code>ShapBaselineUri</code> parameter if you want to provide more than 4 KB of baseline data.</p>
+    pub fn shap_baseline(&self) -> std::option::Option<&str> {
+        self.shap_baseline.as_deref()
+    }
+    /// <p>The uniform resource identifier (URI) of the S3 bucket where the SHAP baseline file is stored. The format of the SHAP baseline file should be the same format as the format of the training dataset. For example, if the training dataset is in CSV format, and each record in the training dataset has four features, and all features are numerical, then the baseline file should also have this same format. Each record should contain only the features. If you are using a virtual private cloud (VPC), the <code>ShapBaselineUri</code> should be accessible to the VPC. For more information about setting up endpoints with Amazon Virtual Private Cloud, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to Resources in your Amazon Virtual Private Cloud</a>.</p>
+    pub fn shap_baseline_uri(&self) -> std::option::Option<&str> {
+        self.shap_baseline_uri.as_deref()
+    }
+}
+impl std::fmt::Debug for ClarifyShapBaselineConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClarifyShapBaselineConfig");
+        formatter.field("mime_type", &self.mime_type);
+        formatter.field("shap_baseline", &self.shap_baseline);
+        formatter.field("shap_baseline_uri", &self.shap_baseline_uri);
+        formatter.finish()
+    }
+}
+/// See [`ClarifyShapBaselineConfig`](crate::model::ClarifyShapBaselineConfig).
+pub mod clarify_shap_baseline_config {
+
+    /// A builder for [`ClarifyShapBaselineConfig`](crate::model::ClarifyShapBaselineConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mime_type: std::option::Option<std::string::String>,
+        pub(crate) shap_baseline: std::option::Option<std::string::String>,
+        pub(crate) shap_baseline_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The MIME type of the baseline data. Choose from <code>'text/csv'</code> or <code>'application/jsonlines'</code>. Defaults to <code>'text/csv'</code>.</p>
+        pub fn mime_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mime_type = Some(input.into());
+            self
+        }
+        /// <p>The MIME type of the baseline data. Choose from <code>'text/csv'</code> or <code>'application/jsonlines'</code>. Defaults to <code>'text/csv'</code>.</p>
+        pub fn set_mime_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mime_type = input;
+            self
+        }
+        /// <p>The inline SHAP baseline data in string format. <code>ShapBaseline</code> can have one or multiple records to be used as the baseline dataset. The format of the SHAP baseline file should be the same format as the training dataset. For example, if the training dataset is in CSV format and each record contains four features, and all features are numerical, then the format of the baseline data should also share these characteristics. For natural language processing (NLP) of text columns, the baseline value should be the value used to replace the unit of text specified by the <code>Granularity</code> of the <code>TextConfig</code> parameter. The size limit for <code>ShapBasline</code> is 4 KB. Use the <code>ShapBaselineUri</code> parameter if you want to provide more than 4 KB of baseline data.</p>
+        pub fn shap_baseline(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shap_baseline = Some(input.into());
+            self
+        }
+        /// <p>The inline SHAP baseline data in string format. <code>ShapBaseline</code> can have one or multiple records to be used as the baseline dataset. The format of the SHAP baseline file should be the same format as the training dataset. For example, if the training dataset is in CSV format and each record contains four features, and all features are numerical, then the format of the baseline data should also share these characteristics. For natural language processing (NLP) of text columns, the baseline value should be the value used to replace the unit of text specified by the <code>Granularity</code> of the <code>TextConfig</code> parameter. The size limit for <code>ShapBasline</code> is 4 KB. Use the <code>ShapBaselineUri</code> parameter if you want to provide more than 4 KB of baseline data.</p>
+        pub fn set_shap_baseline(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.shap_baseline = input;
+            self
+        }
+        /// <p>The uniform resource identifier (URI) of the S3 bucket where the SHAP baseline file is stored. The format of the SHAP baseline file should be the same format as the format of the training dataset. For example, if the training dataset is in CSV format, and each record in the training dataset has four features, and all features are numerical, then the baseline file should also have this same format. Each record should contain only the features. If you are using a virtual private cloud (VPC), the <code>ShapBaselineUri</code> should be accessible to the VPC. For more information about setting up endpoints with Amazon Virtual Private Cloud, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to Resources in your Amazon Virtual Private Cloud</a>.</p>
+        pub fn shap_baseline_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shap_baseline_uri = Some(input.into());
+            self
+        }
+        /// <p>The uniform resource identifier (URI) of the S3 bucket where the SHAP baseline file is stored. The format of the SHAP baseline file should be the same format as the format of the training dataset. For example, if the training dataset is in CSV format, and each record in the training dataset has four features, and all features are numerical, then the baseline file should also have this same format. Each record should contain only the features. If you are using a virtual private cloud (VPC), the <code>ShapBaselineUri</code> should be accessible to the VPC. For more information about setting up endpoints with Amazon Virtual Private Cloud, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to Resources in your Amazon Virtual Private Cloud</a>.</p>
+        pub fn set_shap_baseline_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.shap_baseline_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClarifyShapBaselineConfig`](crate::model::ClarifyShapBaselineConfig).
+        pub fn build(self) -> crate::model::ClarifyShapBaselineConfig {
+            crate::model::ClarifyShapBaselineConfig {
+                mime_type: self.mime_type,
+                shap_baseline: self.shap_baseline,
+                shap_baseline_uri: self.shap_baseline_uri,
+            }
+        }
+    }
+}
+impl ClarifyShapBaselineConfig {
+    /// Creates a new builder-style object to manufacture [`ClarifyShapBaselineConfig`](crate::model::ClarifyShapBaselineConfig).
+    pub fn builder() -> crate::model::clarify_shap_baseline_config::Builder {
+        crate::model::clarify_shap_baseline_config::Builder::default()
+    }
+}
+
+/// <p>The inference configuration parameter for the model container.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClarifyInferenceConfig {
+    /// <p>Provides the JMESPath expression to extract the features from a model container input in JSON Lines format. For example, if <code>FeaturesAttribute</code> is the JMESPath expression <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code> from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+    #[doc(hidden)]
+    pub features_attribute: std::option::Option<std::string::String>,
+    /// <p>A template string used to format a JSON record into an acceptable model container input. For example, a <code>ContentTemplate</code> string <code>'{"myfeatures":$features}'</code> will format a list of features <code>[1,2,3]</code> into the record string <code>'{"myfeatures":[1,2,3]}'</code>. Required only when the model container input is in JSON Lines format.</p>
+    #[doc(hidden)]
+    pub content_template: std::option::Option<std::string::String>,
+    /// <p>The maximum number of records in a request that the model container can process when querying the model container for the predictions of a <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-synthetic">synthetic dataset</a>. A record is a unit of input data that inference can be made on, for example, a single line in CSV data. If <code>MaxRecordCount</code> is <code>1</code>, the model container expects one record per request. A value of 2 or greater means that the model expects batch requests, which can reduce overhead and speed up the inferencing process. If this parameter is not provided, the explainer will tune the record count per request according to the model container's capacity at runtime.</p>
+    #[doc(hidden)]
+    pub max_record_count: std::option::Option<i32>,
+    /// <p>The maximum payload size (MB) allowed of a request from the explainer to the model container. Defaults to <code>6</code> MB.</p>
+    #[doc(hidden)]
+    pub max_payload_in_mb: std::option::Option<i32>,
+    /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
+    /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+    #[doc(hidden)]
+    pub probability_index: std::option::Option<i32>,
+    /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
+    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+    #[doc(hidden)]
+    pub label_index: std::option::Option<i32>,
+    /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
+    /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+    #[doc(hidden)]
+    pub probability_attribute: std::option::Option<std::string::String>,
+    /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
+    /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+    #[doc(hidden)]
+    pub label_attribute: std::option::Option<std::string::String>,
+    /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
+    #[doc(hidden)]
+    pub label_headers: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The names of the features. If provided, these are included in the endpoint response payload to help readability of the <code>InvokeEndpoint</code> output. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
+    #[doc(hidden)]
+    pub feature_headers: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of data types of the features (optional). Applicable only to NLP explainability. If provided, <code>FeatureTypes</code> must have at least one <code>'text'</code> string (for example, <code>['text']</code>). If <code>FeatureTypes</code> is not provided, the explainer infers the feature types based on the baseline data. The feature types are included in the endpoint response payload. For additional information see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
+    #[doc(hidden)]
+    pub feature_types: std::option::Option<std::vec::Vec<crate::model::ClarifyFeatureType>>,
+}
+impl ClarifyInferenceConfig {
+    /// <p>Provides the JMESPath expression to extract the features from a model container input in JSON Lines format. For example, if <code>FeaturesAttribute</code> is the JMESPath expression <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code> from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+    pub fn features_attribute(&self) -> std::option::Option<&str> {
+        self.features_attribute.as_deref()
+    }
+    /// <p>A template string used to format a JSON record into an acceptable model container input. For example, a <code>ContentTemplate</code> string <code>'{"myfeatures":$features}'</code> will format a list of features <code>[1,2,3]</code> into the record string <code>'{"myfeatures":[1,2,3]}'</code>. Required only when the model container input is in JSON Lines format.</p>
+    pub fn content_template(&self) -> std::option::Option<&str> {
+        self.content_template.as_deref()
+    }
+    /// <p>The maximum number of records in a request that the model container can process when querying the model container for the predictions of a <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-synthetic">synthetic dataset</a>. A record is a unit of input data that inference can be made on, for example, a single line in CSV data. If <code>MaxRecordCount</code> is <code>1</code>, the model container expects one record per request. A value of 2 or greater means that the model expects batch requests, which can reduce overhead and speed up the inferencing process. If this parameter is not provided, the explainer will tune the record count per request according to the model container's capacity at runtime.</p>
+    pub fn max_record_count(&self) -> std::option::Option<i32> {
+        self.max_record_count
+    }
+    /// <p>The maximum payload size (MB) allowed of a request from the explainer to the model container. Defaults to <code>6</code> MB.</p>
+    pub fn max_payload_in_mb(&self) -> std::option::Option<i32> {
+        self.max_payload_in_mb
+    }
+    /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
+    /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+    pub fn probability_index(&self) -> std::option::Option<i32> {
+        self.probability_index
+    }
+    /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
+    /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+    pub fn label_index(&self) -> std::option::Option<i32> {
+        self.label_index
+    }
+    /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
+    /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+    pub fn probability_attribute(&self) -> std::option::Option<&str> {
+        self.probability_attribute.as_deref()
+    }
+    /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
+    /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+    pub fn label_attribute(&self) -> std::option::Option<&str> {
+        self.label_attribute.as_deref()
+    }
+    /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
+    pub fn label_headers(&self) -> std::option::Option<&[std::string::String]> {
+        self.label_headers.as_deref()
+    }
+    /// <p>The names of the features. If provided, these are included in the endpoint response payload to help readability of the <code>InvokeEndpoint</code> output. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
+    pub fn feature_headers(&self) -> std::option::Option<&[std::string::String]> {
+        self.feature_headers.as_deref()
+    }
+    /// <p>A list of data types of the features (optional). Applicable only to NLP explainability. If provided, <code>FeatureTypes</code> must have at least one <code>'text'</code> string (for example, <code>['text']</code>). If <code>FeatureTypes</code> is not provided, the explainer infers the feature types based on the baseline data. The feature types are included in the endpoint response payload. For additional information see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
+    pub fn feature_types(&self) -> std::option::Option<&[crate::model::ClarifyFeatureType]> {
+        self.feature_types.as_deref()
+    }
+}
+impl std::fmt::Debug for ClarifyInferenceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClarifyInferenceConfig");
+        formatter.field("features_attribute", &self.features_attribute);
+        formatter.field("content_template", &self.content_template);
+        formatter.field("max_record_count", &self.max_record_count);
+        formatter.field("max_payload_in_mb", &self.max_payload_in_mb);
+        formatter.field("probability_index", &self.probability_index);
+        formatter.field("label_index", &self.label_index);
+        formatter.field("probability_attribute", &self.probability_attribute);
+        formatter.field("label_attribute", &self.label_attribute);
+        formatter.field("label_headers", &self.label_headers);
+        formatter.field("feature_headers", &self.feature_headers);
+        formatter.field("feature_types", &self.feature_types);
+        formatter.finish()
+    }
+}
+/// See [`ClarifyInferenceConfig`](crate::model::ClarifyInferenceConfig).
+pub mod clarify_inference_config {
+
+    /// A builder for [`ClarifyInferenceConfig`](crate::model::ClarifyInferenceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) features_attribute: std::option::Option<std::string::String>,
+        pub(crate) content_template: std::option::Option<std::string::String>,
+        pub(crate) max_record_count: std::option::Option<i32>,
+        pub(crate) max_payload_in_mb: std::option::Option<i32>,
+        pub(crate) probability_index: std::option::Option<i32>,
+        pub(crate) label_index: std::option::Option<i32>,
+        pub(crate) probability_attribute: std::option::Option<std::string::String>,
+        pub(crate) label_attribute: std::option::Option<std::string::String>,
+        pub(crate) label_headers: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) feature_headers: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) feature_types:
+            std::option::Option<std::vec::Vec<crate::model::ClarifyFeatureType>>,
+    }
+    impl Builder {
+        /// <p>Provides the JMESPath expression to extract the features from a model container input in JSON Lines format. For example, if <code>FeaturesAttribute</code> is the JMESPath expression <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code> from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+        pub fn features_attribute(mut self, input: impl Into<std::string::String>) -> Self {
+            self.features_attribute = Some(input.into());
+            self
+        }
+        /// <p>Provides the JMESPath expression to extract the features from a model container input in JSON Lines format. For example, if <code>FeaturesAttribute</code> is the JMESPath expression <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code> from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+        pub fn set_features_attribute(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.features_attribute = input;
+            self
+        }
+        /// <p>A template string used to format a JSON record into an acceptable model container input. For example, a <code>ContentTemplate</code> string <code>'{"myfeatures":$features}'</code> will format a list of features <code>[1,2,3]</code> into the record string <code>'{"myfeatures":[1,2,3]}'</code>. Required only when the model container input is in JSON Lines format.</p>
+        pub fn content_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_template = Some(input.into());
+            self
+        }
+        /// <p>A template string used to format a JSON record into an acceptable model container input. For example, a <code>ContentTemplate</code> string <code>'{"myfeatures":$features}'</code> will format a list of features <code>[1,2,3]</code> into the record string <code>'{"myfeatures":[1,2,3]}'</code>. Required only when the model container input is in JSON Lines format.</p>
+        pub fn set_content_template(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.content_template = input;
+            self
+        }
+        /// <p>The maximum number of records in a request that the model container can process when querying the model container for the predictions of a <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-synthetic">synthetic dataset</a>. A record is a unit of input data that inference can be made on, for example, a single line in CSV data. If <code>MaxRecordCount</code> is <code>1</code>, the model container expects one record per request. A value of 2 or greater means that the model expects batch requests, which can reduce overhead and speed up the inferencing process. If this parameter is not provided, the explainer will tune the record count per request according to the model container's capacity at runtime.</p>
+        pub fn max_record_count(mut self, input: i32) -> Self {
+            self.max_record_count = Some(input);
+            self
+        }
+        /// <p>The maximum number of records in a request that the model container can process when querying the model container for the predictions of a <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-synthetic">synthetic dataset</a>. A record is a unit of input data that inference can be made on, for example, a single line in CSV data. If <code>MaxRecordCount</code> is <code>1</code>, the model container expects one record per request. A value of 2 or greater means that the model expects batch requests, which can reduce overhead and speed up the inferencing process. If this parameter is not provided, the explainer will tune the record count per request according to the model container's capacity at runtime.</p>
+        pub fn set_max_record_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_record_count = input;
+            self
+        }
+        /// <p>The maximum payload size (MB) allowed of a request from the explainer to the model container. Defaults to <code>6</code> MB.</p>
+        pub fn max_payload_in_mb(mut self, input: i32) -> Self {
+            self.max_payload_in_mb = Some(input);
+            self
+        }
+        /// <p>The maximum payload size (MB) allowed of a request from the explainer to the model container. Defaults to <code>6</code> MB.</p>
+        pub fn set_max_payload_in_mb(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_payload_in_mb = input;
+            self
+        }
+        /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
+        /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+        /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+        pub fn probability_index(mut self, input: i32) -> Self {
+            self.probability_index = Some(input);
+            self
+        }
+        /// <p>A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.</p>
+        /// <p> <b>Example for a single class model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'1,0.6'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability value <code>0.6</code>.</p>
+        /// <p> <b>Example for a multiclass model:</b> If the model container output consists of a string-formatted prediction label followed by its probability: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>ProbabilityIndex</code> to <code>1</code> to select the probability values <code>[0.1,0.6,0.3]</code>.</p>
+        pub fn set_probability_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.probability_index = input;
+            self
+        }
+        /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
+        /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+        pub fn label_index(mut self, input: i32) -> Self {
+            self.label_index = Some(input);
+            self
+        }
+        /// <p>A zero-based index used to extract a label header or list of label headers from model container output in CSV format.</p>
+        /// <p> <b>Example for a multiclass model:</b> If the model container output consists of label headers followed by probabilities: <code>'"[\'cat\',\'dog\',\'fish\']","[0.1,0.6,0.3]"'</code>, set <code>LabelIndex</code> to <code>0</code> to select the label headers <code>['cat','dog','fish']</code>.</p>
+        pub fn set_label_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.label_index = input;
+            self
+        }
+        /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
+        /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+        pub fn probability_attribute(mut self, input: impl Into<std::string::String>) -> Self {
+            self.probability_attribute = Some(input.into());
+            self
+        }
+        /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
+        /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
+        pub fn set_probability_attribute(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.probability_attribute = input;
+            self
+        }
+        /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
+        /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+        pub fn label_attribute(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_attribute = Some(input.into());
+            self
+        }
+        /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
+        /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
+        pub fn set_label_attribute(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_attribute = input;
+            self
+        }
+        /// Appends an item to `label_headers`.
+        ///
+        /// To override the contents of this collection use [`set_label_headers`](Self::set_label_headers).
+        ///
+        /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
+        pub fn label_headers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.label_headers.unwrap_or_default();
+            v.push(input.into());
+            self.label_headers = Some(v);
+            self
+        }
+        /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
+        pub fn set_label_headers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.label_headers = input;
+            self
+        }
+        /// Appends an item to `feature_headers`.
+        ///
+        /// To override the contents of this collection use [`set_feature_headers`](Self::set_feature_headers).
+        ///
+        /// <p>The names of the features. If provided, these are included in the endpoint response payload to help readability of the <code>InvokeEndpoint</code> output. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
+        pub fn feature_headers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.feature_headers.unwrap_or_default();
+            v.push(input.into());
+            self.feature_headers = Some(v);
+            self
+        }
+        /// <p>The names of the features. If provided, these are included in the endpoint response payload to help readability of the <code>InvokeEndpoint</code> output. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
+        pub fn set_feature_headers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.feature_headers = input;
+            self
+        }
+        /// Appends an item to `feature_types`.
+        ///
+        /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
+        ///
+        /// <p>A list of data types of the features (optional). Applicable only to NLP explainability. If provided, <code>FeatureTypes</code> must have at least one <code>'text'</code> string (for example, <code>['text']</code>). If <code>FeatureTypes</code> is not provided, the explainer infers the feature types based on the baseline data. The feature types are included in the endpoint response payload. For additional information see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
+        pub fn feature_types(mut self, input: crate::model::ClarifyFeatureType) -> Self {
+            let mut v = self.feature_types.unwrap_or_default();
+            v.push(input);
+            self.feature_types = Some(v);
+            self
+        }
+        /// <p>A list of data types of the features (optional). Applicable only to NLP explainability. If provided, <code>FeatureTypes</code> must have at least one <code>'text'</code> string (for example, <code>['text']</code>). If <code>FeatureTypes</code> is not provided, the explainer infers the feature types based on the baseline data. The feature types are included in the endpoint response payload. For additional information see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
+        pub fn set_feature_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClarifyFeatureType>>,
+        ) -> Self {
+            self.feature_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClarifyInferenceConfig`](crate::model::ClarifyInferenceConfig).
+        pub fn build(self) -> crate::model::ClarifyInferenceConfig {
+            crate::model::ClarifyInferenceConfig {
+                features_attribute: self.features_attribute,
+                content_template: self.content_template,
+                max_record_count: self.max_record_count,
+                max_payload_in_mb: self.max_payload_in_mb,
+                probability_index: self.probability_index,
+                label_index: self.label_index,
+                probability_attribute: self.probability_attribute,
+                label_attribute: self.label_attribute,
+                label_headers: self.label_headers,
+                feature_headers: self.feature_headers,
+                feature_types: self.feature_types,
+            }
+        }
+    }
+}
+impl ClarifyInferenceConfig {
+    /// Creates a new builder-style object to manufacture [`ClarifyInferenceConfig`](crate::model::ClarifyInferenceConfig).
+    pub fn builder() -> crate::model::clarify_inference_config::Builder {
+        crate::model::clarify_inference_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClarifyFeatureType {
+    #[allow(missing_docs)] // documentation missing in model
+    Categorical,
+    #[allow(missing_docs)] // documentation missing in model
+    Numerical,
+    #[allow(missing_docs)] // documentation missing in model
+    Text,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClarifyFeatureType {
+    fn from(s: &str) -> Self {
+        match s {
+            "categorical" => ClarifyFeatureType::Categorical,
+            "numerical" => ClarifyFeatureType::Numerical,
+            "text" => ClarifyFeatureType::Text,
+            other => ClarifyFeatureType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClarifyFeatureType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClarifyFeatureType::from(s))
+    }
+}
+impl ClarifyFeatureType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClarifyFeatureType::Categorical => "categorical",
+            ClarifyFeatureType::Numerical => "numerical",
+            ClarifyFeatureType::Text => "text",
+            ClarifyFeatureType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["categorical", "numerical", "text"]
+    }
+}
+impl AsRef<str> for ClarifyFeatureType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Specifies configuration for how an endpoint performs asynchronous inference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -66773,6 +69723,15 @@ pub struct ProductionVariant {
     /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
     #[doc(hidden)]
     pub serverless_config: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+    /// <p>The size, in GB, of the ML storage volume attached to individual inference instance associated with the production variant. Currenly only Amazon EBS gp2 storage volumes are supported.</p>
+    #[doc(hidden)]
+    pub volume_size_in_gb: std::option::Option<i32>,
+    /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant.</p>
+    #[doc(hidden)]
+    pub model_data_download_timeout_in_seconds: std::option::Option<i32>,
+    /// <p>The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
+    #[doc(hidden)]
+    pub container_startup_health_check_timeout_in_seconds: std::option::Option<i32>,
 }
 impl ProductionVariant {
     /// <p>The name of the production variant.</p>
@@ -66815,6 +69774,18 @@ impl ProductionVariant {
     ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
         self.serverless_config.as_ref()
     }
+    /// <p>The size, in GB, of the ML storage volume attached to individual inference instance associated with the production variant. Currenly only Amazon EBS gp2 storage volumes are supported.</p>
+    pub fn volume_size_in_gb(&self) -> std::option::Option<i32> {
+        self.volume_size_in_gb
+    }
+    /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant.</p>
+    pub fn model_data_download_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.model_data_download_timeout_in_seconds
+    }
+    /// <p>The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
+    pub fn container_startup_health_check_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.container_startup_health_check_timeout_in_seconds
+    }
 }
 impl std::fmt::Debug for ProductionVariant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -66827,6 +69798,15 @@ impl std::fmt::Debug for ProductionVariant {
         formatter.field("accelerator_type", &self.accelerator_type);
         formatter.field("core_dump_config", &self.core_dump_config);
         formatter.field("serverless_config", &self.serverless_config);
+        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.field(
+            "model_data_download_timeout_in_seconds",
+            &self.model_data_download_timeout_in_seconds,
+        );
+        formatter.field(
+            "container_startup_health_check_timeout_in_seconds",
+            &self.container_startup_health_check_timeout_in_seconds,
+        );
         formatter.finish()
     }
 }
@@ -66847,6 +69827,9 @@ pub mod production_variant {
             std::option::Option<crate::model::ProductionVariantCoreDumpConfig>,
         pub(crate) serverless_config:
             std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+        pub(crate) volume_size_in_gb: std::option::Option<i32>,
+        pub(crate) model_data_download_timeout_in_seconds: std::option::Option<i32>,
+        pub(crate) container_startup_health_check_timeout_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the production variant.</p>
@@ -66950,6 +69933,42 @@ pub mod production_variant {
             self.serverless_config = input;
             self
         }
+        /// <p>The size, in GB, of the ML storage volume attached to individual inference instance associated with the production variant. Currenly only Amazon EBS gp2 storage volumes are supported.</p>
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.volume_size_in_gb = Some(input);
+            self
+        }
+        /// <p>The size, in GB, of the ML storage volume attached to individual inference instance associated with the production variant. Currenly only Amazon EBS gp2 storage volumes are supported.</p>
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_in_gb = input;
+            self
+        }
+        /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant.</p>
+        pub fn model_data_download_timeout_in_seconds(mut self, input: i32) -> Self {
+            self.model_data_download_timeout_in_seconds = Some(input);
+            self
+        }
+        /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant.</p>
+        pub fn set_model_data_download_timeout_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.model_data_download_timeout_in_seconds = input;
+            self
+        }
+        /// <p>The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
+        pub fn container_startup_health_check_timeout_in_seconds(mut self, input: i32) -> Self {
+            self.container_startup_health_check_timeout_in_seconds = Some(input);
+            self
+        }
+        /// <p>The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
+        pub fn set_container_startup_health_check_timeout_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.container_startup_health_check_timeout_in_seconds = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProductionVariant`](crate::model::ProductionVariant).
         pub fn build(self) -> crate::model::ProductionVariant {
             crate::model::ProductionVariant {
@@ -66961,6 +69980,10 @@ pub mod production_variant {
                 accelerator_type: self.accelerator_type,
                 core_dump_config: self.core_dump_config,
                 serverless_config: self.serverless_config,
+                volume_size_in_gb: self.volume_size_in_gb,
+                model_data_download_timeout_in_seconds: self.model_data_download_timeout_in_seconds,
+                container_startup_health_check_timeout_in_seconds: self
+                    .container_startup_health_check_timeout_in_seconds,
             }
         }
     }
@@ -68639,6 +71662,10 @@ pub struct DomainSettings {
     #[doc(hidden)]
     pub r_studio_server_pro_domain_settings:
         std::option::Option<crate::model::RStudioServerProDomainSettings>,
+    /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
+    #[doc(hidden)]
+    pub execution_role_identity_config:
+        std::option::Option<crate::model::ExecutionRoleIdentityConfig>,
 }
 impl DomainSettings {
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
@@ -68651,6 +71678,12 @@ impl DomainSettings {
     ) -> std::option::Option<&crate::model::RStudioServerProDomainSettings> {
         self.r_studio_server_pro_domain_settings.as_ref()
     }
+    /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
+    pub fn execution_role_identity_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionRoleIdentityConfig> {
+        self.execution_role_identity_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -68659,6 +71692,10 @@ impl std::fmt::Debug for DomainSettings {
         formatter.field(
             "r_studio_server_pro_domain_settings",
             &self.r_studio_server_pro_domain_settings,
+        );
+        formatter.field(
+            "execution_role_identity_config",
+            &self.execution_role_identity_config,
         );
         formatter.finish()
     }
@@ -68672,6 +71709,8 @@ pub mod domain_settings {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) r_studio_server_pro_domain_settings:
             std::option::Option<crate::model::RStudioServerProDomainSettings>,
+        pub(crate) execution_role_identity_config:
+            std::option::Option<crate::model::ExecutionRoleIdentityConfig>,
     }
     impl Builder {
         /// Appends an item to `security_group_ids`.
@@ -68709,11 +71748,28 @@ pub mod domain_settings {
             self.r_studio_server_pro_domain_settings = input;
             self
         }
+        /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
+        pub fn execution_role_identity_config(
+            mut self,
+            input: crate::model::ExecutionRoleIdentityConfig,
+        ) -> Self {
+            self.execution_role_identity_config = Some(input);
+            self
+        }
+        /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
+        pub fn set_execution_role_identity_config(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionRoleIdentityConfig>,
+        ) -> Self {
+            self.execution_role_identity_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DomainSettings`](crate::model::DomainSettings).
         pub fn build(self) -> crate::model::DomainSettings {
             crate::model::DomainSettings {
                 security_group_ids: self.security_group_ids,
                 r_studio_server_pro_domain_settings: self.r_studio_server_pro_domain_settings,
+                execution_role_identity_config: self.execution_role_identity_config,
             }
         }
     }
@@ -71073,7 +74129,7 @@ pub struct AutoMlJobCompletionCriteria {
     /// <p>The maximum number of times a training job is allowed to run.</p>
     #[doc(hidden)]
     pub max_candidates: std::option::Option<i32>,
-    /// <p>The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning job. For more information, see the used by the action.</p>
+    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the used by the action.</p>
     #[doc(hidden)]
     pub max_runtime_per_training_job_in_seconds: std::option::Option<i32>,
     /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
@@ -71086,7 +74142,7 @@ impl AutoMlJobCompletionCriteria {
     pub fn max_candidates(&self) -> std::option::Option<i32> {
         self.max_candidates
     }
-    /// <p>The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning job. For more information, see the used by the action.</p>
+    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the used by the action.</p>
     pub fn max_runtime_per_training_job_in_seconds(&self) -> std::option::Option<i32> {
         self.max_runtime_per_training_job_in_seconds
     }
@@ -71132,12 +74188,12 @@ pub mod auto_ml_job_completion_criteria {
             self.max_candidates = input;
             self
         }
-        /// <p>The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning job. For more information, see the used by the action.</p>
+        /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the used by the action.</p>
         pub fn max_runtime_per_training_job_in_seconds(mut self, input: i32) -> Self {
             self.max_runtime_per_training_job_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum time, in seconds, that each training job is allowed to run as part of a hyperparameter tuning job. For more information, see the used by the action.</p>
+        /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the used by the action.</p>
         pub fn set_max_runtime_per_training_job_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -71466,6 +74522,11 @@ pub struct AutoMlJobConfig {
     #[doc(hidden)]
     pub candidate_generation_config:
         std::option::Option<crate::model::AutoMlCandidateGenerationConfig>,
+    /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
+    /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
+    /// <p>The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a model. HPO will automatically select an algorithm for the type of problem you want to solve. Then HPO finds the best hyperparameters according to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.</p>
+    #[doc(hidden)]
+    pub mode: std::option::Option<crate::model::AutoMlMode>,
 }
 impl AutoMlJobConfig {
     /// <p>How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.</p>
@@ -71489,6 +74550,12 @@ impl AutoMlJobConfig {
     ) -> std::option::Option<&crate::model::AutoMlCandidateGenerationConfig> {
         self.candidate_generation_config.as_ref()
     }
+    /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
+    /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
+    /// <p>The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a model. HPO will automatically select an algorithm for the type of problem you want to solve. Then HPO finds the best hyperparameters according to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::AutoMlMode> {
+        self.mode.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoMlJobConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -71500,6 +74567,7 @@ impl std::fmt::Debug for AutoMlJobConfig {
             "candidate_generation_config",
             &self.candidate_generation_config,
         );
+        formatter.field("mode", &self.mode);
         formatter.finish()
     }
 }
@@ -71515,6 +74583,7 @@ pub mod auto_ml_job_config {
         pub(crate) data_split_config: std::option::Option<crate::model::AutoMlDataSplitConfig>,
         pub(crate) candidate_generation_config:
             std::option::Option<crate::model::AutoMlCandidateGenerationConfig>,
+        pub(crate) mode: std::option::Option<crate::model::AutoMlMode>,
     }
     impl Builder {
         /// <p>How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.</p>
@@ -71577,6 +74646,20 @@ pub mod auto_ml_job_config {
             self.candidate_generation_config = input;
             self
         }
+        /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
+        /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
+        /// <p>The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a model. HPO will automatically select an algorithm for the type of problem you want to solve. Then HPO finds the best hyperparameters according to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.</p>
+        pub fn mode(mut self, input: crate::model::AutoMlMode) -> Self {
+            self.mode = Some(input);
+            self
+        }
+        /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
+        /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
+        /// <p>The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a model. HPO will automatically select an algorithm for the type of problem you want to solve. Then HPO finds the best hyperparameters according to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.</p>
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::AutoMlMode>) -> Self {
+            self.mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AutoMlJobConfig`](crate::model::AutoMlJobConfig).
         pub fn build(self) -> crate::model::AutoMlJobConfig {
             crate::model::AutoMlJobConfig {
@@ -71584,6 +74667,7 @@ pub mod auto_ml_job_config {
                 security_config: self.security_config,
                 data_split_config: self.data_split_config,
                 candidate_generation_config: self.candidate_generation_config,
+                mode: self.mode,
             }
         }
     }
@@ -71595,19 +74679,92 @@ impl AutoMlJobConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AutoMlMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
+    Ensembling,
+    #[allow(missing_docs)] // documentation missing in model
+    HyperparameterTuning,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AutoMlMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTO" => AutoMlMode::Auto,
+            "ENSEMBLING" => AutoMlMode::Ensembling,
+            "HYPERPARAMETER_TUNING" => AutoMlMode::HyperparameterTuning,
+            other => AutoMlMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AutoMlMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutoMlMode::from(s))
+    }
+}
+impl AutoMlMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutoMlMode::Auto => "AUTO",
+            AutoMlMode::Ensembling => "ENSEMBLING",
+            AutoMlMode::HyperparameterTuning => "HYPERPARAMETER_TUNING",
+            AutoMlMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "ENSEMBLING", "HYPERPARAMETER_TUNING"]
+    }
+}
+impl AsRef<str> for AutoMlMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Stores the config information for how a candidate is generated (optional).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlCandidateGenerationConfig {
-    /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job (optional). This file should be in json format as shown below: </p>
+    /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
     /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
+    /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p> <note>
+    /// <p>These column keys may not include the target column.</p>
+    /// </note>
+    /// <p>In ensembling mode, Autopilot will only support the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code> and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code> and <code>sequence</code>.</p>
+    /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
+    /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
     /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> is case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
     #[doc(hidden)]
     pub feature_specification_s3_uri: std::option::Option<std::string::String>,
 }
 impl AutoMlCandidateGenerationConfig {
-    /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job (optional). This file should be in json format as shown below: </p>
+    /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
     /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
+    /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p> <note>
+    /// <p>These column keys may not include the target column.</p>
+    /// </note>
+    /// <p>In ensembling mode, Autopilot will only support the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code> and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code> and <code>sequence</code>.</p>
+    /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
+    /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
     /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> is case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
     pub fn feature_specification_s3_uri(&self) -> std::option::Option<&str> {
         self.feature_specification_s3_uri.as_deref()
@@ -71632,8 +74789,15 @@ pub mod auto_ml_candidate_generation_config {
         pub(crate) feature_specification_s3_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job (optional). This file should be in json format as shown below: </p>
+        /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
         /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+        /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
+        /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p> <note>
+        /// <p>These column keys may not include the target column.</p>
+        /// </note>
+        /// <p>In ensembling mode, Autopilot will only support the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code> and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code> and <code>sequence</code>.</p>
+        /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
+        /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
         /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> is case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
         pub fn feature_specification_s3_uri(
             mut self,
@@ -71642,8 +74806,15 @@ pub mod auto_ml_candidate_generation_config {
             self.feature_specification_s3_uri = Some(input.into());
             self
         }
-        /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job (optional). This file should be in json format as shown below: </p>
+        /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
         /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+        /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
+        /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p> <note>
+        /// <p>These column keys may not include the target column.</p>
+        /// </note>
+        /// <p>In ensembling mode, Autopilot will only support the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code> and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code> and <code>sequence</code>.</p>
+        /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
+        /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
         /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> is case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
         pub fn set_feature_specification_s3_uri(
             mut self,

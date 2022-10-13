@@ -5141,7 +5141,9 @@ impl UserIdentityInfoLite {
     }
 }
 
-/// <p>The search criteria to be used to return users.</p>
+/// <p>The search criteria to be used to return users.</p> <note>
+/// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSearchCriteria {
@@ -6240,6 +6242,995 @@ impl SecurityProfileSearchCriteria {
     /// Creates a new builder-style object to manufacture [`SecurityProfileSearchCriteria`](crate::model::SecurityProfileSearchCriteria).
     pub fn builder() -> crate::model::security_profile_search_criteria::Builder {
         crate::model::security_profile_search_criteria::Builder::default()
+    }
+}
+
+/// <p>Contains information about a routing profile.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RoutingProfile {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The name of the routing profile.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    #[doc(hidden)]
+    pub routing_profile_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
+    pub routing_profile_id: std::option::Option<std::string::String>,
+    /// <p>The description of the routing profile.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+    #[doc(hidden)]
+    pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
+    /// <p>The identifier of the default outbound queue for this routing profile.</p>
+    #[doc(hidden)]
+    pub default_outbound_queue_id: std::option::Option<std::string::String>,
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The number of associated queues in routing profile.</p>
+    #[doc(hidden)]
+    pub number_of_associated_queues: std::option::Option<i64>,
+    /// <p>The number of associated users in routing profile.</p>
+    #[doc(hidden)]
+    pub number_of_associated_users: std::option::Option<i64>,
+}
+impl RoutingProfile {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the routing profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn routing_profile_arn(&self) -> std::option::Option<&str> {
+        self.routing_profile_arn.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The description of the routing profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+    pub fn media_concurrencies(&self) -> std::option::Option<&[crate::model::MediaConcurrency]> {
+        self.media_concurrencies.as_deref()
+    }
+    /// <p>The identifier of the default outbound queue for this routing profile.</p>
+    pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
+        self.default_outbound_queue_id.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The number of associated queues in routing profile.</p>
+    pub fn number_of_associated_queues(&self) -> std::option::Option<i64> {
+        self.number_of_associated_queues
+    }
+    /// <p>The number of associated users in routing profile.</p>
+    pub fn number_of_associated_users(&self) -> std::option::Option<i64> {
+        self.number_of_associated_users
+    }
+}
+impl std::fmt::Debug for RoutingProfile {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutingProfile");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("name", &self.name);
+        formatter.field("routing_profile_arn", &self.routing_profile_arn);
+        formatter.field("routing_profile_id", &self.routing_profile_id);
+        formatter.field("description", &self.description);
+        formatter.field("media_concurrencies", &self.media_concurrencies);
+        formatter.field("default_outbound_queue_id", &self.default_outbound_queue_id);
+        formatter.field("tags", &self.tags);
+        formatter.field(
+            "number_of_associated_queues",
+            &self.number_of_associated_queues,
+        );
+        formatter.field(
+            "number_of_associated_users",
+            &self.number_of_associated_users,
+        );
+        formatter.finish()
+    }
+}
+/// See [`RoutingProfile`](crate::model::RoutingProfile).
+pub mod routing_profile {
+
+    /// A builder for [`RoutingProfile`](crate::model::RoutingProfile).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) routing_profile_arn: std::option::Option<std::string::String>,
+        pub(crate) routing_profile_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) media_concurrencies:
+            std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
+        pub(crate) default_outbound_queue_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) number_of_associated_queues: std::option::Option<i64>,
+        pub(crate) number_of_associated_users: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The name of the routing profile.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the routing profile.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+        pub fn routing_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.routing_profile_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+        pub fn set_routing_profile_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.routing_profile_arn = input;
+            self
+        }
+        /// <p>The identifier of the routing profile.</p>
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.routing_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the routing profile.</p>
+        pub fn set_routing_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.routing_profile_id = input;
+            self
+        }
+        /// <p>The description of the routing profile.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the routing profile.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `media_concurrencies`.
+        ///
+        /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
+        ///
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+        pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
+            let mut v = self.media_concurrencies.unwrap_or_default();
+            v.push(input);
+            self.media_concurrencies = Some(v);
+            self
+        }
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+        pub fn set_media_concurrencies(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
+        ) -> Self {
+            self.media_concurrencies = input;
+            self
+        }
+        /// <p>The identifier of the default outbound queue for this routing profile.</p>
+        pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_outbound_queue_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the default outbound queue for this routing profile.</p>
+        pub fn set_default_outbound_queue_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_outbound_queue_id = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The number of associated queues in routing profile.</p>
+        pub fn number_of_associated_queues(mut self, input: i64) -> Self {
+            self.number_of_associated_queues = Some(input);
+            self
+        }
+        /// <p>The number of associated queues in routing profile.</p>
+        pub fn set_number_of_associated_queues(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_associated_queues = input;
+            self
+        }
+        /// <p>The number of associated users in routing profile.</p>
+        pub fn number_of_associated_users(mut self, input: i64) -> Self {
+            self.number_of_associated_users = Some(input);
+            self
+        }
+        /// <p>The number of associated users in routing profile.</p>
+        pub fn set_number_of_associated_users(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_associated_users = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RoutingProfile`](crate::model::RoutingProfile).
+        pub fn build(self) -> crate::model::RoutingProfile {
+            crate::model::RoutingProfile {
+                instance_id: self.instance_id,
+                name: self.name,
+                routing_profile_arn: self.routing_profile_arn,
+                routing_profile_id: self.routing_profile_id,
+                description: self.description,
+                media_concurrencies: self.media_concurrencies,
+                default_outbound_queue_id: self.default_outbound_queue_id,
+                tags: self.tags,
+                number_of_associated_queues: self.number_of_associated_queues,
+                number_of_associated_users: self.number_of_associated_users,
+            }
+        }
+    }
+}
+impl RoutingProfile {
+    /// Creates a new builder-style object to manufacture [`RoutingProfile`](crate::model::RoutingProfile).
+    pub fn builder() -> crate::model::routing_profile::Builder {
+        crate::model::routing_profile::Builder::default()
+    }
+}
+
+/// <p>The search criteria to be used to return routing profiles.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RoutingProfileSearchCriteria {
+    /// <p>A list of conditions which would be applied together with an OR condition.</p>
+    #[doc(hidden)]
+    pub or_conditions:
+        std::option::Option<std::vec::Vec<crate::model::RoutingProfileSearchCriteria>>,
+    /// <p>A list of conditions which would be applied together with an AND condition.</p>
+    #[doc(hidden)]
+    pub and_conditions:
+        std::option::Option<std::vec::Vec<crate::model::RoutingProfileSearchCriteria>>,
+    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    #[doc(hidden)]
+    pub string_condition: std::option::Option<crate::model::StringCondition>,
+}
+impl RoutingProfileSearchCriteria {
+    /// <p>A list of conditions which would be applied together with an OR condition.</p>
+    pub fn or_conditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::RoutingProfileSearchCriteria]> {
+        self.or_conditions.as_deref()
+    }
+    /// <p>A list of conditions which would be applied together with an AND condition.</p>
+    pub fn and_conditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::RoutingProfileSearchCriteria]> {
+        self.and_conditions.as_deref()
+    }
+    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
+        self.string_condition.as_ref()
+    }
+}
+impl std::fmt::Debug for RoutingProfileSearchCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutingProfileSearchCriteria");
+        formatter.field("or_conditions", &self.or_conditions);
+        formatter.field("and_conditions", &self.and_conditions);
+        formatter.field("string_condition", &self.string_condition);
+        formatter.finish()
+    }
+}
+/// See [`RoutingProfileSearchCriteria`](crate::model::RoutingProfileSearchCriteria).
+pub mod routing_profile_search_criteria {
+
+    /// A builder for [`RoutingProfileSearchCriteria`](crate::model::RoutingProfileSearchCriteria).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) or_conditions:
+            std::option::Option<std::vec::Vec<crate::model::RoutingProfileSearchCriteria>>,
+        pub(crate) and_conditions:
+            std::option::Option<std::vec::Vec<crate::model::RoutingProfileSearchCriteria>>,
+        pub(crate) string_condition: std::option::Option<crate::model::StringCondition>,
+    }
+    impl Builder {
+        /// Appends an item to `or_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_or_conditions`](Self::set_or_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an OR condition.</p>
+        pub fn or_conditions(mut self, input: crate::model::RoutingProfileSearchCriteria) -> Self {
+            let mut v = self.or_conditions.unwrap_or_default();
+            v.push(input);
+            self.or_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an OR condition.</p>
+        pub fn set_or_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RoutingProfileSearchCriteria>>,
+        ) -> Self {
+            self.or_conditions = input;
+            self
+        }
+        /// Appends an item to `and_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an AND condition.</p>
+        pub fn and_conditions(mut self, input: crate::model::RoutingProfileSearchCriteria) -> Self {
+            let mut v = self.and_conditions.unwrap_or_default();
+            v.push(input);
+            self.and_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an AND condition.</p>
+        pub fn set_and_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RoutingProfileSearchCriteria>>,
+        ) -> Self {
+            self.and_conditions = input;
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        pub fn string_condition(mut self, input: crate::model::StringCondition) -> Self {
+            self.string_condition = Some(input);
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        pub fn set_string_condition(
+            mut self,
+            input: std::option::Option<crate::model::StringCondition>,
+        ) -> Self {
+            self.string_condition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RoutingProfileSearchCriteria`](crate::model::RoutingProfileSearchCriteria).
+        pub fn build(self) -> crate::model::RoutingProfileSearchCriteria {
+            crate::model::RoutingProfileSearchCriteria {
+                or_conditions: self.or_conditions,
+                and_conditions: self.and_conditions,
+                string_condition: self.string_condition,
+            }
+        }
+    }
+}
+impl RoutingProfileSearchCriteria {
+    /// Creates a new builder-style object to manufacture [`RoutingProfileSearchCriteria`](crate::model::RoutingProfileSearchCriteria).
+    pub fn builder() -> crate::model::routing_profile_search_criteria::Builder {
+        crate::model::routing_profile_search_criteria::Builder::default()
+    }
+}
+
+/// <p>Filters to be applied to search results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RoutingProfileSearchFilter {
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+    /// <ul>
+    /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+    /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
+}
+impl RoutingProfileSearchFilter {
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+    /// <ul>
+    /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+    /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+    /// </ul>
+    pub fn tag_filter(&self) -> std::option::Option<&crate::model::ControlPlaneTagFilter> {
+        self.tag_filter.as_ref()
+    }
+}
+impl std::fmt::Debug for RoutingProfileSearchFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutingProfileSearchFilter");
+        formatter.field("tag_filter", &self.tag_filter);
+        formatter.finish()
+    }
+}
+/// See [`RoutingProfileSearchFilter`](crate::model::RoutingProfileSearchFilter).
+pub mod routing_profile_search_filter {
+
+    /// A builder for [`RoutingProfileSearchFilter`](crate::model::RoutingProfileSearchFilter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
+    }
+    impl Builder {
+        /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+        /// <ul>
+        /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+        /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+        /// </ul>
+        pub fn tag_filter(mut self, input: crate::model::ControlPlaneTagFilter) -> Self {
+            self.tag_filter = Some(input);
+            self
+        }
+        /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+        /// <ul>
+        /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+        /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+        /// </ul>
+        pub fn set_tag_filter(
+            mut self,
+            input: std::option::Option<crate::model::ControlPlaneTagFilter>,
+        ) -> Self {
+            self.tag_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RoutingProfileSearchFilter`](crate::model::RoutingProfileSearchFilter).
+        pub fn build(self) -> crate::model::RoutingProfileSearchFilter {
+            crate::model::RoutingProfileSearchFilter {
+                tag_filter: self.tag_filter,
+            }
+        }
+    }
+}
+impl RoutingProfileSearchFilter {
+    /// Creates a new builder-style object to manufacture [`RoutingProfileSearchFilter`](crate::model::RoutingProfileSearchFilter).
+    pub fn builder() -> crate::model::routing_profile_search_filter::Builder {
+        crate::model::routing_profile_search_filter::Builder::default()
+    }
+}
+
+/// <p>Contains information about a queue.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Queue {
+    /// <p>The name of the queue.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the queue.</p>
+    #[doc(hidden)]
+    pub queue_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
+    pub queue_id: std::option::Option<std::string::String>,
+    /// <p>The description of the queue.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    #[doc(hidden)]
+    pub outbound_caller_config: std::option::Option<crate::model::OutboundCallerConfig>,
+    /// <p>The identifier for the hours of operation.</p>
+    #[doc(hidden)]
+    pub hours_of_operation_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    #[doc(hidden)]
+    pub max_contacts: std::option::Option<i32>,
+    /// <p>The status of the queue.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::QueueStatus>,
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Queue {
+    /// <p>The name of the queue.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the queue.</p>
+    pub fn queue_arn(&self) -> std::option::Option<&str> {
+        self.queue_arn.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The description of the queue.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    pub fn outbound_caller_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OutboundCallerConfig> {
+        self.outbound_caller_config.as_ref()
+    }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    pub fn max_contacts(&self) -> std::option::Option<i32> {
+        self.max_contacts
+    }
+    /// <p>The status of the queue.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for Queue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Queue");
+        formatter.field("name", &self.name);
+        formatter.field("queue_arn", &self.queue_arn);
+        formatter.field("queue_id", &self.queue_id);
+        formatter.field("description", &self.description);
+        formatter.field("outbound_caller_config", &self.outbound_caller_config);
+        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
+        formatter.field("max_contacts", &self.max_contacts);
+        formatter.field("status", &self.status);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`Queue`](crate::model::Queue).
+pub mod queue {
+
+    /// A builder for [`Queue`](crate::model::Queue).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) queue_arn: std::option::Option<std::string::String>,
+        pub(crate) queue_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) outbound_caller_config: std::option::Option<crate::model::OutboundCallerConfig>,
+        pub(crate) hours_of_operation_id: std::option::Option<std::string::String>,
+        pub(crate) max_contacts: std::option::Option<i32>,
+        pub(crate) status: std::option::Option<crate::model::QueueStatus>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the queue.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the queue.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the queue.</p>
+        pub fn queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the queue.</p>
+        pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_arn = input;
+            self
+        }
+        /// <p>The identifier for the queue.</p>
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the queue.</p>
+        pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_id = input;
+            self
+        }
+        /// <p>The description of the queue.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the queue.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+        pub fn outbound_caller_config(mut self, input: crate::model::OutboundCallerConfig) -> Self {
+            self.outbound_caller_config = Some(input);
+            self
+        }
+        /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+        pub fn set_outbound_caller_config(
+            mut self,
+            input: std::option::Option<crate::model::OutboundCallerConfig>,
+        ) -> Self {
+            self.outbound_caller_config = input;
+            self
+        }
+        /// <p>The identifier for the hours of operation.</p>
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hours_of_operation_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the hours of operation.</p>
+        pub fn set_hours_of_operation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hours_of_operation_id = input;
+            self
+        }
+        /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+        pub fn max_contacts(mut self, input: i32) -> Self {
+            self.max_contacts = Some(input);
+            self
+        }
+        /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+        pub fn set_max_contacts(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_contacts = input;
+            self
+        }
+        /// <p>The status of the queue.</p>
+        pub fn status(mut self, input: crate::model::QueueStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the queue.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::QueueStatus>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Queue`](crate::model::Queue).
+        pub fn build(self) -> crate::model::Queue {
+            crate::model::Queue {
+                name: self.name,
+                queue_arn: self.queue_arn,
+                queue_id: self.queue_id,
+                description: self.description,
+                outbound_caller_config: self.outbound_caller_config,
+                hours_of_operation_id: self.hours_of_operation_id,
+                max_contacts: self.max_contacts,
+                status: self.status,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl Queue {
+    /// Creates a new builder-style object to manufacture [`Queue`](crate::model::Queue).
+    pub fn builder() -> crate::model::queue::Builder {
+        crate::model::queue::Builder::default()
+    }
+}
+
+/// <p>The search criteria to be used to return queues.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueueSearchCriteria {
+    /// <p>A list of conditions which would be applied together with an OR condition.</p>
+    #[doc(hidden)]
+    pub or_conditions: std::option::Option<std::vec::Vec<crate::model::QueueSearchCriteria>>,
+    /// <p>A list of conditions which would be applied together with an AND condition.</p>
+    #[doc(hidden)]
+    pub and_conditions: std::option::Option<std::vec::Vec<crate::model::QueueSearchCriteria>>,
+    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    #[doc(hidden)]
+    pub string_condition: std::option::Option<crate::model::StringCondition>,
+    /// <p>The type of queue.</p>
+    #[doc(hidden)]
+    pub queue_type_condition: std::option::Option<crate::model::SearchableQueueType>,
+}
+impl QueueSearchCriteria {
+    /// <p>A list of conditions which would be applied together with an OR condition.</p>
+    pub fn or_conditions(&self) -> std::option::Option<&[crate::model::QueueSearchCriteria]> {
+        self.or_conditions.as_deref()
+    }
+    /// <p>A list of conditions which would be applied together with an AND condition.</p>
+    pub fn and_conditions(&self) -> std::option::Option<&[crate::model::QueueSearchCriteria]> {
+        self.and_conditions.as_deref()
+    }
+    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
+        self.string_condition.as_ref()
+    }
+    /// <p>The type of queue.</p>
+    pub fn queue_type_condition(&self) -> std::option::Option<&crate::model::SearchableQueueType> {
+        self.queue_type_condition.as_ref()
+    }
+}
+impl std::fmt::Debug for QueueSearchCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueueSearchCriteria");
+        formatter.field("or_conditions", &self.or_conditions);
+        formatter.field("and_conditions", &self.and_conditions);
+        formatter.field("string_condition", &self.string_condition);
+        formatter.field("queue_type_condition", &self.queue_type_condition);
+        formatter.finish()
+    }
+}
+/// See [`QueueSearchCriteria`](crate::model::QueueSearchCriteria).
+pub mod queue_search_criteria {
+
+    /// A builder for [`QueueSearchCriteria`](crate::model::QueueSearchCriteria).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) or_conditions:
+            std::option::Option<std::vec::Vec<crate::model::QueueSearchCriteria>>,
+        pub(crate) and_conditions:
+            std::option::Option<std::vec::Vec<crate::model::QueueSearchCriteria>>,
+        pub(crate) string_condition: std::option::Option<crate::model::StringCondition>,
+        pub(crate) queue_type_condition: std::option::Option<crate::model::SearchableQueueType>,
+    }
+    impl Builder {
+        /// Appends an item to `or_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_or_conditions`](Self::set_or_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an OR condition.</p>
+        pub fn or_conditions(mut self, input: crate::model::QueueSearchCriteria) -> Self {
+            let mut v = self.or_conditions.unwrap_or_default();
+            v.push(input);
+            self.or_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an OR condition.</p>
+        pub fn set_or_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::QueueSearchCriteria>>,
+        ) -> Self {
+            self.or_conditions = input;
+            self
+        }
+        /// Appends an item to `and_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an AND condition.</p>
+        pub fn and_conditions(mut self, input: crate::model::QueueSearchCriteria) -> Self {
+            let mut v = self.and_conditions.unwrap_or_default();
+            v.push(input);
+            self.and_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an AND condition.</p>
+        pub fn set_and_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::QueueSearchCriteria>>,
+        ) -> Self {
+            self.and_conditions = input;
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        pub fn string_condition(mut self, input: crate::model::StringCondition) -> Self {
+            self.string_condition = Some(input);
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        pub fn set_string_condition(
+            mut self,
+            input: std::option::Option<crate::model::StringCondition>,
+        ) -> Self {
+            self.string_condition = input;
+            self
+        }
+        /// <p>The type of queue.</p>
+        pub fn queue_type_condition(mut self, input: crate::model::SearchableQueueType) -> Self {
+            self.queue_type_condition = Some(input);
+            self
+        }
+        /// <p>The type of queue.</p>
+        pub fn set_queue_type_condition(
+            mut self,
+            input: std::option::Option<crate::model::SearchableQueueType>,
+        ) -> Self {
+            self.queue_type_condition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueueSearchCriteria`](crate::model::QueueSearchCriteria).
+        pub fn build(self) -> crate::model::QueueSearchCriteria {
+            crate::model::QueueSearchCriteria {
+                or_conditions: self.or_conditions,
+                and_conditions: self.and_conditions,
+                string_condition: self.string_condition,
+                queue_type_condition: self.queue_type_condition,
+            }
+        }
+    }
+}
+impl QueueSearchCriteria {
+    /// Creates a new builder-style object to manufacture [`QueueSearchCriteria`](crate::model::QueueSearchCriteria).
+    pub fn builder() -> crate::model::queue_search_criteria::Builder {
+        crate::model::queue_search_criteria::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SearchableQueueType {
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SearchableQueueType {
+    fn from(s: &str) -> Self {
+        match s {
+            "STANDARD" => SearchableQueueType::Standard,
+            other => SearchableQueueType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SearchableQueueType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SearchableQueueType::from(s))
+    }
+}
+impl SearchableQueueType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SearchableQueueType::Standard => "STANDARD",
+            SearchableQueueType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["STANDARD"]
+    }
+}
+impl AsRef<str> for SearchableQueueType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Filters to be applied to search results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueueSearchFilter {
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+    /// <ul>
+    /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+    /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
+}
+impl QueueSearchFilter {
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+    /// <ul>
+    /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+    /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+    /// </ul>
+    pub fn tag_filter(&self) -> std::option::Option<&crate::model::ControlPlaneTagFilter> {
+        self.tag_filter.as_ref()
+    }
+}
+impl std::fmt::Debug for QueueSearchFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueueSearchFilter");
+        formatter.field("tag_filter", &self.tag_filter);
+        formatter.finish()
+    }
+}
+/// See [`QueueSearchFilter`](crate::model::QueueSearchFilter).
+pub mod queue_search_filter {
+
+    /// A builder for [`QueueSearchFilter`](crate::model::QueueSearchFilter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
+    }
+    impl Builder {
+        /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+        /// <ul>
+        /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+        /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+        /// </ul>
+        pub fn tag_filter(mut self, input: crate::model::ControlPlaneTagFilter) -> Self {
+            self.tag_filter = Some(input);
+            self
+        }
+        /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+        /// <ul>
+        /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+        /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+        /// </ul>
+        pub fn set_tag_filter(
+            mut self,
+            input: std::option::Option<crate::model::ControlPlaneTagFilter>,
+        ) -> Self {
+            self.tag_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueueSearchFilter`](crate::model::QueueSearchFilter).
+        pub fn build(self) -> crate::model::QueueSearchFilter {
+            crate::model::QueueSearchFilter {
+                tag_filter: self.tag_filter,
+            }
+        }
+    }
+}
+impl QueueSearchFilter {
+    /// Creates a new builder-style object to manufacture [`QueueSearchFilter`](crate::model::QueueSearchFilter).
+    pub fn builder() -> crate::model::queue_search_filter::Builder {
+        crate::model::queue_search_filter::Builder::default()
     }
 }
 
@@ -9465,6 +10456,8 @@ impl AsRef<str> for SourceType {
 )]
 pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
+    CasesDomain,
+    #[allow(missing_docs)] // documentation missing in model
     Event,
     #[allow(missing_docs)] // documentation missing in model
     PinpointApp,
@@ -9480,6 +10473,7 @@ pub enum IntegrationType {
 impl std::convert::From<&str> for IntegrationType {
     fn from(s: &str) -> Self {
         match s {
+            "CASES_DOMAIN" => IntegrationType::CasesDomain,
             "EVENT" => IntegrationType::Event,
             "PINPOINT_APP" => IntegrationType::PinpointApp,
             "VOICE_ID" => IntegrationType::VoiceId,
@@ -9500,6 +10494,7 @@ impl IntegrationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IntegrationType::CasesDomain => "CASES_DOMAIN",
             IntegrationType::Event => "EVENT",
             IntegrationType::PinpointApp => "PINPOINT_APP",
             IntegrationType::VoiceId => "VOICE_ID",
@@ -9511,6 +10506,7 @@ impl IntegrationType {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "CASES_DOMAIN",
             "EVENT",
             "PINPOINT_APP",
             "VOICE_ID",
@@ -15533,241 +16529,6 @@ impl SecurityProfile {
     }
 }
 
-/// <p>Contains information about a routing profile.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RoutingProfile {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The name of the routing profile.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    #[doc(hidden)]
-    pub routing_profile_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the routing profile.</p>
-    #[doc(hidden)]
-    pub routing_profile_id: std::option::Option<std::string::String>,
-    /// <p>The description of the routing profile.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    #[doc(hidden)]
-    pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
-    /// <p>The identifier of the default outbound queue for this routing profile.</p>
-    #[doc(hidden)]
-    pub default_outbound_queue_id: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl RoutingProfile {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
-        self.instance_id.as_deref()
-    }
-    /// <p>The name of the routing profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn routing_profile_arn(&self) -> std::option::Option<&str> {
-        self.routing_profile_arn.as_deref()
-    }
-    /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
-        self.routing_profile_id.as_deref()
-    }
-    /// <p>The description of the routing profile.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
-        self.description.as_deref()
-    }
-    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn media_concurrencies(&self) -> std::option::Option<&[crate::model::MediaConcurrency]> {
-        self.media_concurrencies.as_deref()
-    }
-    /// <p>The identifier of the default outbound queue for this routing profile.</p>
-    pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
-        self.default_outbound_queue_id.as_deref()
-    }
-    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfile");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("routing_profile_arn", &self.routing_profile_arn);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("description", &self.description);
-        formatter.field("media_concurrencies", &self.media_concurrencies);
-        formatter.field("default_outbound_queue_id", &self.default_outbound_queue_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
-/// See [`RoutingProfile`](crate::model::RoutingProfile).
-pub mod routing_profile {
-
-    /// A builder for [`RoutingProfile`](crate::model::RoutingProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) instance_id: std::option::Option<std::string::String>,
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) routing_profile_arn: std::option::Option<std::string::String>,
-        pub(crate) routing_profile_id: std::option::Option<std::string::String>,
-        pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) media_concurrencies:
-            std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
-        pub(crate) default_outbound_queue_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(input.into());
-            self
-        }
-        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
-        }
-        /// <p>The name of the routing profile.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the routing profile.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-        pub fn routing_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.routing_profile_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-        pub fn set_routing_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.routing_profile_arn = input;
-            self
-        }
-        /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.routing_profile_id = Some(input.into());
-            self
-        }
-        /// <p>The identifier of the routing profile.</p>
-        pub fn set_routing_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.routing_profile_id = input;
-            self
-        }
-        /// <p>The description of the routing profile.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.description = Some(input.into());
-            self
-        }
-        /// <p>The description of the routing profile.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
-        }
-        /// Appends an item to `media_concurrencies`.
-        ///
-        /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
-        ///
-        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-        pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
-            let mut v = self.media_concurrencies.unwrap_or_default();
-            v.push(input);
-            self.media_concurrencies = Some(v);
-            self
-        }
-        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-        pub fn set_media_concurrencies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
-        ) -> Self {
-            self.media_concurrencies = input;
-            self
-        }
-        /// <p>The identifier of the default outbound queue for this routing profile.</p>
-        pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.default_outbound_queue_id = Some(input.into());
-            self
-        }
-        /// <p>The identifier of the default outbound queue for this routing profile.</p>
-        pub fn set_default_outbound_queue_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_outbound_queue_id = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`RoutingProfile`](crate::model::RoutingProfile).
-        pub fn build(self) -> crate::model::RoutingProfile {
-            crate::model::RoutingProfile {
-                instance_id: self.instance_id,
-                name: self.name,
-                routing_profile_arn: self.routing_profile_arn,
-                routing_profile_id: self.routing_profile_id,
-                description: self.description,
-                media_concurrencies: self.media_concurrencies,
-                default_outbound_queue_id: self.default_outbound_queue_id,
-                tags: self.tags,
-            }
-        }
-    }
-}
-impl RoutingProfile {
-    /// Creates a new builder-style object to manufacture [`RoutingProfile`](crate::model::RoutingProfile).
-    pub fn builder() -> crate::model::routing_profile::Builder {
-        crate::model::routing_profile::Builder::default()
-    }
-}
-
 /// <p>Contains information about a quick connect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -15950,250 +16711,6 @@ impl QuickConnect {
     /// Creates a new builder-style object to manufacture [`QuickConnect`](crate::model::QuickConnect).
     pub fn builder() -> crate::model::quick_connect::Builder {
         crate::model::quick_connect::Builder::default()
-    }
-}
-
-/// <p>Contains information about a queue.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Queue {
-    /// <p>The name of the queue.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the queue.</p>
-    #[doc(hidden)]
-    pub queue_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier for the queue.</p>
-    #[doc(hidden)]
-    pub queue_id: std::option::Option<std::string::String>,
-    /// <p>The description of the queue.</p>
-    #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-    #[doc(hidden)]
-    pub outbound_caller_config: std::option::Option<crate::model::OutboundCallerConfig>,
-    /// <p>The identifier for the hours of operation.</p>
-    #[doc(hidden)]
-    pub hours_of_operation_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-    #[doc(hidden)]
-    pub max_contacts: std::option::Option<i32>,
-    /// <p>The status of the queue.</p>
-    #[doc(hidden)]
-    pub status: std::option::Option<crate::model::QueueStatus>,
-    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl Queue {
-    /// <p>The name of the queue.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) for the queue.</p>
-    pub fn queue_arn(&self) -> std::option::Option<&str> {
-        self.queue_arn.as_deref()
-    }
-    /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> std::option::Option<&str> {
-        self.queue_id.as_deref()
-    }
-    /// <p>The description of the queue.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
-        self.description.as_deref()
-    }
-    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-    pub fn outbound_caller_config(
-        &self,
-    ) -> std::option::Option<&crate::model::OutboundCallerConfig> {
-        self.outbound_caller_config.as_ref()
-    }
-    /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
-        self.hours_of_operation_id.as_deref()
-    }
-    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-    pub fn max_contacts(&self) -> std::option::Option<i32> {
-        self.max_contacts
-    }
-    /// <p>The status of the queue.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
-        self.status.as_ref()
-    }
-    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Queue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Queue");
-        formatter.field("name", &self.name);
-        formatter.field("queue_arn", &self.queue_arn);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("description", &self.description);
-        formatter.field("outbound_caller_config", &self.outbound_caller_config);
-        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
-        formatter.field("max_contacts", &self.max_contacts);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
-/// See [`Queue`](crate::model::Queue).
-pub mod queue {
-
-    /// A builder for [`Queue`](crate::model::Queue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) queue_arn: std::option::Option<std::string::String>,
-        pub(crate) queue_id: std::option::Option<std::string::String>,
-        pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) outbound_caller_config: std::option::Option<crate::model::OutboundCallerConfig>,
-        pub(crate) hours_of_operation_id: std::option::Option<std::string::String>,
-        pub(crate) max_contacts: std::option::Option<i32>,
-        pub(crate) status: std::option::Option<crate::model::QueueStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// <p>The name of the queue.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the queue.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the queue.</p>
-        pub fn queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.queue_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the queue.</p>
-        pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_arn = input;
-            self
-        }
-        /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.queue_id = Some(input.into());
-            self
-        }
-        /// <p>The identifier for the queue.</p>
-        pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_id = input;
-            self
-        }
-        /// <p>The description of the queue.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.description = Some(input.into());
-            self
-        }
-        /// <p>The description of the queue.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
-        }
-        /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-        pub fn outbound_caller_config(mut self, input: crate::model::OutboundCallerConfig) -> Self {
-            self.outbound_caller_config = Some(input);
-            self
-        }
-        /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-        pub fn set_outbound_caller_config(
-            mut self,
-            input: std::option::Option<crate::model::OutboundCallerConfig>,
-        ) -> Self {
-            self.outbound_caller_config = input;
-            self
-        }
-        /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.hours_of_operation_id = Some(input.into());
-            self
-        }
-        /// <p>The identifier for the hours of operation.</p>
-        pub fn set_hours_of_operation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hours_of_operation_id = input;
-            self
-        }
-        /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-        pub fn max_contacts(mut self, input: i32) -> Self {
-            self.max_contacts = Some(input);
-            self
-        }
-        /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-        pub fn set_max_contacts(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_contacts = input;
-            self
-        }
-        /// <p>The status of the queue.</p>
-        pub fn status(mut self, input: crate::model::QueueStatus) -> Self {
-            self.status = Some(input);
-            self
-        }
-        /// <p>The status of the queue.</p>
-        pub fn set_status(mut self, input: std::option::Option<crate::model::QueueStatus>) -> Self {
-            self.status = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Queue`](crate::model::Queue).
-        pub fn build(self) -> crate::model::Queue {
-            crate::model::Queue {
-                name: self.name,
-                queue_arn: self.queue_arn,
-                queue_id: self.queue_id,
-                description: self.description,
-                outbound_caller_config: self.outbound_caller_config,
-                hours_of_operation_id: self.hours_of_operation_id,
-                max_contacts: self.max_contacts,
-                status: self.status,
-                tags: self.tags,
-            }
-        }
-    }
-}
-impl Queue {
-    /// Creates a new builder-style object to manufacture [`Queue`](crate::model::Queue).
-    pub fn builder() -> crate::model::queue::Builder {
-        crate::model::queue::Builder::default()
     }
 }
 

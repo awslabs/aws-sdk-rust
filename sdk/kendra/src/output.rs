@@ -1872,12 +1872,12 @@ impl GetQuerySuggestionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePersonasFromEntitiesOutput {
-    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
 }
 impl DisassociatePersonasFromEntitiesOutput {
-    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
     pub fn failed_entity_list(&self) -> std::option::Option<&[crate::model::FailedEntity]> {
         self.failed_entity_list.as_deref()
     }
@@ -1903,14 +1903,14 @@ pub mod disassociate_personas_from_entities_output {
         ///
         /// To override the contents of this collection use [`set_failed_entity_list`](Self::set_failed_entity_list).
         ///
-        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+        /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
         pub fn failed_entity_list(mut self, input: crate::model::FailedEntity) -> Self {
             let mut v = self.failed_entity_list.unwrap_or_default();
             v.push(input);
             self.failed_entity_list = Some(v);
             self
         }
-        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+        /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
         pub fn set_failed_entity_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
@@ -1937,12 +1937,12 @@ impl DisassociatePersonasFromEntitiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateEntitiesFromExperienceOutput {
-    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
 }
 impl DisassociateEntitiesFromExperienceOutput {
-    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
     pub fn failed_entity_list(&self) -> std::option::Option<&[crate::model::FailedEntity]> {
         self.failed_entity_list.as_deref()
     }
@@ -1968,14 +1968,14 @@ pub mod disassociate_entities_from_experience_output {
         ///
         /// To override the contents of this collection use [`set_failed_entity_list`](Self::set_failed_entity_list).
         ///
-        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+        /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
         pub fn failed_entity_list(mut self, input: crate::model::FailedEntity) -> Self {
             let mut v = self.failed_entity_list.unwrap_or_default();
             v.push(input);
             self.failed_entity_list = Some(v);
             self
         }
-        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+        /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
         pub fn set_failed_entity_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
@@ -3093,7 +3093,7 @@ pub struct DescribeIndexOutput {
     /// <p>The user context policy for the Amazon Kendra index.</p>
     #[doc(hidden)]
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
     #[doc(hidden)]
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -3165,7 +3165,7 @@ impl DescribeIndexOutput {
     pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
     pub fn user_group_resolution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
@@ -3432,7 +3432,7 @@ pub mod describe_index_output {
             self.user_context_policy = input;
             self
         }
-        /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+        /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -3440,7 +3440,7 @@ pub mod describe_index_output {
             self.user_group_resolution_configuration = Some(input);
             self
         }
-        /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+        /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -3799,7 +3799,7 @@ pub struct DescribeExperienceOutput {
     /// <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperienceStatus>,
-    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
+    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
@@ -3843,7 +3843,7 @@ impl DescribeExperienceOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::ExperienceStatus> {
         self.status.as_ref()
     }
-    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
+    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -3999,12 +3999,12 @@ pub mod describe_experience_output {
             self.status = input;
             self
         }
-        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
+        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
+        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5491,12 +5491,12 @@ impl BatchDeleteDocumentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePersonasToEntitiesOutput {
-    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
 }
 impl AssociatePersonasToEntitiesOutput {
-    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     pub fn failed_entity_list(&self) -> std::option::Option<&[crate::model::FailedEntity]> {
         self.failed_entity_list.as_deref()
     }
@@ -5522,14 +5522,14 @@ pub mod associate_personas_to_entities_output {
         ///
         /// To override the contents of this collection use [`set_failed_entity_list`](Self::set_failed_entity_list).
         ///
-        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+        /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
         pub fn failed_entity_list(mut self, input: crate::model::FailedEntity) -> Self {
             let mut v = self.failed_entity_list.unwrap_or_default();
             v.push(input);
             self.failed_entity_list = Some(v);
             self
         }
-        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+        /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
         pub fn set_failed_entity_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
@@ -5556,12 +5556,12 @@ impl AssociatePersonasToEntitiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateEntitiesToExperienceOutput {
-    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
 }
 impl AssociateEntitiesToExperienceOutput {
-    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     pub fn failed_entity_list(&self) -> std::option::Option<&[crate::model::FailedEntity]> {
         self.failed_entity_list.as_deref()
     }
@@ -5587,14 +5587,14 @@ pub mod associate_entities_to_experience_output {
         ///
         /// To override the contents of this collection use [`set_failed_entity_list`](Self::set_failed_entity_list).
         ///
-        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+        /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
         pub fn failed_entity_list(mut self, input: crate::model::FailedEntity) -> Self {
             let mut v = self.failed_entity_list.unwrap_or_default();
             v.push(input);
             self.failed_entity_list = Some(v);
             self
         }
-        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+        /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
         pub fn set_failed_entity_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,

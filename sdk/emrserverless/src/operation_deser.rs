@@ -341,6 +341,97 @@ pub fn parse_get_application_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_dashboard_for_job_run_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetDashboardForJobRunOutput,
+    crate::error::GetDashboardForJobRunError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetDashboardForJobRunError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::GetDashboardForJobRunError {
+            meta: generic,
+            kind: crate::error::GetDashboardForJobRunErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::GetDashboardForJobRunError {
+            meta: generic,
+            kind: crate::error::GetDashboardForJobRunErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::GetDashboardForJobRunError {
+            meta: generic,
+            kind: crate::error::GetDashboardForJobRunErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetDashboardForJobRunError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_dashboard_for_job_run_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetDashboardForJobRunOutput,
+    crate::error::GetDashboardForJobRunError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_dashboard_for_job_run_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_dashboard_for_job_run(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_job_run_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetJobRunOutput, crate::error::GetJobRunError> {

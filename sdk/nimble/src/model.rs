@@ -2,7 +2,7 @@
 
 /// <p>Represents a studio resource.</p>
 /// <p>A studio is the core resource used with Nimble Studio. You must create a studio first, before any other resource type can be created. All other resources you create and manage in Nimble Studio are contained within a studio.</p>
-/// <p>When creating a studio, you must provides two IAM roles for use with the Nimble Studio portal. These roles are assumed by your users when they log in to the Nimble Studio portal via Amazon Web Services SSO and your identity source.</p>
+/// <p>When creating a studio, you must provides two IAM roles for use with the Nimble Studio portal. These roles are assumed by your users when they log in to the Nimble Studio portal via IAM Identity Center and your identity source.</p>
 /// <p>The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function properly.</p>
 /// <p>The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function properly.</p>
 /// <p>Your studio roles must trust the identity.nimble.amazonaws.com service principal to function properly.</p>
@@ -24,7 +24,7 @@ pub struct Studio {
     /// <p>The Amazon Web Services Region where the studio resource is located.</p>
     #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to Nimble Studio portal.</p>
+    /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity Center users to log in to Nimble Studio portal.</p>
     #[doc(hidden)]
     pub sso_client_id: std::option::Option<std::string::String>,
     /// <p>The current state of the studio resource.</p>
@@ -81,7 +81,7 @@ impl Studio {
     pub fn home_region(&self) -> std::option::Option<&str> {
         self.home_region.as_deref()
     }
-    /// <p>The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to Nimble Studio portal.</p>
+    /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity Center users to log in to Nimble Studio portal.</p>
     pub fn sso_client_id(&self) -> std::option::Option<&str> {
         self.sso_client_id.as_deref()
     }
@@ -239,12 +239,12 @@ pub mod studio {
             self.home_region = input;
             self
         }
-        /// <p>The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to Nimble Studio portal.</p>
+        /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity Center users to log in to Nimble Studio portal.</p>
         pub fn sso_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sso_client_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to Nimble Studio portal.</p>
+        /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity Center users to log in to Nimble Studio portal.</p>
         pub fn set_sso_client_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -926,7 +926,7 @@ impl AsRef<str> for StudioPersona {
 }
 
 /// <p>A studio member is an association of a user from your studio identity source to elevated permissions that they are granted in the studio.</p>
-/// <p>When you add a user to your studio using the Nimble Studio console, they are given access to the studio's AWS SSO application and are given access to log in to the Nimble Studio portal. These users have the permissions provided by the studio's user IAM role and do not appear in the studio membership collection. Only studio admins appear in studio membership.</p>
+/// <p>When you add a user to your studio using the Nimble Studio console, they are given access to the studio's IAM Identity Center application and are given access to log in to the Nimble Studio portal. These users have the permissions provided by the studio's user IAM role and do not appear in the studio membership collection. Only studio admins appear in studio membership.</p>
 /// <p>When you add a user to studio membership with the persona ADMIN, upon logging in to the Nimble Studio portal, they are granted permissions specified by the Studio's Admin IAM role.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3974,6 +3974,10 @@ impl AsRef<str> for StreamingSessionStreamState {
 )]
 pub enum StreamingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
+    G34xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    G3sXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     G4dn12xlarge,
     #[allow(missing_docs)] // documentation missing in model
     G4dn16xlarge,
@@ -3985,18 +3989,35 @@ pub enum StreamingInstanceType {
     G4dn8xlarge,
     #[allow(missing_docs)] // documentation missing in model
     G4dnXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    G516xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    G52xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    G54xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    G58xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    G5Xlarge,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StreamingInstanceType {
     fn from(s: &str) -> Self {
         match s {
+            "g3.4xlarge" => StreamingInstanceType::G34xlarge,
+            "g3s.xlarge" => StreamingInstanceType::G3sXlarge,
             "g4dn.12xlarge" => StreamingInstanceType::G4dn12xlarge,
             "g4dn.16xlarge" => StreamingInstanceType::G4dn16xlarge,
             "g4dn.2xlarge" => StreamingInstanceType::G4dn2xlarge,
             "g4dn.4xlarge" => StreamingInstanceType::G4dn4xlarge,
             "g4dn.8xlarge" => StreamingInstanceType::G4dn8xlarge,
             "g4dn.xlarge" => StreamingInstanceType::G4dnXlarge,
+            "g5.16xlarge" => StreamingInstanceType::G516xlarge,
+            "g5.2xlarge" => StreamingInstanceType::G52xlarge,
+            "g5.4xlarge" => StreamingInstanceType::G54xlarge,
+            "g5.8xlarge" => StreamingInstanceType::G58xlarge,
+            "g5.xlarge" => StreamingInstanceType::G5Xlarge,
             other => StreamingInstanceType::Unknown(other.to_owned()),
         }
     }
@@ -4012,24 +4033,38 @@ impl StreamingInstanceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StreamingInstanceType::G34xlarge => "g3.4xlarge",
+            StreamingInstanceType::G3sXlarge => "g3s.xlarge",
             StreamingInstanceType::G4dn12xlarge => "g4dn.12xlarge",
             StreamingInstanceType::G4dn16xlarge => "g4dn.16xlarge",
             StreamingInstanceType::G4dn2xlarge => "g4dn.2xlarge",
             StreamingInstanceType::G4dn4xlarge => "g4dn.4xlarge",
             StreamingInstanceType::G4dn8xlarge => "g4dn.8xlarge",
             StreamingInstanceType::G4dnXlarge => "g4dn.xlarge",
+            StreamingInstanceType::G516xlarge => "g5.16xlarge",
+            StreamingInstanceType::G52xlarge => "g5.2xlarge",
+            StreamingInstanceType::G54xlarge => "g5.4xlarge",
+            StreamingInstanceType::G58xlarge => "g5.8xlarge",
+            StreamingInstanceType::G5Xlarge => "g5.xlarge",
             StreamingInstanceType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "g3.4xlarge",
+            "g3s.xlarge",
             "g4dn.12xlarge",
             "g4dn.16xlarge",
             "g4dn.2xlarge",
             "g4dn.4xlarge",
             "g4dn.8xlarge",
             "g4dn.xlarge",
+            "g5.16xlarge",
+            "g5.2xlarge",
+            "g5.4xlarge",
+            "g5.8xlarge",
+            "g5.xlarge",
         ]
     }
 }
@@ -7213,6 +7248,10 @@ pub enum LaunchProfileStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidInstanceTypesProvided,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidSubnetsCombination,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSubnetsProvided,
     #[allow(missing_docs)] // documentation missing in model
     LaunchProfileCreated,
@@ -7241,6 +7280,10 @@ impl std::convert::From<&str> for LaunchProfileStatusCode {
             "ENCRYPTION_KEY_ACCESS_DENIED" => LaunchProfileStatusCode::EncryptionKeyAccessDenied,
             "ENCRYPTION_KEY_NOT_FOUND" => LaunchProfileStatusCode::EncryptionKeyNotFound,
             "INTERNAL_ERROR" => LaunchProfileStatusCode::InternalError,
+            "INVALID_INSTANCE_TYPES_PROVIDED" => {
+                LaunchProfileStatusCode::InvalidInstanceTypesProvided
+            }
+            "INVALID_SUBNETS_COMBINATION" => LaunchProfileStatusCode::InvalidSubnetsCombination,
             "INVALID_SUBNETS_PROVIDED" => LaunchProfileStatusCode::InvalidSubnetsProvided,
             "LAUNCH_PROFILE_CREATED" => LaunchProfileStatusCode::LaunchProfileCreated,
             "LAUNCH_PROFILE_CREATE_IN_PROGRESS" => {
@@ -7277,6 +7320,10 @@ impl LaunchProfileStatusCode {
             LaunchProfileStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
             LaunchProfileStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
             LaunchProfileStatusCode::InternalError => "INTERNAL_ERROR",
+            LaunchProfileStatusCode::InvalidInstanceTypesProvided => {
+                "INVALID_INSTANCE_TYPES_PROVIDED"
+            }
+            LaunchProfileStatusCode::InvalidSubnetsCombination => "INVALID_SUBNETS_COMBINATION",
             LaunchProfileStatusCode::InvalidSubnetsProvided => "INVALID_SUBNETS_PROVIDED",
             LaunchProfileStatusCode::LaunchProfileCreated => "LAUNCH_PROFILE_CREATED",
             LaunchProfileStatusCode::LaunchProfileCreateInProgress => {
@@ -7304,6 +7351,8 @@ impl LaunchProfileStatusCode {
             "ENCRYPTION_KEY_ACCESS_DENIED",
             "ENCRYPTION_KEY_NOT_FOUND",
             "INTERNAL_ERROR",
+            "INVALID_INSTANCE_TYPES_PROVIDED",
+            "INVALID_SUBNETS_COMBINATION",
             "INVALID_SUBNETS_PROVIDED",
             "LAUNCH_PROFILE_CREATED",
             "LAUNCH_PROFILE_CREATE_IN_PROGRESS",

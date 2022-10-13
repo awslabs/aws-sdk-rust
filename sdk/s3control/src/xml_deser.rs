@@ -1144,6 +1144,61 @@ pub fn deser_operation_crate_operation_get_bucket_tagging(
 }
 
 #[allow(unused_mut)]
+pub fn deser_operation_crate_operation_get_bucket_versioning(
+    inp: &[u8],
+    mut builder: crate::output::get_bucket_versioning_output::Builder,
+) -> Result<crate::output::get_bucket_versioning_output::Builder, aws_smithy_xml::decode::XmlError>
+{
+    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+
+    #[allow(unused_mut)]
+    let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
+    let start_el = decoder.start_el();
+    if !start_el.matches("GetBucketVersioningResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetBucketVersioningResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
+    }
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Status") /* Status com.amazonaws.s3control.synthetic#GetBucketVersioningOutput$Status */ =>  {
+                let var_40 =
+                    Some(
+                        Result::<crate::model::BucketVersioningStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::BucketVersioningStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_40);
+            }
+            ,
+            s if s.matches("MfaDelete") /* MFADelete com.amazonaws.s3control.synthetic#GetBucketVersioningOutput$MFADelete */ =>  {
+                let var_41 =
+                    Some(
+                        Result::<crate::model::MfaDeleteStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::MfaDeleteStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_mfa_delete(var_41);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
 pub fn deser_operation_crate_operation_get_job_tagging(
     inp: &[u8],
     mut builder: crate::output::get_job_tagging_output::Builder,
@@ -1164,13 +1219,13 @@ pub fn deser_operation_crate_operation_get_job_tagging(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Tags") /* Tags com.amazonaws.s3control.synthetic#GetJobTaggingOutput$Tags */ =>  {
-                let var_40 =
+                let var_42 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_s3_tag_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_40);
+                builder = builder.set_tags(var_42);
             }
             ,
             _ => {}
@@ -1203,13 +1258,13 @@ pub fn deser_operation_crate_operation_get_multi_region_access_point(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AccessPoint") /* AccessPoint com.amazonaws.s3control.synthetic#GetMultiRegionAccessPointOutput$AccessPoint */ =>  {
-                let var_41 =
+                let var_43 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_multi_region_access_point_report(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_point(var_41);
+                builder = builder.set_access_point(var_43);
             }
             ,
             _ => {}
@@ -1242,13 +1297,13 @@ pub fn deser_operation_crate_operation_get_multi_region_access_point_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Policy") /* Policy com.amazonaws.s3control.synthetic#GetMultiRegionAccessPointPolicyOutput$Policy */ =>  {
-                let var_42 =
+                let var_44 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_multi_region_access_point_policy_document(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_policy(var_42);
+                builder = builder.set_policy(var_44);
             }
             ,
             _ => {}
@@ -1281,13 +1336,13 @@ pub fn deser_operation_crate_operation_get_multi_region_access_point_policy_stat
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Established") /* Established com.amazonaws.s3control.synthetic#GetMultiRegionAccessPointPolicyStatusOutput$Established */ =>  {
-                let var_43 =
+                let var_45 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_policy_status(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_established(var_43);
+                builder = builder.set_established(var_45);
             }
             ,
             _ => {}
@@ -1313,7 +1368,7 @@ pub fn deser_structure_crate_error_no_such_public_access_block_configuration_xml
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.s3control#NoSuchPublicAccessBlockConfiguration$Message */ =>  {
-                let var_44 =
+                let var_46 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1322,7 +1377,7 @@ pub fn deser_structure_crate_error_no_such_public_access_block_configuration_xml
                         ?
                     )
                 ;
-                builder = builder.set_message(var_44);
+                builder = builder.set_message(var_46);
             }
             ,
             _ => {}
@@ -1355,13 +1410,13 @@ pub fn deser_operation_crate_operation_get_storage_lens_configuration_tagging(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Tags") /* Tags com.amazonaws.s3control.synthetic#GetStorageLensConfigurationTaggingOutput$Tags */ =>  {
-                let var_45 =
+                let var_47 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_storage_lens_tags(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_45);
+                builder = builder.set_tags(var_47);
             }
             ,
             _ => {}
@@ -1391,7 +1446,7 @@ pub fn deser_operation_crate_operation_list_access_points(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextToken") /* NextToken com.amazonaws.s3control.synthetic#ListAccessPointsOutput$NextToken */ =>  {
-                let var_46 =
+                let var_48 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1400,17 +1455,17 @@ pub fn deser_operation_crate_operation_list_access_points(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_46);
+                builder = builder.set_next_token(var_48);
             }
             ,
             s if s.matches("AccessPointList") /* AccessPointList com.amazonaws.s3control.synthetic#ListAccessPointsOutput$AccessPointList */ =>  {
-                let var_47 =
+                let var_49 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_access_point_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_point_list(var_47);
+                builder = builder.set_access_point_list(var_49);
             }
             ,
             _ => {}
@@ -1443,7 +1498,7 @@ pub fn deser_operation_crate_operation_list_access_points_for_object_lambda(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextToken") /* NextToken com.amazonaws.s3control.synthetic#ListAccessPointsForObjectLambdaOutput$NextToken */ =>  {
-                let var_48 =
+                let var_50 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1452,17 +1507,17 @@ pub fn deser_operation_crate_operation_list_access_points_for_object_lambda(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_48);
+                builder = builder.set_next_token(var_50);
             }
             ,
             s if s.matches("ObjectLambdaAccessPointList") /* ObjectLambdaAccessPointList com.amazonaws.s3control.synthetic#ListAccessPointsForObjectLambdaOutput$ObjectLambdaAccessPointList */ =>  {
-                let var_49 =
+                let var_51 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_object_lambda_access_point_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_object_lambda_access_point_list(var_49);
+                builder = builder.set_object_lambda_access_point_list(var_51);
             }
             ,
             _ => {}
@@ -1485,7 +1540,7 @@ pub fn deser_structure_crate_error_invalid_next_token_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.s3control#InvalidNextTokenException$Message */ =>  {
-                let var_50 =
+                let var_52 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1494,7 +1549,7 @@ pub fn deser_structure_crate_error_invalid_next_token_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_50);
+                builder = builder.set_message(var_52);
             }
             ,
             _ => {}
@@ -1517,7 +1572,7 @@ pub fn deser_structure_crate_error_invalid_request_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.s3control#InvalidRequestException$Message */ =>  {
-                let var_51 =
+                let var_53 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1526,7 +1581,7 @@ pub fn deser_structure_crate_error_invalid_request_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_51);
+                builder = builder.set_message(var_53);
             }
             ,
             _ => {}
@@ -1556,7 +1611,7 @@ pub fn deser_operation_crate_operation_list_jobs(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextToken") /* NextToken com.amazonaws.s3control.synthetic#ListJobsOutput$NextToken */ =>  {
-                let var_52 =
+                let var_54 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1565,17 +1620,17 @@ pub fn deser_operation_crate_operation_list_jobs(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_52);
+                builder = builder.set_next_token(var_54);
             }
             ,
             s if s.matches("Jobs") /* Jobs com.amazonaws.s3control.synthetic#ListJobsOutput$Jobs */ =>  {
-                let var_53 =
+                let var_55 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_job_list_descriptor_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_jobs(var_53);
+                builder = builder.set_jobs(var_55);
             }
             ,
             _ => {}
@@ -1608,17 +1663,17 @@ pub fn deser_operation_crate_operation_list_multi_region_access_points(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AccessPoints") /* AccessPoints com.amazonaws.s3control.synthetic#ListMultiRegionAccessPointsOutput$AccessPoints */ =>  {
-                let var_54 =
+                let var_56 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_multi_region_access_point_report_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_points(var_54);
+                builder = builder.set_access_points(var_56);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.s3control.synthetic#ListMultiRegionAccessPointsOutput$NextToken */ =>  {
-                let var_55 =
+                let var_57 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1627,7 +1682,7 @@ pub fn deser_operation_crate_operation_list_multi_region_access_points(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_55);
+                builder = builder.set_next_token(var_57);
             }
             ,
             _ => {}
@@ -1658,17 +1713,17 @@ pub fn deser_operation_crate_operation_list_regional_buckets(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RegionalBucketList") /* RegionalBucketList com.amazonaws.s3control.synthetic#ListRegionalBucketsOutput$RegionalBucketList */ =>  {
-                let var_56 =
+                let var_58 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_regional_bucket_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_regional_bucket_list(var_56);
+                builder = builder.set_regional_bucket_list(var_58);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.s3control.synthetic#ListRegionalBucketsOutput$NextToken */ =>  {
-                let var_57 =
+                let var_59 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1677,7 +1732,7 @@ pub fn deser_operation_crate_operation_list_regional_buckets(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_57);
+                builder = builder.set_next_token(var_59);
             }
             ,
             _ => {}
@@ -1710,24 +1765,24 @@ pub fn deser_operation_crate_operation_list_storage_lens_configurations(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StorageLensConfigurationList") /* StorageLensConfigurationList com.amazonaws.s3control.synthetic#ListStorageLensConfigurationsOutput$StorageLensConfigurationList */ =>  {
-                let var_58 =
+                let var_60 =
                     Some(
                         Result::<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>, aws_smithy_xml::decode::XmlError>::Ok({
-                            let mut list_59 = builder.storage_lens_configuration_list.take().unwrap_or_default();
-                            list_59.push(
+                            let mut list_61 = builder.storage_lens_configuration_list.take().unwrap_or_default();
+                            list_61.push(
                                 crate::xml_deser::deser_structure_crate_model_list_storage_lens_configuration_entry(&mut tag)
                                 ?
                             );
-                            list_59
+                            list_61
                         })
                         ?
                     )
                 ;
-                builder = builder.set_storage_lens_configuration_list(var_58);
+                builder = builder.set_storage_lens_configuration_list(var_60);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.s3control.synthetic#ListStorageLensConfigurationsOutput$NextToken */ =>  {
-                let var_60 =
+                let var_62 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1736,7 +1791,7 @@ pub fn deser_operation_crate_operation_list_storage_lens_configurations(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_60);
+                builder = builder.set_next_token(var_62);
             }
             ,
             _ => {}
@@ -1759,7 +1814,7 @@ pub fn deser_structure_crate_error_too_many_tags_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.s3control#TooManyTagsException$Message */ =>  {
-                let var_61 =
+                let var_63 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1768,7 +1823,7 @@ pub fn deser_structure_crate_error_too_many_tags_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_61);
+                builder = builder.set_message(var_63);
             }
             ,
             _ => {}
@@ -1801,7 +1856,7 @@ pub fn deser_operation_crate_operation_put_multi_region_access_point_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RequestTokenARN") /* RequestTokenARN com.amazonaws.s3control.synthetic#PutMultiRegionAccessPointPolicyOutput$RequestTokenARN */ =>  {
-                let var_62 =
+                let var_64 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1810,7 +1865,7 @@ pub fn deser_operation_crate_operation_put_multi_region_access_point_policy(
                         ?
                     )
                 ;
-                builder = builder.set_request_token_arn(var_62);
+                builder = builder.set_request_token_arn(var_64);
             }
             ,
             _ => {}
@@ -1840,7 +1895,7 @@ pub fn deser_operation_crate_operation_update_job_priority(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Priority") /* Priority com.amazonaws.s3control.synthetic#UpdateJobPriorityOutput$Priority */ =>  {
-                let var_63 =
+                let var_65 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -1851,11 +1906,11 @@ pub fn deser_operation_crate_operation_update_job_priority(
                         ?
                     )
                 ;
-                builder = builder.set_priority(var_63);
+                builder = builder.set_priority(var_65);
             }
             ,
             s if s.matches("JobId") /* JobId com.amazonaws.s3control.synthetic#UpdateJobPriorityOutput$JobId */ =>  {
-                let var_64 =
+                let var_66 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1864,7 +1919,7 @@ pub fn deser_operation_crate_operation_update_job_priority(
                         ?
                     )
                 ;
-                builder = builder.set_job_id(var_64);
+                builder = builder.set_job_id(var_66);
             }
             ,
             _ => {}
@@ -1887,7 +1942,7 @@ pub fn deser_structure_crate_error_job_status_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.s3control#JobStatusException$Message */ =>  {
-                let var_65 =
+                let var_67 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1896,7 +1951,7 @@ pub fn deser_structure_crate_error_job_status_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_65);
+                builder = builder.set_message(var_67);
             }
             ,
             _ => {}
@@ -1926,7 +1981,7 @@ pub fn deser_operation_crate_operation_update_job_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3control.synthetic#UpdateJobStatusOutput$Status */ =>  {
-                let var_66 =
+                let var_68 =
                     Some(
                         Result::<crate::model::JobStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::JobStatus::from(
@@ -1936,11 +1991,11 @@ pub fn deser_operation_crate_operation_update_job_status(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_66);
+                builder = builder.set_status(var_68);
             }
             ,
             s if s.matches("StatusUpdateReason") /* StatusUpdateReason com.amazonaws.s3control.synthetic#UpdateJobStatusOutput$StatusUpdateReason */ =>  {
-                let var_67 =
+                let var_69 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1949,11 +2004,11 @@ pub fn deser_operation_crate_operation_update_job_status(
                         ?
                     )
                 ;
-                builder = builder.set_status_update_reason(var_67);
+                builder = builder.set_status_update_reason(var_69);
             }
             ,
             s if s.matches("JobId") /* JobId com.amazonaws.s3control.synthetic#UpdateJobStatusOutput$JobId */ =>  {
-                let var_68 =
+                let var_70 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1962,7 +2017,7 @@ pub fn deser_operation_crate_operation_update_job_status(
                         ?
                     )
                 ;
-                builder = builder.set_job_id(var_68);
+                builder = builder.set_job_id(var_70);
             }
             ,
             _ => {}
@@ -2011,7 +2066,7 @@ pub fn deser_structure_crate_model_job_descriptor(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("JobId") /* JobId com.amazonaws.s3control#JobDescriptor$JobId */ =>  {
-                let var_69 =
+                let var_71 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2020,11 +2075,11 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_job_id(var_69);
+                builder = builder.set_job_id(var_71);
             }
             ,
             s if s.matches("ConfirmationRequired") /* ConfirmationRequired com.amazonaws.s3control#JobDescriptor$ConfirmationRequired */ =>  {
-                let var_70 =
+                let var_72 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2035,11 +2090,11 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_confirmation_required(var_70);
+                builder = builder.set_confirmation_required(var_72);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.s3control#JobDescriptor$Description */ =>  {
-                let var_71 =
+                let var_73 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2048,11 +2103,11 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_71);
+                builder = builder.set_description(var_73);
             }
             ,
             s if s.matches("JobArn") /* JobArn com.amazonaws.s3control#JobDescriptor$JobArn */ =>  {
-                let var_72 =
+                let var_74 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2061,11 +2116,11 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_job_arn(var_72);
+                builder = builder.set_job_arn(var_74);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.s3control#JobDescriptor$Status */ =>  {
-                let var_73 =
+                let var_75 =
                     Some(
                         Result::<crate::model::JobStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::JobStatus::from(
@@ -2075,31 +2130,31 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_73);
+                builder = builder.set_status(var_75);
             }
             ,
             s if s.matches("Manifest") /* Manifest com.amazonaws.s3control#JobDescriptor$Manifest */ =>  {
-                let var_74 =
+                let var_76 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_manifest(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_manifest(var_74);
+                builder = builder.set_manifest(var_76);
             }
             ,
             s if s.matches("Operation") /* Operation com.amazonaws.s3control#JobDescriptor$Operation */ =>  {
-                let var_75 =
+                let var_77 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_operation(var_75);
+                builder = builder.set_operation(var_77);
             }
             ,
             s if s.matches("Priority") /* Priority com.amazonaws.s3control#JobDescriptor$Priority */ =>  {
-                let var_76 =
+                let var_78 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2110,21 +2165,21 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_priority(var_76);
+                builder = builder.set_priority(var_78);
             }
             ,
             s if s.matches("ProgressSummary") /* ProgressSummary com.amazonaws.s3control#JobDescriptor$ProgressSummary */ =>  {
-                let var_77 =
+                let var_79 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_progress_summary(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_progress_summary(var_77);
+                builder = builder.set_progress_summary(var_79);
             }
             ,
             s if s.matches("StatusUpdateReason") /* StatusUpdateReason com.amazonaws.s3control#JobDescriptor$StatusUpdateReason */ =>  {
-                let var_78 =
+                let var_80 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2133,31 +2188,31 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_status_update_reason(var_78);
+                builder = builder.set_status_update_reason(var_80);
             }
             ,
             s if s.matches("FailureReasons") /* FailureReasons com.amazonaws.s3control#JobDescriptor$FailureReasons */ =>  {
-                let var_79 =
+                let var_81 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_job_failure_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_failure_reasons(var_79);
+                builder = builder.set_failure_reasons(var_81);
             }
             ,
             s if s.matches("Report") /* Report com.amazonaws.s3control#JobDescriptor$Report */ =>  {
-                let var_80 =
+                let var_82 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_report(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_report(var_80);
+                builder = builder.set_report(var_82);
             }
             ,
             s if s.matches("CreationTime") /* CreationTime com.amazonaws.s3control#JobDescriptor$CreationTime */ =>  {
-                let var_81 =
+                let var_83 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2167,11 +2222,11 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_creation_time(var_81);
+                builder = builder.set_creation_time(var_83);
             }
             ,
             s if s.matches("TerminationDate") /* TerminationDate com.amazonaws.s3control#JobDescriptor$TerminationDate */ =>  {
-                let var_82 =
+                let var_84 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2181,37 +2236,10 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_termination_date(var_82);
+                builder = builder.set_termination_date(var_84);
             }
             ,
             s if s.matches("RoleArn") /* RoleArn com.amazonaws.s3control#JobDescriptor$RoleArn */ =>  {
-                let var_83 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_role_arn(var_83);
-            }
-            ,
-            s if s.matches("SuspendedDate") /* SuspendedDate com.amazonaws.s3control#JobDescriptor$SuspendedDate */ =>  {
-                let var_84 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3control#SuspendedDate`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_suspended_date(var_84);
-            }
-            ,
-            s if s.matches("SuspendedCause") /* SuspendedCause com.amazonaws.s3control#JobDescriptor$SuspendedCause */ =>  {
                 let var_85 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2221,27 +2249,54 @@ pub fn deser_structure_crate_model_job_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_suspended_cause(var_85);
+                builder = builder.set_role_arn(var_85);
+            }
+            ,
+            s if s.matches("SuspendedDate") /* SuspendedDate com.amazonaws.s3control#JobDescriptor$SuspendedDate */ =>  {
+                let var_86 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.s3control#SuspendedDate`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_suspended_date(var_86);
+            }
+            ,
+            s if s.matches("SuspendedCause") /* SuspendedCause com.amazonaws.s3control#JobDescriptor$SuspendedCause */ =>  {
+                let var_87 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_suspended_cause(var_87);
             }
             ,
             s if s.matches("ManifestGenerator") /* ManifestGenerator com.amazonaws.s3control#JobDescriptor$ManifestGenerator */ =>  {
-                let var_86 =
+                let var_88 =
                     Some(
                         crate::xml_deser::deser_union_crate_model_job_manifest_generator(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_manifest_generator(var_86);
+                builder = builder.set_manifest_generator(var_88);
             }
             ,
             s if s.matches("GeneratedManifestDescriptor") /* GeneratedManifestDescriptor com.amazonaws.s3control#JobDescriptor$GeneratedManifestDescriptor */ =>  {
-                let var_87 =
+                let var_89 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_generated_manifest_descriptor(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_generated_manifest_descriptor(var_87);
+                builder = builder.set_generated_manifest_descriptor(var_89);
             }
             ,
             _ => {}
@@ -2258,7 +2313,7 @@ pub fn deser_structure_crate_model_async_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CreationTime") /* CreationTime com.amazonaws.s3control#AsyncOperation$CreationTime */ =>  {
-                let var_88 =
+                let var_90 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2268,11 +2323,11 @@ pub fn deser_structure_crate_model_async_operation(
                         ?
                     )
                 ;
-                builder = builder.set_creation_time(var_88);
+                builder = builder.set_creation_time(var_90);
             }
             ,
             s if s.matches("Operation") /* Operation com.amazonaws.s3control#AsyncOperation$Operation */ =>  {
-                let var_89 =
+                let var_91 =
                     Some(
                         Result::<crate::model::AsyncOperationName, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AsyncOperationName::from(
@@ -2282,33 +2337,10 @@ pub fn deser_structure_crate_model_async_operation(
                         ?
                     )
                 ;
-                builder = builder.set_operation(var_89);
+                builder = builder.set_operation(var_91);
             }
             ,
             s if s.matches("RequestTokenARN") /* RequestTokenARN com.amazonaws.s3control#AsyncOperation$RequestTokenARN */ =>  {
-                let var_90 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_request_token_arn(var_90);
-            }
-            ,
-            s if s.matches("RequestParameters") /* RequestParameters com.amazonaws.s3control#AsyncOperation$RequestParameters */ =>  {
-                let var_91 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_async_request_parameters(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_request_parameters(var_91);
-            }
-            ,
-            s if s.matches("RequestStatus") /* RequestStatus com.amazonaws.s3control#AsyncOperation$RequestStatus */ =>  {
                 let var_92 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2318,17 +2350,40 @@ pub fn deser_structure_crate_model_async_operation(
                         ?
                     )
                 ;
-                builder = builder.set_request_status(var_92);
+                builder = builder.set_request_token_arn(var_92);
+            }
+            ,
+            s if s.matches("RequestParameters") /* RequestParameters com.amazonaws.s3control#AsyncOperation$RequestParameters */ =>  {
+                let var_93 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_async_request_parameters(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_request_parameters(var_93);
+            }
+            ,
+            s if s.matches("RequestStatus") /* RequestStatus com.amazonaws.s3control#AsyncOperation$RequestStatus */ =>  {
+                let var_94 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_request_status(var_94);
             }
             ,
             s if s.matches("ResponseDetails") /* ResponseDetails com.amazonaws.s3control#AsyncOperation$ResponseDetails */ =>  {
-                let var_93 =
+                let var_95 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_async_response_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_response_details(var_93);
+                builder = builder.set_response_details(var_95);
             }
             ,
             _ => {}
@@ -2365,36 +2420,6 @@ pub fn deser_structure_crate_model_public_access_block_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("BlockPublicAcls") /* BlockPublicAcls com.amazonaws.s3control#PublicAccessBlockConfiguration$BlockPublicAcls */ =>  {
-                let var_94 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3control#Setting`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_block_public_acls(var_94);
-            }
-            ,
-            s if s.matches("IgnorePublicAcls") /* IgnorePublicAcls com.amazonaws.s3control#PublicAccessBlockConfiguration$IgnorePublicAcls */ =>  {
-                let var_95 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3control#Setting`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_ignore_public_acls(var_95);
-            }
-            ,
-            s if s.matches("BlockPublicPolicy") /* BlockPublicPolicy com.amazonaws.s3control#PublicAccessBlockConfiguration$BlockPublicPolicy */ =>  {
                 let var_96 =
                     Some(
                          {
@@ -2406,10 +2431,10 @@ pub fn deser_structure_crate_model_public_access_block_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_block_public_policy(var_96);
+                builder = builder.set_block_public_acls(var_96);
             }
             ,
-            s if s.matches("RestrictPublicBuckets") /* RestrictPublicBuckets com.amazonaws.s3control#PublicAccessBlockConfiguration$RestrictPublicBuckets */ =>  {
+            s if s.matches("IgnorePublicAcls") /* IgnorePublicAcls com.amazonaws.s3control#PublicAccessBlockConfiguration$IgnorePublicAcls */ =>  {
                 let var_97 =
                     Some(
                          {
@@ -2421,7 +2446,37 @@ pub fn deser_structure_crate_model_public_access_block_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_restrict_public_buckets(var_97);
+                builder = builder.set_ignore_public_acls(var_97);
+            }
+            ,
+            s if s.matches("BlockPublicPolicy") /* BlockPublicPolicy com.amazonaws.s3control#PublicAccessBlockConfiguration$BlockPublicPolicy */ =>  {
+                let var_98 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3control#Setting`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_block_public_policy(var_98);
+            }
+            ,
+            s if s.matches("RestrictPublicBuckets") /* RestrictPublicBuckets com.amazonaws.s3control#PublicAccessBlockConfiguration$RestrictPublicBuckets */ =>  {
+                let var_99 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3control#Setting`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_restrict_public_buckets(var_99);
             }
             ,
             _ => {}
@@ -2438,7 +2493,7 @@ pub fn deser_structure_crate_model_vpc_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("VpcId") /* VpcId com.amazonaws.s3control#VpcConfiguration$VpcId */ =>  {
-                let var_98 =
+                let var_100 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2447,7 +2502,7 @@ pub fn deser_structure_crate_model_vpc_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_98);
+                builder = builder.set_vpc_id(var_100);
             }
             ,
             _ => {}
@@ -2464,7 +2519,7 @@ pub fn deser_structure_crate_model_object_lambda_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SupportingAccessPoint") /* SupportingAccessPoint com.amazonaws.s3control#ObjectLambdaConfiguration$SupportingAccessPoint */ =>  {
-                let var_99 =
+                let var_101 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2473,11 +2528,11 @@ pub fn deser_structure_crate_model_object_lambda_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_supporting_access_point(var_99);
+                builder = builder.set_supporting_access_point(var_101);
             }
             ,
             s if s.matches("CloudWatchMetricsEnabled") /* CloudWatchMetricsEnabled com.amazonaws.s3control#ObjectLambdaConfiguration$CloudWatchMetricsEnabled */ =>  {
-                let var_100 =
+                let var_102 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2488,27 +2543,27 @@ pub fn deser_structure_crate_model_object_lambda_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_cloud_watch_metrics_enabled(var_100);
+                builder = builder.set_cloud_watch_metrics_enabled(var_102);
             }
             ,
             s if s.matches("AllowedFeatures") /* AllowedFeatures com.amazonaws.s3control#ObjectLambdaConfiguration$AllowedFeatures */ =>  {
-                let var_101 =
+                let var_103 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_object_lambda_allowed_features_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_allowed_features(var_101);
+                builder = builder.set_allowed_features(var_103);
             }
             ,
             s if s.matches("TransformationConfigurations") /* TransformationConfigurations com.amazonaws.s3control#ObjectLambdaConfiguration$TransformationConfigurations */ =>  {
-                let var_102 =
+                let var_104 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_object_lambda_transformation_configurations_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_transformation_configurations(var_102);
+                builder = builder.set_transformation_configurations(var_104);
             }
             ,
             _ => {}
@@ -2525,7 +2580,7 @@ pub fn deser_structure_crate_model_policy_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IsPublic") /* IsPublic com.amazonaws.s3control#PolicyStatus$IsPublic */ =>  {
-                let var_103 =
+                let var_105 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2536,7 +2591,7 @@ pub fn deser_structure_crate_model_policy_status(
                         ?
                     )
                 ;
-                builder = builder.set_is_public(var_103);
+                builder = builder.set_is_public(var_105);
             }
             ,
             _ => {}
@@ -2591,7 +2646,7 @@ pub fn deser_structure_crate_model_multi_region_access_point_report(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#MultiRegionAccessPointReport$Name */ =>  {
-                let var_104 =
+                let var_106 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2600,11 +2655,11 @@ pub fn deser_structure_crate_model_multi_region_access_point_report(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_104);
+                builder = builder.set_name(var_106);
             }
             ,
             s if s.matches("Alias") /* Alias com.amazonaws.s3control#MultiRegionAccessPointReport$Alias */ =>  {
-                let var_105 =
+                let var_107 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2613,11 +2668,11 @@ pub fn deser_structure_crate_model_multi_region_access_point_report(
                         ?
                     )
                 ;
-                builder = builder.set_alias(var_105);
+                builder = builder.set_alias(var_107);
             }
             ,
             s if s.matches("CreatedAt") /* CreatedAt com.amazonaws.s3control#MultiRegionAccessPointReport$CreatedAt */ =>  {
-                let var_106 =
+                let var_108 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2627,21 +2682,21 @@ pub fn deser_structure_crate_model_multi_region_access_point_report(
                         ?
                     )
                 ;
-                builder = builder.set_created_at(var_106);
+                builder = builder.set_created_at(var_108);
             }
             ,
             s if s.matches("PublicAccessBlock") /* PublicAccessBlock com.amazonaws.s3control#MultiRegionAccessPointReport$PublicAccessBlock */ =>  {
-                let var_107 =
+                let var_109 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_public_access_block_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_public_access_block(var_107);
+                builder = builder.set_public_access_block(var_109);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.s3control#MultiRegionAccessPointReport$Status */ =>  {
-                let var_108 =
+                let var_110 =
                     Some(
                         Result::<crate::model::MultiRegionAccessPointStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::MultiRegionAccessPointStatus::from(
@@ -2651,17 +2706,17 @@ pub fn deser_structure_crate_model_multi_region_access_point_report(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_108);
+                builder = builder.set_status(var_110);
             }
             ,
             s if s.matches("Regions") /* Regions com.amazonaws.s3control#MultiRegionAccessPointReport$Regions */ =>  {
-                let var_109 =
+                let var_111 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_region_report_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_regions(var_109);
+                builder = builder.set_regions(var_111);
             }
             ,
             _ => {}
@@ -2678,23 +2733,23 @@ pub fn deser_structure_crate_model_multi_region_access_point_policy_document(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Established") /* Established com.amazonaws.s3control#MultiRegionAccessPointPolicyDocument$Established */ =>  {
-                let var_110 =
+                let var_112 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_established_multi_region_access_point_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_established(var_110);
+                builder = builder.set_established(var_112);
             }
             ,
             s if s.matches("Proposed") /* Proposed com.amazonaws.s3control#MultiRegionAccessPointPolicyDocument$Proposed */ =>  {
-                let var_111 =
+                let var_113 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_proposed_multi_region_access_point_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_proposed(var_111);
+                builder = builder.set_proposed(var_113);
             }
             ,
             _ => {}
@@ -2829,32 +2884,6 @@ pub fn deser_structure_crate_model_list_storage_lens_configuration_entry(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3control#ListStorageLensConfigurationEntry$Id */ =>  {
-                let var_112 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_id(var_112);
-            }
-            ,
-            s if s.matches("StorageLensArn") /* StorageLensArn com.amazonaws.s3control#ListStorageLensConfigurationEntry$StorageLensArn */ =>  {
-                let var_113 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_storage_lens_arn(var_113);
-            }
-            ,
-            s if s.matches("HomeRegion") /* HomeRegion com.amazonaws.s3control#ListStorageLensConfigurationEntry$HomeRegion */ =>  {
                 let var_114 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2864,11 +2893,37 @@ pub fn deser_structure_crate_model_list_storage_lens_configuration_entry(
                         ?
                     )
                 ;
-                builder = builder.set_home_region(var_114);
+                builder = builder.set_id(var_114);
+            }
+            ,
+            s if s.matches("StorageLensArn") /* StorageLensArn com.amazonaws.s3control#ListStorageLensConfigurationEntry$StorageLensArn */ =>  {
+                let var_115 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_lens_arn(var_115);
+            }
+            ,
+            s if s.matches("HomeRegion") /* HomeRegion com.amazonaws.s3control#ListStorageLensConfigurationEntry$HomeRegion */ =>  {
+                let var_116 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_home_region(var_116);
             }
             ,
             s if s.matches("IsEnabled") /* IsEnabled com.amazonaws.s3control#ListStorageLensConfigurationEntry$IsEnabled */ =>  {
-                let var_115 =
+                let var_117 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2879,7 +2934,7 @@ pub fn deser_structure_crate_model_list_storage_lens_configuration_entry(
                         ?
                     )
                 ;
-                builder = builder.set_is_enabled(var_115);
+                builder = builder.set_is_enabled(var_117);
             }
             ,
             _ => {}
@@ -2896,7 +2951,7 @@ pub fn deser_structure_crate_model_storage_lens_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3control#StorageLensConfiguration$Id */ =>  {
-                let var_116 =
+                let var_118 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2905,51 +2960,51 @@ pub fn deser_structure_crate_model_storage_lens_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_116);
+                builder = builder.set_id(var_118);
             }
             ,
             s if s.matches("AccountLevel") /* AccountLevel com.amazonaws.s3control#StorageLensConfiguration$AccountLevel */ =>  {
-                let var_117 =
+                let var_119 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_account_level(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_account_level(var_117);
+                builder = builder.set_account_level(var_119);
             }
             ,
             s if s.matches("Include") /* Include com.amazonaws.s3control#StorageLensConfiguration$Include */ =>  {
-                let var_118 =
+                let var_120 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_include(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_include(var_118);
+                builder = builder.set_include(var_120);
             }
             ,
             s if s.matches("Exclude") /* Exclude com.amazonaws.s3control#StorageLensConfiguration$Exclude */ =>  {
-                let var_119 =
+                let var_121 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_exclude(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_exclude(var_119);
+                builder = builder.set_exclude(var_121);
             }
             ,
             s if s.matches("DataExport") /* DataExport com.amazonaws.s3control#StorageLensConfiguration$DataExport */ =>  {
-                let var_120 =
+                let var_122 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_storage_lens_data_export(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_data_export(var_120);
+                builder = builder.set_data_export(var_122);
             }
             ,
             s if s.matches("IsEnabled") /* IsEnabled com.amazonaws.s3control#StorageLensConfiguration$IsEnabled */ =>  {
-                let var_121 =
+                let var_123 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2960,21 +3015,21 @@ pub fn deser_structure_crate_model_storage_lens_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_is_enabled(var_121);
+                builder = builder.set_is_enabled(var_123);
             }
             ,
             s if s.matches("AwsOrg") /* AwsOrg com.amazonaws.s3control#StorageLensConfiguration$AwsOrg */ =>  {
-                let var_122 =
+                let var_124 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_storage_lens_aws_org(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_aws_org(var_122);
+                builder = builder.set_aws_org(var_124);
             }
             ,
             s if s.matches("StorageLensArn") /* StorageLensArn com.amazonaws.s3control#StorageLensConfiguration$StorageLensArn */ =>  {
-                let var_123 =
+                let var_125 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2983,7 +3038,7 @@ pub fn deser_structure_crate_model_storage_lens_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_storage_lens_arn(var_123);
+                builder = builder.set_storage_lens_arn(var_125);
             }
             ,
             _ => {}
@@ -3000,23 +3055,23 @@ pub fn deser_structure_crate_model_job_manifest(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Spec") /* Spec com.amazonaws.s3control#JobManifest$Spec */ =>  {
-                let var_124 =
+                let var_126 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_manifest_spec(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_spec(var_124);
+                builder = builder.set_spec(var_126);
             }
             ,
             s if s.matches("Location") /* Location com.amazonaws.s3control#JobManifest$Location */ =>  {
-                let var_125 =
+                let var_127 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_manifest_location(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_location(var_125);
+                builder = builder.set_location(var_127);
             }
             ,
             _ => {}
@@ -3033,93 +3088,93 @@ pub fn deser_structure_crate_model_job_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LambdaInvoke") /* LambdaInvoke com.amazonaws.s3control#JobOperation$LambdaInvoke */ =>  {
-                let var_126 =
+                let var_128 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_lambda_invoke_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_lambda_invoke(var_126);
+                builder = builder.set_lambda_invoke(var_128);
             }
             ,
             s if s.matches("S3PutObjectCopy") /* S3PutObjectCopy com.amazonaws.s3control#JobOperation$S3PutObjectCopy */ =>  {
-                let var_127 =
+                let var_129 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_copy_object_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_copy(var_127);
+                builder = builder.set_s3_put_object_copy(var_129);
             }
             ,
             s if s.matches("S3PutObjectAcl") /* S3PutObjectAcl com.amazonaws.s3control#JobOperation$S3PutObjectAcl */ =>  {
-                let var_128 =
+                let var_130 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_set_object_acl_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_acl(var_128);
+                builder = builder.set_s3_put_object_acl(var_130);
             }
             ,
             s if s.matches("S3PutObjectTagging") /* S3PutObjectTagging com.amazonaws.s3control#JobOperation$S3PutObjectTagging */ =>  {
-                let var_129 =
+                let var_131 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_set_object_tagging_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_tagging(var_129);
+                builder = builder.set_s3_put_object_tagging(var_131);
             }
             ,
             s if s.matches("S3DeleteObjectTagging") /* S3DeleteObjectTagging com.amazonaws.s3control#JobOperation$S3DeleteObjectTagging */ =>  {
-                let var_130 =
+                let var_132 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_delete_object_tagging_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_delete_object_tagging(var_130);
+                builder = builder.set_s3_delete_object_tagging(var_132);
             }
             ,
             s if s.matches("S3InitiateRestoreObject") /* S3InitiateRestoreObject com.amazonaws.s3control#JobOperation$S3InitiateRestoreObject */ =>  {
-                let var_131 =
+                let var_133 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_initiate_restore_object_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_initiate_restore_object(var_131);
+                builder = builder.set_s3_initiate_restore_object(var_133);
             }
             ,
             s if s.matches("S3PutObjectLegalHold") /* S3PutObjectLegalHold com.amazonaws.s3control#JobOperation$S3PutObjectLegalHold */ =>  {
-                let var_132 =
+                let var_134 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_set_object_legal_hold_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_legal_hold(var_132);
+                builder = builder.set_s3_put_object_legal_hold(var_134);
             }
             ,
             s if s.matches("S3PutObjectRetention") /* S3PutObjectRetention com.amazonaws.s3control#JobOperation$S3PutObjectRetention */ =>  {
-                let var_133 =
+                let var_135 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_set_object_retention_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_retention(var_133);
+                builder = builder.set_s3_put_object_retention(var_135);
             }
             ,
             s if s.matches("S3ReplicateObject") /* S3ReplicateObject com.amazonaws.s3control#JobOperation$S3ReplicateObject */ =>  {
-                let var_134 =
+                let var_136 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_replicate_object_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_replicate_object(var_134);
+                builder = builder.set_s3_replicate_object(var_136);
             }
             ,
             _ => {}
@@ -3136,7 +3191,7 @@ pub fn deser_structure_crate_model_job_progress_summary(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TotalNumberOfTasks") /* TotalNumberOfTasks com.amazonaws.s3control#JobProgressSummary$TotalNumberOfTasks */ =>  {
-                let var_135 =
+                let var_137 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3147,11 +3202,11 @@ pub fn deser_structure_crate_model_job_progress_summary(
                         ?
                     )
                 ;
-                builder = builder.set_total_number_of_tasks(var_135);
+                builder = builder.set_total_number_of_tasks(var_137);
             }
             ,
             s if s.matches("NumberOfTasksSucceeded") /* NumberOfTasksSucceeded com.amazonaws.s3control#JobProgressSummary$NumberOfTasksSucceeded */ =>  {
-                let var_136 =
+                let var_138 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3162,11 +3217,11 @@ pub fn deser_structure_crate_model_job_progress_summary(
                         ?
                     )
                 ;
-                builder = builder.set_number_of_tasks_succeeded(var_136);
+                builder = builder.set_number_of_tasks_succeeded(var_138);
             }
             ,
             s if s.matches("NumberOfTasksFailed") /* NumberOfTasksFailed com.amazonaws.s3control#JobProgressSummary$NumberOfTasksFailed */ =>  {
-                let var_137 =
+                let var_139 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3177,17 +3232,17 @@ pub fn deser_structure_crate_model_job_progress_summary(
                         ?
                     )
                 ;
-                builder = builder.set_number_of_tasks_failed(var_137);
+                builder = builder.set_number_of_tasks_failed(var_139);
             }
             ,
             s if s.matches("Timers") /* Timers com.amazonaws.s3control#JobProgressSummary$Timers */ =>  {
-                let var_138 =
+                let var_140 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_timers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_timers(var_138);
+                builder = builder.set_timers(var_140);
             }
             ,
             _ => {}
@@ -3223,7 +3278,7 @@ pub fn deser_structure_crate_model_job_report(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#JobReport$Bucket */ =>  {
-                let var_139 =
+                let var_141 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3232,11 +3287,11 @@ pub fn deser_structure_crate_model_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_139);
+                builder = builder.set_bucket(var_141);
             }
             ,
             s if s.matches("Format") /* Format com.amazonaws.s3control#JobReport$Format */ =>  {
-                let var_140 =
+                let var_142 =
                     Some(
                         Result::<crate::model::JobReportFormat, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::JobReportFormat::from(
@@ -3246,11 +3301,11 @@ pub fn deser_structure_crate_model_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_140);
+                builder = builder.set_format(var_142);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.s3control#JobReport$Enabled */ =>  {
-                let var_141 =
+                let var_143 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3261,11 +3316,11 @@ pub fn deser_structure_crate_model_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_141);
+                builder = builder.set_enabled(var_143);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3control#JobReport$Prefix */ =>  {
-                let var_142 =
+                let var_144 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3274,11 +3329,11 @@ pub fn deser_structure_crate_model_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_142);
+                builder = builder.set_prefix(var_144);
             }
             ,
             s if s.matches("ReportScope") /* ReportScope com.amazonaws.s3control#JobReport$ReportScope */ =>  {
-                let var_143 =
+                let var_145 =
                     Some(
                         Result::<crate::model::JobReportScope, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::JobReportScope::from(
@@ -3288,7 +3343,7 @@ pub fn deser_structure_crate_model_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_report_scope(var_143);
+                builder = builder.set_report_scope(var_145);
             }
             ,
             _ => {}
@@ -3325,7 +3380,7 @@ pub fn deser_structure_crate_model_s3_generated_manifest_descriptor(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Format") /* Format com.amazonaws.s3control#S3GeneratedManifestDescriptor$Format */ =>  {
-                let var_144 =
+                let var_146 =
                     Some(
                         Result::<crate::model::GeneratedManifestFormat, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::GeneratedManifestFormat::from(
@@ -3335,17 +3390,17 @@ pub fn deser_structure_crate_model_s3_generated_manifest_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_144);
+                builder = builder.set_format(var_146);
             }
             ,
             s if s.matches("Location") /* Location com.amazonaws.s3control#S3GeneratedManifestDescriptor$Location */ =>  {
-                let var_145 =
+                let var_147 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_manifest_location(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_location(var_145);
+                builder = builder.set_location(var_147);
             }
             ,
             _ => {}
@@ -3362,33 +3417,33 @@ pub fn deser_structure_crate_model_async_request_parameters(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CreateMultiRegionAccessPointRequest") /* CreateMultiRegionAccessPointRequest com.amazonaws.s3control#AsyncRequestParameters$CreateMultiRegionAccessPointRequest */ =>  {
-                let var_146 =
+                let var_148 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_create_multi_region_access_point_input(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_create_multi_region_access_point_request(var_146);
+                builder = builder.set_create_multi_region_access_point_request(var_148);
             }
             ,
             s if s.matches("DeleteMultiRegionAccessPointRequest") /* DeleteMultiRegionAccessPointRequest com.amazonaws.s3control#AsyncRequestParameters$DeleteMultiRegionAccessPointRequest */ =>  {
-                let var_147 =
+                let var_149 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_delete_multi_region_access_point_input(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_delete_multi_region_access_point_request(var_147);
+                builder = builder.set_delete_multi_region_access_point_request(var_149);
             }
             ,
             s if s.matches("PutMultiRegionAccessPointPolicyRequest") /* PutMultiRegionAccessPointPolicyRequest com.amazonaws.s3control#AsyncRequestParameters$PutMultiRegionAccessPointPolicyRequest */ =>  {
-                let var_148 =
+                let var_150 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_put_multi_region_access_point_policy_input(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_put_multi_region_access_point_policy_request(var_148);
+                builder = builder.set_put_multi_region_access_point_policy_request(var_150);
             }
             ,
             _ => {}
@@ -3405,23 +3460,23 @@ pub fn deser_structure_crate_model_async_response_details(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MultiRegionAccessPointDetails") /* MultiRegionAccessPointDetails com.amazonaws.s3control#AsyncResponseDetails$MultiRegionAccessPointDetails */ =>  {
-                let var_149 =
+                let var_151 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_multi_region_access_points_async_response(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_multi_region_access_point_details(var_149);
+                builder = builder.set_multi_region_access_point_details(var_151);
             }
             ,
             s if s.matches("ErrorDetails") /* ErrorDetails com.amazonaws.s3control#AsyncResponseDetails$ErrorDetails */ =>  {
-                let var_150 =
+                let var_152 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_async_error_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_error_details(var_150);
+                builder = builder.set_error_details(var_152);
             }
             ,
             _ => {}
@@ -3521,17 +3576,17 @@ pub fn deser_structure_crate_model_lifecycle_rule(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Expiration") /* Expiration com.amazonaws.s3control#LifecycleRule$Expiration */ =>  {
-                let var_151 =
+                let var_153 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_lifecycle_expiration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_expiration(var_151);
+                builder = builder.set_expiration(var_153);
             }
             ,
             s if s.matches("ID") /* ID com.amazonaws.s3control#LifecycleRule$ID */ =>  {
-                let var_152 =
+                let var_154 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3540,21 +3595,21 @@ pub fn deser_structure_crate_model_lifecycle_rule(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_152);
+                builder = builder.set_id(var_154);
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3control#LifecycleRule$Filter */ =>  {
-                let var_153 =
+                let var_155 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_lifecycle_rule_filter(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_filter(var_153);
+                builder = builder.set_filter(var_155);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.s3control#LifecycleRule$Status */ =>  {
-                let var_154 =
+                let var_156 =
                     Some(
                         Result::<crate::model::ExpirationStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ExpirationStatus::from(
@@ -3564,47 +3619,47 @@ pub fn deser_structure_crate_model_lifecycle_rule(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_154);
+                builder = builder.set_status(var_156);
             }
             ,
             s if s.matches("Transitions") /* Transitions com.amazonaws.s3control#LifecycleRule$Transitions */ =>  {
-                let var_155 =
+                let var_157 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_transition_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_transitions(var_155);
+                builder = builder.set_transitions(var_157);
             }
             ,
             s if s.matches("NoncurrentVersionTransitions") /* NoncurrentVersionTransitions com.amazonaws.s3control#LifecycleRule$NoncurrentVersionTransitions */ =>  {
-                let var_156 =
+                let var_158 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_noncurrent_version_transition_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_noncurrent_version_transitions(var_156);
+                builder = builder.set_noncurrent_version_transitions(var_158);
             }
             ,
             s if s.matches("NoncurrentVersionExpiration") /* NoncurrentVersionExpiration com.amazonaws.s3control#LifecycleRule$NoncurrentVersionExpiration */ =>  {
-                let var_157 =
+                let var_159 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_noncurrent_version_expiration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_noncurrent_version_expiration(var_157);
+                builder = builder.set_noncurrent_version_expiration(var_159);
             }
             ,
             s if s.matches("AbortIncompleteMultipartUpload") /* AbortIncompleteMultipartUpload com.amazonaws.s3control#LifecycleRule$AbortIncompleteMultipartUpload */ =>  {
-                let var_158 =
+                let var_160 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_abort_incomplete_multipart_upload(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_abort_incomplete_multipart_upload(var_158);
+                builder = builder.set_abort_incomplete_multipart_upload(var_160);
             }
             ,
             _ => {}
@@ -3621,7 +3676,7 @@ pub fn deser_structure_crate_model_s3_tag(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.s3control#S3Tag$Key */ =>  {
-                let var_159 =
+                let var_161 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3630,11 +3685,11 @@ pub fn deser_structure_crate_model_s3_tag(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_159);
+                builder = builder.set_key(var_161);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.s3control#S3Tag$Value */ =>  {
-                let var_160 =
+                let var_162 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3643,7 +3698,7 @@ pub fn deser_structure_crate_model_s3_tag(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_160);
+                builder = builder.set_value(var_162);
             }
             ,
             _ => {}
@@ -3680,7 +3735,7 @@ pub fn deser_structure_crate_model_established_multi_region_access_point_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Policy") /* Policy com.amazonaws.s3control#EstablishedMultiRegionAccessPointPolicy$Policy */ =>  {
-                let var_161 =
+                let var_163 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3689,7 +3744,7 @@ pub fn deser_structure_crate_model_established_multi_region_access_point_policy(
                         ?
                     )
                 ;
-                builder = builder.set_policy(var_161);
+                builder = builder.set_policy(var_163);
             }
             ,
             _ => {}
@@ -3706,7 +3761,7 @@ pub fn deser_structure_crate_model_proposed_multi_region_access_point_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Policy") /* Policy com.amazonaws.s3control#ProposedMultiRegionAccessPointPolicy$Policy */ =>  {
-                let var_162 =
+                let var_164 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3715,7 +3770,7 @@ pub fn deser_structure_crate_model_proposed_multi_region_access_point_policy(
                         ?
                     )
                 ;
-                builder = builder.set_policy(var_162);
+                builder = builder.set_policy(var_164);
             }
             ,
             _ => {}
@@ -3732,7 +3787,7 @@ pub fn deser_structure_crate_model_storage_lens_tag(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.s3control#StorageLensTag$Key */ =>  {
-                let var_163 =
+                let var_165 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3741,11 +3796,11 @@ pub fn deser_structure_crate_model_storage_lens_tag(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_163);
+                builder = builder.set_key(var_165);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.s3control#StorageLensTag$Value */ =>  {
-                let var_164 =
+                let var_166 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3754,7 +3809,7 @@ pub fn deser_structure_crate_model_storage_lens_tag(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_164);
+                builder = builder.set_value(var_166);
             }
             ,
             _ => {}
@@ -3771,7 +3826,7 @@ pub fn deser_structure_crate_model_access_point(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#AccessPoint$Name */ =>  {
-                let var_165 =
+                let var_167 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3780,11 +3835,11 @@ pub fn deser_structure_crate_model_access_point(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_165);
+                builder = builder.set_name(var_167);
             }
             ,
             s if s.matches("NetworkOrigin") /* NetworkOrigin com.amazonaws.s3control#AccessPoint$NetworkOrigin */ =>  {
-                let var_166 =
+                let var_168 =
                     Some(
                         Result::<crate::model::NetworkOrigin, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::NetworkOrigin::from(
@@ -3794,46 +3849,20 @@ pub fn deser_structure_crate_model_access_point(
                         ?
                     )
                 ;
-                builder = builder.set_network_origin(var_166);
+                builder = builder.set_network_origin(var_168);
             }
             ,
             s if s.matches("VpcConfiguration") /* VpcConfiguration com.amazonaws.s3control#AccessPoint$VpcConfiguration */ =>  {
-                let var_167 =
+                let var_169 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_vpc_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_configuration(var_167);
+                builder = builder.set_vpc_configuration(var_169);
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#AccessPoint$Bucket */ =>  {
-                let var_168 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_bucket(var_168);
-            }
-            ,
-            s if s.matches("AccessPointArn") /* AccessPointArn com.amazonaws.s3control#AccessPoint$AccessPointArn */ =>  {
-                let var_169 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_access_point_arn(var_169);
-            }
-            ,
-            s if s.matches("Alias") /* Alias com.amazonaws.s3control#AccessPoint$Alias */ =>  {
                 let var_170 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3843,7 +3872,33 @@ pub fn deser_structure_crate_model_access_point(
                         ?
                     )
                 ;
-                builder = builder.set_alias(var_170);
+                builder = builder.set_bucket(var_170);
+            }
+            ,
+            s if s.matches("AccessPointArn") /* AccessPointArn com.amazonaws.s3control#AccessPoint$AccessPointArn */ =>  {
+                let var_171 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_access_point_arn(var_171);
+            }
+            ,
+            s if s.matches("Alias") /* Alias com.amazonaws.s3control#AccessPoint$Alias */ =>  {
+                let var_172 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_alias(var_172);
             }
             ,
             _ => {}
@@ -3860,7 +3915,7 @@ pub fn deser_structure_crate_model_object_lambda_access_point(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#ObjectLambdaAccessPoint$Name */ =>  {
-                let var_171 =
+                let var_173 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3869,11 +3924,11 @@ pub fn deser_structure_crate_model_object_lambda_access_point(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_171);
+                builder = builder.set_name(var_173);
             }
             ,
             s if s.matches("ObjectLambdaAccessPointArn") /* ObjectLambdaAccessPointArn com.amazonaws.s3control#ObjectLambdaAccessPoint$ObjectLambdaAccessPointArn */ =>  {
-                let var_172 =
+                let var_174 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3882,7 +3937,7 @@ pub fn deser_structure_crate_model_object_lambda_access_point(
                         ?
                     )
                 ;
-                builder = builder.set_object_lambda_access_point_arn(var_172);
+                builder = builder.set_object_lambda_access_point_arn(var_174);
             }
             ,
             _ => {}
@@ -3899,7 +3954,7 @@ pub fn deser_structure_crate_model_job_list_descriptor(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("JobId") /* JobId com.amazonaws.s3control#JobListDescriptor$JobId */ =>  {
-                let var_173 =
+                let var_175 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3908,11 +3963,11 @@ pub fn deser_structure_crate_model_job_list_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_job_id(var_173);
+                builder = builder.set_job_id(var_175);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.s3control#JobListDescriptor$Description */ =>  {
-                let var_174 =
+                let var_176 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3921,11 +3976,11 @@ pub fn deser_structure_crate_model_job_list_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_174);
+                builder = builder.set_description(var_176);
             }
             ,
             s if s.matches("Operation") /* Operation com.amazonaws.s3control#JobListDescriptor$Operation */ =>  {
-                let var_175 =
+                let var_177 =
                     Some(
                         Result::<crate::model::OperationName, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::OperationName::from(
@@ -3935,11 +3990,11 @@ pub fn deser_structure_crate_model_job_list_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_operation(var_175);
+                builder = builder.set_operation(var_177);
             }
             ,
             s if s.matches("Priority") /* Priority com.amazonaws.s3control#JobListDescriptor$Priority */ =>  {
-                let var_176 =
+                let var_178 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3950,11 +4005,11 @@ pub fn deser_structure_crate_model_job_list_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_priority(var_176);
+                builder = builder.set_priority(var_178);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.s3control#JobListDescriptor$Status */ =>  {
-                let var_177 =
+                let var_179 =
                     Some(
                         Result::<crate::model::JobStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::JobStatus::from(
@@ -3964,11 +4019,11 @@ pub fn deser_structure_crate_model_job_list_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_177);
+                builder = builder.set_status(var_179);
             }
             ,
             s if s.matches("CreationTime") /* CreationTime com.amazonaws.s3control#JobListDescriptor$CreationTime */ =>  {
-                let var_178 =
+                let var_180 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3978,11 +4033,11 @@ pub fn deser_structure_crate_model_job_list_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_creation_time(var_178);
+                builder = builder.set_creation_time(var_180);
             }
             ,
             s if s.matches("TerminationDate") /* TerminationDate com.amazonaws.s3control#JobListDescriptor$TerminationDate */ =>  {
-                let var_179 =
+                let var_181 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3992,17 +4047,17 @@ pub fn deser_structure_crate_model_job_list_descriptor(
                         ?
                     )
                 ;
-                builder = builder.set_termination_date(var_179);
+                builder = builder.set_termination_date(var_181);
             }
             ,
             s if s.matches("ProgressSummary") /* ProgressSummary com.amazonaws.s3control#JobListDescriptor$ProgressSummary */ =>  {
-                let var_180 =
+                let var_182 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_progress_summary(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_progress_summary(var_180);
+                builder = builder.set_progress_summary(var_182);
             }
             ,
             _ => {}
@@ -4019,7 +4074,7 @@ pub fn deser_structure_crate_model_regional_bucket(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#RegionalBucket$Bucket */ =>  {
-                let var_181 =
+                let var_183 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4028,11 +4083,11 @@ pub fn deser_structure_crate_model_regional_bucket(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_181);
+                builder = builder.set_bucket(var_183);
             }
             ,
             s if s.matches("BucketArn") /* BucketArn com.amazonaws.s3control#RegionalBucket$BucketArn */ =>  {
-                let var_182 =
+                let var_184 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4041,11 +4096,11 @@ pub fn deser_structure_crate_model_regional_bucket(
                         ?
                     )
                 ;
-                builder = builder.set_bucket_arn(var_182);
+                builder = builder.set_bucket_arn(var_184);
             }
             ,
             s if s.matches("PublicAccessBlockEnabled") /* PublicAccessBlockEnabled com.amazonaws.s3control#RegionalBucket$PublicAccessBlockEnabled */ =>  {
-                let var_183 =
+                let var_185 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4056,11 +4111,11 @@ pub fn deser_structure_crate_model_regional_bucket(
                         ?
                     )
                 ;
-                builder = builder.set_public_access_block_enabled(var_183);
+                builder = builder.set_public_access_block_enabled(var_185);
             }
             ,
             s if s.matches("CreationDate") /* CreationDate com.amazonaws.s3control#RegionalBucket$CreationDate */ =>  {
-                let var_184 =
+                let var_186 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4070,11 +4125,11 @@ pub fn deser_structure_crate_model_regional_bucket(
                         ?
                     )
                 ;
-                builder = builder.set_creation_date(var_184);
+                builder = builder.set_creation_date(var_186);
             }
             ,
             s if s.matches("OutpostId") /* OutpostId com.amazonaws.s3control#RegionalBucket$OutpostId */ =>  {
-                let var_185 =
+                let var_187 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4083,7 +4138,7 @@ pub fn deser_structure_crate_model_regional_bucket(
                         ?
                     )
                 ;
-                builder = builder.set_outpost_id(var_185);
+                builder = builder.set_outpost_id(var_187);
             }
             ,
             _ => {}
@@ -4100,23 +4155,23 @@ pub fn deser_structure_crate_model_account_level(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ActivityMetrics") /* ActivityMetrics com.amazonaws.s3control#AccountLevel$ActivityMetrics */ =>  {
-                let var_186 =
+                let var_188 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_activity_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_activity_metrics(var_186);
+                builder = builder.set_activity_metrics(var_188);
             }
             ,
             s if s.matches("BucketLevel") /* BucketLevel com.amazonaws.s3control#AccountLevel$BucketLevel */ =>  {
-                let var_187 =
+                let var_189 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_bucket_level(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_bucket_level(var_187);
+                builder = builder.set_bucket_level(var_189);
             }
             ,
             _ => {}
@@ -4133,23 +4188,23 @@ pub fn deser_structure_crate_model_include(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Buckets") /* Buckets com.amazonaws.s3control#Include$Buckets */ =>  {
-                let var_188 =
+                let var_190 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_buckets(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_buckets(var_188);
+                builder = builder.set_buckets(var_190);
             }
             ,
             s if s.matches("Regions") /* Regions com.amazonaws.s3control#Include$Regions */ =>  {
-                let var_189 =
+                let var_191 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_regions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_regions(var_189);
+                builder = builder.set_regions(var_191);
             }
             ,
             _ => {}
@@ -4166,23 +4221,23 @@ pub fn deser_structure_crate_model_exclude(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Buckets") /* Buckets com.amazonaws.s3control#Exclude$Buckets */ =>  {
-                let var_190 =
+                let var_192 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_buckets(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_buckets(var_190);
+                builder = builder.set_buckets(var_192);
             }
             ,
             s if s.matches("Regions") /* Regions com.amazonaws.s3control#Exclude$Regions */ =>  {
-                let var_191 =
+                let var_193 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_regions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_regions(var_191);
+                builder = builder.set_regions(var_193);
             }
             ,
             _ => {}
@@ -4199,23 +4254,23 @@ pub fn deser_structure_crate_model_storage_lens_data_export(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3BucketDestination") /* S3BucketDestination com.amazonaws.s3control#StorageLensDataExport$S3BucketDestination */ =>  {
-                let var_192 =
+                let var_194 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_bucket_destination(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_bucket_destination(var_192);
+                builder = builder.set_s3_bucket_destination(var_194);
             }
             ,
             s if s.matches("CloudWatchMetrics") /* CloudWatchMetrics com.amazonaws.s3control#StorageLensDataExport$CloudWatchMetrics */ =>  {
-                let var_193 =
+                let var_195 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_cloud_watch_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cloud_watch_metrics(var_193);
+                builder = builder.set_cloud_watch_metrics(var_195);
             }
             ,
             _ => {}
@@ -4232,7 +4287,7 @@ pub fn deser_structure_crate_model_storage_lens_aws_org(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Arn") /* Arn com.amazonaws.s3control#StorageLensAwsOrg$Arn */ =>  {
-                let var_194 =
+                let var_196 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4241,7 +4296,7 @@ pub fn deser_structure_crate_model_storage_lens_aws_org(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_194);
+                builder = builder.set_arn(var_196);
             }
             ,
             _ => {}
@@ -4258,7 +4313,7 @@ pub fn deser_structure_crate_model_job_manifest_spec(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Format") /* Format com.amazonaws.s3control#JobManifestSpec$Format */ =>  {
-                let var_195 =
+                let var_197 =
                     Some(
                         Result::<crate::model::JobManifestFormat, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::JobManifestFormat::from(
@@ -4268,17 +4323,17 @@ pub fn deser_structure_crate_model_job_manifest_spec(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_195);
+                builder = builder.set_format(var_197);
             }
             ,
             s if s.matches("Fields") /* Fields com.amazonaws.s3control#JobManifestSpec$Fields */ =>  {
-                let var_196 =
+                let var_198 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_job_manifest_field_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_fields(var_196);
+                builder = builder.set_fields(var_198);
             }
             ,
             _ => {}
@@ -4295,32 +4350,6 @@ pub fn deser_structure_crate_model_job_manifest_location(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ObjectArn") /* ObjectArn com.amazonaws.s3control#JobManifestLocation$ObjectArn */ =>  {
-                let var_197 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_object_arn(var_197);
-            }
-            ,
-            s if s.matches("ObjectVersionId") /* ObjectVersionId com.amazonaws.s3control#JobManifestLocation$ObjectVersionId */ =>  {
-                let var_198 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_object_version_id(var_198);
-            }
-            ,
-            s if s.matches("ETag") /* ETag com.amazonaws.s3control#JobManifestLocation$ETag */ =>  {
                 let var_199 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -4330,7 +4359,33 @@ pub fn deser_structure_crate_model_job_manifest_location(
                         ?
                     )
                 ;
-                builder = builder.set_e_tag(var_199);
+                builder = builder.set_object_arn(var_199);
+            }
+            ,
+            s if s.matches("ObjectVersionId") /* ObjectVersionId com.amazonaws.s3control#JobManifestLocation$ObjectVersionId */ =>  {
+                let var_200 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_object_version_id(var_200);
+            }
+            ,
+            s if s.matches("ETag") /* ETag com.amazonaws.s3control#JobManifestLocation$ETag */ =>  {
+                let var_201 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_e_tag(var_201);
             }
             ,
             _ => {}
@@ -4347,7 +4402,7 @@ pub fn deser_structure_crate_model_lambda_invoke_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FunctionArn") /* FunctionArn com.amazonaws.s3control#LambdaInvokeOperation$FunctionArn */ =>  {
-                let var_200 =
+                let var_202 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4356,7 +4411,7 @@ pub fn deser_structure_crate_model_lambda_invoke_operation(
                         ?
                     )
                 ;
-                builder = builder.set_function_arn(var_200);
+                builder = builder.set_function_arn(var_202);
             }
             ,
             _ => {}
@@ -4373,7 +4428,7 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetResource") /* TargetResource com.amazonaws.s3control#S3CopyObjectOperation$TargetResource */ =>  {
-                let var_201 =
+                let var_203 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4382,11 +4437,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_target_resource(var_201);
+                builder = builder.set_target_resource(var_203);
             }
             ,
             s if s.matches("CannedAccessControlList") /* CannedAccessControlList com.amazonaws.s3control#S3CopyObjectOperation$CannedAccessControlList */ =>  {
-                let var_202 =
+                let var_204 =
                     Some(
                         Result::<crate::model::S3CannedAccessControlList, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3CannedAccessControlList::from(
@@ -4396,21 +4451,21 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_canned_access_control_list(var_202);
+                builder = builder.set_canned_access_control_list(var_204);
             }
             ,
             s if s.matches("AccessControlGrants") /* AccessControlGrants com.amazonaws.s3control#S3CopyObjectOperation$AccessControlGrants */ =>  {
-                let var_203 =
+                let var_205 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_s3_grant_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_control_grants(var_203);
+                builder = builder.set_access_control_grants(var_205);
             }
             ,
             s if s.matches("MetadataDirective") /* MetadataDirective com.amazonaws.s3control#S3CopyObjectOperation$MetadataDirective */ =>  {
-                let var_204 =
+                let var_206 =
                     Some(
                         Result::<crate::model::S3MetadataDirective, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3MetadataDirective::from(
@@ -4420,11 +4475,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_metadata_directive(var_204);
+                builder = builder.set_metadata_directive(var_206);
             }
             ,
             s if s.matches("ModifiedSinceConstraint") /* ModifiedSinceConstraint com.amazonaws.s3control#S3CopyObjectOperation$ModifiedSinceConstraint */ =>  {
-                let var_205 =
+                let var_207 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4434,31 +4489,31 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_modified_since_constraint(var_205);
+                builder = builder.set_modified_since_constraint(var_207);
             }
             ,
             s if s.matches("NewObjectMetadata") /* NewObjectMetadata com.amazonaws.s3control#S3CopyObjectOperation$NewObjectMetadata */ =>  {
-                let var_206 =
+                let var_208 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_object_metadata(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_new_object_metadata(var_206);
+                builder = builder.set_new_object_metadata(var_208);
             }
             ,
             s if s.matches("NewObjectTagging") /* NewObjectTagging com.amazonaws.s3control#S3CopyObjectOperation$NewObjectTagging */ =>  {
-                let var_207 =
+                let var_209 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_s3_tag_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_new_object_tagging(var_207);
+                builder = builder.set_new_object_tagging(var_209);
             }
             ,
             s if s.matches("RedirectLocation") /* RedirectLocation com.amazonaws.s3control#S3CopyObjectOperation$RedirectLocation */ =>  {
-                let var_208 =
+                let var_210 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4467,11 +4522,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_redirect_location(var_208);
+                builder = builder.set_redirect_location(var_210);
             }
             ,
             s if s.matches("RequesterPays") /* RequesterPays com.amazonaws.s3control#S3CopyObjectOperation$RequesterPays */ =>  {
-                let var_209 =
+                let var_211 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4482,11 +4537,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_requester_pays(var_209);
+                builder = builder.set_requester_pays(var_211);
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3control#S3CopyObjectOperation$StorageClass */ =>  {
-                let var_210 =
+                let var_212 =
                     Some(
                         Result::<crate::model::S3StorageClass, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3StorageClass::from(
@@ -4496,11 +4551,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_storage_class(var_210);
+                builder = builder.set_storage_class(var_212);
             }
             ,
             s if s.matches("UnModifiedSinceConstraint") /* UnModifiedSinceConstraint com.amazonaws.s3control#S3CopyObjectOperation$UnModifiedSinceConstraint */ =>  {
-                let var_211 =
+                let var_213 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4510,11 +4565,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_un_modified_since_constraint(var_211);
+                builder = builder.set_un_modified_since_constraint(var_213);
             }
             ,
             s if s.matches("SSEAwsKmsKeyId") /* SSEAwsKmsKeyId com.amazonaws.s3control#S3CopyObjectOperation$SSEAwsKmsKeyId */ =>  {
-                let var_212 =
+                let var_214 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4523,11 +4578,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_sse_aws_kms_key_id(var_212);
+                builder = builder.set_sse_aws_kms_key_id(var_214);
             }
             ,
             s if s.matches("TargetKeyPrefix") /* TargetKeyPrefix com.amazonaws.s3control#S3CopyObjectOperation$TargetKeyPrefix */ =>  {
-                let var_213 =
+                let var_215 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4536,11 +4591,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_target_key_prefix(var_213);
+                builder = builder.set_target_key_prefix(var_215);
             }
             ,
             s if s.matches("ObjectLockLegalHoldStatus") /* ObjectLockLegalHoldStatus com.amazonaws.s3control#S3CopyObjectOperation$ObjectLockLegalHoldStatus */ =>  {
-                let var_214 =
+                let var_216 =
                     Some(
                         Result::<crate::model::S3ObjectLockLegalHoldStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3ObjectLockLegalHoldStatus::from(
@@ -4550,11 +4605,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_object_lock_legal_hold_status(var_214);
+                builder = builder.set_object_lock_legal_hold_status(var_216);
             }
             ,
             s if s.matches("ObjectLockMode") /* ObjectLockMode com.amazonaws.s3control#S3CopyObjectOperation$ObjectLockMode */ =>  {
-                let var_215 =
+                let var_217 =
                     Some(
                         Result::<crate::model::S3ObjectLockMode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3ObjectLockMode::from(
@@ -4564,11 +4619,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_object_lock_mode(var_215);
+                builder = builder.set_object_lock_mode(var_217);
             }
             ,
             s if s.matches("ObjectLockRetainUntilDate") /* ObjectLockRetainUntilDate com.amazonaws.s3control#S3CopyObjectOperation$ObjectLockRetainUntilDate */ =>  {
-                let var_216 =
+                let var_218 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4578,11 +4633,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_object_lock_retain_until_date(var_216);
+                builder = builder.set_object_lock_retain_until_date(var_218);
             }
             ,
             s if s.matches("BucketKeyEnabled") /* BucketKeyEnabled com.amazonaws.s3control#S3CopyObjectOperation$BucketKeyEnabled */ =>  {
-                let var_217 =
+                let var_219 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4593,11 +4648,11 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_bucket_key_enabled(var_217);
+                builder = builder.set_bucket_key_enabled(var_219);
             }
             ,
             s if s.matches("ChecksumAlgorithm") /* ChecksumAlgorithm com.amazonaws.s3control#S3CopyObjectOperation$ChecksumAlgorithm */ =>  {
-                let var_218 =
+                let var_220 =
                     Some(
                         Result::<crate::model::S3ChecksumAlgorithm, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3ChecksumAlgorithm::from(
@@ -4607,7 +4662,7 @@ pub fn deser_structure_crate_model_s3_copy_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_checksum_algorithm(var_218);
+                builder = builder.set_checksum_algorithm(var_220);
             }
             ,
             _ => {}
@@ -4624,13 +4679,13 @@ pub fn deser_structure_crate_model_s3_set_object_acl_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AccessControlPolicy") /* AccessControlPolicy com.amazonaws.s3control#S3SetObjectAclOperation$AccessControlPolicy */ =>  {
-                let var_219 =
+                let var_221 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_access_control_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_control_policy(var_219);
+                builder = builder.set_access_control_policy(var_221);
             }
             ,
             _ => {}
@@ -4647,13 +4702,13 @@ pub fn deser_structure_crate_model_s3_set_object_tagging_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TagSet") /* TagSet com.amazonaws.s3control#S3SetObjectTaggingOperation$TagSet */ =>  {
-                let var_220 =
+                let var_222 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_s3_tag_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_set(var_220);
+                builder = builder.set_tag_set(var_222);
             }
             ,
             _ => {}
@@ -4679,7 +4734,7 @@ pub fn deser_structure_crate_model_s3_initiate_restore_object_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExpirationInDays") /* ExpirationInDays com.amazonaws.s3control#S3InitiateRestoreObjectOperation$ExpirationInDays */ =>  {
-                let var_221 =
+                let var_223 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4690,11 +4745,11 @@ pub fn deser_structure_crate_model_s3_initiate_restore_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_expiration_in_days(var_221);
+                builder = builder.set_expiration_in_days(var_223);
             }
             ,
             s if s.matches("GlacierJobTier") /* GlacierJobTier com.amazonaws.s3control#S3InitiateRestoreObjectOperation$GlacierJobTier */ =>  {
-                let var_222 =
+                let var_224 =
                     Some(
                         Result::<crate::model::S3GlacierJobTier, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3GlacierJobTier::from(
@@ -4704,7 +4759,7 @@ pub fn deser_structure_crate_model_s3_initiate_restore_object_operation(
                         ?
                     )
                 ;
-                builder = builder.set_glacier_job_tier(var_222);
+                builder = builder.set_glacier_job_tier(var_224);
             }
             ,
             _ => {}
@@ -4721,13 +4776,13 @@ pub fn deser_structure_crate_model_s3_set_object_legal_hold_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LegalHold") /* LegalHold com.amazonaws.s3control#S3SetObjectLegalHoldOperation$LegalHold */ =>  {
-                let var_223 =
+                let var_225 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_object_lock_legal_hold(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_legal_hold(var_223);
+                builder = builder.set_legal_hold(var_225);
             }
             ,
             _ => {}
@@ -4744,7 +4799,7 @@ pub fn deser_structure_crate_model_s3_set_object_retention_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("BypassGovernanceRetention") /* BypassGovernanceRetention com.amazonaws.s3control#S3SetObjectRetentionOperation$BypassGovernanceRetention */ =>  {
-                let var_224 =
+                let var_226 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4755,17 +4810,17 @@ pub fn deser_structure_crate_model_s3_set_object_retention_operation(
                         ?
                     )
                 ;
-                builder = builder.set_bypass_governance_retention(var_224);
+                builder = builder.set_bypass_governance_retention(var_226);
             }
             ,
             s if s.matches("Retention") /* Retention com.amazonaws.s3control#S3SetObjectRetentionOperation$Retention */ =>  {
-                let var_225 =
+                let var_227 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_retention(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_retention(var_225);
+                builder = builder.set_retention(var_227);
             }
             ,
             _ => {}
@@ -4791,7 +4846,7 @@ pub fn deser_structure_crate_model_job_timers(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ElapsedTimeInActiveSeconds") /* ElapsedTimeInActiveSeconds com.amazonaws.s3control#JobTimers$ElapsedTimeInActiveSeconds */ =>  {
-                let var_226 =
+                let var_228 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4802,7 +4857,7 @@ pub fn deser_structure_crate_model_job_timers(
                         ?
                     )
                 ;
-                builder = builder.set_elapsed_time_in_active_seconds(var_226);
+                builder = builder.set_elapsed_time_in_active_seconds(var_228);
             }
             ,
             _ => {}
@@ -4819,7 +4874,7 @@ pub fn deser_structure_crate_model_job_failure(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FailureCode") /* FailureCode com.amazonaws.s3control#JobFailure$FailureCode */ =>  {
-                let var_227 =
+                let var_229 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4828,11 +4883,11 @@ pub fn deser_structure_crate_model_job_failure(
                         ?
                     )
                 ;
-                builder = builder.set_failure_code(var_227);
+                builder = builder.set_failure_code(var_229);
             }
             ,
             s if s.matches("FailureReason") /* FailureReason com.amazonaws.s3control#JobFailure$FailureReason */ =>  {
-                let var_228 =
+                let var_230 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4841,7 +4896,7 @@ pub fn deser_structure_crate_model_job_failure(
                         ?
                     )
                 ;
-                builder = builder.set_failure_reason(var_228);
+                builder = builder.set_failure_reason(var_230);
             }
             ,
             _ => {}
@@ -4858,7 +4913,7 @@ pub fn deser_structure_crate_model_s3_job_manifest_generator(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExpectedBucketOwner") /* ExpectedBucketOwner com.amazonaws.s3control#S3JobManifestGenerator$ExpectedBucketOwner */ =>  {
-                let var_229 =
+                let var_231 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4867,11 +4922,11 @@ pub fn deser_structure_crate_model_s3_job_manifest_generator(
                         ?
                     )
                 ;
-                builder = builder.set_expected_bucket_owner(var_229);
+                builder = builder.set_expected_bucket_owner(var_231);
             }
             ,
             s if s.matches("SourceBucket") /* SourceBucket com.amazonaws.s3control#S3JobManifestGenerator$SourceBucket */ =>  {
-                let var_230 =
+                let var_232 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4880,31 +4935,31 @@ pub fn deser_structure_crate_model_s3_job_manifest_generator(
                         ?
                     )
                 ;
-                builder = builder.set_source_bucket(var_230);
+                builder = builder.set_source_bucket(var_232);
             }
             ,
             s if s.matches("ManifestOutputLocation") /* ManifestOutputLocation com.amazonaws.s3control#S3JobManifestGenerator$ManifestOutputLocation */ =>  {
-                let var_231 =
+                let var_233 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_manifest_output_location(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_manifest_output_location(var_231);
+                builder = builder.set_manifest_output_location(var_233);
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3control#S3JobManifestGenerator$Filter */ =>  {
-                let var_232 =
+                let var_234 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_job_manifest_generator_filter(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_filter(var_232);
+                builder = builder.set_filter(var_234);
             }
             ,
             s if s.matches("EnableManifestOutput") /* EnableManifestOutput com.amazonaws.s3control#S3JobManifestGenerator$EnableManifestOutput */ =>  {
-                let var_233 =
+                let var_235 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4915,7 +4970,7 @@ pub fn deser_structure_crate_model_s3_job_manifest_generator(
                         ?
                     )
                 ;
-                builder = builder.set_enable_manifest_output(var_233);
+                builder = builder.set_enable_manifest_output(var_235);
             }
             ,
             _ => {}
@@ -4932,7 +4987,7 @@ pub fn deser_structure_crate_model_create_multi_region_access_point_input(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#CreateMultiRegionAccessPointInput$Name */ =>  {
-                let var_234 =
+                let var_236 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4941,27 +4996,27 @@ pub fn deser_structure_crate_model_create_multi_region_access_point_input(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_234);
+                builder = builder.set_name(var_236);
             }
             ,
             s if s.matches("PublicAccessBlock") /* PublicAccessBlock com.amazonaws.s3control#CreateMultiRegionAccessPointInput$PublicAccessBlock */ =>  {
-                let var_235 =
+                let var_237 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_public_access_block_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_public_access_block(var_235);
+                builder = builder.set_public_access_block(var_237);
             }
             ,
             s if s.matches("Regions") /* Regions com.amazonaws.s3control#CreateMultiRegionAccessPointInput$Regions */ =>  {
-                let var_236 =
+                let var_238 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_region_creation_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_regions(var_236);
+                builder = builder.set_regions(var_238);
             }
             ,
             _ => {}
@@ -4978,7 +5033,7 @@ pub fn deser_structure_crate_model_delete_multi_region_access_point_input(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#DeleteMultiRegionAccessPointInput$Name */ =>  {
-                let var_237 =
+                let var_239 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4987,7 +5042,7 @@ pub fn deser_structure_crate_model_delete_multi_region_access_point_input(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_237);
+                builder = builder.set_name(var_239);
             }
             ,
             _ => {}
@@ -5004,7 +5059,7 @@ pub fn deser_structure_crate_model_put_multi_region_access_point_policy_input(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#PutMultiRegionAccessPointPolicyInput$Name */ =>  {
-                let var_238 =
+                let var_240 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5013,11 +5068,11 @@ pub fn deser_structure_crate_model_put_multi_region_access_point_policy_input(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_238);
+                builder = builder.set_name(var_240);
             }
             ,
             s if s.matches("Policy") /* Policy com.amazonaws.s3control#PutMultiRegionAccessPointPolicyInput$Policy */ =>  {
-                let var_239 =
+                let var_241 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5026,7 +5081,7 @@ pub fn deser_structure_crate_model_put_multi_region_access_point_policy_input(
                         ?
                     )
                 ;
-                builder = builder.set_policy(var_239);
+                builder = builder.set_policy(var_241);
             }
             ,
             _ => {}
@@ -5043,13 +5098,13 @@ pub fn deser_structure_crate_model_multi_region_access_points_async_response(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Regions") /* Regions com.amazonaws.s3control#MultiRegionAccessPointsAsyncResponse$Regions */ =>  {
-                let var_240 =
+                let var_242 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_multi_region_access_point_regional_response_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_regions(var_240);
+                builder = builder.set_regions(var_242);
             }
             ,
             _ => {}
@@ -5066,32 +5121,6 @@ pub fn deser_structure_crate_model_async_error_details(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Code") /* Code com.amazonaws.s3control#AsyncErrorDetails$Code */ =>  {
-                let var_241 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_code(var_241);
-            }
-            ,
-            s if s.matches("Message") /* Message com.amazonaws.s3control#AsyncErrorDetails$Message */ =>  {
-                let var_242 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_242);
-            }
-            ,
-            s if s.matches("Resource") /* Resource com.amazonaws.s3control#AsyncErrorDetails$Resource */ =>  {
                 let var_243 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5101,10 +5130,10 @@ pub fn deser_structure_crate_model_async_error_details(
                         ?
                     )
                 ;
-                builder = builder.set_resource(var_243);
+                builder = builder.set_code(var_243);
             }
             ,
-            s if s.matches("RequestId") /* RequestId com.amazonaws.s3control#AsyncErrorDetails$RequestId */ =>  {
+            s if s.matches("Message") /* Message com.amazonaws.s3control#AsyncErrorDetails$Message */ =>  {
                 let var_244 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5114,7 +5143,33 @@ pub fn deser_structure_crate_model_async_error_details(
                         ?
                     )
                 ;
-                builder = builder.set_request_id(var_244);
+                builder = builder.set_message(var_244);
+            }
+            ,
+            s if s.matches("Resource") /* Resource com.amazonaws.s3control#AsyncErrorDetails$Resource */ =>  {
+                let var_245 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_resource(var_245);
+            }
+            ,
+            s if s.matches("RequestId") /* RequestId com.amazonaws.s3control#AsyncErrorDetails$RequestId */ =>  {
+                let var_246 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_request_id(var_246);
             }
             ,
             _ => {}
@@ -5132,23 +5187,23 @@ pub fn deser_structure_crate_model_object_lambda_transformation_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Actions") /* Actions com.amazonaws.s3control#ObjectLambdaTransformationConfiguration$Actions */ =>  {
-                let var_245 =
+                let var_247 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_object_lambda_transformation_configuration_actions_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_actions(var_245);
+                builder = builder.set_actions(var_247);
             }
             ,
             s if s.matches("ContentTransformation") /* ContentTransformation com.amazonaws.s3control#ObjectLambdaTransformationConfiguration$ContentTransformation */ =>  {
-                let var_246 =
+                let var_248 =
                     Some(
                         crate::xml_deser::deser_union_crate_model_object_lambda_content_transformation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_content_transformation(var_246);
+                builder = builder.set_content_transformation(var_248);
             }
             ,
             _ => {}
@@ -5165,7 +5220,7 @@ pub fn deser_structure_crate_model_lifecycle_expiration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Date") /* Date com.amazonaws.s3control#LifecycleExpiration$Date */ =>  {
-                let var_247 =
+                let var_249 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5175,11 +5230,11 @@ pub fn deser_structure_crate_model_lifecycle_expiration(
                         ?
                     )
                 ;
-                builder = builder.set_date(var_247);
+                builder = builder.set_date(var_249);
             }
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3control#LifecycleExpiration$Days */ =>  {
-                let var_248 =
+                let var_250 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5190,11 +5245,11 @@ pub fn deser_structure_crate_model_lifecycle_expiration(
                         ?
                     )
                 ;
-                builder = builder.set_days(var_248);
+                builder = builder.set_days(var_250);
             }
             ,
             s if s.matches("ExpiredObjectDeleteMarker") /* ExpiredObjectDeleteMarker com.amazonaws.s3control#LifecycleExpiration$ExpiredObjectDeleteMarker */ =>  {
-                let var_249 =
+                let var_251 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5205,7 +5260,7 @@ pub fn deser_structure_crate_model_lifecycle_expiration(
                         ?
                     )
                 ;
-                builder = builder.set_expired_object_delete_marker(var_249);
+                builder = builder.set_expired_object_delete_marker(var_251);
             }
             ,
             _ => {}
@@ -5222,7 +5277,7 @@ pub fn deser_structure_crate_model_lifecycle_rule_filter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3control#LifecycleRuleFilter$Prefix */ =>  {
-                let var_250 =
+                let var_252 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5231,27 +5286,27 @@ pub fn deser_structure_crate_model_lifecycle_rule_filter(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_250);
+                builder = builder.set_prefix(var_252);
             }
             ,
             s if s.matches("Tag") /* Tag com.amazonaws.s3control#LifecycleRuleFilter$Tag */ =>  {
-                let var_251 =
+                let var_253 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_tag(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag(var_251);
+                builder = builder.set_tag(var_253);
             }
             ,
             s if s.matches("And") /* And com.amazonaws.s3control#LifecycleRuleFilter$And */ =>  {
-                let var_252 =
+                let var_254 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_lifecycle_rule_and_operator(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_and(var_252);
+                builder = builder.set_and(var_254);
             }
             ,
             _ => {}
@@ -5309,7 +5364,7 @@ pub fn deser_structure_crate_model_noncurrent_version_expiration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NoncurrentDays") /* NoncurrentDays com.amazonaws.s3control#NoncurrentVersionExpiration$NoncurrentDays */ =>  {
-                let var_253 =
+                let var_255 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5320,7 +5375,7 @@ pub fn deser_structure_crate_model_noncurrent_version_expiration(
                         ?
                     )
                 ;
-                builder = builder.set_noncurrent_days(var_253);
+                builder = builder.set_noncurrent_days(var_255);
             }
             ,
             _ => {}
@@ -5337,7 +5392,7 @@ pub fn deser_structure_crate_model_abort_incomplete_multipart_upload(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DaysAfterInitiation") /* DaysAfterInitiation com.amazonaws.s3control#AbortIncompleteMultipartUpload$DaysAfterInitiation */ =>  {
-                let var_254 =
+                let var_256 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5348,7 +5403,7 @@ pub fn deser_structure_crate_model_abort_incomplete_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_days_after_initiation(var_254);
+                builder = builder.set_days_after_initiation(var_256);
             }
             ,
             _ => {}
@@ -5365,7 +5420,7 @@ pub fn deser_structure_crate_model_region_report(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#RegionReport$Bucket */ =>  {
-                let var_255 =
+                let var_257 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5374,11 +5429,11 @@ pub fn deser_structure_crate_model_region_report(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_255);
+                builder = builder.set_bucket(var_257);
             }
             ,
             s if s.matches("Region") /* Region com.amazonaws.s3control#RegionReport$Region */ =>  {
-                let var_256 =
+                let var_258 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5387,7 +5442,7 @@ pub fn deser_structure_crate_model_region_report(
                         ?
                     )
                 ;
-                builder = builder.set_region(var_256);
+                builder = builder.set_region(var_258);
             }
             ,
             _ => {}
@@ -5404,7 +5459,7 @@ pub fn deser_structure_crate_model_activity_metrics(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IsEnabled") /* IsEnabled com.amazonaws.s3control#ActivityMetrics$IsEnabled */ =>  {
-                let var_257 =
+                let var_259 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5415,7 +5470,7 @@ pub fn deser_structure_crate_model_activity_metrics(
                         ?
                     )
                 ;
-                builder = builder.set_is_enabled(var_257);
+                builder = builder.set_is_enabled(var_259);
             }
             ,
             _ => {}
@@ -5432,23 +5487,23 @@ pub fn deser_structure_crate_model_bucket_level(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ActivityMetrics") /* ActivityMetrics com.amazonaws.s3control#BucketLevel$ActivityMetrics */ =>  {
-                let var_258 =
+                let var_260 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_activity_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_activity_metrics(var_258);
+                builder = builder.set_activity_metrics(var_260);
             }
             ,
             s if s.matches("PrefixLevel") /* PrefixLevel com.amazonaws.s3control#BucketLevel$PrefixLevel */ =>  {
-                let var_259 =
+                let var_261 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_prefix_level(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_prefix_level(var_259);
+                builder = builder.set_prefix_level(var_261);
             }
             ,
             _ => {}
@@ -5509,7 +5564,7 @@ pub fn deser_structure_crate_model_s3_bucket_destination(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Format") /* Format com.amazonaws.s3control#S3BucketDestination$Format */ =>  {
-                let var_260 =
+                let var_262 =
                     Some(
                         Result::<crate::model::Format, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::Format::from(
@@ -5519,11 +5574,11 @@ pub fn deser_structure_crate_model_s3_bucket_destination(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_260);
+                builder = builder.set_format(var_262);
             }
             ,
             s if s.matches("OutputSchemaVersion") /* OutputSchemaVersion com.amazonaws.s3control#S3BucketDestination$OutputSchemaVersion */ =>  {
-                let var_261 =
+                let var_263 =
                     Some(
                         Result::<crate::model::OutputSchemaVersion, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::OutputSchemaVersion::from(
@@ -5533,36 +5588,10 @@ pub fn deser_structure_crate_model_s3_bucket_destination(
                         ?
                     )
                 ;
-                builder = builder.set_output_schema_version(var_261);
+                builder = builder.set_output_schema_version(var_263);
             }
             ,
             s if s.matches("AccountId") /* AccountId com.amazonaws.s3control#S3BucketDestination$AccountId */ =>  {
-                let var_262 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_account_id(var_262);
-            }
-            ,
-            s if s.matches("Arn") /* Arn com.amazonaws.s3control#S3BucketDestination$Arn */ =>  {
-                let var_263 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_arn(var_263);
-            }
-            ,
-            s if s.matches("Prefix") /* Prefix com.amazonaws.s3control#S3BucketDestination$Prefix */ =>  {
                 let var_264 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5572,17 +5601,43 @@ pub fn deser_structure_crate_model_s3_bucket_destination(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_264);
+                builder = builder.set_account_id(var_264);
+            }
+            ,
+            s if s.matches("Arn") /* Arn com.amazonaws.s3control#S3BucketDestination$Arn */ =>  {
+                let var_265 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_265);
+            }
+            ,
+            s if s.matches("Prefix") /* Prefix com.amazonaws.s3control#S3BucketDestination$Prefix */ =>  {
+                let var_266 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_prefix(var_266);
             }
             ,
             s if s.matches("Encryption") /* Encryption com.amazonaws.s3control#S3BucketDestination$Encryption */ =>  {
-                let var_265 =
+                let var_267 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_storage_lens_data_export_encryption(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_encryption(var_265);
+                builder = builder.set_encryption(var_267);
             }
             ,
             _ => {}
@@ -5599,7 +5654,7 @@ pub fn deser_structure_crate_model_cloud_watch_metrics(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IsEnabled") /* IsEnabled com.amazonaws.s3control#CloudWatchMetrics$IsEnabled */ =>  {
-                let var_266 =
+                let var_268 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5610,7 +5665,7 @@ pub fn deser_structure_crate_model_cloud_watch_metrics(
                         ?
                     )
                 ;
-                builder = builder.set_is_enabled(var_266);
+                builder = builder.set_is_enabled(var_268);
             }
             ,
             _ => {}
@@ -5669,32 +5724,6 @@ pub fn deser_structure_crate_model_s3_object_metadata(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheControl") /* CacheControl com.amazonaws.s3control#S3ObjectMetadata$CacheControl */ =>  {
-                let var_267 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_control(var_267);
-            }
-            ,
-            s if s.matches("ContentDisposition") /* ContentDisposition com.amazonaws.s3control#S3ObjectMetadata$ContentDisposition */ =>  {
-                let var_268 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_content_disposition(var_268);
-            }
-            ,
-            s if s.matches("ContentEncoding") /* ContentEncoding com.amazonaws.s3control#S3ObjectMetadata$ContentEncoding */ =>  {
                 let var_269 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5704,10 +5733,10 @@ pub fn deser_structure_crate_model_s3_object_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_content_encoding(var_269);
+                builder = builder.set_cache_control(var_269);
             }
             ,
-            s if s.matches("ContentLanguage") /* ContentLanguage com.amazonaws.s3control#S3ObjectMetadata$ContentLanguage */ =>  {
+            s if s.matches("ContentDisposition") /* ContentDisposition com.amazonaws.s3control#S3ObjectMetadata$ContentDisposition */ =>  {
                 let var_270 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5717,21 +5746,47 @@ pub fn deser_structure_crate_model_s3_object_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_content_language(var_270);
+                builder = builder.set_content_disposition(var_270);
+            }
+            ,
+            s if s.matches("ContentEncoding") /* ContentEncoding com.amazonaws.s3control#S3ObjectMetadata$ContentEncoding */ =>  {
+                let var_271 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_content_encoding(var_271);
+            }
+            ,
+            s if s.matches("ContentLanguage") /* ContentLanguage com.amazonaws.s3control#S3ObjectMetadata$ContentLanguage */ =>  {
+                let var_272 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_content_language(var_272);
             }
             ,
             s if s.matches("UserMetadata") /* UserMetadata com.amazonaws.s3control#S3ObjectMetadata$UserMetadata */ =>  {
-                let var_271 =
+                let var_273 =
                     Some(
                         crate::xml_deser::deser_map_com_amazonaws_s3control_s3_user_metadata(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_metadata(var_271);
+                builder = builder.set_user_metadata(var_273);
             }
             ,
             s if s.matches("ContentLength") /* ContentLength com.amazonaws.s3control#S3ObjectMetadata$ContentLength */ =>  {
-                let var_272 =
+                let var_274 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5742,11 +5797,11 @@ pub fn deser_structure_crate_model_s3_object_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_content_length(var_272);
+                builder = builder.set_content_length(var_274);
             }
             ,
             s if s.matches("ContentMD5") /* ContentMD5 com.amazonaws.s3control#S3ObjectMetadata$ContentMD5 */ =>  {
-                let var_273 =
+                let var_275 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5755,11 +5810,11 @@ pub fn deser_structure_crate_model_s3_object_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_content_md5(var_273);
+                builder = builder.set_content_md5(var_275);
             }
             ,
             s if s.matches("ContentType") /* ContentType com.amazonaws.s3control#S3ObjectMetadata$ContentType */ =>  {
-                let var_274 =
+                let var_276 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5768,11 +5823,11 @@ pub fn deser_structure_crate_model_s3_object_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_content_type(var_274);
+                builder = builder.set_content_type(var_276);
             }
             ,
             s if s.matches("HttpExpiresDate") /* HttpExpiresDate com.amazonaws.s3control#S3ObjectMetadata$HttpExpiresDate */ =>  {
-                let var_275 =
+                let var_277 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5782,11 +5837,11 @@ pub fn deser_structure_crate_model_s3_object_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_http_expires_date(var_275);
+                builder = builder.set_http_expires_date(var_277);
             }
             ,
             s if s.matches("RequesterCharged") /* RequesterCharged com.amazonaws.s3control#S3ObjectMetadata$RequesterCharged */ =>  {
-                let var_276 =
+                let var_278 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5797,11 +5852,11 @@ pub fn deser_structure_crate_model_s3_object_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_requester_charged(var_276);
+                builder = builder.set_requester_charged(var_278);
             }
             ,
             s if s.matches("SSEAlgorithm") /* SSEAlgorithm com.amazonaws.s3control#S3ObjectMetadata$SSEAlgorithm */ =>  {
-                let var_277 =
+                let var_279 =
                     Some(
                         Result::<crate::model::S3SseAlgorithm, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3SseAlgorithm::from(
@@ -5811,7 +5866,7 @@ pub fn deser_structure_crate_model_s3_object_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_sse_algorithm(var_277);
+                builder = builder.set_sse_algorithm(var_279);
             }
             ,
             _ => {}
@@ -5828,17 +5883,17 @@ pub fn deser_structure_crate_model_s3_access_control_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AccessControlList") /* AccessControlList com.amazonaws.s3control#S3AccessControlPolicy$AccessControlList */ =>  {
-                let var_278 =
+                let var_280 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_access_control_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_control_list(var_278);
+                builder = builder.set_access_control_list(var_280);
             }
             ,
             s if s.matches("CannedAccessControlList") /* CannedAccessControlList com.amazonaws.s3control#S3AccessControlPolicy$CannedAccessControlList */ =>  {
-                let var_279 =
+                let var_281 =
                     Some(
                         Result::<crate::model::S3CannedAccessControlList, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3CannedAccessControlList::from(
@@ -5848,7 +5903,7 @@ pub fn deser_structure_crate_model_s3_access_control_policy(
                         ?
                     )
                 ;
-                builder = builder.set_canned_access_control_list(var_279);
+                builder = builder.set_canned_access_control_list(var_281);
             }
             ,
             _ => {}
@@ -5865,7 +5920,7 @@ pub fn deser_structure_crate_model_s3_object_lock_legal_hold(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3control#S3ObjectLockLegalHold$Status */ =>  {
-                let var_280 =
+                let var_282 =
                     Some(
                         Result::<crate::model::S3ObjectLockLegalHoldStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3ObjectLockLegalHoldStatus::from(
@@ -5875,7 +5930,7 @@ pub fn deser_structure_crate_model_s3_object_lock_legal_hold(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_280);
+                builder = builder.set_status(var_282);
             }
             ,
             _ => {}
@@ -5892,7 +5947,7 @@ pub fn deser_structure_crate_model_s3_retention(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RetainUntilDate") /* RetainUntilDate com.amazonaws.s3control#S3Retention$RetainUntilDate */ =>  {
-                let var_281 =
+                let var_283 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5902,11 +5957,11 @@ pub fn deser_structure_crate_model_s3_retention(
                         ?
                     )
                 ;
-                builder = builder.set_retain_until_date(var_281);
+                builder = builder.set_retain_until_date(var_283);
             }
             ,
             s if s.matches("Mode") /* Mode com.amazonaws.s3control#S3Retention$Mode */ =>  {
-                let var_282 =
+                let var_284 =
                     Some(
                         Result::<crate::model::S3ObjectLockRetentionMode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3ObjectLockRetentionMode::from(
@@ -5916,7 +5971,7 @@ pub fn deser_structure_crate_model_s3_retention(
                         ?
                     )
                 ;
-                builder = builder.set_mode(var_282);
+                builder = builder.set_mode(var_284);
             }
             ,
             _ => {}
@@ -5933,32 +5988,6 @@ pub fn deser_structure_crate_model_s3_manifest_output_location(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExpectedManifestBucketOwner") /* ExpectedManifestBucketOwner com.amazonaws.s3control#S3ManifestOutputLocation$ExpectedManifestBucketOwner */ =>  {
-                let var_283 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_expected_manifest_bucket_owner(var_283);
-            }
-            ,
-            s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#S3ManifestOutputLocation$Bucket */ =>  {
-                let var_284 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_bucket(var_284);
-            }
-            ,
-            s if s.matches("ManifestPrefix") /* ManifestPrefix com.amazonaws.s3control#S3ManifestOutputLocation$ManifestPrefix */ =>  {
                 let var_285 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5968,21 +5997,47 @@ pub fn deser_structure_crate_model_s3_manifest_output_location(
                         ?
                     )
                 ;
-                builder = builder.set_manifest_prefix(var_285);
+                builder = builder.set_expected_manifest_bucket_owner(var_285);
+            }
+            ,
+            s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#S3ManifestOutputLocation$Bucket */ =>  {
+                let var_286 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket(var_286);
+            }
+            ,
+            s if s.matches("ManifestPrefix") /* ManifestPrefix com.amazonaws.s3control#S3ManifestOutputLocation$ManifestPrefix */ =>  {
+                let var_287 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_manifest_prefix(var_287);
             }
             ,
             s if s.matches("ManifestEncryption") /* ManifestEncryption com.amazonaws.s3control#S3ManifestOutputLocation$ManifestEncryption */ =>  {
-                let var_286 =
+                let var_288 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_generated_manifest_encryption(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_manifest_encryption(var_286);
+                builder = builder.set_manifest_encryption(var_288);
             }
             ,
             s if s.matches("ManifestFormat") /* ManifestFormat com.amazonaws.s3control#S3ManifestOutputLocation$ManifestFormat */ =>  {
-                let var_287 =
+                let var_289 =
                     Some(
                         Result::<crate::model::GeneratedManifestFormat, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::GeneratedManifestFormat::from(
@@ -5992,7 +6047,7 @@ pub fn deser_structure_crate_model_s3_manifest_output_location(
                         ?
                     )
                 ;
-                builder = builder.set_manifest_format(var_287);
+                builder = builder.set_manifest_format(var_289);
             }
             ,
             _ => {}
@@ -6009,7 +6064,7 @@ pub fn deser_structure_crate_model_job_manifest_generator_filter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("EligibleForReplication") /* EligibleForReplication com.amazonaws.s3control#JobManifestGeneratorFilter$EligibleForReplication */ =>  {
-                let var_288 =
+                let var_290 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6020,11 +6075,11 @@ pub fn deser_structure_crate_model_job_manifest_generator_filter(
                         ?
                     )
                 ;
-                builder = builder.set_eligible_for_replication(var_288);
+                builder = builder.set_eligible_for_replication(var_290);
             }
             ,
             s if s.matches("CreatedAfter") /* CreatedAfter com.amazonaws.s3control#JobManifestGeneratorFilter$CreatedAfter */ =>  {
-                let var_289 =
+                let var_291 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6034,11 +6089,11 @@ pub fn deser_structure_crate_model_job_manifest_generator_filter(
                         ?
                     )
                 ;
-                builder = builder.set_created_after(var_289);
+                builder = builder.set_created_after(var_291);
             }
             ,
             s if s.matches("CreatedBefore") /* CreatedBefore com.amazonaws.s3control#JobManifestGeneratorFilter$CreatedBefore */ =>  {
-                let var_290 =
+                let var_292 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6048,17 +6103,17 @@ pub fn deser_structure_crate_model_job_manifest_generator_filter(
                         ?
                     )
                 ;
-                builder = builder.set_created_before(var_290);
+                builder = builder.set_created_before(var_292);
             }
             ,
             s if s.matches("ObjectReplicationStatuses") /* ObjectReplicationStatuses com.amazonaws.s3control#JobManifestGeneratorFilter$ObjectReplicationStatuses */ =>  {
-                let var_291 =
+                let var_293 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_replication_status_filter_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_object_replication_statuses(var_291);
+                builder = builder.set_object_replication_statuses(var_293);
             }
             ,
             _ => {}
@@ -6162,7 +6217,7 @@ pub fn deser_structure_crate_model_lifecycle_rule_and_operator(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3control#LifecycleRuleAndOperator$Prefix */ =>  {
-                let var_292 =
+                let var_294 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6171,17 +6226,17 @@ pub fn deser_structure_crate_model_lifecycle_rule_and_operator(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_292);
+                builder = builder.set_prefix(var_294);
             }
             ,
             s if s.matches("Tags") /* Tags com.amazonaws.s3control#LifecycleRuleAndOperator$Tags */ =>  {
-                let var_293 =
+                let var_295 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_s3_tag_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_293);
+                builder = builder.set_tags(var_295);
             }
             ,
             _ => {}
@@ -6198,7 +6253,7 @@ pub fn deser_structure_crate_model_transition(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Date") /* Date com.amazonaws.s3control#Transition$Date */ =>  {
-                let var_294 =
+                let var_296 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6208,52 +6263,10 @@ pub fn deser_structure_crate_model_transition(
                         ?
                     )
                 ;
-                builder = builder.set_date(var_294);
+                builder = builder.set_date(var_296);
             }
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3control#Transition$Days */ =>  {
-                let var_295 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3control#Days`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_days(var_295);
-            }
-            ,
-            s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3control#Transition$StorageClass */ =>  {
-                let var_296 =
-                    Some(
-                        Result::<crate::model::TransitionStorageClass, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::TransitionStorageClass::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_storage_class(var_296);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn deser_structure_crate_model_noncurrent_version_transition(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::NoncurrentVersionTransition, aws_smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::NoncurrentVersionTransition::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("NoncurrentDays") /* NoncurrentDays com.amazonaws.s3control#NoncurrentVersionTransition$NoncurrentDays */ =>  {
                 let var_297 =
                     Some(
                          {
@@ -6265,10 +6278,10 @@ pub fn deser_structure_crate_model_noncurrent_version_transition(
                         ?
                     )
                 ;
-                builder = builder.set_noncurrent_days(var_297);
+                builder = builder.set_days(var_297);
             }
             ,
-            s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3control#NoncurrentVersionTransition$StorageClass */ =>  {
+            s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3control#Transition$StorageClass */ =>  {
                 let var_298 =
                     Some(
                         Result::<crate::model::TransitionStorageClass, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6288,6 +6301,48 @@ pub fn deser_structure_crate_model_noncurrent_version_transition(
     Ok(builder.build())
 }
 
+pub fn deser_structure_crate_model_noncurrent_version_transition(
+    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::NoncurrentVersionTransition, aws_smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::NoncurrentVersionTransition::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("NoncurrentDays") /* NoncurrentDays com.amazonaws.s3control#NoncurrentVersionTransition$NoncurrentDays */ =>  {
+                let var_299 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3control#Days`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_noncurrent_days(var_299);
+            }
+            ,
+            s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3control#NoncurrentVersionTransition$StorageClass */ =>  {
+                let var_300 =
+                    Some(
+                        Result::<crate::model::TransitionStorageClass, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::TransitionStorageClass::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_class(var_300);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
 pub fn deser_structure_crate_model_prefix_level(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PrefixLevel, aws_smithy_xml::decode::XmlError> {
@@ -6296,13 +6351,13 @@ pub fn deser_structure_crate_model_prefix_level(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StorageMetrics") /* StorageMetrics com.amazonaws.s3control#PrefixLevel$StorageMetrics */ =>  {
-                let var_299 =
+                let var_301 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_prefix_level_storage_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_storage_metrics(var_299);
+                builder = builder.set_storage_metrics(var_301);
             }
             ,
             _ => {}
@@ -6319,23 +6374,23 @@ pub fn deser_structure_crate_model_storage_lens_data_export_encryption(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SSE-S3") /* SSES3 com.amazonaws.s3control#StorageLensDataExportEncryption$SSES3 */ =>  {
-                let var_300 =
+                let var_302 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_sses3(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_sses3(var_300);
+                builder = builder.set_sses3(var_302);
             }
             ,
             s if s.matches("SSE-KMS") /* SSEKMS com.amazonaws.s3control#StorageLensDataExportEncryption$SSEKMS */ =>  {
-                let var_301 =
+                let var_303 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_ssekms(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ssekms(var_301);
+                builder = builder.set_ssekms(var_303);
             }
             ,
             _ => {}
@@ -6352,17 +6407,17 @@ pub fn deser_structure_crate_model_s3_grant(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Grantee") /* Grantee com.amazonaws.s3control#S3Grant$Grantee */ =>  {
-                let var_302 =
+                let var_304 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_grantee(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_grantee(var_302);
+                builder = builder.set_grantee(var_304);
             }
             ,
             s if s.matches("Permission") /* Permission com.amazonaws.s3control#S3Grant$Permission */ =>  {
-                let var_303 =
+                let var_305 =
                     Some(
                         Result::<crate::model::S3Permission, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3Permission::from(
@@ -6372,7 +6427,7 @@ pub fn deser_structure_crate_model_s3_grant(
                         ?
                     )
                 ;
-                builder = builder.set_permission(var_303);
+                builder = builder.set_permission(var_305);
             }
             ,
             _ => {}
@@ -6409,23 +6464,23 @@ pub fn deser_structure_crate_model_s3_access_control_list(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Owner") /* Owner com.amazonaws.s3control#S3AccessControlList$Owner */ =>  {
-                let var_304 =
+                let var_306 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_s3_object_owner(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_owner(var_304);
+                builder = builder.set_owner(var_306);
             }
             ,
             s if s.matches("Grants") /* Grants com.amazonaws.s3control#S3AccessControlList$Grants */ =>  {
-                let var_305 =
+                let var_307 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_s3control_s3_grant_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_grants(var_305);
+                builder = builder.set_grants(var_307);
             }
             ,
             _ => {}
@@ -6442,23 +6497,23 @@ pub fn deser_structure_crate_model_generated_manifest_encryption(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SSE-S3") /* SSES3 com.amazonaws.s3control#GeneratedManifestEncryption$SSES3 */ =>  {
-                let var_306 =
+                let var_308 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_sses3_encryption(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_sses3(var_306);
+                builder = builder.set_sses3(var_308);
             }
             ,
             s if s.matches("SSE-KMS") /* SSEKMS com.amazonaws.s3control#GeneratedManifestEncryption$SSEKMS */ =>  {
-                let var_307 =
+                let var_309 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_ssekms_encryption(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ssekms(var_307);
+                builder = builder.set_ssekms(var_309);
             }
             ,
             _ => {}
@@ -6498,7 +6553,7 @@ pub fn deser_structure_crate_model_region(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#Region$Bucket */ =>  {
-                let var_308 =
+                let var_310 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6507,7 +6562,7 @@ pub fn deser_structure_crate_model_region(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_308);
+                builder = builder.set_bucket(var_310);
             }
             ,
             _ => {}
@@ -6525,7 +6580,7 @@ pub fn deser_structure_crate_model_multi_region_access_point_regional_response(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#MultiRegionAccessPointRegionalResponse$Name */ =>  {
-                let var_309 =
+                let var_311 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6534,11 +6589,11 @@ pub fn deser_structure_crate_model_multi_region_access_point_regional_response(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_309);
+                builder = builder.set_name(var_311);
             }
             ,
             s if s.matches("RequestStatus") /* RequestStatus com.amazonaws.s3control#MultiRegionAccessPointRegionalResponse$RequestStatus */ =>  {
-                let var_310 =
+                let var_312 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6547,7 +6602,7 @@ pub fn deser_structure_crate_model_multi_region_access_point_regional_response(
                         ?
                     )
                 ;
-                builder = builder.set_request_status(var_310);
+                builder = builder.set_request_status(var_312);
             }
             ,
             _ => {}
@@ -6564,7 +6619,7 @@ pub fn deser_structure_crate_model_aws_lambda_transformation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FunctionArn") /* FunctionArn com.amazonaws.s3control#AwsLambdaTransformation$FunctionArn */ =>  {
-                let var_311 =
+                let var_313 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6573,11 +6628,11 @@ pub fn deser_structure_crate_model_aws_lambda_transformation(
                         ?
                     )
                 ;
-                builder = builder.set_function_arn(var_311);
+                builder = builder.set_function_arn(var_313);
             }
             ,
             s if s.matches("FunctionPayload") /* FunctionPayload com.amazonaws.s3control#AwsLambdaTransformation$FunctionPayload */ =>  {
-                let var_312 =
+                let var_314 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6586,7 +6641,7 @@ pub fn deser_structure_crate_model_aws_lambda_transformation(
                         ?
                     )
                 ;
-                builder = builder.set_function_payload(var_312);
+                builder = builder.set_function_payload(var_314);
             }
             ,
             _ => {}
@@ -6603,7 +6658,7 @@ pub fn deser_structure_crate_model_prefix_level_storage_metrics(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IsEnabled") /* IsEnabled com.amazonaws.s3control#PrefixLevelStorageMetrics$IsEnabled */ =>  {
-                let var_313 =
+                let var_315 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6614,17 +6669,17 @@ pub fn deser_structure_crate_model_prefix_level_storage_metrics(
                         ?
                     )
                 ;
-                builder = builder.set_is_enabled(var_313);
+                builder = builder.set_is_enabled(var_315);
             }
             ,
             s if s.matches("SelectionCriteria") /* SelectionCriteria com.amazonaws.s3control#PrefixLevelStorageMetrics$SelectionCriteria */ =>  {
-                let var_314 =
+                let var_316 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_selection_criteria(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_selection_criteria(var_314);
+                builder = builder.set_selection_criteria(var_316);
             }
             ,
             _ => {}
@@ -6650,7 +6705,7 @@ pub fn deser_structure_crate_model_ssekms(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("KeyId") /* KeyId com.amazonaws.s3control#SSEKMS$KeyId */ =>  {
-                let var_315 =
+                let var_317 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6659,7 +6714,7 @@ pub fn deser_structure_crate_model_ssekms(
                         ?
                     )
                 ;
-                builder = builder.set_key_id(var_315);
+                builder = builder.set_key_id(var_317);
             }
             ,
             _ => {}
@@ -6676,7 +6731,7 @@ pub fn deser_structure_crate_model_s3_grantee(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TypeIdentifier") /* TypeIdentifier com.amazonaws.s3control#S3Grantee$TypeIdentifier */ =>  {
-                let var_316 =
+                let var_318 =
                     Some(
                         Result::<crate::model::S3GranteeTypeIdentifier, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::S3GranteeTypeIdentifier::from(
@@ -6686,11 +6741,11 @@ pub fn deser_structure_crate_model_s3_grantee(
                         ?
                     )
                 ;
-                builder = builder.set_type_identifier(var_316);
+                builder = builder.set_type_identifier(var_318);
             }
             ,
             s if s.matches("Identifier") /* Identifier com.amazonaws.s3control#S3Grantee$Identifier */ =>  {
-                let var_317 =
+                let var_319 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6699,11 +6754,11 @@ pub fn deser_structure_crate_model_s3_grantee(
                         ?
                     )
                 ;
-                builder = builder.set_identifier(var_317);
+                builder = builder.set_identifier(var_319);
             }
             ,
             s if s.matches("DisplayName") /* DisplayName com.amazonaws.s3control#S3Grantee$DisplayName */ =>  {
-                let var_318 =
+                let var_320 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6712,7 +6767,7 @@ pub fn deser_structure_crate_model_s3_grantee(
                         ?
                     )
                 ;
-                builder = builder.set_display_name(var_318);
+                builder = builder.set_display_name(var_320);
             }
             ,
             _ => {}
@@ -6766,7 +6821,7 @@ pub fn deser_structure_crate_model_s3_object_owner(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ID") /* ID com.amazonaws.s3control#S3ObjectOwner$ID */ =>  {
-                let var_319 =
+                let var_321 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6775,11 +6830,11 @@ pub fn deser_structure_crate_model_s3_object_owner(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_319);
+                builder = builder.set_id(var_321);
             }
             ,
             s if s.matches("DisplayName") /* DisplayName com.amazonaws.s3control#S3ObjectOwner$DisplayName */ =>  {
-                let var_320 =
+                let var_322 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6788,7 +6843,7 @@ pub fn deser_structure_crate_model_s3_object_owner(
                         ?
                     )
                 ;
-                builder = builder.set_display_name(var_320);
+                builder = builder.set_display_name(var_322);
             }
             ,
             _ => {}
@@ -6814,7 +6869,7 @@ pub fn deser_structure_crate_model_ssekms_encryption(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("KeyId") /* KeyId com.amazonaws.s3control#SSEKMSEncryption$KeyId */ =>  {
-                let var_321 =
+                let var_323 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6823,7 +6878,7 @@ pub fn deser_structure_crate_model_ssekms_encryption(
                         ?
                     )
                 ;
-                builder = builder.set_key_id(var_321);
+                builder = builder.set_key_id(var_323);
             }
             ,
             _ => {}
@@ -6840,7 +6895,7 @@ pub fn deser_structure_crate_model_selection_criteria(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3control#SelectionCriteria$Delimiter */ =>  {
-                let var_322 =
+                let var_324 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6849,11 +6904,11 @@ pub fn deser_structure_crate_model_selection_criteria(
                         ?
                     )
                 ;
-                builder = builder.set_delimiter(var_322);
+                builder = builder.set_delimiter(var_324);
             }
             ,
             s if s.matches("MaxDepth") /* MaxDepth com.amazonaws.s3control#SelectionCriteria$MaxDepth */ =>  {
-                let var_323 =
+                let var_325 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6864,11 +6919,11 @@ pub fn deser_structure_crate_model_selection_criteria(
                         ?
                     )
                 ;
-                builder = builder.set_max_depth(var_323);
+                builder = builder.set_max_depth(var_325);
             }
             ,
             s if s.matches("MinStorageBytesPercentage") /* MinStorageBytesPercentage com.amazonaws.s3control#SelectionCriteria$MinStorageBytesPercentage */ =>  {
-                let var_324 =
+                let var_326 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6879,7 +6934,7 @@ pub fn deser_structure_crate_model_selection_criteria(
                         ?
                     )
                 ;
-                builder = builder.set_min_storage_bytes_percentage(var_324);
+                builder = builder.set_min_storage_bytes_percentage(var_326);
             }
             ,
             _ => {}

@@ -508,6 +508,9 @@ where
                 crate::error::OptOutSpeakerErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::OptOutSpeakerErrorKind::ServiceQuotaExceededException(inner) => {
+                    Error::ServiceQuotaExceededException(inner)
+                }
                 crate::error::OptOutSpeakerErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }

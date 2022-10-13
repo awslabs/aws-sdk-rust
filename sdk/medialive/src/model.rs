@@ -15218,6 +15218,9 @@ pub struct H265ColorSpaceSettings {
     #[doc(hidden)]
     pub color_space_passthrough_settings:
         std::option::Option<crate::model::ColorSpacePassthroughSettings>,
+    /// Dolby Vision Profile 8.1 Settings
+    #[doc(hidden)]
+    pub dolby_vision81_settings: std::option::Option<crate::model::DolbyVision81Settings>,
     /// Hdr10 Settings
     #[doc(hidden)]
     pub hdr10_settings: std::option::Option<crate::model::Hdr10Settings>,
@@ -15234,6 +15237,12 @@ impl H265ColorSpaceSettings {
         &self,
     ) -> std::option::Option<&crate::model::ColorSpacePassthroughSettings> {
         self.color_space_passthrough_settings.as_ref()
+    }
+    /// Dolby Vision Profile 8.1 Settings
+    pub fn dolby_vision81_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DolbyVision81Settings> {
+        self.dolby_vision81_settings.as_ref()
     }
     /// Hdr10 Settings
     pub fn hdr10_settings(&self) -> std::option::Option<&crate::model::Hdr10Settings> {
@@ -15255,6 +15264,7 @@ impl std::fmt::Debug for H265ColorSpaceSettings {
             "color_space_passthrough_settings",
             &self.color_space_passthrough_settings,
         );
+        formatter.field("dolby_vision81_settings", &self.dolby_vision81_settings);
         formatter.field("hdr10_settings", &self.hdr10_settings);
         formatter.field("rec601_settings", &self.rec601_settings);
         formatter.field("rec709_settings", &self.rec709_settings);
@@ -15269,6 +15279,8 @@ pub mod h265_color_space_settings {
     pub struct Builder {
         pub(crate) color_space_passthrough_settings:
             std::option::Option<crate::model::ColorSpacePassthroughSettings>,
+        pub(crate) dolby_vision81_settings:
+            std::option::Option<crate::model::DolbyVision81Settings>,
         pub(crate) hdr10_settings: std::option::Option<crate::model::Hdr10Settings>,
         pub(crate) rec601_settings: std::option::Option<crate::model::Rec601Settings>,
         pub(crate) rec709_settings: std::option::Option<crate::model::Rec709Settings>,
@@ -15288,6 +15300,22 @@ pub mod h265_color_space_settings {
             input: std::option::Option<crate::model::ColorSpacePassthroughSettings>,
         ) -> Self {
             self.color_space_passthrough_settings = input;
+            self
+        }
+        /// Dolby Vision Profile 8.1 Settings
+        pub fn dolby_vision81_settings(
+            mut self,
+            input: crate::model::DolbyVision81Settings,
+        ) -> Self {
+            self.dolby_vision81_settings = Some(input);
+            self
+        }
+        /// Dolby Vision Profile 8.1 Settings
+        pub fn set_dolby_vision81_settings(
+            mut self,
+            input: std::option::Option<crate::model::DolbyVision81Settings>,
+        ) -> Self {
+            self.dolby_vision81_settings = input;
             self
         }
         /// Hdr10 Settings
@@ -15333,6 +15361,7 @@ pub mod h265_color_space_settings {
         pub fn build(self) -> crate::model::H265ColorSpaceSettings {
             crate::model::H265ColorSpaceSettings {
                 color_space_passthrough_settings: self.color_space_passthrough_settings,
+                dolby_vision81_settings: self.dolby_vision81_settings,
                 hdr10_settings: self.hdr10_settings,
                 rec601_settings: self.rec601_settings,
                 rec709_settings: self.rec709_settings,
@@ -15404,6 +15433,36 @@ impl Rec601Settings {
     /// Creates a new builder-style object to manufacture [`Rec601Settings`](crate::model::Rec601Settings).
     pub fn builder() -> crate::model::rec601_settings::Builder {
         crate::model::rec601_settings::Builder::default()
+    }
+}
+
+/// Dolby Vision Profile 8.1 Settings
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DolbyVision81Settings {}
+impl std::fmt::Debug for DolbyVision81Settings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DolbyVision81Settings");
+        formatter.finish()
+    }
+}
+/// See [`DolbyVision81Settings`](crate::model::DolbyVision81Settings).
+pub mod dolby_vision81_settings {
+
+    /// A builder for [`DolbyVision81Settings`](crate::model::DolbyVision81Settings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DolbyVision81Settings`](crate::model::DolbyVision81Settings).
+        pub fn build(self) -> crate::model::DolbyVision81Settings {
+            crate::model::DolbyVision81Settings {}
+        }
+    }
+}
+impl DolbyVision81Settings {
+    /// Creates a new builder-style object to manufacture [`DolbyVision81Settings`](crate::model::DolbyVision81Settings).
+    pub fn builder() -> crate::model::dolby_vision81_settings::Builder {
+        crate::model::dolby_vision81_settings::Builder::default()
     }
 }
 
@@ -35899,6 +35958,9 @@ pub struct AudioCodecSettings {
     /// Ac3 Settings
     #[doc(hidden)]
     pub ac3_settings: std::option::Option<crate::model::Ac3Settings>,
+    /// Eac3 Atmos Settings
+    #[doc(hidden)]
+    pub eac3_atmos_settings: std::option::Option<crate::model::Eac3AtmosSettings>,
     /// Eac3 Settings
     #[doc(hidden)]
     pub eac3_settings: std::option::Option<crate::model::Eac3Settings>,
@@ -35920,6 +35982,10 @@ impl AudioCodecSettings {
     /// Ac3 Settings
     pub fn ac3_settings(&self) -> std::option::Option<&crate::model::Ac3Settings> {
         self.ac3_settings.as_ref()
+    }
+    /// Eac3 Atmos Settings
+    pub fn eac3_atmos_settings(&self) -> std::option::Option<&crate::model::Eac3AtmosSettings> {
+        self.eac3_atmos_settings.as_ref()
     }
     /// Eac3 Settings
     pub fn eac3_settings(&self) -> std::option::Option<&crate::model::Eac3Settings> {
@@ -35943,6 +36009,7 @@ impl std::fmt::Debug for AudioCodecSettings {
         let mut formatter = f.debug_struct("AudioCodecSettings");
         formatter.field("aac_settings", &self.aac_settings);
         formatter.field("ac3_settings", &self.ac3_settings);
+        formatter.field("eac3_atmos_settings", &self.eac3_atmos_settings);
         formatter.field("eac3_settings", &self.eac3_settings);
         formatter.field("mp2_settings", &self.mp2_settings);
         formatter.field("pass_through_settings", &self.pass_through_settings);
@@ -35958,6 +36025,7 @@ pub mod audio_codec_settings {
     pub struct Builder {
         pub(crate) aac_settings: std::option::Option<crate::model::AacSettings>,
         pub(crate) ac3_settings: std::option::Option<crate::model::Ac3Settings>,
+        pub(crate) eac3_atmos_settings: std::option::Option<crate::model::Eac3AtmosSettings>,
         pub(crate) eac3_settings: std::option::Option<crate::model::Eac3Settings>,
         pub(crate) mp2_settings: std::option::Option<crate::model::Mp2Settings>,
         pub(crate) pass_through_settings: std::option::Option<crate::model::PassThroughSettings>,
@@ -35988,6 +36056,19 @@ pub mod audio_codec_settings {
             input: std::option::Option<crate::model::Ac3Settings>,
         ) -> Self {
             self.ac3_settings = input;
+            self
+        }
+        /// Eac3 Atmos Settings
+        pub fn eac3_atmos_settings(mut self, input: crate::model::Eac3AtmosSettings) -> Self {
+            self.eac3_atmos_settings = Some(input);
+            self
+        }
+        /// Eac3 Atmos Settings
+        pub fn set_eac3_atmos_settings(
+            mut self,
+            input: std::option::Option<crate::model::Eac3AtmosSettings>,
+        ) -> Self {
+            self.eac3_atmos_settings = input;
             self
         }
         /// Eac3 Settings
@@ -36047,6 +36128,7 @@ pub mod audio_codec_settings {
             crate::model::AudioCodecSettings {
                 aac_settings: self.aac_settings,
                 ac3_settings: self.ac3_settings,
+                eac3_atmos_settings: self.eac3_atmos_settings,
                 eac3_settings: self.eac3_settings,
                 mp2_settings: self.mp2_settings,
                 pass_through_settings: self.pass_through_settings,
@@ -37738,6 +37820,409 @@ impl Eac3AttenuationControl {
     }
 }
 impl AsRef<str> for Eac3AttenuationControl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Eac3 Atmos Settings
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Eac3AtmosSettings {
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+    #[doc(hidden)]
+    pub bitrate: f64,
+    /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
+    #[doc(hidden)]
+    pub coding_mode: std::option::Option<crate::model::Eac3AtmosCodingMode>,
+    /// Sets the dialnorm for the output. Default 23.
+    #[doc(hidden)]
+    pub dialnorm: i32,
+    /// Sets the Dolby dynamic range compression profile.
+    #[doc(hidden)]
+    pub drc_line: std::option::Option<crate::model::Eac3AtmosDrcLine>,
+    /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+    #[doc(hidden)]
+    pub drc_rf: std::option::Option<crate::model::Eac3AtmosDrcRf>,
+    /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+    #[doc(hidden)]
+    pub height_trim: f64,
+    /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+    #[doc(hidden)]
+    pub surround_trim: f64,
+}
+impl Eac3AtmosSettings {
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+    pub fn bitrate(&self) -> f64 {
+        self.bitrate
+    }
+    /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
+    pub fn coding_mode(&self) -> std::option::Option<&crate::model::Eac3AtmosCodingMode> {
+        self.coding_mode.as_ref()
+    }
+    /// Sets the dialnorm for the output. Default 23.
+    pub fn dialnorm(&self) -> i32 {
+        self.dialnorm
+    }
+    /// Sets the Dolby dynamic range compression profile.
+    pub fn drc_line(&self) -> std::option::Option<&crate::model::Eac3AtmosDrcLine> {
+        self.drc_line.as_ref()
+    }
+    /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+    pub fn drc_rf(&self) -> std::option::Option<&crate::model::Eac3AtmosDrcRf> {
+        self.drc_rf.as_ref()
+    }
+    /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+    pub fn height_trim(&self) -> f64 {
+        self.height_trim
+    }
+    /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+    pub fn surround_trim(&self) -> f64 {
+        self.surround_trim
+    }
+}
+impl std::fmt::Debug for Eac3AtmosSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Eac3AtmosSettings");
+        formatter.field("bitrate", &self.bitrate);
+        formatter.field("coding_mode", &self.coding_mode);
+        formatter.field("dialnorm", &self.dialnorm);
+        formatter.field("drc_line", &self.drc_line);
+        formatter.field("drc_rf", &self.drc_rf);
+        formatter.field("height_trim", &self.height_trim);
+        formatter.field("surround_trim", &self.surround_trim);
+        formatter.finish()
+    }
+}
+/// See [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
+pub mod eac3_atmos_settings {
+
+    /// A builder for [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bitrate: std::option::Option<f64>,
+        pub(crate) coding_mode: std::option::Option<crate::model::Eac3AtmosCodingMode>,
+        pub(crate) dialnorm: std::option::Option<i32>,
+        pub(crate) drc_line: std::option::Option<crate::model::Eac3AtmosDrcLine>,
+        pub(crate) drc_rf: std::option::Option<crate::model::Eac3AtmosDrcRf>,
+        pub(crate) height_trim: std::option::Option<f64>,
+        pub(crate) surround_trim: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+        pub fn bitrate(mut self, input: f64) -> Self {
+            self.bitrate = Some(input);
+            self
+        }
+        /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+        pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
+            self.bitrate = input;
+            self
+        }
+        /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
+        pub fn coding_mode(mut self, input: crate::model::Eac3AtmosCodingMode) -> Self {
+            self.coding_mode = Some(input);
+            self
+        }
+        /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
+        pub fn set_coding_mode(
+            mut self,
+            input: std::option::Option<crate::model::Eac3AtmosCodingMode>,
+        ) -> Self {
+            self.coding_mode = input;
+            self
+        }
+        /// Sets the dialnorm for the output. Default 23.
+        pub fn dialnorm(mut self, input: i32) -> Self {
+            self.dialnorm = Some(input);
+            self
+        }
+        /// Sets the dialnorm for the output. Default 23.
+        pub fn set_dialnorm(mut self, input: std::option::Option<i32>) -> Self {
+            self.dialnorm = input;
+            self
+        }
+        /// Sets the Dolby dynamic range compression profile.
+        pub fn drc_line(mut self, input: crate::model::Eac3AtmosDrcLine) -> Self {
+            self.drc_line = Some(input);
+            self
+        }
+        /// Sets the Dolby dynamic range compression profile.
+        pub fn set_drc_line(
+            mut self,
+            input: std::option::Option<crate::model::Eac3AtmosDrcLine>,
+        ) -> Self {
+            self.drc_line = input;
+            self
+        }
+        /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+        pub fn drc_rf(mut self, input: crate::model::Eac3AtmosDrcRf) -> Self {
+            self.drc_rf = Some(input);
+            self
+        }
+        /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+        pub fn set_drc_rf(
+            mut self,
+            input: std::option::Option<crate::model::Eac3AtmosDrcRf>,
+        ) -> Self {
+            self.drc_rf = input;
+            self
+        }
+        /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+        pub fn height_trim(mut self, input: f64) -> Self {
+            self.height_trim = Some(input);
+            self
+        }
+        /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+        pub fn set_height_trim(mut self, input: std::option::Option<f64>) -> Self {
+            self.height_trim = input;
+            self
+        }
+        /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+        pub fn surround_trim(mut self, input: f64) -> Self {
+            self.surround_trim = Some(input);
+            self
+        }
+        /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+        pub fn set_surround_trim(mut self, input: std::option::Option<f64>) -> Self {
+            self.surround_trim = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
+        pub fn build(self) -> crate::model::Eac3AtmosSettings {
+            crate::model::Eac3AtmosSettings {
+                bitrate: self.bitrate.unwrap_or_default(),
+                coding_mode: self.coding_mode,
+                dialnorm: self.dialnorm.unwrap_or_default(),
+                drc_line: self.drc_line,
+                drc_rf: self.drc_rf,
+                height_trim: self.height_trim.unwrap_or_default(),
+                surround_trim: self.surround_trim.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl Eac3AtmosSettings {
+    /// Creates a new builder-style object to manufacture [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
+    pub fn builder() -> crate::model::eac3_atmos_settings::Builder {
+        crate::model::eac3_atmos_settings::Builder::default()
+    }
+}
+
+/// Eac3 Atmos Drc Rf
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Eac3AtmosDrcRf {
+    #[allow(missing_docs)] // documentation missing in model
+    FilmLight,
+    #[allow(missing_docs)] // documentation missing in model
+    FilmStandard,
+    #[allow(missing_docs)] // documentation missing in model
+    MusicLight,
+    #[allow(missing_docs)] // documentation missing in model
+    MusicStandard,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Speech,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Eac3AtmosDrcRf {
+    fn from(s: &str) -> Self {
+        match s {
+            "FILM_LIGHT" => Eac3AtmosDrcRf::FilmLight,
+            "FILM_STANDARD" => Eac3AtmosDrcRf::FilmStandard,
+            "MUSIC_LIGHT" => Eac3AtmosDrcRf::MusicLight,
+            "MUSIC_STANDARD" => Eac3AtmosDrcRf::MusicStandard,
+            "NONE" => Eac3AtmosDrcRf::None,
+            "SPEECH" => Eac3AtmosDrcRf::Speech,
+            other => Eac3AtmosDrcRf::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Eac3AtmosDrcRf {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Eac3AtmosDrcRf::from(s))
+    }
+}
+impl Eac3AtmosDrcRf {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Eac3AtmosDrcRf::FilmLight => "FILM_LIGHT",
+            Eac3AtmosDrcRf::FilmStandard => "FILM_STANDARD",
+            Eac3AtmosDrcRf::MusicLight => "MUSIC_LIGHT",
+            Eac3AtmosDrcRf::MusicStandard => "MUSIC_STANDARD",
+            Eac3AtmosDrcRf::None => "NONE",
+            Eac3AtmosDrcRf::Speech => "SPEECH",
+            Eac3AtmosDrcRf::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FILM_LIGHT",
+            "FILM_STANDARD",
+            "MUSIC_LIGHT",
+            "MUSIC_STANDARD",
+            "NONE",
+            "SPEECH",
+        ]
+    }
+}
+impl AsRef<str> for Eac3AtmosDrcRf {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Eac3 Atmos Drc Line
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Eac3AtmosDrcLine {
+    #[allow(missing_docs)] // documentation missing in model
+    FilmLight,
+    #[allow(missing_docs)] // documentation missing in model
+    FilmStandard,
+    #[allow(missing_docs)] // documentation missing in model
+    MusicLight,
+    #[allow(missing_docs)] // documentation missing in model
+    MusicStandard,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Speech,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Eac3AtmosDrcLine {
+    fn from(s: &str) -> Self {
+        match s {
+            "FILM_LIGHT" => Eac3AtmosDrcLine::FilmLight,
+            "FILM_STANDARD" => Eac3AtmosDrcLine::FilmStandard,
+            "MUSIC_LIGHT" => Eac3AtmosDrcLine::MusicLight,
+            "MUSIC_STANDARD" => Eac3AtmosDrcLine::MusicStandard,
+            "NONE" => Eac3AtmosDrcLine::None,
+            "SPEECH" => Eac3AtmosDrcLine::Speech,
+            other => Eac3AtmosDrcLine::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Eac3AtmosDrcLine {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Eac3AtmosDrcLine::from(s))
+    }
+}
+impl Eac3AtmosDrcLine {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Eac3AtmosDrcLine::FilmLight => "FILM_LIGHT",
+            Eac3AtmosDrcLine::FilmStandard => "FILM_STANDARD",
+            Eac3AtmosDrcLine::MusicLight => "MUSIC_LIGHT",
+            Eac3AtmosDrcLine::MusicStandard => "MUSIC_STANDARD",
+            Eac3AtmosDrcLine::None => "NONE",
+            Eac3AtmosDrcLine::Speech => "SPEECH",
+            Eac3AtmosDrcLine::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FILM_LIGHT",
+            "FILM_STANDARD",
+            "MUSIC_LIGHT",
+            "MUSIC_STANDARD",
+            "NONE",
+            "SPEECH",
+        ]
+    }
+}
+impl AsRef<str> for Eac3AtmosDrcLine {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Eac3 Atmos Coding Mode
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Eac3AtmosCodingMode {
+    #[allow(missing_docs)] // documentation missing in model
+    CodingMode514,
+    #[allow(missing_docs)] // documentation missing in model
+    CodingMode714,
+    #[allow(missing_docs)] // documentation missing in model
+    CodingMode916,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Eac3AtmosCodingMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "CODING_MODE_5_1_4" => Eac3AtmosCodingMode::CodingMode514,
+            "CODING_MODE_7_1_4" => Eac3AtmosCodingMode::CodingMode714,
+            "CODING_MODE_9_1_6" => Eac3AtmosCodingMode::CodingMode916,
+            other => Eac3AtmosCodingMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Eac3AtmosCodingMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Eac3AtmosCodingMode::from(s))
+    }
+}
+impl Eac3AtmosCodingMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Eac3AtmosCodingMode::CodingMode514 => "CODING_MODE_5_1_4",
+            Eac3AtmosCodingMode::CodingMode714 => "CODING_MODE_7_1_4",
+            Eac3AtmosCodingMode::CodingMode916 => "CODING_MODE_9_1_6",
+            Eac3AtmosCodingMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CODING_MODE_5_1_4",
+            "CODING_MODE_7_1_4",
+            "CODING_MODE_9_1_6",
+        ]
+    }
+}
+impl AsRef<str> for Eac3AtmosCodingMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

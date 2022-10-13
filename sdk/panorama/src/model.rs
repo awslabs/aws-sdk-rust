@@ -2005,6 +2005,25 @@ pub struct Device {
     /// <p>The device's maker.</p>
     #[doc(hidden)]
     pub brand: std::option::Option<crate::model::DeviceBrand>,
+    /// <p>A device's current software.</p>
+    #[doc(hidden)]
+    pub current_software: std::option::Option<std::string::String>,
+    /// <p>A description for the device.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The device's tags.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The device's type.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::DeviceType>,
+    /// <p>A device's latest job. Includes the target image version, and the update job status.</p>
+    #[doc(hidden)]
+    pub latest_device_job: std::option::Option<crate::model::LatestDeviceJob>,
+    /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+    #[doc(hidden)]
+    pub device_aggregated_status: std::option::Option<crate::model::DeviceAggregatedStatus>,
 }
 impl Device {
     /// <p>The device's ID.</p>
@@ -2035,6 +2054,35 @@ impl Device {
     pub fn brand(&self) -> std::option::Option<&crate::model::DeviceBrand> {
         self.brand.as_ref()
     }
+    /// <p>A device's current software.</p>
+    pub fn current_software(&self) -> std::option::Option<&str> {
+        self.current_software.as_deref()
+    }
+    /// <p>A description for the device.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The device's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The device's type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DeviceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A device's latest job. Includes the target image version, and the update job status.</p>
+    pub fn latest_device_job(&self) -> std::option::Option<&crate::model::LatestDeviceJob> {
+        self.latest_device_job.as_ref()
+    }
+    /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+    pub fn device_aggregated_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceAggregatedStatus> {
+        self.device_aggregated_status.as_ref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2046,6 +2094,12 @@ impl std::fmt::Debug for Device {
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("lease_expiration_time", &self.lease_expiration_time);
         formatter.field("brand", &self.brand);
+        formatter.field("current_software", &self.current_software);
+        formatter.field("description", &self.description);
+        formatter.field("tags", &self.tags);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("latest_device_job", &self.latest_device_job);
+        formatter.field("device_aggregated_status", &self.device_aggregated_status);
         formatter.finish()
     }
 }
@@ -2062,6 +2116,15 @@ pub mod device {
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) brand: std::option::Option<crate::model::DeviceBrand>,
+        pub(crate) current_software: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) r#type: std::option::Option<crate::model::DeviceType>,
+        pub(crate) latest_device_job: std::option::Option<crate::model::LatestDeviceJob>,
+        pub(crate) device_aggregated_status:
+            std::option::Option<crate::model::DeviceAggregatedStatus>,
     }
     impl Builder {
         /// <p>The device's ID.</p>
@@ -2146,6 +2209,93 @@ pub mod device {
             self.brand = input;
             self
         }
+        /// <p>A device's current software.</p>
+        pub fn current_software(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_software = Some(input.into());
+            self
+        }
+        /// <p>A device's current software.</p>
+        pub fn set_current_software(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_software = input;
+            self
+        }
+        /// <p>A description for the device.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description for the device.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The device's tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The device's tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The device's type.</p>
+        pub fn r#type(mut self, input: crate::model::DeviceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The device's type.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DeviceType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>A device's latest job. Includes the target image version, and the update job status.</p>
+        pub fn latest_device_job(mut self, input: crate::model::LatestDeviceJob) -> Self {
+            self.latest_device_job = Some(input);
+            self
+        }
+        /// <p>A device's latest job. Includes the target image version, and the update job status.</p>
+        pub fn set_latest_device_job(
+            mut self,
+            input: std::option::Option<crate::model::LatestDeviceJob>,
+        ) -> Self {
+            self.latest_device_job = input;
+            self
+        }
+        /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+        pub fn device_aggregated_status(
+            mut self,
+            input: crate::model::DeviceAggregatedStatus,
+        ) -> Self {
+            self.device_aggregated_status = Some(input);
+            self
+        }
+        /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+        pub fn set_device_aggregated_status(
+            mut self,
+            input: std::option::Option<crate::model::DeviceAggregatedStatus>,
+        ) -> Self {
+            self.device_aggregated_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Device`](crate::model::Device).
         pub fn build(self) -> crate::model::Device {
             crate::model::Device {
@@ -2156,6 +2306,12 @@ pub mod device {
                 last_updated_time: self.last_updated_time,
                 lease_expiration_time: self.lease_expiration_time,
                 brand: self.brand,
+                current_software: self.current_software,
+                description: self.description,
+                tags: self.tags,
+                r#type: self.r#type,
+                latest_device_job: self.latest_device_job,
+                device_aggregated_status: self.device_aggregated_status,
             }
         }
     }
@@ -2164,6 +2320,318 @@ impl Device {
     /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
     pub fn builder() -> crate::model::device::Builder {
         crate::model::device::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeviceAggregatedStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    AwaitingProvisioning,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    LeaseExpired,
+    #[allow(missing_docs)] // documentation missing in model
+    Offline,
+    #[allow(missing_docs)] // documentation missing in model
+    Online,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateNeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeviceAggregatedStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWAITING_PROVISIONING" => DeviceAggregatedStatus::AwaitingProvisioning,
+            "DELETING" => DeviceAggregatedStatus::Deleting,
+            "ERROR" => DeviceAggregatedStatus::Error,
+            "FAILED" => DeviceAggregatedStatus::Failed,
+            "LEASE_EXPIRED" => DeviceAggregatedStatus::LeaseExpired,
+            "OFFLINE" => DeviceAggregatedStatus::Offline,
+            "ONLINE" => DeviceAggregatedStatus::Online,
+            "PENDING" => DeviceAggregatedStatus::Pending,
+            "UPDATE_NEEDED" => DeviceAggregatedStatus::UpdateNeeded,
+            other => DeviceAggregatedStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeviceAggregatedStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceAggregatedStatus::from(s))
+    }
+}
+impl DeviceAggregatedStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceAggregatedStatus::AwaitingProvisioning => "AWAITING_PROVISIONING",
+            DeviceAggregatedStatus::Deleting => "DELETING",
+            DeviceAggregatedStatus::Error => "ERROR",
+            DeviceAggregatedStatus::Failed => "FAILED",
+            DeviceAggregatedStatus::LeaseExpired => "LEASE_EXPIRED",
+            DeviceAggregatedStatus::Offline => "OFFLINE",
+            DeviceAggregatedStatus::Online => "ONLINE",
+            DeviceAggregatedStatus::Pending => "PENDING",
+            DeviceAggregatedStatus::UpdateNeeded => "UPDATE_NEEDED",
+            DeviceAggregatedStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AWAITING_PROVISIONING",
+            "DELETING",
+            "ERROR",
+            "FAILED",
+            "LEASE_EXPIRED",
+            "OFFLINE",
+            "ONLINE",
+            "PENDING",
+            "UPDATE_NEEDED",
+        ]
+    }
+}
+impl AsRef<str> for DeviceAggregatedStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Returns information about the latest device job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LatestDeviceJob {
+    /// <p>The target version of the device software.</p>
+    #[doc(hidden)]
+    pub image_version: std::option::Option<std::string::String>,
+    /// <p>Status of the latest device job.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::UpdateProgress>,
+}
+impl LatestDeviceJob {
+    /// <p>The target version of the device software.</p>
+    pub fn image_version(&self) -> std::option::Option<&str> {
+        self.image_version.as_deref()
+    }
+    /// <p>Status of the latest device job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::UpdateProgress> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for LatestDeviceJob {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LatestDeviceJob");
+        formatter.field("image_version", &self.image_version);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`LatestDeviceJob`](crate::model::LatestDeviceJob).
+pub mod latest_device_job {
+
+    /// A builder for [`LatestDeviceJob`](crate::model::LatestDeviceJob).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_version: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::UpdateProgress>,
+    }
+    impl Builder {
+        /// <p>The target version of the device software.</p>
+        pub fn image_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_version = Some(input.into());
+            self
+        }
+        /// <p>The target version of the device software.</p>
+        pub fn set_image_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.image_version = input;
+            self
+        }
+        /// <p>Status of the latest device job.</p>
+        pub fn status(mut self, input: crate::model::UpdateProgress) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Status of the latest device job.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::UpdateProgress>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LatestDeviceJob`](crate::model::LatestDeviceJob).
+        pub fn build(self) -> crate::model::LatestDeviceJob {
+            crate::model::LatestDeviceJob {
+                image_version: self.image_version,
+                status: self.status,
+            }
+        }
+    }
+}
+impl LatestDeviceJob {
+    /// Creates a new builder-style object to manufacture [`LatestDeviceJob`](crate::model::LatestDeviceJob).
+    pub fn builder() -> crate::model::latest_device_job::Builder {
+        crate::model::latest_device_job::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UpdateProgress {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Downloading,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Rebooting,
+    #[allow(missing_docs)] // documentation missing in model
+    Verifying,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for UpdateProgress {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => UpdateProgress::Completed,
+            "DOWNLOADING" => UpdateProgress::Downloading,
+            "FAILED" => UpdateProgress::Failed,
+            "IN_PROGRESS" => UpdateProgress::InProgress,
+            "PENDING" => UpdateProgress::Pending,
+            "REBOOTING" => UpdateProgress::Rebooting,
+            "VERIFYING" => UpdateProgress::Verifying,
+            other => UpdateProgress::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for UpdateProgress {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateProgress::from(s))
+    }
+}
+impl UpdateProgress {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateProgress::Completed => "COMPLETED",
+            UpdateProgress::Downloading => "DOWNLOADING",
+            UpdateProgress::Failed => "FAILED",
+            UpdateProgress::InProgress => "IN_PROGRESS",
+            UpdateProgress::Pending => "PENDING",
+            UpdateProgress::Rebooting => "REBOOTING",
+            UpdateProgress::Verifying => "VERIFYING",
+            UpdateProgress::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "DOWNLOADING",
+            "FAILED",
+            "IN_PROGRESS",
+            "PENDING",
+            "REBOOTING",
+            "VERIFYING",
+        ]
+    }
+}
+impl AsRef<str> for UpdateProgress {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeviceType {
+    #[allow(missing_docs)] // documentation missing in model
+    PanoramaAppliance,
+    #[allow(missing_docs)] // documentation missing in model
+    PanoramaApplianceDeveloperKit,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeviceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PANORAMA_APPLIANCE" => DeviceType::PanoramaAppliance,
+            "PANORAMA_APPLIANCE_DEVELOPER_KIT" => DeviceType::PanoramaApplianceDeveloperKit,
+            other => DeviceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeviceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceType::from(s))
+    }
+}
+impl DeviceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceType::PanoramaAppliance => "PANORAMA_APPLIANCE",
+            DeviceType::PanoramaApplianceDeveloperKit => "PANORAMA_APPLIANCE_DEVELOPER_KIT",
+            DeviceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PANORAMA_APPLIANCE", "PANORAMA_APPLIANCE_DEVELOPER_KIT"]
+    }
+}
+impl AsRef<str> for DeviceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2217,6 +2685,129 @@ impl DeviceBrand {
     }
 }
 impl AsRef<str> for DeviceBrand {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
+    Ascending,
+    #[allow(missing_docs)] // documentation missing in model
+    Descending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SortOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASCENDING" => SortOrder::Ascending,
+            "DESCENDING" => SortOrder::Descending,
+            other => SortOrder::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SortOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortOrder::from(s))
+    }
+}
+impl SortOrder {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrder::Ascending => "ASCENDING",
+            SortOrder::Descending => "DESCENDING",
+            SortOrder::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ASCENDING", "DESCENDING"]
+    }
+}
+impl AsRef<str> for SortOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListDevicesSortBy {
+    #[allow(missing_docs)] // documentation missing in model
+    CreatedTime,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceAggregatedStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceId,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ListDevicesSortBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATED_TIME" => ListDevicesSortBy::CreatedTime,
+            "DEVICE_AGGREGATED_STATUS" => ListDevicesSortBy::DeviceAggregatedStatus,
+            "DEVICE_ID" => ListDevicesSortBy::DeviceId,
+            "NAME" => ListDevicesSortBy::Name,
+            other => ListDevicesSortBy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ListDevicesSortBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListDevicesSortBy::from(s))
+    }
+}
+impl ListDevicesSortBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListDevicesSortBy::CreatedTime => "CREATED_TIME",
+            ListDevicesSortBy::DeviceAggregatedStatus => "DEVICE_AGGREGATED_STATUS",
+            ListDevicesSortBy::DeviceId => "DEVICE_ID",
+            ListDevicesSortBy::Name => "NAME",
+            ListDevicesSortBy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATED_TIME",
+            "DEVICE_AGGREGATED_STATUS",
+            "DEVICE_ID",
+            "NAME",
+        ]
+    }
+}
+impl AsRef<str> for ListDevicesSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -4469,144 +5060,6 @@ impl NodeInputPort {
     /// Creates a new builder-style object to manufacture [`NodeInputPort`](crate::model::NodeInputPort).
     pub fn builder() -> crate::model::node_input_port::Builder {
         crate::model::node_input_port::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum UpdateProgress {
-    #[allow(missing_docs)] // documentation missing in model
-    Completed,
-    #[allow(missing_docs)] // documentation missing in model
-    Downloading,
-    #[allow(missing_docs)] // documentation missing in model
-    Failed,
-    #[allow(missing_docs)] // documentation missing in model
-    InProgress,
-    #[allow(missing_docs)] // documentation missing in model
-    Pending,
-    #[allow(missing_docs)] // documentation missing in model
-    Rebooting,
-    #[allow(missing_docs)] // documentation missing in model
-    Verifying,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for UpdateProgress {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => UpdateProgress::Completed,
-            "DOWNLOADING" => UpdateProgress::Downloading,
-            "FAILED" => UpdateProgress::Failed,
-            "IN_PROGRESS" => UpdateProgress::InProgress,
-            "PENDING" => UpdateProgress::Pending,
-            "REBOOTING" => UpdateProgress::Rebooting,
-            "VERIFYING" => UpdateProgress::Verifying,
-            other => UpdateProgress::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for UpdateProgress {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateProgress::from(s))
-    }
-}
-impl UpdateProgress {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateProgress::Completed => "COMPLETED",
-            UpdateProgress::Downloading => "DOWNLOADING",
-            UpdateProgress::Failed => "FAILED",
-            UpdateProgress::InProgress => "IN_PROGRESS",
-            UpdateProgress::Pending => "PENDING",
-            UpdateProgress::Rebooting => "REBOOTING",
-            UpdateProgress::Verifying => "VERIFYING",
-            UpdateProgress::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED",
-            "DOWNLOADING",
-            "FAILED",
-            "IN_PROGRESS",
-            "PENDING",
-            "REBOOTING",
-            "VERIFYING",
-        ]
-    }
-}
-impl AsRef<str> for UpdateProgress {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum DeviceType {
-    #[allow(missing_docs)] // documentation missing in model
-    PanoramaAppliance,
-    #[allow(missing_docs)] // documentation missing in model
-    PanoramaApplianceDeveloperKit,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for DeviceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PANORAMA_APPLIANCE" => DeviceType::PanoramaAppliance,
-            "PANORAMA_APPLIANCE_DEVELOPER_KIT" => DeviceType::PanoramaApplianceDeveloperKit,
-            other => DeviceType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for DeviceType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceType::from(s))
-    }
-}
-impl DeviceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceType::PanoramaAppliance => "PANORAMA_APPLIANCE",
-            DeviceType::PanoramaApplianceDeveloperKit => "PANORAMA_APPLIANCE_DEVELOPER_KIT",
-            DeviceType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["PANORAMA_APPLIANCE", "PANORAMA_APPLIANCE_DEVELOPER_KIT"]
-    }
-}
-impl AsRef<str> for DeviceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

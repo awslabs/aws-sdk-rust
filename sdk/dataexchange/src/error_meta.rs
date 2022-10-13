@@ -7,7 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// An exception occurred with the service.
+    /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

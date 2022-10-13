@@ -10,7 +10,7 @@ version = "0.49.0"
 
 [dependencies.aws-sdk-ecs]
 path = "../../sdk/ecs"
-version = "0.19.0"
+version = "0.20.0"
 
 [dependencies.tokio]
 version = "1.20.1"

@@ -1437,6 +1437,9 @@ pub fn serialize_structure_crate_model_client_properties(
     if let Some(var_293) = &input.reconnect_enabled {
         object.key("ReconnectEnabled").string(var_293.as_str());
     }
+    if let Some(var_294) = &input.log_upload_enabled {
+        object.key("LogUploadEnabled").string(var_294.as_str());
+    }
     Ok(())
 }
 
@@ -1444,16 +1447,16 @@ pub fn serialize_structure_crate_model_saml_properties(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SamlProperties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_294) = &input.status {
-        object.key("Status").string(var_294.as_str());
+    if let Some(var_295) = &input.status {
+        object.key("Status").string(var_295.as_str());
     }
-    if let Some(var_295) = &input.user_access_url {
-        object.key("UserAccessUrl").string(var_295.as_str());
+    if let Some(var_296) = &input.user_access_url {
+        object.key("UserAccessUrl").string(var_296.as_str());
     }
-    if let Some(var_296) = &input.relay_state_parameter_name {
+    if let Some(var_297) = &input.relay_state_parameter_name {
         object
             .key("RelayStateParameterName")
-            .string(var_296.as_str());
+            .string(var_297.as_str());
     }
     Ok(())
 }
@@ -1462,20 +1465,20 @@ pub fn serialize_structure_crate_model_selfservice_permissions(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SelfservicePermissions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_297) = &input.restart_workspace {
-        object.key("RestartWorkspace").string(var_297.as_str());
+    if let Some(var_298) = &input.restart_workspace {
+        object.key("RestartWorkspace").string(var_298.as_str());
     }
-    if let Some(var_298) = &input.increase_volume_size {
-        object.key("IncreaseVolumeSize").string(var_298.as_str());
+    if let Some(var_299) = &input.increase_volume_size {
+        object.key("IncreaseVolumeSize").string(var_299.as_str());
     }
-    if let Some(var_299) = &input.change_compute_type {
-        object.key("ChangeComputeType").string(var_299.as_str());
+    if let Some(var_300) = &input.change_compute_type {
+        object.key("ChangeComputeType").string(var_300.as_str());
     }
-    if let Some(var_300) = &input.switch_running_mode {
-        object.key("SwitchRunningMode").string(var_300.as_str());
+    if let Some(var_301) = &input.switch_running_mode {
+        object.key("SwitchRunningMode").string(var_301.as_str());
     }
-    if let Some(var_301) = &input.rebuild_workspace {
-        object.key("RebuildWorkspace").string(var_301.as_str());
+    if let Some(var_302) = &input.rebuild_workspace {
+        object.key("RebuildWorkspace").string(var_302.as_str());
     }
     Ok(())
 }
@@ -1484,29 +1487,29 @@ pub fn serialize_structure_crate_model_workspace_access_properties(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkspaceAccessProperties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_302) = &input.device_type_windows {
-        object.key("DeviceTypeWindows").string(var_302.as_str());
+    if let Some(var_303) = &input.device_type_windows {
+        object.key("DeviceTypeWindows").string(var_303.as_str());
     }
-    if let Some(var_303) = &input.device_type_osx {
-        object.key("DeviceTypeOsx").string(var_303.as_str());
+    if let Some(var_304) = &input.device_type_osx {
+        object.key("DeviceTypeOsx").string(var_304.as_str());
     }
-    if let Some(var_304) = &input.device_type_web {
-        object.key("DeviceTypeWeb").string(var_304.as_str());
+    if let Some(var_305) = &input.device_type_web {
+        object.key("DeviceTypeWeb").string(var_305.as_str());
     }
-    if let Some(var_305) = &input.device_type_ios {
-        object.key("DeviceTypeIos").string(var_305.as_str());
+    if let Some(var_306) = &input.device_type_ios {
+        object.key("DeviceTypeIos").string(var_306.as_str());
     }
-    if let Some(var_306) = &input.device_type_android {
-        object.key("DeviceTypeAndroid").string(var_306.as_str());
+    if let Some(var_307) = &input.device_type_android {
+        object.key("DeviceTypeAndroid").string(var_307.as_str());
     }
-    if let Some(var_307) = &input.device_type_chrome_os {
-        object.key("DeviceTypeChromeOs").string(var_307.as_str());
+    if let Some(var_308) = &input.device_type_chrome_os {
+        object.key("DeviceTypeChromeOs").string(var_308.as_str());
     }
-    if let Some(var_308) = &input.device_type_zero_client {
-        object.key("DeviceTypeZeroClient").string(var_308.as_str());
+    if let Some(var_309) = &input.device_type_zero_client {
+        object.key("DeviceTypeZeroClient").string(var_309.as_str());
     }
-    if let Some(var_309) = &input.device_type_linux {
-        object.key("DeviceTypeLinux").string(var_309.as_str());
+    if let Some(var_310) = &input.device_type_linux {
+        object.key("DeviceTypeLinux").string(var_310.as_str());
     }
     Ok(())
 }
@@ -1515,25 +1518,25 @@ pub fn serialize_structure_crate_model_workspace_creation_properties(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkspaceCreationProperties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_310) = &input.enable_work_docs {
-        object.key("EnableWorkDocs").boolean(*var_310);
+    if let Some(var_311) = &input.enable_work_docs {
+        object.key("EnableWorkDocs").boolean(*var_311);
     }
-    if let Some(var_311) = &input.enable_internet_access {
-        object.key("EnableInternetAccess").boolean(*var_311);
+    if let Some(var_312) = &input.enable_internet_access {
+        object.key("EnableInternetAccess").boolean(*var_312);
     }
-    if let Some(var_312) = &input.default_ou {
-        object.key("DefaultOu").string(var_312.as_str());
+    if let Some(var_313) = &input.default_ou {
+        object.key("DefaultOu").string(var_313.as_str());
     }
-    if let Some(var_313) = &input.custom_security_group_id {
-        object.key("CustomSecurityGroupId").string(var_313.as_str());
+    if let Some(var_314) = &input.custom_security_group_id {
+        object.key("CustomSecurityGroupId").string(var_314.as_str());
     }
-    if let Some(var_314) = &input.user_enabled_as_local_administrator {
+    if let Some(var_315) = &input.user_enabled_as_local_administrator {
         object
             .key("UserEnabledAsLocalAdministrator")
-            .boolean(*var_314);
+            .boolean(*var_315);
     }
-    if let Some(var_315) = &input.enable_maintenance_mode {
-        object.key("EnableMaintenanceMode").boolean(*var_315);
+    if let Some(var_316) = &input.enable_maintenance_mode {
+        object.key("EnableMaintenanceMode").boolean(*var_316);
     }
     Ok(())
 }
@@ -1542,29 +1545,29 @@ pub fn serialize_structure_crate_model_workspace_properties(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkspaceProperties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_316) = &input.running_mode {
-        object.key("RunningMode").string(var_316.as_str());
+    if let Some(var_317) = &input.running_mode {
+        object.key("RunningMode").string(var_317.as_str());
     }
-    if let Some(var_317) = &input.running_mode_auto_stop_timeout_in_minutes {
+    if let Some(var_318) = &input.running_mode_auto_stop_timeout_in_minutes {
         object.key("RunningModeAutoStopTimeoutInMinutes").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_317).into()),
-        );
-    }
-    if let Some(var_318) = &input.root_volume_size_gib {
-        object.key("RootVolumeSizeGib").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_318).into()),
         );
     }
-    if let Some(var_319) = &input.user_volume_size_gib {
-        object.key("UserVolumeSizeGib").number(
+    if let Some(var_319) = &input.root_volume_size_gib {
+        object.key("RootVolumeSizeGib").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_319).into()),
         );
     }
-    if let Some(var_320) = &input.compute_type_name {
-        object.key("ComputeTypeName").string(var_320.as_str());
+    if let Some(var_320) = &input.user_volume_size_gib {
+        object.key("UserVolumeSizeGib").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_320).into()),
+        );
+    }
+    if let Some(var_321) = &input.compute_type_name {
+        object.key("ComputeTypeName").string(var_321.as_str());
     }
     Ok(())
 }
@@ -1573,8 +1576,8 @@ pub fn serialize_structure_crate_model_reboot_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RebootRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_321) = &input.workspace_id {
-        object.key("WorkspaceId").string(var_321.as_str());
+    if let Some(var_322) = &input.workspace_id {
+        object.key("WorkspaceId").string(var_322.as_str());
     }
     Ok(())
 }
@@ -1583,8 +1586,8 @@ pub fn serialize_structure_crate_model_rebuild_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RebuildRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_322) = &input.workspace_id {
-        object.key("WorkspaceId").string(var_322.as_str());
+    if let Some(var_323) = &input.workspace_id {
+        object.key("WorkspaceId").string(var_323.as_str());
     }
     Ok(())
 }
@@ -1593,8 +1596,8 @@ pub fn serialize_structure_crate_model_start_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_323) = &input.workspace_id {
-        object.key("WorkspaceId").string(var_323.as_str());
+    if let Some(var_324) = &input.workspace_id {
+        object.key("WorkspaceId").string(var_324.as_str());
     }
     Ok(())
 }
@@ -1603,8 +1606,8 @@ pub fn serialize_structure_crate_model_stop_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StopRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_324) = &input.workspace_id {
-        object.key("WorkspaceId").string(var_324.as_str());
+    if let Some(var_325) = &input.workspace_id {
+        object.key("WorkspaceId").string(var_325.as_str());
     }
     Ok(())
 }
@@ -1613,8 +1616,8 @@ pub fn serialize_structure_crate_model_terminate_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TerminateRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_325) = &input.workspace_id {
-        object.key("WorkspaceId").string(var_325.as_str());
+    if let Some(var_326) = &input.workspace_id {
+        object.key("WorkspaceId").string(var_326.as_str());
     }
     Ok(())
 }
@@ -1623,11 +1626,11 @@ pub fn serialize_structure_crate_model_connection_alias_permission(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConnectionAliasPermission,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_326) = &input.shared_account_id {
-        object.key("SharedAccountId").string(var_326.as_str());
+    if let Some(var_327) = &input.shared_account_id {
+        object.key("SharedAccountId").string(var_327.as_str());
     }
-    if let Some(var_327) = &input.allow_association {
-        object.key("AllowAssociation").boolean(*var_327);
+    if let Some(var_328) = &input.allow_association {
+        object.key("AllowAssociation").boolean(*var_328);
     }
     Ok(())
 }

@@ -646,6 +646,251 @@ impl StopLoggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopImportOutput {
+    /// <p> The ID for the import. </p>
+    #[doc(hidden)]
+    pub import_id: std::option::Option<std::string::String>,
+    /// <p> The source S3 bucket. </p>
+    #[doc(hidden)]
+    pub import_source: std::option::Option<crate::model::ImportSource>,
+    /// <p> The destination event data store. </p>
+    #[doc(hidden)]
+    pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The status of the import. </p>
+    #[doc(hidden)]
+    pub import_status: std::option::Option<crate::model::ImportStatus>,
+    /// <p> The timestamp of the import's creation. </p>
+    #[doc(hidden)]
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The timestamp of the import's last update. </p>
+    #[doc(hidden)]
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    #[doc(hidden)]
+    pub start_event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    #[doc(hidden)]
+    pub end_event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Returns information on the stopped import. </p>
+    #[doc(hidden)]
+    pub import_statistics: std::option::Option<crate::model::ImportStatistics>,
+}
+impl StopImportOutput {
+    /// <p> The ID for the import. </p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p> The source S3 bucket. </p>
+    pub fn import_source(&self) -> std::option::Option<&crate::model::ImportSource> {
+        self.import_source.as_ref()
+    }
+    /// <p> The destination event data store. </p>
+    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
+        self.destinations.as_deref()
+    }
+    /// <p> The status of the import. </p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p> The timestamp of the import's creation. </p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p> The timestamp of the import's last update. </p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_timestamp.as_ref()
+    }
+    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn start_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_event_time.as_ref()
+    }
+    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn end_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_event_time.as_ref()
+    }
+    /// <p> Returns information on the stopped import. </p>
+    pub fn import_statistics(&self) -> std::option::Option<&crate::model::ImportStatistics> {
+        self.import_statistics.as_ref()
+    }
+}
+impl std::fmt::Debug for StopImportOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopImportOutput");
+        formatter.field("import_id", &self.import_id);
+        formatter.field("import_source", &self.import_source);
+        formatter.field("destinations", &self.destinations);
+        formatter.field("import_status", &self.import_status);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.field("start_event_time", &self.start_event_time);
+        formatter.field("end_event_time", &self.end_event_time);
+        formatter.field("import_statistics", &self.import_statistics);
+        formatter.finish()
+    }
+}
+/// See [`StopImportOutput`](crate::output::StopImportOutput).
+pub mod stop_import_output {
+
+    /// A builder for [`StopImportOutput`](crate::output::StopImportOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_id: std::option::Option<std::string::String>,
+        pub(crate) import_source: std::option::Option<crate::model::ImportSource>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) import_statistics: std::option::Option<crate::model::ImportStatistics>,
+    }
+    impl Builder {
+        /// <p> The ID for the import. </p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_id = Some(input.into());
+            self
+        }
+        /// <p> The ID for the import. </p>
+        pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_id = input;
+            self
+        }
+        /// <p> The source S3 bucket. </p>
+        pub fn import_source(mut self, input: crate::model::ImportSource) -> Self {
+            self.import_source = Some(input);
+            self
+        }
+        /// <p> The source S3 bucket. </p>
+        pub fn set_import_source(
+            mut self,
+            input: std::option::Option<crate::model::ImportSource>,
+        ) -> Self {
+            self.import_source = input;
+            self
+        }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p> The destination event data store. </p>
+        pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input.into());
+            self.destinations = Some(v);
+            self
+        }
+        /// <p> The destination event data store. </p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
+            self.import_status = Some(input);
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn set_import_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatus>,
+        ) -> Self {
+            self.import_status = input;
+            self
+        }
+        /// <p> The timestamp of the import's creation. </p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of the import's creation. </p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p> The timestamp of the import's last update. </p>
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of the import's last update. </p>
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn start_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_event_time = Some(input);
+            self
+        }
+        /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn set_start_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_event_time = input;
+            self
+        }
+        /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn end_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_event_time = Some(input);
+            self
+        }
+        /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn set_end_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_event_time = input;
+            self
+        }
+        /// <p> Returns information on the stopped import. </p>
+        pub fn import_statistics(mut self, input: crate::model::ImportStatistics) -> Self {
+            self.import_statistics = Some(input);
+            self
+        }
+        /// <p> Returns information on the stopped import. </p>
+        pub fn set_import_statistics(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatistics>,
+        ) -> Self {
+            self.import_statistics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopImportOutput`](crate::output::StopImportOutput).
+        pub fn build(self) -> crate::output::StopImportOutput {
+            crate::output::StopImportOutput {
+                import_id: self.import_id,
+                import_source: self.import_source,
+                destinations: self.destinations,
+                import_status: self.import_status,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+                start_event_time: self.start_event_time,
+                end_event_time: self.end_event_time,
+                import_statistics: self.import_statistics,
+            }
+        }
+    }
+}
+impl StopImportOutput {
+    /// Creates a new builder-style object to manufacture [`StopImportOutput`](crate::output::StopImportOutput).
+    pub fn builder() -> crate::output::stop_import_output::Builder {
+        crate::output::stop_import_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartQueryOutput {
     /// <p>The ID of the started query.</p>
     #[doc(hidden)]
@@ -725,6 +970,228 @@ impl StartLoggingOutput {
     /// Creates a new builder-style object to manufacture [`StartLoggingOutput`](crate::output::StartLoggingOutput).
     pub fn builder() -> crate::output::start_logging_output::Builder {
         crate::output::start_logging_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartImportOutput {
+    /// <p> The ID of the import. </p>
+    #[doc(hidden)]
+    pub import_id: std::option::Option<std::string::String>,
+    /// <p> The destination event data store. </p>
+    #[doc(hidden)]
+    pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The source S3 bucket. </p>
+    #[doc(hidden)]
+    pub import_source: std::option::Option<crate::model::ImportSource>,
+    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    #[doc(hidden)]
+    pub start_event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    #[doc(hidden)]
+    pub end_event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Shows the status of the import after a <code>StartImport</code> request. An import finishes with a status of <code>COMPLETED</code> if there were no failures, or <code>FAILED</code> if there were failures. </p>
+    #[doc(hidden)]
+    pub import_status: std::option::Option<crate::model::ImportStatus>,
+    /// <p> The timestamp for the import's creation. </p>
+    #[doc(hidden)]
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The timestamp of the import's last update, if applicable. </p>
+    #[doc(hidden)]
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl StartImportOutput {
+    /// <p> The ID of the import. </p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p> The destination event data store. </p>
+    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
+        self.destinations.as_deref()
+    }
+    /// <p> The source S3 bucket. </p>
+    pub fn import_source(&self) -> std::option::Option<&crate::model::ImportSource> {
+        self.import_source.as_ref()
+    }
+    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn start_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_event_time.as_ref()
+    }
+    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn end_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_event_time.as_ref()
+    }
+    /// <p> Shows the status of the import after a <code>StartImport</code> request. An import finishes with a status of <code>COMPLETED</code> if there were no failures, or <code>FAILED</code> if there were failures. </p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p> The timestamp for the import's creation. </p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p> The timestamp of the import's last update, if applicable. </p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for StartImportOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartImportOutput");
+        formatter.field("import_id", &self.import_id);
+        formatter.field("destinations", &self.destinations);
+        formatter.field("import_source", &self.import_source);
+        formatter.field("start_event_time", &self.start_event_time);
+        formatter.field("end_event_time", &self.end_event_time);
+        formatter.field("import_status", &self.import_status);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`StartImportOutput`](crate::output::StartImportOutput).
+pub mod start_import_output {
+
+    /// A builder for [`StartImportOutput`](crate::output::StartImportOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_id: std::option::Option<std::string::String>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) import_source: std::option::Option<crate::model::ImportSource>,
+        pub(crate) start_event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The ID of the import. </p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the import. </p>
+        pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_id = input;
+            self
+        }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p> The destination event data store. </p>
+        pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input.into());
+            self.destinations = Some(v);
+            self
+        }
+        /// <p> The destination event data store. </p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// <p> The source S3 bucket. </p>
+        pub fn import_source(mut self, input: crate::model::ImportSource) -> Self {
+            self.import_source = Some(input);
+            self
+        }
+        /// <p> The source S3 bucket. </p>
+        pub fn set_import_source(
+            mut self,
+            input: std::option::Option<crate::model::ImportSource>,
+        ) -> Self {
+            self.import_source = input;
+            self
+        }
+        /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn start_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_event_time = Some(input);
+            self
+        }
+        /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn set_start_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_event_time = input;
+            self
+        }
+        /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn end_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_event_time = Some(input);
+            self
+        }
+        /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn set_end_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_event_time = input;
+            self
+        }
+        /// <p> Shows the status of the import after a <code>StartImport</code> request. An import finishes with a status of <code>COMPLETED</code> if there were no failures, or <code>FAILED</code> if there were failures. </p>
+        pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
+            self.import_status = Some(input);
+            self
+        }
+        /// <p> Shows the status of the import after a <code>StartImport</code> request. An import finishes with a status of <code>COMPLETED</code> if there were no failures, or <code>FAILED</code> if there were failures. </p>
+        pub fn set_import_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatus>,
+        ) -> Self {
+            self.import_status = input;
+            self
+        }
+        /// <p> The timestamp for the import's creation. </p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp for the import's creation. </p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p> The timestamp of the import's last update, if applicable. </p>
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of the import's last update, if applicable. </p>
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartImportOutput`](crate::output::StartImportOutput).
+        pub fn build(self) -> crate::output::StartImportOutput {
+            crate::output::StartImportOutput {
+                import_id: self.import_id,
+                destinations: self.destinations,
+                import_source: self.import_source,
+                start_event_time: self.start_event_time,
+                end_event_time: self.end_event_time,
+                import_status: self.import_status,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+            }
+        }
+    }
+}
+impl StartImportOutput {
+    /// Creates a new builder-style object to manufacture [`StartImportOutput`](crate::output::StartImportOutput).
+    pub fn builder() -> crate::output::start_import_output::Builder {
+        crate::output::start_import_output::Builder::default()
     }
 }
 
@@ -1667,6 +2134,175 @@ impl ListPublicKeysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImportsOutput {
+    /// <p> The list of returned imports. </p>
+    #[doc(hidden)]
+    pub imports: std::option::Option<std::vec::Vec<crate::model::ImportsListItem>>,
+    /// <p> A token you can use to get the next page of import results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImportsOutput {
+    /// <p> The list of returned imports. </p>
+    pub fn imports(&self) -> std::option::Option<&[crate::model::ImportsListItem]> {
+        self.imports.as_deref()
+    }
+    /// <p> A token you can use to get the next page of import results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListImportsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImportsOutput");
+        formatter.field("imports", &self.imports);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListImportsOutput`](crate::output::ListImportsOutput).
+pub mod list_imports_output {
+
+    /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) imports: std::option::Option<std::vec::Vec<crate::model::ImportsListItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `imports`.
+        ///
+        /// To override the contents of this collection use [`set_imports`](Self::set_imports).
+        ///
+        /// <p> The list of returned imports. </p>
+        pub fn imports(mut self, input: crate::model::ImportsListItem) -> Self {
+            let mut v = self.imports.unwrap_or_default();
+            v.push(input);
+            self.imports = Some(v);
+            self
+        }
+        /// <p> The list of returned imports. </p>
+        pub fn set_imports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImportsListItem>>,
+        ) -> Self {
+            self.imports = input;
+            self
+        }
+        /// <p> A token you can use to get the next page of import results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> A token you can use to get the next page of import results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImportsOutput`](crate::output::ListImportsOutput).
+        pub fn build(self) -> crate::output::ListImportsOutput {
+            crate::output::ListImportsOutput {
+                imports: self.imports,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListImportsOutput {
+    /// Creates a new builder-style object to manufacture [`ListImportsOutput`](crate::output::ListImportsOutput).
+    pub fn builder() -> crate::output::list_imports_output::Builder {
+        crate::output::list_imports_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImportFailuresOutput {
+    /// <p> Contains information about the import failures. </p>
+    #[doc(hidden)]
+    pub failures: std::option::Option<std::vec::Vec<crate::model::ImportFailureListItem>>,
+    /// <p> A token you can use to get the next page of results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImportFailuresOutput {
+    /// <p> Contains information about the import failures. </p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::ImportFailureListItem]> {
+        self.failures.as_deref()
+    }
+    /// <p> A token you can use to get the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListImportFailuresOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImportFailuresOutput");
+        formatter.field("failures", &self.failures);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListImportFailuresOutput`](crate::output::ListImportFailuresOutput).
+pub mod list_import_failures_output {
+
+    /// A builder for [`ListImportFailuresOutput`](crate::output::ListImportFailuresOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failures:
+            std::option::Option<std::vec::Vec<crate::model::ImportFailureListItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `failures`.
+        ///
+        /// To override the contents of this collection use [`set_failures`](Self::set_failures).
+        ///
+        /// <p> Contains information about the import failures. </p>
+        pub fn failures(mut self, input: crate::model::ImportFailureListItem) -> Self {
+            let mut v = self.failures.unwrap_or_default();
+            v.push(input);
+            self.failures = Some(v);
+            self
+        }
+        /// <p> Contains information about the import failures. </p>
+        pub fn set_failures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImportFailureListItem>>,
+        ) -> Self {
+            self.failures = input;
+            self
+        }
+        /// <p> A token you can use to get the next page of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> A token you can use to get the next page of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImportFailuresOutput`](crate::output::ListImportFailuresOutput).
+        pub fn build(self) -> crate::output::ListImportFailuresOutput {
+            crate::output::ListImportFailuresOutput {
+                failures: self.failures,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListImportFailuresOutput {
+    /// Creates a new builder-style object to manufacture [`ListImportFailuresOutput`](crate::output::ListImportFailuresOutput).
+    pub fn builder() -> crate::output::list_import_failures_output::Builder {
+        crate::output::list_import_failures_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventDataStoresOutput {
     /// <p>Contains information about event data stores in the account, in the current region.</p>
     #[doc(hidden)]
@@ -1746,6 +2382,90 @@ impl ListEventDataStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
     pub fn builder() -> crate::output::list_event_data_stores_output::Builder {
         crate::output::list_event_data_stores_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListChannelsOutput {
+    /// <p> The list of CloudTrail channels. </p>
+    #[doc(hidden)]
+    pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+    /// <p> A token used to get the next page of results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsOutput {
+    /// <p> The list of CloudTrail channels. </p>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.channels.as_deref()
+    }
+    /// <p> A token used to get the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListChannelsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListChannelsOutput");
+        formatter.field("channels", &self.channels);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+pub mod list_channels_output {
+
+    /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `channels`.
+        ///
+        /// To override the contents of this collection use [`set_channels`](Self::set_channels).
+        ///
+        /// <p> The list of CloudTrail channels. </p>
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
+            let mut v = self.channels.unwrap_or_default();
+            v.push(input);
+            self.channels = Some(v);
+            self
+        }
+        /// <p> The list of CloudTrail channels. </p>
+        pub fn set_channels(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
+        ) -> Self {
+            self.channels = input;
+            self
+        }
+        /// <p> A token used to get the next page of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> A token used to get the next page of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+        pub fn build(self) -> crate::output::ListChannelsOutput {
+            crate::output::ListChannelsOutput {
+                channels: self.channels,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    pub fn builder() -> crate::output::list_channels_output::Builder {
+        crate::output::list_channels_output::Builder::default()
     }
 }
 
@@ -2553,6 +3273,251 @@ impl GetInsightSelectorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetImportOutput {
+    /// <p> The ID of the import. </p>
+    #[doc(hidden)]
+    pub import_id: std::option::Option<std::string::String>,
+    /// <p> The destination event data store. </p>
+    #[doc(hidden)]
+    pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The source S3 bucket. </p>
+    #[doc(hidden)]
+    pub import_source: std::option::Option<crate::model::ImportSource>,
+    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    #[doc(hidden)]
+    pub start_event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    #[doc(hidden)]
+    pub end_event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The status of the import. </p>
+    #[doc(hidden)]
+    pub import_status: std::option::Option<crate::model::ImportStatus>,
+    /// <p> The timestamp of the import's creation. </p>
+    #[doc(hidden)]
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The timestamp of when the import was updated. </p>
+    #[doc(hidden)]
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Provides statistics for the import. </p>
+    #[doc(hidden)]
+    pub import_statistics: std::option::Option<crate::model::ImportStatistics>,
+}
+impl GetImportOutput {
+    /// <p> The ID of the import. </p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p> The destination event data store. </p>
+    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
+        self.destinations.as_deref()
+    }
+    /// <p> The source S3 bucket. </p>
+    pub fn import_source(&self) -> std::option::Option<&crate::model::ImportSource> {
+        self.import_source.as_ref()
+    }
+    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn start_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_event_time.as_ref()
+    }
+    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn end_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_event_time.as_ref()
+    }
+    /// <p> The status of the import. </p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p> The timestamp of the import's creation. </p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p> The timestamp of when the import was updated. </p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_timestamp.as_ref()
+    }
+    /// <p> Provides statistics for the import. </p>
+    pub fn import_statistics(&self) -> std::option::Option<&crate::model::ImportStatistics> {
+        self.import_statistics.as_ref()
+    }
+}
+impl std::fmt::Debug for GetImportOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetImportOutput");
+        formatter.field("import_id", &self.import_id);
+        formatter.field("destinations", &self.destinations);
+        formatter.field("import_source", &self.import_source);
+        formatter.field("start_event_time", &self.start_event_time);
+        formatter.field("end_event_time", &self.end_event_time);
+        formatter.field("import_status", &self.import_status);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.field("import_statistics", &self.import_statistics);
+        formatter.finish()
+    }
+}
+/// See [`GetImportOutput`](crate::output::GetImportOutput).
+pub mod get_import_output {
+
+    /// A builder for [`GetImportOutput`](crate::output::GetImportOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_id: std::option::Option<std::string::String>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) import_source: std::option::Option<crate::model::ImportSource>,
+        pub(crate) start_event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) import_statistics: std::option::Option<crate::model::ImportStatistics>,
+    }
+    impl Builder {
+        /// <p> The ID of the import. </p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the import. </p>
+        pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_id = input;
+            self
+        }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p> The destination event data store. </p>
+        pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input.into());
+            self.destinations = Some(v);
+            self
+        }
+        /// <p> The destination event data store. </p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// <p> The source S3 bucket. </p>
+        pub fn import_source(mut self, input: crate::model::ImportSource) -> Self {
+            self.import_source = Some(input);
+            self
+        }
+        /// <p> The source S3 bucket. </p>
+        pub fn set_import_source(
+            mut self,
+            input: std::option::Option<crate::model::ImportSource>,
+        ) -> Self {
+            self.import_source = input;
+            self
+        }
+        /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn start_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_event_time = Some(input);
+            self
+        }
+        /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn set_start_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_event_time = input;
+            self
+        }
+        /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn end_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_event_time = Some(input);
+            self
+        }
+        /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        pub fn set_end_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_event_time = input;
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
+            self.import_status = Some(input);
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn set_import_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatus>,
+        ) -> Self {
+            self.import_status = input;
+            self
+        }
+        /// <p> The timestamp of the import's creation. </p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of the import's creation. </p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p> The timestamp of when the import was updated. </p>
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of when the import was updated. </p>
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// <p> Provides statistics for the import. </p>
+        pub fn import_statistics(mut self, input: crate::model::ImportStatistics) -> Self {
+            self.import_statistics = Some(input);
+            self
+        }
+        /// <p> Provides statistics for the import. </p>
+        pub fn set_import_statistics(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatistics>,
+        ) -> Self {
+            self.import_statistics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetImportOutput`](crate::output::GetImportOutput).
+        pub fn build(self) -> crate::output::GetImportOutput {
+            crate::output::GetImportOutput {
+                import_id: self.import_id,
+                destinations: self.destinations,
+                import_source: self.import_source,
+                start_event_time: self.start_event_time,
+                end_event_time: self.end_event_time,
+                import_status: self.import_status,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+                import_statistics: self.import_statistics,
+            }
+        }
+    }
+}
+impl GetImportOutput {
+    /// Creates a new builder-style object to manufacture [`GetImportOutput`](crate::output::GetImportOutput).
+    pub fn builder() -> crate::output::get_import_output::Builder {
+        crate::output::get_import_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSelectorsOutput {
     /// <p>The specified trail ARN that has the event selectors.</p>
     #[doc(hidden)]
@@ -2936,6 +3901,153 @@ impl GetEventDataStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
     pub fn builder() -> crate::output::get_event_data_store_output::Builder {
         crate::output::get_event_data_store_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetChannelOutput {
+    /// <p> The ARN of the CloudTrail service-linked channel. </p>
+    #[doc(hidden)]
+    pub channel_arn: std::option::Option<std::string::String>,
+    /// <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p> The trail or event data store for the CloudTrail service-linked channel. </p>
+    #[doc(hidden)]
+    pub source: std::option::Option<std::string::String>,
+    /// <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
+    #[doc(hidden)]
+    pub source_config: std::option::Option<crate::model::SourceConfig>,
+    /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+    #[doc(hidden)]
+    pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
+}
+impl GetChannelOutput {
+    /// <p> The ARN of the CloudTrail service-linked channel. </p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The trail or event data store for the CloudTrail service-linked channel. </p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
+    pub fn source_config(&self) -> std::option::Option<&crate::model::SourceConfig> {
+        self.source_config.as_ref()
+    }
+    /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
+        self.destinations.as_deref()
+    }
+}
+impl std::fmt::Debug for GetChannelOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetChannelOutput");
+        formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("name", &self.name);
+        formatter.field("source", &self.source);
+        formatter.field("source_config", &self.source_config);
+        formatter.field("destinations", &self.destinations);
+        formatter.finish()
+    }
+}
+/// See [`GetChannelOutput`](crate::output::GetChannelOutput).
+pub mod get_channel_output {
+
+    /// A builder for [`GetChannelOutput`](crate::output::GetChannelOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) source: std::option::Option<std::string::String>,
+        pub(crate) source_config: std::option::Option<crate::model::SourceConfig>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
+    }
+    impl Builder {
+        /// <p> The ARN of the CloudTrail service-linked channel. </p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_arn = Some(input.into());
+            self
+        }
+        /// <p> The ARN of the CloudTrail service-linked channel. </p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_arn = input;
+            self
+        }
+        /// <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p> The trail or event data store for the CloudTrail service-linked channel. </p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p> The trail or event data store for the CloudTrail service-linked channel. </p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
+        pub fn source_config(mut self, input: crate::model::SourceConfig) -> Self {
+            self.source_config = Some(input);
+            self
+        }
+        /// <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
+        pub fn set_source_config(
+            mut self,
+            input: std::option::Option<crate::model::SourceConfig>,
+        ) -> Self {
+            self.source_config = input;
+            self
+        }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+        pub fn destinations(mut self, input: crate::model::Destination) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input);
+            self.destinations = Some(v);
+            self
+        }
+        /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Destination>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetChannelOutput`](crate::output::GetChannelOutput).
+        pub fn build(self) -> crate::output::GetChannelOutput {
+            crate::output::GetChannelOutput {
+                channel_arn: self.channel_arn,
+                name: self.name,
+                source: self.source,
+                source_config: self.source_config,
+                destinations: self.destinations,
+            }
+        }
+    }
+}
+impl GetChannelOutput {
+    /// Creates a new builder-style object to manufacture [`GetChannelOutput`](crate::output::GetChannelOutput).
+    pub fn builder() -> crate::output::get_channel_output::Builder {
+        crate::output::get_channel_output::Builder::default()
     }
 }
 

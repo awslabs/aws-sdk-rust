@@ -3495,6 +3495,72 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchAvailablePhoneNumb
     }
 }
 
+/// Operation shape for `SearchQueues`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_queues`](crate::client::Client::search_queues).
+///
+/// See [`crate::client::fluent_builders::SearchQueues`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchQueues {
+    _private: (),
+}
+impl SearchQueues {
+    /// Creates a new builder-style object to manufacture [`SearchQueuesInput`](crate::input::SearchQueuesInput).
+    pub fn builder() -> crate::input::search_queues_input::Builder {
+        crate::input::search_queues_input::Builder::default()
+    }
+    /// Creates a new `SearchQueues` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchQueues {
+    type Output =
+        std::result::Result<crate::output::SearchQueuesOutput, crate::error::SearchQueuesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_queues_error(response)
+        } else {
+            crate::operation_deser::parse_search_queues_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchRoutingProfiles`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_routing_profiles`](crate::client::Client::search_routing_profiles).
+///
+/// See [`crate::client::fluent_builders::SearchRoutingProfiles`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchRoutingProfiles {
+    _private: (),
+}
+impl SearchRoutingProfiles {
+    /// Creates a new builder-style object to manufacture [`SearchRoutingProfilesInput`](crate::input::SearchRoutingProfilesInput).
+    pub fn builder() -> crate::input::search_routing_profiles_input::Builder {
+        crate::input::search_routing_profiles_input::Builder::default()
+    }
+    /// Creates a new `SearchRoutingProfiles` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchRoutingProfiles {
+    type Output = std::result::Result<
+        crate::output::SearchRoutingProfilesOutput,
+        crate::error::SearchRoutingProfilesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_routing_profiles_error(response)
+        } else {
+            crate::operation_deser::parse_search_routing_profiles_response(response)
+        }
+    }
+}
+
 /// Operation shape for `SearchSecurityProfiles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

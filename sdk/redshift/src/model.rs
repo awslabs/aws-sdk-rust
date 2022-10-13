@@ -259,7 +259,7 @@ pub struct Cluster {
     /// <p>The total storage capacity of the cluster in megabytes. </p>
     #[doc(hidden)]
     pub total_storage_capacity_in_mega_bytes: std::option::Option<i64>,
-    /// <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+    /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     #[doc(hidden)]
     pub aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
@@ -527,7 +527,7 @@ impl Cluster {
     pub fn total_storage_capacity_in_mega_bytes(&self) -> std::option::Option<i64> {
         self.total_storage_capacity_in_mega_bytes
     }
-    /// <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+    /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration(&self) -> std::option::Option<&crate::model::AquaConfiguration> {
         self.aqua_configuration.as_ref()
     }
@@ -1493,12 +1493,12 @@ pub mod cluster {
             self.total_storage_capacity_in_mega_bytes = input;
             self
         }
-        /// <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+        /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration(mut self, input: crate::model::AquaConfiguration) -> Self {
             self.aqua_configuration = Some(input);
             self
         }
-        /// <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+        /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_configuration(
             mut self,
             input: std::option::Option<crate::model::AquaConfiguration>,
@@ -1938,43 +1938,23 @@ impl AsRef<str> for ReservedNodeExchangeStatusType {
     }
 }
 
-/// <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+/// <p>The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AquaConfiguration {
-    /// <p>The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - AQUA is enabled.</p> </li>
-    /// <li> <p>disabled - AQUA is not enabled. </p> </li>
-    /// <li> <p>applying - AQUA status is being applied. </p> </li>
-    /// </ul>
+    /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     #[doc(hidden)]
     pub aqua_status: std::option::Option<crate::model::AquaStatus>,
-    /// <p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-    /// <li> <p>disabled - Don't use AQUA. </p> </li>
-    /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-    /// </ul>
+    /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     #[doc(hidden)]
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
 }
 impl AquaConfiguration {
-    /// <p>The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - AQUA is enabled.</p> </li>
-    /// <li> <p>disabled - AQUA is not enabled. </p> </li>
-    /// <li> <p>applying - AQUA status is being applied. </p> </li>
-    /// </ul>
+    /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_status(&self) -> std::option::Option<&crate::model::AquaStatus> {
         self.aqua_status.as_ref()
     }
-    /// <p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
-    /// <ul>
-    /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-    /// <li> <p>disabled - Don't use AQUA. </p> </li>
-    /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-    /// </ul>
+    /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration_status(
         &self,
     ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
@@ -2000,22 +1980,12 @@ pub mod aqua_configuration {
             std::option::Option<crate::model::AquaConfigurationStatus>,
     }
     impl Builder {
-        /// <p>The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - AQUA is enabled.</p> </li>
-        /// <li> <p>disabled - AQUA is not enabled. </p> </li>
-        /// <li> <p>applying - AQUA status is being applied. </p> </li>
-        /// </ul>
+        /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_status(mut self, input: crate::model::AquaStatus) -> Self {
             self.aqua_status = Some(input);
             self
         }
-        /// <p>The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - AQUA is enabled.</p> </li>
-        /// <li> <p>disabled - AQUA is not enabled. </p> </li>
-        /// <li> <p>applying - AQUA status is being applied. </p> </li>
-        /// </ul>
+        /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_status(
             mut self,
             input: std::option::Option<crate::model::AquaStatus>,
@@ -2023,12 +1993,7 @@ pub mod aqua_configuration {
             self.aqua_status = input;
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration_status(
             mut self,
             input: crate::model::AquaConfigurationStatus,
@@ -2036,12 +2001,7 @@ pub mod aqua_configuration {
             self.aqua_configuration_status = Some(input);
             self
         }
-        /// <p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
-        /// <ul>
-        /// <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>
-        /// <li> <p>disabled - Don't use AQUA. </p> </li>
-        /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
-        /// </ul>
+        /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn set_aqua_configuration_status(
             mut self,
             input: std::option::Option<crate::model::AquaConfigurationStatus>,

@@ -94,7 +94,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchDetectDominantLanguage`](crate::client::fluent_builders::BatchDetectDominantLanguage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectDominantLanguage::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectDominantLanguage::set_text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectDominantLanguage::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectDominantLanguage::set_text_list): <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
     /// - On success, responds with [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput) with field(s):
     ///   - [`result_list(Option<Vec<BatchDetectDominantLanguageItemResult>>)`](crate::output::BatchDetectDominantLanguageOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::output::BatchDetectDominantLanguageOutput::error_list): <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
@@ -105,7 +105,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchDetectEntities`](crate::client::fluent_builders::BatchDetectEntities) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectEntities::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectEntities::set_text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectEntities::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectEntities::set_text_list): <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::BatchDetectEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::BatchDetectEntities::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     /// - On success, responds with [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput) with field(s):
     ///   - [`result_list(Option<Vec<BatchDetectEntitiesItemResult>>)`](crate::output::BatchDetectEntitiesOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -117,7 +117,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchDetectKeyPhrases`](crate::client::fluent_builders::BatchDetectKeyPhrases) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::set_text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::set_text_list): <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::BatchDetectKeyPhrases::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::BatchDetectKeyPhrases::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     /// - On success, responds with [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput) with field(s):
     ///   - [`result_list(Option<Vec<BatchDetectKeyPhrasesItemResult>>)`](crate::output::BatchDetectKeyPhrasesOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -129,7 +129,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchDetectSentiment`](crate::client::fluent_builders::BatchDetectSentiment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectSentiment::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectSentiment::set_text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectSentiment::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectSentiment::set_text_list): <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>   <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>  </note>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::BatchDetectSentiment::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::BatchDetectSentiment::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     /// - On success, responds with [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput) with field(s):
     ///   - [`result_list(Option<Vec<BatchDetectSentimentItemResult>>)`](crate::output::BatchDetectSentimentOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -141,7 +141,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchDetectSyntax`](crate::client::fluent_builders::BatchDetectSyntax) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectSyntax::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectSyntax::set_text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectSyntax::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectSyntax::set_text_list): <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
     ///   - [`language_code(SyntaxLanguageCode)`](crate::client::fluent_builders::BatchDetectSyntax::language_code) / [`set_language_code(Option<SyntaxLanguageCode>)`](crate::client::fluent_builders::BatchDetectSyntax::set_language_code): <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
     /// - On success, responds with [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput) with field(s):
     ///   - [`result_list(Option<Vec<BatchDetectSyntaxItemResult>>)`](crate::output::BatchDetectSyntaxOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -149,6 +149,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<BatchDetectSyntaxError>`](crate::error::BatchDetectSyntaxError)
     pub fn batch_detect_syntax(&self) -> fluent_builders::BatchDetectSyntax {
         fluent_builders::BatchDetectSyntax::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchDetectTargetedSentiment`](crate::client::fluent_builders::BatchDetectTargetedSentiment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`text_list(Vec<String>)`](crate::client::fluent_builders::BatchDetectTargetedSentiment::text_list) / [`set_text_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDetectTargetedSentiment::set_text_list): <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::BatchDetectTargetedSentiment::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::BatchDetectTargetedSentiment::set_language_code): <p>The language of the input documents. Currently, English is the only supported language.</p>
+    /// - On success, responds with [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput) with field(s):
+    ///   - [`result_list(Option<Vec<BatchDetectTargetedSentimentItemResult>>)`](crate::output::BatchDetectTargetedSentimentOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::output::BatchDetectTargetedSentimentOutput::error_list): <p>List of errors that the operation can return.</p>
+    /// - On failure, responds with [`SdkError<BatchDetectTargetedSentimentError>`](crate::error::BatchDetectTargetedSentimentError)
+    pub fn batch_detect_targeted_sentiment(&self) -> fluent_builders::BatchDetectTargetedSentiment {
+        fluent_builders::BatchDetectTargetedSentiment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ClassifyDocument`](crate::client::fluent_builders::ClassifyDocument) operation.
     ///
@@ -165,7 +177,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ContainsPiiEntities`](crate::client::fluent_builders::ContainsPiiEntities) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::ContainsPiiEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::ContainsPiiEntities::set_text): <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::ContainsPiiEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::ContainsPiiEntities::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::ContainsPiiEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::ContainsPiiEntities::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
     /// - On success, responds with [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput) with field(s):
     ///   - [`labels(Option<Vec<EntityLabel>>)`](crate::output::ContainsPiiEntitiesOutput::labels): <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
@@ -419,7 +431,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DetectDominantLanguage`](crate::client::fluent_builders::DetectDominantLanguage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectDominantLanguage::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectDominantLanguage::set_text): <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectDominantLanguage::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectDominantLanguage::set_text): <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
     /// - On success, responds with [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput) with field(s):
     ///   - [`languages(Option<Vec<DominantLanguage>>)`](crate::output::DetectDominantLanguageOutput::languages): <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
     /// - On failure, responds with [`SdkError<DetectDominantLanguageError>`](crate::error::DetectDominantLanguageError)
@@ -429,11 +441,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DetectEntities`](crate::client::fluent_builders::DetectEntities) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectEntities::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>  <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
     ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_endpoint_arn): <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>  <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>  <p>For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     /// - On success, responds with [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput) with field(s):
-    ///   - [`entities(Option<Vec<Entity>>)`](crate::output::DetectEntitiesOutput::entities): <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>  <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <code>how-entities</code>.</p>
+    ///   - [`entities(Option<Vec<Entity>>)`](crate::output::DetectEntitiesOutput::entities): <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>  <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     /// - On failure, responds with [`SdkError<DetectEntitiesError>`](crate::error::DetectEntitiesError)
     pub fn detect_entities(&self) -> fluent_builders::DetectEntities {
         fluent_builders::DetectEntities::new(self.handle.clone())
@@ -441,7 +453,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DetectKeyPhrases`](crate::client::fluent_builders::DetectKeyPhrases) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectKeyPhrases::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectKeyPhrases::set_text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectKeyPhrases::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectKeyPhrases::set_text): <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectKeyPhrases::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectKeyPhrases::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     /// - On success, responds with [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput) with field(s):
     ///   - [`key_phrases(Option<Vec<KeyPhrase>>)`](crate::output::DetectKeyPhrasesOutput::key_phrases): <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
@@ -452,7 +464,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DetectPiiEntities`](crate::client::fluent_builders::DetectPiiEntities) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectPiiEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectPiiEntities::set_text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectPiiEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectPiiEntities::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectPiiEntities::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectPiiEntities::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
     /// - On success, responds with [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput) with field(s):
     ///   - [`entities(Option<Vec<PiiEntity>>)`](crate::output::DetectPiiEntitiesOutput::entities): <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
@@ -463,7 +475,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DetectSentiment`](crate::client::fluent_builders::DetectSentiment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectSentiment::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectSentiment::set_text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectSentiment::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectSentiment::set_text): <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>   <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>  </note>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectSentiment::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectSentiment::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     /// - On success, responds with [`DetectSentimentOutput`](crate::output::DetectSentimentOutput) with field(s):
     ///   - [`sentiment(Option<SentimentType>)`](crate::output::DetectSentimentOutput::sentiment): <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
@@ -475,13 +487,24 @@ impl Client {
     /// Constructs a fluent builder for the [`DetectSyntax`](crate::client::fluent_builders::DetectSyntax) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectSyntax::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectSyntax::set_text): <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectSyntax::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectSyntax::set_text): <p>A UTF-8 string. The maximum string size is 5 KB.</p>
     ///   - [`language_code(SyntaxLanguageCode)`](crate::client::fluent_builders::DetectSyntax::language_code) / [`set_language_code(Option<SyntaxLanguageCode>)`](crate::client::fluent_builders::DetectSyntax::set_language_code): <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
     /// - On success, responds with [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput) with field(s):
-    ///   - [`syntax_tokens(Option<Vec<SyntaxToken>>)`](crate::output::DetectSyntaxOutput::syntax_tokens): <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <code>how-syntax</code>.</p>
+    ///   - [`syntax_tokens(Option<Vec<SyntaxToken>>)`](crate::output::DetectSyntaxOutput::syntax_tokens): <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     /// - On failure, responds with [`SdkError<DetectSyntaxError>`](crate::error::DetectSyntaxError)
     pub fn detect_syntax(&self) -> fluent_builders::DetectSyntax {
         fluent_builders::DetectSyntax::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DetectTargetedSentiment`](crate::client::fluent_builders::DetectTargetedSentiment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectTargetedSentiment::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectTargetedSentiment::set_text): <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::DetectTargetedSentiment::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::DetectTargetedSentiment::set_language_code): <p>The language of the input documents. Currently, English is the only supported language.</p>
+    /// - On success, responds with [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput) with field(s):
+    ///   - [`entities(Option<Vec<TargetedSentimentEntity>>)`](crate::output::DetectTargetedSentimentOutput::entities): <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
+    /// - On failure, responds with [`SdkError<DetectTargetedSentimentError>`](crate::error::DetectTargetedSentimentError)
+    pub fn detect_targeted_sentiment(&self) -> fluent_builders::DetectTargetedSentiment {
+        fluent_builders::DetectTargetedSentiment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ImportModel`](crate::client::fluent_builders::ImportModel) operation.
     ///
@@ -877,7 +900,7 @@ impl Client {
     ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_output_data_config): <p>Specifies where to send the output files. </p>
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_job_name): <p>The identifier of the job.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_language_code): <p>The language of the input documents. Currently, English is the only supported language.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     ///   - [`volume_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::volume_kms_key_id) / [`set_volume_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_volume_kms_key_id): <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_vpc_config): <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
@@ -1128,12 +1151,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1144,7 +1167,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDetectEntities`.
     ///
-    /// <p>Inspects the text of a batch of documents for named entities and returns information about them. For more information about named entities, see <code>how-entities</code> </p>
+    /// <p>Inspects the text of a batch of documents for named entities and returns information about them. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectEntities {
         handle: std::sync::Arc<super::Handle>,
@@ -1212,12 +1235,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1309,12 +1332,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1406,12 +1429,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
+        /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+        /// </note>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p> <note>
+        /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+        /// </note>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1435,7 +1462,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDetectSyntax`.
     ///
-    /// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them. For more information, see <code>how-syntax</code>.</p>
+    /// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectSyntax {
         handle: std::sync::Arc<super::Handle>,
@@ -1503,12 +1530,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1525,6 +1552,104 @@ pub mod fluent_builders {
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::SyntaxLanguageCode>,
+        ) -> Self {
+            self.inner = self.inner.set_language_code(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchDetectTargetedSentiment`.
+    ///
+    /// <p>Inspects a batch of documents and returns a sentiment analysis for each entity identified in the documents.</p>
+    /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchDetectTargetedSentiment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_detect_targeted_sentiment_input::Builder,
+    }
+    impl BatchDetectTargetedSentiment {
+        /// Creates a new `BatchDetectTargetedSentiment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::BatchDetectTargetedSentiment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchDetectTargetedSentimentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchDetectTargetedSentimentOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchDetectTargetedSentimentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `TextList`.
+        ///
+        /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
+        ///
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+        pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text_list(input.into());
+            self
+        }
+        /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+        pub fn set_text_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_text_list(input);
+            self
+        }
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
+            self
+        }
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
             self.inner = self.inner.set_language_code(input);
             self
@@ -1683,12 +1808,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -1709,7 +1834,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDocumentClassifier`.
     ///
-    /// <p>Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a set of training documents that labeled with the categories that you want to use. After the classifier is trained you can use it to categorize a set of labeled documents into the categories. For more information, see <code>how-document-classification</code>.</p>
+    /// <p>Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a set of training documents that labeled with the categories that you want to use. After the classifier is trained you can use it to categorize a set of labeled documents into the categories. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Document Classification</a> in the Comprehend Developer Guide. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDocumentClassifier {
         handle: std::sync::Arc<super::Handle>,
@@ -3761,12 +3886,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -3774,7 +3899,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectEntities`.
     ///
-    /// <p>Inspects text for named entities, and returns information about them. For more information, about named entities, see <code>how-entities</code>. </p>
+    /// <p>Inspects text for named entities, and returns information about them. For more information, about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectEntities {
         handle: std::sync::Arc<super::Handle>,
@@ -3838,12 +3963,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -3944,12 +4069,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -4034,12 +4159,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -4124,12 +4249,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
+        /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+        /// </note>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. The maximum string size is 5 KB.</p> <note>
+        /// <p>Amazon Comprehend performs real-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input.</p>
+        /// </note>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -4150,7 +4279,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectSyntax`.
     ///
-    /// <p>Inspects text for syntax and the part of speech of words in the document. For more information, <code>how-syntax</code>.</p>
+    /// <p>Inspects text for syntax and the part of speech of words in the document. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectSyntax {
         handle: std::sync::Arc<super::Handle>,
@@ -4214,12 +4343,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
+        /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
+        /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -4233,6 +4362,97 @@ pub mod fluent_builders {
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::SyntaxLanguageCode>,
+        ) -> Self {
+            self.inner = self.inner.set_language_code(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DetectTargetedSentiment`.
+    ///
+    /// <p>Inspects the input text and returns a sentiment analysis for each entity identified in the text.</p>
+    /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DetectTargetedSentiment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::detect_targeted_sentiment_input::Builder,
+    }
+    impl DetectTargetedSentiment {
+        /// Creates a new `DetectTargetedSentiment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DetectTargetedSentiment,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DetectTargetedSentimentError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DetectTargetedSentimentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DetectTargetedSentimentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
+            self
+        }
+        /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_text(input);
+            self
+        }
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
+            self
+        }
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
             self.inner = self.inner.set_language_code(input);
             self
@@ -7486,12 +7706,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+        /// <p>The language of the input documents. Currently, English is the only supported language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,

@@ -67,6 +67,40 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCustomDataIdenti
     }
 }
 
+/// Operation shape for `CreateAllowList`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_allow_list`](crate::client::Client::create_allow_list).
+///
+/// See [`crate::client::fluent_builders::CreateAllowList`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateAllowList {
+    _private: (),
+}
+impl CreateAllowList {
+    /// Creates a new builder-style object to manufacture [`CreateAllowListInput`](crate::input::CreateAllowListInput).
+    pub fn builder() -> crate::input::create_allow_list_input::Builder {
+        crate::input::create_allow_list_input::Builder::default()
+    }
+    /// Creates a new `CreateAllowList` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateAllowList {
+    type Output = std::result::Result<
+        crate::output::CreateAllowListOutput,
+        crate::error::CreateAllowListError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_allow_list_error(response)
+        } else {
+            crate::operation_deser::parse_create_allow_list_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateClassificationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -299,6 +333,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeclineInvitations {
             crate::operation_deser::parse_decline_invitations_error(response)
         } else {
             crate::operation_deser::parse_decline_invitations_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteAllowList`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_allow_list`](crate::client::Client::delete_allow_list).
+///
+/// See [`crate::client::fluent_builders::DeleteAllowList`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteAllowList {
+    _private: (),
+}
+impl DeleteAllowList {
+    /// Creates a new builder-style object to manufacture [`DeleteAllowListInput`](crate::input::DeleteAllowListInput).
+    pub fn builder() -> crate::input::delete_allow_list_input::Builder {
+        crate::input::delete_allow_list_input::Builder::default()
+    }
+    /// Creates a new `DeleteAllowList` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteAllowList {
+    type Output = std::result::Result<
+        crate::output::DeleteAllowListOutput,
+        crate::error::DeleteAllowListError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_allow_list_error(response)
+        } else {
+            crate::operation_deser::parse_delete_allow_list_response(response)
         }
     }
 }
@@ -803,6 +871,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAdministratorAccount 
             crate::operation_deser::parse_get_administrator_account_error(response)
         } else {
             crate::operation_deser::parse_get_administrator_account_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetAllowList`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_allow_list`](crate::client::Client::get_allow_list).
+///
+/// See [`crate::client::fluent_builders::GetAllowList`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetAllowList {
+    _private: (),
+}
+impl GetAllowList {
+    /// Creates a new builder-style object to manufacture [`GetAllowListInput`](crate::input::GetAllowListInput).
+    pub fn builder() -> crate::input::get_allow_list_input::Builder {
+        crate::input::get_allow_list_input::Builder::default()
+    }
+    /// Creates a new `GetAllowList` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetAllowList {
+    type Output =
+        std::result::Result<crate::output::GetAllowListOutput, crate::error::GetAllowListError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_allow_list_error(response)
+        } else {
+            crate::operation_deser::parse_get_allow_list_response(response)
         }
     }
 }
@@ -1348,6 +1448,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsageTotals {
     }
 }
 
+/// Operation shape for `ListAllowLists`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_allow_lists`](crate::client::Client::list_allow_lists).
+///
+/// See [`crate::client::fluent_builders::ListAllowLists`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAllowLists {
+    _private: (),
+}
+impl ListAllowLists {
+    /// Creates a new builder-style object to manufacture [`ListAllowListsInput`](crate::input::ListAllowListsInput).
+    pub fn builder() -> crate::input::list_allow_lists_input::Builder {
+        crate::input::list_allow_lists_input::Builder::default()
+    }
+    /// Creates a new `ListAllowLists` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAllowLists {
+    type Output =
+        std::result::Result<crate::output::ListAllowListsOutput, crate::error::ListAllowListsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_allow_lists_error(response)
+        } else {
+            crate::operation_deser::parse_list_allow_lists_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListClassificationJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1846,6 +1978,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateAllowList`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_allow_list`](crate::client::Client::update_allow_list).
+///
+/// See [`crate::client::fluent_builders::UpdateAllowList`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateAllowList {
+    _private: (),
+}
+impl UpdateAllowList {
+    /// Creates a new builder-style object to manufacture [`UpdateAllowListInput`](crate::input::UpdateAllowListInput).
+    pub fn builder() -> crate::input::update_allow_list_input::Builder {
+        crate::input::update_allow_list_input::Builder::default()
+    }
+    /// Creates a new `UpdateAllowList` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateAllowList {
+    type Output = std::result::Result<
+        crate::output::UpdateAllowListOutput,
+        crate::error::UpdateAllowListError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_allow_list_error(response)
+        } else {
+            crate::operation_deser::parse_update_allow_list_response(response)
         }
     }
 }

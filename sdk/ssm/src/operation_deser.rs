@@ -654,6 +654,27 @@ pub fn parse_create_association_error(
                 }),
             }
         }
+        "InvalidTag" => crate::error::CreateAssociationError {
+            meta: generic,
+            kind: crate::error::CreateAssociationErrorKind::InvalidTag({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_tag::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tag_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateAssociationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidTarget" => crate::error::CreateAssociationError {
             meta: generic,
             kind: crate::error::CreateAssociationErrorKind::InvalidTarget({

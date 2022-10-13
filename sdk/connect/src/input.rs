@@ -4315,14 +4315,14 @@ pub mod create_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>Permissions assigned to the security profile.</p>
+        /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
         pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
-        /// <p>Permissions assigned to the security profile.</p>
+        /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20899,6 +20899,395 @@ impl SearchAvailablePhoneNumbersInput {
     }
 }
 
+/// See [`SearchQueuesInput`](crate::input::SearchQueuesInput).
+pub mod search_queues_input {
+
+    /// A builder for [`SearchQueuesInput`](crate::input::SearchQueuesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) search_filter: std::option::Option<crate::model::QueueSearchFilter>,
+        pub(crate) search_criteria: std::option::Option<crate::model::QueueSearchCriteria>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn search_filter(mut self, input: crate::model::QueueSearchFilter) -> Self {
+            self.search_filter = Some(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn set_search_filter(
+            mut self,
+            input: std::option::Option<crate::model::QueueSearchFilter>,
+        ) -> Self {
+            self.search_filter = input;
+            self
+        }
+        /// <p>The search criteria to be used to return queues.</p>
+        pub fn search_criteria(mut self, input: crate::model::QueueSearchCriteria) -> Self {
+            self.search_criteria = Some(input);
+            self
+        }
+        /// <p>The search criteria to be used to return queues.</p>
+        pub fn set_search_criteria(
+            mut self,
+            input: std::option::Option<crate::model::QueueSearchCriteria>,
+        ) -> Self {
+            self.search_criteria = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchQueuesInput`](crate::input::SearchQueuesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SearchQueuesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SearchQueuesInput {
+                instance_id: self.instance_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                search_filter: self.search_filter,
+                search_criteria: self.search_criteria,
+            })
+        }
+    }
+}
+impl SearchQueuesInput {
+    /// Consumes the builder and constructs an Operation<[`SearchQueues`](crate::operation::SearchQueues)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SearchQueues,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SearchQueuesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/search-queues").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SearchQueuesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_search_queues(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchQueues::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchQueues",
+            "connect",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SearchQueuesInput`](crate::input::SearchQueuesInput).
+    pub fn builder() -> crate::input::search_queues_input::Builder {
+        crate::input::search_queues_input::Builder::default()
+    }
+}
+
+/// See [`SearchRoutingProfilesInput`](crate::input::SearchRoutingProfilesInput).
+pub mod search_routing_profiles_input {
+
+    /// A builder for [`SearchRoutingProfilesInput`](crate::input::SearchRoutingProfilesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) search_filter: std::option::Option<crate::model::RoutingProfileSearchFilter>,
+        pub(crate) search_criteria: std::option::Option<crate::model::RoutingProfileSearchCriteria>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn search_filter(mut self, input: crate::model::RoutingProfileSearchFilter) -> Self {
+            self.search_filter = Some(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn set_search_filter(
+            mut self,
+            input: std::option::Option<crate::model::RoutingProfileSearchFilter>,
+        ) -> Self {
+            self.search_filter = input;
+            self
+        }
+        /// <p>The search criteria to be used to return routing profiles.</p>
+        pub fn search_criteria(
+            mut self,
+            input: crate::model::RoutingProfileSearchCriteria,
+        ) -> Self {
+            self.search_criteria = Some(input);
+            self
+        }
+        /// <p>The search criteria to be used to return routing profiles.</p>
+        pub fn set_search_criteria(
+            mut self,
+            input: std::option::Option<crate::model::RoutingProfileSearchCriteria>,
+        ) -> Self {
+            self.search_criteria = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchRoutingProfilesInput`](crate::input::SearchRoutingProfilesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SearchRoutingProfilesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SearchRoutingProfilesInput {
+                instance_id: self.instance_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                search_filter: self.search_filter,
+                search_criteria: self.search_criteria,
+            })
+        }
+    }
+}
+impl SearchRoutingProfilesInput {
+    /// Consumes the builder and constructs an Operation<[`SearchRoutingProfiles`](crate::operation::SearchRoutingProfiles)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SearchRoutingProfiles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SearchRoutingProfilesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/search-routing-profiles").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SearchRoutingProfilesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_search_routing_profiles(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchRoutingProfiles::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchRoutingProfiles",
+            "connect",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SearchRoutingProfilesInput`](crate::input::SearchRoutingProfilesInput).
+    pub fn builder() -> crate::input::search_routing_profiles_input::Builder {
+        crate::input::search_routing_profiles_input::Builder::default()
+    }
+}
+
 /// See [`SearchSecurityProfilesInput`](crate::input::SearchSecurityProfilesInput).
 pub mod search_security_profiles_input {
 
@@ -21153,12 +21542,16 @@ pub mod search_users_input {
             self.search_filter = input;
             self
         }
-        /// <p>The search criteria to be used to return users.</p>
+        /// <p>The search criteria to be used to return users.</p> <note>
+        /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+        /// </note>
         pub fn search_criteria(mut self, input: crate::model::UserSearchCriteria) -> Self {
             self.search_criteria = Some(input);
             self
         }
-        /// <p>The search criteria to be used to return users.</p>
+        /// <p>The search criteria to be used to return users.</p> <note>
+        /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+        /// </note>
         pub fn set_search_criteria(
             mut self,
             input: std::option::Option<crate::model::UserSearchCriteria>,
@@ -24885,12 +25278,12 @@ pub mod update_contact_flow_metadata_input {
             self.contact_flow_id = input;
             self
         }
-        /// <p>TThe name of the flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>TThe name of the flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -29045,14 +29438,14 @@ pub mod update_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The permissions granted to a security profile.</p>
+        /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
         pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
-        /// <p>The permissions granted to a security profile.</p>
+        /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -31272,7 +31665,7 @@ pub struct UpdateSecurityProfileInput {
     /// <p>The description of the security profile.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The permissions granted to a security profile.</p>
+    /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier for the security profle.</p>
@@ -31287,7 +31680,7 @@ impl UpdateSecurityProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The permissions granted to a security profile.</p>
+    /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     pub fn permissions(&self) -> std::option::Option<&[std::string::String]> {
         self.permissions.as_deref()
     }
@@ -32129,7 +32522,7 @@ pub struct UpdateContactFlowMetadataInput {
     /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>TThe name of the flow.</p>
+    /// <p>The name of the flow.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the flow.</p>
@@ -32148,7 +32541,7 @@ impl UpdateContactFlowMetadataInput {
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>TThe name of the flow.</p>
+    /// <p>The name of the flow.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -33147,7 +33540,9 @@ pub struct SearchUsersInput {
     /// <p>Filters to be applied to search results.</p>
     #[doc(hidden)]
     pub search_filter: std::option::Option<crate::model::UserSearchFilter>,
-    /// <p>The search criteria to be used to return users.</p>
+    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+    /// </note>
     #[doc(hidden)]
     pub search_criteria: std::option::Option<crate::model::UserSearchCriteria>,
 }
@@ -33168,7 +33563,9 @@ impl SearchUsersInput {
     pub fn search_filter(&self) -> std::option::Option<&crate::model::UserSearchFilter> {
         self.search_filter.as_ref()
     }
-    /// <p>The search criteria to be used to return users.</p>
+    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
+    /// </note>
     pub fn search_criteria(&self) -> std::option::Option<&crate::model::UserSearchCriteria> {
         self.search_criteria.as_ref()
     }
@@ -33239,6 +33636,116 @@ impl std::fmt::Debug for SearchSecurityProfilesInput {
         formatter.field("max_results", &self.max_results);
         formatter.field("search_criteria", &self.search_criteria);
         formatter.field("search_filter", &self.search_filter);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchRoutingProfilesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Filters to be applied to search results.</p>
+    #[doc(hidden)]
+    pub search_filter: std::option::Option<crate::model::RoutingProfileSearchFilter>,
+    /// <p>The search criteria to be used to return routing profiles.</p>
+    #[doc(hidden)]
+    pub search_criteria: std::option::Option<crate::model::RoutingProfileSearchCriteria>,
+}
+impl SearchRoutingProfilesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filters to be applied to search results.</p>
+    pub fn search_filter(&self) -> std::option::Option<&crate::model::RoutingProfileSearchFilter> {
+        self.search_filter.as_ref()
+    }
+    /// <p>The search criteria to be used to return routing profiles.</p>
+    pub fn search_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::RoutingProfileSearchCriteria> {
+        self.search_criteria.as_ref()
+    }
+}
+impl std::fmt::Debug for SearchRoutingProfilesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchRoutingProfilesInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("search_filter", &self.search_filter);
+        formatter.field("search_criteria", &self.search_criteria);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchQueuesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Filters to be applied to search results.</p>
+    #[doc(hidden)]
+    pub search_filter: std::option::Option<crate::model::QueueSearchFilter>,
+    /// <p>The search criteria to be used to return queues.</p>
+    #[doc(hidden)]
+    pub search_criteria: std::option::Option<crate::model::QueueSearchCriteria>,
+}
+impl SearchQueuesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filters to be applied to search results.</p>
+    pub fn search_filter(&self) -> std::option::Option<&crate::model::QueueSearchFilter> {
+        self.search_filter.as_ref()
+    }
+    /// <p>The search criteria to be used to return queues.</p>
+    pub fn search_criteria(&self) -> std::option::Option<&crate::model::QueueSearchCriteria> {
+        self.search_criteria.as_ref()
+    }
+}
+impl std::fmt::Debug for SearchQueuesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchQueuesInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("search_filter", &self.search_filter);
+        formatter.field("search_criteria", &self.search_criteria);
         formatter.finish()
     }
 }
@@ -37110,7 +37617,7 @@ pub struct CreateSecurityProfileInput {
     /// <p>The description of the security profile.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Permissions assigned to the security profile.</p>
+    /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -37130,7 +37637,7 @@ impl CreateSecurityProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Permissions assigned to the security profile.</p>
+    /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
     pub fn permissions(&self) -> std::option::Option<&[std::string::String]> {
         self.permissions.as_deref()
     }

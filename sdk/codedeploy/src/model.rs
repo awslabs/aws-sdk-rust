@@ -395,17 +395,17 @@ impl EcsService {
     }
 }
 
-/// <p>Information about groups of EC2 instance tags.</p>
+/// <p>Information about groups of Amazon EC2 instance tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2TagSet {
-    /// <p>A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
+    /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
     #[doc(hidden)]
     pub ec2_tag_set_list:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Ec2TagFilter>>>,
 }
 impl Ec2TagSet {
-    /// <p>A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
+    /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
     pub fn ec2_tag_set_list(
         &self,
     ) -> std::option::Option<&[std::vec::Vec<crate::model::Ec2TagFilter>]> {
@@ -433,7 +433,7 @@ pub mod ec2_tag_set {
         ///
         /// To override the contents of this collection use [`set_ec2_tag_set_list`](Self::set_ec2_tag_set_list).
         ///
-        /// <p>A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
+        /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
         pub fn ec2_tag_set_list(
             mut self,
             input: std::vec::Vec<crate::model::Ec2TagFilter>,
@@ -443,7 +443,7 @@ pub mod ec2_tag_set {
             self.ec2_tag_set_list = Some(v);
             self
         }
-        /// <p>A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
+        /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
         pub fn set_ec2_tag_set_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Ec2TagFilter>>>,
@@ -2039,7 +2039,7 @@ impl AsRef<str> for AutoRollbackEvent {
     }
 }
 
-/// <p>Information about alarms associated with the deployment group.</p>
+/// <p>Information about alarms associated with a deployment or deployment group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmConfiguration {
@@ -2053,7 +2053,7 @@ pub struct AlarmConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub ignore_poll_alarm_failure: bool,
-    /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.</p>
+    /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
     #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
 }
@@ -2070,7 +2070,7 @@ impl AlarmConfiguration {
     pub fn ignore_poll_alarm_failure(&self) -> bool {
         self.ignore_poll_alarm_failure
     }
-    /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.</p>
+    /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
     pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
         self.alarms.as_deref()
     }
@@ -2127,14 +2127,14 @@ pub mod alarm_configuration {
         ///
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
-        /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.</p>
+        /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
         pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
             v.push(input);
             self.alarms = Some(v);
             self
         }
-        /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.</p>
+        /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
         pub fn set_alarms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
@@ -2556,8 +2556,8 @@ pub struct RevisionLocation {
     /// <ul>
     /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
     /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
-    /// <li> <p>String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
-    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
+    /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub revision_type: std::option::Option<crate::model::RevisionLocationType>,
@@ -2567,10 +2567,10 @@ pub struct RevisionLocation {
     /// <p>Information about the location of application artifacts stored in GitHub.</p>
     #[doc(hidden)]
     pub git_hub_location: std::option::Option<crate::model::GitHubLocation>,
-    /// <p>Information about the location of an AWS Lambda deployment revision stored as a RawString.</p>
+    /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
     #[doc(hidden)]
     pub string: std::option::Option<crate::model::RawString>,
-    /// <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
+    /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
     #[doc(hidden)]
     pub app_spec_content: std::option::Option<crate::model::AppSpecContent>,
 }
@@ -2579,8 +2579,8 @@ impl RevisionLocation {
     /// <ul>
     /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
     /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
-    /// <li> <p>String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
-    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
+    /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
     pub fn revision_type(&self) -> std::option::Option<&crate::model::RevisionLocationType> {
         self.revision_type.as_ref()
@@ -2593,11 +2593,11 @@ impl RevisionLocation {
     pub fn git_hub_location(&self) -> std::option::Option<&crate::model::GitHubLocation> {
         self.git_hub_location.as_ref()
     }
-    /// <p>Information about the location of an AWS Lambda deployment revision stored as a RawString.</p>
+    /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
     pub fn string(&self) -> std::option::Option<&crate::model::RawString> {
         self.string.as_ref()
     }
-    /// <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
+    /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
     pub fn app_spec_content(&self) -> std::option::Option<&crate::model::AppSpecContent> {
         self.app_spec_content.as_ref()
     }
@@ -2630,8 +2630,8 @@ pub mod revision_location {
         /// <ul>
         /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
         /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
-        /// <li> <p>String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
-        /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
+        /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+        /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
         /// </ul>
         pub fn revision_type(mut self, input: crate::model::RevisionLocationType) -> Self {
             self.revision_type = Some(input);
@@ -2641,8 +2641,8 @@ pub mod revision_location {
         /// <ul>
         /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
         /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
-        /// <li> <p>String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
-        /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
+        /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+        /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
         /// </ul>
         pub fn set_revision_type(
             mut self,
@@ -2677,22 +2677,22 @@ pub mod revision_location {
             self.git_hub_location = input;
             self
         }
-        /// <p>Information about the location of an AWS Lambda deployment revision stored as a RawString.</p>
+        /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
         pub fn string(mut self, input: crate::model::RawString) -> Self {
             self.string = Some(input);
             self
         }
-        /// <p>Information about the location of an AWS Lambda deployment revision stored as a RawString.</p>
+        /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
         pub fn set_string(mut self, input: std::option::Option<crate::model::RawString>) -> Self {
             self.string = input;
             self
         }
-        /// <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
+        /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
         pub fn app_spec_content(mut self, input: crate::model::AppSpecContent) -> Self {
             self.app_spec_content = Some(input);
             self
         }
-        /// <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
+        /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
         pub fn set_app_spec_content(
             mut self,
             input: std::option::Option<crate::model::AppSpecContent>,
@@ -2719,12 +2719,12 @@ impl RevisionLocation {
     }
 }
 
-/// <p> A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. </p>
+/// <p> A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppSpecContent {
     /// <p> The YAML-formatted or JSON-formatted revision string. </p>
-    /// <p> For an AWS Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
+    /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
     /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
     /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
     #[doc(hidden)]
@@ -2735,7 +2735,7 @@ pub struct AppSpecContent {
 }
 impl AppSpecContent {
     /// <p> The YAML-formatted or JSON-formatted revision string. </p>
-    /// <p> For an AWS Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
+    /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
     /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
     /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
     pub fn content(&self) -> std::option::Option<&str> {
@@ -2765,7 +2765,7 @@ pub mod app_spec_content {
     }
     impl Builder {
         /// <p> The YAML-formatted or JSON-formatted revision string. </p>
-        /// <p> For an AWS Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
+        /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
         /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
         /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2773,7 +2773,7 @@ pub mod app_spec_content {
             self
         }
         /// <p> The YAML-formatted or JSON-formatted revision string. </p>
-        /// <p> For an AWS Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
+        /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
         /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
         /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2806,7 +2806,7 @@ impl AppSpecContent {
     }
 }
 
-/// <p>A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.</p>
+/// <p>A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the revision is the same as the AppSpec file.</p>
 #[deprecated(
     note = "RawString and String revision type are deprecated, use AppSpecContent type instead."
 )]
@@ -4144,13 +4144,13 @@ pub struct DeploymentTarget {
     /// <p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>
     #[doc(hidden)]
     pub instance_target: std::option::Option<crate::model::InstanceTarget>,
-    /// <p> Information about the target for a deployment that uses the AWS Lambda compute platform. </p>
+    /// <p> Information about the target for a deployment that uses the Lambda compute platform. </p>
     #[doc(hidden)]
     pub lambda_target: std::option::Option<crate::model::LambdaTarget>,
     /// <p> Information about the target for a deployment that uses the Amazon ECS compute platform. </p>
     #[doc(hidden)]
     pub ecs_target: std::option::Option<crate::model::EcsTarget>,
-    /// <p> Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
+    /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
     #[doc(hidden)]
     pub cloud_formation_target: std::option::Option<crate::model::CloudFormationTarget>,
 }
@@ -4165,7 +4165,7 @@ impl DeploymentTarget {
     pub fn instance_target(&self) -> std::option::Option<&crate::model::InstanceTarget> {
         self.instance_target.as_ref()
     }
-    /// <p> Information about the target for a deployment that uses the AWS Lambda compute platform. </p>
+    /// <p> Information about the target for a deployment that uses the Lambda compute platform. </p>
     pub fn lambda_target(&self) -> std::option::Option<&crate::model::LambdaTarget> {
         self.lambda_target.as_ref()
     }
@@ -4173,7 +4173,7 @@ impl DeploymentTarget {
     pub fn ecs_target(&self) -> std::option::Option<&crate::model::EcsTarget> {
         self.ecs_target.as_ref()
     }
-    /// <p> Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
+    /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
     pub fn cloud_formation_target(
         &self,
     ) -> std::option::Option<&crate::model::CloudFormationTarget> {
@@ -4230,12 +4230,12 @@ pub mod deployment_target {
             self.instance_target = input;
             self
         }
-        /// <p> Information about the target for a deployment that uses the AWS Lambda compute platform. </p>
+        /// <p> Information about the target for a deployment that uses the Lambda compute platform. </p>
         pub fn lambda_target(mut self, input: crate::model::LambdaTarget) -> Self {
             self.lambda_target = Some(input);
             self
         }
-        /// <p> Information about the target for a deployment that uses the AWS Lambda compute platform. </p>
+        /// <p> Information about the target for a deployment that uses the Lambda compute platform. </p>
         pub fn set_lambda_target(
             mut self,
             input: std::option::Option<crate::model::LambdaTarget>,
@@ -4256,12 +4256,12 @@ pub mod deployment_target {
             self.ecs_target = input;
             self
         }
-        /// <p> Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
+        /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
         pub fn cloud_formation_target(mut self, input: crate::model::CloudFormationTarget) -> Self {
             self.cloud_formation_target = Some(input);
             self
         }
-        /// <p> Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
+        /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
         pub fn set_cloud_formation_target(
             mut self,
             input: std::option::Option<crate::model::CloudFormationTarget>,
@@ -4288,34 +4288,34 @@ impl DeploymentTarget {
     }
 }
 
-/// <p> Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
+/// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFormationTarget {
-    /// <p>The unique ID of an AWS CloudFormation blue/green deployment.</p>
+    /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of a deployment target that has a type of&nbsp;<code>CloudFormationTarget</code>. </p>
     #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
-    /// <p> The date and time when the target application was updated by an AWS CloudFormation blue/green deployment. </p>
+    /// <p> The date and time when the target application was updated by an CloudFormation blue/green deployment. </p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target application. </p>
+    /// <p> The lifecycle events of the CloudFormation blue/green deployment to this target application. </p>
     #[doc(hidden)]
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
-    /// <p> The status of an AWS CloudFormation blue/green deployment's target application. </p>
+    /// <p> The status of an CloudFormation blue/green deployment's target application. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TargetStatus>,
-    /// <p>The resource type for the AWS CloudFormation blue/green deployment.</p>
+    /// <p>The resource type for the CloudFormation blue/green deployment.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment receives.</p>
+    /// <p>The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.</p>
     #[doc(hidden)]
     pub target_version_weight: f64,
 }
 impl CloudFormationTarget {
-    /// <p>The unique ID of an AWS CloudFormation blue/green deployment.</p>
+    /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -4323,23 +4323,23 @@ impl CloudFormationTarget {
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
-    /// <p> The date and time when the target application was updated by an AWS CloudFormation blue/green deployment. </p>
+    /// <p> The date and time when the target application was updated by an CloudFormation blue/green deployment. </p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target application. </p>
+    /// <p> The lifecycle events of the CloudFormation blue/green deployment to this target application. </p>
     pub fn lifecycle_events(&self) -> std::option::Option<&[crate::model::LifecycleEvent]> {
         self.lifecycle_events.as_deref()
     }
-    /// <p> The status of an AWS CloudFormation blue/green deployment's target application. </p>
+    /// <p> The status of an CloudFormation blue/green deployment's target application. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::TargetStatus> {
         self.status.as_ref()
     }
-    /// <p>The resource type for the AWS CloudFormation blue/green deployment.</p>
+    /// <p>The resource type for the CloudFormation blue/green deployment.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment receives.</p>
+    /// <p>The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.</p>
     pub fn target_version_weight(&self) -> f64 {
         self.target_version_weight
     }
@@ -4373,12 +4373,12 @@ pub mod cloud_formation_target {
         pub(crate) target_version_weight: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The unique ID of an AWS CloudFormation blue/green deployment.</p>
+        /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of an AWS CloudFormation blue/green deployment.</p>
+        /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4396,12 +4396,12 @@ pub mod cloud_formation_target {
             self.target_id = input;
             self
         }
-        /// <p> The date and time when the target application was updated by an AWS CloudFormation blue/green deployment. </p>
+        /// <p> The date and time when the target application was updated by an CloudFormation blue/green deployment. </p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p> The date and time when the target application was updated by an AWS CloudFormation blue/green deployment. </p>
+        /// <p> The date and time when the target application was updated by an CloudFormation blue/green deployment. </p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4413,14 +4413,14 @@ pub mod cloud_formation_target {
         ///
         /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
         ///
-        /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target application. </p>
+        /// <p> The lifecycle events of the CloudFormation blue/green deployment to this target application. </p>
         pub fn lifecycle_events(mut self, input: crate::model::LifecycleEvent) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
             v.push(input);
             self.lifecycle_events = Some(v);
             self
         }
-        /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target application. </p>
+        /// <p> The lifecycle events of the CloudFormation blue/green deployment to this target application. </p>
         pub fn set_lifecycle_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
@@ -4428,12 +4428,12 @@ pub mod cloud_formation_target {
             self.lifecycle_events = input;
             self
         }
-        /// <p> The status of an AWS CloudFormation blue/green deployment's target application. </p>
+        /// <p> The status of an CloudFormation blue/green deployment's target application. </p>
         pub fn status(mut self, input: crate::model::TargetStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p> The status of an AWS CloudFormation blue/green deployment's target application. </p>
+        /// <p> The status of an CloudFormation blue/green deployment's target application. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TargetStatus>,
@@ -4441,12 +4441,12 @@ pub mod cloud_formation_target {
             self.status = input;
             self
         }
-        /// <p>The resource type for the AWS CloudFormation blue/green deployment.</p>
+        /// <p>The resource type for the CloudFormation blue/green deployment.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The resource type for the AWS CloudFormation blue/green deployment.</p>
+        /// <p>The resource type for the CloudFormation blue/green deployment.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4454,12 +4454,12 @@ pub mod cloud_formation_target {
             self.resource_type = input;
             self
         }
-        /// <p>The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment receives.</p>
+        /// <p>The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.</p>
         pub fn target_version_weight(mut self, input: f64) -> Self {
             self.target_version_weight = Some(input);
             self
         }
-        /// <p>The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment receives.</p>
+        /// <p>The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.</p>
         pub fn set_target_version_weight(mut self, input: std::option::Option<f64>) -> Self {
             self.target_version_weight = input;
             self
@@ -4772,7 +4772,7 @@ pub struct Diagnostics {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The last portion of the diagnostic log.</p>
-    /// <p>If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
+    /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
     #[doc(hidden)]
     pub log_tail: std::option::Option<std::string::String>,
 }
@@ -4798,7 +4798,7 @@ impl Diagnostics {
         self.message.as_deref()
     }
     /// <p>The last portion of the diagnostic log.</p>
-    /// <p>If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
+    /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
     pub fn log_tail(&self) -> std::option::Option<&str> {
         self.log_tail.as_deref()
     }
@@ -4875,13 +4875,13 @@ pub mod diagnostics {
             self
         }
         /// <p>The last portion of the diagnostic log.</p>
-        /// <p>If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
+        /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
         pub fn log_tail(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_tail = Some(input.into());
             self
         }
         /// <p>The last portion of the diagnostic log.</p>
-        /// <p>If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
+        /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
         pub fn set_log_tail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_tail = input;
             self
@@ -5185,7 +5185,7 @@ impl EcsTarget {
     }
 }
 
-/// <p> Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set. </p>
+/// <p> Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsTaskSet {
@@ -5212,7 +5212,7 @@ pub struct EcsTaskSet {
     /// <p> The percentage of traffic served by this task set. </p>
     #[doc(hidden)]
     pub traffic_weight: f64,
-    /// <p> The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a task set. </p>
+    /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
     #[doc(hidden)]
     pub target_group: std::option::Option<crate::model::TargetGroupInfo>,
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
@@ -5249,7 +5249,7 @@ impl EcsTaskSet {
     pub fn traffic_weight(&self) -> f64 {
         self.traffic_weight
     }
-    /// <p> The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a task set. </p>
+    /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
     pub fn target_group(&self) -> std::option::Option<&crate::model::TargetGroupInfo> {
         self.target_group.as_ref()
     }
@@ -5358,12 +5358,12 @@ pub mod ecs_task_set {
             self.traffic_weight = input;
             self
         }
-        /// <p> The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a task set. </p>
+        /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
         pub fn target_group(mut self, input: crate::model::TargetGroupInfo) -> Self {
             self.target_group = Some(input);
             self
         }
-        /// <p> The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a task set. </p>
+        /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
         pub fn set_target_group(
             mut self,
             input: std::option::Option<crate::model::TargetGroupInfo>,
@@ -5461,7 +5461,7 @@ impl AsRef<str> for TargetLabel {
     }
 }
 
-/// <p> Information about the target AWS Lambda function during an AWS Lambda deployment. </p>
+/// <p> Information about the target Lambda function during an Lambda deployment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaTarget {
@@ -5474,7 +5474,7 @@ pub struct LambdaTarget {
     /// <p> The Amazon Resource Name (ARN) of the target. </p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
-    /// <p> The status an AWS Lambda deployment's target Lambda function. </p>
+    /// <p> The status an Lambda deployment's target Lambda function. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TargetStatus>,
     /// <p> The date and time when the target Lambda function was updated by a deployment. </p>
@@ -5500,7 +5500,7 @@ impl LambdaTarget {
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
-    /// <p> The status an AWS Lambda deployment's target Lambda function. </p>
+    /// <p> The status an Lambda deployment's target Lambda function. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::TargetStatus> {
         self.status.as_ref()
     }
@@ -5579,12 +5579,12 @@ pub mod lambda_target {
             self.target_arn = input;
             self
         }
-        /// <p> The status an AWS Lambda deployment's target Lambda function. </p>
+        /// <p> The status an Lambda deployment's target Lambda function. </p>
         pub fn status(mut self, input: crate::model::TargetStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p> The status an AWS Lambda deployment's target Lambda function. </p>
+        /// <p> The status an Lambda deployment's target Lambda function. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TargetStatus>,
@@ -5665,7 +5665,7 @@ pub struct LambdaFunctionInfo {
     /// <p> The name of a Lambda function. </p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
-    /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+    /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
     #[doc(hidden)]
     pub function_alias: std::option::Option<std::string::String>,
     /// <p> The version of a Lambda function that production traffic points to. </p>
@@ -5683,7 +5683,7 @@ impl LambdaFunctionInfo {
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+    /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
     pub fn function_alias(&self) -> std::option::Option<&str> {
         self.function_alias.as_deref()
     }
@@ -5737,12 +5737,12 @@ pub mod lambda_function_info {
             self.function_name = input;
             self
         }
-        /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+        /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
         pub fn function_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_alias = Some(input.into());
             self
         }
-        /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+        /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
         pub fn set_function_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6322,7 +6322,7 @@ pub struct DeploymentGroupInfo {
     /// <p>A list of associated Auto Scaling groups.</p>
     #[doc(hidden)]
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
-    /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Information about the deployment group's target revision, including type and location.</p>
@@ -6340,9 +6340,9 @@ pub struct DeploymentGroupInfo {
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
     #[doc(hidden)]
     pub deployment_style: std::option::Option<crate::model::DeploymentStyle>,
-    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
-    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
-    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
     #[doc(hidden)]
     pub outdated_instances_strategy: std::option::Option<crate::model::OutdatedInstancesStrategy>,
     /// <p>Information about blue/green deployment options for a deployment group.</p>
@@ -6358,7 +6358,7 @@ pub struct DeploymentGroupInfo {
     /// <p>Information about the most recent attempted deployment to the deployment group.</p>
     #[doc(hidden)]
     pub last_attempted_deployment: std::option::Option<crate::model::LastDeploymentInfo>,
-    /// <p>Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
+    /// <p>Information about groups of tags applied to an Amazon EC2 instance. The deployment group includes only Amazon EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
     #[doc(hidden)]
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
     /// <p>Information about groups of tags applied to an on-premises instance. The deployment group includes only on-premises instances identified by all the tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
@@ -6406,7 +6406,7 @@ impl DeploymentGroupInfo {
     pub fn auto_scaling_groups(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
         self.auto_scaling_groups.as_deref()
     }
-    /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
@@ -6432,9 +6432,9 @@ impl DeploymentGroupInfo {
     pub fn deployment_style(&self) -> std::option::Option<&crate::model::DeploymentStyle> {
         self.deployment_style.as_ref()
     }
-    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
-    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
-    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
     pub fn outdated_instances_strategy(
         &self,
     ) -> std::option::Option<&crate::model::OutdatedInstancesStrategy> {
@@ -6462,7 +6462,7 @@ impl DeploymentGroupInfo {
     ) -> std::option::Option<&crate::model::LastDeploymentInfo> {
         self.last_attempted_deployment.as_ref()
     }
-    /// <p>Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
+    /// <p>Information about groups of tags applied to an Amazon EC2 instance. The deployment group includes only Amazon EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
     pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
         self.ec2_tag_set.as_ref()
     }
@@ -6672,12 +6672,12 @@ pub mod deployment_group_info {
             self.auto_scaling_groups = input;
             self
         }
-        /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
-        /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6759,9 +6759,9 @@ pub mod deployment_group_info {
             self.deployment_style = input;
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+        /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
             input: crate::model::OutdatedInstancesStrategy,
@@ -6769,9 +6769,9 @@ pub mod deployment_group_info {
             self.outdated_instances_strategy = Some(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+        /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
         pub fn set_outdated_instances_strategy(
             mut self,
             input: std::option::Option<crate::model::OutdatedInstancesStrategy>,
@@ -6840,12 +6840,12 @@ pub mod deployment_group_info {
             self.last_attempted_deployment = input;
             self
         }
-        /// <p>Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
+        /// <p>Information about groups of tags applied to an Amazon EC2 instance. The deployment group includes only Amazon EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
         pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
             self.ec2_tag_set = Some(input);
             self
         }
-        /// <p>Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
+        /// <p>Information about groups of tags applied to an Amazon EC2 instance. The deployment group includes only Amazon EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -7147,7 +7147,7 @@ pub struct DeploymentConfigInfo {
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
-    /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS compute platform only.</p>
+    /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
     #[doc(hidden)]
     pub traffic_routing_config: std::option::Option<crate::model::TrafficRoutingConfig>,
 }
@@ -7172,7 +7172,7 @@ impl DeploymentConfigInfo {
     pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
         self.compute_platform.as_ref()
     }
-    /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS compute platform only.</p>
+    /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
     pub fn traffic_routing_config(
         &self,
     ) -> std::option::Option<&crate::model::TrafficRoutingConfig> {
@@ -7270,12 +7270,12 @@ pub mod deployment_config_info {
             self.compute_platform = input;
             self
         }
-        /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS compute platform only.</p>
+        /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
         pub fn traffic_routing_config(mut self, input: crate::model::TrafficRoutingConfig) -> Self {
             self.traffic_routing_config = Some(input);
             self
         }
-        /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS compute platform only.</p>
+        /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
         pub fn set_traffic_routing_config(
             mut self,
             input: std::option::Option<crate::model::TrafficRoutingConfig>,
@@ -7303,7 +7303,7 @@ impl DeploymentConfigInfo {
     }
 }
 
-/// <p>The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.</p>
+/// <p>The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrafficRoutingConfig {
@@ -7313,7 +7313,7 @@ pub struct TrafficRoutingConfig {
     /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
     #[doc(hidden)]
     pub time_based_canary: std::option::Option<crate::model::TimeBasedCanary>,
-    /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
+    /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
     #[doc(hidden)]
     pub time_based_linear: std::option::Option<crate::model::TimeBasedLinear>,
 }
@@ -7326,7 +7326,7 @@ impl TrafficRoutingConfig {
     pub fn time_based_canary(&self) -> std::option::Option<&crate::model::TimeBasedCanary> {
         self.time_based_canary.as_ref()
     }
-    /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
+    /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
     pub fn time_based_linear(&self) -> std::option::Option<&crate::model::TimeBasedLinear> {
         self.time_based_linear.as_ref()
     }
@@ -7377,12 +7377,12 @@ pub mod traffic_routing_config {
             self.time_based_canary = input;
             self
         }
-        /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
+        /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
         pub fn time_based_linear(mut self, input: crate::model::TimeBasedLinear) -> Self {
             self.time_based_linear = Some(input);
             self
         }
-        /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
+        /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
         pub fn set_time_based_linear(
             mut self,
             input: std::option::Option<crate::model::TimeBasedLinear>,
@@ -7482,7 +7482,7 @@ impl TimeBasedLinear {
     }
 }
 
-/// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
+/// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeBasedCanary {
@@ -7626,9 +7626,9 @@ pub struct MinimumHealthyHosts {
     /// <li> <p> <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of instances in the deployment.</p> </li>
     /// </ul>
     /// <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.</p> <note>
-    /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
+    /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MinimumHealthyHostsType>,
     /// <p>The minimum healthy instance value.</p>
@@ -7642,9 +7642,9 @@ impl MinimumHealthyHosts {
     /// <li> <p> <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of instances in the deployment.</p> </li>
     /// </ul>
     /// <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.</p> <note>
-    /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
+    /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::MinimumHealthyHostsType> {
         self.r#type.as_ref()
     }
@@ -7677,9 +7677,9 @@ pub mod minimum_healthy_hosts {
         /// <li> <p> <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of instances in the deployment.</p> </li>
         /// </ul>
         /// <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.</p> <note>
-        /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
+        /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
         /// </note>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::MinimumHealthyHostsType) -> Self {
             self.r#type = Some(input);
             self
@@ -7690,9 +7690,9 @@ pub mod minimum_healthy_hosts {
         /// <li> <p> <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of instances in the deployment.</p> </li>
         /// </ul>
         /// <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.</p> <note>
-        /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
+        /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
         /// </note>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::MinimumHealthyHostsType>,
@@ -7830,13 +7830,13 @@ pub struct DeploymentInfo {
     /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
     /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
     /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
-    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2 instances.</p> </li>
+    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub creator: std::option::Option<crate::model::DeploymentCreator>,
     /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
-    /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
     /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     #[doc(hidden)]
     pub ignore_application_stop_failures: bool,
@@ -7868,7 +7868,7 @@ pub struct DeploymentInfo {
     /// <p>Provides information about the results of a deployment, such as whether instances in the original environment in a blue/green deployment were not terminated.</p>
     #[doc(hidden)]
     pub additional_deployment_status_info: std::option::Option<std::string::String>,
-    /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+    /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
     /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
     /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
@@ -7888,6 +7888,9 @@ pub struct DeploymentInfo {
     /// <p>Information about deployments related to the specified deployment.</p>
     #[doc(hidden)]
     pub related_deployments: std::option::Option<crate::model::RelatedDeployments>,
+    /// <p>Information about alarms associated with a deployment or deployment group.</p>
+    #[doc(hidden)]
+    pub override_alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
 }
 impl DeploymentInfo {
     /// <p>The application name.</p>
@@ -7948,14 +7951,14 @@ impl DeploymentInfo {
     /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
     /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
     /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
-    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2 instances.</p> </li>
+    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
     pub fn creator(&self) -> std::option::Option<&crate::model::DeploymentCreator> {
         self.creator.as_ref()
     }
     /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
-    /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
     /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     pub fn ignore_application_stop_failures(&self) -> bool {
         self.ignore_application_stop_failures
@@ -8000,7 +8003,7 @@ impl DeploymentInfo {
     pub fn additional_deployment_status_info(&self) -> std::option::Option<&str> {
         self.additional_deployment_status_info.as_deref()
     }
-    /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+    /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
     /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
     /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
@@ -8024,6 +8027,12 @@ impl DeploymentInfo {
     /// <p>Information about deployments related to the specified deployment.</p>
     pub fn related_deployments(&self) -> std::option::Option<&crate::model::RelatedDeployments> {
         self.related_deployments.as_ref()
+    }
+    /// <p>Information about alarms associated with a deployment or deployment group.</p>
+    pub fn override_alarm_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.override_alarm_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for DeploymentInfo {
@@ -8079,6 +8088,10 @@ impl std::fmt::Debug for DeploymentInfo {
         formatter.field("compute_platform", &self.compute_platform);
         formatter.field("external_id", &self.external_id);
         formatter.field("related_deployments", &self.related_deployments);
+        formatter.field(
+            "override_alarm_configuration",
+            &self.override_alarm_configuration,
+        );
         formatter.finish()
     }
 }
@@ -8120,6 +8133,8 @@ pub mod deployment_info {
         pub(crate) compute_platform: std::option::Option<crate::model::ComputePlatform>,
         pub(crate) external_id: std::option::Option<std::string::String>,
         pub(crate) related_deployments: std::option::Option<crate::model::RelatedDeployments>,
+        pub(crate) override_alarm_configuration:
+            std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
         /// <p>The application name.</p>
@@ -8295,7 +8310,7 @@ pub mod deployment_info {
         /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
         /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
         /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
-        /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2 instances.</p> </li>
+        /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
         /// </ul>
         pub fn creator(mut self, input: crate::model::DeploymentCreator) -> Self {
             self.creator = Some(input);
@@ -8306,7 +8321,7 @@ pub mod deployment_info {
         /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
         /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
         /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
-        /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2 instances.</p> </li>
+        /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
         /// </ul>
         pub fn set_creator(
             mut self,
@@ -8317,7 +8332,7 @@ pub mod deployment_info {
         }
         /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
         /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
-        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+        /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
         /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
         pub fn ignore_application_stop_failures(mut self, input: bool) -> Self {
             self.ignore_application_stop_failures = Some(input);
@@ -8325,7 +8340,7 @@ pub mod deployment_info {
         }
         /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
         /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
-        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+        /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
         /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
         pub fn set_ignore_application_stop_failures(
             mut self,
@@ -8460,7 +8475,7 @@ pub mod deployment_info {
             self.additional_deployment_status_info = input;
             self
         }
-        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+        /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
         /// <ul>
         /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
         /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
@@ -8470,7 +8485,7 @@ pub mod deployment_info {
             self.file_exists_behavior = Some(input);
             self
         }
-        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+        /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
         /// <ul>
         /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
         /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
@@ -8538,6 +8553,22 @@ pub mod deployment_info {
             self.related_deployments = input;
             self
         }
+        /// <p>Information about alarms associated with a deployment or deployment group.</p>
+        pub fn override_alarm_configuration(
+            mut self,
+            input: crate::model::AlarmConfiguration,
+        ) -> Self {
+            self.override_alarm_configuration = Some(input);
+            self
+        }
+        /// <p>Information about alarms associated with a deployment or deployment group.</p>
+        pub fn set_override_alarm_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlarmConfiguration>,
+        ) -> Self {
+            self.override_alarm_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeploymentInfo`](crate::model::DeploymentInfo).
         pub fn build(self) -> crate::model::DeploymentInfo {
             crate::model::DeploymentInfo {
@@ -8576,6 +8607,7 @@ pub mod deployment_info {
                 compute_platform: self.compute_platform,
                 external_id: self.external_id,
                 related_deployments: self.related_deployments,
+                override_alarm_configuration: self.override_alarm_configuration,
             }
         }
     }
@@ -8766,7 +8798,7 @@ pub struct TargetInstances {
     /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>
     #[doc(hidden)]
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
+    /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
     #[doc(hidden)]
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
 }
@@ -8779,7 +8811,7 @@ impl TargetInstances {
     pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_scaling_groups.as_deref()
     }
-    /// <p>Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
+    /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
     pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
         self.ec2_tag_set.as_ref()
     }
@@ -8842,12 +8874,12 @@ pub mod target_instances {
             self.auto_scaling_groups = input;
             self
         }
-        /// <p>Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
+        /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
         pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
             self.ec2_tag_set = Some(input);
             self
         }
-        /// <p>Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
+        /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -9224,7 +9256,7 @@ impl DeploymentOverview {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorInformation {
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.</p>
     /// <p>The error code:</p>
     /// <ul>
     /// <li> <p>APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is deleted after the deployment is created, but before it is started.</p> </li>
@@ -9237,7 +9269,7 @@ pub struct ErrorInformation {
     /// <li> <p>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.</p> </li>
     /// <li> <p>NO_INSTANCES: No instances were specified, or no instances can be found.</p> </li>
     /// <li> <p>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</p> </li>
-    /// <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</p> </li>
+    /// <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more Amazon Web Services services.</p> </li>
     /// <li> <p>TIMEOUT: The deployment has timed out.</p> </li>
     /// <li> <p>REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted after the deployment is created, but before it is started.</p> </li>
     /// </ul>
@@ -9248,7 +9280,7 @@ pub struct ErrorInformation {
     pub message: std::option::Option<std::string::String>,
 }
 impl ErrorInformation {
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.</p>
     /// <p>The error code:</p>
     /// <ul>
     /// <li> <p>APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is deleted after the deployment is created, but before it is started.</p> </li>
@@ -9261,7 +9293,7 @@ impl ErrorInformation {
     /// <li> <p>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.</p> </li>
     /// <li> <p>NO_INSTANCES: No instances were specified, or no instances can be found.</p> </li>
     /// <li> <p>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</p> </li>
-    /// <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</p> </li>
+    /// <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more Amazon Web Services services.</p> </li>
     /// <li> <p>TIMEOUT: The deployment has timed out.</p> </li>
     /// <li> <p>REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted after the deployment is created, but before it is started.</p> </li>
     /// </ul>
@@ -9291,7 +9323,7 @@ pub mod error_information {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.</p>
         /// <p>The error code:</p>
         /// <ul>
         /// <li> <p>APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is deleted after the deployment is created, but before it is started.</p> </li>
@@ -9304,7 +9336,7 @@ pub mod error_information {
         /// <li> <p>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.</p> </li>
         /// <li> <p>NO_INSTANCES: No instances were specified, or no instances can be found.</p> </li>
         /// <li> <p>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</p> </li>
-        /// <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</p> </li>
+        /// <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more Amazon Web Services services.</p> </li>
         /// <li> <p>TIMEOUT: The deployment has timed out.</p> </li>
         /// <li> <p>REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted after the deployment is created, but before it is started.</p> </li>
         /// </ul>
@@ -9312,7 +9344,7 @@ pub mod error_information {
             self.code = Some(input);
             self
         }
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.</p>
         /// <p>The error code:</p>
         /// <ul>
         /// <li> <p>APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is deleted after the deployment is created, but before it is started.</p> </li>
@@ -9325,7 +9357,7 @@ pub mod error_information {
         /// <li> <p>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.</p> </li>
         /// <li> <p>NO_INSTANCES: No instances were specified, or no instances can be found.</p> </li>
         /// <li> <p>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</p> </li>
-        /// <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</p> </li>
+        /// <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more Amazon Web Services services.</p> </li>
         /// <li> <p>TIMEOUT: The deployment has timed out.</p> </li>
         /// <li> <p>REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted after the deployment is created, but before it is started.</p> </li>
         /// </ul>
@@ -9591,13 +9623,13 @@ pub struct GenericRevisionInfo {
     /// <p>The deployment groups for which this is the current target revision.</p>
     #[doc(hidden)]
     pub deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>When the revision was first used by AWS CodeDeploy.</p>
+    /// <p>When the revision was first used by CodeDeploy.</p>
     #[doc(hidden)]
     pub first_used_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When the revision was last used by AWS CodeDeploy.</p>
+    /// <p>When the revision was last used by CodeDeploy.</p>
     #[doc(hidden)]
     pub last_used_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When the revision was registered with AWS CodeDeploy.</p>
+    /// <p>When the revision was registered with CodeDeploy.</p>
     #[doc(hidden)]
     pub register_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -9610,15 +9642,15 @@ impl GenericRevisionInfo {
     pub fn deployment_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.deployment_groups.as_deref()
     }
-    /// <p>When the revision was first used by AWS CodeDeploy.</p>
+    /// <p>When the revision was first used by CodeDeploy.</p>
     pub fn first_used_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_used_time.as_ref()
     }
-    /// <p>When the revision was last used by AWS CodeDeploy.</p>
+    /// <p>When the revision was last used by CodeDeploy.</p>
     pub fn last_used_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_used_time.as_ref()
     }
-    /// <p>When the revision was registered with AWS CodeDeploy.</p>
+    /// <p>When the revision was registered with CodeDeploy.</p>
     pub fn register_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.register_time.as_ref()
     }
@@ -9676,12 +9708,12 @@ pub mod generic_revision_info {
             self.deployment_groups = input;
             self
         }
-        /// <p>When the revision was first used by AWS CodeDeploy.</p>
+        /// <p>When the revision was first used by CodeDeploy.</p>
         pub fn first_used_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_used_time = Some(input);
             self
         }
-        /// <p>When the revision was first used by AWS CodeDeploy.</p>
+        /// <p>When the revision was first used by CodeDeploy.</p>
         pub fn set_first_used_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9689,12 +9721,12 @@ pub mod generic_revision_info {
             self.first_used_time = input;
             self
         }
-        /// <p>When the revision was last used by AWS CodeDeploy.</p>
+        /// <p>When the revision was last used by CodeDeploy.</p>
         pub fn last_used_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_used_time = Some(input);
             self
         }
-        /// <p>When the revision was last used by AWS CodeDeploy.</p>
+        /// <p>When the revision was last used by CodeDeploy.</p>
         pub fn set_last_used_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9702,12 +9734,12 @@ pub mod generic_revision_info {
             self.last_used_time = input;
             self
         }
-        /// <p>When the revision was registered with AWS CodeDeploy.</p>
+        /// <p>When the revision was registered with CodeDeploy.</p>
         pub fn register_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.register_time = Some(input);
             self
         }
-        /// <p>When the revision was registered with AWS CodeDeploy.</p>
+        /// <p>When the revision was registered with CodeDeploy.</p>
         pub fn set_register_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

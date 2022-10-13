@@ -146,7 +146,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_file_system_id): <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    ///   - [`file_system_path(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::file_system_path) / [`set_file_system_path(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_file_system_path): <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>  <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>   <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>  </note>
+    ///   - [`file_system_path(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::file_system_path) / [`set_file_system_path(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_file_system_path): <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>  <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>   <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>  </note>
     ///   - [`data_repository_path(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::data_repository_path) / [`set_data_repository_path(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_data_repository_path): <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     ///   - [`batch_import_meta_data_on_create(bool)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::batch_import_meta_data_on_create) / [`set_batch_import_meta_data_on_create(Option<bool>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_batch_import_meta_data_on_create): <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
     ///   - [`imported_file_chunk_size(i32)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::imported_file_chunk_size) / [`set_imported_file_chunk_size(Option<i32>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_imported_file_chunk_size): <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>  <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
@@ -170,11 +170,32 @@ impl Client {
     ///   - [`report(CompletionReport)`](crate::client::fluent_builders::CreateDataRepositoryTask::report) / [`set_report(Option<CompletionReport>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_report): <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryTask::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataRepositoryTask::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    ///   - [`capacity_to_release(i64)`](crate::client::fluent_builders::CreateDataRepositoryTask::capacity_to_release) / [`set_capacity_to_release(Option<i64>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_capacity_to_release): <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
     /// - On success, responds with [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput) with field(s):
     ///   - [`data_repository_task(Option<DataRepositoryTask>)`](crate::output::CreateDataRepositoryTaskOutput::data_repository_task): <p>The description of the data repository task that you just created.</p>
     /// - On failure, responds with [`SdkError<CreateDataRepositoryTaskError>`](crate::error::CreateDataRepositoryTaskError)
     pub fn create_data_repository_task(&self) -> fluent_builders::CreateDataRepositoryTask {
         fluent_builders::CreateDataRepositoryTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateFileCache`](crate::client::fluent_builders::CreateFileCache) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateFileCache::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateFileCache::set_client_request_token): <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>  <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
+    ///   - [`file_cache_type(FileCacheType)`](crate::client::fluent_builders::CreateFileCache::file_cache_type) / [`set_file_cache_type(Option<FileCacheType>)`](crate::client::fluent_builders::CreateFileCache::set_file_cache_type): <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
+    ///   - [`file_cache_type_version(impl Into<String>)`](crate::client::fluent_builders::CreateFileCache::file_cache_type_version) / [`set_file_cache_type_version(Option<String>)`](crate::client::fluent_builders::CreateFileCache::set_file_cache_type_version): <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
+    ///   - [`storage_capacity(i32)`](crate::client::fluent_builders::CreateFileCache::storage_capacity) / [`set_storage_capacity(Option<i32>)`](crate::client::fluent_builders::CreateFileCache::set_storage_capacity): <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateFileCache::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFileCache::set_subnet_ids): <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateFileCache::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFileCache::set_security_group_ids): <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFileCache::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFileCache::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    ///   - [`copy_tags_to_data_repository_associations(bool)`](crate::client::fluent_builders::CreateFileCache::copy_tags_to_data_repository_associations) / [`set_copy_tags_to_data_repository_associations(Option<bool>)`](crate::client::fluent_builders::CreateFileCache::set_copy_tags_to_data_repository_associations): <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileCache::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileCache::set_kms_key_id): <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    ///   - [`lustre_configuration(CreateFileCacheLustreConfiguration)`](crate::client::fluent_builders::CreateFileCache::lustre_configuration) / [`set_lustre_configuration(Option<CreateFileCacheLustreConfiguration>)`](crate::client::fluent_builders::CreateFileCache::set_lustre_configuration): <p>The configuration for the Amazon File Cache resource being created.</p>
+    ///   - [`data_repository_associations(Vec<FileCacheDataRepositoryAssociation>)`](crate::client::fluent_builders::CreateFileCache::data_repository_associations) / [`set_data_repository_associations(Option<Vec<FileCacheDataRepositoryAssociation>>)`](crate::client::fluent_builders::CreateFileCache::set_data_repository_associations): <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>  <p>The DRA configurations must meet the following requirements:</p>  <ul>   <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>   <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>  </ul>  <p>DRA automatic import and automatic export is not supported.</p>
+    /// - On success, responds with [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput) with field(s):
+    ///   - [`file_cache(Option<FileCacheCreating>)`](crate::output::CreateFileCacheOutput::file_cache): <p>A description of the cache that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateFileCacheError>`](crate::error::CreateFileCacheError)
+    pub fn create_file_cache(&self) -> fluent_builders::CreateFileCache {
+        fluent_builders::CreateFileCache::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateFileSystem`](crate::client::fluent_builders::CreateFileSystem) operation.
     ///
@@ -212,6 +233,7 @@ impl Client {
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_kms_key_id): <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>  <ul>   <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>   <li> <p>Amazon FSx for NetApp ONTAP</p> </li>   <li> <p>Amazon FSx for OpenZFS</p> </li>   <li> <p>Amazon FSx for Windows File Server</p> </li>  </ul>  <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     ///   - [`file_system_type_version(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::file_system_type_version) / [`set_file_system_type_version(Option<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_file_system_type_version): <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>  <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     ///   - [`open_zfs_configuration(CreateFileSystemOpenZfsConfiguration)`](crate::client::fluent_builders::CreateFileSystemFromBackup::open_zfs_configuration) / [`set_open_zfs_configuration(Option<CreateFileSystemOpenZfsConfiguration>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_open_zfs_configuration): <p>The OpenZFS configuration for the file system that's being created. </p>
+    ///   - [`storage_capacity(i32)`](crate::client::fluent_builders::CreateFileSystemFromBackup::storage_capacity) / [`set_storage_capacity(Option<i32>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_storage_capacity): <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>  <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request. </p>
     /// - On success, responds with [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput) with field(s):
     ///   - [`file_system(Option<FileSystem>)`](crate::output::CreateFileSystemFromBackupOutput::file_system): <p>A description of the file system.</p>
     /// - On failure, responds with [`SdkError<CreateFileSystemFromBackupError>`](crate::error::CreateFileSystemFromBackupError)
@@ -304,6 +326,18 @@ impl Client {
     ) -> fluent_builders::DeleteDataRepositoryAssociation {
         fluent_builders::DeleteDataRepositoryAssociation::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteFileCache`](crate::client::fluent_builders::DeleteFileCache) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`file_cache_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFileCache::file_cache_id) / [`set_file_cache_id(Option<String>)`](crate::client::fluent_builders::DeleteFileCache::set_file_cache_id): <p>The ID of the cache that's being deleted.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteFileCache::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteFileCache::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// - On success, responds with [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput) with field(s):
+    ///   - [`file_cache_id(Option<String>)`](crate::output::DeleteFileCacheOutput::file_cache_id): <p>The ID of the cache that's being deleted.</p>
+    ///   - [`lifecycle(Option<FileCacheLifecycle>)`](crate::output::DeleteFileCacheOutput::lifecycle): <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
+    /// - On failure, responds with [`SdkError<DeleteFileCacheError>`](crate::error::DeleteFileCacheError)
+    pub fn delete_file_cache(&self) -> fluent_builders::DeleteFileCache {
+        fluent_builders::DeleteFileCache::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteFileSystem`](crate::client::fluent_builders::DeleteFileSystem) operation.
     ///
     /// - The fluent builder is configurable:
@@ -385,7 +419,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::set_max_results): <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::set_next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     /// - On success, responds with [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput) with field(s):
-    ///   - [`associations(Option<Vec<DataRepositoryAssociation>>)`](crate::output::DescribeDataRepositoryAssociationsOutput::associations): <p>An array of one ore more data repository association descriptions.</p>
+    ///   - [`associations(Option<Vec<DataRepositoryAssociation>>)`](crate::output::DescribeDataRepositoryAssociationsOutput::associations): <p>An array of one or more data repository association descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeDataRepositoryAssociationsOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     /// - On failure, responds with [`SdkError<DescribeDataRepositoryAssociationsError>`](crate::error::DescribeDataRepositoryAssociationsError)
     pub fn describe_data_repository_associations(
@@ -407,6 +441,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeDataRepositoryTasksError>`](crate::error::DescribeDataRepositoryTasksError)
     pub fn describe_data_repository_tasks(&self) -> fluent_builders::DescribeDataRepositoryTasks {
         fluent_builders::DescribeDataRepositoryTasks::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeFileCaches`](crate::client::fluent_builders::DescribeFileCaches) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFileCaches::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`file_cache_ids(Vec<String>)`](crate::client::fluent_builders::DescribeFileCaches::file_cache_ids) / [`set_file_cache_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeFileCaches::set_file_cache_ids): <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeFileCaches::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeFileCaches::set_max_results): <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFileCaches::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFileCaches::set_next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On success, responds with [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput) with field(s):
+    ///   - [`file_caches(Option<Vec<FileCache>>)`](crate::output::DescribeFileCachesOutput::file_caches): <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFileCachesOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On failure, responds with [`SdkError<DescribeFileCachesError>`](crate::error::DescribeFileCachesError)
+    pub fn describe_file_caches(&self) -> fluent_builders::DescribeFileCaches {
+        fluent_builders::DescribeFileCaches::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeFileSystemAliases`](crate::client::fluent_builders::DescribeFileSystemAliases) operation.
     ///
@@ -572,6 +620,18 @@ impl Client {
         &self,
     ) -> fluent_builders::UpdateDataRepositoryAssociation {
         fluent_builders::UpdateDataRepositoryAssociation::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateFileCache`](crate::client::fluent_builders::UpdateFileCache) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`file_cache_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFileCache::file_cache_id) / [`set_file_cache_id(Option<String>)`](crate::client::fluent_builders::UpdateFileCache::set_file_cache_id): <p>The ID of the cache that you are updating.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFileCache::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateFileCache::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`lustre_configuration(UpdateFileCacheLustreConfiguration)`](crate::client::fluent_builders::UpdateFileCache::lustre_configuration) / [`set_lustre_configuration(Option<UpdateFileCacheLustreConfiguration>)`](crate::client::fluent_builders::UpdateFileCache::set_lustre_configuration): <p>The configuration updates for an Amazon File Cache resource.</p>
+    /// - On success, responds with [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput) with field(s):
+    ///   - [`file_cache(Option<FileCache>)`](crate::output::UpdateFileCacheOutput::file_cache): <p>A description of the cache that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateFileCacheError>`](crate::error::UpdateFileCacheError)
+    pub fn update_file_cache(&self) -> fluent_builders::UpdateFileCache {
+        fluent_builders::UpdateFileCache::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateFileSystem`](crate::client::fluent_builders::UpdateFileSystem) operation.
     ///
@@ -1148,7 +1208,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataRepositoryAssociation`.
     ///
     /// <p>Creates an Amazon FSx for Lustre data repository association (DRA). A data repository association is a link between a directory on the file system and an Amazon S3 bucket or prefix. You can have a maximum of 8 data repository associations on a file system. Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
-    /// <p>Each data repository association must have a unique Amazon FSx file system directory and a unique S3 bucket or prefix associated with it. You can configure a data repository association for automatic import only, for automatic export only, or for both. To learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
+    /// <p>Each data repository association must have a unique Amazon FSx file system directory and a unique S3 bucket or prefix associated with it. You can configure a data repository association for automatic import only, for automatic export only, or for both. To learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p> <note>
+    /// <p> <code>CreateDataRepositoryAssociation</code> isn't supported on Amazon File Cache resources. To create a DRA on Amazon File Cache, use the <code>CreateFileCache</code> operation.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataRepositoryAssociation {
         handle: std::sync::Arc<super::Handle>,
@@ -1227,7 +1289,7 @@ pub mod fluent_builders {
         }
         /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
         /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
-        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
         /// </note>
         pub fn file_system_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_system_path(input.into());
@@ -1235,7 +1297,7 @@ pub mod fluent_builders {
         }
         /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
         /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
-        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
         /// </note>
         pub fn set_file_system_path(
             mut self,
@@ -1486,6 +1548,267 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
+        pub fn capacity_to_release(mut self, input: i64) -> Self {
+            self.inner = self.inner.capacity_to_release(input);
+            self
+        }
+        /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
+        pub fn set_capacity_to_release(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_capacity_to_release(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateFileCache`.
+    ///
+    /// <p>Creates a new Amazon File Cache resource.</p>
+    /// <p>You can use this operation with a client request token in the request that Amazon File Cache uses to ensure idempotent creation. If a cache with the specified client request token exists and the parameters match, <code>CreateFileCache</code> returns the description of the existing cache. If a cache with the specified client request token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file cache with the specified client request token doesn't exist, <code>CreateFileCache</code> does the following: </p>
+    /// <ul>
+    /// <li> <p>Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
+    /// <li> <p>Returns the description of the cache in JSON format.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>CreateFileCache</code> call returns while the cache's lifecycle state is still <code>CREATING</code>. You can check the cache creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a> operation, which returns the cache state along with other information.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateFileCache {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_file_cache_input::Builder,
+    }
+    impl CreateFileCache {
+        /// Creates a new `CreateFileCache`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::CreateFileCache,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateFileCacheError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateFileCacheOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateFileCacheError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
+        pub fn file_cache_type(mut self, input: crate::model::FileCacheType) -> Self {
+            self.inner = self.inner.file_cache_type(input);
+            self
+        }
+        /// <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
+        pub fn set_file_cache_type(
+            mut self,
+            input: std::option::Option<crate::model::FileCacheType>,
+        ) -> Self {
+            self.inner = self.inner.set_file_cache_type(input);
+            self
+        }
+        /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
+        pub fn file_cache_type_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_cache_type_version(input.into());
+            self
+        }
+        /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
+        pub fn set_file_cache_type_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_file_cache_type_version(input);
+            self
+        }
+        /// <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
+        pub fn storage_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_capacity(input);
+            self
+        }
+        /// <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
+        pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_storage_capacity(input);
+            self
+        }
+        /// Appends an item to `SubnetIds`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
+            self
+        }
+        /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_subnet_ids(input);
+            self
+        }
+        /// Appends an item to `SecurityGroupIds`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
+            self
+        }
+        /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_group_ids(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
+        pub fn copy_tags_to_data_repository_associations(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_data_repository_associations(input);
+            self
+        }
+        /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
+        pub fn set_copy_tags_to_data_repository_associations(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_copy_tags_to_data_repository_associations(input);
+            self
+        }
+        /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
+            self
+        }
+        /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
+        /// <p>The configuration for the Amazon File Cache resource being created.</p>
+        pub fn lustre_configuration(
+            mut self,
+            input: crate::model::CreateFileCacheLustreConfiguration,
+        ) -> Self {
+            self.inner = self.inner.lustre_configuration(input);
+            self
+        }
+        /// <p>The configuration for the Amazon File Cache resource being created.</p>
+        pub fn set_lustre_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateFileCacheLustreConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_lustre_configuration(input);
+            self
+        }
+        /// Appends an item to `DataRepositoryAssociations`.
+        ///
+        /// To override the contents of this collection use [`set_data_repository_associations`](Self::set_data_repository_associations).
+        ///
+        /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
+        /// <p>The DRA configurations must meet the following requirements:</p>
+        /// <ul>
+        /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+        /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
+        /// </ul>
+        /// <p>DRA automatic import and automatic export is not supported.</p>
+        pub fn data_repository_associations(
+            mut self,
+            input: crate::model::FileCacheDataRepositoryAssociation,
+        ) -> Self {
+            self.inner = self.inner.data_repository_associations(input);
+            self
+        }
+        /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
+        /// <p>The DRA configurations must meet the following requirements:</p>
+        /// <ul>
+        /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+        /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
+        /// </ul>
+        /// <p>DRA automatic import and automatic export is not supported.</p>
+        pub fn set_data_repository_associations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::FileCacheDataRepositoryAssociation>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_data_repository_associations(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateFileSystem`.
     ///
@@ -1501,8 +1824,7 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>Creates a new, empty Amazon FSx file system with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
     /// <li> <p>Returns the description of the file system in JSON format.</p> </li>
-    /// </ul>
-    /// <p>This operation requires a client request token in the request that Amazon FSx uses to ensure idempotent creation. This means that calling the operation multiple times with the same client request token has no effect. By using the idempotent operation, you can retry a <code>CreateFileSystem</code> operation without the risk of creating an extra file system. This approach can be useful when an initial call fails in a way that makes it unclear whether a file system was created. Examples are if a transport-level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a file system, the client receives a success message as long as the parameters are the same.</p> <note>
+    /// </ul> <note>
     /// <p>The <code>CreateFileSystem</code> call returns while the file system's lifecycle state is still <code>CREATING</code>. You can check the file-system creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a> operation, which returns the file system state along with other information.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2117,6 +2439,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CreateFileSystemOpenZfsConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_open_zfs_configuration(input);
+            self
+        }
+        /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>
+        /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request. </p>
+        pub fn storage_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_capacity(input);
+            self
+        }
+        /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>
+        /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request. </p>
+        pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_storage_capacity(input);
             self
         }
     }
@@ -2900,6 +3234,102 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteFileCache`.
+    ///
+    /// <p>Deletes an Amazon File Cache resource. After deletion, the cache no longer exists, and its data is gone.</p>
+    /// <p>The <code>DeleteFileCache</code> operation returns while the cache has the <code>DELETING</code> status. You can check the cache deletion status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a> operation, which returns a list of caches in your account. If you pass the cache ID for a deleted cache, the <code>DescribeFileCaches</code> operation returns a <code>FileCacheNotFound</code> error.</p> <important>
+    /// <p>The data in a deleted cache is also deleted and can't be recovered by any means.</p>
+    /// </important>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteFileCache {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_file_cache_input::Builder,
+    }
+    impl DeleteFileCache {
+        /// Creates a new `DeleteFileCache`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DeleteFileCache,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteFileCacheError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteFileCacheOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteFileCacheError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the cache that's being deleted.</p>
+        pub fn file_cache_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_cache_id(input.into());
+            self
+        }
+        /// <p>The ID of the cache that's being deleted.</p>
+        pub fn set_file_cache_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_file_cache_id(input);
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteFileSystem`.
     ///
     /// <p>Deletes a file system. After deletion, the file system no longer exists, and its data is gone. Any existing automatic backups and snapshots are also deleted.</p>
@@ -3490,9 +3920,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataRepositoryAssociations`.
     ///
-    /// <p>Returns the description of specific Amazon FSx for Lustre data repository associations, if one or more <code>AssociationIds</code> values are provided in the request, or if filters are used in the request. Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
-    /// <p>You can use filters to narrow the response to include just data repository associations for specific file systems (use the <code>file-system-id</code> filter with the ID of the file system) or data repository associations for a specific repository type (use the <code>data-repository-type</code> filter with a value of <code>S3</code>). If you don't use filters, the response returns all data repository associations owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
-    /// <p>When retrieving all data repository associations, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of data repository associations returned in a response. If more data repository associations remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
+    /// <p>Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data repository associations, if one or more <code>AssociationIds</code> values are provided in the request, or if filters are used in the request. Data repository associations are supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type and for Amazon File Cache resources.</p>
+    /// <p>You can use filters to narrow the response to include just data repository associations for specific file systems (use the <code>file-system-id</code> filter with the ID of the file system) or caches (use the <code>file-cache-id</code> filter with the ID of the cache), or data repository associations for a specific repository type (use the <code>data-repository-type</code> filter with a value of <code>S3</code> or <code>NFS</code>). If you don't use filters, the response returns all data repository associations owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>When retrieving all data repository associations, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of data repository associations returned in a response. If more data repository associations remain, a <code>NextToken</code> value is returned in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataRepositoryAssociations {
         handle: std::sync::Arc<super::Handle>,
@@ -3628,8 +4058,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataRepositoryTasks`.
     ///
-    /// <p>Returns the description of specific Amazon FSx for Lustre data repository tasks, if one or more <code>TaskIds</code> values are provided in the request, or if filters are used in the request. You can use filters to narrow the response to include just tasks for specific file systems, or tasks in a specific lifecycle state. Otherwise, it returns all data repository tasks owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
-    /// <p>When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of tasks returned in a response. If more tasks remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
+    /// <p>Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data repository tasks, if one or more <code>TaskIds</code> values are provided in the request, or if filters are used in the request. You can use filters to narrow the response to include just tasks for specific file systems or caches, or tasks in a specific lifecycle state. Otherwise, it returns all data repository tasks owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of tasks returned in a response. If more tasks remain, a <code>NextToken</code> value is returned in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataRepositoryTasks {
         handle: std::sync::Arc<super::Handle>,
@@ -3731,6 +4161,123 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::DataRepositoryTaskFilter>>,
         ) -> Self {
             self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeFileCaches`.
+    ///
+    /// <p>Returns the description of a specific Amazon File Cache resource, if a <code>FileCacheIds</code> value is provided for that cache. Otherwise, it returns descriptions of all caches owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>When retrieving all cache descriptions, you can optionally specify the <code>MaxResults</code> parameter to limit the number of descriptions in a response. If more cache descriptions remain, the operation returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
+    /// <p>This operation is used in an iterative process to retrieve a list of your cache descriptions. <code>DescribeFileCaches</code> is called first without a <code>NextToken</code>value. Then the operation continues to be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
+    /// <p>When using this operation, keep the following in mind:</p>
+    /// <ul>
+    /// <li> <p>The implementation might return fewer than <code>MaxResults</code> cache descriptions while still including a <code>NextToken</code> value.</p> </li>
+    /// <li> <p>The order of caches returned in the response of one <code>DescribeFileCaches</code> call and the order of caches returned across the responses of a multicall iteration is unspecified.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeFileCaches {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_file_caches_input::Builder,
+    }
+    impl DescribeFileCaches {
+        /// Creates a new `DescribeFileCaches`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::DescribeFileCaches,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFileCachesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeFileCachesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFileCachesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFileCachesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFileCachesPaginator {
+            crate::paginator::DescribeFileCachesPaginator::new(self.handle, self.inner)
+        }
+        /// Appends an item to `FileCacheIds`.
+        ///
+        /// To override the contents of this collection use [`set_file_cache_ids`](Self::set_file_cache_ids).
+        ///
+        /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
+        pub fn file_cache_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_cache_ids(input.into());
+            self
+        }
+        /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
+        pub fn set_file_cache_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_file_cache_ids(input);
             self
         }
         /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -5117,6 +5664,115 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::S3DataRepositoryConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_s3(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateFileCache`.
+    ///
+    /// <p>Updates the configuration of an existing Amazon File Cache resource. You can update multiple properties in a single request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateFileCache {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_file_cache_input::Builder,
+    }
+    impl UpdateFileCache {
+        /// Creates a new `UpdateFileCache`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::customizable_operation::CustomizableOperation<
+                crate::operation::UpdateFileCache,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateFileCacheError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateFileCacheOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateFileCacheError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the cache that you are updating.</p>
+        pub fn file_cache_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_cache_id(input.into());
+            self
+        }
+        /// <p>The ID of the cache that you are updating.</p>
+        pub fn set_file_cache_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_file_cache_id(input);
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The configuration updates for an Amazon File Cache resource.</p>
+        pub fn lustre_configuration(
+            mut self,
+            input: crate::model::UpdateFileCacheLustreConfiguration,
+        ) -> Self {
+            self.inner = self.inner.lustre_configuration(input);
+            self
+        }
+        /// <p>The configuration updates for an Amazon File Cache resource.</p>
+        pub fn set_lustre_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateFileCacheLustreConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_lustre_configuration(input);
             self
         }
     }

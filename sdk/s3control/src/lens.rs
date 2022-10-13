@@ -58,3 +58,13 @@ pub(crate) fn reflens_structure_crate_output_list_storage_lens_configurations_ou
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_access_points_for_object_lambda_output_object_lambda_access_point_list(
+    input: crate::output::ListAccessPointsForObjectLambdaOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>> {
+    let input = match input.object_lambda_access_point_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

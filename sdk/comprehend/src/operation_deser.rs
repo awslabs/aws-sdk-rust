@@ -630,6 +630,149 @@ pub fn parse_batch_detect_syntax_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_detect_targeted_sentiment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchDetectTargetedSentimentOutput,
+    crate::error::BatchDetectTargetedSentimentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchDetectTargetedSentimentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::BatchDetectTargetedSentimentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BatchSizeLimitExceededException" => crate::error::BatchDetectTargetedSentimentError {
+            meta: generic,
+            kind:
+                crate::error::BatchDetectTargetedSentimentErrorKind::BatchSizeLimitExceededException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::batch_size_limit_exceeded_exception::Builder::default(
+                                );
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_batch_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDetectTargetedSentimentError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InternalServerException" => crate::error::BatchDetectTargetedSentimentError {
+            meta: generic,
+            kind: crate::error::BatchDetectTargetedSentimentErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDetectTargetedSentimentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::BatchDetectTargetedSentimentError {
+            meta: generic,
+            kind: crate::error::BatchDetectTargetedSentimentErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDetectTargetedSentimentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TextSizeLimitExceededException" => crate::error::BatchDetectTargetedSentimentError {
+            meta: generic,
+            kind:
+                crate::error::BatchDetectTargetedSentimentErrorKind::TextSizeLimitExceededException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::text_size_limit_exceeded_exception::Builder::default(
+                                );
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDetectTargetedSentimentError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "UnsupportedLanguageException" => crate::error::BatchDetectTargetedSentimentError {
+            meta: generic,
+            kind: crate::error::BatchDetectTargetedSentimentErrorKind::UnsupportedLanguageException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unsupported_language_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_language_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDetectTargetedSentimentError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::BatchDetectTargetedSentimentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_detect_targeted_sentiment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchDetectTargetedSentimentOutput,
+    crate::error::BatchDetectTargetedSentimentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_detect_targeted_sentiment_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_batch_detect_targeted_sentiment(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::BatchDetectTargetedSentimentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_classify_document_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ClassifyDocumentOutput, crate::error::ClassifyDocumentError>
@@ -3915,6 +4058,120 @@ pub fn parse_detect_syntax_response(
             output,
         )
         .map_err(crate::error::DetectSyntaxError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_detect_targeted_sentiment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DetectTargetedSentimentOutput,
+    crate::error::DetectTargetedSentimentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DetectTargetedSentimentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DetectTargetedSentimentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::DetectTargetedSentimentError {
+            meta: generic,
+            kind: crate::error::DetectTargetedSentimentErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectTargetedSentimentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::DetectTargetedSentimentError {
+            meta: generic,
+            kind: crate::error::DetectTargetedSentimentErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectTargetedSentimentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TextSizeLimitExceededException" => crate::error::DetectTargetedSentimentError {
+            meta: generic,
+            kind: crate::error::DetectTargetedSentimentErrorKind::TextSizeLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::text_size_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectTargetedSentimentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedLanguageException" => crate::error::DetectTargetedSentimentError {
+            meta: generic,
+            kind: crate::error::DetectTargetedSentimentErrorKind::UnsupportedLanguageException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_language_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_language_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectTargetedSentimentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DetectTargetedSentimentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_detect_targeted_sentiment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DetectTargetedSentimentOutput,
+    crate::error::DetectTargetedSentimentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::detect_targeted_sentiment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_detect_targeted_sentiment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DetectTargetedSentimentError::unhandled)?;
         output.build()
     })
 }

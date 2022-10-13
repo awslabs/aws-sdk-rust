@@ -8534,10 +8534,10 @@ pub struct DescribeUserProfileOutput {
     /// <p>The failure reason.</p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The SSO user identifier.</p>
+    /// <p>The IAM Identity Center user identifier.</p>
     #[doc(hidden)]
     pub single_sign_on_user_identifier: std::option::Option<std::string::String>,
-    /// <p>The SSO user value.</p>
+    /// <p>The IAM Identity Center user value.</p>
     #[doc(hidden)]
     pub single_sign_on_user_value: std::option::Option<std::string::String>,
     /// <p>A collection of settings.</p>
@@ -8577,11 +8577,11 @@ impl DescribeUserProfileOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The SSO user identifier.</p>
+    /// <p>The IAM Identity Center user identifier.</p>
     pub fn single_sign_on_user_identifier(&self) -> std::option::Option<&str> {
         self.single_sign_on_user_identifier.as_deref()
     }
-    /// <p>The SSO user value.</p>
+    /// <p>The IAM Identity Center user value.</p>
     pub fn single_sign_on_user_value(&self) -> std::option::Option<&str> {
         self.single_sign_on_user_value.as_deref()
     }
@@ -8730,7 +8730,7 @@ pub mod describe_user_profile_output {
             self.failure_reason = input;
             self
         }
-        /// <p>The SSO user identifier.</p>
+        /// <p>The IAM Identity Center user identifier.</p>
         pub fn single_sign_on_user_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -8738,7 +8738,7 @@ pub mod describe_user_profile_output {
             self.single_sign_on_user_identifier = Some(input.into());
             self
         }
-        /// <p>The SSO user identifier.</p>
+        /// <p>The IAM Identity Center user identifier.</p>
         pub fn set_single_sign_on_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8746,12 +8746,12 @@ pub mod describe_user_profile_output {
             self.single_sign_on_user_identifier = input;
             self
         }
-        /// <p>The SSO user value.</p>
+        /// <p>The IAM Identity Center user value.</p>
         pub fn single_sign_on_user_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.single_sign_on_user_value = Some(input.into());
             self
         }
-        /// <p>The SSO user value.</p>
+        /// <p>The IAM Identity Center user value.</p>
         pub fn set_single_sign_on_user_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10305,6 +10305,9 @@ pub struct DescribeTrainingJobOutput {
     #[doc(hidden)]
     pub environment:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The status of the warm pool associated with the training job.</p>
+    #[doc(hidden)]
+    pub warm_pool_status: std::option::Option<crate::model::WarmPoolStatus>,
 }
 impl DescribeTrainingJobOutput {
     /// <p> Name of the model training job. </p>
@@ -10561,6 +10564,10 @@ impl DescribeTrainingJobOutput {
     {
         self.environment.as_ref()
     }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn warm_pool_status(&self) -> std::option::Option<&crate::model::WarmPoolStatus> {
+        self.warm_pool_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTrainingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10626,6 +10633,7 @@ impl std::fmt::Debug for DescribeTrainingJobOutput {
         formatter.field("profiling_status", &self.profiling_status);
         formatter.field("retry_strategy", &self.retry_strategy);
         formatter.field("environment", &self.environment);
+        formatter.field("warm_pool_status", &self.warm_pool_status);
         formatter.finish()
     }
 }
@@ -10687,6 +10695,7 @@ pub mod describe_training_job_output {
         pub(crate) environment: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) warm_pool_status: std::option::Option<crate::model::WarmPoolStatus>,
     }
     impl Builder {
         /// <p> Name of the model training job. </p>
@@ -11432,6 +11441,19 @@ pub mod describe_training_job_output {
             self.environment = input;
             self
         }
+        /// <p>The status of the warm pool associated with the training job.</p>
+        pub fn warm_pool_status(mut self, input: crate::model::WarmPoolStatus) -> Self {
+            self.warm_pool_status = Some(input);
+            self
+        }
+        /// <p>The status of the warm pool associated with the training job.</p>
+        pub fn set_warm_pool_status(
+            mut self,
+            input: std::option::Option<crate::model::WarmPoolStatus>,
+        ) -> Self {
+            self.warm_pool_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTrainingJobOutput`](crate::output::DescribeTrainingJobOutput).
         pub fn build(self) -> crate::output::DescribeTrainingJobOutput {
             crate::output::DescribeTrainingJobOutput {
@@ -11477,6 +11499,7 @@ pub mod describe_training_job_output {
                 profiling_status: self.profiling_status,
                 retry_strategy: self.retry_strategy,
                 environment: self.environment,
+                warm_pool_status: self.warm_pool_status,
             }
         }
     }
@@ -19960,6 +19983,9 @@ pub struct DescribeEndpointConfigOutput {
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     #[doc(hidden)]
     pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
+    /// <p>The configuration parameters for an explainer.</p>
+    #[doc(hidden)]
+    pub explainer_config: std::option::Option<crate::model::ExplainerConfig>,
 }
 impl DescribeEndpointConfigOutput {
     /// <p>Name of the SageMaker endpoint configuration.</p>
@@ -19992,6 +20018,10 @@ impl DescribeEndpointConfigOutput {
     ) -> std::option::Option<&crate::model::AsyncInferenceConfig> {
         self.async_inference_config.as_ref()
     }
+    /// <p>The configuration parameters for an explainer.</p>
+    pub fn explainer_config(&self) -> std::option::Option<&crate::model::ExplainerConfig> {
+        self.explainer_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20003,6 +20033,7 @@ impl std::fmt::Debug for DescribeEndpointConfigOutput {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("async_inference_config", &self.async_inference_config);
+        formatter.field("explainer_config", &self.explainer_config);
         formatter.finish()
     }
 }
@@ -20020,6 +20051,7 @@ pub mod describe_endpoint_config_output {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
+        pub(crate) explainer_config: std::option::Option<crate::model::ExplainerConfig>,
     }
     impl Builder {
         /// <p>Name of the SageMaker endpoint configuration.</p>
@@ -20116,6 +20148,19 @@ pub mod describe_endpoint_config_output {
             self.async_inference_config = input;
             self
         }
+        /// <p>The configuration parameters for an explainer.</p>
+        pub fn explainer_config(mut self, input: crate::model::ExplainerConfig) -> Self {
+            self.explainer_config = Some(input);
+            self
+        }
+        /// <p>The configuration parameters for an explainer.</p>
+        pub fn set_explainer_config(
+            mut self,
+            input: std::option::Option<crate::model::ExplainerConfig>,
+        ) -> Self {
+            self.explainer_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeEndpointConfigOutput`](crate::output::DescribeEndpointConfigOutput).
         pub fn build(self) -> crate::output::DescribeEndpointConfigOutput {
             crate::output::DescribeEndpointConfigOutput {
@@ -20126,6 +20171,7 @@ pub mod describe_endpoint_config_output {
                 kms_key_id: self.kms_key_id,
                 creation_time: self.creation_time,
                 async_inference_config: self.async_inference_config,
+                explainer_config: self.explainer_config,
             }
         }
     }
@@ -20188,6 +20234,9 @@ pub struct DescribeEndpointOutput {
     /// <p>Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or updating with a new endpoint configuration.</p>
     #[doc(hidden)]
     pub pending_deployment_summary: std::option::Option<crate::model::PendingDeploymentSummary>,
+    /// <p>The configuration parameters for an explainer.</p>
+    #[doc(hidden)]
+    pub explainer_config: std::option::Option<crate::model::ExplainerConfig>,
 }
 impl DescribeEndpointOutput {
     /// <p>Name of the endpoint.</p>
@@ -20256,6 +20305,10 @@ impl DescribeEndpointOutput {
     ) -> std::option::Option<&crate::model::PendingDeploymentSummary> {
         self.pending_deployment_summary.as_ref()
     }
+    /// <p>The configuration parameters for an explainer.</p>
+    pub fn explainer_config(&self) -> std::option::Option<&crate::model::ExplainerConfig> {
+        self.explainer_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20275,6 +20328,7 @@ impl std::fmt::Debug for DescribeEndpointOutput {
             "pending_deployment_summary",
             &self.pending_deployment_summary,
         );
+        formatter.field("explainer_config", &self.explainer_config);
         formatter.finish()
     }
 }
@@ -20298,6 +20352,7 @@ pub mod describe_endpoint_output {
         pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
         pub(crate) pending_deployment_summary:
             std::option::Option<crate::model::PendingDeploymentSummary>,
+        pub(crate) explainer_config: std::option::Option<crate::model::ExplainerConfig>,
     }
     impl Builder {
         /// <p>Name of the endpoint.</p>
@@ -20488,6 +20543,19 @@ pub mod describe_endpoint_output {
             self.pending_deployment_summary = input;
             self
         }
+        /// <p>The configuration parameters for an explainer.</p>
+        pub fn explainer_config(mut self, input: crate::model::ExplainerConfig) -> Self {
+            self.explainer_config = Some(input);
+            self
+        }
+        /// <p>The configuration parameters for an explainer.</p>
+        pub fn set_explainer_config(
+            mut self,
+            input: std::option::Option<crate::model::ExplainerConfig>,
+        ) -> Self {
+            self.explainer_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
         pub fn build(self) -> crate::output::DescribeEndpointOutput {
             crate::output::DescribeEndpointOutput {
@@ -20503,6 +20571,7 @@ pub mod describe_endpoint_output {
                 last_deployment_config: self.last_deployment_config,
                 async_inference_config: self.async_inference_config,
                 pending_deployment_summary: self.pending_deployment_summary,
+                explainer_config: self.explainer_config,
             }
         }
     }
@@ -21209,7 +21278,7 @@ pub struct DescribeDomainOutput {
     /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
     #[doc(hidden)]
     pub home_efs_file_system_id: std::option::Option<std::string::String>,
-    /// <p>The SSO managed application instance ID.</p>
+    /// <p>The IAM Identity Center managed application instance ID.</p>
     #[doc(hidden)]
     pub single_sign_on_managed_application_instance_id: std::option::Option<std::string::String>,
     /// <p>The status.</p>
@@ -21281,7 +21350,7 @@ impl DescribeDomainOutput {
     pub fn home_efs_file_system_id(&self) -> std::option::Option<&str> {
         self.home_efs_file_system_id.as_deref()
     }
-    /// <p>The SSO managed application instance ID.</p>
+    /// <p>The IAM Identity Center managed application instance ID.</p>
     pub fn single_sign_on_managed_application_instance_id(&self) -> std::option::Option<&str> {
         self.single_sign_on_managed_application_instance_id
             .as_deref()
@@ -21467,7 +21536,7 @@ pub mod describe_domain_output {
             self.home_efs_file_system_id = input;
             self
         }
-        /// <p>The SSO managed application instance ID.</p>
+        /// <p>The IAM Identity Center managed application instance ID.</p>
         pub fn single_sign_on_managed_application_instance_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -21475,7 +21544,7 @@ pub mod describe_domain_output {
             self.single_sign_on_managed_application_instance_id = Some(input.into());
             self
         }
-        /// <p>The SSO managed application instance ID.</p>
+        /// <p>The IAM Identity Center managed application instance ID.</p>
         pub fn set_single_sign_on_managed_application_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -258,6 +258,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrails {
     }
 }
 
+/// Operation shape for `GetChannel`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_channel`](crate::client::Client::get_channel).
+///
+/// See [`crate::client::fluent_builders::GetChannel`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetChannel {
+    _private: (),
+}
+impl GetChannel {
+    /// Creates a new builder-style object to manufacture [`GetChannelInput`](crate::input::GetChannelInput).
+    pub fn builder() -> crate::input::get_channel_input::Builder {
+        crate::input::get_channel_input::Builder::default()
+    }
+    /// Creates a new `GetChannel` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetChannel {
+    type Output =
+        std::result::Result<crate::output::GetChannelOutput, crate::error::GetChannelError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_channel_error(response)
+        } else {
+            crate::operation_deser::parse_get_channel_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetEventDataStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -322,6 +354,37 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventSelectors {
             crate::operation_deser::parse_get_event_selectors_error(response)
         } else {
             crate::operation_deser::parse_get_event_selectors_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetImport`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_import`](crate::client::Client::get_import).
+///
+/// See [`crate::client::fluent_builders::GetImport`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetImport {
+    _private: (),
+}
+impl GetImport {
+    /// Creates a new builder-style object to manufacture [`GetImportInput`](crate::input::GetImportInput).
+    pub fn builder() -> crate::input::get_import_input::Builder {
+        crate::input::get_import_input::Builder::default()
+    }
+    /// Creates a new `GetImport` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetImport {
+    type Output = std::result::Result<crate::output::GetImportOutput, crate::error::GetImportError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_import_error(response)
+        } else {
+            crate::operation_deser::parse_get_import_response(response)
         }
     }
 }
@@ -457,6 +520,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrailStatus {
     }
 }
 
+/// Operation shape for `ListChannels`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_channels`](crate::client::Client::list_channels).
+///
+/// See [`crate::client::fluent_builders::ListChannels`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListChannels {
+    _private: (),
+}
+impl ListChannels {
+    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput).
+    pub fn builder() -> crate::input::list_channels_input::Builder {
+        crate::input::list_channels_input::Builder::default()
+    }
+    /// Creates a new `ListChannels` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
+    type Output =
+        std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_channels_error(response)
+        } else {
+            crate::operation_deser::parse_list_channels_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListEventDataStores`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -487,6 +582,72 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventDataStores {
             crate::operation_deser::parse_list_event_data_stores_error(response)
         } else {
             crate::operation_deser::parse_list_event_data_stores_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListImportFailures`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_import_failures`](crate::client::Client::list_import_failures).
+///
+/// See [`crate::client::fluent_builders::ListImportFailures`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListImportFailures {
+    _private: (),
+}
+impl ListImportFailures {
+    /// Creates a new builder-style object to manufacture [`ListImportFailuresInput`](crate::input::ListImportFailuresInput).
+    pub fn builder() -> crate::input::list_import_failures_input::Builder {
+        crate::input::list_import_failures_input::Builder::default()
+    }
+    /// Creates a new `ListImportFailures` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListImportFailures {
+    type Output = std::result::Result<
+        crate::output::ListImportFailuresOutput,
+        crate::error::ListImportFailuresError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_import_failures_error(response)
+        } else {
+            crate::operation_deser::parse_list_import_failures_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListImports`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_imports`](crate::client::Client::list_imports).
+///
+/// See [`crate::client::fluent_builders::ListImports`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListImports {
+    _private: (),
+}
+impl ListImports {
+    /// Creates a new builder-style object to manufacture [`ListImportsInput`](crate::input::ListImportsInput).
+    pub fn builder() -> crate::input::list_imports_input::Builder {
+        crate::input::list_imports_input::Builder::default()
+    }
+    /// Creates a new `ListImports` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListImports {
+    type Output =
+        std::result::Result<crate::output::ListImportsOutput, crate::error::ListImportsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_imports_error(response)
+        } else {
+            crate::operation_deser::parse_list_imports_response(response)
         }
     }
 }
@@ -784,6 +945,38 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreEventDataStore {
     }
 }
 
+/// Operation shape for `StartImport`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_import`](crate::client::Client::start_import).
+///
+/// See [`crate::client::fluent_builders::StartImport`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartImport {
+    _private: (),
+}
+impl StartImport {
+    /// Creates a new builder-style object to manufacture [`StartImportInput`](crate::input::StartImportInput).
+    pub fn builder() -> crate::input::start_import_input::Builder {
+        crate::input::start_import_input::Builder::default()
+    }
+    /// Creates a new `StartImport` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartImport {
+    type Output =
+        std::result::Result<crate::output::StartImportOutput, crate::error::StartImportError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_import_error(response)
+        } else {
+            crate::operation_deser::parse_start_import_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartLogging`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -844,6 +1037,38 @@ impl aws_smithy_http::response::ParseStrictResponse for StartQuery {
             crate::operation_deser::parse_start_query_error(response)
         } else {
             crate::operation_deser::parse_start_query_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopImport`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_import`](crate::client::Client::stop_import).
+///
+/// See [`crate::client::fluent_builders::StopImport`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopImport {
+    _private: (),
+}
+impl StopImport {
+    /// Creates a new builder-style object to manufacture [`StopImportInput`](crate::input::StopImportInput).
+    pub fn builder() -> crate::input::stop_import_input::Builder {
+        crate::input::stop_import_input::Builder::default()
+    }
+    /// Creates a new `StopImport` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopImport {
+    type Output =
+        std::result::Result<crate::output::StopImportOutput, crate::error::StopImportError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_import_error(response)
+        } else {
+            crate::operation_deser::parse_stop_import_response(response)
         }
     }
 }

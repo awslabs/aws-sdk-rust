@@ -2,6 +2,176 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDomainsOutput {
+    /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
+    #[doc(hidden)]
+    pub domain_summaries: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDomainsOutput {
+    /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
+    pub fn domain_summaries(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
+        self.domain_summaries.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListDomainsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDomainsOutput");
+        formatter.field("domain_summaries", &self.domain_summaries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+pub mod list_domains_output {
+
+    /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_summaries:
+            std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `domain_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_domain_summaries`](Self::set_domain_summaries).
+        ///
+        /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
+        pub fn domain_summaries(mut self, input: crate::model::DomainSummary) -> Self {
+            let mut v = self.domain_summaries.unwrap_or_default();
+            v.push(input);
+            self.domain_summaries = Some(v);
+            self
+        }
+        /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
+        pub fn set_domain_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
+        ) -> Self {
+            self.domain_summaries = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+        pub fn build(self) -> crate::output::ListDomainsOutput {
+            crate::output::ListDomainsOutput {
+                domain_summaries: self.domain_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    pub fn builder() -> crate::output::list_domains_output::Builder {
+        crate::output::list_domains_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDomainOutput {
+    /// <p>Information about the newly created domain.</p>
+    #[doc(hidden)]
+    pub domain: std::option::Option<crate::model::Domain>,
+}
+impl CreateDomainOutput {
+    /// <p>Information about the newly created domain.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateDomainOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDomainOutput");
+        formatter.field("domain", &self.domain);
+        formatter.finish()
+    }
+}
+/// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+pub mod create_domain_output {
+
+    /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<crate::model::Domain>,
+    }
+    impl Builder {
+        /// <p>Information about the newly created domain.</p>
+        pub fn domain(mut self, input: crate::model::Domain) -> Self {
+            self.domain = Some(input);
+            self
+        }
+        /// <p>Information about the newly created domain.</p>
+        pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+        pub fn build(self) -> crate::output::CreateDomainOutput {
+            crate::output::CreateDomainOutput {
+                domain: self.domain,
+            }
+        }
+    }
+}
+impl CreateDomainOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    pub fn builder() -> crate::output::create_domain_output::Builder {
+        crate::output::create_domain_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDomainOutput {}
+impl std::fmt::Debug for DeleteDomainOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDomainOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+pub mod delete_domain_output {
+
+    /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+        pub fn build(self) -> crate::output::DeleteDomainOutput {
+            crate::output::DeleteDomainOutput {}
+        }
+    }
+}
+impl DeleteDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    pub fn builder() -> crate::output::delete_domain_output::Builder {
+        crate::output::delete_domain_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainOutput {
     /// <p>Details about the updated domain</p>
     #[doc(hidden)]
@@ -51,6 +221,61 @@ impl UpdateDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
     pub fn builder() -> crate::output::update_domain_output::Builder {
         crate::output::update_domain_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDomainOutput {
+    /// <p>Information about the specified domain.</p>
+    #[doc(hidden)]
+    pub domain: std::option::Option<crate::model::Domain>,
+}
+impl DescribeDomainOutput {
+    /// <p>Information about the specified domain.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeDomainOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDomainOutput");
+        formatter.field("domain", &self.domain);
+        formatter.finish()
+    }
+}
+/// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+pub mod describe_domain_output {
+
+    /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<crate::model::Domain>,
+    }
+    impl Builder {
+        /// <p>Information about the specified domain.</p>
+        pub fn domain(mut self, input: crate::model::Domain) -> Self {
+            self.domain = Some(input);
+            self
+        }
+        /// <p>Information about the specified domain.</p>
+        pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+        pub fn build(self) -> crate::output::DescribeDomainOutput {
+            crate::output::DescribeDomainOutput {
+                domain: self.domain,
+            }
+        }
+    }
+}
+impl DescribeDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+    pub fn builder() -> crate::output::describe_domain_output::Builder {
+        crate::output::describe_domain_output::Builder::default()
     }
 }
 
@@ -612,91 +837,6 @@ impl ListFraudsterRegistrationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDomainsOutput {
-    /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-    #[doc(hidden)]
-    pub domain_summaries: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl ListDomainsOutput {
-    /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-    pub fn domain_summaries(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
-        self.domain_summaries.as_deref()
-    }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsOutput");
-        formatter.field("domain_summaries", &self.domain_summaries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
-/// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-pub mod list_domains_output {
-
-    /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) domain_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `domain_summaries`.
-        ///
-        /// To override the contents of this collection use [`set_domain_summaries`](Self::set_domain_summaries).
-        ///
-        /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-        pub fn domain_summaries(mut self, input: crate::model::DomainSummary) -> Self {
-            let mut v = self.domain_summaries.unwrap_or_default();
-            v.push(input);
-            self.domain_summaries = Some(v);
-            self
-        }
-        /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-        pub fn set_domain_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-        ) -> Self {
-            self.domain_summaries = input;
-            self
-        }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-        pub fn build(self) -> crate::output::ListDomainsOutput {
-            crate::output::ListDomainsOutput {
-                domain_summaries: self.domain_summaries,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-    pub fn builder() -> crate::output::list_domains_output::Builder {
-        crate::output::list_domains_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateSessionOutput {
     /// <p>The identifier of the domain containing the session.</p>
     #[doc(hidden)]
@@ -1090,61 +1230,6 @@ impl DescribeFraudsterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeDomainOutput {
-    /// <p>Information about the specified domain.</p>
-    #[doc(hidden)]
-    pub domain: std::option::Option<crate::model::Domain>,
-}
-impl DescribeDomainOutput {
-    /// <p>Information about the specified domain.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
-        self.domain.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainOutput");
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
-/// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
-pub mod describe_domain_output {
-
-    /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) domain: std::option::Option<crate::model::Domain>,
-    }
-    impl Builder {
-        /// <p>Information about the specified domain.</p>
-        pub fn domain(mut self, input: crate::model::Domain) -> Self {
-            self.domain = Some(input);
-            self
-        }
-        /// <p>Information about the specified domain.</p>
-        pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
-        pub fn build(self) -> crate::output::DescribeDomainOutput {
-            crate::output::DescribeDomainOutput {
-                domain: self.domain,
-            }
-        }
-    }
-}
-impl DescribeDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
-    pub fn builder() -> crate::output::describe_domain_output::Builder {
-        crate::output::describe_domain_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSpeakerOutput {}
 impl std::fmt::Debug for DeleteSpeakerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1199,90 +1284,5 @@ impl DeleteFraudsterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
     pub fn builder() -> crate::output::delete_fraudster_output::Builder {
         crate::output::delete_fraudster_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDomainOutput {}
-impl std::fmt::Debug for DeleteDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainOutput");
-        formatter.finish()
-    }
-}
-/// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-pub mod delete_domain_output {
-
-    /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-        pub fn build(self) -> crate::output::DeleteDomainOutput {
-            crate::output::DeleteDomainOutput {}
-        }
-    }
-}
-impl DeleteDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-    pub fn builder() -> crate::output::delete_domain_output::Builder {
-        crate::output::delete_domain_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateDomainOutput {
-    /// <p>Information about the newly created domain.</p>
-    #[doc(hidden)]
-    pub domain: std::option::Option<crate::model::Domain>,
-}
-impl CreateDomainOutput {
-    /// <p>Information about the newly created domain.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
-        self.domain.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainOutput");
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
-/// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-pub mod create_domain_output {
-
-    /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) domain: std::option::Option<crate::model::Domain>,
-    }
-    impl Builder {
-        /// <p>Information about the newly created domain.</p>
-        pub fn domain(mut self, input: crate::model::Domain) -> Self {
-            self.domain = Some(input);
-            self
-        }
-        /// <p>Information about the newly created domain.</p>
-        pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-        pub fn build(self) -> crate::output::CreateDomainOutput {
-            crate::output::CreateDomainOutput {
-                domain: self.domain,
-            }
-        }
-    }
-}
-impl CreateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-    pub fn builder() -> crate::output::create_domain_output::Builder {
-        crate::output::create_domain_output::Builder::default()
     }
 }
