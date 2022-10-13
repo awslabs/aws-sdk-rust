@@ -2,7 +2,7 @@
 name = "custom-retries-examples"
 version = "0.1.0"
 authors = ["John DiSanti <jdisanti@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
-edition = "2018"
+edition = "2021"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
@@ -11,6 +11,15 @@ version = "0.50.0"
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 version = "0.20.0"
+
+[dependencies.aws-smithy-client]
+features = ["rustls"]
+path = "../../sdk/aws-smithy-client"
+version = "0.50.0"
+
+[dependencies.aws-smithy-types]
+path = "../../sdk/aws-smithy-types"
+version = "0.50.0"
 
 [dependencies.tokio]
 version = "1.20.1"
