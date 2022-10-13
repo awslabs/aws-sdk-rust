@@ -3184,3 +3184,6 @@ impl aws_smithy_http::response::ParseStrictResponse for ValidateMatchmakingRuleS
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -29,7 +29,7 @@ pub(crate) struct Handle {
 /// ```
 /// **Constructing a client with custom configuration**
 /// ```rust,no_run
-/// use aws_config::RetryConfig;
+/// use aws_config::retry::RetryConfig;
 /// # async fn docs() {
 /// let shared_config = aws_config::load_from_env().await;
 /// let config = aws_sdk_servicecatalog::config::Builder::from(&shared_config)
@@ -1420,7 +1420,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::AcceptPortfolioShare,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -1436,7 +1436,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -1545,7 +1545,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::AssociateBudgetWithResource,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -1561,7 +1561,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -1632,7 +1632,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::AssociatePrincipalWithPortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -1648,7 +1648,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -1759,7 +1759,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::AssociateProductWithPortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -1775,7 +1775,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -1882,7 +1882,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::AssociateServiceActionWithProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -1900,7 +1900,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -2012,7 +2012,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::AssociateTagOptionWithResource,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -2028,7 +2028,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -2103,7 +2103,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::BatchAssociateServiceActionWithProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -2121,7 +2121,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -2217,7 +2217,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::BatchDisassociateServiceActionFromProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -2235,7 +2235,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -2333,7 +2333,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CopyProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -2349,7 +2349,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -2525,7 +2525,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CreateConstraint,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -2541,7 +2541,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -2789,7 +2789,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CreatePortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -2805,7 +2805,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -2946,7 +2946,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CreatePortfolioShare,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -2962,7 +2962,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -3081,7 +3081,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CreateProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -3097,7 +3097,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -3311,7 +3311,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CreateProvisionedProductPlan,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -3327,7 +3327,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -3541,7 +3541,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CreateProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -3557,7 +3557,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -3667,7 +3667,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CreateServiceAction,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -3683,7 +3683,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -3887,7 +3887,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::CreateTagOption,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -3903,7 +3903,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -3975,7 +3975,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DeleteConstraint,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -3991,7 +3991,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4077,7 +4077,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DeletePortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4093,7 +4093,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4178,7 +4178,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DeletePortfolioShare,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4194,7 +4194,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4303,7 +4303,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DeleteProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4319,7 +4319,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4403,7 +4403,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DeleteProvisionedProductPlan,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4419,7 +4419,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4514,7 +4514,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DeleteProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4530,7 +4530,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4627,7 +4627,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DeleteServiceAction,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4643,7 +4643,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4728,7 +4728,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DeleteTagOption,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4744,7 +4744,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4805,7 +4805,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeConstraint,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4821,7 +4821,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -4905,7 +4905,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeCopyProductStatus,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -4921,7 +4921,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5009,7 +5009,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribePortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5025,7 +5025,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5111,7 +5111,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribePortfolioShares,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5127,7 +5127,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5235,7 +5235,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribePortfolioShareStatus,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5251,7 +5251,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5315,7 +5315,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5331,7 +5331,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5425,7 +5425,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeProductAsAdmin,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5441,7 +5441,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5550,7 +5550,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeProductView,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5566,7 +5566,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5650,7 +5650,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeProvisionedProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5666,7 +5666,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5764,7 +5764,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeProvisionedProductPlan,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5780,7 +5780,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -5884,7 +5884,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -5900,7 +5900,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6031,7 +6031,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeProvisioningParameters,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6047,7 +6047,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6190,7 +6190,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeRecord,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6206,7 +6206,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6310,7 +6310,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeServiceAction,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6326,7 +6326,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6410,7 +6410,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeServiceActionExecutionParameters,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6428,7 +6428,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6530,7 +6530,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DescribeTagOption,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6546,7 +6546,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6611,7 +6611,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DisableAWSOrganizationsAccess,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6627,7 +6627,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6678,7 +6678,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DisassociateBudgetFromResource,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6694,7 +6694,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6765,7 +6765,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DisassociatePrincipalFromPortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6783,7 +6783,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6883,7 +6883,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DisassociateProductFromPortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -6899,7 +6899,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -6993,7 +6993,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DisassociateServiceActionFromProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7011,7 +7011,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -7123,7 +7123,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::DisassociateTagOptionFromResource,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7139,7 +7139,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -7217,7 +7217,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::EnableAWSOrganizationsAccess,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7233,7 +7233,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -7284,7 +7284,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ExecuteProvisionedProductPlan,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7300,7 +7300,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -7397,7 +7397,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ExecuteProvisionedProductServiceAction,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7415,7 +7415,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -7553,7 +7553,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::GetAWSOrganizationsAccessStatus,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7569,7 +7569,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -7620,7 +7620,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::GetProvisionedProductOutputs,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7636,7 +7636,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -7783,7 +7783,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ImportAsProvisionedProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7799,7 +7799,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -7932,7 +7932,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListAcceptedPortfolioShares,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -7948,7 +7948,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -8071,7 +8071,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListBudgetsForResource,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -8087,7 +8087,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -8197,7 +8197,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListConstraintsForPortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -8213,7 +8213,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -8333,7 +8333,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListLaunchPaths,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -8349,7 +8349,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -8460,7 +8460,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListOrganizationPortfolioAccess,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -8476,7 +8476,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -8610,7 +8610,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListPortfolioAccess,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -8626,7 +8626,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -8749,7 +8749,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListPortfolios,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -8765,7 +8765,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -8865,7 +8865,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListPortfoliosForProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -8881,7 +8881,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -8991,7 +8991,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListPrincipalsForPortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -9007,7 +9007,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -9117,7 +9117,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListProvisionedProductPlans,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -9133,7 +9133,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -9253,7 +9253,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListProvisioningArtifacts,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -9269,7 +9269,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -9353,7 +9353,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListProvisioningArtifactsForServiceAction,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -9371,7 +9371,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -9491,7 +9491,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListRecordHistory,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -9507,7 +9507,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -9627,7 +9627,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListResourcesForTagOption,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -9643,7 +9643,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -9754,7 +9754,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListServiceActions,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -9770,7 +9770,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -9870,7 +9870,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListServiceActionsForProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -9888,7 +9888,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -10018,7 +10018,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListStackInstancesForProvisionedProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -10036,7 +10036,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -10145,7 +10145,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ListTagOptions,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -10161,7 +10161,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -10253,7 +10253,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ProvisionProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -10269,7 +10269,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -10505,7 +10505,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::RejectPortfolioShare,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -10521,7 +10521,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -10631,7 +10631,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::ScanProvisionedProducts,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -10647,7 +10647,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -10754,7 +10754,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::SearchProducts,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -10770,7 +10770,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -10922,7 +10922,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::SearchProductsAsAdmin,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -10938,7 +10938,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -11117,7 +11117,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::SearchProvisionedProducts,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -11133,7 +11133,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -11301,7 +11301,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::TerminateProvisionedProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -11317,7 +11317,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -11450,7 +11450,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdateConstraint,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -11466,7 +11466,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -11667,7 +11667,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdatePortfolio,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -11683,7 +11683,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -11838,7 +11838,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdatePortfolioShare,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -11854,7 +11854,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -11971,7 +11971,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdateProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -11987,7 +11987,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -12183,7 +12183,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdateProvisionedProduct,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -12199,7 +12199,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -12428,7 +12428,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdateProvisionedProductProperties,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -12446,7 +12446,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -12580,7 +12580,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdateProvisioningArtifact,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -12596,7 +12596,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -12742,7 +12742,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdateServiceAction,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -12758,7 +12758,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -12888,7 +12888,7 @@ pub mod fluent_builders {
         pub async fn customize(
             self,
         ) -> std::result::Result<
-            crate::customizable_operation::CustomizableOperation<
+            crate::operation::customize::CustomizableOperation<
                 crate::operation::UpdateTagOption,
                 aws_http::retry::AwsResponseRetryClassifier,
             >,
@@ -12904,7 +12904,7 @@ pub mod fluent_builders {
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
-            Ok(crate::customizable_operation::CustomizableOperation { handle, operation })
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
         /// Sends the request and returns the response.
@@ -12976,17 +12976,18 @@ impl Client {
             .retry_config()
             .cloned()
             .unwrap_or_else(aws_smithy_types::retry::RetryConfig::disabled);
-        let timeout_config = conf.timeout_config().cloned().unwrap_or_default();
+        let timeout_config = conf
+            .timeout_config()
+            .cloned()
+            .unwrap_or_else(aws_smithy_types::timeout::TimeoutConfig::disabled);
         let mut builder = aws_smithy_client::Builder::new()
             .connector(aws_smithy_client::erase::DynConnector::new(conn))
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
-            ));
-        builder.set_retry_config(retry_config.into());
-        builder.set_timeout_config(timeout_config);
-        if let Some(sleep_impl) = conf.sleep_impl() {
-            builder.set_sleep_impl(Some(sleep_impl));
-        }
+            ))
+            .retry_config(retry_config.into())
+            .operation_timeout_config(timeout_config.into());
+        builder.set_sleep_impl(conf.sleep_impl());
         let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
@@ -13006,24 +13007,27 @@ impl Client {
             .retry_config()
             .cloned()
             .unwrap_or_else(aws_smithy_types::retry::RetryConfig::disabled);
-        let timeout_config = conf.timeout_config().cloned().unwrap_or_default();
+        let timeout_config = conf
+            .timeout_config()
+            .cloned()
+            .unwrap_or_else(aws_smithy_types::timeout::TimeoutConfig::disabled);
         let sleep_impl = conf.sleep_impl();
         if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
             panic!("An async sleep implementation is required for retries or timeouts to work. \
                                     Set the `sleep_impl` on the Config passed into this function to fix this panic.");
         }
-        let mut builder = aws_smithy_client::Builder::dyn_https().middleware(
-            aws_smithy_client::erase::DynMiddleware::new(
+        let mut builder = aws_smithy_client::Builder::new()
+            .dyn_https_connector(
+                aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(
+                    &timeout_config,
+                ),
+            )
+            .middleware(aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
-            ),
-        );
-        builder.set_retry_config(retry_config.into());
-        builder.set_timeout_config(timeout_config);
-        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
-        // only set it if we actually have a sleep impl.
-        if let Some(sleep_impl) = sleep_impl {
-            builder.set_sleep_impl(Some(sleep_impl));
-        }
+            ))
+            .retry_config(retry_config.into())
+            .operation_timeout_config(timeout_config.into());
+        builder.set_sleep_impl(sleep_impl);
         let client = builder.build();
 
         Self {

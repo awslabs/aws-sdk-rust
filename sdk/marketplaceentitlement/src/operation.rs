@@ -32,3 +32,6 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEntitlements {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

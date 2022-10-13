@@ -536,3 +536,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkspaceAuthentic
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -425,3 +425,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationRule {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

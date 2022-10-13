@@ -1181,3 +1181,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCostCategoryDefini
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

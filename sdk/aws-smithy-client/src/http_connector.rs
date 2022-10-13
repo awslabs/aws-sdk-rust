@@ -8,12 +8,13 @@
 
 use crate::erase::DynConnector;
 use aws_smithy_async::rt::sleep::AsyncSleep;
-use aws_smithy_types::timeout;
+use aws_smithy_types::timeout::TimeoutConfig;
+use std::time::Duration;
 use std::{fmt::Debug, sync::Arc};
 
 /// Type alias for a Connector factory function.
 pub type MakeConnectorFn =
-    dyn Fn(&HttpSettings, Option<Arc<dyn AsyncSleep>>) -> Option<DynConnector> + Send + Sync;
+    dyn Fn(&ConnectorSettings, Option<Arc<dyn AsyncSleep>>) -> Option<DynConnector> + Send + Sync;
 
 /// Enum for describing the two "kinds" of HTTP Connectors in smithy-rs.
 #[derive(Clone)]
@@ -45,7 +46,7 @@ impl HttpConnector {
     /// If `HttpConnector` is `ConnectorFn`, generate a new connector from settings and return it.
     pub fn connector(
         &self,
-        settings: &HttpSettings,
+        settings: &ConnectorSettings,
         sleep: Option<Arc<dyn AsyncSleep>>,
     ) -> Option<DynConnector> {
         match self {
@@ -55,26 +56,99 @@ impl HttpConnector {
     }
 }
 
-/// HttpSettings for HTTP Connectors
+/// Builder for [`ConnectorSettings`].
 #[non_exhaustive]
 #[derive(Default, Debug)]
-pub struct HttpSettings {
-    /// Timeout configuration used when making HTTP connections
-    pub http_timeout_config: timeout::Http,
-    /// Timeout configuration used when creating TCP connections
-    pub tcp_timeout_config: timeout::Tcp,
+pub struct ConnectorSettingsBuilder {
+    connect_timeout: Option<Duration>,
+    read_timeout: Option<Duration>,
 }
 
-impl HttpSettings {
-    /// Set the HTTP timeouts to be used when making HTTP connections
-    pub fn with_http_timeout_config(mut self, http_timeout_config: timeout::Http) -> Self {
-        self.http_timeout_config = http_timeout_config;
+impl ConnectorSettingsBuilder {
+    /// Creates a new builder.
+    pub fn new() -> Self {
+        Default::default()
+    }
+
+    /// Sets the connect timeout that should be used.
+    ///
+    /// The connect timeout is a limit on the amount of time it takes to initiate a socket connection.
+    pub fn connect_timeout(mut self, connect_timeout: Duration) -> Self {
+        self.connect_timeout = Some(connect_timeout);
         self
     }
 
-    /// Set the TCP timeouts to be used when creating TCP connections
-    pub fn with_tcp_timeout_config(mut self, tcp_timeout_config: timeout::Tcp) -> Self {
-        self.tcp_timeout_config = tcp_timeout_config;
+    /// Sets the connect timeout that should be used.
+    ///
+    /// The connect timeout is a limit on the amount of time it takes to initiate a socket connection.
+    pub fn set_connect_timeout(&mut self, connect_timeout: Option<Duration>) -> &mut Self {
+        self.connect_timeout = connect_timeout;
         self
+    }
+
+    /// Sets the read timeout that should be used.
+    ///
+    /// The read timeout is the limit on the amount of time it takes to read the first byte of a response
+    /// from the time the request is initiated.
+    pub fn read_timeout(mut self, read_timeout: Duration) -> Self {
+        self.read_timeout = Some(read_timeout);
+        self
+    }
+
+    /// Sets the read timeout that should be used.
+    ///
+    /// The read timeout is the limit on the amount of time it takes to read the first byte of a response
+    /// from the time the request is initiated.
+    pub fn set_read_timeout(&mut self, read_timeout: Option<Duration>) -> &mut Self {
+        self.read_timeout = read_timeout;
+        self
+    }
+
+    /// Builds the [`ConnectorSettings`].
+    pub fn build(self) -> ConnectorSettings {
+        ConnectorSettings {
+            connect_timeout: self.connect_timeout,
+            read_timeout: self.read_timeout,
+        }
+    }
+}
+
+/// Settings for HTTP Connectors
+#[non_exhaustive]
+#[derive(Clone, Default, Debug)]
+pub struct ConnectorSettings {
+    connect_timeout: Option<Duration>,
+    read_timeout: Option<Duration>,
+}
+
+impl ConnectorSettings {
+    /// Returns a builder for `ConnectorSettings`.
+    pub fn builder() -> ConnectorSettingsBuilder {
+        Default::default()
+    }
+
+    /// Returns the connect timeout that should be used.
+    ///
+    /// The connect timeout is a limit on the amount of time it takes to initiate a socket connection.
+    pub fn connect_timeout(&self) -> Option<Duration> {
+        self.connect_timeout
+    }
+
+    /// Returns the read timeout that should be used.
+    ///
+    /// The read timeout is the limit on the amount of time it takes to read the first byte of a response
+    /// from the time the request is initiated.
+    pub fn read_timeout(&self) -> Option<Duration> {
+        self.read_timeout
+    }
+
+    // This function may be removed/refactored in the future if other non-timeout
+    // properties are added to the `ConnectorSettings` struct.
+    #[doc(hidden)]
+    pub fn from_timeout_config(timeout_config: &TimeoutConfig) -> Self {
+        Self {
+            connect_timeout: timeout_config.connect_timeout(),
+            read_timeout: timeout_config.read_timeout(),
+        }
     }
 }

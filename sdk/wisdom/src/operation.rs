@@ -1056,3 +1056,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateKnowledgeBaseTempl
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

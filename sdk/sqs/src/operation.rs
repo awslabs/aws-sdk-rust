@@ -679,3 +679,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagQueue {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

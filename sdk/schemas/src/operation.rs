@@ -1022,3 +1022,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSchema {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

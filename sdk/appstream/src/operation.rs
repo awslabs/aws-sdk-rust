@@ -2160,3 +2160,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStack {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -1226,3 +1226,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSubscription {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

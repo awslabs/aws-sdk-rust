@@ -1404,3 +1404,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVodSource {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

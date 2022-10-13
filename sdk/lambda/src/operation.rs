@@ -2100,3 +2100,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionUrlConfig 
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

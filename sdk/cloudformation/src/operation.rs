@@ -2190,3 +2190,6 @@ impl aws_smithy_http::response::ParseStrictResponse for ValidateTemplate {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

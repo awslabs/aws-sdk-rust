@@ -796,3 +796,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOrganizationConfig
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

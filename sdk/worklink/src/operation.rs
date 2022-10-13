@@ -1110,3 +1110,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityProviderCo
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

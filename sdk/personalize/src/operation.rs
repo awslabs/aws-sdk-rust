@@ -1994,3 +1994,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRecommender {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

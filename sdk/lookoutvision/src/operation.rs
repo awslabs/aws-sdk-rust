@@ -719,3 +719,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDatasetEntries {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

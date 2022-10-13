@@ -383,3 +383,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoom {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

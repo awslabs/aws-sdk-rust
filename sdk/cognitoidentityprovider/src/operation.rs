@@ -3371,3 +3371,6 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyUserAttribute {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

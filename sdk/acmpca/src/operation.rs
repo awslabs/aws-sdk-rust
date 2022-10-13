@@ -775,3 +775,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCertificateAuthori
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

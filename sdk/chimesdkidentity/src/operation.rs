@@ -810,3 +810,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstanceUserEnd
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

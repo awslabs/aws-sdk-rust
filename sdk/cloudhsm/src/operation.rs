@@ -650,3 +650,6 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

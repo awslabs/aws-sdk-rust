@@ -1036,3 +1036,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingRule {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

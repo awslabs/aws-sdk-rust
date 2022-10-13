@@ -1477,3 +1477,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserSettings {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

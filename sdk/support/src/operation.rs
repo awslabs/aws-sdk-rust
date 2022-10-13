@@ -475,3 +475,6 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveCase {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

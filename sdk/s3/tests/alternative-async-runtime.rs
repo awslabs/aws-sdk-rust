@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_config::RetryConfig;
+use aws_config::retry::RetryConfig;
 use aws_sdk_s3::model::{
     CompressionType, CsvInput, CsvOutput, ExpressionType, FileHeaderInfo, InputSerialization,
     OutputSerialization,
@@ -13,8 +13,7 @@ use aws_smithy_async::assert_elapsed;
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 use aws_smithy_client::never::NeverConnector;
 use aws_smithy_http::result::SdkError;
-use aws_smithy_types::timeout;
-use aws_smithy_types::tristate::TriState;
+use aws_smithy_types::timeout::TimeoutConfig;
 use std::fmt::Debug;
 use std::sync::Arc;
 use std::time::{Duration, Instant};
@@ -78,9 +77,9 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
     let conn = NeverConnector::new();
     let region = Region::from_static("us-east-2");
     let credentials = Credentials::new("test", "test", None, None, "test");
-    let api_timeouts =
-        timeout::Api::new().with_call_timeout(TriState::Set(Duration::from_secs_f32(0.5)));
-    let timeout_config = timeout::Config::new().with_api_timeouts(api_timeouts);
+    let timeout_config = TimeoutConfig::builder()
+        .operation_timeout(Duration::from_secs_f32(0.5))
+        .build();
     let config = Config::builder()
         .region(region)
         .credentials_provider(credentials)
@@ -116,7 +115,7 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
         .await
         .unwrap_err();
 
-    assert_eq!(format!("{:?}", err), "TimeoutError(RequestTimeoutError { kind: \"API call (all attempts including retries)\", duration: 500ms })");
+    assert_eq!(format!("{:?}", err), "TimeoutError(RequestTimeoutError { kind: \"operation timeout (all attempts including retries)\", duration: 500ms })");
     // Assert 500ms have passed with a 10ms margin of error
     assert_elapsed!(now, Duration::from_millis(500), Duration::from_millis(10));
 
@@ -133,10 +132,9 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
         ))
         .retry_config(RetryConfig::standard())
         .timeout_config(
-            timeout::Config::new().with_api_timeouts(
-                timeout::Api::new()
-                    .with_call_attempt_timeout(TriState::Set(Duration::from_secs_f64(0.1))),
-            ),
+            TimeoutConfig::builder()
+                .operation_attempt_timeout(Duration::from_secs_f64(0.1))
+                .build(),
         )
         .sleep_impl(sleep_impl)
         .build();

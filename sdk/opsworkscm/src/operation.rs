@@ -624,3 +624,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServerEngineAttrib
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

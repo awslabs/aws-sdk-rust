@@ -168,3 +168,6 @@ impl aws_smithy_http::response::ParseStrictResponse for PutContactInformation {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

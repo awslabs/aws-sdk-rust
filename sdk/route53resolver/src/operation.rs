@@ -2144,3 +2144,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverRule {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

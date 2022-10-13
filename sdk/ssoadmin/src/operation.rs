@@ -1312,3 +1312,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePermissionSet {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

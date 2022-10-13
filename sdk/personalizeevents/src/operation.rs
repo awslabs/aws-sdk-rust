@@ -91,3 +91,6 @@ impl aws_smithy_http::response::ParseStrictResponse for PutUsers {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

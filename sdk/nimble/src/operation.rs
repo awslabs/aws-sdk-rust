@@ -1573,3 +1573,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStudioComponent {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

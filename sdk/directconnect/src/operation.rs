@@ -2150,3 +2150,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualInterfaceAt
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -1465,3 +1465,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTaskExecution {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

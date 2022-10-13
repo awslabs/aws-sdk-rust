@@ -202,3 +202,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateScalingPlan {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -1000,3 +1000,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateService {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

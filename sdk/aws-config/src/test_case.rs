@@ -8,7 +8,6 @@ use crate::provider_config::ProviderConfig;
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep, TokioSleep};
 use aws_smithy_client::dvr::{NetworkTraffic, RecordingConnection, ReplayingConnection};
 use aws_smithy_client::erase::DynConnector;
-use aws_smithy_client::http_connector::HttpSettings;
 use aws_types::credentials::{self, ProvideCredentials};
 use aws_types::os_shim_internal::{Env, Fs};
 
@@ -182,9 +181,8 @@ impl TestEnvironment {
         P: ProvideCredentials,
     {
         // swap out the connector generated from `http-traffic.json` for a real connector:
-        let settings = HttpSettings::default();
         let (_test_connector, config) = self.provider_config().await;
-        let live_connector = default_connector(&settings, config.sleep()).unwrap();
+        let live_connector = default_connector(&Default::default(), config.sleep()).unwrap();
         let live_connector = RecordingConnection::new(live_connector);
         let config = config.with_http_connector(DynConnector::new(live_connector.clone()));
         let provider = make_provider(config).await;

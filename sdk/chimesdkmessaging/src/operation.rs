@@ -1605,3 +1605,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelReadMarker 
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -132,10 +132,8 @@ pub mod connector;
 
 pub mod credential_process;
 
-pub(crate) mod parsing;
-
 // Re-export types from smithy-types
-pub use aws_smithy_types::retry::RetryConfig;
+pub use aws_smithy_types::retry;
 pub use aws_smithy_types::timeout;
 
 // Re-export types from aws-types
@@ -172,9 +170,9 @@ mod loader {
 
     use crate::connector::default_connector;
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
-    use aws_smithy_client::http_connector::{HttpConnector, HttpSettings};
+    use aws_smithy_client::http_connector::{ConnectorSettings, HttpConnector};
     use aws_smithy_types::retry::RetryConfig;
-    use aws_smithy_types::timeout;
+    use aws_smithy_types::timeout::TimeoutConfig;
     use aws_types::app_name::AppName;
     use aws_types::credentials::{ProvideCredentials, SharedCredentialsProvider};
     use aws_types::endpoint::ResolveAwsEndpoint;
@@ -198,7 +196,7 @@ mod loader {
         region: Option<Box<dyn ProvideRegion>>,
         retry_config: Option<RetryConfig>,
         sleep: Option<Arc<dyn AsyncSleep>>,
-        timeout_config: Option<timeout::Config>,
+        timeout_config: Option<TimeoutConfig>,
         provider_config: Option<ProviderConfig>,
         http_connector: Option<HttpConnector>,
     }
@@ -244,18 +242,19 @@ mod loader {
         /// ```no_run
         /// # use std::time::Duration;
         /// # async fn create_config() {
-        ///  use aws_smithy_types::{timeout, tristate::TriState};
+        ///  use aws_smithy_types::timeout::TimeoutConfig;
         ///
-        ///  let api_timeout_config = timeout::Api::new()
-        ///     .with_call_timeout(TriState::Set(Duration::from_secs(1)));
-        ///  let timeout_config = timeout::Config::new().with_api_timeouts(api_timeout_config);
         ///  let config = aws_config::from_env()
-        ///     .timeout_config(timeout_config)
+        ///     .timeout_config(
+        ///         TimeoutConfig::builder()
+        ///             .operation_timeout(Duration::from_secs(5))
+        ///             .build()
+        ///     )
         ///     .load()
         ///     .await;
         /// # }
         /// ```
-        pub fn timeout_config(mut self, timeout_config: timeout::Config) -> Self {
+        pub fn timeout_config(mut self, timeout_config: TimeoutConfig) -> Self {
             self.timeout_config = Some(timeout_config);
             self
         }
@@ -401,17 +400,6 @@ mod loader {
                 self.sleep
             };
 
-            let http_connector = if let Some(http_connector) = self.http_connector {
-                http_connector
-            } else {
-                let timeouts = self.timeout_config.clone().unwrap_or_default();
-                let settings = HttpSettings::default()
-                    .with_http_timeout_config(timeouts.http_timeouts())
-                    .with_tcp_timeout_config(timeouts.tcp_timeouts());
-                let sleep_impl = sleep_impl.clone();
-                HttpConnector::Prebuilt(default_connector(&settings, sleep_impl))
-            };
-
             let timeout_config = if let Some(timeout_config) = self.timeout_config {
                 timeout_config
             } else {
@@ -419,6 +407,15 @@ mod loader {
                     .configure(&conf)
                     .timeout_config()
                     .await
+            };
+
+            let http_connector = if let Some(http_connector) = self.http_connector {
+                http_connector
+            } else {
+                HttpConnector::Prebuilt(default_connector(
+                    &ConnectorSettings::from_timeout_config(&timeout_config),
+                    sleep_impl.clone(),
+                ))
             };
 
             let credentials_provider = if let Some(provider) = self.credentials_provider {

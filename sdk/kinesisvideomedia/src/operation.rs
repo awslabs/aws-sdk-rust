@@ -36,3 +36,6 @@ impl aws_smithy_http::response::ParseHttpResponse for GetMedia {
         crate::operation_deser::parse_get_media_error(response)
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

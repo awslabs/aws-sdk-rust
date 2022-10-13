@@ -3951,3 +3951,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVpcLink {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

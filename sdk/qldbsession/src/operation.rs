@@ -30,3 +30,6 @@ impl aws_smithy_http::response::ParseStrictResponse for SendCommand {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

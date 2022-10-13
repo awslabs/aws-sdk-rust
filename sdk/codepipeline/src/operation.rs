@@ -1296,3 +1296,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePipeline {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

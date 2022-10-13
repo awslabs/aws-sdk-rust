@@ -1270,3 +1270,6 @@ mod upload_multipart_part_request_test {
         ));
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -4,22 +4,18 @@
  */
 
 //! Timeout Configuration
-//!
-//! While timeout configuration is unstable, this module is in aws-smithy-client.
-//!
-//! As timeout and HTTP configuration stabilizes, this will move to aws-types and become a part of
-//! HttpSettings.
-use std::future::Future;
-use std::pin::Pin;
-use std::sync::Arc;
-use std::task::{Context, Poll};
-use std::time::Duration;
 
 use crate::SdkError;
 use aws_smithy_async::future::timeout::Timeout;
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 use aws_smithy_http::operation::Operation;
+use aws_smithy_types::timeout::OperationTimeoutConfig;
 use pin_project_lite::pin_project;
+use std::future::Future;
+use std::pin::Pin;
+use std::sync::Arc;
+use std::task::{Context, Poll};
+use std::time::Duration;
 use tower::Layer;
 
 #[derive(Debug)]
@@ -36,11 +32,7 @@ impl RequestTimeoutError {
 
 impl std::fmt::Display for RequestTimeoutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "{} timeout occurred after {:?}",
-            self.kind, self.duration
-        )
+        write!(f, "{} occurred after {:?}", self.kind, self.duration)
     }
 }
 
@@ -59,40 +51,38 @@ pub struct TimeoutServiceParams {
 
 #[derive(Clone, Debug, Default)]
 /// A struct of structs containing everything needed to create new [`TimeoutService`]s
-pub struct ClientTimeoutParams {
+pub(crate) struct ClientTimeoutParams {
     /// Params used to create a new API call [`TimeoutService`]
-    pub(crate) api_call: Option<TimeoutServiceParams>,
+    pub(crate) operation_timeout: Option<TimeoutServiceParams>,
     /// Params used to create a new API call attempt [`TimeoutService`]
-    pub(crate) api_call_attempt: Option<TimeoutServiceParams>,
+    pub(crate) operation_attempt_timeout: Option<TimeoutServiceParams>,
 }
 
-/// Convert a [`timeout::Api`](aws_smithy_types::timeout::Api) into an [`ClientTimeoutParams`] in order to create
-/// the set of [`TimeoutService`]s needed by a [`crate::Client`]
-pub fn generate_timeout_service_params_from_timeout_config(
-    api_timeout_config: &aws_smithy_types::timeout::Api,
-    async_sleep: Option<Arc<dyn AsyncSleep>>,
-) -> ClientTimeoutParams {
-    if let Some(async_sleep) = async_sleep {
-        ClientTimeoutParams {
-            api_call: api_timeout_config
-                .call_timeout()
-                .map(|duration| TimeoutServiceParams {
-                    duration,
-                    kind: "API call (all attempts including retries)",
-                    async_sleep: async_sleep.clone(),
-                })
-                .into(),
-            api_call_attempt: api_timeout_config
-                .call_attempt_timeout()
-                .map(|duration| TimeoutServiceParams {
-                    duration,
-                    kind: "API call (single attempt)",
-                    async_sleep: async_sleep.clone(),
-                })
-                .into(),
+impl ClientTimeoutParams {
+    pub fn new(
+        timeout_config: &OperationTimeoutConfig,
+        async_sleep: Option<Arc<dyn AsyncSleep>>,
+    ) -> Self {
+        if let Some(async_sleep) = async_sleep {
+            Self {
+                operation_timeout: timeout_config.operation_timeout().map(|duration| {
+                    TimeoutServiceParams {
+                        duration,
+                        kind: "operation timeout (all attempts including retries)",
+                        async_sleep: async_sleep.clone(),
+                    }
+                }),
+                operation_attempt_timeout: timeout_config.operation_attempt_timeout().map(
+                    |duration| TimeoutServiceParams {
+                        duration,
+                        kind: "operation attempt timeout (single attempt)",
+                        async_sleep: async_sleep.clone(),
+                    },
+                ),
+            }
+        } else {
+            Default::default()
         }
-    } else {
-        Default::default()
     }
 }
 
@@ -238,19 +228,16 @@ where
 
 #[cfg(test)]
 mod test {
-    use std::sync::Arc;
-    use std::time::Duration;
-
+    use super::*;
     use crate::never::NeverService;
-    use crate::timeout::generate_timeout_service_params_from_timeout_config;
     use crate::{SdkError, TimeoutLayer};
-
     use aws_smithy_async::assert_elapsed;
     use aws_smithy_async::rt::sleep::{AsyncSleep, TokioSleep};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::operation::{Operation, Request};
-    use aws_smithy_types::tristate::TriState;
-
+    use aws_smithy_types::timeout::TimeoutConfig;
+    use std::sync::Arc;
+    use std::time::Duration;
     use tower::{Service, ServiceBuilder, ServiceExt};
 
     #[tokio::test]
@@ -258,13 +245,15 @@ mod test {
         let req = Request::new(http::Request::new(SdkBody::empty()));
         let op = Operation::new(req, ());
         let never_service: NeverService<_, (), _> = NeverService::new();
-        let timeout_config = aws_smithy_types::timeout::Api::new()
-            .with_call_timeout(TriState::Set(Duration::from_secs_f32(0.25)));
-        let sleep_impl: Option<Arc<dyn AsyncSleep>> = Some(Arc::new(TokioSleep::new()));
-        let timeout_service_params =
-            generate_timeout_service_params_from_timeout_config(&timeout_config, sleep_impl);
+        let timeout_config = OperationTimeoutConfig::from(
+            TimeoutConfig::builder()
+                .operation_timeout(Duration::from_secs_f32(0.25))
+                .build(),
+        );
+        let sleep_impl: Arc<dyn AsyncSleep> = Arc::new(TokioSleep::new());
+        let timeout_service_params = ClientTimeoutParams::new(&timeout_config, Some(sleep_impl));
         let mut svc = ServiceBuilder::new()
-            .layer(TimeoutLayer::new(timeout_service_params.api_call))
+            .layer(TimeoutLayer::new(timeout_service_params.operation_timeout))
             .service(never_service);
 
         let now = tokio::time::Instant::now();
@@ -273,7 +262,7 @@ mod test {
         let err: SdkError<Box<dyn std::error::Error + 'static>> =
             svc.ready().await.unwrap().call(op).await.unwrap_err();
 
-        assert_eq!(format!("{:?}", err), "TimeoutError(RequestTimeoutError { kind: \"API call (all attempts including retries)\", duration: 250ms })");
+        assert_eq!(format!("{:?}", err), "TimeoutError(RequestTimeoutError { kind: \"operation timeout (all attempts including retries)\", duration: 250ms })");
         assert_elapsed!(now, Duration::from_secs_f32(0.25));
     }
 }

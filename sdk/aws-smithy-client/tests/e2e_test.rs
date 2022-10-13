@@ -139,9 +139,12 @@ async fn end_to_end_retry_test() {
         // This is the default, just setting it to be explicit
         .with_initial_backoff(Duration::from_secs(1))
         .with_base(|| 1_f64);
-    let client = Client::<TestConnection<_>, Identity>::new(conn.clone())
-        .with_retry_config(retry_config)
-        .with_sleep_impl(Arc::new(TokioSleep::new()));
+    let client = Client::builder()
+        .connector(conn.clone())
+        .middleware(Identity::new())
+        .retry_config(retry_config)
+        .sleep_impl(Arc::new(TokioSleep::new()))
+        .build();
     tokio::time::pause();
     let initial = tokio::time::Instant::now();
     let resp = client

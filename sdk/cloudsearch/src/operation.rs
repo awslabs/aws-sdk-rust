@@ -876,3 +876,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceAccessPolic
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -174,3 +174,6 @@ impl aws_smithy_http::response::ParseHttpResponse for RecognizeUtterance {
         crate::operation_deser::parse_recognize_utterance_error(response)
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

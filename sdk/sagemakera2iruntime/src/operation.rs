@@ -162,3 +162,6 @@ impl aws_smithy_http::response::ParseStrictResponse for StopHumanLoop {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

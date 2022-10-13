@@ -82,3 +82,6 @@ impl aws_smithy_http::response::ParseHttpResponse for StartStreamTranscription {
         crate::operation_deser::parse_start_stream_transcription_error(response)
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

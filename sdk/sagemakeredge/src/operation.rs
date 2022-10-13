@@ -96,3 +96,6 @@ impl aws_smithy_http::response::ParseStrictResponse for SendHeartbeat {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -927,3 +927,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamMode {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

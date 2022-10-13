@@ -1169,3 +1169,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurity {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

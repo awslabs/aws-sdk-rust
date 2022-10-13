@@ -401,3 +401,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDestination {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -826,3 +826,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNetworkSitePlan {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -62,7 +62,12 @@ pub mod conns {
     #[cfg(feature = "rustls")]
     lazy_static::lazy_static! {
         static ref HTTPS_NATIVE_ROOTS: Https = {
-            hyper_rustls::HttpsConnector::with_native_roots()
+            hyper_rustls::HttpsConnectorBuilder::new()
+                .with_native_roots()
+                .https_or_http()
+                .enable_http1()
+                .enable_http2()
+                .build()
         };
     }
 
@@ -84,11 +89,6 @@ pub mod conns {
         crate::hyper_ext::Adapter<hyper_rustls::HttpsConnector<hyper::client::HttpConnector>>;
 }
 
-use std::error::Error;
-use std::sync::Arc;
-use tower::{Layer, Service, ServiceBuilder, ServiceExt};
-
-use crate::timeout::generate_timeout_service_params_from_timeout_config;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation::Operation;
@@ -98,6 +98,11 @@ use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_http_tower::dispatch::DispatchLayer;
 use aws_smithy_http_tower::parse_response::ParseResponseLayer;
 use aws_smithy_types::retry::ProvideErrorKind;
+use aws_smithy_types::timeout::OperationTimeoutConfig;
+use std::error::Error;
+use std::sync::Arc;
+use timeout::ClientTimeoutParams;
+use tower::{Layer, Service, ServiceBuilder, ServiceExt};
 
 /// Smithy service client.
 ///
@@ -116,8 +121,8 @@ use aws_smithy_types::retry::ProvideErrorKind;
 ///
 /// With the `hyper` feature enabled, you can construct a `Client` directly from a
 /// [`hyper::Client`] using [`hyper_ext::Adapter::builder`]. You can also enable the `rustls` or `native-tls`
-/// features to construct a Client against a standard HTTPS endpoint using [`Builder::rustls`] and
-/// `Builder::native_tls` respectively.
+/// features to construct a Client against a standard HTTPS endpoint using [`Builder::rustls_connector`] and
+/// `Builder::native_tls_connector` respectively.
 #[derive(Debug)]
 pub struct Client<
     Connector = erase::DynConnector,
@@ -127,8 +132,15 @@ pub struct Client<
     connector: Connector,
     middleware: Middleware,
     retry_policy: RetryPolicy,
-    timeout_config: aws_smithy_types::timeout::Config,
+    operation_timeout_config: OperationTimeoutConfig,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
+}
+
+impl Client<(), (), ()> {
+    /// Returns a client builder
+    pub fn builder() -> Builder {
+        Builder::new()
+    }
 }
 
 // Quick-create for people who just want "the default".
@@ -144,48 +156,6 @@ where
             .connector(connector)
             .middleware(M::default())
             .build()
-    }
-}
-
-impl<C, M> Client<C, M> {
-    /// Set the standard retry policy's configuration.
-    pub fn set_retry_config(&mut self, config: retry::Config) {
-        self.retry_policy.with_config(config);
-    }
-
-    /// Adjust a standard retry client with the given policy configuration.
-    pub fn with_retry_config(mut self, config: retry::Config) -> Self {
-        self.set_retry_config(config);
-        self
-    }
-}
-
-impl<C, M, R> Client<C, M, R> {
-    /// Set the client's timeout configuration.
-    pub fn set_timeout_config(&mut self, timeout_config: aws_smithy_types::timeout::Config) {
-        self.timeout_config = timeout_config;
-    }
-
-    /// Set the client's timeout configuration.
-    pub fn with_timeout_config(
-        mut self,
-        timeout_config: aws_smithy_types::timeout::Config,
-    ) -> Self {
-        self.set_timeout_config(timeout_config);
-        self
-    }
-
-    /// Set the [`AsyncSleep`] function that the client will use to create things like timeout futures.
-    ///
-    /// *Note: If `None` is passed, this will prevent the client from using retries or timeouts.*
-    pub fn set_sleep_impl(&mut self, sleep_impl: Option<Arc<dyn AsyncSleep>>) {
-        self.sleep_impl = sleep_impl;
-    }
-
-    /// Set the [`AsyncSleep`] function that the client will use to create things like timeout futures.
-    pub fn with_sleep_impl(mut self, sleep_impl: Arc<dyn AsyncSleep>) -> Self {
-        self.set_sleep_impl(Some(sleep_impl));
-        self
     }
 }
 
@@ -237,18 +207,16 @@ where
     {
         let connector = self.connector.clone();
 
-        let timeout_service_params = generate_timeout_service_params_from_timeout_config(
-            &self.timeout_config.api,
-            self.sleep_impl.clone(),
-        );
+        let timeout_params =
+            ClientTimeoutParams::new(&self.operation_timeout_config, self.sleep_impl.clone());
 
         let svc = ServiceBuilder::new()
-            .layer(TimeoutLayer::new(timeout_service_params.api_call))
+            .layer(TimeoutLayer::new(timeout_params.operation_timeout))
             .retry(
                 self.retry_policy
                     .new_request_policy(self.sleep_impl.clone()),
             )
-            .layer(TimeoutLayer::new(timeout_service_params.api_call_attempt))
+            .layer(TimeoutLayer::new(timeout_params.operation_attempt_timeout))
             .layer(ParseResponseLayer::<O, Retry>::new())
             // These layers can be considered as occurring in order. That is, first invoke the
             // customer-provided middleware, then dispatch dispatch over the wire.

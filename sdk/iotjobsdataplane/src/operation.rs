@@ -134,3 +134,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobExecution {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

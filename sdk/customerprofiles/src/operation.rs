@@ -1251,3 +1251,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProfile {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

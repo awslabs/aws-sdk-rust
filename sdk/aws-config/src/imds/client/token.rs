@@ -32,13 +32,13 @@ use aws_smithy_http::operation::Operation;
 use aws_smithy_http::operation::{Metadata, Request};
 use aws_smithy_http::response::ParseStrictResponse;
 use aws_smithy_http_tower::map_request::MapRequestLayer;
-use aws_smithy_types::timeout;
 use aws_types::os_shim_internal::TimeSource;
 
 use http::{HeaderValue, Uri};
 
 use crate::cache::ExpiringCache;
 use crate::imds::client::{ImdsError, ImdsResponseRetryClassifier, TokenError};
+use aws_sdk_sso::config::timeout::TimeoutConfig;
 
 /// Token Refresh Buffer
 ///
@@ -85,15 +85,16 @@ impl TokenMiddleware {
         endpoint: Endpoint,
         token_ttl: Duration,
         retry_config: retry::Config,
-        timeout_config: timeout::Config,
+        timeout_config: TimeoutConfig,
         sleep_impl: Option<Arc<dyn AsyncSleep>>,
     ) -> Self {
-        let inner_client = aws_smithy_client::Builder::new()
+        let mut inner_builder = aws_smithy_client::Client::builder()
             .connector(connector)
-            .sleep_impl(sleep_impl)
-            .build()
-            .with_retry_config(retry_config)
-            .with_timeout_config(timeout_config);
+            .middleware(MapRequestLayer::<UserAgentStage>::default())
+            .retry_config(retry_config)
+            .operation_timeout_config(timeout_config.into());
+        inner_builder.set_sleep_impl(sleep_impl);
+        let inner_client = inner_builder.build();
         let client = Arc::new(inner_client);
         Self {
             client,

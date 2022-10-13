@@ -18598,3 +18598,6 @@ impl aws_smithy_http::response::ParseStrictResponse for WithdrawByoipCidr {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -1266,3 +1266,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualService {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -769,3 +769,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityPool {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

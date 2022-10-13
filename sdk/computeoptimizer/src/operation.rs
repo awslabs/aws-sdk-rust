@@ -618,3 +618,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEnrollmentStatus {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

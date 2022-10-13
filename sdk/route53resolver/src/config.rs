@@ -20,7 +20,7 @@ pub struct Config {
     pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
-    timeout_config: Option<aws_smithy_types::timeout::Config>,
+    timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     app_name: Option<aws_types::app_name::AppName>,
     pub(crate) endpoint_resolver:
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<aws_endpoint::Params>>,
@@ -51,7 +51,7 @@ impl Config {
     }
 
     /// Return a reference to the timeout configuration contained in this config, if any.
-    pub fn timeout_config(&self) -> Option<&aws_smithy_types::timeout::Config> {
+    pub fn timeout_config(&self) -> Option<&aws_smithy_types::timeout::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// Returns the name of the app that is using the client, if it was provided.
@@ -79,7 +79,7 @@ pub struct Builder {
     make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
-    timeout_config: Option<aws_smithy_types::timeout::Config>,
+    timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     app_name: Option<aws_types::app_name::AppName>,
     endpoint_resolver: Option<
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<aws_endpoint::Params>>,
@@ -105,7 +105,7 @@ impl Builder {
     /// # Examples
     /// ```no_run
     /// use aws_sdk_route53resolver::config::Config;
-    /// use aws_smithy_types::retry::RetryConfig;
+    /// use aws_sdk_route53resolver::config::retry::RetryConfig;
     ///
     /// let retry_config = RetryConfig::standard().with_max_attempts(5);
     /// let config = Config::builder().retry_config(retry_config).build();
@@ -120,7 +120,7 @@ impl Builder {
     /// # Examples
     /// ```no_run
     /// use aws_sdk_route53resolver::config::{Builder, Config};
-    /// use aws_smithy_types::retry::RetryConfig;
+    /// use aws_sdk_route53resolver::config::retry::RetryConfig;
     ///
     /// fn disable_retries(builder: &mut Builder) {
     ///     let retry_config = RetryConfig::standard().with_max_attempts(1);
@@ -144,9 +144,7 @@ impl Builder {
     /// # Examples
     ///
     /// ```no_run
-    /// use aws_sdk_route53resolver::config::Config;
-    /// use aws_smithy_async::rt::sleep::AsyncSleep;
-    /// use aws_smithy_async::rt::sleep::Sleep;
+    /// use aws_sdk_route53resolver::config::{AsyncSleep, Sleep, Config};
     ///
     /// #[derive(Debug)]
     /// pub struct ForeverSleep;
@@ -173,9 +171,7 @@ impl Builder {
     /// # Examples
     ///
     /// ```no_run
-    /// use aws_sdk_route53resolver::config::{Builder, Config};
-    /// use aws_smithy_async::rt::sleep::AsyncSleep;
-    /// use aws_smithy_async::rt::sleep::Sleep;
+    /// use aws_sdk_route53resolver::config::{AsyncSleep, Sleep, Builder, Config};
     ///
     /// #[derive(Debug)]
     /// pub struct ForeverSleep;
@@ -210,15 +206,17 @@ impl Builder {
     /// ```no_run
     /// # use std::time::Duration;
     /// use aws_sdk_route53resolver::config::Config;
-    /// use aws_smithy_types::{timeout, tristate::TriState};
+    /// use aws_sdk_route53resolver::config::timeout::TimeoutConfig;
     ///
-    /// let api_timeouts = timeout::Api::new()
-    ///     .with_call_attempt_timeout(TriState::Set(Duration::from_secs(1)));
-    /// let timeout_config = timeout::Config::new()
-    ///     .with_api_timeouts(api_timeouts);
+    /// let timeout_config = TimeoutConfig::builder()
+    ///     .operation_attempt_timeout(Duration::from_secs(1))
+    ///     .build();
     /// let config = Config::builder().timeout_config(timeout_config).build();
     /// ```
-    pub fn timeout_config(mut self, timeout_config: aws_smithy_types::timeout::Config) -> Self {
+    pub fn timeout_config(
+        mut self,
+        timeout_config: aws_smithy_types::timeout::TimeoutConfig,
+    ) -> Self {
         self.set_timeout_config(Some(timeout_config));
         self
     }
@@ -230,13 +228,12 @@ impl Builder {
     /// ```no_run
     /// # use std::time::Duration;
     /// use aws_sdk_route53resolver::config::{Builder, Config};
-    /// use aws_smithy_types::{timeout, tristate::TriState};
+    /// use aws_sdk_route53resolver::config::timeout::TimeoutConfig;
     ///
     /// fn set_request_timeout(builder: &mut Builder) {
-    ///     let api_timeouts = timeout::Api::new()
-    ///         .with_call_attempt_timeout(TriState::Set(Duration::from_secs(1)));
-    ///     let timeout_config = timeout::Config::new()
-    ///         .with_api_timeouts(api_timeouts);
+    ///     let timeout_config = TimeoutConfig::builder()
+    ///         .operation_attempt_timeout(Duration::from_secs(1))
+    ///         .build();
     ///     builder.set_timeout_config(Some(timeout_config));
     /// }
     ///
@@ -246,7 +243,7 @@ impl Builder {
     /// ```
     pub fn set_timeout_config(
         &mut self,
-        timeout_config: Option<aws_smithy_types::timeout::Config>,
+        timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     ) -> &mut Self {
         self.timeout_config = timeout_config;
         self
@@ -380,4 +377,19 @@ impl From<&aws_types::sdk_config::SdkConfig> for Config {
     fn from(sdk_config: &aws_types::sdk_config::SdkConfig) -> Self {
         Builder::from(sdk_config).build()
     }
+}
+
+pub use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+
+/// Retry configuration
+///
+/// These are re-exported from `aws-smithy-types` for convenience.
+pub mod retry {
+    pub use aws_smithy_types::retry::{RetryConfig, RetryConfigBuilder, RetryMode};
+}
+/// Timeout configuration
+///
+/// These are re-exported from `aws-smithy-types` for convenience.
+pub mod timeout {
+    pub use aws_smithy_types::timeout::{TimeoutConfig, TimeoutConfigBuilder};
 }

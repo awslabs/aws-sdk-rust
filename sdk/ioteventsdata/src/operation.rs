@@ -400,3 +400,6 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDetectors {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

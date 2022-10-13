@@ -415,3 +415,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTable {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

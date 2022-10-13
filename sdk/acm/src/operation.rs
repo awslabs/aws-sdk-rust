@@ -506,3 +506,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCertificateOptions
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

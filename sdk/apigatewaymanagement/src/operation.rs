@@ -98,3 +98,6 @@ impl aws_smithy_http::response::ParseStrictResponse for PostToConnection {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

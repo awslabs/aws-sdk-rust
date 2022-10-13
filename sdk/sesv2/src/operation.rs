@@ -2752,3 +2752,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEmailTemplate {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

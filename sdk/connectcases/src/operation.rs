@@ -939,3 +939,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTemplate {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

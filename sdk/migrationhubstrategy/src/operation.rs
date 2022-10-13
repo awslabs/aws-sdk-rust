@@ -670,3 +670,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServerConfig {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

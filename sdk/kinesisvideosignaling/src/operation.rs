@@ -66,3 +66,6 @@ impl aws_smithy_http::response::ParseStrictResponse for SendAlexaOfferToMaster {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

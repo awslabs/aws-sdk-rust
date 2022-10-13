@@ -989,3 +989,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectivityInfo {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

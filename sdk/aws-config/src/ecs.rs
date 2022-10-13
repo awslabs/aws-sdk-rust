@@ -61,10 +61,14 @@ use tower::{Service, ServiceExt};
 
 use crate::http_credential_provider::HttpCredentialProvider;
 use crate::provider_config::ProviderConfig;
+use aws_smithy_client::http_connector::ConnectorSettings;
 use aws_types::os_shim_internal::Env;
 use http::header::InvalidHeaderValue;
 use std::time::Duration;
 use tokio::sync::OnceCell;
+
+const DEFAULT_READ_TIMEOUT: Duration = Duration::from_secs(5);
+const DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_secs(2);
 
 // URL from https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-metadata-endpoint-v2.html
 const BASE_HOST: &str = "http://169.254.170.2";
@@ -164,8 +168,12 @@ impl Provider {
         };
         let http_provider = HttpCredentialProvider::builder()
             .configure(&provider_config)
-            .connect_timeout(builder.connect_timeout)
-            .read_timeout(builder.read_timeout)
+            .connector_settings(
+                ConnectorSettings::builder()
+                    .connect_timeout(DEFAULT_CONNECT_TIMEOUT)
+                    .read_timeout(DEFAULT_READ_TIMEOUT)
+                    .build(),
+            )
             .build("EcsContainer", uri);
         Provider::Configured(http_provider)
     }

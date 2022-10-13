@@ -867,3 +867,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSchedulingPolicy {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

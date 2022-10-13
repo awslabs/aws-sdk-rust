@@ -1683,3 +1683,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnection {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

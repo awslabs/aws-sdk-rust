@@ -2466,3 +2466,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpoint {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -4019,3 +4019,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePartnerStatus {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

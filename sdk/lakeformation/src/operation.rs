@@ -1520,3 +1520,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTableStorageOptimi
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

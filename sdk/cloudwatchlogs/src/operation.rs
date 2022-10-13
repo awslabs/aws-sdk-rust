@@ -1405,3 +1405,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagLogGroup {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

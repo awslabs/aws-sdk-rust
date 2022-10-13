@@ -2603,3 +2603,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRepositoryName {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

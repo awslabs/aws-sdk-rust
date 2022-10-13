@@ -9,7 +9,7 @@ use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_client::erase::DynConnector;
 use aws_types::os_shim_internal::{Env, Fs, TimeSource};
 use aws_types::{
-    http_connector::{HttpConnector, HttpSettings},
+    http_connector::{ConnectorSettings, HttpConnector},
     region::Region,
 };
 
@@ -50,7 +50,7 @@ impl Debug for ProviderConfig {
 impl Default for ProviderConfig {
     fn default() -> Self {
         let connector = HttpConnector::ConnectorFn(Arc::new(
-            |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
+            |settings: &ConnectorSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
                 default_connector(settings, sleep)
             },
         ));
@@ -161,11 +161,11 @@ impl ProviderConfig {
     #[allow(dead_code)]
     pub(crate) fn default_connector(&self) -> Option<DynConnector> {
         self.connector
-            .connector(&HttpSettings::default(), self.sleep.clone())
+            .connector(&Default::default(), self.sleep.clone())
     }
 
     #[allow(dead_code)]
-    pub(crate) fn connector(&self, settings: &HttpSettings) -> Option<DynConnector> {
+    pub(crate) fn connector(&self, settings: &ConnectorSettings) -> Option<DynConnector> {
         self.connector.connector(settings, self.sleep.clone())
     }
 
@@ -249,9 +249,10 @@ impl ProviderConfig {
         C::Future: Unpin + Send + 'static,
         C::Error: Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
     {
-        let connector_fn = move |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
+        let connector_fn = move |settings: &ConnectorSettings,
+                                 sleep: Option<Arc<dyn AsyncSleep>>| {
             let mut builder = aws_smithy_client::hyper_ext::Adapter::builder()
-                .timeout(&settings.http_timeout_config);
+                .connector_settings(settings.clone());
             if let Some(sleep) = sleep {
                 builder = builder.sleep_impl(sleep);
             };

@@ -21,7 +21,6 @@ pub mod endpoint;
 pub mod primitive;
 pub mod retry;
 pub mod timeout;
-pub mod tristate;
 
 pub use crate::date_time::DateTime;
 

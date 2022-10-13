@@ -618,3 +618,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUser {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -236,3 +236,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateS3Resources {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

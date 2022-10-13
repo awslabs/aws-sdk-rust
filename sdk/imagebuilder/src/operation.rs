@@ -1673,3 +1673,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInfrastructureConf
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

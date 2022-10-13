@@ -684,3 +684,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCanary {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

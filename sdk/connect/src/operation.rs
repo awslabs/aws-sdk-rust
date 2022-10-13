@@ -5186,3 +5186,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserSecurityProfil
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

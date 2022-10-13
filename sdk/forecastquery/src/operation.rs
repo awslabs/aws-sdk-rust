@@ -64,3 +64,6 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryWhatIfForecast {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

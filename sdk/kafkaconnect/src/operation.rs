@@ -404,3 +404,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnector {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

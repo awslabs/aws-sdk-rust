@@ -2158,3 +2158,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateThreatIntelSet {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

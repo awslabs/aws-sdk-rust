@@ -334,3 +334,6 @@ impl aws_smithy_http::response::ParseStrictResponse for StopProductSubscription 
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;

@@ -485,3 +485,6 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
         }
     }
 }
+
+/// Operation customization and supporting types
+pub mod customize;
