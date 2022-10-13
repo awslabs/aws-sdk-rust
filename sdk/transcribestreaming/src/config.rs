@@ -78,6 +78,14 @@ impl Config {
     ) -> impl aws_smithy_eventstream::frame::SignMessage {
         aws_sig_auth::event_stream::SigV4Signer::new(_properties)
     }
+    /// Returns the AWS region, if it was provided.
+    pub fn region(&self) -> Option<&aws_types::region::Region> {
+        self.region.as_ref()
+    }
+    /// Returns the credentials provider.
+    pub fn credentials_provider(&self) -> aws_types::credentials::SharedCredentialsProvider {
+        self.credentials_provider.clone()
+    }
 }
 /// Builder for creating a `Config`.
 #[derive(Default)]

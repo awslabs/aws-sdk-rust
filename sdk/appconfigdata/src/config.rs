@@ -71,6 +71,14 @@ impl Config {
     pub fn signing_service(&self) -> &'static str {
         "appconfig"
     }
+    /// Returns the AWS region, if it was provided.
+    pub fn region(&self) -> Option<&aws_types::region::Region> {
+        self.region.as_ref()
+    }
+    /// Returns the credentials provider.
+    pub fn credentials_provider(&self) -> aws_types::credentials::SharedCredentialsProvider {
+        self.credentials_provider.clone()
+    }
 }
 /// Builder for creating a `Config`.
 #[derive(Default)]

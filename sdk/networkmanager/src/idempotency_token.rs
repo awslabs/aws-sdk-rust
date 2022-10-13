@@ -86,3 +86,12 @@ impl IdempotencyTokenProvider {
         }
     }
 }
+
+impl Clone for IdempotencyTokenProvider {
+    fn clone(&self) -> Self {
+        match &self.inner {
+            Inner::Static(token) => IdempotencyTokenProvider::fixed(token),
+            Inner::Random(_) => IdempotencyTokenProvider::random(),
+        }
+    }
+}

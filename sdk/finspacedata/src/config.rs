@@ -38,6 +38,12 @@ impl Config {
     pub fn builder() -> Builder {
         Builder::default()
     }
+    /// Returns a copy of the idempotency token provider.
+    /// If a random token provider was configured,
+    /// a newly-randomized token provider will be returned.
+    pub fn make_token(&self) -> crate::idempotency_token::IdempotencyTokenProvider {
+        self.make_token.clone()
+    }
     /// Return a reference to the retry configuration contained in this config, if any.
     pub fn retry_config(&self) -> Option<&aws_smithy_types::retry::RetryConfig> {
         self.retry_config.as_ref()
@@ -71,6 +77,14 @@ impl Config {
     /// [`SigningService`](aws_types::SigningService) during operation construction
     pub fn signing_service(&self) -> &'static str {
         "finspace-api"
+    }
+    /// Returns the AWS region, if it was provided.
+    pub fn region(&self) -> Option<&aws_types::region::Region> {
+        self.region.as_ref()
+    }
+    /// Returns the credentials provider.
+    pub fn credentials_provider(&self) -> aws_types::credentials::SharedCredentialsProvider {
+        self.credentials_provider.clone()
     }
 }
 /// Builder for creating a `Config`.
