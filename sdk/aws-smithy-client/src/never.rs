@@ -10,7 +10,7 @@ use http::Uri;
 use aws_smithy_async::future::never::Never;
 
 use std::marker::PhantomData;
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
 
 use std::task::{Context, Poll};
@@ -27,7 +27,7 @@ use tower::BoxError;
 #[derive(Debug)]
 pub struct NeverService<Req, Resp, Err> {
     _resp: PhantomData<(Req, Resp, Err)>,
-    invocations: Arc<AtomicU64>,
+    invocations: Arc<AtomicUsize>,
 }
 
 impl<Req, Resp, Err> Clone for NeverService<Req, Resp, Err> {
@@ -55,7 +55,7 @@ impl<Req, Resp, Err> NeverService<Req, Resp, Err> {
     }
 
     /// Returns the number of invocations made to this service
-    pub fn num_calls(&self) -> u64 {
+    pub fn num_calls(&self) -> usize {
         self.invocations.load(Ordering::SeqCst)
     }
 }
