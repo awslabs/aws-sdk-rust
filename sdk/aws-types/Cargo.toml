@@ -17,7 +17,7 @@ hardcoded-credentials = []
 
 [dependencies]
 tracing = "0.1"
-zeroize = "1.4.1"
+zeroize = "1"
 http = "0.2.6"
 
 [dependencies.aws-smithy-async]
