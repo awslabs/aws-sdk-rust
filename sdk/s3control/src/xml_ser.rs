@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_create_access_point_input(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_1.as_ref());
+        inner_writer.data(var_1.as_str());
     }
     if let Some(var_2) = &input.public_access_block_configuration {
         let inner_writer = scope.start_el("PublicAccessBlockConfiguration");
@@ -64,7 +64,7 @@ pub fn serialize_structure_crate_input_create_job_input(
     let mut scope = writer.finish();
     if let Some(var_5) = &input.client_request_token {
         let mut inner_writer = scope.start_el("ClientRequestToken").finish();
-        inner_writer.data(var_5.as_ref());
+        inner_writer.data(var_5.as_str());
     }
     if let Some(var_6) = &input.confirmation_required {
         let mut inner_writer = scope.start_el("ConfirmationRequired").finish();
@@ -72,7 +72,7 @@ pub fn serialize_structure_crate_input_create_job_input(
     }
     if let Some(var_7) = &input.description {
         let mut inner_writer = scope.start_el("Description").finish();
-        inner_writer.data(var_7.as_ref());
+        inner_writer.data(var_7.as_str());
     }
     if let Some(var_8) = &input.manifest {
         let inner_writer = scope.start_el("Manifest");
@@ -96,7 +96,7 @@ pub fn serialize_structure_crate_input_create_job_input(
     }
     if let Some(var_13) = &input.role_arn {
         let mut inner_writer = scope.start_el("RoleArn").finish();
-        inner_writer.data(var_13.as_ref());
+        inner_writer.data(var_13.as_str());
     }
     if let Some(var_14) = &input.tags {
         let mut inner_writer = scope.start_el("Tags").finish();
@@ -119,7 +119,7 @@ pub fn serialize_structure_crate_input_create_multi_region_access_point_input(
     let mut scope = writer.finish();
     if let Some(var_16) = &input.client_token {
         let mut inner_writer = scope.start_el("ClientToken").finish();
-        inner_writer.data(var_16.as_ref());
+        inner_writer.data(var_16.as_str());
     }
     if let Some(var_17) = &input.details {
         let inner_writer = scope.start_el("Details");
@@ -140,7 +140,7 @@ pub fn serialize_structure_crate_input_delete_multi_region_access_point_input(
     let mut scope = writer.finish();
     if let Some(var_18) = &input.client_token {
         let mut inner_writer = scope.start_el("ClientToken").finish();
-        inner_writer.data(var_18.as_ref());
+        inner_writer.data(var_18.as_str());
     }
     if let Some(var_19) = &input.details {
         let inner_writer = scope.start_el("Details");
@@ -178,7 +178,7 @@ pub fn serialize_structure_crate_input_put_access_point_policy_input(
     let mut scope = writer.finish();
     if let Some(var_21) = &input.policy {
         let mut inner_writer = scope.start_el("Policy").finish();
-        inner_writer.data(var_21.as_ref());
+        inner_writer.data(var_21.as_str());
     }
     scope.finish();
     Ok(())
@@ -192,7 +192,7 @@ pub fn serialize_structure_crate_input_put_access_point_policy_for_object_lambda
     let mut scope = writer.finish();
     if let Some(var_22) = &input.policy {
         let mut inner_writer = scope.start_el("Policy").finish();
-        inner_writer.data(var_22.as_ref());
+        inner_writer.data(var_22.as_str());
     }
     scope.finish();
     Ok(())
@@ -221,7 +221,7 @@ pub fn serialize_structure_crate_input_put_bucket_policy_input(
     let mut scope = writer.finish();
     if let Some(var_23) = &input.policy {
         let mut inner_writer = scope.start_el("Policy").finish();
-        inner_writer.data(var_23.as_ref());
+        inner_writer.data(var_23.as_str());
     }
     scope.finish();
     Ok(())
@@ -284,7 +284,7 @@ pub fn serialize_structure_crate_input_put_multi_region_access_point_policy_inpu
     let mut scope = writer.finish();
     if let Some(var_26) = &input.client_token {
         let mut inner_writer = scope.start_el("ClientToken").finish();
-        inner_writer.data(var_26.as_ref());
+        inner_writer.data(var_26.as_str());
     }
     if let Some(var_27) = &input.details {
         let inner_writer = scope.start_el("Details");
@@ -404,7 +404,7 @@ pub fn serialize_structure_crate_model_vpc_configuration(
     let mut scope = writer.finish();
     if let Some(var_33) = &input.vpc_id {
         let mut inner_writer = scope.start_el("VpcId").finish();
-        inner_writer.data(var_33.as_ref());
+        inner_writer.data(var_33.as_str());
     }
     scope.finish();
     Ok(())
@@ -418,7 +418,7 @@ pub fn serialize_structure_crate_model_object_lambda_configuration(
     let mut scope = writer.finish();
     if let Some(var_34) = &input.supporting_access_point {
         let mut inner_writer = scope.start_el("SupportingAccessPoint").finish();
-        inner_writer.data(var_34.as_ref());
+        inner_writer.data(var_34.as_str());
     }
     if input.cloud_watch_metrics_enabled {
         let mut inner_writer = scope.start_el("CloudWatchMetricsEnabled").finish();
@@ -585,7 +585,7 @@ pub fn serialize_structure_crate_model_job_report(
     let mut scope = writer.finish();
     if let Some(var_51) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_51.as_ref());
+        inner_writer.data(var_51.as_str());
     }
     if let Some(var_52) = &input.format {
         let mut inner_writer = scope.start_el("Format").finish();
@@ -597,7 +597,7 @@ pub fn serialize_structure_crate_model_job_report(
     }
     if let Some(var_53) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_53.as_ref());
+        inner_writer.data(var_53.as_str());
     }
     if let Some(var_54) = &input.report_scope {
         let mut inner_writer = scope.start_el("ReportScope").finish();
@@ -615,11 +615,11 @@ pub fn serialize_structure_crate_model_s3_tag(
     let mut scope = writer.finish();
     if let Some(var_55) = &input.key {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_55.as_ref());
+        inner_writer.data(var_55.as_str());
     }
     if let Some(var_56) = &input.value {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_56.as_ref());
+        inner_writer.data(var_56.as_str());
     }
     scope.finish();
     Ok(())
@@ -633,7 +633,7 @@ pub fn serialize_structure_crate_model_create_multi_region_access_point_input(
     let mut scope = writer.finish();
     if let Some(var_57) = &input.name {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_57.as_ref());
+        inner_writer.data(var_57.as_str());
     }
     if let Some(var_58) = &input.public_access_block {
         let inner_writer = scope.start_el("PublicAccessBlock");
@@ -663,7 +663,7 @@ pub fn serialize_structure_crate_model_delete_multi_region_access_point_input(
     let mut scope = writer.finish();
     if let Some(var_61) = &input.name {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_61.as_ref());
+        inner_writer.data(var_61.as_str());
     }
     scope.finish();
     Ok(())
@@ -736,11 +736,11 @@ pub fn serialize_structure_crate_model_put_multi_region_access_point_policy_inpu
     let mut scope = writer.finish();
     if let Some(var_68) = &input.name {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_68.as_ref());
+        inner_writer.data(var_68.as_str());
     }
     if let Some(var_69) = &input.policy {
         let mut inner_writer = scope.start_el("Policy").finish();
-        inner_writer.data(var_69.as_ref());
+        inner_writer.data(var_69.as_str());
     }
     scope.finish();
     Ok(())
@@ -754,7 +754,7 @@ pub fn serialize_structure_crate_model_storage_lens_configuration(
     let mut scope = writer.finish();
     if let Some(var_70) = &input.id {
         let mut inner_writer = scope.start_el("Id").finish();
-        inner_writer.data(var_70.as_ref());
+        inner_writer.data(var_70.as_str());
     }
     if let Some(var_71) = &input.account_level {
         let inner_writer = scope.start_el("AccountLevel");
@@ -785,7 +785,7 @@ pub fn serialize_structure_crate_model_storage_lens_configuration(
     }
     if let Some(var_76) = &input.storage_lens_arn {
         let mut inner_writer = scope.start_el("StorageLensArn").finish();
-        inner_writer.data(var_76.as_ref());
+        inner_writer.data(var_76.as_str());
     }
     scope.finish();
     Ok(())
@@ -799,11 +799,11 @@ pub fn serialize_structure_crate_model_storage_lens_tag(
     let mut scope = writer.finish();
     if let Some(var_77) = &input.key {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_77.as_ref());
+        inner_writer.data(var_77.as_str());
     }
     if let Some(var_78) = &input.value {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_78.as_ref());
+        inner_writer.data(var_78.as_str());
     }
     scope.finish();
     Ok(())
@@ -866,15 +866,15 @@ pub fn serialize_structure_crate_model_job_manifest_location(
     let mut scope = writer.finish();
     if let Some(var_85) = &input.object_arn {
         let mut inner_writer = scope.start_el("ObjectArn").finish();
-        inner_writer.data(var_85.as_ref());
+        inner_writer.data(var_85.as_str());
     }
     if let Some(var_86) = &input.object_version_id {
         let mut inner_writer = scope.start_el("ObjectVersionId").finish();
-        inner_writer.data(var_86.as_ref());
+        inner_writer.data(var_86.as_str());
     }
     if let Some(var_87) = &input.e_tag {
         let mut inner_writer = scope.start_el("ETag").finish();
-        inner_writer.data(var_87.as_ref());
+        inner_writer.data(var_87.as_str());
     }
     scope.finish();
     Ok(())
@@ -888,11 +888,11 @@ pub fn serialize_structure_crate_model_s3_job_manifest_generator(
     let mut scope = writer.finish();
     if let Some(var_88) = &input.expected_bucket_owner {
         let mut inner_writer = scope.start_el("ExpectedBucketOwner").finish();
-        inner_writer.data(var_88.as_ref());
+        inner_writer.data(var_88.as_str());
     }
     if let Some(var_89) = &input.source_bucket {
         let mut inner_writer = scope.start_el("SourceBucket").finish();
-        inner_writer.data(var_89.as_ref());
+        inner_writer.data(var_89.as_str());
     }
     if let Some(var_90) = &input.manifest_output_location {
         let inner_writer = scope.start_el("ManifestOutputLocation");
@@ -926,7 +926,7 @@ pub fn serialize_structure_crate_model_lambda_invoke_operation(
     let mut scope = writer.finish();
     if let Some(var_92) = &input.function_arn {
         let mut inner_writer = scope.start_el("FunctionArn").finish();
-        inner_writer.data(var_92.as_ref());
+        inner_writer.data(var_92.as_str());
     }
     scope.finish();
     Ok(())
@@ -940,7 +940,7 @@ pub fn serialize_structure_crate_model_s3_copy_object_operation(
     let mut scope = writer.finish();
     if let Some(var_93) = &input.target_resource {
         let mut inner_writer = scope.start_el("TargetResource").finish();
-        inner_writer.data(var_93.as_ref());
+        inner_writer.data(var_93.as_str());
     }
     if let Some(var_94) = &input.canned_access_control_list {
         let mut inner_writer = scope.start_el("CannedAccessControlList").finish();
@@ -985,7 +985,7 @@ pub fn serialize_structure_crate_model_s3_copy_object_operation(
     }
     if let Some(var_102) = &input.redirect_location {
         let mut inner_writer = scope.start_el("RedirectLocation").finish();
-        inner_writer.data(var_102.as_ref());
+        inner_writer.data(var_102.as_str());
     }
     if input.requester_pays {
         let mut inner_writer = scope.start_el("RequesterPays").finish();
@@ -1006,11 +1006,11 @@ pub fn serialize_structure_crate_model_s3_copy_object_operation(
     }
     if let Some(var_105) = &input.sse_aws_kms_key_id {
         let mut inner_writer = scope.start_el("SSEAwsKmsKeyId").finish();
-        inner_writer.data(var_105.as_ref());
+        inner_writer.data(var_105.as_str());
     }
     if let Some(var_106) = &input.target_key_prefix {
         let mut inner_writer = scope.start_el("TargetKeyPrefix").finish();
-        inner_writer.data(var_106.as_ref());
+        inner_writer.data(var_106.as_str());
     }
     if let Some(var_107) = &input.object_lock_legal_hold_status {
         let mut inner_writer = scope.start_el("ObjectLockLegalHoldStatus").finish();
@@ -1160,7 +1160,7 @@ pub fn serialize_structure_crate_model_region(
     let mut scope = writer.finish();
     if let Some(var_119) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_119.as_ref());
+        inner_writer.data(var_119.as_str());
     }
     scope.finish();
     Ok(())
@@ -1178,7 +1178,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
     }
     if let Some(var_121) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_121.as_ref());
+        inner_writer.data(var_121.as_str());
     }
     if let Some(var_122) = &input.filter {
         let inner_writer = scope.start_el("Filter");
@@ -1262,7 +1262,7 @@ pub fn serialize_structure_crate_model_include(
         for list_item_133 in var_132 {
             {
                 let mut inner_writer = inner_writer.start_el("Arn").finish();
-                inner_writer.data(list_item_133.as_ref());
+                inner_writer.data(list_item_133.as_str());
             }
         }
     }
@@ -1271,7 +1271,7 @@ pub fn serialize_structure_crate_model_include(
         for list_item_135 in var_134 {
             {
                 let mut inner_writer = inner_writer.start_el("Region").finish();
-                inner_writer.data(list_item_135.as_ref());
+                inner_writer.data(list_item_135.as_str());
             }
         }
     }
@@ -1290,7 +1290,7 @@ pub fn serialize_structure_crate_model_exclude(
         for list_item_137 in var_136 {
             {
                 let mut inner_writer = inner_writer.start_el("Arn").finish();
-                inner_writer.data(list_item_137.as_ref());
+                inner_writer.data(list_item_137.as_str());
             }
         }
     }
@@ -1299,7 +1299,7 @@ pub fn serialize_structure_crate_model_exclude(
         for list_item_139 in var_138 {
             {
                 let mut inner_writer = inner_writer.start_el("Region").finish();
-                inner_writer.data(list_item_139.as_ref());
+                inner_writer.data(list_item_139.as_str());
             }
         }
     }
@@ -1336,7 +1336,7 @@ pub fn serialize_structure_crate_model_storage_lens_aws_org(
     let mut scope = writer.finish();
     if let Some(var_142) = &input.arn {
         let mut inner_writer = scope.start_el("Arn").finish();
-        inner_writer.data(var_142.as_ref());
+        inner_writer.data(var_142.as_str());
     }
     scope.finish();
     Ok(())
@@ -1374,15 +1374,15 @@ pub fn serialize_structure_crate_model_s3_manifest_output_location(
     let mut scope = writer.finish();
     if let Some(var_143) = &input.expected_manifest_bucket_owner {
         let mut inner_writer = scope.start_el("ExpectedManifestBucketOwner").finish();
-        inner_writer.data(var_143.as_ref());
+        inner_writer.data(var_143.as_str());
     }
     if let Some(var_144) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_144.as_ref());
+        inner_writer.data(var_144.as_str());
     }
     if let Some(var_145) = &input.manifest_prefix {
         let mut inner_writer = scope.start_el("ManifestPrefix").finish();
-        inner_writer.data(var_145.as_ref());
+        inner_writer.data(var_145.as_str());
     }
     if let Some(var_146) = &input.manifest_encryption {
         let inner_writer = scope.start_el("ManifestEncryption");
@@ -1464,19 +1464,19 @@ pub fn serialize_structure_crate_model_s3_object_metadata(
     let mut scope = writer.finish();
     if let Some(var_155) = &input.cache_control {
         let mut inner_writer = scope.start_el("CacheControl").finish();
-        inner_writer.data(var_155.as_ref());
+        inner_writer.data(var_155.as_str());
     }
     if let Some(var_156) = &input.content_disposition {
         let mut inner_writer = scope.start_el("ContentDisposition").finish();
-        inner_writer.data(var_156.as_ref());
+        inner_writer.data(var_156.as_str());
     }
     if let Some(var_157) = &input.content_encoding {
         let mut inner_writer = scope.start_el("ContentEncoding").finish();
-        inner_writer.data(var_157.as_ref());
+        inner_writer.data(var_157.as_str());
     }
     if let Some(var_158) = &input.content_language {
         let mut inner_writer = scope.start_el("ContentLanguage").finish();
-        inner_writer.data(var_158.as_ref());
+        inner_writer.data(var_158.as_str());
     }
     if let Some(var_159) = &input.user_metadata {
         let mut inner_writer = scope.start_el("UserMetadata").finish();
@@ -1484,11 +1484,11 @@ pub fn serialize_structure_crate_model_s3_object_metadata(
             let mut entry = inner_writer.start_el("entry").finish();
             {
                 let mut inner_writer = entry.start_el("key").finish();
-                inner_writer.data(key_160.as_ref());
+                inner_writer.data(key_160.as_str());
             }
             {
                 let mut inner_writer = entry.start_el("value").finish();
-                inner_writer.data(value_161.as_ref());
+                inner_writer.data(value_161.as_str());
             }
         }
     }
@@ -1498,11 +1498,11 @@ pub fn serialize_structure_crate_model_s3_object_metadata(
     }
     if let Some(var_163) = &input.content_md5 {
         let mut inner_writer = scope.start_el("ContentMD5").finish();
-        inner_writer.data(var_163.as_ref());
+        inner_writer.data(var_163.as_str());
     }
     if let Some(var_164) = &input.content_type {
         let mut inner_writer = scope.start_el("ContentType").finish();
-        inner_writer.data(var_164.as_ref());
+        inner_writer.data(var_164.as_str());
     }
     if let Some(var_165) = &input.http_expires_date {
         let mut inner_writer = scope.start_el("HttpExpiresDate").finish();
@@ -1618,7 +1618,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule_filter(
     let mut scope = writer.finish();
     if let Some(var_173) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_173.as_ref());
+        inner_writer.data(var_173.as_str());
     }
     if let Some(var_174) = &input.tag {
         let inner_writer = scope.start_el("Tag");
@@ -1758,15 +1758,15 @@ pub fn serialize_structure_crate_model_s3_bucket_destination(
     }
     if let Some(var_183) = &input.account_id {
         let mut inner_writer = scope.start_el("AccountId").finish();
-        inner_writer.data(var_183.as_ref());
+        inner_writer.data(var_183.as_str());
     }
     if let Some(var_184) = &input.arn {
         let mut inner_writer = scope.start_el("Arn").finish();
-        inner_writer.data(var_184.as_ref());
+        inner_writer.data(var_184.as_str());
     }
     if let Some(var_185) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_185.as_ref());
+        inner_writer.data(var_185.as_str());
     }
     if let Some(var_186) = &input.encryption {
         let inner_writer = scope.start_el("Encryption");
@@ -1801,11 +1801,11 @@ pub fn serialize_structure_crate_model_aws_lambda_transformation(
     let mut scope = writer.finish();
     if let Some(var_187) = &input.function_arn {
         let mut inner_writer = scope.start_el("FunctionArn").finish();
-        inner_writer.data(var_187.as_ref());
+        inner_writer.data(var_187.as_str());
     }
     if let Some(var_188) = &input.function_payload {
         let mut inner_writer = scope.start_el("FunctionPayload").finish();
-        inner_writer.data(var_188.as_ref());
+        inner_writer.data(var_188.as_str());
     }
     scope.finish();
     Ok(())
@@ -1841,11 +1841,11 @@ pub fn serialize_structure_crate_model_s3_grantee(
     }
     if let Some(var_192) = &input.identifier {
         let mut inner_writer = scope.start_el("Identifier").finish();
-        inner_writer.data(var_192.as_ref());
+        inner_writer.data(var_192.as_str());
     }
     if let Some(var_193) = &input.display_name {
         let mut inner_writer = scope.start_el("DisplayName").finish();
-        inner_writer.data(var_193.as_ref());
+        inner_writer.data(var_193.as_str());
     }
     scope.finish();
     Ok(())
@@ -1885,7 +1885,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
     let mut scope = writer.finish();
     if let Some(var_197) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_197.as_ref());
+        inner_writer.data(var_197.as_str());
     }
     if let Some(var_198) = &input.tags {
         let mut inner_writer = scope.start_el("Tags").finish();
@@ -1954,7 +1954,7 @@ pub fn serialize_structure_crate_model_ssekms_encryption(
     let mut scope = writer.finish();
     if let Some(var_203) = &input.key_id {
         let mut inner_writer = scope.start_el("KeyId").finish();
-        inner_writer.data(var_203.as_ref());
+        inner_writer.data(var_203.as_str());
     }
     scope.finish();
     Ok(())
@@ -1968,11 +1968,11 @@ pub fn serialize_structure_crate_model_s3_object_owner(
     let mut scope = writer.finish();
     if let Some(var_204) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_204.as_ref());
+        inner_writer.data(var_204.as_str());
     }
     if let Some(var_205) = &input.display_name {
         let mut inner_writer = scope.start_el("DisplayName").finish();
-        inner_writer.data(var_205.as_ref());
+        inner_writer.data(var_205.as_str());
     }
     scope.finish();
     Ok(())
@@ -2015,7 +2015,7 @@ pub fn serialize_structure_crate_model_ssekms(
     let mut scope = writer.finish();
     if let Some(var_207) = &input.key_id {
         let mut inner_writer = scope.start_el("KeyId").finish();
-        inner_writer.data(var_207.as_ref());
+        inner_writer.data(var_207.as_str());
     }
     scope.finish();
     Ok(())
@@ -2029,7 +2029,7 @@ pub fn serialize_structure_crate_model_selection_criteria(
     let mut scope = writer.finish();
     if let Some(var_208) = &input.delimiter {
         let mut inner_writer = scope.start_el("Delimiter").finish();
-        inner_writer.data(var_208.as_ref());
+        inner_writer.data(var_208.as_str());
     }
     if input.max_depth != 0 {
         let mut inner_writer = scope.start_el("MaxDepth").finish();
