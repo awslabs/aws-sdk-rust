@@ -72,6 +72,7 @@ pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub mod types {
     pub use aws_smithy_http::byte_stream::AggregatedBytes;
     pub use aws_smithy_http::byte_stream::ByteStream;
+    pub use aws_smithy_http::byte_stream::Error as ByteStreamError;
     pub use aws_smithy_http::result::SdkError;
     pub use aws_smithy_types::Blob;
     pub use aws_smithy_types::DateTime;
