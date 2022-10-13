@@ -1,4 +1,7 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+October 13th, 2022
+==================
+
 September 21st, 2022
 ====================
 **Breaking Changes:**
