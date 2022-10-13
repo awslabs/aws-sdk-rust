@@ -17,7 +17,20 @@
 //! with `rustls` will be constructed during client creation. However, if you are creating a Smithy
 //! [`Client`](crate::Client), directly, use the `dyn_https_https()` method to match that default behavior:
 //!
-//! ```no_run
+#![cfg_attr(
+    not(all(
+        any(feature = "rustls", feature = "native-tls"),
+        feature = "client-hyper"
+    )),
+    doc = "```no_run,ignore"
+)]
+#![cfg_attr(
+    all(
+        any(feature = "rustls", feature = "native-tls"),
+        feature = "client-hyper"
+    ),
+    doc = "```no_run"
+)]
 //! use aws_smithy_client::Client;
 //!
 //! let client = Client::builder()
@@ -34,7 +47,11 @@
 //! A use case for where you may want to use the [`Adapter`] is when settings Hyper client settings
 //! that aren't otherwise exposed by the `Client` builder interface.
 //!
-//! ```no_run
+#![cfg_attr(
+    not(all(feature = "rustls", feature = "client-hyper")),
+    doc = "```no_run,ignore"
+)]
+#![cfg_attr(all(feature = "rustls", feature = "client-hyper"), doc = "```no_run")]
 //! use std::time::Duration;
 //! use aws_smithy_client::{Client, conns, hyper_ext};
 //! use aws_smithy_client::erase::DynConnector;
@@ -186,7 +203,11 @@ fn find_source<'a, E: Error + 'static>(err: &'a (dyn Error + 'static)) -> Option
 /// Construct a HyperAdapter with the default HTTP implementation (rustls). This can be useful when you want to share a Hyper connector
 /// between multiple Smithy clients.
 ///
-/// ```no_run
+#[cfg_attr(
+    not(all(feature = "rustls", feature = "client-hyper")),
+    doc = "```no_run,ignore"
+)]
+#[cfg_attr(all(feature = "rustls", feature = "client-hyper"), doc = "```no_run")]
 /// use tower::layer::util::Identity;
 /// use aws_smithy_client::{conns, hyper_ext};
 /// use aws_smithy_client::erase::DynConnector;
@@ -428,7 +449,7 @@ mod timeout_middleware {
         fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
             let (timeout_future, kind, &mut duration) = match self.project() {
                 MaybeTimeoutFutureProj::NoTimeout { future } => {
-                    return future.poll(cx).map_err(|err| err.into())
+                    return future.poll(cx).map_err(|err| err.into());
                 }
                 MaybeTimeoutFutureProj::Timeout {
                     timeout,

@@ -135,7 +135,7 @@ impl<M, R> Builder<(), M, R> {
         let with_https = |b: Builder<_, M, R>| b.rustls_connector(connector_settings);
         // If we are compiling this function & rustls is not enabled, then native-tls MUST be enabled
         #[cfg(not(feature = "rustls"))]
-        let with_https = |b: Builder<_, M, R>| b.native_tls_connector();
+        let with_https = |b: Builder<_, M, R>| b.native_tls_connector(connector_settings);
 
         with_https(self)
     }
